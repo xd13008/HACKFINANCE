@@ -14,6 +14,7 @@ const NAV: { href: string; label: string; roles?: Role[] }[] = [
   { href: "/admin/demandes", label: "Demandes et signalements", roles: ["editor", "compliance", "admin"] },
   { href: "/admin/publicite", label: "Régie publicitaire", roles: ["sales", "admin"] },
   { href: "/admin/analytics", label: "Audience et parcours" },
+  { href: "/admin/agents", label: "Agents", roles: ["editor", "admin"] },
   { href: "/admin/audit", label: "Journal d'audit", roles: ["admin", "compliance", "editor"] },
 ];
 

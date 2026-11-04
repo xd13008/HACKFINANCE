@@ -1,6 +1,6 @@
 """Convertit docs/seo/keywords-*.csv (export Semrush) en INSERT keyword_targets.
 
-Usage : python3 -I scripts/csv-to-keywords-sql.py docs/seo/keywords-fr-2026-11.csv > supabase/seeds/02_keywords.sql
+Usage : python3 -I scripts/csv-to-keywords-sql.py docs/seo/keywords-fr-2026-11.csv > supabase/bootstrap/02_keywords.sql
 Colonnes : keyword;volume;cpc_eur;kd;portail;cluster  (portail = daf | cession ; les autres lignes sont ignorées)
 """
 import csv

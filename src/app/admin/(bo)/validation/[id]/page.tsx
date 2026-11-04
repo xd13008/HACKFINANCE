@@ -5,11 +5,13 @@ import { requireRole } from "@/lib/admin";
 import { Badge, Card, Field, PageHeader, StatusBadge, inputCls } from "@/components/admin/ui";
 import { ActionForm } from "@/components/admin/ActionForm";
 import { SeoReport } from "@/components/admin/SeoReport";
-import { approveVersion, blockItem, rejectVersion } from "@/lib/actions/admin";
+import { approveVersion, blockItem, launchAgent, rejectVersion } from "@/lib/actions/admin";
 import { diffLines } from "@/lib/diff";
 
 const FIELDS = ["meta_title", "meta_description", "h1", "summary", "body"] as const;
 const LABEL: Record<string, string> = { meta_title: "Title", meta_description: "Meta description", h1: "H1", summary: "Réponse directe", body: "Corps" };
+
+export const maxDuration = 300;
 
 export default async function ReviewPage({ params }: { params: Promise<{ id: string }> }) {
   const me = await requireRole("editor", "compliance");
@@ -58,7 +60,15 @@ export default async function ReviewPage({ params }: { params: Promise<{ id: str
           <Card title="Décision">
             {tasks && tasks.length > 0 && (
               <div className="mb-3 text-sm rounded-lg bg-amber-50 text-amber-900 p-2">
-                {tasks.map((t) => <p key={t.id}>{t.blocking ? "⛔" : "⚠️"} {t.reason}</p>)}
+                {tasks.map((t) => {
+                  const issues = ((t.details as { issues?: { type: string; severity: string; excerpt: string; explanation: string }[] })?.issues) ?? [];
+                  return (
+                    <div key={t.id} className="mb-2">
+                      <p>{t.blocking ? "⛔" : "⚠️"} {t.reason}</p>
+                      {issues.length > 0 && <ul className="ml-5 list-disc text-xs">{issues.map((i, k) => <li key={k}><strong>{i.type}</strong> ({i.severity}) : « {i.excerpt} » — {i.explanation}</li>)}</ul>}
+                    </div>
+                  );
+                })}
               </div>
             )}
             {me.is("editor") ? (
@@ -83,6 +93,14 @@ export default async function ReviewPage({ params }: { params: Promise<{ id: str
             )}
           </Card>
           <Card title="Checklist SEO à la soumission"><SeoReport report={report} /></Card>
+          {me.is("editor") && (
+            <Card title="Contrôle qualité par l'agent">
+              <ActionForm action={launchAgent} submit="Lancer le contrôle" tone="ghost">
+                <input type="hidden" name="agent" value="controle_qualite" /><input type="hidden" name="target_id" value={v.id} />
+              </ActionForm>
+              <p className="text-xs text-ink-3 mt-2">Rapport joint à la décision ; un point bloquant empêche l&apos;approbation tant qu&apos;il n&apos;est pas traité.</p>
+            </Card>
+          )}
           <Card title={`Sources (${sources?.length ?? 0})`}>
             <ul className="text-sm space-y-1">
               {(sources ?? []).map((s) => <li key={s.id}><a href={s.url} target="_blank" rel="noopener noreferrer" className="underline">{s.title ?? s.url}</a> <span className="text-ink-3">· {s.accessed_at}</span></li>)}

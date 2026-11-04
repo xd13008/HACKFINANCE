@@ -3,7 +3,7 @@ import { serverClient } from "@/lib/supabase/server";
 import { requireRole } from "@/lib/admin";
 import { Card, Field, PageHeader, StatusBadge, inputCls } from "@/components/admin/ui";
 import { ActionForm } from "@/components/admin/ActionForm";
-import { saveTestRun, validateTestRun } from "@/lib/actions/admin";
+import { saveTestRun, uploadEvidence, validateTestRun } from "@/lib/actions/admin";
 import type { Criterion } from "@/lib/data";
 
 export default async function TestRunPage({ params }: { params: Promise<{ id: string }> }) {
@@ -17,6 +17,11 @@ export default async function TestRunPage({ params }: { params: Promise<{ id: st
   const byKey = new Map((scores ?? []).map((s) => [s.criterion_key, s]));
   const frozen = t.status === "validated" || t.status === "withdrawn";
   const evidence = (t.evidence as { label: string; path: string }[]).map((e) => `${e.label} | ${e.path}`).join("\n");
+  const evidenceList = t.evidence as { label: string; path: string }[];
+  const signed = await Promise.all(evidenceList.map(async (e) => {
+    const { data } = await db.storage.from("evidence").createSignedUrl(e.path, 600);
+    return { ...e, url: data?.signedUrl ?? null };
+  }));
   const weighted = cat.criteria.reduce((a, c) => a + Number(byKey.get(c.key)?.score ?? 0) * c.weight, 0) / 100;
 
   return (
@@ -47,6 +52,19 @@ export default async function TestRunPage({ params }: { params: Promise<{ id: st
             <label className="text-sm flex gap-2"><input type="checkbox" name="completed" defaultChecked={t.status === "completed"} /> Test terminé (prêt pour validation)</label>
           </fieldset>
         </ActionForm>
+      </Card>
+      <Card title={`Preuves (${signed.length})`}>
+        <ul className="text-sm space-y-1 mb-3">
+          {signed.map((e) => <li key={e.path}>{e.url ? <a href={e.url} target="_blank" rel="noopener noreferrer" className="underline">{e.label}</a> : <span>{e.label} <span className="text-ink-3">(fichier absent du stockage)</span></span>} <span className="text-xs text-ink-3 font-mono">{e.path}</span></li>)}
+        </ul>
+        {!frozen && (
+          <ActionForm action={uploadEvidence} submit="Ajouter la preuve" className="grid sm:grid-cols-[1fr_1fr_auto] gap-2 items-end">
+            <input type="hidden" name="test_run_id" value={t.id} />
+            <Field label="Fichier (image, PDF, vidéo ≤ 10 Mo)"><input type="file" name="file" required accept="image/*,application/pdf,video/mp4" className={inputCls} /></Field>
+            <Field label="Libellé"><input name="label" className={inputCls} placeholder="Capture de l'import bancaire" /></Field>
+          </ActionForm>
+        )}
+        <p className="text-xs text-ink-3 mt-2">Stockage privé : liens signés valables 10 minutes, visibles des seuls éditeurs et de la conformité.</p>
       </Card>
       {t.status === "completed" && (
         <Card title="Validation">

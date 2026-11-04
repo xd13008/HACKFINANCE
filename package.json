@@ -13,9 +13,10 @@
     "db:start": "supabase start -x studio,imgproxy,edge-runtime,logflare,vector,supavisor,realtime,mailpit",
     "db:reset": "supabase db reset",
     "db:types": "supabase gen types typescript --local > src/lib/database.types.ts",
-    "keywords:sql": "python3 -I scripts/csv-to-keywords-sql.py docs/seo/keywords-fr-2026-11.csv > supabase/seeds/02_keywords.sql"
+    "keywords:sql": "python3 -I scripts/csv-to-keywords-sql.py docs/seo/keywords-fr-2026-11.csv > supabase/bootstrap/02_keywords.sql"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.5.0",
     "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.118.0",
     "next": "15.5.4",
@@ -36,6 +37,7 @@
     "supabase": "^3.0.0",
     "tailwindcss": "^4",
     "typescript": "^5",
+    "vite": "8.3.5",
     "vitest": "^5.1.0"
   },
   "pnpm": {
@@ -44,5 +46,6 @@
       "sharp",
       "unrs-resolver"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.28.0"
 }

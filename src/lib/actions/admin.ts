@@ -476,3 +476,76 @@ export async function createTask(_: ActionResult, fd: FormData): Promise<ActionR
   revalidatePath("/admin", "layout");
   return error ? ko(error.message) : ok("Tâche créée.");
 }
+
+// ---------------------------------------------------------------------------
+// Preuves de test (Storage privé)
+// ---------------------------------------------------------------------------
+export async function uploadEvidence(_: ActionResult, fd: FormData): Promise<ActionResult> {
+  const c = await db();
+  const id = str(fd, "test_run_id");
+  const file = fd.get("file");
+  if (!(file instanceof File) || file.size === 0) return ko("Choisissez un fichier.");
+  if (file.size > 10 * 1024 * 1024) return ko("10 Mo maximum.");
+  const { data: t } = await c.from("test_runs").select("status,evidence").eq("id", id).single();
+  if (!t || !["draft", "completed"].includes(t.status)) return ko("Un test validé est figé : impossible d'ajouter une preuve.");
+  const safe = file.name.normalize("NFD").replace(/[^\w.-]+/g, "_").slice(-80);
+  const path = `${id}/${Date.now()}-${safe}`;
+  const { error } = await c.storage.from("evidence").upload(path, file, { contentType: file.type, upsert: false });
+  if (error) return ko(`Envoi refusé : ${error.message}`);
+  const evidence = [...((t.evidence as { label: string; path: string }[]) ?? []), { label: str(fd, "label") || file.name, path }];
+  const { error: uErr } = await c.from("test_runs").update({ evidence }).eq("id", id);
+  revalidatePath(`/admin/tests/${id}`);
+  return uErr ? ko(uErr.message) : ok("Preuve ajoutée.");
+}
+
+// ---------------------------------------------------------------------------
+// Search Console
+// ---------------------------------------------------------------------------
+export async function importGscNow(_: ActionResult, fd: FormData): Promise<ActionResult> {
+  const c = await db();
+  const { importGsc } = await import("@/lib/gsc");
+  const { data: site } = await c.from("sites").select("id,gsc_property").eq("id", str(fd, "site_id")).single();
+  if (!site) return ko("Portail introuvable.");
+  try {
+    const r = await importGsc(c, site, Number(str(fd, "days")) || 28);
+    revalidatePath("/admin/seo");
+    return ok(`${r.rows} lignes importées (${r.from} → ${r.to}), ${r.keywordsUpdated} position(s) mise(s) à jour.`);
+  } catch (e) {
+    return ko((e as Error).message);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Agents
+// ---------------------------------------------------------------------------
+export async function launchAgent(_: ActionResult, fd: FormData): Promise<ActionResult> {
+  const me = await requireStaff();
+  if (!me.is("editor") && !me.is("admin")) return ko("Réservé aux éditeurs et administrateurs.");
+  if (!process.env.ANTHROPIC_API_KEY) return ko("ANTHROPIC_API_KEY non configurée sur le serveur.");
+  const agents = await import("@/lib/agents");
+  const target = str(fd, "target_id");
+  try {
+    const r = str(fd, "agent") === "veille" ? await agents.runVeille(target, { triggeredBy: me.id })
+      : str(fd, "agent") === "redaction" ? await agents.runRedaction(target, { triggeredBy: me.id })
+      : await agents.runQualityCheck(target, { triggeredBy: me.id });
+    revalidatePath("/admin", "layout");
+    return r.status === "succeeded" ? ok(`${r.summary} — coût ${r.costUsd.toFixed(3)} $`) : ko(r.summary);
+  } catch (e) {
+    return ko((e as Error).message);
+  }
+}
+
+export async function updateAgentSettings(_: ActionResult, fd: FormData): Promise<ActionResult> {
+  const me = await requireStaff();
+  if (!me.is("admin")) return ko("Réservé à l'administrateur.");
+  const c = await db();
+  const { error } = await c.from("agent_settings").update({
+    enabled: fd.get("enabled") === "on",
+    max_cost_per_run: Number(str(fd, "max_cost_per_run")) || 0,
+    max_cost_per_month: Number(str(fd, "max_cost_per_month")) || 0,
+    allowed_domains: str(fd, "allowed_domains").split(/[\s,]+/).map((d) => d.trim().toLowerCase()).filter(Boolean),
+    updated_at: new Date().toISOString(),
+  }).eq("agent", str(fd, "agent"));
+  revalidatePath("/admin/agents");
+  return error ? ko(error.message) : ok("Réglages enregistrés.");
+}

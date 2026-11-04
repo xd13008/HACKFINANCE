@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Lint et types
+        run: pnpm lint && pnpm typecheck
+
+      - name: Supabase local (Docker)
+        run: |
+          pnpm db:start
+          pnpm db:reset
+
+      - name: Tests des droits (pgTAP)
+        run: pnpm test:db
+
+      - name: Variables d'environnement de test
+        run: |
+          npx supabase status -o env | grep -E '^(API_URL|ANON_KEY)=' | sed -e 's/^API_URL=/NEXT_PUBLIC_SUPABASE_URL=/' -e 's/^ANON_KEY=/NEXT_PUBLIC_SUPABASE_ANON_KEY=/' | tr -d '"' > .env.local
+          echo "SITE_DOMAINS=dafradar.localhost=daf,cedermasociete.localhost=cession" >> .env.local
+          echo "DEFAULT_SITE_KEY=daf" >> .env.local
+          echo "ANALYTICS_SALT=ci-only-salt-not-secret" >> .env.local
+
+      - name: Tests unitaires et d'intégration (Vitest, modèle factice)
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build

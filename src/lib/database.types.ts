@@ -45,14 +45,14 @@ isOneToOne: false
                   ]
                 },"agent_runs": {
                   Row: {
-                    "agent": string,"cost_usd": number,"created_at": string,"duration_ms": number | null,"error": string | null,"finished_at": string | null,"id": string,"input": NonNullable<Json>,"output": Json | null,"started_by": string | null,"status": string
+                    "agent": string,"cost_usd": number,"created_at": string,"duration_ms": number | null,"error": string | null,"finished_at": string | null,"id": string,"input": NonNullable<Json>,"output": Json | null,"started_by": string | null,"status": string,"target_id": string | null,"triggered_by": string | null
                   }
                   ComputedFields: never
                   Insert: {
-                    "agent": string,"cost_usd"?: number,"created_at"?: string,"duration_ms"?: number | null,"error"?: string | null,"finished_at"?: string | null,"id"?: string,"input"?: NonNullable<Json>,"output"?: Json | null,"started_by"?: string | null,"status"?: string
+                    "agent": string,"cost_usd"?: number,"created_at"?: string,"duration_ms"?: number | null,"error"?: string | null,"finished_at"?: string | null,"id"?: string,"input"?: NonNullable<Json>,"output"?: Json | null,"started_by"?: string | null,"status"?: string,"target_id"?: string | null,"triggered_by"?: string | null
                   }
                   Update: {
-                    "agent"?: string,"cost_usd"?: number,"created_at"?: string,"duration_ms"?: number | null,"error"?: string | null,"finished_at"?: string | null,"id"?: string,"input"?: NonNullable<Json>,"output"?: Json | null,"started_by"?: string | null,"status"?: string
+                    "agent"?: string,"cost_usd"?: number,"created_at"?: string,"duration_ms"?: number | null,"error"?: string | null,"finished_at"?: string | null,"id"?: string,"input"?: NonNullable<Json>,"output"?: Json | null,"started_by"?: string | null,"status"?: string,"target_id"?: string | null,"triggered_by"?: string | null
                   }
                   Relationships: [
                     
@@ -829,14 +829,14 @@ isOneToOne: true
                   ]
                 },"sites": {
                   Row: {
-                    "audience": string | null,"base_path": string,"created_at": string,"description": string | null,"domain": string,"id": string,"key": string,"name": string,"status": string,"tagline": string | null,"theme": NonNullable<Json>,"updated_at": string
+                    "audience": string | null,"base_path": string,"created_at": string,"description": string | null,"domain": string,"gsc_property": string | null,"id": string,"key": string,"name": string,"status": string,"tagline": string | null,"theme": NonNullable<Json>,"updated_at": string
                   }
                   ComputedFields: never
                   Insert: {
-                    "audience"?: string | null,"base_path"?: string,"created_at"?: string,"description"?: string | null,"domain": string,"id"?: string,"key": string,"name": string,"status"?: string,"tagline"?: string | null,"theme"?: NonNullable<Json>,"updated_at"?: string
+                    "audience"?: string | null,"base_path"?: string,"created_at"?: string,"description"?: string | null,"domain": string,"gsc_property"?: string | null,"id"?: string,"key": string,"name": string,"status"?: string,"tagline"?: string | null,"theme"?: NonNullable<Json>,"updated_at"?: string
                   }
                   Update: {
-                    "audience"?: string | null,"base_path"?: string,"created_at"?: string,"description"?: string | null,"domain"?: string,"id"?: string,"key"?: string,"name"?: string,"status"?: string,"tagline"?: string | null,"theme"?: NonNullable<Json>,"updated_at"?: string
+                    "audience"?: string | null,"base_path"?: string,"created_at"?: string,"description"?: string | null,"domain"?: string,"gsc_property"?: string | null,"id"?: string,"key"?: string,"name"?: string,"status"?: string,"tagline"?: string | null,"theme"?: NonNullable<Json>,"updated_at"?: string
                   }
                   Relationships: [
                     
@@ -1287,7 +1287,10 @@ isOneToOne: false
                 }
           }
           Functions: {
-            "analytics_by_rubrique":
+            "agent_month_cost":
+{ Args: { "p_agent": string }; Returns: number
+                           },
+"analytics_by_rubrique":
 { Args: { "p_from": string,"p_site": string,"p_to": string }; Returns: {
               "click_rate": number,"form_submits": number,"outbound_clicks": number,"pageviews": number,"rubrique": string,"sessions": number
             }[]
@@ -1353,6 +1356,9 @@ isOneToOne: false
                            },
 "record_event":
 { Args: { "p_category_id"?: string,"p_device"?: string,"p_entity_id"?: string,"p_event_type": string,"p_link_kind"?: string,"p_page_type"?: string,"p_path": string,"p_placement_id"?: string,"p_props"?: Json,"p_referrer_host"?: string,"p_rubrique"?: string,"p_session_hash": string,"p_site_key": string,"p_utm_campaign"?: string,"p_utm_medium"?: string,"p_utm_source"?: string }; Returns: undefined
+                           },
+"refresh_keyword_positions":
+{ Args: { "p_days"?: number,"p_site": string }; Returns: number
                            },
 "reject_version":
 { Args: { "p_comment": string,"p_version": string }; Returns: undefined

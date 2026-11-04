@@ -2,19 +2,6 @@
 -- Régie, demandes et mesure d'audience — données FICTIVES de démonstration
 -- =============================================================================
 
--- Inventaire publicitaire
-insert into public.placement_inventory (id, site_id, placement_type, category_id, slot, label, base_price_month) values
-  ('50000000-0000-4000-a000-000000000001', '10000000-0000-4000-a000-000000000001', 'category_sponsored', '12000000-0000-4000-a000-000000000001', 1, 'Sponsorisé', null),
-  ('50000000-0000-4000-a000-000000000002', '10000000-0000-4000-a000-000000000001', 'category_sponsored', '12000000-0000-4000-a000-000000000001', 2, 'Sponsorisé', null),
-  ('50000000-0000-4000-a000-000000000003', '10000000-0000-4000-a000-000000000001', 'enhanced_listing', '12000000-0000-4000-a000-000000000001', 1, 'Fiche enrichie', 290),
-  ('50000000-0000-4000-a000-000000000004', '10000000-0000-4000-a000-000000000001', 'guide_banner', '12000000-0000-4000-a000-000000000001', 1, 'Partenaire', 390),
-  ('50000000-0000-4000-a000-000000000005', '10000000-0000-4000-a000-000000000001', 'newsletter', null, 1, 'Partenaire', 600),
-  ('50000000-0000-4000-a000-000000000006', '10000000-0000-4000-a000-000000000001', 'category_sponsored', '12000000-0000-4000-a000-000000000002', 1, 'Sponsorisé', null),
-  ('50000000-0000-4000-a000-000000000007', '10000000-0000-4000-a000-000000000001', 'category_sponsored', '12000000-0000-4000-a000-000000000003', 1, 'Sponsorisé', null),
-  ('50000000-0000-4000-a000-000000000010', '10000000-0000-4000-a000-000000000002', 'directory_featured', '12000000-0000-4000-a000-000000000020', 1, 'Mis en avant', 450),
-  ('50000000-0000-4000-a000-000000000011', '10000000-0000-4000-a000-000000000002', 'directory_featured', '12000000-0000-4000-a000-000000000020', 2, 'Mis en avant', 350),
-  ('50000000-0000-4000-a000-000000000012', '10000000-0000-4000-a000-000000000002', 'simulator_sponsor', null, 1, 'Partenaire', 800);
-
 insert into public.commercial_contracts (id, site_id, client_name, reference, starts_on, ends_on, amount_eur, status, created_by) values
   ('51000000-0000-4000-a000-000000000001', '10000000-0000-4000-a000-000000000001', 'Éditeur fictif B', 'DEMO-2026-001',
    current_date - 20, current_date + 70, 3600, 'active', '00000000-0000-4000-a000-000000000003');
@@ -166,8 +153,3 @@ from generate_series(1, 28) g,
   ('/guides/choisir-logiciel-tresorerie', 'logiciel de trésorerie', 1, 60, 14.0),
   ('/meilleurs-logiciels/tresorerie', 'logiciel de trésorerie', 0, 40, 18.5)
 ) as x(page, query, clicks, impr, pos);
-
-insert into public.agent_settings (agent, enabled, max_cost_per_run, max_cost_per_month, allowed_domains) values
-  ('veille', false, 0.50, 30, '{example.com}'),
-  ('redaction', false, 1.00, 60, '{}'),
-  ('controle_qualite', false, 0.30, 20, '{}');

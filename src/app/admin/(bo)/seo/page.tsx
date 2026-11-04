@@ -3,7 +3,7 @@ import { serverClient } from "@/lib/supabase/server";
 import { currentSite, requireRole } from "@/lib/admin";
 import { Badge, Card, Field, PageHeader, StatusBadge, Table, inputCls } from "@/components/admin/ui";
 import { ActionForm } from "@/components/admin/ActionForm";
-import { addRedirect, importKeywords } from "@/lib/actions/admin";
+import { addRedirect, importGscNow, importKeywords } from "@/lib/actions/admin";
 import { formatNum } from "@/lib/format";
 
 /** Les 7 piliers SEO pilotés depuis une seule page. */
@@ -64,7 +64,10 @@ export default async function SeoPage() {
           </details>
         </Card>
 
-        <Card title="7 · Opportunités : positions 4 à 15 (28 j)">
+        <Card title="7 · Opportunités : positions 4 à 15 (28 j)" actions={
+          <ActionForm action={importGscNow} submit="Importer Search Console" tone="ghost" className="flex items-center gap-2">
+            <input type="hidden" name="site_id" value={sid ?? sites[0]?.id} /><input type="hidden" name="days" value="28" />
+          </ActionForm>}>
           <Table head={["Requête", "Page", "Impr.", "Clics", "Position"]} empty="Aucune donnée Search Console importée.">
             {striking.map((r) => (
               <tr key={r.page! + r.query}><td className="py-1.5 pr-2">{r.query}</td><td className="pr-2 font-mono text-xs">{r.page}</td>

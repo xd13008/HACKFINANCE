@@ -27,8 +27,8 @@ pnpm db:start            # Supabase local (Docker) — si le démon Docker est a
 pnpm db:reset            # applique les migrations + le jeu de données fictif (supabase/seeds)
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://dafradar.localhost:3000 et http://cedermasociete.localhost:3000
-pnpm test                # Vitest (contrôles, SEO, diff)
-pnpm test:db             # pgTAP : droits et file de validation (42 tests)
+pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage (52 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -41,8 +41,9 @@ Comptes de démo (local uniquement, mot de passe `demo-local-2026`) : `admin@`, 
 ```
 supabase/
   migrations/   0100 plateforme+rôles+audit · 0200 faits · 0300 éditorial+workflow · 0400 SEO+checklist
-                0500 demandes+régie · 0600 analytics+agents · 0700 reporting
-  seeds/        données FICTIVES (is_fictional) publiées via le vrai circuit de validation
+                0500 demandes+régie · 0600 analytics+agents · 0700 reporting · 0800 agents+Storage+GSC
+  bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
+  seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/
   middleware.ts         domaine → portail (rewrite vers /s/[site]), redirections 301, session admin
@@ -52,10 +53,23 @@ src/
   app/admin/(bo)/…      back-office : validation, contenus, SEO, catalogue, tests, prestataires,
                         demandes, régie, analytics, audit
   app/api/collect       mesure d'audience sans cookie (hachage quotidien salé, pas d'IP stockée)
+  app/api/cron/*        tâches planifiées (Search Console quotidien, agents hebdomadaire) — Bearer CRON_SECRET
+  lib/agents/           veille, rédaction, contrôle qualité : un appel Claude à sortie structurée, sans outil,
+                        compte Supabase « agent » (RLS), plafonds de coût, journal agent_runs
+  lib/gsc.ts            import Search Console (compte de service Google)
   components/public|admin
 tests/                  Vitest
 docs/seo/               exports Semrush
 ```
+
+## Agents
+
+- Modèle : `claude-opus-5-5` (lib/agents/llm.ts), repli serveur `fallbacks: "default"`, sortie Zod validée.
+- Les agents n'ont **aucun outil** : le code récupère les pages (domaines autorisés), le modèle renvoie des données.
+  Tout contenu externe passe par `asDocument()` — donnée, jamais instruction.
+- Toujours via `agentDb()` (compte rôle `agent`) ; jamais `serviceClient()`.
+- Sources : `keepKnownSources()` retire toute URL que l'agent n'a pas reçue.
+- Tests : injecter un `Llm` factice ; ne jamais appeler l'API réelle dans les tests (coût).
 
 ## Conventions
 
@@ -65,3 +79,4 @@ docs/seo/               exports Semrush
 - Nouveau portail : une ligne dans `sites` + `SITE_DOMAINS`. Aucune modification de code.
 - Pages publiques : client `publicClient()` (anon, sans cookie) pour rester cachables ; back-office : `serverClient()`.
 - `robots.txt` interdit l'indexation tant que `ALLOW_INDEXING=true` n'est pas défini en production.
+- Mise en production : `DEPLOY.md`. CI : `.github/workflows/ci.yml` (lint, types, pgTAP, Vitest, build).

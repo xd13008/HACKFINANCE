@@ -288,7 +288,7 @@ Règles imposées au niveau de la base :
 
 La base de banques d'affaires pourra alimenter `providers` et `public_deals`. Le CA, les e-mails et les téléphones nominatifs restent internes jusqu'à une revue RGPD.
 
-## 12. Agents (V2, après le socle)
+## 12. Agents (V2 — implémentés, désactivés par défaut)
 
 | Agent | Déclencheur | Sortie | Droits | Validation humaine |
 |---|---|---|---|---|
@@ -298,7 +298,7 @@ La base de banques d'affaires pourra alimenter `providers` et `public_deals`. Le
 | Opportunités SEO | Chaque semaine | Propositions de nouvelles pages et de pages à retravailler | Lecture de `gsc_metrics` et `keyword_targets`, `review_tasks` | L'éditeur priorise |
 | Vérification des prestataires | Nouvelle demande, revue trimestrielle | Fiche préremplie, écarts | Registres publics, brouillon | Validation avant affichage |
 
-Mise en place : Managed Agents, puis Agent SDK si besoin de contrôle. Limites : plafond de coût par exécution et par mois, outils et sources autorisés, sortie structurée avec une source pour chaque fait, aucun envoi externe ni paiement. Le contenu web est une donnée, jamais une instruction.
+**Implémentation retenue :** appels Claude API (`claude-opus-5-5`) à sortie structurée, sans outil, orchestrés par le code (`src/lib/agents`) — plus simple et plus sûr que des agents autonomes pour ces tâches bornées. Le code récupère les pages autorisées ; le modèle ne fait que renvoyer des données. Managed Agents reste une option si les tâches deviennent ouvertes. Les agents « Opportunités SEO » et « Vérification des prestataires » restent à faire. Limites : plafond de coût par exécution et par mois, outils et sources autorisés, sortie structurée avec une source pour chaque fait, aucun envoi externe ni paiement. Le contenu web est une donnée, jamais une instruction.
 
 ## 13. Stack technique
 

@@ -6,9 +6,11 @@ import { Card, Field, PageHeader, StatusBadge, inputCls } from "@/components/adm
 import { ActionForm } from "@/components/admin/ActionForm";
 import { SeoReport } from "@/components/admin/SeoReport";
 import {
-  addSource, newDraftFromPublished, removeSource, saveBrief, saveDraft, submitVersion, unpublishItem, updateItemSettings, unblockItem,
+  addSource, launchAgent, newDraftFromPublished, removeSource, saveBrief, saveDraft, submitVersion, unpublishItem, updateItemSettings, unblockItem,
 } from "@/lib/actions/admin";
 import { CONTENT_TYPE_LABEL } from "@/lib/seo";
+
+export const maxDuration = 300;
 
 export default async function ContentEditor({ params }: { params: Promise<{ id: string }> }) {
   const me = await requireRole("editor", "compliance", "admin");
@@ -55,9 +57,16 @@ export default async function ContentEditor({ params }: { params: Promise<{ id: 
           ) : (
             <Card title="Aucun brouillon en cours">
               {canEdit ? (
-                <ActionForm action={newDraftFromPublished} submit="Créer un brouillon depuis la version en ligne">
-                  <input type="hidden" name="item_id" value={item.id} />
-                </ActionForm>
+                <div className="space-y-3">
+                  <ActionForm action={newDraftFromPublished} submit="Créer un brouillon depuis la version en ligne">
+                    <input type="hidden" name="item_id" value={item.id} />
+                  </ActionForm>
+                  {brief && (
+                    <ActionForm action={launchAgent} submit="Faire rédiger un brouillon par l'agent" tone="ghost">
+                      <input type="hidden" name="agent" value="redaction" /><input type="hidden" name="target_id" value={item.id} />
+                    </ActionForm>
+                  )}
+                </div>
               ) : <p className="text-sm text-ink-3">Lecture seule.</p>}
             </Card>
           )}
