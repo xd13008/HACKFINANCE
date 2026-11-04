@@ -6,7 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:db": "supabase test db",
+    "db:start": "supabase start -x studio,imgproxy,edge-runtime,logflare,vector,supavisor,realtime,mailpit",
+    "db:reset": "supabase db reset",
+    "db:types": "supabase gen types typescript --local > src/lib/database.types.ts",
+    "keywords:sql": "python3 -I scripts/csv-to-keywords-sql.py docs/seo/keywords-fr-2026-11.csv > supabase/seeds/02_keywords.sql"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
@@ -14,6 +21,8 @@
     "next": "15.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-markdown": "10.1.0",
+    "remark-gfm": "4.0.1",
     "zod": "^4.6.7"
   },
   "devDependencies": {

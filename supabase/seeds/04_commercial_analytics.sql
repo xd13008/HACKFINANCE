@@ -83,7 +83,7 @@ begin
   perform setseed(0.42);
   for d in 0..29 loop
     -- Portail DAF : croissance progressive
-    nb := 40 + d * 3 + (random() * 20)::int;
+    nb := 40 + (29 - d) * 3 + (random() * 20)::int;
     for s in 1..nb loop
       sess := md5('daf' || d || '-' || s);
       r := random();
@@ -126,7 +126,7 @@ begin
     end loop;
 
     -- Portail Cession
-    nb := 25 + d * 2 + (random() * 15)::int;
+    nb := 25 + (29 - d) * 2 + (random() * 15)::int;
     for s in 1..nb loop
       sess := md5('ces' || d || '-' || s);
       src := case when random() < 0.7 then 'www.google.com' else null end;
