@@ -1,15 +1,11 @@
 name: Base de données (production)
 
+# Secours : les migrations sont normalement appliquées par le build Vercel de production.
 # Déclenchement manuel uniquement : Actions → « Base de données (production) » → Run workflow.
 # Secret requis dans GitHub (Settings → Secrets and variables → Actions) :
 #   SUPABASE_DB_URL = chaîne de connexion Postgres directe (non poolée) du projet Supabase de production.
 on:
   workflow_dispatch:
-    inputs:
-      bootstrap:
-        description: "Charger aussi la taxonomie de production (première installation uniquement)"
-        type: boolean
-        default: false
 
 jobs:
   migrate:
@@ -24,18 +20,8 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
 
-      - name: Migrations
+      - name: Migrations et taxonomie (si base vide)
         env:
-          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
-        run: npx supabase db push --db-url "$SUPABASE_DB_URL" --include-all
-
-      - name: Taxonomie de production (sans données fictives)
-        if: ${{ inputs.bootstrap }}
-        env:
-          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
-        run: |
-          sudo apt-get install -y -qq postgresql-client >/dev/null
-          for f in supabase/bootstrap/*.sql; do
-            echo "→ $f"
-            psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -q -f "$f"
-          done
+          POSTGRES_URL_NON_POOLING: ${{ secrets.SUPABASE_DB_URL }}
+          FORCE_MIGRATIONS: "1"
+        run: node scripts/migrate-prod.mjs

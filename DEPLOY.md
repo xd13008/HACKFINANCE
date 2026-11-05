@@ -8,12 +8,9 @@ Domaines achetés : `radarfinances.com` (portail finance, marque « Radar Financ
 ## 2. Supabase (région UE)
 1. Créer un projet sur supabase.com dans une **région européenne** (Paris `eu-west-3` ou Francfort `eu-central-1`).
 2. Dans *Authentication → Providers → Email* : **désactiver les inscriptions publiques**. Les comptes sont créés par l'administrateur.
-3. Appliquer le schéma et la taxonomie, **sans le jeu de données fictif** :
-   ```bash
-   npx supabase link --project-ref <ref>
-   npx supabase db push
-   for f in supabase/bootstrap/*.sql; do psql "$SUPABASE_DB_URL" -f "$f"; done
-   ```
+3. Le schéma et la taxonomie sont appliqués **automatiquement par chaque build Vercel de production**
+   (`scripts/migrate-prod.mjs`, variable `POSTGRES_URL_NON_POOLING` fournie par l'intégration Supabase de Vercel).
+   Les déploiements de prévisualisation n'y touchent jamais. Secours : workflow GitHub « Base de données (production) ».
 4. Créer les comptes dans *Authentication → Users*, puis attribuer les rôles en SQL :
    ```sql
    insert into public.user_roles (user_id, role) values ('<uuid admin>', 'admin'), ('<uuid éditeur>', 'editor');
