@@ -1,6 +1,6 @@
 # Réseau de portails média B2B
 
-Média comparateur + annuaire + régie, multi-portails : **DAF Radar** et **Céder ma société**.
+Média comparateur + annuaire + régie, multi-portails : **Radar Finances** et **Céder ma société**.
 Architecture et stratégie : [`ARCHITECTURE.md`](ARCHITECTURE.md). Consignes de développement : [`CLAUDE.md`](CLAUDE.md).
 
 ## Lancement local
@@ -15,9 +15,9 @@ cp .env.example .env.local   # puis renseigner NEXT_PUBLIC_SUPABASE_ANON_KEY (np
 pnpm dev
 ```
 
-- Portail DAF : http://dafradar.localhost:3000
+- Portail DAF : http://radarfinances.localhost:3000
 - Portail Cession : http://cedermasociete.localhost:3000
-- Back-office : http://dafradar.localhost:3000/admin (`editeur@exemple.test` / `demo-local-2026`)
+- Back-office : http://radarfinances.localhost:3000/admin (`editeur@exemple.test` / `demo-local-2026`)
 
 Toutes les données sont fictives et signalées comme telles.
 

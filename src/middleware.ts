@@ -52,7 +52,15 @@ export async function middleware(req: NextRequest) {
   // Les routes internes /s/… ne sont jamais servies directement.
   if (pathname.startsWith("/s/")) return new NextResponse("Not found", { status: 404 });
 
-  const siteKey = siteKeyForHost(req.headers.get("host"));
+  // Une seule version de chaque domaine : www → domaine nu (301).
+  const host = req.headers.get("host") ?? "";
+  if (host.startsWith("www.")) {
+    const target = req.nextUrl.clone();
+    target.host = host.slice(4);
+    return NextResponse.redirect(target, 301);
+  }
+
+  const siteKey = siteKeyForHost(host);
 
   const rule = (await redirectsFor(siteKey)).get(pathname);
   if (rule) {

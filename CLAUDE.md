@@ -1,7 +1,7 @@
 # CLAUDE.md — Réseau de portails média B2B
 
 Plateforme unique (Next.js + Supabase) qui sert plusieurs portails par nom de domaine :
-**DAF Radar** (`dafradar.fr`, logiciels finance pour DAF) et **Céder ma société** (`cedermasociete.fr`, vente d'entreprise).
+**Radar Finances** (`radarfinances.com`, logiciels finance pour DAF) et **Céder ma société** (`cedermasociete.com`, vente d'entreprise).
 Référence produit : `ARCHITECTURE.md`. Mots-clés Semrush : `docs/seo/`.
 
 ## Règles non négociables (imposées par la base — ne jamais les contourner)
@@ -26,7 +26,7 @@ pnpm install
 pnpm db:start            # Supabase local (Docker) — si le démon Docker est arrêté : dockerd &
 pnpm db:reset            # applique les migrations + le jeu de données fictif (supabase/seeds)
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
-pnpm dev                 # http://dafradar.localhost:3000 et http://cedermasociete.localhost:3000
+pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
 pnpm test:db             # pgTAP : droits, validation, agents, Storage (52 tests)
 pnpm typecheck && pnpm lint && pnpm build

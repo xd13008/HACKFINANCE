@@ -3,7 +3,7 @@
 -- =============================================================================
 
 -- ---------------------------------------------------------------------------
--- Search Console : propriété par portail (ex. "sc-domain:dafradar.fr")
+-- Search Console : propriété par portail (ex. "sc-domain:radarfinances.com")
 -- ---------------------------------------------------------------------------
 alter table public.sites add column if not exists gsc_property text;
 

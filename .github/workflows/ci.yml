@@ -32,7 +32,7 @@ jobs:
       - name: Variables d'environnement de test
         run: |
           npx supabase status -o env | grep -E '^(API_URL|ANON_KEY)=' | sed -e 's/^API_URL=/NEXT_PUBLIC_SUPABASE_URL=/' -e 's/^ANON_KEY=/NEXT_PUBLIC_SUPABASE_ANON_KEY=/' | tr -d '"' > .env.local
-          echo "SITE_DOMAINS=dafradar.localhost=daf,cedermasociete.localhost=cession" >> .env.local
+          echo "SITE_DOMAINS=radarfinances.localhost=daf,cedermasociete.localhost=cession" >> .env.local
           echo "DEFAULT_SITE_KEY=daf" >> .env.local
           echo "ANALYTICS_SALT=ci-only-salt-not-secret" >> .env.local
 

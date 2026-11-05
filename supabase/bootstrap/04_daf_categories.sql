@@ -5,8 +5,8 @@
 -- Chaque brouillon doit être relu, sourcé et validé par un éditeur humain.
 -- =============================================================================
 
-update public.sites set gsc_property = 'sc-domain:dafradar.fr' where key = 'daf' and gsc_property is null;
-update public.sites set gsc_property = 'sc-domain:cedermasociete.fr' where key = 'cession' and gsc_property is null;
+update public.sites set gsc_property = 'sc-domain:radarfinances.com' where key = 'daf' and gsc_property is null;
+update public.sites set gsc_property = 'sc-domain:cedermasociete.com' where key = 'cession' and gsc_property is null;
 
 -- Grilles de critères (somme des pondérations = 100). Les catégories restent en brouillon
 -- jusqu'aux premiers tests réels : une page de classement vide serait un contenu pauvre.

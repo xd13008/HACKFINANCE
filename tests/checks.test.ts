@@ -26,9 +26,9 @@ describe("contrôles des demandes de référencement", () => {
 });
 
 describe("résolution domaine → portail", () => {
-  const raw = "dafradar.fr=daf,cedermasociete.fr=cession,dafradar.localhost=daf";
-  it("lit la configuration", () => expect(parseSiteDomains(raw).get("cedermasociete.fr")).toBe("cession"));
-  it("ignore le port et la casse", () => expect(siteKeyForHost("DafRadar.localhost:3000", raw, "x")).toBe("daf"));
+  const raw = "radarfinances.com=daf,cedermasociete.com=cession,radarfinances.localhost=daf";
+  it("lit la configuration", () => expect(parseSiteDomains(raw).get("cedermasociete.com")).toBe("cession"));
+  it("ignore le port et la casse", () => expect(siteKeyForHost("RadarFinances.localhost:3000", raw, "x")).toBe("daf"));
   it("retombe sur le portail par défaut", () => expect(siteKeyForHost("inconnu.fr", raw, "daf")).toBe("daf"));
 });
 

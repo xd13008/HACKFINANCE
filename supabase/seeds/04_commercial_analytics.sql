@@ -11,13 +11,13 @@ insert into public.commercial_contracts (id, site_id, client_name, reference, st
 insert into public.sponsored_placements (id, inventory_id, contract_id, software_id, provider_id, headline, cta_label, cta_url, starts_on, ends_on, status) values
   ('52000000-0000-4000-a000-000000000001', '50000000-0000-4000-a000-000000000001', '51000000-0000-4000-a000-000000000001',
    '20000000-0000-4000-a000-000000000002', null, 'Démarrez gratuitement votre suivi de trésorerie', 'Essayer Cashpilot',
-   'https://example.com/cashpilot?utm_source=dafradar', current_date - 20, current_date + 70, 'active'),
+   'https://example.com/cashpilot?utm_source=radarfinances', current_date - 20, current_date + 70, 'active'),
   ('52000000-0000-4000-a000-000000000002', '50000000-0000-4000-a000-000000000010', null,
    null, '40000000-0000-4000-a000-000000000001', 'Spécialiste des cessions industrielles en Rhône-Alpes', 'Voir le cabinet',
    'https://example.com/transmission', current_date - 5, current_date + 85, 'active');
 
 insert into public.affiliate_links (software_id, url, network, commission) values
-  ('20000000-0000-4000-a000-000000000003', 'https://example.com/previa?ref=dafradar', 'Programme direct (démo)', '15 % la 1re année');
+  ('20000000-0000-4000-a000-000000000003', 'https://example.com/previa?ref=radarfinances', 'Programme direct (démo)', '15 % la 1re année');
 
 -- Demandes entrantes
 insert into public.placement_requests (site_id, advertiser_name, website, contact_name, contact_email, placement_types, category_ids,

@@ -2,7 +2,7 @@
 
 _v2 · 4 nov. 2026 · @xav — remplace la v1 « Portail finance des PME »_
 
-**Noms provisoires retenus :** DAF Radar (`dafradar.fr`) et Céder ma société (`cedermasociete.fr`) — un domaine par portail, un seul dépôt et un seul back-office. Domaines libres au 4 nov. 2026 (RDAP AFNIC) : à réserver.
+**Noms et domaines retenus :** Radar Finances (`radarfinances.com`) et Céder ma société (`cedermasociete.com`) — un domaine par portail, un seul dépôt et un seul back-office. Domaines achetés le 5 nov. 2026.
 
 ## 1. Synthèse
 

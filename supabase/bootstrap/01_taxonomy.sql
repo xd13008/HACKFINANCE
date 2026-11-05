@@ -8,12 +8,12 @@
 -- Portails
 -- ---------------------------------------------------------------------------
 insert into public.sites (id, key, name, domain, tagline, description, audience, theme, status) values
-  ('10000000-0000-4000-a000-000000000001', 'daf', 'DAF Radar', 'dafradar.fr',
+  ('10000000-0000-4000-a000-000000000001', 'daf', 'Radar Finances', 'radarfinances.com',
    'Les logiciels et prestataires finance, testés pour les DAF de PME',
    'Comparatifs indépendants de logiciels financiers : trésorerie, facturation électronique, notes de frais, comptabilité.',
    'DAF, RAF et dirigeants de PME',
    '{"primary":"#0f4c81","accent":"#f59e0b"}', 'live'),
-  ('10000000-0000-4000-a000-000000000002', 'cession', 'Céder ma société', 'cedermasociete.fr',
+  ('10000000-0000-4000-a000-000000000002', 'cession', 'Céder ma société', 'cedermasociete.com',
    'Préparer, valoriser et réussir la vente de son entreprise',
    'Guides pratiques, simulateurs et annuaire des conseils en cession pour les dirigeants de TPE et PME.',
    'Dirigeants cédants de TPE et PME',

@@ -100,7 +100,7 @@ describe.skipIf(!reachable)("agents (Supabase local, modèle factice)", () => {
     ] }]);
     const r = await runQualityCheck(pending!.id, { db: agent, llm });
     expect(r.status).toBe("succeeded");
-    const { data: task } = await editor.from("review_tasks").select("id,blocking,kind").eq("content_version_id", pending!.id).eq("kind", "qa_report").single();
+    const { data: task } = await editor.from("review_tasks").select("id,blocking,kind").eq("content_version_id", pending!.id).eq("kind", "qa_report").order("created_at", { ascending: false }).limit(1).single();
     expect(task!.blocking).toBe(true); // forcé bloquant quel que soit l'avis du modèle
 
     const { error } = await editor.rpc("approve_version", { p_version: pending!.id });

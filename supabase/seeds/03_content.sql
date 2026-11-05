@@ -67,10 +67,10 @@ $$;
 -- =============================================================================
 
 select pg_temp.c('daf', 'home', '', null,
-  'DAF Radar — logiciels finance testés pour les PME',
+  'Radar Finances — logiciels finance testés pour les PME',
   'Comparatifs indépendants de logiciels de trésorerie, facturation électronique et notes de frais, testés selon une méthode publiée.',
   'Les logiciels finance des PME, testés et comparés',
-  'DAF Radar teste les logiciels financiers utilisés par les PME françaises et publie des comparatifs indépendants : chaque note repose sur un test réel, daté et validé par un humain.',
+  'Radar Finances teste les logiciels financiers utilisés par les PME françaises et publie des comparatifs indépendants : chaque note repose sur un test réel, daté et validé par un humain.',
   'Choisissez une catégorie pour découvrir notre classement, les prix vérifiés et nos verdicts par profil d''entreprise.');
 
 select pg_temp.c('daf', 'category_ranking', 'tresorerie', 'logiciel de gestion de trésorerie',
@@ -184,29 +184,29 @@ select pg_temp.c('daf', 'glossary', 'bfr', 'bfr',
   E'## Exemple\n\nUne PME avec 100 k€ de stocks, 200 k€ de créances clients et 150 k€ de dettes fournisseurs a un BFR de 150 k€.');
 
 select pg_temp.c('daf', 'page', 'methode', null,
-  'Notre méthode de test et de notation — DAF Radar',
+  'Notre méthode de test et de notation — Radar Finances',
   'Comment nous testons les logiciels : protocole, critères, pondérations, validation humaine et séparation stricte entre éditorial et publicité.',
   'Notre méthode de test et de notation',
   'Chaque note publiée repose sur un test réel, daté, documenté par des preuves et validé par un membre humain de la rédaction. Aucun partenaire commercial ne peut modifier une note ou un classement.',
   E'## Le protocole\n\nChaque catégorie a un protocole de test identique pour tous les logiciels et une grille de critères pondérés, publiée sur la page de la catégorie.\n\n## La note\n\nLa note globale est la moyenne pondérée des notes par critère. Elle est calculée automatiquement à partir du test validé.\n\n## Éditorial et publicité\n\nLes positions sponsorisées sont signalées par la mention « Sponsorisé » et affichées dans un bloc distinct du classement. Le classement éditorial ne dépend que des notes. Voir [notre politique publicitaire](/publicite).\n\n## Le rôle des agents IA\n\nDes agents IA nous aident à surveiller les prix et à préparer des brouillons. Ils ne publient jamais : chaque contenu est relu et validé par un humain.\n\n## Signaler une erreur\n\nUn formulaire de signalement et de droit de réponse est disponible sur chaque fiche, avec un délai de traitement de 10 jours ouvrés.');
 
 select pg_temp.c('daf', 'page', 'a-propos', null,
-  'À propos de DAF Radar — qui sommes-nous ?',
-  'DAF Radar est un média indépendant qui teste les logiciels finance des PME. Équipe, rôle des agents IA, sources de revenus et engagements.',
-  'À propos de DAF Radar',
-  'DAF Radar est un média indépendant consacré aux outils et prestataires finance des PME. Nos revenus proviennent de positions sponsorisées signalées et de liens d''affiliation signalés.',
+  'À propos de Radar Finances — qui sommes-nous ?',
+  'Radar Finances est un média indépendant qui teste les logiciels finance des PME. Équipe, rôle des agents IA, sources de revenus et engagements.',
+  'À propos de Radar Finances',
+  'Radar Finances est un média indépendant consacré aux outils et prestataires finance des PME. Nos revenus proviennent de positions sponsorisées signalées et de liens d''affiliation signalés.',
   E'## Nos sources de revenus\n\n- positions sponsorisées, toujours signalées ;\n- fiches enrichies ;\n- liens d''affiliation, toujours signalés.\n\nAucune de ces sources n''influence les notes. Voir [notre méthode](/methode).');
 
 select pg_temp.c('daf', 'page', 'mentions-legales', null,
-  'Mentions légales — DAF Radar',
-  'Mentions légales du site DAF Radar : éditeur, directeur de la publication, hébergeur et contact. Informations à compléter avant mise en ligne.',
+  'Mentions légales — Radar Finances',
+  'Mentions légales du site Radar Finances : éditeur, directeur de la publication, hébergeur et contact. Informations à compléter avant mise en ligne.',
   'Mentions légales',
   'Éditeur, directeur de la publication et hébergeur du site. À compléter avant la mise en ligne.',
   E'## Éditeur\n\n[À compléter : raison sociale, SIREN, adresse, directeur de la publication]\n\n## Hébergement\n\n[À compléter : hébergeur, région UE]');
 
 select pg_temp.c('daf', 'page', 'donnees-personnelles', null,
-  'Données personnelles et mesure d''audience — DAF Radar',
-  'Comment DAF Radar traite vos données : formulaires, consentement, durées de conservation, mesure d''audience sans cookie et vos droits RGPD.',
+  'Données personnelles et mesure d''audience — Radar Finances',
+  'Comment Radar Finances traite vos données : formulaires, consentement, durées de conservation, mesure d''audience sans cookie et vos droits RGPD.',
   'Données personnelles et mesure d''audience',
   'Nous mesurons l''audience sans cookie et sans stocker d''adresse IP. Les données des formulaires ne sont utilisées que pour la finalité indiquée lors de votre consentement.',
   E'## Mesure d''audience\n\nIdentifiant de session calculé à partir d''un hachage quotidien, non réversible. Conservation : 25 mois.\n\n## Vos droits\n\n[À compléter : contact DPO, base légale, durées de conservation par formulaire — à valider lors de la revue RGPD.]');

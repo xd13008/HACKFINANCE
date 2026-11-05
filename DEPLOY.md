@@ -3,7 +3,7 @@
 Durée estimée : une demi-journée. Rien n'est automatique : chaque étape demande vos comptes.
 
 ## 1. Domaines
-Réserver `dafradar.fr` et `cedermasociete.fr` (libres au 4 nov. 2026 selon le RDAP de l'AFNIC), puis prévoir les `www.`.
+Domaines achetés : `radarfinances.com` (portail finance, marque « Radar Finances ») et `cedermasociete.com`. Prévoir les sous-domaines `www.` en redirection 301 vers le domaine nu.
 
 ## 2. Supabase (région UE)
 1. Créer un projet sur supabase.com dans une **région européenne** (Paris `eu-west-3` ou Francfort `eu-central-1`).
@@ -21,7 +21,7 @@ Réserver `dafradar.fr` et `cedermasociete.fr` (libres au 4 nov. 2026 selon le R
    -- Compte technique des agents : rôle « agent » UNIQUEMENT
    insert into public.user_roles (user_id, role) values ('<uuid agent>', 'agent');
    ```
-5. *Authentication → URL configuration* : ajouter `https://dafradar.fr/admin` et `https://cedermasociete.fr/admin`.
+5. *Authentication → URL configuration* : ajouter `https://radarfinances.com/admin` et `https://cedermasociete.com/admin`.
 
 ## 3. Vercel
 1. Importer le dépôt GitHub (framework Next.js). La région `cdg1` (Paris) est fixée dans `vercel.json`.
@@ -36,7 +36,7 @@ Réserver `dafradar.fr` et `cedermasociete.fr` (libres au 4 nov. 2026 selon le R
    - agents chaque semaine.
 
 ## 4. Google Search Console
-1. Vérifier les propriétés de domaine `sc-domain:dafradar.fr` et `sc-domain:cedermasociete.fr`.
+1. Vérifier les propriétés de domaine `sc-domain:radarfinances.com` et `sc-domain:cedermasociete.com`.
 2. Dans Google Cloud : activer l'API *Search Console*, créer un **compte de service** et télécharger sa clé JSON.
 3. Dans Search Console, ajouter l'e-mail du compte de service en utilisateur « Restreint » de chaque propriété.
 4. Coller le JSON dans `GSC_SERVICE_ACCOUNT`. Bouton manuel : back-office → SEO → *Importer Search Console*.
