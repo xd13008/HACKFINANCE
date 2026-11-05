@@ -1,0 +1,41 @@
+name: Base de données (production)
+
+# Déclenchement manuel uniquement : Actions → « Base de données (production) » → Run workflow.
+# Secret requis dans GitHub (Settings → Secrets and variables → Actions) :
+#   SUPABASE_DB_URL = chaîne de connexion Postgres directe (non poolée) du projet Supabase de production.
+on:
+  workflow_dispatch:
+    inputs:
+      bootstrap:
+        description: "Charger aussi la taxonomie de production (première installation uniquement)"
+        type: boolean
+        default: false
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Migrations
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: npx supabase db push --db-url "$SUPABASE_DB_URL" --include-all
+
+      - name: Taxonomie de production (sans données fictives)
+        if: ${{ inputs.bootstrap }}
+        env:
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+        run: |
+          sudo apt-get install -y -qq postgresql-client >/dev/null
+          for f in supabase/bootstrap/*.sql; do
+            echo "→ $f"
+            psql "$SUPABASE_DB_URL" -v ON_ERROR_STOP=1 -q -f "$f"
+          done
