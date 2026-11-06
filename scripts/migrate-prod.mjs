@@ -3,6 +3,9 @@
  * - Applique, dans l'ordre et chacune dans une transaction, les fichiers de supabase/migrations
  *   absents de supabase_migrations.schema_migrations (même table que la CLI Supabase).
  * - Base vide (aucun portail) : charge supabase/bootstrap/*.sql (taxonomie, sans données fictives).
+ * - Comptes initiaux : attribue les rôles admin + éditeur + conformité aux comptes listés dans
+ *   INITIAL_ADMIN_EMAIL (séparés par des virgules) et le seul rôle « agent » au compte AGENT_EMAIL,
+ *   s'ils existent dans Supabase Auth et n'ont encore aucun rôle. Jamais d'écrasement.
  * - N'affiche jamais la chaîne de connexion.
  *
  * Usage : VERCEL_ENV=production POSTGRES_URL_NON_POOLING=… node scripts/migrate-prod.mjs
@@ -73,6 +76,22 @@ try {
       throw new Error(`bootstrap : ${e.message}`);
     }
   }
+
+  const mask = (e) => e.replace(/^(.).*(@.*)$/, "$1…$2");
+  const grant = async (email, roles, label) => {
+    const { rows: u } = await client.query("select id from auth.users where lower(email) = lower($1)", [email.trim()]);
+    if (!u.length) { log(`${label} ${mask(email)} : compte absent de Supabase Auth (à créer)`); return; }
+    const { rows: has } = await client.query("select 1 from public.user_roles where user_id = $1 limit 1", [u[0].id]);
+    if (has.length) return;
+    for (const r of roles) await client.query("insert into public.user_roles (user_id, role) values ($1, $2) on conflict do nothing", [u[0].id, r]);
+    await client.query("insert into public.staff_profiles (user_id, display_name, is_public) values ($1, $2, false) on conflict do nothing",
+      [u[0].id, email.split("@")[0]]);
+    log(`${label} ${mask(email)} : rôles ${roles.join(", ")} attribués`);
+  };
+  for (const email of (process.env.INITIAL_ADMIN_EMAIL ?? "").split(",").filter((e) => e.includes("@"))) {
+    await grant(email, ["admin", "editor", "compliance"], "administrateur");
+  }
+  if (process.env.AGENT_EMAIL?.includes("@")) await grant(process.env.AGENT_EMAIL, ["agent"], "compte agent");
 } catch (e) {
   console.error(`[migrations] échec : ${e.message}`);
   process.exitCode = 1;
