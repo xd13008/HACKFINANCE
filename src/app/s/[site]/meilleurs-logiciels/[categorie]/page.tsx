@@ -40,7 +40,7 @@ export default async function CategoryPage({ params }: { params: P }) {
       content={content}
       rubrique={category.slug}
       crumbs={[{ name: "Accueil", path: "/" }, { name: category.name, path: content.path! }]}
-      article={false}
+      about={ranking.map((r) => r.software.name)}
       extraLd={[ldItemList(site, ranking.map((r) => ({ name: r.software.name, path: `/logiciels/${r.software.slug}` })))]}
       before={
         <>

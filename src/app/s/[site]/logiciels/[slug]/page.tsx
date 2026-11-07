@@ -53,7 +53,6 @@ export default async function SoftwarePage({ params }: { params: P }) {
     { name: sw.name, path: `/logiciels/${sw.slug}` },
   ];
   const plans = pricing.get(sw.id) ?? [];
-  const minPrice = plans.filter((x) => x.price_eur != null).map((x) => Number(x.price_eur)).sort((a, b) => a - b)[0] ?? null;
   const commercial = affiliate ? ["Lien affilié"] : [];
 
   const parts = (
@@ -96,7 +95,7 @@ export default async function SoftwarePage({ params }: { params: P }) {
       }
       extraLd={[
         test && ranked
-          ? ldSoftwareReview(site, sw, content, { score: ranked.overall, author: names.get(test.test.tester_id)?.name ?? site.name, category, minPrice })
+          ? ldSoftwareReview(site, sw, content, { score: ranked.overall, author: names.get(test.test.tester_id) ?? site.name, category, plans, test: test.test })
           : null,
       ]}
       before={parts}

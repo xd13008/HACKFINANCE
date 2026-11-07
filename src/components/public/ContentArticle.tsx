@@ -16,7 +16,7 @@ import { Tracker } from "./Tracker";
 
 /** Gabarit commun des pages éditoriales : fil d'Ariane, H1, réponse directe, corps, FAQ, sources, maillage. */
 export async function ContentArticle({
-  site, content, crumbs, rubrique, before, after, extraLd = [], article = true, meta, wide = false, hideBody = false,
+  site, content, crumbs, rubrique, before, after, extraLd = [], article = true, about, meta, wide = false, hideBody = false,
 }: {
   site: Site;
   content: Content;
@@ -26,6 +26,8 @@ export async function ContentArticle({
   after?: React.ReactNode;
   extraLd?: (Record<string, unknown> | null)[];
   article?: boolean;
+  /** Logiciels dont parle l'article (données structurées « about »). */
+  about?: string[];
   meta?: React.ReactNode;
   wide?: boolean;
   hideBody?: boolean;
@@ -44,7 +46,7 @@ export async function ContentArticle({
 
   return (
     <article className={`${wide ? "max-w-6xl" : "max-w-3xl"} mx-auto px-4 py-8`}>
-      <JsonLd data={[ldBreadcrumb(site, crumbs), article ? ldArticle(site, content, author ?? undefined) : null, ldFaq(faq), ...extraLd]} />
+      <JsonLd data={[ldBreadcrumb(site, crumbs), article ? ldArticle(site, content, names.get(content.author_id!), { about }) : null, ldFaq(faq), ...extraLd]} />
       <Tracker site={site.key} pageType={content.type!} rubrique={rubrique ?? content.cluster} categoryId={content.category_id} entityId={content.software_id ?? content.id} />
       <Breadcrumbs items={crumbs} />
       <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight">{content.h1}</h1>

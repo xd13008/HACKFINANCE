@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getAffiliate, getContentByPath, getPricing, getPrimaryCategory, getSoftware } from "@/lib/data";
+import { ldPricing } from "@/lib/seo";
 import { ContentArticle } from "@/components/public/ContentArticle";
 import { PricingTable, VisitCta } from "@/components/public/SoftwareParts";
 import { metadataFor, requireSite, publishedSlugs, staticParams } from "../../../_lib";
@@ -28,6 +29,7 @@ export default async function PricingPage({ params }: { params: P }) {
   return (
     <ContentArticle
       site={site} content={content} rubrique={category?.slug} article={false}
+      extraLd={[ldPricing(site, sw, pricing.get(sw.id) ?? [], category)]}
       crumbs={[{ name: "Accueil", path: "/" }, ...(category ? [{ name: category.name, path: `/meilleurs-logiciels/${category.slug}` }] : []),
                { name: sw.name, path: `/logiciels/${sw.slug}` }, { name: "Prix", path: content.path! }]}
       before={<><PricingTable plans={pricing.get(sw.id) ?? []} /><VisitCta name={sw.name} website={sw.website} affiliate={affiliate} softwareId={sw.id} /></>}

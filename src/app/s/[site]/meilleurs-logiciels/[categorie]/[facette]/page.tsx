@@ -51,7 +51,7 @@ export default async function FacetPage({ params }: { params: P }) {
       site={site}
       content={content}
       rubrique={category.slug}
-      article={false}
+      about={ranking.map((r) => r.software.name)}
       crumbs={[{ name: "Accueil", path: "/" }, { name: category.name, path: `/meilleurs-logiciels/${category.slug}` }, { name: facet.name, path: content.path! }]}
       extraLd={[ldItemList(site, ranking.map((r) => ({ name: r.software.name, path: `/logiciels/${r.software.slug}` })))]}
       before={<RankingTable pricingPages={new Set((await listContent(site.id, { types: ["pricing"], limit: 500 })).map((c) => c.path!))} ranking={ranking} criteria={category.criteria as Criterion[]} pricing={pricing} facts={facts} />}

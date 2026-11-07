@@ -78,7 +78,7 @@ export default async function DuelPage({ params }: { params: P }) {
 
   return (
     <ContentArticle
-      site={site} content={content} rubrique={category?.slug} article={false}
+      site={site} content={content} rubrique={category?.slug} about={[swA.name, swB.name]}
       crumbs={[{ name: "Accueil", path: "/" }, ...(category ? [{ name: category.name, path: `/meilleurs-logiciels/${category.slug}` }] : []),
                { name: `${swA.name} vs ${swB.name}`, path: content.path! }]}
       before={table}
