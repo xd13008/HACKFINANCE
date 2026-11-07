@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: SiteParams }) {
   const site = await requireSite(key);
   const home = await getContentByPath(site.id, "/");
   // Sans contenu d'accueil validé, l'accueil reste indexable avec le titre et la description du portail.
-  if (!home) return staticMetadata(site, "/", `${site.name} — ${site.tagline ?? ""}`.slice(0, 65).trim(), site.description ?? "");
+  if (!home) return staticMetadata(site, "/", fitTitle(`${site.name} — ${site.tagline ?? ""}`), site.description ?? "");
   return metadataFor(key, "/");
 }
 
@@ -102,4 +102,10 @@ export default async function Home({ params }: { params: SiteParams }) {
       </div>
     </div>
   );
+}
+
+/** Titre ≤ 65 caractères, coupé sur un mot entier (jamais au milieu d'un mot). */
+function fitTitle(t: string, max = 65) {
+  if (t.length <= max) return t;
+  return t.slice(0, max + 1).replace(/\s+\S*$/, "").replace(/[\s,;:—–-]+$/, "");
 }
