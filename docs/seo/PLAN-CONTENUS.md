@@ -29,6 +29,28 @@ briefs pré-remplis, contexte de l'agent de rédaction. Régénérer : `python3 
 7. **Garde-fous** : fonds de commerce, cession de parts, Dutreil et fiscalité = contenu d'information générale uniquement
    (loi Hoguet, conseil fiscal : ARCHITECTURE §9). Aucune mise en relation rémunérée tant que la revue juridique n'est pas faite.
 
+## Radar Finances — couverture du cahier des charges (ARCHITECTURE §5)
+
+Source : `supabase/data/30_daf_perimetre.sql` (rejoué à chaque déploiement, ne publie rien).
+
+| Catégorie | Grille | Facettes | Comparatif | Pages liées planifiées |
+|---|---|---|---|---|
+| Facturation électronique | ✅ | PME, gratuite | brouillon IA | dossier pilier, 2 guides |
+| Facturation | ✅ | gratuit, BTP, auto-entrepreneur | à rédiger | landings gratuit, BTP |
+| Trésorerie | ✅ | 3 | publié (démo locale) | guide plan de trésorerie, modèle Excel |
+| Notes de frais | ✅ | gratuit, cartes | brouillon IA | guide |
+| Comptabilité | ✅ | gratuit, PME, association, auto-entrepreneur | à rédiger | landings gratuit, PME |
+| Rapprochement bancaire | ✅ | — | à rédiger | guide |
+| Recouvrement | ✅ | PME | à rédiger | guide recouvrement de créances |
+| Pilotage et FP&A | ✅ | PME | à rédiger | guide budget prévisionnel, modèle Excel |
+| Consolidation | ✅ | — | à rédiger | — |
+| Achats | ✅ | — | à rédiger (volume à mesurer) | — |
+| Annuaire experts-comptables | sans classement | — | à rédiger | — |
+
+Hors périmètre DAF, conformément au cahier des charges : paie et RSE (portails dédiés, §3) ;
+crédit, affacturage, compte pro, assurance et placements (contenu seul, revue juridique, §9).
+Mots-clés à mesurer dès que le crédit Semrush est rechargé : `logiciel achat`, `logiciel fp&a` (source `a_mesurer`).
+
 ## Radar Finances — valeur par cluster
 
 | Cluster | Mots-clés | Volume cumulé | Valeur pub. mensuelle (vol. × CPC) |

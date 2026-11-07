@@ -33,6 +33,11 @@ begin
               p_cluster, 'manuel')
       returning id into kid;
     end if;
+    -- Mot-clé déjà cible principale d'une autre page (brouillon planifié) : on ne le réattribue pas.
+    if exists (select 1 from public.content_items i where i.primary_keyword_id = kid
+               and not (i.site_id = sid and i.type = p_type and i.slug = p_slug)) then
+      kid := null;
+    end if;
   end if;
 
   -- La page peut déjà exister en brouillon (supabase/data) : on la réutilise.
@@ -161,10 +166,10 @@ select pg_temp.c('daf', 'guide', 'choisir-logiciel-tresorerie', 'logiciel de pr�
   '{}', '[{"url":"https://example.com/etude-tresorerie-pme","title":"Étude fictive sur la trésorerie des PME (démo)"}]',
   null, null, 'tresorerie', null, 'tresorerie');
 
-select pg_temp.c('daf', 'guide', 'facturation-electronique-pme', 'facturation électronique',
-  'Facturation électronique : ce qui change pour les PME',
+select pg_temp.c('daf', 'guide', 'facturation-electronique-pme', 'facturation électronique obligatoire',
+  'Facturation électronique obligatoire : ce qui change en PME',
   'Facturation électronique obligatoire : calendrier 2026-2027, rôle des plateformes agréées, étapes pour préparer votre PME. Guide pratique.',
-  'Facturation électronique : le calendrier et les étapes pour les PME',
+  'Facturation électronique obligatoire : le calendrier et les étapes pour les PME',
   'Depuis le 1er septembre 2026, toutes les entreprises doivent pouvoir recevoir des factures électroniques ; les PME et microentreprises devront les émettre à partir du 1er septembre 2027, via une plateforme agréée.',
   E'## Le calendrier\n\n- **1er septembre 2026** : obligation de réception pour toutes les entreprises ; obligation d''émission pour les grandes entreprises et les ETI.\n- **1er septembre 2027** : obligation d''émission pour les PME et microentreprises.\n\n## Les étapes pour se préparer\n\n1. Recenser vos flux de facturation.\n2. Choisir une plateforme agréée (notre comparatif est en préparation).\n3. Mettre à jour vos données clients (SIREN).\n\n## À lire aussi\n\n- [Notre méthode de test](/methode)\n- [Comment choisir un logiciel de prévision de trésorerie](/guides/choisir-logiciel-tresorerie)\n- [Les logiciels de trésorerie comparés](/meilleurs-logiciels/tresorerie)',
   '[]', '{"editor_note":"Sources officielles à vérifier avant mise en ligne réelle."}',
