@@ -31,7 +31,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE (70 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, rubriques DAF (74 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -48,7 +48,8 @@ supabase/
                 1000 checklist GEO · 1100 sujets réglementés (contenu seul, aucun emplacement publicitaire)
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
-                périmètre DAF du cahier des charges, sujets réglementés en contenu seul,
+                périmètre DAF du cahier des charges, rubriques complémentaires (documents, formation, aides publiques,
+                réduction des coûts, RSE), sujets réglementés en contenu seul,
                 portails Radar RH / Radar RSE : catégories, grilles, facettes, pages planifiées + briefs)
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP

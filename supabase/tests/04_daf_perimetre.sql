@@ -3,10 +3,10 @@ begin;
 create extension if not exists pgtap with schema extensions;
 select plan(6);
 
-select set_eq(
+select set_has(
   $$ select c.slug from public.categories c join public.sites s on s.id = c.site_id where s.key = 'daf' and c.kind = 'software' $$,
-  array['facturation-electronique', 'facturation', 'tresorerie', 'notes-de-frais', 'comptabilite', 'rapprochement-bancaire',
-        'recouvrement', 'pilotage-financier', 'consolidation', 'achats'],
+  $$ values ('facturation-electronique'), ('facturation'), ('tresorerie'), ('notes-de-frais'), ('comptabilite'),
+            ('rapprochement-bancaire'), ('recouvrement'), ('pilotage-financier'), ('consolidation'), ('achats') $$,
   'Les 10 catégories logicielles du cahier des charges existent'
 );
 

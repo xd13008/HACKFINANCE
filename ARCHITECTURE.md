@@ -119,6 +119,16 @@ Chaque gabarit répond à une intention de recherche. Les chemins sont relatifs 
 
 **Portail Finance & DAF, catégories de départ :** facturation électronique (plateformes agréées), facturation, trésorerie, notes de frais, comptabilité, rapprochement bancaire, recouvrement, pilotage et FP&A, consolidation, achats, plus l'annuaire des experts-comptables (sans classement).
 
+**Portail Finance & DAF, rubriques complémentaires (7 nov. 2026, `supabase/data/45_daf_rubriques_complementaires.sql`) :**
+
+| Rubrique | Contenu | Signaux Semrush FR | Garde-fous |
+|---|---|---|---|
+| Documents & signature | catégories signature électronique et GED, dossier signature, facette « gratuite », guide GED | signature électronique 22 200 · gratuite 6 600 · GED 12 100 · logiciel GED 1 900 (5,5 €) | — (domiciliation et legaltech restent pour un futur portail Juridique, §3) |
+| Formation finance & compta | catégorie plateformes LMS, annuaire des organismes de formation, guides | formation comptabilité 4 400 · plateforme LMS 1 000 (5,7 €) · formation DAF 320 | annuaire sans classement ; la vente de formations reste en V3 |
+| Subventions & aides publiques | dossier aides, guides CIR, CII, subventions, annuaire des cabinets CIR/CII | aide aux entreprises 880 (KD 20) · CIR 1 900 · CII 720 | information générale ; **prêt d'honneur (1 900) = sujet réglementé « crédit », contenu seul** |
+| Réduction des coûts | annuaire des cabinets, catégorie gestion des abonnements SaaS, guide méthode | cost killer 320 · optimisation des coûts 170 (KD 13) · SaaS management 90 | annuaire sans classement ; volumes faibles, rubrique de monétisation |
+| RSE & carbone | guide « CSRD : ce qui change pour la direction financière » | logiciel RSE 880 · logiciel bilan carbone 320 | comparatifs sur Radar RSE uniquement (pas de cannibalisation entre portails) |
+
 **Blocs obligatoires sur chaque fiche :** date du dernier test, nom du valideur, statut du test (« testé » ou « référencé, non testé »), sources datées, mention de tout lien commercial (affiliation, sponsoring, fiche enrichie).
 
 ## 6. Référencement dans l'annuaire et demandes de publicité

@@ -27,7 +27,7 @@ select is(
 select is(
   (select count(*)::int from public.content_items i join public.sites s on s.id = i.site_id
    where s.key = 'daf' and i.regulated_topic is not null),
-  5, 'Cinq guides « contenu seul » : crédit, affacturage, compte pro, assurance, placement'
+  6, 'Six guides « contenu seul » : crédit, prêt d''honneur, affacturage, compte pro, assurance, placement'
 );
 
 select set_eq(
