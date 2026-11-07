@@ -1,7 +1,8 @@
 # CLAUDE.md — Réseau de portails média B2B
 
 Plateforme unique (Next.js + Supabase) qui sert plusieurs portails par nom de domaine :
-**Radar Finances** (`radarfinances.com`, logiciels finance pour DAF) et **Céder ma société** (`cedermasociete.com`, vente d'entreprise).
+**Radar Finances** (`radarfinances.com`, logiciels finance pour DAF) et **Céder ma société** (`cedermasociete.com`, vente d'entreprise),
+plus deux portails en préparation (`status = 'draft'`, 404 en production) : **Radar RH** (`radarrh.com`) et **Radar RSE** (`radarrse.com`).
 Référence produit : `ARCHITECTURE.md`. Mots-clés Semrush : `docs/seo/`.
 
 ## Règles non négociables (imposées par la base — ne jamais les contourner)
@@ -13,6 +14,8 @@ Référence produit : `ARCHITECTURE.md`. Mots-clés Semrush : `docs/seo/`.
    (`editorial_rankings`) est calculé depuis `scores` seulement ; le sponsoring vit dans `sponsored_placements` et s'affiche dans un bloc distinct, étiqueté.
 4. **Un agent écrit uniquement en brouillon** (`software_facts`, `content_versions`, `review_tasks`), jamais publié.
 5. **Aucune fonctionnalité de crédit, levée de fonds, assurance ou lead financier** (cadre IOBSP / CIF / ORIAS / loi Hoguet non validé — voir ARCHITECTURE §9).
+   Ces sujets n'existent qu'en guides d'information marqués `content_items.regulated_topic` : sans catégorie, sans classement,
+   sans emplacement publicitaire (trigger `guard_regulated_inventory`), sans lien affilié.
 6. **Aucun fait publié sans source datée ; tout lien affilié ou sponsorisé est signalé** (`rel="sponsored"` + mention).
 7. **Aucune clé secrète dans le dépôt.** `.env.local` est ignoré ; seules les clés de démo locales de Supabase CLI y figurent.
 8. **La checklist SEO (`seo_check()`) bloque la soumission.** Ne pas l'affaiblir pour faire passer un contenu.
@@ -28,7 +31,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF (63 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE (70 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -42,9 +45,11 @@ Comptes de démo (local uniquement, mot de passe `demo-local-2026`) : `admin@`, 
 supabase/
   migrations/   0100 plateforme+rôles+audit · 0200 faits · 0300 éditorial+workflow · 0400 SEO+checklist
                 0500 demandes+régie · 0600 analytics+agents · 0700 reporting · 0800 agents+Storage+GSC · 0900 questions SEO
+                1000 checklist GEO · 1100 sujets réglementés (contenu seul, aucun emplacement publicitaire)
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
-                périmètre DAF du cahier des charges : catégories, grilles, facettes, pages planifiées + briefs)
+                périmètre DAF du cahier des charges, sujets réglementés en contenu seul,
+                portails Radar RH / Radar RSE : catégories, grilles, facettes, pages planifiées + briefs)
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/

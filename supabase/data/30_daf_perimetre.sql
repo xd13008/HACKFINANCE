@@ -116,14 +116,19 @@ where c.site_id = '10000000-0000-4000-a000-000000000001'
 on conflict (category_id, slug) do nothing;
 
 -- ---------------------------------------------------------------------------
--- 4. Mots-clés absents du relevé Semrush (consolidation : chiffres ARCHITECTURE §2 ;
---    achats et FP&A : à mesurer dès que le crédit Semrush est rechargé)
+-- 4. Mots-clés absents du relevé initial (consolidation : ARCHITECTURE §2 ; achats et FP&A : Semrush FR 07/11/2026)
 -- ---------------------------------------------------------------------------
 insert into public.keyword_targets (site_id, keyword, volume, cpc_eur, kd, intent, cluster, source, refreshed_at) values
   ('10000000-0000-4000-a000-000000000001', 'logiciel consolidation', 110, 11.90, 18, 'commercial', 'consolidation', 'semrush', '2026-11-04'),
-  ('10000000-0000-4000-a000-000000000001', 'logiciel achat', 0, 0, 0, 'commercial', 'achats', 'a_mesurer', '2026-11-07'),
-  ('10000000-0000-4000-a000-000000000001', 'logiciel fp&a', 0, 0, 0, 'commercial', 'pilotage', 'a_mesurer', '2026-11-07')
-on conflict (site_id, keyword) do nothing;
+  ('10000000-0000-4000-a000-000000000001', 'logiciel achat', 480, 4.48, 20, 'commercial', 'achats', 'semrush', '2026-11-07'),
+  ('10000000-0000-4000-a000-000000000001', 'logiciel fp&a', 140, 0, 19, 'commercial', 'pilotage', 'semrush', '2026-11-07')
+on conflict (site_id, keyword) do update set
+  volume = excluded.volume, cpc_eur = excluded.cpc_eur, kd = excluded.kd, source = excluded.source, refreshed_at = excluded.refreshed_at
+where public.keyword_targets.source = 'a_mesurer';
+
+-- Valeur commerciale des achats (volume × CPC), si encore non renseignée
+update public.categories set value_score = 2150
+where site_id = '10000000-0000-4000-a000-000000000001' and slug = 'achats' and value_score = 0;
 
 -- ---------------------------------------------------------------------------
 -- 5. Pages à rédiger : fiche + brief SEO (aucune version, rien de publié)

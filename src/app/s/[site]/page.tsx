@@ -107,5 +107,9 @@ export default async function Home({ params }: { params: SiteParams }) {
 /** Titre ≤ 65 caractères, coupé sur un mot entier (jamais au milieu d'un mot). */
 function fitTitle(t: string, max = 65) {
   if (t.length <= max) return t;
-  return t.slice(0, max + 1).replace(/\s+\S*$/, "").replace(/[\s,;:—–-]+$/, "");
+  let out = t.slice(0, max + 1).replace(/\s+\S*$/, "");
+  // Ne jamais finir sur un mot de liaison ni une ponctuation (« … pour les PME et »).
+  const tail = /[\s,;:—–-]+$|\s+(et|ou|de|des|du|la|le|les|pour|à|en|aux|au)$/i;
+  while (tail.test(out)) out = out.replace(tail, "");
+  return out;
 }

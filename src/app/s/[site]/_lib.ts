@@ -9,6 +9,8 @@ export async function requireSite(key: string) {
   if (!SITE_KEY_PATTERN.test(key)) notFound();
   const site = await getSite(key);
   if (!site) notFound();
+  // Portail en préparation : invisible en production, même si son domaine est déjà branché.
+  if (site.status !== "live" && process.env.VERCEL_ENV === "production") notFound();
   return site;
 }
 

@@ -72,6 +72,17 @@ Score indicatif : volume × CPC (potentiel de revenus) ÷ difficulté. Tous les 
 
 **Recommandation.** Lancer Finance & DAF et Vendre ma société, puis ouvrir RH & Paie (forte proximité avec le public DAF), puis RSE (faible concurrence). L'assurance et la banque pro restent en contenu seul jusqu'à la revue juridique.
 
+**Mise en œuvre (7 nov. 2026).** Les portails n° 1 et n° 3 sont configurés en brouillon (`supabase/data/40_portails_rh_rse.sql`), invisibles en production tant que leur statut n'est pas `live` :
+
+| Portail | Domaine (libre au 07/11/2026, à acheter) | Catégories notées | Annuaires (sans classement) | Pages planifiées |
+|---|---|---|---|---|
+| **Radar RH** | radarrh.com | paie, SIRH, planning et temps, recrutement (ATS), entretiens annuels | externalisation de la paie | dossier SIRH, 5 comparatifs, annuaire |
+| **Radar RSE** | radarrse.com | bilan carbone, reporting CSRD, pilotage RSE, évaluation RSE des fournisseurs | cabinets de bilan carbone, vérificateurs du rapport de durabilité (CAC et OTI : fiches factuelles) | dossiers CSRD et bilan carbone, 4 comparatifs, 2 annuaires |
+
+Signaux Semrush FR (07/11/2026) : sirh 12 100 · 5,6 € · KD 36 ; logiciel rh 3 600 · 12,8 € · KD 25 ; logiciel planning 2 400 · KD 14 ; logiciel paie 1 300 · 11,3 € ; externalisation paie 1 000 · 13,8 € · KD 19 ; csrd 12 100 ; bilan carbone 5 400 ; logiciel rse 880 · 10,3 € · KD 12 ; logiciel csrd 390 · 15,8 € · KD 15.
+
+**Sujets réglementés sur Radar Finances (contenu seul).** Cinq guides d'information générale : affacturage (6 600/mois), compte professionnel (2 900 · CPC 25,4 €), crédit de trésorerie, assurances de l'entreprise (rc pro 9 900), placement de trésorerie. Marqués `regulated_topic` : aucune catégorie, aucun classement, aucun emplacement publicitaire (refus imposé par la base), aucun lien affilié ni formulaire, jusqu'à la revue juridique du §9.
+
 ## 4. Plateforme multi-portails
 
 - **Un seul projet Next.js** sert tous les portails. Le portail est déterminé par le nom de domaine (middleware), et chaque contenu porte un `site_id`.
