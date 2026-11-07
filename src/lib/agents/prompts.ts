@@ -23,7 +23,8 @@ Contraintes :
 - Corps en Markdown, titres en ## (jamais de #), paragraphes courts, tableaux si utile.
 - Ajoute au moins 3 liens internes vers les chemins fournis, au format [texte](/chemin). N'invente aucun chemin.
 - sources_used : uniquement des URL présentes dans les données fournies.
-- Les notes et verdicts viennent du test fourni ; ne les modifie pas.`;
+- Les notes et verdicts viennent du test fourni ; ne les modifie pas.
+- Réponds dans le corps ou la FAQ aux questions des internautes fournies qui relèvent du sujet, sans en inventer d'autres.`;
 
 export const QC_SYSTEM = `${COMMON_RULES}
 

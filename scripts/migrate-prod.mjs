@@ -3,6 +3,7 @@
  * - Applique, dans l'ordre et chacune dans une transaction, les fichiers de supabase/migrations
  *   absents de supabase_migrations.schema_migrations (même table que la CLI Supabase).
  * - Base vide (aucun portail) : charge supabase/bootstrap/*.sql (taxonomie, sans données fictives).
+ * - Données de référence (supabase/data/*.sql, idempotentes : mots-clés, questions) rejouées à chaque déploiement.
  * - Comptes initiaux : attribue les rôles admin + éditeur + conformité aux comptes listés dans
  *   INITIAL_ADMIN_EMAIL (séparés par des virgules) et le seul rôle « agent » au compte AGENT_EMAIL,
  *   s'ils existent dans Supabase Auth et n'ont encore aucun rôle. Jamais d'écrasement.
@@ -75,6 +76,11 @@ try {
       await client.query("rollback");
       throw new Error(`bootstrap : ${e.message}`);
     }
+  }
+
+  for (const f of files("supabase/data")) {
+    log(`données ${f}`);
+    await client.query(readFileSync(path.join(root, "supabase/data", f), "utf8"));
   }
 
   const mask = (e) => e.replace(/^(.).*(@.*)$/, "$1…$2");

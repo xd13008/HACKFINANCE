@@ -26,6 +26,12 @@ export default async function ContentEditor({ params }: { params: Promise<{ id: 
     db.from("content_items").select("id,title").eq("site_id", item.site_id).eq("type", "pillar"),
     db.from("internal_link_stats").select("inbound_body_links,outbound_body_links").eq("id", id).maybeSingle(),
   ]);
+  const { data: clusterQuestions } = item.cluster
+    ? await db.from("keyword_questions").select("question,volume").eq("site_id", item.site_id).eq("cluster", item.cluster).order("volume", { ascending: false }).limit(12)
+    : { data: [] as { question: string; volume: number }[] };
+  const { data: clusterKeywords } = item.cluster
+    ? await db.from("keyword_targets").select("keyword,volume").eq("site_id", item.site_id).eq("cluster", item.cluster).is("target_content_id", null).order("priority", { ascending: false }).limit(10)
+    : { data: [] as { keyword: string; volume: number }[] };
   const draftMeta = (versions ?? []).find((v) => v.status === "draft");
   const draft = draftMeta ? (await db.from("content_versions").select("*").eq("id", draftMeta.id).single()).data : null;
   const sources = draft ? (await db.from("content_sources").select("*").eq("content_version_id", draft.id)).data ?? [] : [];
@@ -91,7 +97,7 @@ export default async function ContentEditor({ params }: { params: Promise<{ id: 
           )}
 
           {canEdit && (
-            <Card title="Brief SEO">
+            <Card title={brief ? "Brief SEO" : "Brief SEO (pré-rempli avec les données Semrush du cluster — à valider)"}>
               <ActionForm action={saveBrief} submit="Enregistrer le brief">
                 <input type="hidden" name="item_id" value={item.id} />
                 <div className="grid sm:grid-cols-2 gap-3">
@@ -99,8 +105,8 @@ export default async function ContentEditor({ params }: { params: Promise<{ id: 
                   <Field label="Longueur cible (mots)"><input name="target_words" type="number" defaultValue={brief?.target_words ?? ""} className={inputCls} /></Field>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-3">
-                  <Field label="Requêtes secondaires (une par ligne)"><textarea name="secondary_keywords" rows={4} defaultValue={brief?.secondary_keywords.join("\n")} className={inputCls} /></Field>
-                  <Field label="Questions « People also ask »"><textarea name="questions" rows={4} defaultValue={brief?.questions.join("\n")} className={inputCls} /></Field>
+                  <Field label="Requêtes secondaires (une par ligne)"><textarea name="secondary_keywords" rows={4} defaultValue={brief ? brief.secondary_keywords.join("\n") : (clusterKeywords ?? []).map((k) => k.keyword).join("\n")} className={inputCls} /></Field>
+                  <Field label="Questions « People also ask »"><textarea name="questions" rows={4} defaultValue={brief ? brief.questions.join("\n") : (clusterQuestions ?? []).map((q) => q.question).join("\n")} className={inputCls} /></Field>
                   <Field label="Plan (## / ### par ligne)"><textarea name="outline" rows={4} defaultValue={((brief?.outline ?? []) as { level: number; text: string }[]).map((o) => `${"#".repeat(o.level)} ${o.text}`).join("\n")} className={inputCls} /></Field>
                   <Field label="Entités à couvrir"><textarea name="entities" rows={4} defaultValue={brief?.entities.join("\n")} className={inputCls} /></Field>
                 </div>

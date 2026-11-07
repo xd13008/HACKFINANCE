@@ -28,7 +28,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage (52 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO (57 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -41,8 +41,9 @@ Comptes de démo (local uniquement, mot de passe `demo-local-2026`) : `admin@`, 
 ```
 supabase/
   migrations/   0100 plateforme+rôles+audit · 0200 faits · 0300 éditorial+workflow · 0400 SEO+checklist
-                0500 demandes+régie · 0600 analytics+agents · 0700 reporting · 0800 agents+Storage+GSC
+                0500 demandes+régie · 0600 analytics+agents · 0700 reporting · 0800 agents+Storage+GSC · 0900 questions SEO
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
+  data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés et questions Semrush)
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/
@@ -59,7 +60,7 @@ src/
   lib/gsc.ts            import Search Console (compte de service Google)
   components/public|admin
 tests/                  Vitest
-docs/seo/               exports Semrush
+docs/seo/               relevés Semrush, PLAN-CONTENUS.md (priorités), scripts/seo-build.py pour régénérer
 ```
 
 ## Agents

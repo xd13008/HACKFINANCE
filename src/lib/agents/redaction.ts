@@ -48,11 +48,16 @@ export async function draftContent(deps: { db: Db; llm: Llm }, contentItemId: st
     ? await db.from("test_runs").select("software_id,verdict,pros,cons,best_for").in("software_id", softwareIds).eq("status", "validated")
     : { data: [] };
 
+  const { data: questions } = item.cluster
+    ? await db.from("keyword_questions").select("question,volume").eq("site_id", item.site_id).eq("cluster", item.cluster).order("volume", { ascending: false }).limit(12)
+    : { data: [] as { question: string; volume: number }[] };
+
   const knownUrls = [...(facts ?? []).map((f) => f.source_url), ...(plans ?? []).map((p) => p.source_url), ...(liveSources ?? []).map((s) => s.url)];
   const context = {
     type: item.type, path: item.path, cluster: item.cluster,
     brief: { requete_principale: brief.primary_keyword, secondaires: brief.secondary_keywords, questions: brief.questions, plan: brief.outline, mots: brief.target_words, cta: brief.cta },
     categorie: category, logiciels: sw, faits_valides: facts, offres_validees: plans, tests_valides: tests, verdicts_des_tests: verdicts,
+    questions_des_internautes: (questions ?? []).map((q) => `${q.question} (${q.volume}/mois)`),
     chemins_internes_disponibles: (pages ?? []).map((p) => ({ chemin: p.path, titre: p.h1 })),
     sources_connues: knownUrls,
   };

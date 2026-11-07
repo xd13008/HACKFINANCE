@@ -387,6 +387,50 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"keyword_questions": {
+                  Row: {
+                    "cluster": string,"created_at": string,"id": string,"question": string,"site_id": string,"source": string,"used_in": string | null,"volume": number
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "cluster": string,"created_at"?: string,"id"?: string,"question": string,"site_id": string,"source"?: string,"used_in"?: string | null,"volume"?: number
+                  }
+                  Update: {
+                    "cluster"?: string,"created_at"?: string,"id"?: string,"question"?: string,"site_id"?: string,"source"?: string,"used_in"?: string | null,"volume"?: number
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "keyword_questions_site_id_fkey"
+      columns: ["site_id"]
+isOneToOne: false
+      referencedRelation: "sites"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "keyword_questions_used_in_fkey"
+      columns: ["used_in"]
+isOneToOne: false
+      referencedRelation: "content_items"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "keyword_questions_used_in_fkey"
+      columns: ["used_in"]
+isOneToOne: false
+      referencedRelation: "internal_link_stats"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "keyword_questions_used_in_fkey"
+      columns: ["used_in"]
+isOneToOne: false
+      referencedRelation: "published_content"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "keyword_questions_used_in_fkey"
+      columns: ["used_in"]
+isOneToOne: false
+      referencedRelation: "stale_content"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"keyword_targets": {
                   Row: {
                     "cluster": string | null,"cpc_eur": number,"current_position": number | null,"id": string,"intent": string,"kd": number,"keyword": string,"priority": number | null,"refreshed_at": string,"site_id": string,"source": string,"status": string,"target_content_id": string | null,"volume": number
