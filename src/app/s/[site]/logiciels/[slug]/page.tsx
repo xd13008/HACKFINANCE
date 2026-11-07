@@ -11,9 +11,14 @@ import { FactsTable, PricingTable, VerdictBox, VisitCta } from "@/components/pub
 import { Breadcrumbs } from "@/components/public/Breadcrumbs";
 import { Tracker } from "@/components/public/Tracker";
 import { ldSoftwareReview } from "@/lib/seo";
-import { metadataFor, requireSite } from "../../_lib";
+import { metadataFor, requireSite, publishedSlugs, staticParams } from "../../_lib";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
+
+/** Pré-génère au build les pages publiées (mises en cache, servies par le CDN). */
+export async function generateStaticParams({ params }: { params: { site: string } }) {
+  return staticParams("slug", await publishedSlugs(params.site, "software_review"));
+}
 type P = Promise<{ site: string; slug: string }>;
 
 export async function generateMetadata({ params }: { params: P }): Promise<Metadata> {

@@ -14,6 +14,9 @@ export async function GET(_: Request, { params }: { params: Promise<{ site: stri
     db.from("categories").select("id,slug").eq("site_id", site.id).eq("kind", "provider").eq("status", "published"),
   ]);
   const urls: { loc: string; lastmod: string | null }[] = (pages ?? []).map((p) => ({ loc: absoluteUrl(site, p.path!), lastmod: p.content_updated_at ?? p.published_at }));
+  // Pages fixes indexables (hors contenus éditoriaux)
+  urls.push({ loc: absoluteUrl(site, "/publicite"), lastmod: null });
+  if ((pages ?? []).some((p) => p.type === "glossary")) urls.push({ loc: absoluteUrl(site, "/lexique"), lastmod: null });
   const catSlug = new Map((cats ?? []).map((c) => [c.id, c.slug]));
   if (catSlug.size) {
     const { data: links } = await db.from("provider_categories").select("provider_id,category_id").in("category_id", [...catSlug.keys()]);

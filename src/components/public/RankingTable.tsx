@@ -4,11 +4,13 @@ import { priceLabel, formatDate } from "@/lib/format";
 import { ScoreBadge } from "./ScoreBadge";
 
 /** Classement éditorial : ordre calculé par la base à partir des notes, sans aucune donnée commerciale. */
-export function RankingTable({ ranking, criteria, pricing, facts }: {
+export function RankingTable({ ranking, criteria, pricing, facts, pricingPages }: {
   ranking: RankedSoftware[];
   criteria: Criterion[];
   pricing: Map<string, PricingPlan[]>;
   facts: Map<string, Map<string, Fact>>;
+  /** Chemins des pages « prix » publiées : évite tout lien vers une page inexistante. */
+  pricingPages?: Set<string>;
 }) {
   if (!ranking.length) return <p className="text-ink-3 my-6">Aucun logiciel testé dans cette sélection pour le moment.</p>;
   return (
@@ -50,7 +52,9 @@ export function RankingTable({ ranking, criteria, pricing, facts }: {
               </details>
               <div className="mt-3 flex gap-4 text-sm">
                 <Link href={`/logiciels/${r.software.slug}`} className="font-medium text-brand underline">Lire l&apos;avis</Link>
-                <Link href={`/logiciels/${r.software.slug}/prix`} className="text-ink-2 underline">Voir les prix</Link>
+                {pricingPages?.has(`/logiciels/${r.software.slug}/prix`) && (
+                  <Link href={`/logiciels/${r.software.slug}/prix`} className="text-ink-2 underline">Voir les prix</Link>
+                )}
               </div>
             </li>
           );

@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getInventory } from "@/lib/data";
 import { SimplePage } from "@/components/public/SimplePage";
-import { absoluteUrl } from "@/lib/seo";
+import { staticMetadata } from "@/lib/seo";
 import { formatEur } from "@/lib/format";
 import { requireSite, type SiteParams } from "../_lib";
 
@@ -15,11 +15,7 @@ const TYPE_LABEL: Record<string, string> = {
 
 export async function generateMetadata({ params }: { params: SiteParams }): Promise<Metadata> {
   const site = await requireSite((await params).site);
-  return {
-    title: `Publicité et partenariats — ${site.name}`,
-    description: `Comment ${site.name} se finance : positions sponsorisées signalées, fiches enrichies, affiliation. Séparation stricte avec l'éditorial.`,
-    alternates: { canonical: absoluteUrl(site, "/publicite") },
-  };
+  return staticMetadata(site, "/publicite", `Publicité et partenariats — ${site.name}`, `Comment ${site.name} se finance : positions sponsorisées signalées, fiches enrichies, affiliation. Séparation stricte avec l'éditorial.`);
 }
 
 export default async function AdvertisingPolicy({ params }: { params: SiteParams }) {

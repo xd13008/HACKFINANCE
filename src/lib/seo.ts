@@ -9,10 +9,30 @@ export function absoluteUrl(site: Site, path: string) {
   return `${siteUrl(site)}${path === "/" ? "" : path}` || siteUrl(site);
 }
 
-/** Métadonnées d'une page publiée : title, description, canonical, robots, Open Graph. */
+/** Image de partage générée pour une page (route /api/og). */
+export function ogImage(site: Site, title: string, kind?: string) {
+  const q = new URLSearchParams({ site: site.key, t: title, ...(kind ? { k: kind } : {}) });
+  return { url: `${siteUrl(site)}/api/og?${q}`, width: 1200, height: 630, alt: title };
+}
+
+/** Métadonnées des pages hors contenus éditoriaux (publicité, lexique, formulaires…). */
+export function staticMetadata(site: Site, path: string, title: string, description: string, opts: { noindex?: boolean } = {}): Metadata {
+  const url = absoluteUrl(site, path);
+  return {
+    title, description,
+    alternates: { canonical: url },
+    robots: opts.noindex ? { index: false, follow: true } : { index: true, follow: true },
+    openGraph: { type: "website", url, siteName: site.name, title, description, locale: "fr_FR", images: [ogImage(site, title)] },
+    twitter: { card: "summary_large_image", title, description, images: [ogImage(site, title).url] },
+  };
+}
+
+/** Métadonnées d'une page publiée : title, description, canonical, robots, Open Graph, carte X/Twitter. */
 export function contentMetadata(site: Site, c: Content, opts: { noindex?: boolean } = {}): Metadata {
   const url = absoluteUrl(site, c.path!);
   const index = c.robots === "index" && !opts.noindex;
+  const title = c.meta_title || c.h1 || site.name;
+  const image = ogImage(site, c.h1 || title, CONTENT_TYPE_LABEL[c.type!]);
   return {
     title: c.meta_title || c.h1 || site.name,
     description: c.meta_description || undefined,
@@ -27,7 +47,9 @@ export function contentMetadata(site: Site, c: Content, opts: { noindex?: boolea
       locale: "fr_FR",
       modifiedTime: c.content_updated_at ?? undefined,
       publishedTime: c.first_published_at ?? undefined,
+      images: [image],
     },
+    twitter: { card: "summary_large_image", title, description: c.meta_description || undefined, images: [image.url] },
   };
 }
 
@@ -44,6 +66,11 @@ export function ldOrganization(site: Site): Ld {
     name: site.name,
     url: siteUrl(site),
     description: site.description,
+    logo: { "@type": "ImageObject", url: `${siteUrl(site)}/api/icon?site=${site.key}&s=512`, width: 512, height: 512 },
+    // Signaux de confiance (E-E-A-T) lus par les moteurs et les assistants IA
+    publishingPrinciples: absoluteUrl(site, "/methode"),
+    correctionsPolicy: absoluteUrl(site, "/signaler-une-erreur"),
+    ownershipFundingInfo: absoluteUrl(site, "/publicite"),
   };
 }
 

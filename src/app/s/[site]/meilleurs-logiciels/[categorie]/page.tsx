@@ -1,13 +1,18 @@
 import { notFound } from "next/navigation";
-import { getCategory, getFacts, getPricing, getRanking, getSponsored, getContentByPath } from "@/lib/data";
+import { getCategory, getFacts, getPricing, getRanking, getSponsored, getContentByPath, listContent } from "@/lib/data";
 import type { Criterion } from "@/lib/data";
 import { ContentArticle } from "@/components/public/ContentArticle";
 import { RankingTable } from "@/components/public/RankingTable";
 import { SponsoredBlock } from "@/components/public/SponsoredBlock";
 import { ldItemList } from "@/lib/seo";
-import { metadataFor, requireSite } from "../../_lib";
+import { metadataFor, requireSite, publishedSlugs, staticParams } from "../../_lib";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
+
+/** Pré-génère au build les pages publiées (mises en cache, servies par le CDN). */
+export async function generateStaticParams({ params }: { params: { site: string } }) {
+  return staticParams("categorie", await publishedSlugs(params.site, "category_ranking"));
+}
 type P = Promise<{ site: string; categorie: string }>;
 
 export async function generateMetadata({ params }: { params: P }) {
@@ -40,7 +45,7 @@ export default async function CategoryPage({ params }: { params: P }) {
       before={
         <>
           <SponsoredBlock placements={sponsored} title="Partenaires de la catégorie" />
-          <RankingTable ranking={ranking} criteria={category.criteria as Criterion[]} pricing={pricing} facts={facts} />
+          <RankingTable pricingPages={new Set((await listContent(site.id, { types: ["pricing"], limit: 500 })).map((c) => c.path!))} ranking={ranking} criteria={category.criteria as Criterion[]} pricing={pricing} facts={facts} />
         </>
       }
     />

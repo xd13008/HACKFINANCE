@@ -6,12 +6,24 @@ import { DemoBanner } from "@/components/public/DemoBanner";
 import { JsonLd } from "@/components/public/JsonLd";
 import { OutboundLink } from "@/components/public/OutboundLink";
 import { Tracker } from "@/components/public/Tracker";
-import { absoluteUrl, ldBreadcrumb } from "@/lib/seo";
+import { absoluteUrl, ldBreadcrumb, staticMetadata } from "@/lib/seo";
 import { formatDate } from "@/lib/format";
-import { requireSite } from "../../../_lib";
+import { requireSite, publishedSlugs } from "../../../_lib";
 import { ProviderList } from "@/components/public/ProviderList";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
+
+/** Pré-génère au build les pages publiées (mises en cache, servies par le CDN). */
+export async function generateStaticParams({ params }: { params: { site: string } }) {
+  // Seul le layout [site] fournit des paramètres parents : on renvoie métier et fiche.
+  const site = await getSite(params.site);
+  const out: { metier: string; slug: string }[] = [];
+  for (const metier of site ? await publishedSlugs(params.site, "provider_directory") : []) {
+    const cat = await getProviderCategory(site!.id, metier);
+    for (const pr of cat ? await getProviders(cat.id) : []) out.push({ metier, slug: pr.slug! });
+  }
+  return out.length ? out : [{ metier: "-", slug: "-" }];
+}
 type P = Promise<{ site: string; metier: string; slug: string }>;
 
 export async function generateMetadata({ params }: { params: P }): Promise<Metadata> {
@@ -20,13 +32,10 @@ export async function generateMetadata({ params }: { params: P }): Promise<Metad
   const cat = site ? await getProviderCategory(site.id, p.metier) : null;
   const pr = await getProvider(p.slug);
   if (site && cat && pr) {
-    return {
-      title: `${pr.name} — ${cat.short_name ?? cat.name} à ${pr.city}`,
-      description: `${pr.name}, ${cat.short_name ?? cat.name} à ${pr.city} : spécialités, taille des opérations, références publiques.`,
-      alternates: { canonical: absoluteUrl(site, `/prestataires/${cat.slug}/${pr.slug}`) },
-      // Une fiche non vérifiée reste accessible mais n'est pas indexée.
-      robots: pr.verification_status === "verified" ? undefined : { index: false, follow: true },
-    };
+    // Une fiche non vérifiée reste accessible mais n'est pas indexée.
+    return staticMetadata(site, `/prestataires/${cat.slug}/${pr.slug}`, `${pr.name} — ${cat.short_name ?? cat.name} à ${pr.city}`,
+      `${pr.name}, ${cat.short_name ?? cat.name} à ${pr.city} : spécialités, taille des opérations accompagnées et références publiques vérifiées.`,
+      { noindex: pr.verification_status !== "verified" });
   }
   if (site && cat) {
     return { title: `${cat.name} à ${p.slug}`, alternates: { canonical: absoluteUrl(site, `/prestataires/${cat.slug}/${p.slug}`) }, robots: { index: false, follow: true } };

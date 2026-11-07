@@ -1,8 +1,15 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getNav } from "@/lib/data";
+import { publicClient } from "@/lib/supabase/public";
 import { siteUrl } from "@/lib/seo";
 import { requireSite, type SiteParams } from "./_lib";
+
+/** Portails connus au build : toutes les pages publiques peuvent être pré-générées et mises en cache. */
+export async function generateStaticParams() {
+  const { data } = await publicClient().from("sites").select("key");
+  return (data ?? []).map((s) => ({ site: s.key }));
+}
 
 export async function generateMetadata({ params }: { params: SiteParams }): Promise<Metadata> {
   const site = await requireSite((await params).site);
@@ -11,6 +18,10 @@ export async function generateMetadata({ params }: { params: SiteParams }): Prom
     title: { default: site.name, template: `%s` },
     description: site.description ?? undefined,
     applicationName: site.name,
+    icons: {
+      icon: [{ url: `/api/icon?site=${site.key}&s=48`, sizes: "48x48", type: "image/png" }],
+      apple: [{ url: `/api/icon?site=${site.key}&s=180`, sizes: "180x180", type: "image/png" }],
+    },
   };
 }
 
@@ -52,9 +63,10 @@ export default async function SiteLayout({ children, params }: { children: React
           <div>
             <p className="font-semibold mb-2">Transparence</p>
             <ul className="space-y-1 text-ink-2">
-              <li><Link href="/methode">Notre méthode</Link></li>
+              {nav.publishedPaths.has("/methode") && <li><Link href="/methode">Notre méthode</Link></li>}
               <li><Link href="/publicite">Publicité et partenariats</Link></li>
-              <li><Link href="/a-propos">À propos</Link></li>
+              {nav.publishedPaths.has("/a-propos") && <li><Link href="/a-propos">À propos</Link></li>}
+              {nav.hasGlossary && <li><Link href="/lexique">Lexique</Link></li>}
               <li><Link href="/signaler-une-erreur">Signaler une erreur / droit de réponse</Link></li>
             </ul>
           </div>
@@ -64,8 +76,8 @@ export default async function SiteLayout({ children, params }: { children: React
               <li><Link href="/referencer-mon-logiciel">Référencer mon logiciel</Link></li>
               <li><Link href="/referencer-mon-cabinet">Référencer mon cabinet</Link></li>
               <li><Link href="/publicite/annoncer">Annoncer sur {site.name}</Link></li>
-              <li><Link href="/mentions-legales">Mentions légales</Link></li>
-              <li><Link href="/donnees-personnelles">Données personnelles</Link></li>
+              {nav.publishedPaths.has("/mentions-legales") && <li><Link href="/mentions-legales">Mentions légales</Link></li>}
+              {nav.publishedPaths.has("/donnees-personnelles") && <li><Link href="/donnees-personnelles">Données personnelles</Link></li>}
             </ul>
           </div>
         </div>

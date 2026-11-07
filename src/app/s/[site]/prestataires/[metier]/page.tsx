@@ -4,9 +4,14 @@ import { ContentArticle } from "@/components/public/ContentArticle";
 import { SponsoredBlock } from "@/components/public/SponsoredBlock";
 import { ProviderList } from "@/components/public/ProviderList";
 import { ldItemList } from "@/lib/seo";
-import { metadataFor, requireSite } from "../../_lib";
+import { metadataFor, requireSite, publishedSlugs, staticParams } from "../../_lib";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
+
+/** Pré-génère au build les pages publiées (mises en cache, servies par le CDN). */
+export async function generateStaticParams({ params }: { params: { site: string } }) {
+  return staticParams("metier", await publishedSlugs(params.site, "provider_directory"));
+}
 type P = Promise<{ site: string; metier: string }>;
 
 export async function generateMetadata({ params }: { params: P }) {

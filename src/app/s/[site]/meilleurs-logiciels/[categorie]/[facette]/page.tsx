@@ -1,12 +1,19 @@
 import { notFound } from "next/navigation";
-import { getCategory, getContentByPath, getFacet, getFacts, getPricing, getRanking } from "@/lib/data";
+import { getCategory, getContentByPath, getFacet, getFacts, getPricing, getRanking, listContent } from "@/lib/data";
 import type { Criterion, Fact } from "@/lib/data";
 import { ContentArticle } from "@/components/public/ContentArticle";
 import { RankingTable } from "@/components/public/RankingTable";
 import { ldItemList } from "@/lib/seo";
-import { metadataFor, requireSite } from "../../../_lib";
+import { metadataFor, requireSite, publishedSlugs } from "../../../_lib";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
+
+/** Pré-génère au build les pages publiées (mises en cache, servies par le CDN). */
+export async function generateStaticParams({ params }: { params: { site: string } }) {
+  // Seul le layout [site] fournit des paramètres parents : on renvoie catégorie et facette.
+  const pairs = (await publishedSlugs(params.site, "facet_landing")).map((slug) => slug.split("/"));
+  return pairs.length ? pairs.map(([categorie, facette]) => ({ categorie, facette })) : [{ categorie: "-", facette: "-" }];
+}
 type P = Promise<{ site: string; categorie: string; facette: string }>;
 
 /** Application d'une règle de facette aux faits validés. */
@@ -47,7 +54,7 @@ export default async function FacetPage({ params }: { params: P }) {
       article={false}
       crumbs={[{ name: "Accueil", path: "/" }, { name: category.name, path: `/meilleurs-logiciels/${category.slug}` }, { name: facet.name, path: content.path! }]}
       extraLd={[ldItemList(site, ranking.map((r) => ({ name: r.software.name, path: `/logiciels/${r.software.slug}` })))]}
-      before={<RankingTable ranking={ranking} criteria={category.criteria as Criterion[]} pricing={pricing} facts={facts} />}
+      before={<RankingTable pricingPages={new Set((await listContent(site.id, { types: ["pricing"], limit: 500 })).map((c) => c.path!))} ranking={ranking} criteria={category.criteria as Criterion[]} pricing={pricing} facts={facts} />}
     />
   );
 }

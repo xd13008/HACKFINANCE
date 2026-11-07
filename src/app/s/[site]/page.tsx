@@ -3,12 +3,17 @@ import { getNav, getRanking, listContent, getContentByPath } from "@/lib/data";
 import { JsonLd } from "@/components/public/JsonLd";
 import { Tracker } from "@/components/public/Tracker";
 import { ScoreBadge } from "@/components/public/ScoreBadge";
-import { ldOrganization, ldWebsite, CONTENT_TYPE_LABEL } from "@/lib/seo";
+import { ldOrganization, ldWebsite, CONTENT_TYPE_LABEL, staticMetadata } from "@/lib/seo";
 import { metadataFor, requireSite, type SiteParams } from "./_lib";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
 export async function generateMetadata({ params }: { params: SiteParams }) {
-  return metadataFor((await params).site, "/");
+  const key = (await params).site;
+  const site = await requireSite(key);
+  const home = await getContentByPath(site.id, "/");
+  // Sans contenu d'accueil validé, l'accueil reste indexable avec le titre et la description du portail.
+  if (!home) return staticMetadata(site, "/", `${site.name} — ${site.tagline ?? ""}`.slice(0, 65).trim(), site.description ?? "");
+  return metadataFor(key, "/");
 }
 
 export default async function Home({ params }: { params: SiteParams }) {

@@ -1,8 +1,13 @@
 import { ContentArticle } from "@/components/public/ContentArticle";
 import { ResourceForm } from "@/components/public/Forms";
-import { loadPage, metadataFor } from "../../_lib";
+import { loadPage, metadataFor, publishedSlugs, staticParams } from "../../_lib";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
+
+/** Pré-génère au build les pages publiées (mises en cache, servies par le CDN). */
+export async function generateStaticParams({ params }: { params: { site: string } }) {
+  return staticParams("slug", await publishedSlugs(params.site, "resource"));
+}
 type P = Promise<{ site: string; slug: string }>;
 
 export async function generateMetadata({ params }: { params: P }) {

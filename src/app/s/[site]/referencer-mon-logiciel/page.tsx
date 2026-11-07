@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { listCategories } from "@/lib/data";
 import { SimplePage } from "@/components/public/SimplePage";
 import { ListingForm } from "@/components/public/Forms";
-import { absoluteUrl } from "@/lib/seo";
+import { staticMetadata } from "@/lib/seo";
 import { requireSite, type SiteParams } from "../_lib";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
 
 export async function generateMetadata({ params }: { params: SiteParams }): Promise<Metadata> {
   const site = await requireSite((await params).site);
-  return { title: `Référencer mon logiciel — ${site.name}`, description: "Le référencement de base est gratuit et sans contrepartie. Après vérification, votre logiciel apparaît dans l'annuaire avec la mention « référencé, non testé » ; un test complet peut être programmé par la rédaction.".slice(0, 150), alternates: { canonical: absoluteUrl(site, "/referencer-mon-logiciel") } };
+  return staticMetadata(site, "/referencer-mon-logiciel", `Référencer mon logiciel — ${site.name}`, "Le référencement de base est gratuit et sans contrepartie. Après vérification, votre logiciel apparaît dans l'annuaire avec la mention « référencé, non testé » ; un test complet peut être programmé par la rédaction.".slice(0, 150), { noindex: true });
 }
 
 export default async function ListingPage({ params }: { params: SiteParams }) {

@@ -2,15 +2,14 @@ import type { Metadata } from "next";
 import { getInventory, listCategories } from "@/lib/data";
 import { SimplePage } from "@/components/public/SimplePage";
 import { PlacementForm } from "@/components/public/Forms";
-import { absoluteUrl } from "@/lib/seo";
+import { staticMetadata } from "@/lib/seo";
 import { requireSite, type SiteParams } from "../../_lib";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
 
 export async function generateMetadata({ params }: { params: SiteParams }): Promise<Metadata> {
   const site = await requireSite((await params).site);
-  return { title: `Annoncer sur ${site.name}`, description: `Demandez une proposition pour apparaître sur ${site.name} : comparatifs, annuaire, guides, newsletter.`,
-           alternates: { canonical: absoluteUrl(site, "/publicite/annoncer") } };
+  return staticMetadata(site, "/publicite/annoncer", `Annoncer sur ${site.name}`, `Demandez une proposition pour apparaître sur ${site.name} : comparatifs, annuaire, guides, newsletter.`, { noindex: true });
 }
 
 export default async function AdvertisePage({ params }: { params: SiteParams }) {

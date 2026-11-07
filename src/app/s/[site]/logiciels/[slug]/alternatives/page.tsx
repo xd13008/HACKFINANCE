@@ -1,11 +1,16 @@
 import { notFound } from "next/navigation";
-import { getContentByPath, getFacts, getPricing, getPrimaryCategory, getRanking, getSoftware } from "@/lib/data";
+import { getContentByPath, getFacts, getPricing, getPrimaryCategory, getRanking, getSoftware, listContent } from "@/lib/data";
 import type { Criterion } from "@/lib/data";
 import { ContentArticle } from "@/components/public/ContentArticle";
 import { RankingTable } from "@/components/public/RankingTable";
-import { metadataFor, requireSite } from "../../../_lib";
+import { metadataFor, requireSite, publishedSlugs, staticParams } from "../../../_lib";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
+
+/** Pré-génère au build les pages publiées (mises en cache, servies par le CDN). */
+export async function generateStaticParams({ params }: { params: { site: string } }) {
+  return staticParams("slug", await publishedSlugs(params.site, "alternatives"));
+}
 type P = Promise<{ site: string; slug: string }>;
 
 export async function generateMetadata({ params }: { params: P }) {
@@ -29,7 +34,7 @@ export default async function AlternativesPage({ params }: { params: P }) {
       site={site} content={content} rubrique={category?.slug} article={false}
       crumbs={[{ name: "Accueil", path: "/" }, ...(category ? [{ name: category.name, path: `/meilleurs-logiciels/${category.slug}` }] : []),
                { name: sw.name, path: `/logiciels/${sw.slug}` }, { name: "Alternatives", path: content.path! }]}
-      before={category && <RankingTable ranking={ranking} criteria={category.criteria as Criterion[]} pricing={pricing} facts={facts} />}
+      before={category && <RankingTable pricingPages={new Set((await listContent(site.id, { types: ["pricing"], limit: 500 })).map((c) => c.path!))} ranking={ranking} criteria={category.criteria as Criterion[]} pricing={pricing} facts={facts} />}
     />
   );
 }

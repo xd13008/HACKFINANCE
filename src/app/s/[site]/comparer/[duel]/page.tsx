@@ -5,9 +5,14 @@ import type { Criterion } from "@/lib/data";
 import { ContentArticle } from "@/components/public/ContentArticle";
 import { ScoreBadge } from "@/components/public/ScoreBadge";
 import { priceLabel } from "@/lib/format";
-import { metadataFor, requireSite } from "../../_lib";
+import { metadataFor, requireSite, publishedSlugs, staticParams } from "../../_lib";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
+
+/** Pré-génère au build les pages publiées (mises en cache, servies par le CDN). */
+export async function generateStaticParams({ params }: { params: { site: string } }) {
+  return staticParams("duel", await publishedSlugs(params.site, "duel"));
+}
 type P = Promise<{ site: string; duel: string }>;
 
 export async function generateMetadata({ params }: { params: P }) {

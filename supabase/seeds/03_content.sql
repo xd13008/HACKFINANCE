@@ -35,13 +35,17 @@ begin
     end if;
   end if;
 
-  insert into public.content_items (site_id, type, slug, title, software_id, software_b_id, category_id, facet_id,
-                                    cluster, primary_keyword_id, is_fictional, created_by)
-  values (sid, p_type, p_slug, p_h1,
-          (select id from public.software where slug = p_sw),
-          (select id from public.software where slug = p_sw_b),
-          cid, fid, p_cluster, kid, true, editor)
-  returning id into iid;
+  -- La page peut déjà exister en brouillon (supabase/data) : on la réutilise.
+  select id into iid from public.content_items where site_id = sid and type = p_type and slug = p_slug;
+  if iid is null then
+    insert into public.content_items (site_id, type, slug, title, software_id, software_b_id, category_id, facet_id,
+                                      cluster, primary_keyword_id, is_fictional, created_by)
+    values (sid, p_type, p_slug, p_h1,
+            (select id from public.software where slug = p_sw),
+            (select id from public.software where slug = p_sw_b),
+            cid, fid, p_cluster, kid, true, editor)
+    returning id into iid;
+  end if;
 
   if kid is not null then
     update public.keyword_targets set target_content_id = iid, status = 'published' where id = kid;

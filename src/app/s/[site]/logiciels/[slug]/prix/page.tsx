@@ -2,9 +2,14 @@ import { notFound } from "next/navigation";
 import { getAffiliate, getContentByPath, getPricing, getPrimaryCategory, getSoftware } from "@/lib/data";
 import { ContentArticle } from "@/components/public/ContentArticle";
 import { PricingTable, VisitCta } from "@/components/public/SoftwareParts";
-import { metadataFor, requireSite } from "../../../_lib";
+import { metadataFor, requireSite, publishedSlugs, staticParams } from "../../../_lib";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
+
+/** Pré-génère au build les pages publiées (mises en cache, servies par le CDN). */
+export async function generateStaticParams({ params }: { params: { site: string } }) {
+  return staticParams("slug", await publishedSlugs(params.site, "pricing"));
+}
 type P = Promise<{ site: string; slug: string }>;
 
 export async function generateMetadata({ params }: { params: P }) {

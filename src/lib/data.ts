@@ -27,12 +27,18 @@ export const getSite = cache(async (key: string): Promise<Site | null> => {
 });
 
 export const getNav = cache(async (siteId: string) => {
-  const [{ data: verticals }, { data: categories }, { data: pillars }] = await Promise.all([
+  const [{ data: verticals }, { data: categories }, { data: pillars }, { data: pages }] = await Promise.all([
     db().from("verticals").select("*").eq("site_id", siteId).order("sort"),
     db().from("categories").select("*").eq("site_id", siteId).eq("status", "published").order("sort"),
     db().from("published_content").select("path,h1,type").eq("site_id", siteId).in("type", ["pillar", "simulator"]),
+    db().from("published_content").select("path").eq("site_id", siteId).in("type", ["page", "glossary"]),
   ]);
-  return { verticals: verticals ?? [], categories: categories ?? [], highlights: pillars ?? [] };
+  return {
+    verticals: verticals ?? [], categories: categories ?? [], highlights: pillars ?? [],
+    /** Pages institutionnelles publiées : le pied de page ne lie que celles-ci (aucun lien vers une 404). */
+    publishedPaths: new Set((pages ?? []).map((p) => p.path!)),
+    hasGlossary: (pages ?? []).some((p) => p.path!.startsWith("/lexique/")),
+  };
 });
 
 export const getContentByPath = cache(async (siteId: string, path: string): Promise<Content | null> => {
