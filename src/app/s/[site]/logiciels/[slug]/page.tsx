@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
   getAffiliate, getContentByPath, getFacts, getIntegrations, getPricing, getPrimaryCategory, getSite, getSoftware,
-  getStaffNames, getValidatedTest, getRanking,
+  getStaffNames, getValidatedTest, getRanking, getPublicReviews,
 } from "@/lib/data";
 import type { Criterion } from "@/lib/data";
 import { ContentArticle } from "@/components/public/ContentArticle";
@@ -10,6 +10,7 @@ import { ContentMeta } from "@/components/public/ContentMeta";
 import { FactsTable, PricingTable, VerdictBox, VisitCta } from "@/components/public/SoftwareParts";
 import { Breadcrumbs } from "@/components/public/Breadcrumbs";
 import { Tracker } from "@/components/public/Tracker";
+import { PublicReviews } from "@/components/public/PublicReviews";
 import { ldSoftwareReview } from "@/lib/seo";
 import { metadataFor, requireSite, publishedSlugs, staticParams } from "../../_lib";
 
@@ -39,10 +40,11 @@ export default async function SoftwarePage({ params }: { params: P }) {
   const sw = await getSoftware(p.slug);
   if (!sw) notFound();
   const category = await getPrimaryCategory(sw.id);
-  const [content, facts, pricing, integrations, affiliate, test] = await Promise.all([
+  const [content, facts, pricing, integrations, affiliate, test, reviews] = await Promise.all([
     getContentByPath(site.id, `/logiciels/${sw.slug}`),
     getFacts([sw.id]), getPricing([sw.id]), getIntegrations(sw.id), getAffiliate(sw.id),
     category ? getValidatedTest(sw.id, category.id) : null,
+    getPublicReviews({ softwareId: sw.id }),
   ]);
   const ranking = category ? await getRanking(category.id) : [];
   const ranked = ranking.find((r) => r.software.id === sw.id);
@@ -63,6 +65,7 @@ export default async function SoftwarePage({ params }: { params: P }) {
       <VisitCta name={sw.name} website={sw.website} affiliate={affiliate} softwareId={sw.id} />
       <PricingTable plans={plans} />
       <FactsTable facts={facts.get(sw.id)} integrations={integrations} />
+      <PublicReviews sources={reviews.sources} quotes={reviews.quotes} name={sw.name} />
     </>
   );
 

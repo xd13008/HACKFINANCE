@@ -51,7 +51,7 @@ Principe directeur, inchangé : **les agents préparent, un humain valide**. Un 
   4. pas de copie d'avis des plateformes : tendances synthétisées, lien et date uniquement.
 - **Banc d'essai** : 20 pages tarifs d'éditeurs, OpenClaw comparé aux collecteurs déterministes. Indicateurs : coût par page (tokens), exactitude des faits, taux d'échec, incidents de sécurité. Décision au moindre coût à qualité égale ; l'hybride est possible (collecteurs pour les pages simples, OpenClaw pour les sites dynamiques).
 
-**Avis publiés sur le web (G2, Capterra, Trustpilot, Google…) : synthèse, jamais copie.**
+**Avis publiés sur le web (G2, Capterra, Trustpilot, Google…) : citation sourcée, jamais copie** — implémenté le 8 nov. 2026 (migration 1200, `PublicReviews` sur la fiche logiciel) : relevé de note par plateforme (lien, date, nombre d'avis) et courtes citations (≤ 300 caractères, lien vers l'avis original, fonction de l'auteur sans nom, sélection équilibrée positifs / négatifs), validation par un éditeur humain.
 - Recopier ou agréger les avis d'une plateforme expose à son droit sur sa base de données (droit *sui generis*, art. L342-1 CPI), au droit d'auteur des textes, à ses CGU et au RGPD (noms des auteurs).
 - Afficher une note « agrégée » d'avis non contrôlés serait trompeur (art. L111-7-2 C. conso : obligation d'indiquer si les avis sont vérifiés).
 - Retenu : un bloc **« Ce que disent les avis publics »** : tendances synthétisées par la rédaction (points forts et faibles récurrents), avec lien et date de consultation par source, sans citation longue, sans note chiffrée importée, sans nom d'auteur. Il est distinct de nos **avis vérifiés**, collectés sur le site (maquette, écran 3). Partenariats ou API officielles à privilégier quand ils existent.

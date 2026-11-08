@@ -18,6 +18,8 @@ Plan éditorial par univers (6 sous-rubriques) et chaîne des 4 agents (collecte
    Ces sujets n'existent qu'en guides d'information marqués `content_items.regulated_topic` : sans catégorie, sans classement,
    sans emplacement publicitaire (trigger `guard_regulated_inventory`), sans lien affilié.
 6. **Aucun fait publié sans source datée ; tout lien affilié ou sponsorisé est signalé** (`rel="sponsored"` + mention).
+   Avis tiers : citer, jamais copier (citation ≤ 300 caractères, lien vers l'avis, date, fonction de l'auteur sans nom),
+   mention « non vérifiés par la rédaction », jamais dans la note éditoriale ni en données structurées AggregateRating.
 7. **Aucune clé secrète dans le dépôt.** `.env.local` est ignoré ; seules les clés de démo locales de Supabase CLI y figurent.
 8. **La checklist SEO (`seo_check()`) bloque la soumission.** Ne pas l'affaiblir pour faire passer un contenu.
 9. Les données nominatives des prestataires (`providers.internal_contact`, `siren`) ne sont jamais servies à `anon` (vue `providers_public`).
@@ -32,7 +34,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF (76 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités (87 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -47,6 +49,7 @@ supabase/
   migrations/   0100 plateforme+rôles+audit · 0200 faits · 0300 éditorial+workflow · 0400 SEO+checklist
                 0500 demandes+régie · 0600 analytics+agents · 0700 reporting · 0800 agents+Storage+GSC · 0900 questions SEO
                 1000 checklist GEO · 1100 sujets réglementés (contenu seul, aucun emplacement publicitaire)
+                1200 avis tiers cités (review_sources, review_quotes : brouillon → validation humaine)
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
                 périmètre DAF du cahier des charges, rubriques complémentaires, organisation de Radar Finances

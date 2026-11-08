@@ -739,6 +739,58 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"review_quotes": {
+                  Row: {
+                    "author_kind": string,"author_label": string,"created_at": string,"created_by": string | null,"id": string,"quote": string,"review_date": string,"review_source_id": string,"review_url": string,"sentiment": string,"status": Database["public"]['Enums']["fact_status"],"translated": boolean,"validated_at": string | null,"validated_by": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "author_kind"?: string,"author_label": string,"created_at"?: string,"created_by"?: string | null,"id"?: string,"quote": string,"review_date": string,"review_source_id": string,"review_url": string,"sentiment": string,"status"?: Database["public"]['Enums']["fact_status"],"translated"?: boolean,"validated_at"?: string | null,"validated_by"?: string | null
+                  }
+                  Update: {
+                    "author_kind"?: string,"author_label"?: string,"created_at"?: string,"created_by"?: string | null,"id"?: string,"quote"?: string,"review_date"?: string,"review_source_id"?: string,"review_url"?: string,"sentiment"?: string,"status"?: Database["public"]['Enums']["fact_status"],"translated"?: boolean,"validated_at"?: string | null,"validated_by"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "review_quotes_review_source_id_fkey"
+      columns: ["review_source_id"]
+isOneToOne: false
+      referencedRelation: "review_sources"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"review_sources": {
+                  Row: {
+                    "author_kind": string,"captured_at": string,"created_at": string,"created_by": string | null,"id": string,"platform": string,"platform_name": string | null,"provider_id": string | null,"rating": number | null,"rating_scale": number,"review_count": number | null,"software_id": string | null,"status": Database["public"]['Enums']["fact_status"],"url": string,"validated_at": string | null,"validated_by": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "author_kind"?: string,"captured_at": string,"created_at"?: string,"created_by"?: string | null,"id"?: string,"platform": string,"platform_name"?: string | null,"provider_id"?: string | null,"rating"?: number | null,"rating_scale"?: number,"review_count"?: number | null,"software_id"?: string | null,"status"?: Database["public"]['Enums']["fact_status"],"url": string,"validated_at"?: string | null,"validated_by"?: string | null
+                  }
+                  Update: {
+                    "author_kind"?: string,"captured_at"?: string,"created_at"?: string,"created_by"?: string | null,"id"?: string,"platform"?: string,"platform_name"?: string | null,"provider_id"?: string | null,"rating"?: number | null,"rating_scale"?: number,"review_count"?: number | null,"software_id"?: string | null,"status"?: Database["public"]['Enums']["fact_status"],"url"?: string,"validated_at"?: string | null,"validated_by"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "review_sources_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "review_sources_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers_public"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "review_sources_software_id_fkey"
+      columns: ["software_id"]
+isOneToOne: false
+      referencedRelation: "software"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"review_tasks": {
                   Row: {
                     "assigned_to": string | null,"blocking": boolean,"closed_at": string | null,"comment": string | null,"content_item_id": string | null,"content_version_id": string | null,"created_at": string,"created_by": string | null,"decision": string | null,"details": NonNullable<Json>,"id": string,"kind": string,"reason": string,"site_id": string | null,"software_id": string | null,"status": string

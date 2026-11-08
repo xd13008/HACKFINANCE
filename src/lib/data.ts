@@ -217,3 +217,21 @@ export const getContentById = cache(async (id: string) => {
   const { data } = await db().from("published_content").select("id,path,h1,type").eq("id", id).maybeSingle();
   return data;
 });
+
+export type ReviewSource = Tables["review_sources"]["Row"];
+export type ReviewQuote = Tables["review_quotes"]["Row"];
+
+/** Avis tiers cités (validés par un éditeur) : relevés de note par plateforme et courtes citations. */
+export async function getPublicReviews(target: { softwareId?: string; providerId?: string }) {
+  let q = db().from("review_sources").select("*").eq("status", "validated").order("captured_at", { ascending: false });
+  q = target.softwareId ? q.eq("software_id", target.softwareId) : q.eq("provider_id", target.providerId!);
+  const { data: sources } = await q;
+  // Le relevé le plus récent par plateforme
+  const latest = new Map<string, ReviewSource>();
+  for (const s of sources ?? []) if (!latest.has(s.platform)) latest.set(s.platform, s);
+  const ids = (sources ?? []).map((s) => s.id);
+  const { data: quotes } = ids.length
+    ? await db().from("review_quotes").select("*").in("review_source_id", ids).eq("status", "validated").order("review_date", { ascending: false })
+    : { data: [] as ReviewQuote[] };
+  return { sources: [...latest.values()], quotes: quotes ?? [] };
+}
