@@ -19,6 +19,22 @@ Chaque univers propose les mêmes 6 sous-rubriques, pour les logiciels **et** le
 | 5 | **Les grands blocs fonctionnels** | Pour chaque bloc (ex. trésorerie : connexions bancaires, prévision, scénarios, consolidation), la revue de chaque outil ou prestataire sur ce bloc | **nouveau gabarit** `feature_review` : `/meilleurs-logiciels/[categorie]/fonctionnalites/[bloc]` | à créer (enum `content_type`, chemin, route, `seo_check`, `linking.ts`) |
 | 6 | **Les tarifs** | Comparatif des prix de tous les acteurs de la catégorie (offres, unités, engagement, coût réel par profil), sourcés et datés | **nouveau gabarit** `category_pricing` : `/meilleurs-logiciels/[categorie]/prix` (les pages `/logiciels/[slug]/prix` restent) | à créer |
 
+### Arborescence « Vous partez de zéro » (décision du 8 nov. 2026 : option A)
+
+```
+Accueil → « Trouver une solution »
+  └─ Assistant en 3 questions (/trouver) : taille / stade · outils déjà en place · besoin prioritaire
+       → présélection de 3 solutions (sans sponsorisé), puis « voir toute la catégorie » ou « voir l'univers »
+  └─ (lien secondaire) les 8 univers (/univers/[univers]) : besoins de l'univers avec leur podium, matchs récents, guide pilier
+       └─ Catégorie (/meilleurs-logiciels/[categorie]) — 6 onglets fixes :
+            Test de la rédaction (liste filtrable logiciels + prestataires) · Podium · Matchs (/comparer/[a]-vs-[b])
+            · Par profil de DAF (/meilleurs-logiciels/[categorie]/[profil]) · Blocs fonctionnels (…/fonctionnalites/[bloc]) · Tarifs (…/prix)
+            └─ Fiche (/logiciels/[slug] ou /prestataires/[metier]/[slug]) : identité, revue, avis publics, prix, alternatives
+                 → comparer · demander une démo ou un devis (formulaire RGPD) · challenger
+```
+
+Règles : 3 clics au plus jusqu'à une fiche ; mêmes onglets dans toutes les catégories (chaque onglet est une page indexable) ; adresses existantes inchangées ; les réponses de l'assistant alimentent le profil (classements par profil, leads avec consentement). Maquette : écrans 9 (assistant) et 10 (univers).
+
 ### Exceptions, imposées par les garde-fous
 
 - **Professions réglementées** (experts-comptables, commissaires aux comptes, avocats) : pas de podium, de match ni de classement par profil. Uniquement une fiche factuelle, une liste triée par distance et des tarifs **déclarés**, en attendant la revue déontologique (§9).
