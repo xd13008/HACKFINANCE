@@ -65,7 +65,7 @@ export default async function SoftwarePage({ params }: { params: P }) {
       <VisitCta name={sw.name} website={sw.website} affiliate={affiliate} softwareId={sw.id} />
       <PricingTable plans={plans} />
       <FactsTable facts={facts.get(sw.id)} integrations={integrations} />
-      <PublicReviews sources={reviews.sources} quotes={reviews.quotes} name={sw.name} />
+      <PublicReviews sources={reviews.sources} quotes={reviews.quotes} summary={reviews.summary} name={sw.name} />
     </>
   );
 

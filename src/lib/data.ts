@@ -220,6 +220,7 @@ export const getContentById = cache(async (id: string) => {
 
 export type ReviewSource = Tables["review_sources"]["Row"];
 export type ReviewQuote = Tables["review_quotes"]["Row"];
+export type ReviewSummary = Tables["review_summaries"]["Row"];
 
 /** Avis tiers cités (validés par un éditeur) : relevés de note par plateforme et courtes citations. */
 export async function getPublicReviews(target: { softwareId?: string; providerId?: string }) {
@@ -233,5 +234,8 @@ export async function getPublicReviews(target: { softwareId?: string; providerId
   const { data: quotes } = ids.length
     ? await db().from("review_quotes").select("*").in("review_source_id", ids).eq("status", "validated").order("review_date", { ascending: false })
     : { data: [] as ReviewQuote[] };
-  return { sources: [...latest.values()], quotes: quotes ?? [] };
+  let sq = db().from("review_summaries").select("*").eq("status", "validated").order("created_at", { ascending: false }).limit(1);
+  sq = target.softwareId ? sq.eq("software_id", target.softwareId) : sq.eq("provider_id", target.providerId!);
+  const { data: summary } = await sq;
+  return { sources: [...latest.values()], quotes: quotes ?? [], summary: summary?.[0] ?? null };
 }

@@ -34,7 +34,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités (87 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités (91 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -49,7 +49,7 @@ supabase/
   migrations/   0100 plateforme+rôles+audit · 0200 faits · 0300 éditorial+workflow · 0400 SEO+checklist
                 0500 demandes+régie · 0600 analytics+agents · 0700 reporting · 0800 agents+Storage+GSC · 0900 questions SEO
                 1000 checklist GEO · 1100 sujets réglementés (contenu seul, aucun emplacement publicitaire)
-                1200 avis tiers cités (review_sources, review_quotes : brouillon → validation humaine)
+                1200-1300 avis tiers cités (review_sources, review_quotes, review_summaries : brouillon → validation humaine)
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
                 périmètre DAF du cahier des charges, rubriques complémentaires, organisation de Radar Finances

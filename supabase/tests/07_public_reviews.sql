@@ -1,7 +1,7 @@
 -- Avis tiers cités (migration 1200) : brouillon par l'agent, validation humaine, lecture publique du seul validé
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(11);
+select plan(15);
 
 create or replace function pg_temp.as_user(uid uuid) returns void language plpgsql as $$
 begin
@@ -81,6 +81,28 @@ select is((select count(*)::int from public.review_quotes where id = '78000000-0
   'public : voit la citation validée');
 select is((select count(*)::int from public.review_sources where id = '78000000-0000-4000-a000-000000000001'), 1,
   'public : voit le relevé validé');
+
+-- Synthèse (migration 1300) --------------------------------------------------------
+select pg_temp.reset();
+select pg_temp.as_user('00000000-0000-4000-a000-000000000004');
+select lives_ok($$
+  insert into public.review_summaries (id, software_id, summary, likes, watchouts, based_on, status, author_kind, created_by)
+  select '78000000-0000-4000-a000-000000000003', id, repeat('Synthèse des avis publics. ', 10), array['Consolidation'], array['Paramétrage long'], 12, 'draft', 'agent', auth.uid()
+  from public.software limit 1 $$, 'agent : propose une synthèse en brouillon');
+select throws_ok($$
+  insert into public.review_summaries (software_id, summary, likes, based_on, status, author_kind, created_by)
+  select id, repeat('Synthèse des avis publics. ', 10), array['Tout est parfait'], 12, 'draft', 'agent', auth.uid() from public.software limit 1 $$,
+  '23514', null, 'synthèse sans point de vigilance alors qu''elle liste des points appréciés : refusée');
+select pg_temp.reset();
+select pg_temp.as_anon();
+select is((select count(*)::int from public.review_summaries where id = '78000000-0000-4000-a000-000000000003'), 0,
+  'public : ne voit pas une synthèse en brouillon');
+select pg_temp.reset();
+select pg_temp.as_user('00000000-0000-4000-a000-000000000003');
+update public.review_summaries set status = 'validated' where id = '78000000-0000-4000-a000-000000000003';
+select pg_temp.reset();
+select is((select status::text from public.review_summaries where id = '78000000-0000-4000-a000-000000000003'), 'draft',
+  'commercial : ne valide pas une synthèse (reste en brouillon)');
 
 select pg_temp.reset();
 select * from finish();

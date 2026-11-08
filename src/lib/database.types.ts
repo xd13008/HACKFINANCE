@@ -741,14 +741,14 @@ isOneToOne: false
                   ]
                 },"review_quotes": {
                   Row: {
-                    "author_kind": string,"author_label": string,"created_at": string,"created_by": string | null,"id": string,"quote": string,"review_date": string,"review_source_id": string,"review_url": string,"sentiment": string,"status": Database["public"]['Enums']["fact_status"],"translated": boolean,"validated_at": string | null,"validated_by": string | null
+                    "author_kind": string,"author_label": string,"created_at": string,"created_by": string | null,"id": string,"quote": string,"rating": number | null,"review_date": string,"review_source_id": string,"review_url": string,"sentiment": string,"status": Database["public"]['Enums']["fact_status"],"translated": boolean,"validated_at": string | null,"validated_by": string | null
                   }
                   ComputedFields: never
                   Insert: {
-                    "author_kind"?: string,"author_label": string,"created_at"?: string,"created_by"?: string | null,"id"?: string,"quote": string,"review_date": string,"review_source_id": string,"review_url": string,"sentiment": string,"status"?: Database["public"]['Enums']["fact_status"],"translated"?: boolean,"validated_at"?: string | null,"validated_by"?: string | null
+                    "author_kind"?: string,"author_label": string,"created_at"?: string,"created_by"?: string | null,"id"?: string,"quote": string,"rating"?: number | null,"review_date": string,"review_source_id": string,"review_url": string,"sentiment": string,"status"?: Database["public"]['Enums']["fact_status"],"translated"?: boolean,"validated_at"?: string | null,"validated_by"?: string | null
                   }
                   Update: {
-                    "author_kind"?: string,"author_label"?: string,"created_at"?: string,"created_by"?: string | null,"id"?: string,"quote"?: string,"review_date"?: string,"review_source_id"?: string,"review_url"?: string,"sentiment"?: string,"status"?: Database["public"]['Enums']["fact_status"],"translated"?: boolean,"validated_at"?: string | null,"validated_by"?: string | null
+                    "author_kind"?: string,"author_label"?: string,"created_at"?: string,"created_by"?: string | null,"id"?: string,"quote"?: string,"rating"?: number | null,"review_date"?: string,"review_source_id"?: string,"review_url"?: string,"sentiment"?: string,"status"?: Database["public"]['Enums']["fact_status"],"translated"?: boolean,"validated_at"?: string | null,"validated_by"?: string | null
                   }
                   Relationships: [
                     {
@@ -785,6 +785,38 @@ isOneToOne: false
       referencedColumns: ["id"]
     },{
       foreignKeyName: "review_sources_software_id_fkey"
+      columns: ["software_id"]
+isOneToOne: false
+      referencedRelation: "software"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"review_summaries": {
+                  Row: {
+                    "author_kind": string,"based_on": number,"created_at": string,"created_by": string | null,"id": string,"likes": (string)[],"period_end": string | null,"period_start": string | null,"provider_id": string | null,"software_id": string | null,"status": Database["public"]['Enums']["fact_status"],"summary": string,"validated_at": string | null,"validated_by": string | null,"watchouts": (string)[]
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "author_kind"?: string,"based_on": number,"created_at"?: string,"created_by"?: string | null,"id"?: string,"likes"?: (string)[],"period_end"?: string | null,"period_start"?: string | null,"provider_id"?: string | null,"software_id"?: string | null,"status"?: Database["public"]['Enums']["fact_status"],"summary": string,"validated_at"?: string | null,"validated_by"?: string | null,"watchouts"?: (string)[]
+                  }
+                  Update: {
+                    "author_kind"?: string,"based_on"?: number,"created_at"?: string,"created_by"?: string | null,"id"?: string,"likes"?: (string)[],"period_end"?: string | null,"period_start"?: string | null,"provider_id"?: string | null,"software_id"?: string | null,"status"?: Database["public"]['Enums']["fact_status"],"summary"?: string,"validated_at"?: string | null,"validated_by"?: string | null,"watchouts"?: (string)[]
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "review_summaries_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "review_summaries_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers_public"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "review_summaries_software_id_fkey"
       columns: ["software_id"]
 isOneToOne: false
       referencedRelation: "software"
