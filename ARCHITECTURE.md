@@ -324,6 +324,8 @@ La base de banques d'affaires pourra alimenter `providers` et `public_deals`. Le
 
 ## 12. Agents (V2 — implémentés, désactivés par défaut)
 
+> **8 nov. 2026 :** cible à 4 agents (collecte continue, rédaction bihebdomadaire, contrôle qualité, mise en ligne après approbation humaine) et sous-rubriques par univers : voir `docs/PLAN-EDITORIAL-AGENTS.md`.
+
 | Agent | Déclencheur | Sortie | Droits | Validation humaine |
 |---|---|---|---|---|
 | Veille | Chaque semaine, par logiciel | Alerte de changement sourcée | Web en lecture, `software_facts` en brouillon | L'éditeur confirme |

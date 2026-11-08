@@ -158,3 +158,24 @@ select pg_temp.plan_u('provider_directory', 'management-transition', 'Management
 select pg_temp.plan_u('category_ranking', 'reporting-esg', 'Meilleurs logiciels de reporting ESG et carbone pour la direction financière', 'reporting-esg', 'rse-carbone',
   'logiciel reporting esg', array['logiciel csrd', 'logiciel bilan carbone'],
   array['Notre classement', 'Ce que la CSRD demande à la finance', 'Critères de choix', 'Prix', 'Méthode de test'], 1000, 'Comparer les logiciels testés');
+
+-- 5. Mots-clés mesurés le 08/11/2026 (Semrush FR) et rattachement aux pages planifiées
+--    « logiciel tms » (1 600) est ambigu (logistique) : enregistré, non utilisé comme mot-clé principal.
+insert into public.keyword_targets (site_id, keyword, volume, cpc_eur, kd, intent, cluster, source, refreshed_at) values
+  ('10000000-0000-4000-a000-000000000001', 'logiciel tms', 1600, 4.86, 25, 'commercial', 'tresorerie', 'semrush', '2026-11-08'),
+  ('10000000-0000-4000-a000-000000000001', 'carte entreprise', 880, 2.27, 19, 'commercial', 'depenses', 'semrush', '2026-11-08'),
+  ('10000000-0000-4000-a000-000000000001', 'management de transition finance', 590, 3.14, 11, 'commercial', 'equipe', 'semrush', '2026-11-08'),
+  ('10000000-0000-4000-a000-000000000001', 'ia finance', 390, 2.48, 21, 'informational', 'automatisation', 'semrush', '2026-11-08')
+on conflict (site_id, keyword) do nothing;
+
+update public.seo_briefs b set primary_keyword = 'logiciel trésorerie groupe'
+from public.content_items i
+where b.content_item_id = i.id and i.site_id = '10000000-0000-4000-a000-000000000001'
+  and i.type = 'category_ranking' and i.slug = 'communication-bancaire' and b.primary_keyword = 'logiciel tms';
+
+update public.content_items i set primary_keyword_id = k.id
+from public.seo_briefs b, public.keyword_targets k
+where b.content_item_id = i.id and k.site_id = i.site_id and k.keyword = b.primary_keyword
+  and i.site_id = '10000000-0000-4000-a000-000000000001' and i.primary_keyword_id is null
+  and k.keyword in ('carte entreprise', 'management de transition finance', 'ia finance')
+  and not exists (select 1 from public.content_items x where x.primary_keyword_id = k.id);
