@@ -119,6 +119,19 @@ Chaque gabarit répond à une intention de recherche. Les chemins sont relatifs 
 
 **Portail Finance & DAF, catégories de départ :** facturation électronique (plateformes agréées), facturation, trésorerie, notes de frais, comptabilité, rapprochement bancaire, recouvrement, pilotage et FP&A, consolidation, achats, plus l'annuaire des experts-comptables (sans classement).
 
+**Portail Finance & DAF, organisation en 8 univers opérationnels (8 nov. 2026, `supabase/data/50_daf_univers.sql`) :**
+
+| # | Univers | Catégories |
+|---|---|---|
+| 1 | Comptabilité, clôture & conformité | facture électronique, comptabilité, consolidation, rapprochement bancaire, signature électronique, GED |
+| 2 | Trésorerie & cash | trésorerie, trésorerie groupe et communication bancaire (TMS) |
+| 3 | Dépenses & achats | notes de frais, cartes d'entreprise (services de paiement : monétisation à valider), achats, abonnements SaaS, cabinets de réduction des coûts |
+| 4 | Encaissement (Order-to-Cash) | facturation, recouvrement, information sur la solvabilité (hors assurance-crédit) |
+| 5 | Pilotage & performance | pilotage et FP&A, reporting et BI financière |
+| 6 | Équipe finance & expertise | experts-comptables (sans classement), management de transition et experts indépendants, organismes de formation, plateformes LMS, automatisation et IA finance |
+| 7 | Financement, aides & risques | cabinets CIR/CII ; affacturage, crédit, prêt d'honneur, compte pro, assurance, placements en contenu seul (`regulated_topic`) |
+| 8 | RSE & performance durable | reporting ESG et carbone (angle DAF) ; comparatifs détaillés sur Radar RSE |
+
 **Portail Finance & DAF, rubriques complémentaires (7 nov. 2026, `supabase/data/45_daf_rubriques_complementaires.sql`) :**
 
 | Rubrique | Contenu | Signaux Semrush FR | Garde-fous |

@@ -18,7 +18,7 @@ insert into public.verticals (id, site_id, name, slug, description, sort) values
    'Cabinets et outils spécialisés dans la réduction des frais généraux.', 6),
   ('11000000-0000-4000-a000-000000000008', '10000000-0000-4000-a000-000000000001', 'RSE & carbone', 'rse-carbone',
    'Ce que la CSRD et le bilan carbone changent pour la direction financière (comparatifs sur Radar RSE).', 7)
-on conflict (site_id, slug) do nothing;
+on conflict do nothing; -- identifiants fixes : les univers (data/50) peuvent renommer ces rubriques
 
 insert into public.categories (id, site_id, vertical_id, kind, name, slug, short_name, description, criteria, value_score, status, sort) values
   ('12000000-0000-4000-a000-000000000060', '10000000-0000-4000-a000-000000000001', '11000000-0000-4000-a000-000000000004',

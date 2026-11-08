@@ -1,19 +1,26 @@
--- Rubriques complémentaires de Radar Finances (data/45)
+-- Radar Finances organisé en 8 univers opérationnels (data/45 et data/50)
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(4);
+select plan(6);
 
-select set_has(
+select set_eq(
   $$ select v.slug from public.verticals v join public.sites s on s.id = v.site_id where s.key = 'daf' $$,
-  $$ values ('documents-signature'), ('formation'), ('aides-publiques'), ('reduction-couts'), ('rse-carbone') $$,
-  'Rubriques documents, formation, aides publiques, réduction des coûts, RSE présentes'
+  $$ values ('comptabilite-conformite'), ('tresorerie-cash'), ('depenses-achats'), ('encaissement'),
+            ('pilotage-performance'), ('equipe-expertise'), ('financement-aides-risques'), ('rse-performance-durable') $$,
+  'Huit univers, et seulement eux'
 );
 
 select is(
   (select count(*)::int from public.categories c join public.sites s on s.id = c.site_id
-   where s.key = 'daf' and c.slug in ('organismes-formation-finance', 'cabinets-cir-cii', 'cabinets-reduction-couts')
+   where s.key = 'daf' and c.vertical_id is null),
+  0, 'Chaque catégorie est rattachée à un univers'
+);
+
+select is(
+  (select count(*)::int from public.categories c join public.sites s on s.id = c.site_id
+   where s.key = 'daf' and c.slug in ('organismes-formation-finance', 'cabinets-cir-cii', 'cabinets-reduction-couts', 'management-transition', 'experts-comptables')
      and c.kind = 'provider' and c.criteria = '[]'::jsonb),
-  3, 'Organismes de formation et cabinets : annuaires sans classement'
+  5, 'Organismes, cabinets et professions réglementées : annuaires sans classement'
 );
 
 select ok(
@@ -22,10 +29,18 @@ select ok(
   'Prêt d''honneur : sujet réglementé « crédit », sans catégorie'
 );
 
+select set_eq(
+  $$ select c.slug from public.categories c join public.verticals v on v.id = c.vertical_id
+     join public.sites s on s.id = c.site_id where s.key = 'daf' and v.slug = 'rse-performance-durable' $$,
+  $$ values ('reporting-esg') $$,
+  'RSE sur Radar Finances : une catégorie angle DAF, le détail reste sur Radar RSE'
+);
+
 select is(
-  (select count(*)::int from public.categories c join public.sites s on s.id = c.site_id
-   where s.key = 'daf' and c.vertical_id = (select id from public.verticals where slug = 'rse-carbone' and site_id = s.id)),
-  0, 'RSE sur Radar Finances : guide seulement, les comparatifs restent sur Radar RSE'
+  (select count(*)::int from public.categories c join public.verticals v on v.id = c.vertical_id
+   join public.sites s on s.id = c.site_id where s.key = 'daf' and v.slug = 'financement-aides-risques'
+     and c.slug ~ '(credit|affacturage|financement|assurance|pret|levee|crowdlending)'),
+  0, 'Financement & risques : aucune catégorie comparative de financement ou d''assurance'
 );
 
 select * from finish();
