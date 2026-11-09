@@ -6,6 +6,13 @@ plus deux portails en préparation (`status = 'draft'`, 404 en production) : **R
 Référence produit : `ARCHITECTURE.md`. Mots-clés Semrush : `docs/seo/`.
 Plan éditorial par univers (6 sous-rubriques) et chaîne des 4 agents (collecte, rédaction, contrôle, mise en ligne) : `docs/PLAN-EDITORIAL-AGENTS.md`.
 
+## Façon de travailler avec le dirigeant (@xav) — règles permanentes
+
+1. **Ne jamais livrer de code non vérifié.** Tester avant d'annoncer (tests, build, rendu réel). Ne rien annoncer comme fait sans preuve.
+2. **Ne jamais revenir après coup avec « j'ai fait une erreur ».** Vérifier avant de répondre, pas après.
+3. **Réponses en français, phrases courtes et simples.** Aller droit au but. Pas de détails inutiles.
+4. **Niveau de qualité maximal**, adapté à un dirigeant : l'essentiel, la décision à prendre, la recommandation.
+
 ## Règles non négociables (imposées par la base — ne jamais les contourner)
 
 1. **Seul un contenu approuvé par un humain est publié.** Statuts modifiables uniquement via
