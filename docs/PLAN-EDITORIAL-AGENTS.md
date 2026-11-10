@@ -35,6 +35,18 @@ Accueil → « Trouver une solution »
 
 Règles : 3 clics au plus jusqu'à une fiche ; mêmes onglets dans toutes les catégories (chaque onglet est une page indexable) ; adresses existantes inchangées ; les réponses de l'assistant alimentent le profil (classements par profil, leads avec consentement). Maquette : écrans 9 (assistant) et 10 (univers).
 
+### Accueil d'univers : tableau de bord du DAF (décision du 10 nov. 2026)
+
+Approche propre à Radar Finances, distincte des répertoires « par angle » des concurrents : la page suit les **4 étapes de décision du DAF** (A Comprendre · B Comparer · C Choisir pour mon profil · D Changer) et présente des **données**, pas des listes de liens (chiffres clés, classement en tableau filtrable, podium, prix comparés, matrice « qui fait quoi », profils, duels, parcours de migration). Maquette : écran 10.
+
+**Unicité SEO (règles obligatoires)**
+1. **Un mot-clé tête par univers**, distinct de ceux des catégories (ex. univers « gestion de trésorerie d'entreprise » ; catégorie « logiciel de trésorerie »). Le H1 et le title le portent. Pas deux pages sur la même intention (cannibalisation contrôlée dans `seo_check()` via `keyword_targets`).
+2. **Contenu généré depuis nos propres données**, donc introuvable ailleurs : phrase de chiffres clés datée et citable (nombre de solutions testées, prix médian, fourchette, meilleure note), matrice des fonctions vérifiées, podium, prix comparés. Recalculés à chaque publication.
+3. **Pas de duplication avec les pages catégories** : l'univers résume (top 5, podium, extraits) et renvoie ; le classement complet, les facettes et les tarifs détaillés vivent sur la catégorie (canonical propre à chaque page).
+4. **Textes d'introduction et réponses « Comprendre » rédigés pour chaque univers** (jamais un gabarit avec le nom changé) ; contrôlés par l'agent qualité.
+5. **Données structurées** : `CollectionPage` + `ItemList` (classement) + `FAQPage` (étape A) ; pas d'`AggregateRating` issu d'avis tiers.
+6. **Aucune reprise de textes, de structure de titres ni de libellés d'un concurrent.**
+
 ### Exceptions, imposées par les garde-fous
 
 - **Professions réglementées** (experts-comptables, commissaires aux comptes, avocats) : pas de podium, de match ni de classement par profil. Uniquement une fiche factuelle, une liste triée par distance et des tarifs **déclarés**, en attendant la revue déontologique (§9).
