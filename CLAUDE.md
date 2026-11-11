@@ -75,7 +75,9 @@ supabase/
                 770 faits et 159 offres relevés sur les sites officiels (data/90, scripts/facts-to-sql.py : facturation électronique,
                 notes de frais, factures fournisseurs ; statut DGFiP des 163 plateformes agréées), en brouillon avec citation,
                 161 cabinets et prestataires (data/95, scripts/providers-to-sql.py depuis docs/seo/prestataires/*.json :
-                personnes morales seulement, SIREN vérifié au registre public, localisation du siège), en brouillon
+                personnes morales seulement, SIREN vérifié au registre public, localisation du siège), en brouillon,
+                28 772 sociétés issues des registres publics (data/96, scripts/opendata-to-providers.py : activités comptables 69.20Z,
+                organismes de formation « Comptabilité, gestion » certifiés Qualiopi, recouvrement 82.91Z ; hors entreprises individuelles)
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/

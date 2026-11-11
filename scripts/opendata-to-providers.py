@@ -24,20 +24,29 @@ def nice(name):
     n = re.sub(r"\s+", " ", (name or "").strip())
     return n.title() if n.isupper() and len(n) > 4 else n
 
-out, excluded = [], 0
+import glob
+# Sociétés déjà référencées par la recherche documentaire (data/95) : on ne les duplique pas
+known = {str(x.get("siren")) for f in glob.glob("docs/seo/prestataires/*.json") for x in json.load(open(f, encoding="utf-8")) if x.get("siren")}
+out, excluded, by_siren = [], 0, {}
 for path in sys.argv[1:]:
     for r in json.load(open(path, encoding="utf-8")):
         name = r.get("of_name") or r.get("name")
         if not name or EXCLUDE.search(name):
             excluded += 1; continue
         cat = r["category"]
+        sid = str(r.get("siren") or "")
+        if sid in known: excluded += 1; continue
+        if sid in by_siren:  # même société trouvée plusieurs fois : une seule fiche, catégories fusionnées
+            if cat not in by_siren[sid]["categories"]: by_siren[sid]["categories"].append(cat)
+            continue
         desc = LABEL[cat] + (f" Ville du siège : {r['city'].title()}." if r.get("city") else "")
-        out.append({"name": nice(name), "siren": r.get("siren"), "verified": True, "website": None,
+        item = {"name": nice(name), "siren": r.get("siren"), "verified": True, "website": None,
                     "city": (r.get("city") or "").title() or None, "region": REGIONS.get(str(r.get("region_code") or "")),
                     "postal_code": r.get("postal_code"), "department": r.get("department"),
                     "latitude": r.get("latitude"), "longitude": r.get("longitude"), "offices": [], "coverage": None,
                     "categories": [cat], "specialties": [r["specialty"]] if r.get("specialty") else [],
                     "description": desc, "regulated": cat in ("societes-recouvrement", "experts-comptables"),
-                    "sources": [SOURCE[cat]]})
+                    "sources": [SOURCE[cat]]}
+        out.append(item); by_siren[sid] = item
 json.dump(out, sys.stdout, ensure_ascii=False)
 print(f"sociétés {len(out)} · exclues {excluded}", file=sys.stderr)

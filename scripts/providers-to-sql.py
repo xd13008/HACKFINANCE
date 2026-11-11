@@ -39,7 +39,9 @@ for path in sys.argv[1:]:
         city = (r.get("city") or "").strip() or None
         slug = slugify(name)
         if slug in seen: slug = slugify(f"{name}-{city or 'bis'}")
-        if slug in seen: rejected.append(name); continue
+        base, n = slug, 2
+        while slug in seen:  # homonymes (réseaux, filiales) : suffixe numérique, jamais le SIREN (règle 9)
+            slug = f"{base[:64]}-{n}"; n += 1
         seen.add(slug)
         siren = r.get("siren") if re.fullmatch(r"[0-9]{9}", str(r.get("siren") or "")) else None
         cp = r.get("postal_code") if re.fullmatch(r"[0-9]{5}", str(r.get("postal_code") or "")) else None
