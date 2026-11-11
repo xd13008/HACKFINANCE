@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { serverClient } from "@/lib/supabase/server";
-import { requireStaff } from "@/lib/admin";
+import { requireRole, requireStaff } from "@/lib/admin";
 import { normalizeUrl } from "@/lib/checks";
 
 export type ActionResult = { ok: boolean; message: string };
@@ -285,6 +285,49 @@ export async function addPricing(_: ActionResult, fd: FormData): Promise<ActionR
   });
   revalidatePath("/admin/catalogue", "layout");
   return error ? ko(error.message) : ok("Offre ajoutée.");
+}
+
+/** Validation humaine d'une offre relevée en brouillon (par un agent ou un relevé assisté). */
+export async function decidePricing(fd: FormData) {
+  await requireRole("editor");
+  const c = await serverClient();
+  const decision = str(fd, "decision") === "validate" ? "validated" : "rejected";
+  await c.from("pricing_plans").update({ status: decision }).eq("id", str(fd, "pricing_id")).eq("status", "draft");
+  revalidatePath("/admin", "layout");
+}
+
+/** Vérification humaine d'une note publique (G2, GetApp…) : correction éventuelle, puis validation ou rejet. */
+export async function decideReviewSource(_: ActionResult, fd: FormData): Promise<ActionResult> {
+  await requireRole("editor");
+  const c = await serverClient();
+  const reject = str(fd, "decision") === "reject";
+  const rating = str(fd, "rating").replace(",", ".");
+  const count = str(fd, "review_count");
+  const patch = reject
+    ? { status: "rejected" as const }
+    : { status: "validated" as const, rating: rating === "" ? null : Number(rating), review_count: count === "" ? null : Number(count),
+        captured_at: str(fd, "captured_at") || new Date().toISOString().slice(0, 10) };
+  const { error } = await c.from("review_sources").update(patch).eq("id", str(fd, "review_source_id"));
+  revalidatePath("/admin", "layout");
+  return error ? ko(error.message) : ok(reject ? "Note rejetée." : "Note vérifiée et validée.");
+}
+
+/** Publication d'une catégorie : au moins un test validé est exigé, sinon la page serait vide. */
+export async function setCategoryStatus(_: ActionResult, fd: FormData): Promise<ActionResult> {
+  await requireRole("editor");
+  const c = await serverClient();
+  const id = str(fd, "category_id");
+  const publish = str(fd, "publish") === "1";
+  if (publish) {
+    const { count } = await c.from("test_runs").select("id", { count: "exact", head: true }).eq("category_id", id).eq("status", "validated");
+    if (!count) return ko("Publication refusée : aucun test validé dans cette catégorie. Validez d'abord au moins un test réel.");
+  }
+  const { data: cat, error } = await c.from("categories").update({ status: publish ? "published" : "draft" }).eq("id", id).select("slug,sites(key)").maybeSingle();
+  if (error || !cat) return ko(error?.message ?? "Catégorie introuvable ou droits insuffisants.");
+  const key = (cat.sites as unknown as { key: string } | null)?.key;
+  if (key) revalidatePath(`/s/${key}`, "layout");
+  revalidatePath("/admin/catalogue");
+  return ok(publish ? "Catégorie publiée." : "Catégorie repassée en brouillon.");
 }
 
 // ---------------------------------------------------------------------------

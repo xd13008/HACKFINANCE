@@ -4,7 +4,7 @@ import { serverClient } from "@/lib/supabase/server";
 import { requireRole } from "@/lib/admin";
 import { Badge, Card, Field, PageHeader, StatusBadge, Table, inputCls } from "@/components/admin/ui";
 import { ActionForm } from "@/components/admin/ActionForm";
-import { addFact, addPricing, createTestRun, decideFact, publishSoftwareListing } from "@/lib/actions/admin";
+import { addFact, addPricing, createTestRun, decideFact, decidePricing, decideReviewSource, publishSoftwareListing } from "@/lib/actions/admin";
 import { priceLabel } from "@/lib/format";
 
 export default async function SoftwareAdmin({ params }: { params: Promise<{ id: string }> }) {
@@ -13,12 +13,13 @@ export default async function SoftwareAdmin({ params }: { params: Promise<{ id: 
   const db = await serverClient();
   const { data: sw } = await db.from("software").select("*").eq("id", id).maybeSingle();
   if (!sw) notFound();
-  const [{ data: facts }, { data: plans }, { data: cats }, { data: tests }, { data: contents }] = await Promise.all([
+  const [{ data: facts }, { data: plans }, { data: cats }, { data: tests }, { data: contents }, { data: reviews }] = await Promise.all([
     db.from("software_facts").select("*").eq("software_id", id).order("collected_at", { ascending: false }),
     db.from("pricing_plans").select("*").eq("software_id", id).order("sort"),
     db.from("software_categories").select("category_id,categories(name)").eq("software_id", id),
     db.from("test_runs").select("id,status,tested_at,category_id").eq("software_id", id).order("tested_at", { ascending: false }),
     db.from("content_items").select("id,type,path,status").eq("software_id", id),
+    db.from("review_sources").select("*").eq("software_id", id).order("platform"),
   ]);
   return (
     <div className="space-y-6">
@@ -37,7 +38,7 @@ export default async function SoftwareAdmin({ params }: { params: Promise<{ id: 
                 <td className="pr-2">{JSON.stringify(f.value)}</td>
                 <td className="pr-2"><a href={f.source_url} target="_blank" rel="noopener noreferrer" className="underline text-xs">source</a><p className="text-xs text-ink-3">{new Date(f.collected_at).toLocaleDateString("fr-FR")}</p></td>
                 <td className="pr-2">{f.author_kind === "agent" ? <Badge tone="warn">agent</Badge> : f.author_kind}</td>
-                <td className="pr-2"><StatusBadge status={f.status} />{f.note && <p className="text-xs text-ink-3 max-w-[14rem]">{f.note}</p>}</td>
+                <td className="pr-2"><StatusBadge status={f.status} />{f.note && <details className="text-xs text-ink-3 max-w-[14rem]"><summary className="cursor-pointer">Citation</summary>{f.note}</details>}</td>
                 <td>{f.status === "draft" && (
                   <div className="flex gap-2">
                     <form action={decideFact}><input type="hidden" name="fact_id" value={f.id} /><input type="hidden" name="decision" value="validate" /><button className="text-xs underline text-green-700">Valider</button></form>
@@ -56,11 +57,43 @@ export default async function SoftwareAdmin({ params }: { params: Promise<{ id: 
             </ActionForm>
           </div>
         </Card>
+        <Card title="Avis publics (notes des plateformes)">
+          <p className="text-xs text-ink-3 mb-2">Ouvrez la page, corrigez la note et le nombre d&apos;avis si besoin, puis validez. Ces notes ne sont jamais intégrées à la note de la rédaction.</p>
+          <Table head={["Plateforme", "Note", "Avis", "Relevé", "Statut"]} empty="Aucune note relevée.">
+            {(reviews ?? []).map((r) => (
+              <tr key={r.id}>
+                <td className="py-2 pr-2"><a href={r.url} className="underline" target="_blank" rel="noopener noreferrer">{r.platform}</a></td>
+                <td className="pr-2">{r.rating ?? "—"} / {r.rating_scale}</td>
+                <td className="pr-2">{r.review_count ?? "—"}</td>
+                <td className="pr-2 text-xs">{r.captured_at}</td>
+                <td><StatusBadge status={r.status} />{r.status === "draft" && (
+                  <div className="mt-2 space-y-2">
+                    <ActionForm action={decideReviewSource} submit="Vérifié : valider" className="flex flex-wrap gap-2 items-end">
+                      <input type="hidden" name="review_source_id" value={r.id} />
+                      <Field label="Note"><input name="rating" defaultValue={r.rating ?? ""} className={inputCls} size={4} /></Field>
+                      <Field label="Nb d'avis"><input name="review_count" defaultValue={r.review_count ?? ""} className={inputCls} size={5} /></Field>
+                      <Field label="Relevé le"><input name="captured_at" type="date" defaultValue={new Date().toISOString().slice(0, 10)} className={inputCls} /></Field>
+                    </ActionForm>
+                    <ActionForm action={decideReviewSource} submit="Rejeter" tone="ghost">
+                      <input type="hidden" name="review_source_id" value={r.id} /><input type="hidden" name="decision" value="reject" />
+                    </ActionForm>
+                  </div>
+                )}</td>
+              </tr>
+            ))}
+          </Table>
+        </Card>
         <Card title="Tarifs">
           <Table head={["Offre", "Prix", "Source", "Statut"]}>
             {(plans ?? []).map((p) => (
               <tr key={p.id}><td className="py-2 pr-2">{p.plan_name}</td><td className="pr-2">{priceLabel(p)}</td>
-                <td className="pr-2 text-xs"><a href={p.source_url} className="underline" target="_blank" rel="noopener noreferrer">{p.source_date}</a></td><td><StatusBadge status={p.status} /></td></tr>
+                <td className="pr-2 text-xs"><a href={p.source_url} className="underline" target="_blank" rel="noopener noreferrer">{p.source_date}</a>{p.conditions && <p className="text-ink-3">{p.conditions}</p>}</td>
+                <td><StatusBadge status={p.status} />{p.status === "draft" && (
+                  <div className="flex gap-2 mt-1">
+                    <form action={decidePricing}><input type="hidden" name="pricing_id" value={p.id} /><input type="hidden" name="decision" value="validate" /><button className="text-xs underline text-green-700">Valider</button></form>
+                    <form action={decidePricing}><input type="hidden" name="pricing_id" value={p.id} /><input type="hidden" name="decision" value="reject" /><button className="text-xs underline text-red-700">Rejeter</button></form>
+                  </div>
+                )}</td></tr>
             ))}
           </Table>
           <div className="mt-4 border-t border-line pt-4">

@@ -117,6 +117,7 @@ export function DecisionCost({ name, plans, multiEntity }: { name: string; plans
 const FACT_LABELS: Record<string, string> = {
   free_plan: "Offre gratuite", bank_connections: "Banques connectées", multi_entity: "Plusieurs sociétés",
   target_sizes: "Tailles d’entreprise", hosting: "Hébergement des données", min_price_eur: "Prix d’entrée (€ HT/mois)",
+  free_trial: "Essai gratuit", no_commitment: "Sans engagement", bank_protocols: "Protocoles bancaires", accounts_included: "Comptes bancaires inclus",
 };
 const factValue = (v: unknown) => (v === true ? "Oui" : v === false ? "Non" : Array.isArray(v) ? v.join(", ").toUpperCase() : String(v));
 

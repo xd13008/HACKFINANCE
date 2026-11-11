@@ -62,7 +62,9 @@ supabase/
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
                 périmètre DAF du cahier des charges, rubriques complémentaires, organisation de Radar Finances
                 en 8 univers opérationnels (data/50), sujets réglementés en contenu seul,
-                portails Radar RH / Radar RSE : catégories, grilles, facettes, pages planifiées + briefs)
+                portails Radar RH / Radar RSE : catégories, grilles, facettes, pages planifiées + briefs),
+                première catégorie complète en brouillon : trésorerie (data/70 : 5 logiciels réels, faits, prix et notes G2/GetApp
+                sourcés, pages planifiées ; protocole de test et marche à suivre : docs/tests/PROTOCOLE-TRESORERIE.md)
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/
