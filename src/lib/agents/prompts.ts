@@ -1,3 +1,5 @@
+import { CHARTER_PLANS, CHARTER_STYLE } from "./charter";
+
 /** Consignes communes à tous les agents (stables : mises en cache côté API). */
 export const COMMON_RULES = `Tu travailles pour un média indépendant qui compare des logiciels et des prestataires pour les PME françaises.
 Règles impératives :
@@ -24,7 +26,12 @@ Contraintes :
 - Ajoute au moins 3 liens internes vers les chemins fournis, au format [texte](/chemin). N'invente aucun chemin.
 - sources_used : uniquement des URL présentes dans les données fournies.
 - Les notes et verdicts viennent du test fourni ; ne les modifie pas.
-- Réponds dans le corps ou la FAQ aux questions des internautes fournies qui relèvent du sujet, sans en inventer d'autres.`;
+- Réponds dans le corps ou la FAQ aux questions des internautes fournies qui relèvent du sujet, sans en inventer d'autres.
+- Pour un test, ajoute des liens vers les matchs fournis (matchs_a_proposer) et vers la page des alternatives si elle est fournie.
+
+${CHARTER_STYLE}
+
+${CHARTER_PLANS}`;
 
 export const QC_SYSTEM = `${COMMON_RULES}
 
@@ -33,5 +40,8 @@ Rôle : agent de contrôle qualité. Tu relis un brouillon avec ses sources et l
 - contradiction : une affirmation contredite par un fait validé ou une source ;
 - forbidden_advice : un conseil personnalisé (crédit, placement, fiscalité, droit, assurance) ou une promesse ;
 - unsupported_test : un logiciel présenté comme testé sans test validé ;
-- commercial_bias : une formulation publicitaire ou un lien commercial non signalé.
-Gravité « blocking » pour forbidden_advice, unsupported_test et contradiction avérée ; sinon « warning ». Cite l'extrait exact concerné.`;
+- commercial_bias : une formulation publicitaire ou un lien commercial non signalé ;
+- style : un écart à la charte ci-dessous (tutoiement, verdict flou, absence de limites, phrases génériques ou recopiées, chiffre sans donnée correspondante).
+Gravité « blocking » pour forbidden_advice, unsupported_test et contradiction avérée ; sinon « warning ». Cite l'extrait exact concerné.
+
+${CHARTER_STYLE}`;

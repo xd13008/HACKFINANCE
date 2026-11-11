@@ -13,6 +13,11 @@ const LABEL: Record<string, string> = { meta_title: "Title", meta_description: "
 
 export const maxDuration = 300;
 
+const QC_LABEL: Record<string, string> = {
+  missing_source: "Source manquante", contradiction: "Contradiction", forbidden_advice: "Conseil interdit",
+  unsupported_test: "Test non validé", commercial_bias: "Biais commercial", style: "Charte : style", structure: "Charte : structure",
+};
+
 export default async function ReviewPage({ params }: { params: Promise<{ id: string }> }) {
   const me = await requireRole("editor", "compliance");
   const { id } = await params;
@@ -65,7 +70,7 @@ export default async function ReviewPage({ params }: { params: Promise<{ id: str
                   return (
                     <div key={t.id} className="mb-2">
                       <p>{t.blocking ? "⛔" : "⚠️"} {t.reason}</p>
-                      {issues.length > 0 && <ul className="ml-5 list-disc text-xs">{issues.map((i, k) => <li key={k}><strong>{i.type}</strong> ({i.severity}) : « {i.excerpt} » — {i.explanation}</li>)}</ul>}
+                      {issues.length > 0 && <ul className="ml-5 list-disc text-xs">{issues.map((i, k) => <li key={k}><strong>{QC_LABEL[i.type] ?? i.type}</strong> ({i.severity === "blocking" ? "bloquant" : "avertissement"}) : « {i.excerpt} » — {i.explanation}</li>)}</ul>}
                     </div>
                   );
                 })}

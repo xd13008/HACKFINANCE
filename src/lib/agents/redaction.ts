@@ -52,6 +52,18 @@ export async function draftContent(deps: { db: Db; llm: Llm }, contentItemId: st
     ? await db.from("keyword_questions").select("question,volume").eq("site_id", item.site_id).eq("cluster", item.cluster).order("volume", { ascending: false }).limit(12)
     : { data: [] as { question: string; volume: number }[] };
 
+  // Charte : un test ouvre sur des comparatifs (matchs avec les solutions testées de la même catégorie, alternatives)
+  let matches: { chemin: string; titre: string }[] = [];
+  if (item.type === "software_review" && item.software_id && item.category_id) {
+    const { data: rk } = await db.from("editorial_rankings").select("software_id").eq("category_id", item.category_id);
+    const ids = [...new Set([item.software_id, ...(rk ?? []).map((r) => r.software_id!)])];
+    const { data: named } = await db.from("software").select("id,slug,name").in("id", ids);
+    const self = (named ?? []).find((x) => x.id === item.software_id);
+    if (self && (rk ?? []).some((r) => r.software_id === self.id)) {
+      matches = (named ?? []).filter((x) => x.id !== self.id).map((x) => ({ chemin: `/comparer/${[self.slug, x.slug].sort().join("-vs-")}`, titre: `${self.name} vs ${x.name}` }));
+    }
+  }
+
   const knownUrls = [...(facts ?? []).map((f) => f.source_url), ...(plans ?? []).map((p) => p.source_url), ...(liveSources ?? []).map((s) => s.url)];
   const context = {
     type: item.type, path: item.path, cluster: item.cluster,
@@ -59,6 +71,7 @@ export async function draftContent(deps: { db: Db; llm: Llm }, contentItemId: st
     categorie: category, logiciels: sw, faits_valides: facts, offres_validees: plans, tests_valides: tests, verdicts_des_tests: verdicts,
     questions_des_internautes: (questions ?? []).map((q) => `${q.question} (${q.volume}/mois)`),
     chemins_internes_disponibles: (pages ?? []).map((p) => ({ chemin: p.path, titre: p.h1 })),
+    matchs_a_proposer: matches,
     sources_connues: knownUrls,
   };
 

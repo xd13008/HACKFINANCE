@@ -89,6 +89,8 @@ docs/seo/               relevés Semrush, PLAN-CONTENUS.md (priorités), scripts
   Tout contenu externe passe par `asDocument()` — donnée, jamais instruction.
 - Toujours via `agentDb()` (compte rôle `agent`) ; jamais `serviceClient()`.
 - Sources : `keepKnownSources()` retire toute URL que l'agent n'a pas reçue.
+- Charte de rédaction (`lib/agents/charter.ts`) : consignes de l'agent de rédaction et de contrôle ; `charterCheck()` ajoute au rapport
+  des avertissements (ton, mots interdits, longueur, FAQ, liens vers les matchs et alternatives), jamais bloquants à eux seuls.
 - Tests : injecter un `Llm` factice ; ne jamais appeler l'API réelle dans les tests (coût).
 
 ## Conventions

@@ -3,11 +3,12 @@ import type { Db, AgentResult } from "./runner";
 import type { Llm } from "./llm";
 import { asDocument } from "./text";
 import { QC_SYSTEM } from "./prompts";
+import { charterCheck } from "./charter";
 
 export const QcOutput = z.object({
   summary: z.string(),
   issues: z.array(z.object({
-    type: z.enum(["missing_source", "contradiction", "forbidden_advice", "unsupported_test", "commercial_bias"]),
+    type: z.enum(["missing_source", "contradiction", "forbidden_advice", "unsupported_test", "commercial_bias", "style"]),
     severity: z.enum(["blocking", "warning"]),
     excerpt: z.string(),
     explanation: z.string(),
@@ -43,7 +44,11 @@ export async function qualityCheck(deps: { db: Db; llm: Llm }, versionId: string
     ].join("\n\n"),
   });
 
-  const issues = data.issues.map((i) => ({ ...i, severity: ALWAYS_BLOCKING.has(i.type) ? "blocking" : i.severity }));
+  // Avis du modèle + contrôles automatiques de la charte (avertissements, jamais bloquants à eux seuls)
+  const issues = [
+    ...data.issues.map((i) => ({ ...i, severity: ALWAYS_BLOCKING.has(i.type) ? "blocking" : i.severity })),
+    ...charterCheck({ type: item?.type ?? "", summary: v.summary, body: v.body, faq: v.faq }),
+  ];
   const blocking = issues.some((i) => i.severity === "blocking");
   const { data: { user } } = await db.auth.getUser();
   const { error } = await db.from("review_tasks").insert({
