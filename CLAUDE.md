@@ -69,7 +69,8 @@ supabase/
                 3 sous-rubriques issues du rapprochement G2 + Semrush (data/75 : fraude aux virements, factures fournisseurs,
                 audit et contrôle interne ; docs/seo/MAPPING-G2-UNIVERS.md),
                 référencement de 524 logiciels réels en brouillon dans les 24 sous-rubriques (data/80, généré par
-                scripts/refs-to-sql.py depuis docs/seo/referencement/*.json + produits de l'API G2)
+                scripts/refs-to-sql.py depuis docs/seo/referencement/*.json + produits de l'API G2),
+                correspondance G2 de 282 logiciels via l'API G2 v2 (data/85 : identifiant, lien, note, nombre d'avis en brouillon)
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/
