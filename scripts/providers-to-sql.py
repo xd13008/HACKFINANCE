@@ -32,7 +32,9 @@ for path in sys.argv[1:]:
     for r in json.load(open(path, encoding="utf-8")):
         name = (r.get("name") or "").strip(); site = r.get("website") or ""
         cats = [c for c in (r.get("categories") or []) if c in CATS]
-        if not name or not cats or not site.startswith("https://"):
+        # Site obligatoire, sauf pour une société identifiée au registre public (SIREN vérifié)
+        has_siren = bool(re.fullmatch(r"[0-9]{9}", str(r.get("siren") or "")))
+        if not name or not cats or not (site.startswith("https://") or has_siren):
             rejected.append(name or "?"); continue
         city = (r.get("city") or "").strip() or None
         slug = slugify(name)
@@ -45,7 +47,7 @@ for path in sys.argv[1:]:
         cov = r.get("coverage") if r.get("coverage") in ("national", "régional", "local") else None
         refs = [{"label": "Source", "source_url": u} for u in (r.get("sources") or []) if isinstance(u, str) and u.startswith("https://")][:5]
         rows.append({"slug": slug, "name": name[:150], "profession": cats[0], "regulated": cats[0] in REGULATED or bool(r.get("regulated")),
-                     "siren": siren, "website": site, "city": city, "city_slug": slugify(city) if city else None,
+                     "siren": siren, "website": site if site.startswith("https://") else None, "city": city, "city_slug": slugify(city) if city else None,
                      "region": (r.get("region") or None), "specialties": [str(x)[:80] for x in (r.get("specialties") or [])][:12],
                      "description": (r.get("description") or "")[:400] or None, "refs": json.dumps(refs, ensure_ascii=False),
                      "postal_code": cp, "department": dep, "lat": num(r.get("latitude"), -90, 90), "lon": num(r.get("longitude"), -180, 180),

@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+"""
+Registre public (API Recherche d'entreprises, liste publique des organismes de formation) -> JSON prestataires,
+au format attendu par scripts/providers-to-sql.py. Personnes morales actives uniquement (filtrées à la collecte).
+Usage : python3 -I scripts/opendata-to-providers.py recouvrement.json formation.json experts.json > prestataires-registre.json
+"""
+import json, re, sys
+
+REGIONS = {"11": "Île-de-France", "24": "Centre-Val de Loire", "27": "Bourgogne-Franche-Comté", "28": "Normandie",
+           "32": "Hauts-de-France", "44": "Grand Est", "52": "Pays de la Loire", "53": "Bretagne", "75": "Nouvelle-Aquitaine",
+           "76": "Occitanie", "84": "Auvergne-Rhône-Alpes", "93": "Provence-Alpes-Côte d'Azur", "94": "Corse",
+           "01": "Guadeloupe", "02": "Martinique", "03": "Guyane", "04": "La Réunion", "06": "Mayotte"}
+# Hors périmètre (règle 5 et décisions de la rédaction) : assureurs-crédit, racheteurs de créances, information financière
+EXCLUDE = re.compile(r"EULER HERMES|ALLIANZ TRADE|COFACE|ATRADIUS|POUEY|IQERA|CABOT|\bMCS\b|SOGEDI|CONCILIAN|LINK FINANCIAL|"
+                     r"ELLISPHERE|ALTARES|CREDITSAFE|INFOLEGALE|\bEOS\b|HOIST|INTRUM", re.I)
+LABEL = {"societes-recouvrement": "Société de recouvrement de créances (activité 82.91Z au registre).",
+         "organismes-formation-finance": "Organisme de formation déclaré, spécialité « Comptabilité, gestion », certifié Qualiopi pour les actions de formation.",
+         "experts-comptables": "Société d'activités comptables (activité 69.20Z au registre)."}
+SOURCE = {"societes-recouvrement": "https://annuaire-entreprises.data.gouv.fr/",
+          "organismes-formation-finance": "https://www.data.gouv.fr/datasets/liste-publique-des-organismes-de-formation-l-6351-7-1-du-code-du-travail",
+          "experts-comptables": "https://annuaire-entreprises.data.gouv.fr/"}
+
+def nice(name):
+    n = re.sub(r"\s+", " ", (name or "").strip())
+    return n.title() if n.isupper() and len(n) > 4 else n
+
+out, excluded = [], 0
+for path in sys.argv[1:]:
+    for r in json.load(open(path, encoding="utf-8")):
+        name = r.get("of_name") or r.get("name")
+        if not name or EXCLUDE.search(name):
+            excluded += 1; continue
+        cat = r["category"]
+        desc = LABEL[cat] + (f" Ville du siège : {r['city'].title()}." if r.get("city") else "")
+        out.append({"name": nice(name), "siren": r.get("siren"), "verified": True, "website": None,
+                    "city": (r.get("city") or "").title() or None, "region": REGIONS.get(str(r.get("region_code") or "")),
+                    "postal_code": r.get("postal_code"), "department": r.get("department"),
+                    "latitude": r.get("latitude"), "longitude": r.get("longitude"), "offices": [], "coverage": None,
+                    "categories": [cat], "specialties": [r["specialty"]] if r.get("specialty") else [],
+                    "description": desc, "regulated": cat in ("societes-recouvrement", "experts-comptables"),
+                    "sources": [SOURCE[cat]]})
+json.dump(out, sys.stdout, ensure_ascii=False)
+print(f"sociétés {len(out)} · exclues {excluded}", file=sys.stderr)
