@@ -1,0 +1,2627 @@
+[
+  {
+    "name": "Apogea",
+    "siren": "428851463",
+    "verified": true,
+    "website": "https://www.apogea.fr",
+    "city": "Levallois-Perret",
+    "region": "Île-de-France",
+    "postal_code": "92300",
+    "department": "92",
+    "latitude": 48.890188277,
+    "longitude": 2.2909447574,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage 100",
+      "Sage X3",
+      "Sage Intacct",
+      "Agicap"
+    ],
+    "description": "Intégrateur de logiciels de gestion partenaire Sage (100, X3, Intacct) : choix, mise en place et accompagnement des directions métiers des PME et ETI.",
+    "regulated": false,
+    "sources": [
+      "https://www.erpresearch.com/sage-partners/apogea",
+      "https://agicap.com/fr/annuaire/apogea/"
+    ]
+  },
+  {
+    "name": "Absys Cyborg",
+    "siren": "414353250",
+    "verified": true,
+    "website": "https://www.absyscyborg.com/fr",
+    "city": "Issy-les-Moulineaux",
+    "region": "Île-de-France",
+    "postal_code": "92130",
+    "department": "92",
+    "latitude": 48.822017509,
+    "longitude": 2.268339788,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "Microsoft Dynamics 365 Business Central",
+      "CRM",
+      "Paie et RH"
+    ],
+    "description": "Intégrateur et revendeur de solutions ERP, CRM, RH et finance pour PME et ETI, partenaire de longue date de Sage et de Microsoft.",
+    "regulated": false,
+    "sources": [
+      "https://absyscyborg.com/fr/logiciels/sage",
+      "https://www.erpresearch.com/dynamics-partners/absys-cyborg",
+      "https://agicap.com/fr/partenaires/annuaire/"
+    ]
+  },
+  {
+    "name": "Prodware",
+    "siren": "352335962",
+    "verified": true,
+    "website": "https://www.prodwaregroup.com/fr-fr/",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75019",
+    "department": "75",
+    "latitude": 48.886466496,
+    "longitude": 2.3738343547,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Microsoft Dynamics 365",
+      "Sage 100",
+      "Sage FRP 1000",
+      "CRM"
+    ],
+    "description": "Groupe de conseil et d'intégration ERP et CRM (Microsoft Dynamics, Sage) qui intervient aussi sur la data, le cloud et la cybersécurité.",
+    "regulated": false,
+    "sources": [
+      "https://erpresearch.com/sage-partners/prodware",
+      "https://www.erpresearch.com/dynamics-partners/france"
+    ]
+  },
+  {
+    "name": "Inetum",
+    "siren": "385365713",
+    "verified": true,
+    "website": "https://www.inetum.com/fr",
+    "city": "Saint-Ouen-sur-Seine",
+    "region": "Île-de-France",
+    "postal_code": "93400",
+    "department": "93",
+    "latitude": 48.9021656803776,
+    "longitude": 2.32142203997657,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage X3",
+      "Sage XRT",
+      "Sage FRP 1000"
+    ],
+    "description": "Entreprise de services numériques, intégrateur certifié de Sage X3 et partenaire Sage Platinum, qui accompagne aussi les projets finance et trésorerie Sage.",
+    "regulated": false,
+    "sources": [
+      "https://www.inetum.com/en/france/news/inetum-recognized-sage-business-partner-platinum",
+      "https://erpresearch.com/sage-partners/inetum"
+    ]
+  },
+  {
+    "name": "Inforope",
+    "siren": "382656676",
+    "verified": true,
+    "website": "https://www.inforope.fr",
+    "city": "Rosny-sous-Bois",
+    "region": "Île-de-France",
+    "postal_code": "93110",
+    "department": "93",
+    "latitude": 48.876847864,
+    "longitude": 2.4744857313,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage 100",
+      "Comptabilité",
+      "Recouvrement",
+      "Paie et RH"
+    ],
+    "description": "Intégrateur Sage 100 en Île-de-France : choix et mise en œuvre de solutions de comptabilité, recouvrement, paie, gestion commerciale et CRM.",
+    "regulated": false,
+    "sources": [
+      "https://www.inforope.fr/",
+      "https://elioplus.com/fr/france/channel-partners/sage_100"
+    ]
+  },
+  {
+    "name": "Sinergis",
+    "siren": null,
+    "verified": false,
+    "website": "https://www.sinergis.fr",
+    "city": "Baie-Mahault",
+    "region": "Guadeloupe",
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "Cegid",
+      "SAP",
+      "Silae",
+      "Agicap"
+    ],
+    "description": "Intégrateur de logiciels de gestion, comptabilité, paie et ERP (Sage, Cegid, SAP, Silae, Agicap) en Guadeloupe, Martinique et Guyane.",
+    "regulated": false,
+    "sources": [
+      "https://www.sinergis.fr/"
+    ]
+  },
+  {
+    "name": "Syxperiane",
+    "siren": "825070121",
+    "verified": true,
+    "website": "https://syxperiane.com",
+    "city": "Brignais",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "69530",
+    "department": "69",
+    "latitude": 45.6768840259924,
+    "longitude": 4.76940296138124,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid",
+      "ERP",
+      "CRM",
+      "SIRH"
+    ],
+    "description": "Intégrateur de systèmes d'information (ERP, CRM, SIRH, IT), référencé parmi les partenaires intégrateurs de Cegid.",
+    "regulated": false,
+    "sources": [
+      "https://syxperiane.com/",
+      "https://www.cegid.com/fr/partenaires-integrateurs/"
+    ]
+  },
+  {
+    "name": "BPAP",
+    "siren": "810029967",
+    "verified": true,
+    "website": "https://www.bpap.com",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75008",
+    "department": "75",
+    "latitude": 48.87338622,
+    "longitude": 2.3254880504,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid XRP Ultimate"
+    ],
+    "description": "Cabinet d'intégration spécialisé à 100 % sur l'ERP Cegid XRP Ultimate, référencé parmi les partenaires intégrateurs de Cegid.",
+    "regulated": false,
+    "sources": [
+      "https://www.bpap.com/",
+      "https://www.cegid.com/fr/partenaires-integrateurs/"
+    ]
+  },
+  {
+    "name": "Terensys",
+    "siren": "903502656",
+    "verified": true,
+    "website": "https://www.terensys.fr",
+    "city": "Isserteaux",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "63270",
+    "department": "63",
+    "latitude": 45.652504035,
+    "longitude": 3.365299126,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid XRP Ultimate",
+      "Yooz"
+    ],
+    "description": "Intégrateur Cegid XRP Ultimate et Yooz : accompagnement ERP et transformation numérique pour les DSI et les dirigeants.",
+    "regulated": false,
+    "sources": [
+      "https://www.terensys.fr/",
+      "https://www.cegid.com/fr/partenaires-integrateurs/"
+    ]
+  },
+  {
+    "name": "CSinfo",
+    "siren": null,
+    "verified": false,
+    "website": "https://csinfo.fr",
+    "city": "Nantes",
+    "region": "Pays de la Loire",
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid XRP Flex"
+    ],
+    "description": "Société nantaise d'intégration d'outils de gestion, présentée par Cegid comme intégrateur de l'ERP Cegid XRP Flex.",
+    "regulated": false,
+    "sources": [
+      "https://csinfo.fr/",
+      "https://www.cegid.com/fr/partenaires-integrateurs/"
+    ]
+  },
+  {
+    "name": "Captivea",
+    "siren": "501030811",
+    "verified": true,
+    "website": "https://www.captivea.com",
+    "city": "Chambéry",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "73000",
+    "department": "73",
+    "latitude": 45.5729754267542,
+    "longitude": 5.91452211551191,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Cegid XRP Flex"
+    ],
+    "description": "Intégrateur Odoo Gold Partner (ERP, web, BI) présent dans plusieurs pays, également partenaire Cegid pour XRP Flex en France.",
+    "regulated": false,
+    "sources": [
+      "https://erpresearch.com/odoo-partners/captivea",
+      "https://captivea.com/cegid-xrp-flex"
+    ]
+  },
+  {
+    "name": "Apik",
+    "siren": "530332360",
+    "verified": true,
+    "website": "https://apik.cloud",
+    "city": "Baden",
+    "region": "Bretagne",
+    "postal_code": "56870",
+    "department": "56",
+    "latitude": 47.623633311,
+    "longitude": -2.90615852,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo"
+    ],
+    "description": "Partenaire Gold Odoo : intégration ERP et CRM, migration, formation et hébergement en France, sans sous-traitance.",
+    "regulated": false,
+    "sources": [
+      "https://apik.cloud/",
+      "https://erpresearch.com/odoo-partners/apik-by-oci"
+    ]
+  },
+  {
+    "name": "Nalios France",
+    "siren": "982615023",
+    "verified": true,
+    "website": "https://www.nalios.com",
+    "city": "Lille",
+    "region": "Hauts-de-France",
+    "postal_code": "59777",
+    "department": "59",
+    "latitude": 50.638554991,
+    "longitude": 3.0792749967,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo"
+    ],
+    "description": "Intégrateur Odoo certifié : analyse des besoins, paramétrage, reprise de données, formation des équipes et support.",
+    "regulated": false,
+    "sources": [
+      "https://www.nalios.com/fr",
+      "https://erpresearch.com/odoo-partners/nalios-france"
+    ]
+  },
+  {
+    "name": "Irokoo",
+    "siren": "909890428",
+    "verified": true,
+    "website": "https://www.irokoo.fr",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75011",
+    "department": "75",
+    "latitude": 48.8500141112654,
+    "longitude": 2.39598429351145,
+    "offices": [
+      "Tours",
+      "Rouen"
+    ],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Facture électronique"
+    ],
+    "description": "Intégrateur Odoo Gold Partner pour PME et ETI : mise en place, reprise d'un Odoo existant, migration et facture électronique.",
+    "regulated": false,
+    "sources": [
+      "https://www.irokoo.fr/",
+      "https://erpresearch.com/odoo-partners/irokoo"
+    ]
+  },
+  {
+    "name": "Okteo",
+    "siren": "333264810",
+    "verified": true,
+    "website": "https://www.okteo.fr",
+    "city": "Ceyzériat",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "01250",
+    "department": "01",
+    "latitude": 46.1917285875207,
+    "longitude": 5.32339921563322,
+    "offices": [],
+    "coverage": "local",
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo"
+    ],
+    "description": "Entreprise de services numériques coopérative au service des TPE, PME et du monde agricole, éditeur et intégrateur de l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.okteo.fr/",
+      "https://erpresearch.com/odoo-partners/okteo"
+    ]
+  },
+  {
+    "name": "Prelium",
+    "siren": null,
+    "verified": false,
+    "website": "https://www.prelium.fr",
+    "city": "La Mézière",
+    "region": "Bretagne",
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo"
+    ],
+    "description": "Intégrateur certifié Odoo Gold Partner : déploiement, paramétrage et accompagnement de l'ERP pour les entreprises.",
+    "regulated": false,
+    "sources": [
+      "https://www.prelium.fr/",
+      "https://erpresearch.com/odoo-partners/prelium"
+    ]
+  },
+  {
+    "name": "Dynapps France",
+    "siren": "849655428",
+    "verified": true,
+    "website": "https://www.dynapps.fr/fr",
+    "city": "Toulouse",
+    "region": "Occitanie",
+    "postal_code": "31000",
+    "department": "31",
+    "latitude": 43.6047099165167,
+    "longitude": 1.45054430875423,
+    "offices": [
+      "Bayonne",
+      "Nantes",
+      "Strasbourg"
+    ],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo"
+    ],
+    "description": "Partenaire Gold Odoo en France : implémentation, migration et support de l'ERP pour les PME et ETI.",
+    "regulated": false,
+    "sources": [
+      "https://www.dynapps.fr/fr",
+      "https://erpresearch.com/odoo-partners/dynapps-france"
+    ]
+  },
+  {
+    "name": "Scalizer",
+    "siren": "847676863",
+    "verified": true,
+    "website": "https://www.scalizer.fr",
+    "city": "Nantes",
+    "region": "Pays de la Loire",
+    "postal_code": "44000",
+    "department": "44",
+    "latitude": 47.222673983298,
+    "longitude": -1.55358645192213,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "CRM"
+    ],
+    "description": "Accompagne les PME et ETI dans l'optimisation de leurs CRM et ERP (dont Odoo) pour structurer leurs processus.",
+    "regulated": false,
+    "sources": [
+      "https://www.scalizer.fr/",
+      "https://erpresearch.com/odoo-partners/scalizer"
+    ]
+  },
+  {
+    "name": "Smile",
+    "siren": "378615363",
+    "verified": true,
+    "website": "https://smile.eu/fr",
+    "city": "Asnières-sur-Seine",
+    "region": "Île-de-France",
+    "postal_code": "92600",
+    "department": "92",
+    "latitude": 48.9116719055708,
+    "longitude": 2.29904697766098,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo"
+    ],
+    "description": "Groupe européen de services numériques, référencé comme partenaire Gold Odoo en France pour l'intégration de l'ERP.",
+    "regulated": false,
+    "sources": [
+      "https://smile.eu/fr",
+      "https://erpresearch.com/odoo-partners/smile-france"
+    ]
+  },
+  {
+    "name": "Sudokeys",
+    "siren": "443570163",
+    "verified": true,
+    "website": "https://www.sudokeys.com",
+    "city": "Montauban",
+    "region": "Occitanie",
+    "postal_code": "82000",
+    "department": "82",
+    "latitude": 44.006074253,
+    "longitude": 1.3185839305,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo"
+    ],
+    "description": "Intégrateur Odoo Gold Partner : transformation des processus métiers et optimisation de la gestion financière et RH.",
+    "regulated": false,
+    "sources": [
+      "https://www.sudokeys.com/",
+      "https://erpresearch.com/odoo-partners/sudokeys"
+    ]
+  },
+  {
+    "name": "Ouiddoo",
+    "siren": "832952220",
+    "verified": true,
+    "website": "https://www.ouiddoo.fr",
+    "city": "Angers",
+    "region": "Pays de la Loire",
+    "postal_code": "49100",
+    "department": "49",
+    "latitude": 47.4718752531385,
+    "longitude": -0.551166228817134,
+    "offices": [],
+    "coverage": "national",
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo"
+    ],
+    "description": "Intégrateur Odoo certifié : implémentation de l'ERP, audit, optimisation et formation Odoo partout en France.",
+    "regulated": false,
+    "sources": [
+      "https://www.ouiddoo.fr/",
+      "https://erpresearch.com/odoo-partners/ouiddoo"
+    ]
+  },
+  {
+    "name": "Subteno IT",
+    "siren": "503380404",
+    "verified": true,
+    "website": "https://www.subteno.com",
+    "city": "Alençon",
+    "region": "Normandie",
+    "postal_code": "61000",
+    "department": "61",
+    "latitude": 48.431260024,
+    "longitude": 0.0875166793,
+    "offices": [],
+    "coverage": "national",
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo"
+    ],
+    "description": "Partenaire Odoo Silver depuis 2008 basé à Alençon : intégration, mise à niveau et maintenance de l'ERP, partout en France.",
+    "regulated": false,
+    "sources": [
+      "https://www.subteno.com/",
+      "https://erpresearch.com/odoo-partners/subteno"
+    ]
+  },
+  {
+    "name": "Cogitime",
+    "siren": "528885346",
+    "verified": true,
+    "website": "https://www.cogitime.fr",
+    "city": "Saint-Léon-sur-l'Isle",
+    "region": "Nouvelle-Aquitaine",
+    "postal_code": "24110",
+    "department": "24",
+    "latitude": 45.127768776,
+    "longitude": 0.4907999093,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "CRM"
+    ],
+    "description": "Société de conseil et de développement numérique : sites, e-commerce, ERP et CRM Odoo, applications et logiciels métier.",
+    "regulated": false,
+    "sources": [
+      "https://www.cogitime.fr/",
+      "https://erpresearch.com/odoo-partners/cogitime"
+    ]
+  },
+  {
+    "name": "ArkeUp",
+    "siren": "538662602",
+    "verified": true,
+    "website": "https://www.arkeup.com",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75017",
+    "department": "75",
+    "latitude": 48.8922777965797,
+    "longitude": 2.32354676221651,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Salesforce"
+    ],
+    "description": "Société de services informatiques parisienne réalisant des projets Odoo, Salesforce et web, partenaire Odoo Silver.",
+    "regulated": false,
+    "sources": [
+      "https://www.arkeup.com/",
+      "https://erpresearch.com/odoo-partners/arkeup-edoo"
+    ]
+  },
+  {
+    "name": "KreAddis",
+    "siren": "433349206",
+    "verified": true,
+    "website": "https://www.kreaddis.com",
+    "city": "Annecy",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "74600",
+    "department": "74",
+    "latitude": 45.8872109762918,
+    "longitude": 6.07571296319336,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo"
+    ],
+    "description": "Accompagnement numérique global, de la stratégie de communication à l'intégration de l'ERP Odoo (partenaire Silver).",
+    "regulated": false,
+    "sources": [
+      "https://www.kreaddis.com/",
+      "https://erpresearch.com/odoo-partners/kreaddis"
+    ]
+  },
+  {
+    "name": "Elyone",
+    "siren": "492070370",
+    "verified": true,
+    "website": "https://www.elyone.com",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75019",
+    "department": "75",
+    "latitude": 48.883673287,
+    "longitude": 2.3878877535,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "CRM"
+    ],
+    "description": "Prestataire de solutions numériques (ERP, CRM, informatique et télécoms), référencé comme partenaire Odoo Silver.",
+    "regulated": false,
+    "sources": [
+      "https://www.elyone.com/",
+      "https://erpresearch.com/odoo-partners/elyone"
+    ]
+  },
+  {
+    "name": "Alvesta",
+    "siren": "890718133",
+    "verified": true,
+    "website": "https://www.alvesta.fr",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75017",
+    "department": "75",
+    "latitude": 48.881540998,
+    "longitude": 2.2895778147,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo"
+    ],
+    "description": "Conseil en organisation et intégration de l'ERP Odoo pour PME, ETI et associations (industrie, distribution, services).",
+    "regulated": false,
+    "sources": [
+      "https://www.alvesta.fr/",
+      "https://erpresearch.com/odoo-partners/alvesta"
+    ]
+  },
+  {
+    "name": "Drakkar",
+    "siren": "979531274",
+    "verified": true,
+    "website": "https://www.drakkar.io",
+    "city": "Nantes",
+    "region": "Pays de la Loire",
+    "postal_code": "44200",
+    "department": "44",
+    "latitude": 47.1898959010103,
+    "longitude": -1.53562552006484,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo"
+    ],
+    "description": "Accompagne les PME et ETI dans leur transformation numérique : intégration de l'ERP Odoo, développement sur mesure et conseil.",
+    "regulated": false,
+    "sources": [
+      "https://www.drakkar.io/",
+      "https://erpresearch.com/odoo-partners/drakkar-accelerateur"
+    ]
+  },
+  {
+    "name": "EaSI-Soft",
+    "siren": "501646954",
+    "verified": true,
+    "website": "https://www.easi-soft.fr",
+    "city": "Monistrol-sur-Loire",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "43120",
+    "department": "43",
+    "latitude": 45.2826300258137,
+    "longitude": 4.18304701130609,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo"
+    ],
+    "description": "Intégration Odoo, modules sur mesure, maintenance, infogérance et cybersécurité pour les PME.",
+    "regulated": false,
+    "sources": [
+      "https://www.easi-soft.fr/",
+      "https://erpresearch.com/odoo-partners/easi-soft"
+    ]
+  },
+  {
+    "name": "Akineo",
+    "siren": "490097219",
+    "verified": true,
+    "website": "https://www.akineo.eu",
+    "city": "Mably",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "42300",
+    "department": "42",
+    "latitude": 46.0630914085656,
+    "longitude": 4.05160289744157,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo"
+    ],
+    "description": "Intégrateur Odoo à Roanne : déploiement, paramétrage et accompagnement des entreprises de la Loire.",
+    "regulated": false,
+    "sources": [
+      "https://www.akineo.eu/",
+      "https://erpresearch.com/odoo-partners/akineo"
+    ]
+  },
+  {
+    "name": "Symelia",
+    "siren": "537669475",
+    "verified": true,
+    "website": "https://www.symelia.fr",
+    "city": "Carquefou",
+    "region": "Pays de la Loire",
+    "postal_code": "44470",
+    "department": "44",
+    "latitude": 47.2686196769415,
+    "longitude": -1.48647780464609,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Microsoft Dynamics 365 Business Central",
+      "Power Platform"
+    ],
+    "description": "Intégrateur Microsoft Dynamics 365 (dont Business Central) et Power Platform pour la transformation numérique des entreprises.",
+    "regulated": false,
+    "sources": [
+      "https://www.symelia.fr/",
+      "https://www.erpresearch.com/dynamics-partners/symelia"
+    ]
+  },
+  {
+    "name": "CAP Vision",
+    "siren": "793600396",
+    "verified": true,
+    "website": "https://www.capvision.fr",
+    "city": "Rouffach",
+    "region": "Grand Est",
+    "postal_code": "68250",
+    "department": "68",
+    "latitude": 47.9620158144237,
+    "longitude": 7.31749076104233,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Microsoft Dynamics 365 Business Central"
+    ],
+    "description": "Spécialiste de l'intégration et du développement de l'ERP Microsoft Dynamics 365 Business Central, avec BI et applications mobiles.",
+    "regulated": false,
+    "sources": [
+      "https://www.capvision.fr/",
+      "https://www.erpresearch.com/dynamics-partners/cap-vision"
+    ]
+  },
+  {
+    "name": "Isatech",
+    "siren": "326862570",
+    "verified": true,
+    "website": "https://www.isatech.fr",
+    "city": "Vannes",
+    "region": "Bretagne",
+    "postal_code": "56000",
+    "department": "56",
+    "latitude": 47.642292711,
+    "longitude": -2.756669509,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Microsoft Dynamics 365"
+    ],
+    "description": "Partenaire Microsoft et intégrateur des solutions Dynamics 365 (ERP, CRM) depuis plus de 40 ans.",
+    "regulated": false,
+    "sources": [
+      "https://www.isatech.fr/",
+      "https://www.erpresearch.com/dynamics-partners/isatech"
+    ]
+  },
+  {
+    "name": "Opticod",
+    "siren": "878826395",
+    "verified": true,
+    "website": "https://opticod.fr",
+    "city": "Vendenheim",
+    "region": "Grand Est",
+    "postal_code": "67550",
+    "department": "67",
+    "latitude": 48.6716333233163,
+    "longitude": 7.70553276549763,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Microsoft Dynamics 365 Business Central"
+    ],
+    "description": "Entreprise de services numériques fondée en 2019, spécialisée dans l'informatisation des flux de gestion autour de Business Central.",
+    "regulated": false,
+    "sources": [
+      "https://opticod.fr/",
+      "https://agicap.com/fr/annuaire/opticod/"
+    ]
+  },
+  {
+    "name": "Opti-One",
+    "siren": "491681466",
+    "verified": true,
+    "website": "https://www.opti-one.fr",
+    "city": "Chartres",
+    "region": "Centre-Val de Loire",
+    "postal_code": "28000",
+    "department": "28",
+    "latitude": 48.44116583,
+    "longitude": 1.4888782223,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "SAP Business One"
+    ],
+    "description": "Intégrateur exclusivement dédié à l'ERP SAP Business One pour les PME-PMI, certifié SAP Gold Partner.",
+    "regulated": false,
+    "sources": [
+      "https://www.opti-one.fr/",
+      "https://foxeet.fr/centre-val-de-loire/eure-er-loir/opti-one-integrateur-sap-business-one-chartres-france"
+    ]
+  },
+  {
+    "name": "Agentil France",
+    "siren": "528246895",
+    "verified": true,
+    "website": "https://www.agentil.com",
+    "city": "Chambéry",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "73000",
+    "department": "73",
+    "latitude": 45.5813703868692,
+    "longitude": 5.91029825739741,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "SAP Business One"
+    ],
+    "description": "Partenaire SAP Gold en Suisse et en France : intégration, personnalisation, support et hébergement de solutions de gestion SAP.",
+    "regulated": false,
+    "sources": [
+      "https://www.agentil.com/",
+      "https://foxeet.fr/auvergne-rhone-alpes/savoie/agentil-france-integrateur-sap-business-one-73000-chambery"
+    ]
+  },
+  {
+    "name": "Cerealog",
+    "siren": "409736055",
+    "verified": true,
+    "website": "https://www.cerealog.fr",
+    "city": "La Rochelle",
+    "region": "Nouvelle-Aquitaine",
+    "postal_code": "17000",
+    "department": "17",
+    "latitude": 46.1486775990746,
+    "longitude": -1.15038333258872,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "SAP Business One",
+      "SAP Business ByDesign"
+    ],
+    "description": "Intégrateur de systèmes d'information pour PME, ETI et filiales de groupes, partenaire SAP sur Business One et ByDesign.",
+    "regulated": false,
+    "sources": [
+      "https://www.cerealog.fr/fr/cerealog-integrateur-de-plateformes-numeriques/",
+      "https://erpresearch.com/sap-partners/cerealog"
+    ]
+  },
+  {
+    "name": "Mercuria",
+    "siren": "424690626",
+    "verified": true,
+    "website": "https://www.mercuria.fr",
+    "city": "La Chapelle-sur-Erdre",
+    "region": "Pays de la Loire",
+    "postal_code": "44240",
+    "department": "44",
+    "latitude": 47.284258023,
+    "longitude": -1.548784743,
+    "offices": [
+      "Paris",
+      "Rouen",
+      "Strasbourg"
+    ],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Logiciels comptables et financiers",
+      "Trésorerie",
+      "Dématérialisation",
+      "Paie"
+    ],
+    "description": "Distributeur et intégrateur de progiciels comptables, financiers, SIRH, reporting et trésorerie pour PME et ETI.",
+    "regulated": false,
+    "sources": [
+      "https://www.mercuria.fr/",
+      "https://agicap.com/fr/partenaires/annuaire/"
+    ]
+  },
+  {
+    "name": "Parthena Consultant",
+    "siren": "379019482",
+    "verified": true,
+    "website": "https://www.parthena.com/fr/",
+    "city": "Boulogne-Billancourt",
+    "region": "Île-de-France",
+    "postal_code": "92100",
+    "department": "92",
+    "latitude": 48.834339628,
+    "longitude": 2.2566773458,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "Cegid",
+      "Silae"
+    ],
+    "description": "Intégrateur Sage, Cegid et Silae pour PME et ETI : conseil, intégration et formation en finance, paie et RH.",
+    "regulated": false,
+    "sources": [
+      "https://www.parthena.com/fr/",
+      "https://www.cegid.com/fr/partenaires-distributeurs/"
+    ]
+  },
+  {
+    "name": "Groupe Kardol",
+    "siren": "322376906",
+    "verified": true,
+    "website": "https://www.groupe-kardol.fr",
+    "city": "Saint-Cyr-au-Mont-d'Or",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "69450",
+    "department": "69",
+    "latitude": 45.813820576,
+    "longitude": 4.8273767022,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "SAP Business One",
+      "ERP"
+    ],
+    "description": "Groupe intégrateur de logiciels ERP qui accompagne les entreprises de toute taille dans leur transformation numérique.",
+    "regulated": false,
+    "sources": [
+      "https://www.groupe-kardol.fr/",
+      "https://www.sap.com/partners/profile/ert-integration"
+    ]
+  },
+  {
+    "name": "Alego Solutions",
+    "siren": "817453350",
+    "verified": true,
+    "website": "https://www.groupe-kardol.fr/alego-solutions",
+    "city": "Landerneau",
+    "region": "Bretagne",
+    "postal_code": "29800",
+    "department": "29",
+    "latitude": 48.457827967,
+    "longitude": -4.271793026,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage 100",
+      "Sage X3",
+      "Sage Paie & RH",
+      "BI"
+    ],
+    "description": "Filiale du Groupe Kardol dédiée à l'intégration des solutions Sage et de business intelligence en Bretagne.",
+    "regulated": false,
+    "sources": [
+      "https://www.groupe-kardol.fr/alego-solutions",
+      "https://www.erpresearch.com/sage-partners/alego-solutions"
+    ]
+  },
+  {
+    "name": "3C Experts",
+    "siren": null,
+    "verified": false,
+    "website": "https://3cexperts.fr",
+    "city": "Baillargues",
+    "region": "Occitanie",
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage 100"
+    ],
+    "description": "Revendeur, intégrateur et assistance sur les logiciels Sage (ligne 100) dans l'Hérault et le Gard.",
+    "regulated": false,
+    "sources": [
+      "https://3cexperts.fr/",
+      "https://www.erpresearch.com/sage-partners/3c-experts"
+    ]
+  },
+  {
+    "name": "A2F Conseils",
+    "siren": "527883367",
+    "verified": true,
+    "website": "https://www.a2fconseils.fr",
+    "city": "Massy",
+    "region": "Île-de-France",
+    "postal_code": "91300",
+    "department": "91",
+    "latitude": 48.7239812285622,
+    "longitude": 2.28535045250323,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage 100"
+    ],
+    "description": "Revendeur et intégrateur Sage 100 : comptabilité, paie et gestion commerciale pour entreprises de tous secteurs.",
+    "regulated": false,
+    "sources": [
+      "https://www.a2fconseils.fr/",
+      "https://www.erpresearch.com/sage-partners/a2f-conseils"
+    ]
+  },
+  {
+    "name": "ABS Groupe (Absams)",
+    "siren": "499503308",
+    "verified": true,
+    "website": "https://www.absams.com",
+    "city": "Bron",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "69500",
+    "department": "69",
+    "latitude": 45.7261194469851,
+    "longitude": 4.91404332186842,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "Odoo"
+    ],
+    "description": "Prestataire basé à Bron (informatique, téléphonie, logiciels de gestion), partenaire Sage et Odoo pour la métropole lyonnaise.",
+    "regulated": false,
+    "sources": [
+      "https://www.absams.com/",
+      "https://www.erpresearch.com/sage-partners/absams"
+    ]
+  },
+  {
+    "name": "Activ'IT",
+    "siren": "400470928",
+    "verified": true,
+    "website": "https://www.activit.fr",
+    "city": "Lisses",
+    "region": "Île-de-France",
+    "postal_code": "91090",
+    "department": "91",
+    "latitude": 48.609523794,
+    "longitude": 2.4293833222,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage 100"
+    ],
+    "description": "Revendeur et intégrateur Sage 100 : logiciels de paie, gestion commerciale et comptabilité pour les PME et PMI.",
+    "regulated": false,
+    "sources": [
+      "https://www.activit.fr/",
+      "https://www.erpresearch.com/sage-partners/activ-i-t"
+    ]
+  },
+  {
+    "name": "Actuelburo",
+    "siren": "307594325",
+    "verified": true,
+    "website": "https://www.actuelburo.fr",
+    "city": "Narrosse",
+    "region": "Nouvelle-Aquitaine",
+    "postal_code": "40180",
+    "department": "40",
+    "latitude": 43.6976081667614,
+    "longitude": -1.02356114932626,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "Logiciels de gestion"
+    ],
+    "description": "Prestataire informatique depuis 1976, déploie des solutions de gestion d'entreprise dans les Landes, le Pays basque et à Toulouse.",
+    "regulated": false,
+    "sources": [
+      "https://www.actuelburo.fr/",
+      "https://www.erpresearch.com/sage-partners/actuel-buro"
+    ]
+  },
+  {
+    "name": "ADW Concept & Gestion",
+    "siren": "392736336",
+    "verified": true,
+    "website": "https://www.adw.fr",
+    "city": "Strasbourg",
+    "region": "Grand Est",
+    "postal_code": "67200",
+    "department": "67",
+    "latitude": 48.5674352519928,
+    "longitude": 7.72877346550125,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage"
+    ],
+    "description": "Société alsacienne de près de 30 ans d'expérience en informatique, revendeur Sage dans le Grand Est.",
+    "regulated": false,
+    "sources": [
+      "https://www.adw.fr/",
+      "https://www.erpresearch.com/sage-partners/adw-concept-et-gestion"
+    ]
+  },
+  {
+    "name": "Aetia Informatique",
+    "siren": "482831732",
+    "verified": true,
+    "website": "https://www.aetia.fr",
+    "city": "Lorient",
+    "region": "Bretagne",
+    "postal_code": "56100",
+    "department": "56",
+    "latitude": 47.7329797788331,
+    "longitude": -3.37344841932397,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "ERP",
+      "CRM"
+    ],
+    "description": "Partenaire informatique de proximité à Lorient : matériel, réseaux et déploiement d'ERP et de CRM, dont Sage.",
+    "regulated": false,
+    "sources": [
+      "https://www.aetia.fr/",
+      "https://www.erpresearch.com/sage-partners/aetia-informatique"
+    ]
+  },
+  {
+    "name": "AFIGEC Informatique",
+    "siren": "382973139",
+    "verified": true,
+    "website": "https://afigec-informatique.fr",
+    "city": "Castres",
+    "region": "Occitanie",
+    "postal_code": "81100",
+    "department": "81",
+    "latitude": 43.618579521,
+    "longitude": 2.2343176493,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage"
+    ],
+    "description": "Intégrateur informatique à Castres : infrastructure, infogérance et intégration certifiée de logiciels de gestion Sage.",
+    "regulated": false,
+    "sources": [
+      "https://afigec-informatique.fr/",
+      "https://www.erpresearch.com/sage-partners/afigec"
+    ]
+  },
+  {
+    "name": "AJC Info",
+    "siren": "480276724",
+    "verified": true,
+    "website": "https://www.ajc-info.fr",
+    "city": "Belfort",
+    "region": "Bourgogne-Franche-Comté",
+    "postal_code": "90000",
+    "department": "90",
+    "latitude": 47.6444491612107,
+    "longitude": 6.84419154678291,
+    "offices": [
+      "Mulhouse",
+      "Besançon"
+    ],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage 100",
+      "Paie et RH"
+    ],
+    "description": "Accompagne les PME-PMI sur leur système informatique et les logiciels Sage (paie, comptabilité, gestion commerciale).",
+    "regulated": false,
+    "sources": [
+      "https://www.ajc-info.fr/",
+      "https://www.erpresearch.com/sage-partners/ajc-info"
+    ]
+  },
+  {
+    "name": "Alliances Informatique de Gestion (AIG)",
+    "siren": "418710935",
+    "verified": true,
+    "website": "https://aig.fr",
+    "city": "Vandœuvre-les-Nancy",
+    "region": "Grand Est",
+    "postal_code": "54500",
+    "department": "54",
+    "latitude": 48.656241023,
+    "longitude": 6.1285375474,
+    "offices": [
+      "Metz",
+      "Marcq-en-Barœul",
+      "Strasbourg",
+      "Bernolsheim"
+    ],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "ACD"
+    ],
+    "description": "Revendeur de solutions de gestion Sage et ACD dans le Grand Est : choix, déploiement et suivi, près de 1 500 clients.",
+    "regulated": false,
+    "sources": [
+      "https://aig.fr/",
+      "https://www.erpresearch.com/sage-partners/alliances-informatique-de-gestio"
+    ]
+  },
+  {
+    "name": "Almeria",
+    "siren": "333047603",
+    "verified": true,
+    "website": "https://www.almeria.fr",
+    "city": "Le Bignon",
+    "region": "Pays de la Loire",
+    "postal_code": "44140",
+    "department": "44",
+    "latitude": 47.1243967867575,
+    "longitude": -1.50922087874377,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "Silae",
+      "EBP",
+      "Pennylane"
+    ],
+    "description": "Prestataire informatique et intégrateur de logiciels de gestion (Sage, Silae, EBP, Pennylane) pour entreprises de l'Ouest.",
+    "regulated": false,
+    "sources": [
+      "https://www.almeria.fr/",
+      "https://www.erpresearch.com/sage-partners/almeria-solutions-informatiques"
+    ]
+  },
+  {
+    "name": "Altaïs",
+    "siren": "404751646",
+    "verified": true,
+    "website": "https://www.altais.fr",
+    "city": "Orléans",
+    "region": "Centre-Val de Loire",
+    "postal_code": "45000",
+    "department": "45",
+    "latitude": 47.9139171423836,
+    "longitude": 1.92534794981775,
+    "offices": [
+      "Paris",
+      "Tours"
+    ],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "EBP",
+      "Odoo",
+      "Zoho",
+      "Pennylane"
+    ],
+    "description": "Intégrateur Sage Platinum, Zoho, EBP, Odoo et Pennylane depuis 1996 : ERP, CRM, paie et facture électronique.",
+    "regulated": false,
+    "sources": [
+      "https://www.altais.fr/",
+      "https://www.erpresearch.com/sage-partners/altais"
+    ]
+  },
+  {
+    "name": "Altanis",
+    "siren": "403623291",
+    "verified": true,
+    "website": "https://altanis.fr",
+    "city": "Marly",
+    "region": "Grand Est",
+    "postal_code": "57155",
+    "department": "57",
+    "latitude": 49.072912724,
+    "longitude": 6.1452830017,
+    "offices": [],
+    "coverage": "régional",
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage"
+    ],
+    "description": "Partenaire régional agréé Sage depuis 1996 pour le nord-est de la France, la Belgique et le Luxembourg.",
+    "regulated": false,
+    "sources": [
+      "https://altanis.fr/",
+      "https://www.erpresearch.com/sage-partners/altanis-informatique"
+    ]
+  },
+  {
+    "name": "Altarem",
+    "siren": "530296680",
+    "verified": true,
+    "website": "https://www.altarem.fr",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75015",
+    "department": "75",
+    "latitude": 48.836878694,
+    "longitude": 2.2811084386,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "Trésorerie"
+    ],
+    "description": "Partenaire Sage à Paris : mise en place, formation et assistance sur les logiciels de gestion, comptabilité et trésorerie.",
+    "regulated": false,
+    "sources": [
+      "https://www.altarem.fr/",
+      "https://www.erpresearch.com/sage-partners/altarem"
+    ]
+  },
+  {
+    "name": "Amplitude Informatique",
+    "siren": "411072606",
+    "verified": true,
+    "website": "https://www.amplitude-informatique.fr",
+    "city": "Feillens",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "01570",
+    "department": "01",
+    "latitude": 46.325769301,
+    "longitude": 4.8929118045,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage 100",
+      "Sage Paie"
+    ],
+    "description": "Revendeur Sage (Sage 30, Sage 100, Sage Paie) près de Mâcon : formations, matériel, maintenance et infogérance.",
+    "regulated": false,
+    "sources": [
+      "https://www.amplitude-informatique.fr/",
+      "https://www.erpresearch.com/sage-partners/amplitude-informatique"
+    ]
+  },
+  {
+    "name": "Arium Consulting",
+    "siren": "481895407",
+    "verified": true,
+    "website": "https://www.arium-consulting.fr",
+    "city": "Beauvais",
+    "region": "Hauts-de-France",
+    "postal_code": "60000",
+    "department": "60",
+    "latitude": 49.4387321392062,
+    "longitude": 2.10757886596951,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "Cegid",
+      "EBP",
+      "Silae"
+    ],
+    "description": "Intégrateur de solutions de gestion (paie et RH, gestion commerciale, ERP), partenaire Sage, Cegid, EBP et Silae.",
+    "regulated": false,
+    "sources": [
+      "https://www.arium-consulting.fr/",
+      "https://www.erpresearch.com/sage-partners/arium-consulting"
+    ]
+  },
+  {
+    "name": "AXE Informatique",
+    "siren": "350066007",
+    "verified": true,
+    "website": "https://www.axeinfo.fr",
+    "city": "Grenoble",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "38000",
+    "department": "38",
+    "latitude": 45.1866604337229,
+    "longitude": 5.72413898064743,
+    "offices": [
+      "Aix-en-Provence",
+      "Aix-les-Bains",
+      "Besançon",
+      "Chalon-sur-Saône",
+      "Dijon",
+      "Lyon",
+      "Montpellier",
+      "Paris",
+      "Saint-Étienne",
+      "Toulouse",
+      "Valence"
+    ],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage 100",
+      "Sage FRP 1000",
+      "Sage Paie & RH"
+    ],
+    "description": "Revendeur et intégrateur de logiciels de gestion Sage et de solutions d'infrastructure, avec plusieurs agences en France.",
+    "regulated": false,
+    "sources": [
+      "https://www.axeinfo.fr/",
+      "https://www.erpresearch.com/sage-partners/axe-informatique-mediterrannee"
+    ]
+  },
+  {
+    "name": "Axel Gestion",
+    "siren": "402005854",
+    "verified": true,
+    "website": "https://www.axelgestion.com",
+    "city": "Lissieu",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "69380",
+    "department": "69",
+    "latitude": 45.8409014688239,
+    "longitude": 4.7351117764344,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "Cegid",
+      "Finance",
+      "Fiscalité"
+    ],
+    "description": "Partenaire de Sage et de Cegid, propose une offre autour du pôle finance et fiscalité pour les entreprises.",
+    "regulated": false,
+    "sources": [
+      "https://www.axelgestion.com/",
+      "https://www.erpresearch.com/sage-partners/axel-gestion"
+    ]
+  },
+  {
+    "name": "Axial",
+    "siren": "398143354",
+    "verified": true,
+    "website": "https://axial-bat.com",
+    "city": "Brignais",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "69530",
+    "department": "69",
+    "latitude": 45.68876044,
+    "longitude": 4.7674458057,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "Optim'BTP",
+      "Zeendoc"
+    ],
+    "description": "Intégrateur de solutions de gestion dédié au bâtiment depuis plus de 30 ans (Sage, Optim'BTP, Zeendoc).",
+    "regulated": false,
+    "sources": [
+      "https://axial-bat.com/",
+      "https://www.erpresearch.com/sage-partners/axial"
+    ]
+  },
+  {
+    "name": "Azur Gestion Informatique (OptimalSI)",
+    "siren": "791040694",
+    "verified": true,
+    "website": "https://www.optimalsi.fr",
+    "city": "Manosque",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "postal_code": "04100",
+    "department": "04",
+    "latitude": 43.8301839269267,
+    "longitude": 5.79710953615289,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "EBP",
+      "Codial",
+      "Wavesoft"
+    ],
+    "description": "Installation, assistance et cloud pour logiciels de gestion et de comptabilité (Sage, EBP, Codial, Wavesoft) en Provence.",
+    "regulated": false,
+    "sources": [
+      "https://www.optimalsi.fr/",
+      "https://www.erpresearch.com/sage-partners/azur-gestion-informatique"
+    ]
+  },
+  {
+    "name": "Armor Informatique",
+    "siren": null,
+    "verified": false,
+    "website": "https://www.armor-info.bzh",
+    "city": "Ergué-Gabéric",
+    "region": "Bretagne",
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "EBP",
+      "Sage"
+    ],
+    "description": "Partenaire agréé EBP et Sage depuis 1993 : installation, formation et assistance sur site autour de Quimper.",
+    "regulated": false,
+    "sources": [
+      "https://www.armor-info.bzh/",
+      "https://www.erpresearch.com/sage-partners/bbi-armor-informatique"
+    ]
+  },
+  {
+    "name": "BLC Conseil",
+    "siren": "802917021",
+    "verified": true,
+    "website": "https://blc-conseil.com",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75009",
+    "department": "75",
+    "latitude": 48.875926444,
+    "longitude": 2.3280219662,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage 100",
+      "Sage Intacct",
+      "Pipedrive"
+    ],
+    "description": "Revendeur et intégrateur de CRM et de logiciels de gestion (Sage 100, Sage Intacct, Pipedrive) basé à Paris.",
+    "regulated": false,
+    "sources": [
+      "https://blc-conseil.com/",
+      "https://www.erpresearch.com/sage-partners/blc-conseil",
+      "https://agicap.com/fr/partenaires/annuaire/"
+    ]
+  },
+  {
+    "name": "BMSC",
+    "siren": "792355794",
+    "verified": true,
+    "website": "https://www.bmsc.fr",
+    "city": "Créteil",
+    "region": "Île-de-France",
+    "postal_code": "94000",
+    "department": "94",
+    "latitude": 48.7655189615095,
+    "longitude": 2.46797546955094,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage"
+    ],
+    "description": "Centre de compétences Sage spécialisé PME, avec le plus haut niveau d'agrément CCS, de la TPE à la grande entreprise.",
+    "regulated": false,
+    "sources": [
+      "https://www.bmsc.fr/",
+      "https://www.erpresearch.com/sage-partners/bmsc"
+    ]
+  },
+  {
+    "name": "ADN Software (O'Ceels)",
+    "siren": null,
+    "verified": false,
+    "website": "https://www.adn-software.com",
+    "city": "Meyreuil",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage 50",
+      "Sage 100",
+      "Génération Experts"
+    ],
+    "description": "Revendeur et intégrateur de logiciels de gestion Sage 50, Sage 100 et Génération Experts près d'Aix-en-Provence.",
+    "regulated": false,
+    "sources": [
+      "https://www.adn-software.com/",
+      "https://www.erpresearch.com/sage-partners/o-ceels"
+    ]
+  },
+  {
+    "name": "YAD Informatique",
+    "siren": "418188017",
+    "verified": true,
+    "website": "https://www.yad.fr",
+    "city": "Villeurbanne",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "69100",
+    "department": "69",
+    "latitude": 45.76675411,
+    "longitude": 4.8758167293,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage 100"
+    ],
+    "description": "Revendeur et intégrateur Sage dans la région lyonnaise : mise en place, formation, assistance et modules complémentaires.",
+    "regulated": false,
+    "sources": [
+      "https://www.yad.fr/",
+      "https://www.erpresearch.com/sage-partners/yad-informatique"
+    ]
+  },
+  {
+    "name": "Onysos",
+    "siren": "752800052",
+    "verified": true,
+    "website": "https://www.onysos.fr",
+    "city": "Villefranche-sur-Saône",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "69400",
+    "department": "69",
+    "latitude": 45.990856653,
+    "longitude": 4.7377233197,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage 100",
+      "Logiciels de gestion"
+    ],
+    "description": "Depuis plus de 30 ans, met en place logiciels de gestion et infrastructure pour piloter l'activité financière des entreprises.",
+    "regulated": false,
+    "sources": [
+      "https://www.onysos.fr/",
+      "https://www.erpresearch.com/sage-partners/onysos"
+    ]
+  },
+  {
+    "name": "Groupe Grafe",
+    "siren": "422388223",
+    "verified": true,
+    "website": "https://www.grafe.fr",
+    "city": "Haute-Goulaine",
+    "region": "Pays de la Loire",
+    "postal_code": "44115",
+    "department": "44",
+    "latitude": 47.1832255616732,
+    "longitude": -1.42296264942109,
+    "offices": [
+      "Rennes",
+      "Saint-Gilles-Croix-de-Vie",
+      "Mayenne",
+      "Le Mans"
+    ],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "Silae",
+      "EBP"
+    ],
+    "description": "Conseille et accompagne les PME et ETI dans la mise en place de solutions de gestion, intégrateur certifié Sage, Silae et EBP.",
+    "regulated": false,
+    "sources": [
+      "https://www.grafe.fr/",
+      "https://foxeet.fr/pays-de-la-loire/loire-atlantique/grafe-44115"
+    ]
+  },
+  {
+    "name": "extremIT",
+    "siren": "432551810",
+    "verified": true,
+    "website": "https://www.extremit.fr",
+    "city": "Villeneuve-d'Ascq",
+    "region": "Hauts-de-France",
+    "postal_code": "59650",
+    "department": "59",
+    "latitude": 50.647854245,
+    "longitude": 3.148643478,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Sage",
+      "Cegid"
+    ],
+    "description": "PME multi-spécialiste en informatique des Hauts-de-France, intégratrice des logiciels Sage et Cegid.",
+    "regulated": false,
+    "sources": [
+      "https://www.extremit.fr/",
+      "https://www.cegid.com/fr/partenaires-distributeurs/"
+    ]
+  },
+  {
+    "name": "A3C Informatique",
+    "siren": "790450779",
+    "verified": true,
+    "website": "https://www.a3c-informatique.fr",
+    "city": "Saint-Avé",
+    "region": "Bretagne",
+    "postal_code": "56890",
+    "department": "56",
+    "latitude": 47.681049002,
+    "longitude": -2.739467038,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid"
+    ],
+    "description": "Société d'informatique de gestion à Vannes (Morbihan), référencée parmi les partenaires distributeurs de Cegid.",
+    "regulated": false,
+    "sources": [
+      "https://www.a3c-informatique.fr/",
+      "https://www.cegid.com/fr/partenaires-distributeurs/"
+    ]
+  },
+  {
+    "name": "SIBAP",
+    "siren": "424462778",
+    "verified": true,
+    "website": "https://sibap.fr",
+    "city": "Les Herbiers",
+    "region": "Pays de la Loire",
+    "postal_code": "85500",
+    "department": "85",
+    "latitude": 46.859471993,
+    "longitude": -1.034177017,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "EBP",
+      "Sage"
+    ],
+    "description": "Matériel informatique et logiciels de gestion aux Herbiers : installation, maintenance et accompagnement.",
+    "regulated": false,
+    "sources": [
+      "https://sibap.fr/"
+    ]
+  },
+  {
+    "name": "Finasens",
+    "siren": "838403285",
+    "verified": true,
+    "website": "https://www.finasens.com",
+    "city": "Marseille",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "postal_code": "13002",
+    "department": "13",
+    "latitude": 43.3067074254137,
+    "longitude": 5.36817810050661,
+    "offices": [
+      "Paris",
+      "Lyon",
+      "Nantes",
+      "Strasbourg",
+      "Bordeaux"
+    ],
+    "coverage": null,
+    "categories": [
+      "conseil-tresorerie"
+    ],
+    "specialties": [
+      "DAF externalisé",
+      "Prévisions de trésorerie",
+      "Contrôle de gestion",
+      "Agicap"
+    ],
+    "description": "Cabinet de conseil en direction financière externalisée des ETI et PME : pilotage, contrôle de gestion et sécurisation de la trésorerie.",
+    "regulated": false,
+    "sources": [
+      "https://www.finasens.com/",
+      "https://agicap.com/fr/annuaire/finasens/"
+    ]
+  },
+  {
+    "name": "Augea",
+    "siren": "933211807",
+    "verified": true,
+    "website": "https://augea.fr",
+    "city": "Vandeins",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "01660",
+    "department": "01",
+    "latitude": 46.2016212672072,
+    "longitude": 5.0871896461158,
+    "offices": [],
+    "coverage": "national",
+    "categories": [
+      "conseil-tresorerie"
+    ],
+    "specialties": [
+      "Agicap",
+      "Plan de trésorerie",
+      "Connexions bancaires"
+    ],
+    "description": "Intégrateur Agicap certifié à Lyon : connexion des banques et de l'ERP et construction du plan de trésorerie pour PME et ETI.",
+    "regulated": false,
+    "sources": [
+      "https://augea.fr/",
+      "https://agicap.com/fr/annuaire/augea/"
+    ]
+  },
+  {
+    "name": "Copilotys",
+    "siren": "919504829",
+    "verified": true,
+    "website": "https://copilotys.fr",
+    "city": "Boulogne-Billancourt",
+    "region": "Île-de-France",
+    "postal_code": "92100",
+    "department": "92",
+    "latitude": 48.8316796610204,
+    "longitude": 2.2305589806507,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "conseil-tresorerie"
+    ],
+    "specialties": [
+      "DAF externalisé",
+      "Trésorerie",
+      "Pilotage"
+    ],
+    "description": "Cabinet de DAF externalisé à temps partagé pour PME : trésorerie, pilotage, budgets et prévisionnels.",
+    "regulated": false,
+    "sources": [
+      "https://copilotys.fr/",
+      "https://agicap.com/fr/annuaire/copilotys/"
+    ]
+  },
+  {
+    "name": "Bras Droit des Dirigeants",
+    "siren": "533861126",
+    "verified": true,
+    "website": "https://www.brasdroitdesdirigeants.com",
+    "city": "Avignon",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "postal_code": "84000",
+    "department": "84",
+    "latitude": 43.9468790252675,
+    "longitude": 4.80565432746719,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "conseil-tresorerie"
+    ],
+    "specialties": [
+      "DAF à temps partagé",
+      "Cadres externalisés"
+    ],
+    "description": "Réseau de cadres externalisés à temps partagé, dont des directeurs financiers, pour les dirigeants de TPE, PME et ETI.",
+    "regulated": false,
+    "sources": [
+      "https://www.brasdroitdesdirigeants.com/",
+      "https://www.xerfi.com/presentationetude/Le-marche-des-DAF-externalises_SAE108"
+    ]
+  },
+  {
+    "name": "2CFinance",
+    "siren": null,
+    "verified": false,
+    "website": "https://www.2cfinance.net",
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "conseil-tresorerie"
+    ],
+    "specialties": [
+      "DAF à temps partagé",
+      "Transaction services"
+    ],
+    "description": "Cabinet de conseil financier opérationnel : directeur financier à temps partagé ou de transition, et accompagnement des opérations.",
+    "regulated": false,
+    "sources": [
+      "https://www.2cfinance.net/",
+      "https://www.xerfi.com/presentationetude/Le-marche-des-DAF-externalises_SAE108"
+    ]
+  },
+  {
+    "name": "Baker Tilly France",
+    "siren": null,
+    "verified": false,
+    "website": "https://www.bakertilly.fr",
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "conseil-tresorerie"
+    ],
+    "specialties": [
+      "Audit",
+      "Expertise comptable",
+      "Pilotage de trésorerie"
+    ],
+    "description": "Cabinet d'audit, d'expertise comptable et de conseil qui relie données comptables et pilotage de trésorerie, partenaire Agicap.",
+    "regulated": false,
+    "sources": [
+      "https://www.bakertilly.fr/",
+      "https://agicap.com/fr/annuaire/baker-tilly/"
+    ]
+  },
+  {
+    "name": "BDO France",
+    "siren": "500492004",
+    "verified": true,
+    "website": "https://www.bdo.fr/fr-fr/accueil",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75009",
+    "department": "75",
+    "latitude": 48.8764741582911,
+    "longitude": 2.34412713754065,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "conseil-tresorerie"
+    ],
+    "specialties": [
+      "Trésorerie et cash management",
+      "Liquidité"
+    ],
+    "description": "Cabinet d'audit, d'expertise comptable et de conseil disposant d'une équipe dédiée à la trésorerie et au cash management.",
+    "regulated": false,
+    "sources": [
+      "https://www.bdo.fr/fr-fr/accueil",
+      "https://www.welcometothejungle.com/en/companies/bdo-france-corporate-finance/jobs/consultant-senior-tresorerie-cash-management-f-h_paris_BF_rz0a8Xd"
+    ]
+  },
+  {
+    "name": "KPMG France",
+    "siren": "775726417",
+    "verified": true,
+    "website": "https://kpmg.com/fr/fr.html",
+    "city": "Courbevoie",
+    "region": "Île-de-France",
+    "postal_code": "92400",
+    "department": "92",
+    "latitude": 48.892237787,
+    "longitude": 2.2463330807,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "conseil-tresorerie"
+    ],
+    "specialties": [
+      "Trésorerie",
+      "Outil de pilotage de trésorerie"
+    ],
+    "description": "Cabinet d'audit et de conseil proposant notamment une offre de pilotage de trésorerie destinée aux PME et ETI.",
+    "regulated": false,
+    "sources": [
+      "https://kpmg.com/fr/fr.html",
+      "https://home.kpmg.com/content/dam/kpmg/fr/pdf/2022/11/fr-kpmg-pilot-treasury.pdf"
+    ]
+  },
+  {
+    "name": "Cosma Experts",
+    "siren": "791984487",
+    "verified": true,
+    "website": "https://cosma-experts.fr",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75007",
+    "department": "75",
+    "latitude": 48.852171903,
+    "longitude": 2.3126975772,
+    "offices": [],
+    "coverage": "national",
+    "categories": [
+      "cabinets-reduction-couts"
+    ],
+    "specialties": [
+      "Réduction des coûts",
+      "Rémunération au succès"
+    ],
+    "description": "Réseau de consultants proposant, partout en France, l'optimisation des coûts de fonctionnement des PME et grands comptes.",
+    "regulated": false,
+    "sources": [
+      "https://cosma-experts.fr/",
+      "https://www.optionfinance.fr/dossiers-de-la-redaction/cosma-experts-specialiste-de-la-reduction-des-couts-de-fonctionnement.html"
+    ]
+  },
+  {
+    "name": "Leyton",
+    "siren": "504868399",
+    "verified": true,
+    "website": "https://leyton.com/fr",
+    "city": "Issy-les-Moulineaux",
+    "region": "Île-de-France",
+    "postal_code": "92130",
+    "department": "92",
+    "latitude": 48.8225713800445,
+    "longitude": 2.26162828787134,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "cabinets-reduction-couts"
+    ],
+    "specialties": [
+      "Charges sociales",
+      "Fiscalité",
+      "Achats",
+      "Financement de l'innovation"
+    ],
+    "description": "Cabinet de conseil en performance financière et sociale (charges sociales, fiscalité, achats), rémunéré au succès sur les économies.",
+    "regulated": false,
+    "sources": [
+      "https://leyton.com/fr/",
+      "https://leyton.com/fr/?p=266"
+    ]
+  },
+  {
+    "name": "Ayming",
+    "siren": "414119735",
+    "verified": true,
+    "website": "https://www.ayming.fr",
+    "city": "Levallois-Perret",
+    "region": "Île-de-France",
+    "postal_code": "92300",
+    "department": "92",
+    "latitude": 48.8937240004629,
+    "longitude": 2.27857007020389,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "cabinets-reduction-couts"
+    ],
+    "specialties": [
+      "Finance & Taxes",
+      "RH",
+      "Financement de l'innovation"
+    ],
+    "description": "Cabinet de conseil en performance d'entreprise : financement de l'innovation, RH, finance et taxes, depuis plus de 40 ans.",
+    "regulated": false,
+    "sources": [
+      "https://www.ayming.fr/",
+      "https://www.hellopro.fr/ayming-229434-profil-fr-societe.html"
+    ]
+  },
+  {
+    "name": "Cristal Décisions",
+    "siren": "435271069",
+    "verified": true,
+    "website": "https://cristal-decisions.com",
+    "city": "Boulogne-Billancourt",
+    "region": "Île-de-France",
+    "postal_code": "92100",
+    "department": "92",
+    "latitude": 48.8340865540248,
+    "longitude": 2.22723334894107,
+    "offices": [
+      "Paris",
+      "Lille",
+      "Lyon",
+      "Aix-en-Provence",
+      "Rennes"
+    ],
+    "coverage": null,
+    "categories": [
+      "cabinets-reduction-couts"
+    ],
+    "specialties": [
+      "Achats indirects",
+      "Énergie",
+      "Télécoms"
+    ],
+    "description": "Cabinet de conseil opérationnel en achats indirects : optimisation et rationalisation des dépenses (énergie, télécoms, fluides).",
+    "regulated": false,
+    "sources": [
+      "https://cristal-decisions.com/"
+    ]
+  },
+  {
+    "name": "Réseau Analysts",
+    "siren": "810538827",
+    "verified": true,
+    "website": "https://analysts.fr",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75016",
+    "department": "75",
+    "latitude": 48.843441655,
+    "longitude": 2.2638464365,
+    "offices": [],
+    "coverage": "national",
+    "categories": [
+      "cabinets-reduction-couts"
+    ],
+    "specialties": [
+      "Optimisation des charges",
+      "Rémunération au succès"
+    ],
+    "description": "Réseau national d'experts en recherche d'économies, rémunéré en fonction des économies réalisées.",
+    "regulated": false,
+    "sources": [
+      "https://analysts.fr/",
+      "https://www.toute-la-franchise.com/franchise/analysts"
+    ]
+  },
+  {
+    "name": "Efficio",
+    "siren": null,
+    "verified": false,
+    "website": "https://www.efficioconsulting.com/fr",
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "cabinets-reduction-couts"
+    ],
+    "specialties": [
+      "Achats",
+      "Supply chain"
+    ],
+    "description": "Cabinet international de conseil en achats et supply chain qui identifie et réalise des économies pour ses clients.",
+    "regulated": false,
+    "sources": [
+      "https://www.efficioconsulting.com/fr/"
+    ]
+  },
+  {
+    "name": "Intrum",
+    "siren": "797546769",
+    "verified": true,
+    "website": "https://www.intrum.fr",
+    "city": "Rueil-Malmaison",
+    "region": "Île-de-France",
+    "postal_code": "92500",
+    "department": "92",
+    "latitude": 48.8860606901102,
+    "longitude": 2.1714297190867,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "societes-recouvrement"
+    ],
+    "specialties": [
+      "Recouvrement amiable",
+      "Gestion de créances"
+    ],
+    "description": "Société de recouvrement de créances pour le compte d'entreprises, en France et à l'international.",
+    "regulated": true,
+    "sources": [
+      "https://www.intrum.fr/",
+      "https://www.plateya.fr/blog/detail/cabinets-de-recouvrement-de-creances-guide-complet-2026-plateya"
+    ]
+  },
+  {
+    "name": "EOS France",
+    "siren": "488825217",
+    "verified": true,
+    "website": "https://fr.eos-solutions.com",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75015",
+    "department": "75",
+    "latitude": 48.853125735,
+    "longitude": 2.2963839787,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "societes-recouvrement"
+    ],
+    "specialties": [
+      "Recouvrement amiable",
+      "Gestion de créances"
+    ],
+    "description": "Société de gestion et de recouvrement de créances proposant des solutions aux entreprises créancières.",
+    "regulated": true,
+    "sources": [
+      "https://fr.eos-solutions.com/"
+    ]
+  },
+  {
+    "name": "Gestion Crédit Expert",
+    "siren": "302592431",
+    "verified": true,
+    "website": "https://www.gestioncreditexpert.com",
+    "city": "Toulouse",
+    "region": "Occitanie",
+    "postal_code": "31000",
+    "department": "31",
+    "latitude": 43.5955157246542,
+    "longitude": 1.44090306310117,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "societes-recouvrement"
+    ],
+    "specialties": [
+      "Recouvrement B2B",
+      "International"
+    ],
+    "description": "Société de recouvrement pour PME et grands groupes : relances, encaissements et réduction des impayés.",
+    "regulated": true,
+    "sources": [
+      "https://www.gestioncreditexpert.com/",
+      "https://www.plateya.fr/blog/detail/cabinets-de-recouvrement-de-creances-guide-complet-2026-plateya"
+    ]
+  },
+  {
+    "name": "Cabinet ARC",
+    "siren": "350300117",
+    "verified": true,
+    "website": "https://www.cabinet-arc.fr",
+    "city": "Boulogne-Billancourt",
+    "region": "Île-de-France",
+    "postal_code": "92100",
+    "department": "92",
+    "latitude": 48.834262668,
+    "longitude": 2.2446373368,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "societes-recouvrement"
+    ],
+    "specialties": [
+      "Recouvrement amiable",
+      "Gestion du poste clients"
+    ],
+    "description": "Cabinet de recouvrement de créances amiable et de gestion du poste clients depuis plus de 30 ans.",
+    "regulated": true,
+    "sources": [
+      "https://www.cabinet-arc.fr/",
+      "https://www.plateya.fr/blog/detail/cabinets-de-recouvrement-de-creances-guide-complet-2026-plateya"
+    ]
+  },
+  {
+    "name": "Reactia Recouvrement",
+    "siren": "808240139",
+    "verified": true,
+    "website": "https://www.reactia.fr",
+    "city": "Le Bignon",
+    "region": "Pays de la Loire",
+    "postal_code": "44140",
+    "department": "44",
+    "latitude": 47.1242019457902,
+    "longitude": -1.5093610399512,
+    "offices": [],
+    "coverage": "national",
+    "categories": [
+      "societes-recouvrement"
+    ],
+    "specialties": [
+      "Recouvrement B2B",
+      "Poste clients"
+    ],
+    "description": "Société de recouvrement de créances active partout en France, au service des professionnels et de leur poste clients.",
+    "regulated": true,
+    "sources": [
+      "https://www.reactia.fr/",
+      "https://www.plateya.fr/blog/detail/cabinets-de-recouvrement-de-creances-guide-complet-2026-plateya"
+    ]
+  },
+  {
+    "name": "Agir Recouvrement",
+    "siren": "389792052",
+    "verified": true,
+    "website": "https://www.agir-recouvrement.com",
+    "city": "Cholet",
+    "region": "Pays de la Loire",
+    "postal_code": "49300",
+    "department": "49",
+    "latitude": 47.078351323,
+    "longitude": -0.828683354,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "societes-recouvrement"
+    ],
+    "specialties": [
+      "Créances commerciales",
+      "International"
+    ],
+    "description": "Recouvrement des créances commerciales des entreprises, en France et à l'international, depuis Cholet.",
+    "regulated": true,
+    "sources": [
+      "https://www.agir-recouvrement.com/"
+    ]
+  },
+  {
+    "name": "Filaction",
+    "siren": "402386429",
+    "verified": true,
+    "website": "https://www.filaction.fr",
+    "city": "Nantes",
+    "region": "Pays de la Loire",
+    "postal_code": "44300",
+    "department": "44",
+    "latitude": 47.240501378,
+    "longitude": -1.531674466,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "societes-recouvrement"
+    ],
+    "specialties": [
+      "Recouvrement amiable",
+      "BtoB et BtoC"
+    ],
+    "description": "Recouvrement de créances et factures impayées pour entreprises de toute taille, que les débiteurs soient professionnels ou particuliers.",
+    "regulated": true,
+    "sources": [
+      "https://www.filaction.fr/fr/index.html"
+    ]
+  },
+  {
+    "name": "Cabinet Safir",
+    "siren": "385211669",
+    "verified": true,
+    "website": "https://www.cabinetsafir.com",
+    "city": "Issy-les-Moulineaux",
+    "region": "Île-de-France",
+    "postal_code": "92130",
+    "department": "92",
+    "latitude": 48.822518323,
+    "longitude": 2.2739824178,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "societes-recouvrement"
+    ],
+    "specialties": [
+      "Gestion du poste clients",
+      "Recouvrement amiable"
+    ],
+    "description": "Société de gestion du poste clients et de recouvrement amiable de créances, installée à Issy-les-Moulineaux.",
+    "regulated": true,
+    "sources": [
+      "https://www.cabinetsafir.com/",
+      "https://www.companeo.com/fiche_info/cabinet-safir"
+    ]
+  },
+  {
+    "name": "Recocash",
+    "siren": "479974115",
+    "verified": true,
+    "website": "https://www.recocash.com",
+    "city": "Gazeran",
+    "region": "Île-de-France",
+    "postal_code": "78125",
+    "department": "78",
+    "latitude": 48.62242013772,
+    "longitude": 1.82513765170928,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "societes-recouvrement"
+    ],
+    "specialties": [
+      "Recouvrement de créances"
+    ],
+    "description": "Société de recouvrement de créances proposant des solutions aux entreprises créancières.",
+    "regulated": true,
+    "sources": [
+      "https://www.recocash.com/"
+    ]
+  },
+  {
+    "name": "Gestion 411",
+    "siren": "500866603",
+    "verified": true,
+    "website": "https://www.gestion411.com",
+    "city": "Roanne",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "42300",
+    "department": "42",
+    "latitude": 46.044621699,
+    "longitude": 4.0738748399,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "societes-recouvrement"
+    ],
+    "specialties": [
+      "Credit management",
+      "Recouvrement",
+      "Litiges clients"
+    ],
+    "description": "Services et conseils en credit management : accélération des encaissements, réduction des litiges et sécurisation du poste clients.",
+    "regulated": true,
+    "sources": [
+      "https://www.gestion411.com/"
+    ]
+  }
+]

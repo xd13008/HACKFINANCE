@@ -73,7 +73,9 @@ supabase/
                 scripts/refs-to-sql.py depuis docs/seo/referencement/*.json + produits de l'API G2),
                 correspondance G2 de 282 logiciels via l'API G2 v2 (data/85 : identifiant, lien, note, nombre d'avis en brouillon),
                 770 faits et 159 offres relevés sur les sites officiels (data/90, scripts/facts-to-sql.py : facturation électronique,
-                notes de frais, factures fournisseurs ; statut DGFiP des 163 plateformes agréées), en brouillon avec citation
+                notes de frais, factures fournisseurs ; statut DGFiP des 163 plateformes agréées), en brouillon avec citation,
+                161 cabinets et prestataires (data/95, scripts/providers-to-sql.py depuis docs/seo/prestataires/*.json :
+                personnes morales seulement, SIREN vérifié au registre public, localisation du siège), en brouillon
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/

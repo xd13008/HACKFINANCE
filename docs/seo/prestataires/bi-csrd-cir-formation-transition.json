@@ -1,0 +1,1914 @@
+[
+ {
+  "name": "Valtus",
+  "siren": "442223269",
+  "verified": true,
+  "website": "https://www.valtus.fr",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75008",
+  "department": "75",
+  "latitude": 48.872608089,
+  "longitude": 2.3039162085,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition",
+   "direction générale",
+   "direction financière"
+  ],
+  "description": "Cabinet de management de transition : mise à disposition de managers expérimentés pour piloter la transformation des entreprises, en France et en Europe.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.valtus.fr",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "X-PM",
+  "siren": "439746900",
+  "verified": true,
+  "website": "https://www.x-pm.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75001",
+  "department": "75",
+  "latitude": 48.864360579,
+  "longitude": 2.3344505836,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition"
+  ],
+  "description": "Cabinet de management de transition qui sélectionne managers et dirigeants pour des missions en France et à l'international ; la marque évolue vers Alixio Talent.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.x-pm.com",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "Wayden",
+  "siren": "800565525",
+  "verified": true,
+  "website": "https://www.wayden.fr",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75008",
+  "department": "75",
+  "latitude": 48.871186926,
+  "longitude": 2.3056623904,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition",
+   "gestion de crise",
+   "remplacement de dirigeant"
+  ],
+  "description": "Cabinet qui mobilise des managers de transition expérimentés pour piloter transformations, situations de crise et remplacements de dirigeants.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.wayden.fr",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "Reactive Executive",
+  "siren": "788446888",
+  "verified": true,
+  "website": "https://www.reactive-executive.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75008",
+  "department": "75",
+  "latitude": 48.872450003,
+  "longitude": 2.3003561516,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition",
+   "DAF de transition",
+   "consolidation",
+   "contrôle financier"
+  ],
+  "description": "Cabinet de management de transition fondé en 2012, qui présente des managers sous 48 h, y compris pour les fonctions finance (DAF, contrôle financier, consolidation).",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.reactive-executive.com",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "Delville Management",
+  "siren": "524000056",
+  "verified": true,
+  "website": "https://www.delville-management.com",
+  "city": "NEUILLY-SUR-SEINE",
+  "region": "Île-de-France",
+  "postal_code": "92200",
+  "department": "92",
+  "latitude": 48.8855999908984,
+  "longitude": 2.25892853520913,
+  "offices": [
+   "Paris",
+   "Lyon",
+   "Lille",
+   "Nantes",
+   "Toulouse",
+   "Strasbourg"
+  ],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition",
+   "conduite du changement",
+   "gestion de crise"
+  ],
+  "description": "Cabinet de management de transition qui déploie des managers opérationnels pour des enjeux de transformation, de crise et de performance.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.delville-management.com",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "Momen",
+  "siren": "891628125",
+  "verified": true,
+  "website": "https://cabinet-management-transition.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75009",
+  "department": "75",
+  "latitude": 48.8719241738464,
+  "longitude": 2.34589200494062,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition",
+   "DAF de transition",
+   "DRH de transition"
+  ],
+  "description": "Cabinet de management de transition qui propose des profils DG, DAF, DRH et supply chain aux PME, ETI et grands groupes.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://cabinet-management-transition.com",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "CAHRA",
+  "siren": "515402956",
+  "verified": true,
+  "website": "https://www.cahra.com",
+  "city": "NANTES",
+  "region": "Pays de la Loire",
+  "postal_code": "44000",
+  "department": "44",
+  "latitude": 47.210361271,
+  "longitude": -1.549253234,
+  "offices": [],
+  "coverage": "national",
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition",
+   "PME et ETI"
+  ],
+  "description": "Cabinet de management de transition qui accompagne PME et ETI avec des managers opérationnels, dans l'industrie, les services et la finance.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.cahra.com"
+  ]
+ },
+ {
+  "name": "IMT Partners",
+  "siren": "794666453",
+  "verified": true,
+  "website": "https://www.imt-partners.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75116",
+  "department": "75",
+  "latitude": 48.869863501,
+  "longitude": 2.2840846149,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition"
+  ],
+  "description": "Cabinet de management de transition qui accompagne les transformations des entreprises avec des managers expérimentés, en France et à l'international.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.imt-partners.com",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "Bras Droit des Dirigeants",
+  "siren": "533861126",
+  "verified": true,
+  "website": "https://www.brasdroitdesdirigeants.com",
+  "city": "AVIGNON",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "postal_code": "84000",
+  "department": "84",
+  "latitude": 43.9468790252675,
+  "longitude": 4.80565432746719,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "cadres à temps partagé",
+   "DAF à temps partagé",
+   "réseau de franchise"
+  ],
+  "description": "Réseau de franchise de cadres externalisés à temps partagé pour TPE et PME, avec notamment une offre de direction administrative et financière.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.brasdroitdesdirigeants.com",
+   "https://www.toute-la-franchise.com/news-bras-droit-des-dirigeants-lance-un-nouveau-concept-de-direction-administrative-et-financiere"
+  ]
+ },
+ {
+  "name": "Grant Alexander Executive Interim",
+  "siren": "828053439",
+  "verified": true,
+  "website": "https://www.grantalexander.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75008",
+  "department": "75",
+  "latitude": 48.87749699,
+  "longitude": 2.3135558765,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition",
+   "conseil RH"
+  ],
+  "description": "Entité de management de transition du groupe Grant Alexander, groupe indépendant de conseil RH présent en France, en Suisse et à l'international.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.grantalexander.com",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "Adequancy",
+  "siren": "820044006",
+  "verified": true,
+  "website": "https://adequancy.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75016",
+  "department": "75",
+  "latitude": 48.872426017,
+  "longitude": 2.2929071101,
+  "offices": [],
+  "coverage": "national",
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition",
+   "plateforme de managers"
+  ],
+  "description": "Cabinet de management de transition qui s'appuie sur une plateforme mettant en relation dirigeants et managers de transition indépendants qualifiés.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://adequancy.com",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "Valumen Groupe",
+  "siren": "808979074",
+  "verified": true,
+  "website": "https://www.valumen.com",
+  "city": "BOULOGNE-BILLANCOURT",
+  "region": "Île-de-France",
+  "postal_code": "92100",
+  "department": "92",
+  "latitude": 48.8342606909442,
+  "longitude": 2.24463753572095,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition",
+   "conseil en leadership"
+  ],
+  "description": "Société de management de transition et de conseil en leadership qui met à disposition des experts pour des missions de performance et de transformation.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.valumen.com",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "Tillerman IM",
+  "siren": "948043492",
+  "verified": true,
+  "website": "https://tillerman.fr",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75008",
+  "department": "75",
+  "latitude": 48.873170147,
+  "longitude": 2.308830741,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition",
+   "chasse de têtes"
+  ],
+  "description": "Cabinet de chasse de têtes et de management de transition, intervenant dans plus de 18 secteurs dont banque, finance, industrie et services.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://tillerman.fr",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "WheelOfWork",
+  "siren": "889124343",
+  "verified": true,
+  "website": "https://www.wheelofwork.com",
+  "city": "WASQUEHAL",
+  "region": "Hauts-de-France",
+  "postal_code": "59290",
+  "department": "59",
+  "latitude": 50.689024947886,
+  "longitude": 3.12368150544133,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition",
+   "freelances",
+   "recrutement"
+  ],
+  "description": "Société qui propose managers de transition, freelances et recrutements en CDI, avec des agents de talents chargés de préciser le profil recherché.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.wheelofwork.com",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "CapexFi",
+  "siren": "833336852",
+  "verified": true,
+  "website": "https://www.capexfi.com",
+  "city": "LEVALLOIS-PERRET",
+  "region": "Île-de-France",
+  "postal_code": "92300",
+  "department": "92",
+  "latitude": 48.886481567,
+  "longitude": 2.2843948123,
+  "offices": [],
+  "coverage": "national",
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "DAF de transition",
+   "DAF à temps partagé",
+   "recrutement finance"
+  ],
+  "description": "Cabinet dédié aux directions financières : management de transition, temps partagé et recrutement en finance, pour grands groupes, ETI, PME et start-up.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.capexfi.com",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "Kenseo Management de Transition",
+  "siren": "508342763",
+  "verified": true,
+  "website": "https://www.kenseo.fr",
+  "city": "LYON",
+  "region": "Auvergne-Rhône-Alpes",
+  "postal_code": "69003",
+  "department": "69",
+  "latitude": 45.763518007,
+  "longitude": 4.8461939553,
+  "offices": [
+   "Paris"
+  ],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition",
+   "conseil RH"
+  ],
+  "description": "Structure de management de transition du cabinet de conseil RH Kenseo, implanté à Lyon et Paris (recrutement, outplacement, coaching, assessment).",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.kenseo.fr",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "Alternative Managers",
+  "siren": "499269041",
+  "verified": true,
+  "website": "https://alternative-managers.com",
+  "city": "LYON",
+  "region": "Auvergne-Rhône-Alpes",
+  "postal_code": "69001",
+  "department": "69",
+  "latitude": 45.7693566385978,
+  "longitude": 4.83732387015692,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition",
+   "interim management"
+  ],
+  "description": "Cabinet de management de transition qui met à disposition des cadres et dirigeants expérimentés pour des besoins ponctuels et urgents.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://alternative-managers.com",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "Réseau 137",
+  "siren": "844566935",
+  "verified": true,
+  "website": "https://www.reseau137.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75001",
+  "department": "75",
+  "latitude": 48.8643605790588,
+  "longitude": 2.33445058357229,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition"
+  ],
+  "description": "Société de management de transition rattachée au groupe Alixio, qui met à disposition des managers de transition auprès des entreprises.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.reseau137.com",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "Michael Page Interim & Staffing",
+  "siren": "399256890",
+  "verified": true,
+  "website": "https://www.michaelpage.fr",
+  "city": "NEUILLY-SUR-SEINE",
+  "region": "Île-de-France",
+  "postal_code": "92200",
+  "department": "92",
+  "latitude": 48.886320382,
+  "longitude": 2.2624276194,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "management-transition"
+  ],
+  "specialties": [
+   "management de transition",
+   "recrutement"
+  ],
+  "description": "Cabinet de recrutement dont l'activité interim management place des managers de transition auprès des entreprises.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.michaelpage.fr",
+   "https://www.leadersleague.com/fr/classements/ressources-humaines-management-de-transition-cabinet-de-conseils-france-2025"
+  ]
+ },
+ {
+  "name": "Leyton France",
+  "siren": "504868399",
+  "verified": true,
+  "website": "https://leyton.com/fr",
+  "city": "ISSY-LES-MOULINEAUX",
+  "region": "Île-de-France",
+  "postal_code": "92130",
+  "department": "92",
+  "latitude": 48.8225713800445,
+  "longitude": 2.26162828787134,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "cabinets-cir-cii"
+  ],
+  "specialties": [
+   "CIR",
+   "CII",
+   "JEI",
+   "IP Box",
+   "aides publiques"
+  ],
+  "description": "Cabinet de conseil en financement de l'innovation (CIR, CII, statut JEI, IP Box, aides publiques) et en optimisation de la performance financière et sociale.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://leyton.com/fr",
+   "https://leyton.com/fr/mentions-legales/"
+  ]
+ },
+ {
+  "name": "Ayming",
+  "siren": "414119735",
+  "verified": true,
+  "website": "https://www.ayming.fr",
+  "city": "LEVALLOIS-PERRET",
+  "region": "Île-de-France",
+  "postal_code": "92300",
+  "department": "92",
+  "latitude": 48.8937240004629,
+  "longitude": 2.27857007020389,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "cabinets-cir-cii"
+  ],
+  "specialties": [
+   "CIR",
+   "CII",
+   "fiscalité",
+   "performance RH"
+  ],
+  "description": "Cabinet de conseil en performance d'entreprise : financement de l'innovation (CIR, CII), RH, finance et taxes, actif depuis plus de 40 ans.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.ayming.fr"
+  ]
+ },
+ {
+  "name": "F.initiatives",
+  "siren": "499154557",
+  "verified": true,
+  "website": "https://www.f-initiatives.com",
+  "city": "PUTEAUX",
+  "region": "Île-de-France",
+  "postal_code": "92800",
+  "department": "92",
+  "latitude": 48.886712223,
+  "longitude": 2.2513282305,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "cabinets-cir-cii"
+  ],
+  "specialties": [
+   "CIR",
+   "CII",
+   "subventions R&D",
+   "transition écologique"
+  ],
+  "description": "Cabinet de conseil en financements publics de la R&D, de l'innovation et de la transition écologique, dont le crédit d'impôt recherche, depuis plus de 30 ans.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.f-initiatives.com"
+  ]
+ },
+ {
+  "name": "G.A.C. Group",
+  "siren": "509820502",
+  "verified": true,
+  "website": "https://group-gac.com",
+  "city": "ISSY-LES-MOULINEAUX",
+  "region": "Île-de-France",
+  "postal_code": "92130",
+  "department": "92",
+  "latitude": 48.823183833,
+  "longitude": 2.2612884608,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "cabinets-cir-cii",
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "CIR",
+   "CII",
+   "fiscalité",
+   "bilan carbone",
+   "reporting extra-financier"
+  ],
+  "description": "Cabinet de conseil en innovation, fiscalité, RH, environnement et RSE ; propose aussi bilan carbone et reporting extra-financier.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://group-gac.com",
+   "https://group-gac.com/fr/mentions-legales/"
+  ]
+ },
+ {
+  "name": "Finalli",
+  "siren": "818782997",
+  "verified": true,
+  "website": "https://www.finalli.com",
+  "city": "BORDEAUX",
+  "region": "Nouvelle-Aquitaine",
+  "postal_code": "33000",
+  "department": "33",
+  "latitude": 44.851676185,
+  "longitude": -0.571596468,
+  "offices": [
+   "Paris",
+   "Lyon",
+   "Biarritz",
+   "Montpellier",
+   "Aix-Marseille",
+   "Rennes",
+   "Nantes",
+   "Rouen",
+   "Nice"
+  ],
+  "coverage": null,
+  "categories": [
+   "cabinets-cir-cii"
+  ],
+  "specialties": [
+   "CIR",
+   "CII",
+   "JEI",
+   "IP Box",
+   "subventions"
+  ],
+  "description": "Cabinet d'accompagnement aux aides à l'innovation (CIR, CII, statut JEI, IP Box, subventions), avec dix implantations en France.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.finalli.com"
+  ]
+ },
+ {
+  "name": "EPSA",
+  "siren": "852389865",
+  "verified": true,
+  "website": "https://www.epsa.com/fr",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75007",
+  "department": "75",
+  "latitude": 48.8616188319917,
+  "longitude": 2.30307457318999,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "cabinets-cir-cii"
+  ],
+  "specialties": [
+   "financement de l'innovation",
+   "performance RH",
+   "performance financière"
+  ],
+  "description": "Groupe européen de conseil en optimisation de la performance financière, opérationnelle et RH, avec une offre dédiée au financement de l'innovation.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.epsa.com/fr",
+   "https://www.epsa.com/fr/mentions-legales"
+  ]
+ },
+ {
+  "name": "In Extenso Innovation Croissance",
+  "siren": "439690991",
+  "verified": true,
+  "website": "https://www.inextenso-innovation.fr",
+  "city": "BIOT",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "postal_code": "06410",
+  "department": "06",
+  "latitude": 43.6155013613777,
+  "longitude": 7.066774637031,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "cabinets-cir-cii"
+  ],
+  "specialties": [
+   "financement de l'innovation",
+   "stratégie d'innovation",
+   "transition écologique"
+  ],
+  "description": "Cabinet de conseil en stratégie, financement de l'innovation et transition écologique, avec 80 consultants et six bureaux en France.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.inextenso-innovation.fr"
+  ]
+ },
+ {
+  "name": "ABGi France",
+  "siren": "490817897",
+  "verified": true,
+  "website": "https://abgi-france.com",
+  "city": "LYON",
+  "region": "Auvergne-Rhône-Alpes",
+  "postal_code": "69002",
+  "department": "69",
+  "latitude": 45.73563388,
+  "longitude": 4.8155276946,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "cabinets-cir-cii"
+  ],
+  "specialties": [
+   "CIR",
+   "CII",
+   "management de l'innovation"
+  ],
+  "description": "Cabinet de conseil en financement et en management de l'innovation (CIR, CII), actif depuis plus de 35 ans, avec un réseau d'implantations en France.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://abgi-france.com",
+   "https://www.abgi-uk.com/innovation-funding-incentives-france"
+  ]
+ },
+ {
+  "name": "ABF Décisions",
+  "siren": "444979280",
+  "verified": true,
+  "website": "https://www.abfdecisions.fr",
+  "city": "TOURS",
+  "region": "Centre-Val de Loire",
+  "postal_code": "37000",
+  "department": "37",
+  "latitude": 47.390218462,
+  "longitude": 0.6874675166,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "cabinets-cir-cii"
+  ],
+  "specialties": [
+   "financements publics",
+   "aides territoriales",
+   "aides européennes"
+  ],
+  "description": "Cabinet de conseil en obtention de financements publics (aides territoriales, d'État et européennes) pour les entreprises, avec huit bureaux en France.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.abfdecisions.fr",
+   "https://www.xerfi.com/presentationetude/Le-conseil-en-financement-de-l-innovation-a-l-heure-de-la-maturite_22SAE62"
+  ]
+ },
+ {
+  "name": "Hayot Expertise",
+  "siren": "942525098",
+  "verified": true,
+  "website": "https://hayot-expertise.fr",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75008",
+  "department": "75",
+  "latitude": 48.8783317630282,
+  "longitude": 2.31216282451369,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "cabinets-cir-cii",
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "CIR",
+   "CII",
+   "JEI",
+   "reporting CSRD",
+   "bilan carbone"
+  ],
+  "description": "Cabinet d'expertise comptable à Paris qui propose aussi un accompagnement CIR, CII et JEI ainsi qu'un reporting RSE et CSRD pour PME et ETI.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://hayot-expertise.fr/services/financement-innovation-cir-cii-jei",
+   "https://hayot-expertise.fr/services/expert-comptable-rse-reporting-csrd"
+  ]
+ },
+ {
+  "name": "Carbone 4",
+  "siren": "829579549",
+  "verified": true,
+  "website": "https://carbone4.com/fr",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75009",
+  "department": "75",
+  "latitude": 48.880666605,
+  "longitude": 2.3288291206,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "décarbonation",
+   "adaptation climatique",
+   "biodiversité"
+  ],
+  "description": "Cabinet de conseil qui accompagne les organisations sur la décarbonation, l'adaptation au changement climatique et la préservation de la biodiversité.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://carbone4.com/fr"
+  ]
+ },
+ {
+  "name": "Utopies",
+  "siren": null,
+  "verified": false,
+  "website": "https://utopies.com",
+  "city": null,
+  "region": null,
+  "postal_code": null,
+  "department": null,
+  "latitude": null,
+  "longitude": null,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "stratégie RSE",
+   "climat et nature",
+   "ancrage local"
+  ],
+  "description": "Cabinet de conseil français pionnier de la RSE, qui accompagne la transformation durable des organisations : données, stratégie et récit.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://utopies.com"
+  ]
+ },
+ {
+  "name": "GreenFlex",
+  "siren": "511840845",
+  "verified": true,
+  "website": "https://www.greenflex.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75009",
+  "department": "75",
+  "latitude": 48.8722332696698,
+  "longitude": 2.33668982631825,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "stratégie climat",
+   "décarbonation",
+   "stratégie RSE",
+   "analyse de cycle de vie"
+  ],
+  "description": "Société de conseil en développement durable : stratégie climat et RSE, décarbonation, efficacité énergétique, biodiversité et analyse de cycle de vie.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.greenflex.com",
+   "https://www.greenflex.com/mentions-legales/"
+  ]
+ },
+ {
+  "name": "Des Enjeux et des Hommes",
+  "siren": "801390261",
+  "verified": true,
+  "website": "https://www.desenjeuxetdeshommes.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75001",
+  "department": "75",
+  "latitude": 48.861243658,
+  "longitude": 2.3408272435,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "stratégie RSE",
+   "conduite du changement",
+   "société à mission"
+  ],
+  "description": "Société de conseil en stratégies RSE et accompagnement du changement depuis 2003, rattachée au groupe Ecocert.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.desenjeuxetdeshommes.com"
+  ]
+ },
+ {
+  "name": "Projet Celsius",
+  "siren": "882571912",
+  "verified": true,
+  "website": "https://projetcelsius.com",
+  "city": "MARSEILLE",
+  "region": "Provence-Alpes-Côte d'Azur",
+  "postal_code": "13005",
+  "department": "13",
+  "latitude": 43.297732808,
+  "longitude": 5.3924545455,
+  "offices": [
+   "Paris"
+  ],
+  "coverage": null,
+  "categories": [
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "Bilan Carbone",
+   "ACV",
+   "CSRD",
+   "BEGES"
+  ],
+  "description": "Bureau d'études climat : Bilan Carbone, analyse de cycle de vie, conformité CSRD et BEGES, pour entreprises dont les PME.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://projetcelsius.com",
+   "https://projetcelsius.com/offres/"
+  ]
+ },
+ {
+  "name": "I Care",
+  "siren": "504715863",
+  "verified": true,
+  "website": "https://www.i-care-consult.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75002",
+  "department": "75",
+  "latitude": 48.870241977,
+  "longitude": 2.333586091,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "stratégie climat",
+   "transition durable",
+   "finance durable"
+  ],
+  "description": "Cabinet de conseil en stratégie et transition durable (filiale de BearingPoint) pour entreprises, institutions financières et organisations publiques.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.i-care-consult.com",
+   "https://www.i-care-consult.com/legal-note/"
+  ]
+ },
+ {
+  "name": "ekodev",
+  "siren": "518412432",
+  "verified": true,
+  "website": "https://ekodev.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75007",
+  "department": "75",
+  "latitude": 48.8616188319917,
+  "longitude": 2.30307457318999,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "stratégie RSE",
+   "stratégie climat",
+   "Bilan Carbone"
+  ],
+  "description": "Cabinet de conseil RSE et stratégie climat qui accompagne les organisations vers un modèle bas-carbone et responsable, dont Bilan Carbone.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://ekodev.com"
+  ]
+ },
+ {
+  "name": "Goodwill-management",
+  "siren": "450482641",
+  "verified": true,
+  "website": "https://goodwill-management.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75008",
+  "department": "75",
+  "latitude": 48.875781307,
+  "longitude": 2.3074638728,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "stratégie RSE",
+   "audit RSE",
+   "CSRD"
+  ],
+  "description": "Cabinet de stratégie et de conseil RSE, rattaché à Baker Tilly France, qui accompagne entreprises et décideurs vers des modèles soutenables.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://goodwill-management.com"
+  ]
+ },
+ {
+  "name": "B&L évolution",
+  "siren": "532581618",
+  "verified": true,
+  "website": "https://www.bl-evolution.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75014",
+  "department": "75",
+  "latitude": 48.824824461,
+  "longitude": 2.3201955299,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "stratégie RSE",
+   "énergie-climat",
+   "biodiversité"
+  ],
+  "description": "Cabinet de conseil en transition écologique : stratégies RSE, énergie, climat et biodiversité pour entreprises et collectivités.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.bl-evolution.com"
+  ]
+ },
+ {
+  "name": "Climat Mundi",
+  "siren": "493827141",
+  "verified": true,
+  "website": "https://www.climatmundi.fr",
+  "city": "SALLES-LA-SOURCE",
+  "region": "Occitanie",
+  "postal_code": "12330",
+  "department": "12",
+  "latitude": 44.40900997690854,
+  "longitude": 2.520905049992259,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "expertise carbone",
+   "adaptation",
+   "conduite du changement"
+  ],
+  "description": "Cabinet de conseil climat : expertise carbone, conduite du changement et adaptation, pour entreprises, PME, associations et territoires.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.climatmundi.fr"
+  ]
+ },
+ {
+  "name": "Inddigo",
+  "siren": "402250427",
+  "verified": true,
+  "website": "https://www.inddigo.com",
+  "city": "CHAMBERY",
+  "region": "Auvergne-Rhône-Alpes",
+  "postal_code": "73000",
+  "department": "73",
+  "latitude": 45.5831181254579,
+  "longitude": 5.89306251064135,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "transition énergétique",
+   "transition écologique",
+   "ingénierie"
+  ],
+  "description": "Bureau d'études en conseil et ingénierie pour la transition énergétique et écologique des territoires, entreprises et industries depuis 1986.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.inddigo.com"
+  ]
+ },
+ {
+  "name": "Sinteo",
+  "siren": "502080104",
+  "verified": true,
+  "website": "https://www.sinteo.fr",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75009",
+  "department": "75",
+  "latitude": 48.876604069,
+  "longitude": 2.3363682186,
+  "offices": [
+   "Bordeaux",
+   "Marseille"
+  ],
+  "coverage": null,
+  "categories": [
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "immobilier durable",
+   "stratégie ESG",
+   "écoconstruction"
+  ],
+  "description": "Cabinet de conseil et d'ingénierie en immobilier durable : stratégie ESG, écoconstruction, commissionnement et valorisation d'actifs en exploitation.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.sinteo.fr"
+  ]
+ },
+ {
+  "name": "BThConseil",
+  "siren": null,
+  "verified": false,
+  "website": "https://www.bthconseil.fr",
+  "city": null,
+  "region": null,
+  "postal_code": null,
+  "department": null,
+  "latitude": null,
+  "longitude": null,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "RSE PME",
+   "Bilan Carbone",
+   "ISO 26000"
+  ],
+  "description": "Cabinet de conseil RSE pour PME et TPE : conseil, formation et Bilan Carbone, avec une approche alignée sur la norme ISO 26000.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.bthconseil.fr"
+  ]
+ },
+ {
+  "name": "noocarb",
+  "siren": "898551965",
+  "verified": true,
+  "website": "https://www.noocarb.com",
+  "city": "NANTES",
+  "region": "Pays de la Loire",
+  "postal_code": "44300",
+  "department": "44",
+  "latitude": 47.232940089,
+  "longitude": -1.517451915,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "stratégie de décarbonation",
+   "transition énergétique"
+  ],
+  "description": "Cabinet de conseil en stratégie de décarbonation et en transition énergétique, qui revendique trois agences.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.noocarb.com",
+   "https://www.noocarb.com/mentions-legales/"
+  ]
+ },
+ {
+  "name": "Lefebvre Dalloz Compétences",
+  "siren": "479163131",
+  "verified": true,
+  "website": "https://formation.lefebvre-dalloz.fr",
+  "city": "COURBEVOIE",
+  "region": "Île-de-France",
+  "postal_code": "92400",
+  "department": "92",
+  "latitude": 48.8919036741586,
+  "longitude": 2.24872145272403,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "organismes-formation-finance"
+  ],
+  "specialties": [
+   "contrôle de gestion",
+   "finance pour non-financiers",
+   "trésorerie"
+  ],
+  "description": "Organisme de formation proposant des stages inter-entreprises en contrôle de gestion, finance pour non-financiers et trésorerie, à Paris, Lyon et à distance.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://formation.lefebvre-dalloz.fr/formations/controle-de-gestion-niveau-1_702961",
+   "https://formation.lefebvre-dalloz.fr/formations/finance-pour-non-financiers-niveau-1_1348"
+  ]
+ },
+ {
+  "name": "ORSYS",
+  "siren": "482761160",
+  "verified": true,
+  "website": "https://www.orsys.fr",
+  "city": "PUTEAUX",
+  "region": "Île-de-France",
+  "postal_code": "92800",
+  "department": "92",
+  "latitude": 48.8925369186446,
+  "longitude": 2.23584849106074,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "organismes-formation-finance"
+  ],
+  "specialties": [
+   "contrôle de gestion",
+   "trésorerie",
+   "management"
+  ],
+  "description": "Organisme de formation (IT, management, métiers) dont le catalogue inclut contrôle de gestion et gestion de trésorerie, en inter, intra et sur mesure.",
+  "regulated": false,
+  "qualiopi": true,
+  "sources": [
+   "https://www.orsys.fr",
+   "https://www.orsys.fr/ContentV11/doc/pdf/pdc/fra_fr_CDG.pdf",
+   "https://www.orsys.fr/ContentV11/doc/pdf/pdc/fra_fr_TIT.pdf"
+  ]
+ },
+ {
+  "name": "CNFCE",
+  "siren": "480626787",
+  "verified": true,
+  "website": "https://www.cnfce.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75015",
+  "department": "75",
+  "latitude": 48.8496779891031,
+  "longitude": 2.28899770333005,
+  "offices": [],
+  "coverage": "national",
+  "categories": [
+   "organismes-formation-finance"
+  ],
+  "specialties": [
+   "gestion de trésorerie",
+   "finance",
+   "comptabilité"
+  ],
+  "description": "Organisme proposant environ 2000 formations, dont la gestion de trésorerie, en inter et intra-entreprise à Paris, en France entière et à distance.",
+  "regulated": false,
+  "qualiopi": true,
+  "sources": [
+   "https://www.cnfce.com",
+   "https://www.cnfce.com/formation-gestion-de-tresorerie"
+  ]
+ },
+ {
+  "name": "Demos",
+  "siren": "722030277",
+  "verified": true,
+  "website": "https://www.demos.fr",
+  "city": "PUTEAUX",
+  "region": "Île-de-France",
+  "postal_code": "92800",
+  "department": "92",
+  "latitude": 48.8921147989706,
+  "longitude": 2.23378394297602,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "organismes-formation-finance"
+  ],
+  "specialties": [
+   "gestion et finance d'entreprise",
+   "comptabilité",
+   "audit interne"
+  ],
+  "description": "Organisme de formation professionnelle (inter, intra, e-learning, certifiant) avec des domaines gestion-finance d'entreprise et comptabilité-audit interne.",
+  "regulated": false,
+  "qualiopi": true,
+  "sources": [
+   "https://www.demos.fr"
+  ]
+ },
+ {
+  "name": "Comundi",
+  "siren": "799222039",
+  "verified": true,
+  "website": "https://www.comundi.fr",
+  "city": "SAINT-DENIS",
+  "region": "Île-de-France",
+  "postal_code": "93200",
+  "department": "93",
+  "latitude": 48.916951237,
+  "longitude": 2.3450278785,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "organismes-formation-finance"
+  ],
+  "specialties": [
+   "finance pour managers",
+   "management"
+  ],
+  "description": "Organisme de formation professionnelle certifié Qualiopi (management, RH), avec des modules finance pour managers en inter, intra et sur mesure.",
+  "regulated": false,
+  "qualiopi": true,
+  "sources": [
+   "https://www.comundi.fr"
+  ]
+ },
+ {
+  "name": "EFE Formation",
+  "siren": "412806960",
+  "verified": true,
+  "website": "https://www.efe.fr",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75015",
+  "department": "75",
+  "latitude": 48.848893923,
+  "longitude": 2.2960241197,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "organismes-formation-finance"
+  ],
+  "specialties": [
+   "finance",
+   "comptabilité",
+   "gestion"
+  ],
+  "description": "Organisme de formation professionnelle continue de plus de 800 programmes, dont un catalogue finance, comptabilité et gestion.",
+  "regulated": false,
+  "qualiopi": true,
+  "sources": [
+   "https://www.efe.fr",
+   "https://www.efe.fr/document/efe/catalogues/catalogue-finance-compta-gestion-2020.pdf"
+  ]
+ },
+ {
+  "name": "AFTE",
+  "siren": "314974338",
+  "verified": true,
+  "website": "https://www.afte.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75009",
+  "department": "75",
+  "latitude": 48.878575651,
+  "longitude": 2.3270668697,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "organismes-formation-finance"
+  ],
+  "specialties": [
+   "trésorerie d'entreprise",
+   "risques financiers"
+  ],
+  "description": "Association française des trésoriers d'entreprise : réseau professionnel qui propose formations et échanges sur la trésorerie et les risques financiers.",
+  "regulated": false,
+  "qualiopi": true,
+  "sources": [
+   "https://www.afte.com"
+  ]
+ },
+ {
+  "name": "GERESO",
+  "siren": "311975577",
+  "verified": true,
+  "website": "https://www.gereso.com",
+  "city": "LE MANS",
+  "region": "Pays de la Loire",
+  "postal_code": "72000",
+  "department": "72",
+  "latitude": 48.0233320677716,
+  "longitude": 0.169823350414596,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "organismes-formation-finance"
+  ],
+  "specialties": [
+   "contrôle de gestion",
+   "finance pour non-financiers",
+   "RH"
+  ],
+  "description": "Organisme de formation, de conseil et d'édition, centré sur les RH, qui propose aussi des formations en contrôle de gestion et en finance.",
+  "regulated": false,
+  "qualiopi": true,
+  "sources": [
+   "https://www.gereso.com",
+   "https://documents.gereso.com/client/programme-pdf/FHCOGE.pdf"
+  ]
+ },
+ {
+  "name": "Studi",
+  "siren": "911148369",
+  "verified": true,
+  "website": "https://www.studi.com/fr",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75011",
+  "department": "75",
+  "latitude": 48.855767236,
+  "longitude": 2.3889660075,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "organismes-formation-finance"
+  ],
+  "specialties": [
+   "finance",
+   "contrôle de gestion",
+   "formation en ligne"
+  ],
+  "description": "Organisme de formation 100 % en ligne qui prépare à des diplômes reconnus par l'État, dont des parcours en finance et contrôle de gestion.",
+  "regulated": false,
+  "qualiopi": true,
+  "sources": [
+   "https://www.studi.com/fr",
+   "https://www.studi.com/fr/formation/finance-controle-de-gestion/manager-un-service-financier"
+  ]
+ },
+ {
+  "name": "DFCG",
+  "siren": "383224045",
+  "verified": true,
+  "website": "https://www.dfcg.fr",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75016",
+  "department": "75",
+  "latitude": 48.869587471,
+  "longitude": 2.2905458603,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "organismes-formation-finance"
+  ],
+  "specialties": [
+   "direction financière",
+   "contrôle de gestion"
+  ],
+  "description": "Association nationale des directeurs financiers et de contrôle de gestion, qui propose formations, événements, études et congrès.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.dfcg.fr"
+  ]
+ },
+ {
+  "name": "Klee Performance",
+  "siren": "432307932",
+  "verified": true,
+  "website": "https://www.kleegroup.com/en/service/klee-performance",
+  "city": "LE PLESSIS ROBINSON",
+  "region": "Île-de-France",
+  "postal_code": "92350",
+  "department": "92",
+  "latitude": 48.7736227896294,
+  "longitude": 2.23919868582753,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "controle-gestion-bi"
+  ],
+  "specialties": [
+   "EPM",
+   "consolidation",
+   "FP&A",
+   "reporting ESG"
+  ],
+  "description": "Intégrateur EPM et BI du groupe Klee : conseil, projets et maintenance sur la consolidation, la planification financière (FP&A) et le reporting ESG.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.kleegroup.com/en/service/klee-performance",
+   "https://foxeet.fr/contenu/top-integrateurs-epm-france"
+  ]
+ },
+ {
+  "name": "Kiwika",
+  "siren": "903355915",
+  "verified": true,
+  "website": "https://www.kiwika.com",
+  "city": "LYON",
+  "region": "Auvergne-Rhône-Alpes",
+  "postal_code": "69007",
+  "department": "69",
+  "latitude": 45.7512037462714,
+  "longitude": 4.84386255349609,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "controle-gestion-bi"
+  ],
+  "specialties": [
+   "EPM",
+   "consolidation",
+   "reporting financier"
+  ],
+  "description": "Agence de conseil et d'intégration EPM qui aide les directions à collecter, consolider, analyser et diffuser leurs données financières.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.kiwika.com",
+   "https://foxeet.fr/contenu/kiwika-69007"
+  ]
+ },
+ {
+  "name": "Reportwise",
+  "siren": "512948696",
+  "verified": true,
+  "website": "https://www.reportwise.fr",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75009",
+  "department": "75",
+  "latitude": 48.877740217,
+  "longitude": 2.3283567522,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "controle-gestion-bi"
+  ],
+  "specialties": [
+   "EPM",
+   "pilotage de la performance",
+   "consolidation"
+  ],
+  "description": "Cabinet spécialisé dans le pilotage de la performance des grands groupes, qui accompagne le choix et le déploiement de solutions EPM.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.reportwise.fr",
+   "https://foxeet.fr/contenu/top-integrateurs-epm-france"
+  ]
+ },
+ {
+  "name": "IENA",
+  "siren": null,
+  "verified": false,
+  "website": "https://www.iena.com",
+  "city": null,
+  "region": null,
+  "postal_code": null,
+  "department": null,
+  "latitude": null,
+  "longitude": null,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "controle-gestion-bi"
+  ],
+  "specialties": [
+   "pilotage de la performance",
+   "EPM",
+   "RSE"
+  ],
+  "description": "Cabinet de pilotage de la performance financière, RH et RSE, qui accompagne les entreprises dans le choix et la mise en œuvre d'outils de pilotage.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.iena.com"
+  ]
+ },
+ {
+  "name": "Trimane",
+  "siren": "481552628",
+  "verified": true,
+  "website": "https://trimane.fr",
+  "city": "PUTEAUX",
+  "region": "Île-de-France",
+  "postal_code": "92800",
+  "department": "92",
+  "latitude": 48.889278427402,
+  "longitude": 2.23888113419657,
+  "offices": [
+   "Toulouse"
+  ],
+  "coverage": "national",
+  "categories": [
+   "controle-gestion-bi"
+  ],
+  "specialties": [
+   "Power BI",
+   "Tableau",
+   "data intelligence"
+  ],
+  "description": "Cabinet de conseil en data intelligence et IA (Power BI, Tableau, entrepôts de données), basé à Paris et Toulouse.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://trimane.fr"
+  ]
+ },
+ {
+  "name": "Keyrus",
+  "siren": "400149647",
+  "verified": true,
+  "website": "https://keyrus.com/fr/fr/home",
+  "city": "LEVALLOIS-PERRET",
+  "region": "Île-de-France",
+  "postal_code": "92300",
+  "department": "92",
+  "latitude": 48.8979788868136,
+  "longitude": 2.27874810676237,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "controle-gestion-bi"
+  ],
+  "specialties": [
+   "data",
+   "business intelligence",
+   "IA"
+  ],
+  "description": "Groupe de conseil en data et intelligence artificielle qui accompagne les organisations dans leurs projets décisionnels et analytiques.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://keyrus.com/fr/fr/home"
+  ]
+ },
+ {
+  "name": "Cubewise France",
+  "siren": "828661199",
+  "verified": true,
+  "website": "https://cubewise.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75010",
+  "department": "75",
+  "latitude": 48.871864167,
+  "longitude": 2.3489069136,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "controle-gestion-bi"
+  ],
+  "specialties": [
+   "FP&A",
+   "planification",
+   "reporting financier"
+  ],
+  "description": "Société spécialisée dans les solutions FP&A avancées pour les directions financières : planification, reporting financier, opérationnel et réglementaire.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://cubewise.com"
+  ]
+ },
+ {
+  "name": "BIAL-X",
+  "siren": "502026313",
+  "verified": true,
+  "website": "https://www.bial-x.com",
+  "city": "LIMONEST",
+  "region": "Auvergne-Rhône-Alpes",
+  "postal_code": "69760",
+  "department": "69",
+  "latitude": 45.806244306,
+  "longitude": 4.7753302466,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "controle-gestion-bi"
+  ],
+  "specialties": [
+   "business intelligence",
+   "data science",
+   "offre finance"
+  ],
+  "description": "Cabinet d'experts data (business intelligence, cloud, data science et IA) basé près de Lyon, avec notamment une offre BialBOX Finance.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.bial-x.com"
+  ]
+ },
+ {
+  "name": "ActinVision",
+  "siren": "833407547",
+  "verified": true,
+  "website": "https://www.actinvision.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75004",
+  "department": "75",
+  "latitude": 48.852848471,
+  "longitude": 2.3643114836,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "controle-gestion-bi"
+  ],
+  "specialties": [
+   "Tableau",
+   "datavisualisation",
+   "gouvernance des données"
+  ],
+  "description": "Agence de conseil data, BI et IA (gouvernance, architecture, ingénierie, datavisualisation), présente en France et au Canada.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.actinvision.com"
+  ]
+ },
+ {
+  "name": "Mydral",
+  "siren": "523153112",
+  "verified": true,
+  "website": "https://www.mydral.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75008",
+  "department": "75",
+  "latitude": 48.872371999,
+  "longitude": 2.3234740223,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "controle-gestion-bi"
+  ],
+  "specialties": [
+   "analytics",
+   "business intelligence"
+  ],
+  "description": "Cabinet de conseil data qui accompagne les entreprises pour faire de l'analytics un levier de transformation et de décision.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.mydral.com"
+  ]
+ },
+ {
+  "name": "The Information Lab",
+  "siren": "799175716",
+  "verified": true,
+  "website": "https://www.theinformationlab.fr",
+  "city": "NANCY",
+  "region": "Grand Est",
+  "postal_code": "54000",
+  "department": "54",
+  "latitude": 48.6965816403649,
+  "longitude": 6.16425793944978,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "controle-gestion-bi"
+  ],
+  "specialties": [
+   "Tableau",
+   "Alteryx",
+   "formation data"
+  ],
+  "description": "Partenaire Tableau et Alteryx qui accompagne les entreprises dans l'exploitation de leurs données : technologies self-service, conseil et formation.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.theinformationlab.fr"
+  ]
+ },
+ {
+  "name": "Next Decision",
+  "siren": "521053173",
+  "verified": true,
+  "website": "https://www.next-decision.fr",
+  "city": "NANTES",
+  "region": "Pays de la Loire",
+  "postal_code": "44000",
+  "department": "44",
+  "latitude": 47.2134888902532,
+  "longitude": -1.548210913382,
+  "offices": [
+   "Paris"
+  ],
+  "coverage": null,
+  "categories": [
+   "controle-gestion-bi",
+   "conseil-csrd-carbone"
+  ],
+  "specialties": [
+   "data et IA",
+   "EPM",
+   "données RSE et ESG"
+  ],
+  "description": "Cabinet de conseil et d'intégration en data et IA, organisation des SI, données RSE et ESG et pilotage des rémunérations, implanté à Nantes et Paris.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://www.next-decision.fr"
+  ]
+ },
+ {
+  "name": "Bedford Consulting France",
+  "siren": "902660158",
+  "verified": true,
+  "website": "https://bedfordconsulting.com",
+  "city": "PARIS",
+  "region": "Île-de-France",
+  "postal_code": "75008",
+  "department": "75",
+  "latitude": 48.879263475,
+  "longitude": 2.3045041113,
+  "offices": [],
+  "coverage": null,
+  "categories": [
+   "controle-gestion-bi"
+  ],
+  "specialties": [
+   "Anaplan",
+   "planification financière"
+  ],
+  "description": "Cabinet spécialisé dans l'intégration, l'optimisation et le support de la plateforme de planification Anaplan, au Royaume-Uni et en EMEA.",
+  "regulated": false,
+  "qualiopi": null,
+  "sources": [
+   "https://bedfordconsulting.com",
+   "https://foxeet.fr/contenu/top-integrateurs-epm-france"
+  ]
+ }
+]
