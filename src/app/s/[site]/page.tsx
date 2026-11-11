@@ -79,7 +79,7 @@ export default async function Home({ params }: { params: SiteParams }) {
             <h2 className="text-2xl font-bold mb-4">Annuaire des professionnels</h2>
             <ul className="flex flex-wrap gap-3">
               {providerCats.map((c) => (
-                <li key={c.id}><Link href={`/prestataires/${c.slug}`} className="inline-block rounded-full border border-line px-4 py-2 hover:border-brand">{c.name}</Link></li>
+                <li key={c.id}><Link href={`/prestataires/${c.slug}`} className="inline-block rounded-lg border border-line bg-white px-4 py-2 hover:border-brand">{c.name}</Link></li>
               ))}
             </ul>
           </section>

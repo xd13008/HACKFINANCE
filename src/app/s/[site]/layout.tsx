@@ -4,6 +4,7 @@ import { getNav } from "@/lib/data";
 import { publicClient } from "@/lib/supabase/public";
 import { siteUrl } from "@/lib/seo";
 import { requireSite, type SiteParams } from "./_lib";
+import { display } from "@/app/fonts";
 
 /** Portails connus au build : toutes les pages publiques peuvent être pré-générées et mises en cache. */
 export async function generateStaticParams() {
@@ -28,17 +29,20 @@ export async function generateMetadata({ params }: { params: SiteParams }): Prom
 export default async function SiteLayout({ children, params }: { children: React.ReactNode; params: SiteParams }) {
   const site = await requireSite((await params).site);
   const nav = await getNav(site.id);
-  const theme = (site.theme ?? {}) as { primary?: string; accent?: string };
+  const theme = (site.theme ?? {}) as { primary?: string; accent?: string; page?: string };
+  // Univers qui ont au moins une catégorie publiée (les autres ne sont pas encore servis)
+  const liveVerticals = nav.verticals.filter((v) => nav.categories.some((c) => c.vertical_id === v.id));
   const softwareCats = nav.categories.filter((c) => c.kind === "software");
   const providerCats = nav.categories.filter((c) => c.kind === "provider");
 
   return (
-    <div style={{ ["--brand" as string]: theme.primary ?? "#0f4c81", ["--accent" as string]: theme.accent ?? "#f59e0b" }}
-         className="min-h-screen flex flex-col">
+    <div style={{ ["--brand" as string]: theme.primary ?? "#0f4c81", ["--accent" as string]: theme.accent ?? "#f59e0b", ["--page" as string]: theme.page ?? "#ffffff" }}
+         className={`${display.variable} min-h-screen flex flex-col bg-page`}>
       <header className="border-b border-line bg-white sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
-          <Link href="/" className="font-extrabold text-lg text-brand">{site.name}</Link>
-          <nav aria-label="Navigation principale" className="hidden md:flex gap-5 text-sm">
+          <Link href="/" className="font-display font-extrabold text-lg text-brand tracking-tight">{site.name}</Link>
+          <nav aria-label="Navigation principale" className="hidden md:flex gap-5 text-sm items-center">
+            <Link href="/trouver" className="font-semibold rounded-lg bg-accent text-ink px-3 py-1.5">Trouver une solution</Link>
             {softwareCats.slice(0, 4).map((c) => (
               <Link key={c.id} href={`/meilleurs-logiciels/${c.slug}`} className="hover:text-brand">{c.short_name ?? c.name}</Link>
             ))}
@@ -55,11 +59,19 @@ export default async function SiteLayout({ children, params }: { children: React
       <main className="flex-1">{children}</main>
 
       <footer className="border-t border-line bg-surface-2 mt-16">
-        <div className="max-w-6xl mx-auto px-4 py-10 grid gap-8 sm:grid-cols-3 text-sm">
+        <div className="max-w-6xl mx-auto px-4 py-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-sm">
           <div>
             <p className="font-bold text-brand">{site.name}</p>
             <p className="text-ink-2 mt-2">{site.tagline}</p>
           </div>
+          {liveVerticals.length > 0 && (
+            <div>
+              <p className="font-semibold mb-2">Univers</p>
+              <ul className="space-y-1 text-ink-2">
+                {liveVerticals.map((v) => <li key={v.id}><Link href={`/univers/${v.slug}`}>{v.name}</Link></li>)}
+              </ul>
+            </div>
+          )}
           <div>
             <p className="font-semibold mb-2">Transparence</p>
             <ul className="space-y-1 text-ink-2">

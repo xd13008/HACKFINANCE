@@ -1,6 +1,7 @@
 import { publicClient } from "@/lib/supabase/public";
 import { getSite } from "@/lib/data";
 import { absoluteUrl } from "@/lib/seo";
+import { loadAllUniverses } from "@/lib/universe";
 
 export const revalidate = 3600;
 
@@ -17,6 +18,10 @@ export async function GET(_: Request, { params }: { params: Promise<{ site: stri
   // Pages fixes indexables (hors contenus éditoriaux)
   urls.push({ loc: absoluteUrl(site, "/publicite"), lastmod: null });
   if ((pages ?? []).some((p) => p.type === "glossary")) urls.push({ loc: absoluteUrl(site, "/lexique"), lastmod: null });
+  // Univers : indexables seulement s'ils présentent au moins un logiciel testé (sinon noindex, cf. la page)
+  const universes = (await loadAllUniverses(site.id)).filter((u) => u.tools.length);
+  if (universes.length) urls.push({ loc: absoluteUrl(site, "/trouver"), lastmod: null });
+  for (const u of universes) urls.push({ loc: absoluteUrl(site, `/univers/${u.vertical.slug}`), lastmod: u.tools.map((t) => t.testedAt).sort().at(-1) ?? null });
   const catSlug = new Map((cats ?? []).map((c) => [c.id, c.slug]));
   if (catSlug.size) {
     const { data: links } = await db.from("provider_categories").select("provider_id,category_id").in("category_id", [...catSlug.keys()]);

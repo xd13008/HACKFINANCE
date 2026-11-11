@@ -54,7 +54,7 @@ export async function ContentArticle({
       {meta ?? <ContentMeta updatedAt={content.content_updated_at} publishedAt={content.first_published_at} author={author} validator={validator} />}
       <Summary>{content.summary}</Summary>
       {before}
-      {!hideBody && <Markdown>{content.body ?? ""}</Markdown>}
+      {!hideBody && (wide ? <div className="max-w-3xl"><Markdown>{content.body ?? ""}</Markdown></div> : <Markdown>{content.body ?? ""}</Markdown>)}
       {after}
       <Faq items={faq} />
       <Sources sources={sources} />

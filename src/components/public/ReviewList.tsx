@@ -35,22 +35,22 @@ export function ReviewList({ quotes }: { quotes: QuoteView[] }) {
       <div className="flex flex-wrap gap-2" role="group" aria-label="Trier les avis">
         {SORTS.map((s) => (
           <button key={s.key} type="button" aria-pressed={sort === s.key} onClick={() => setSort(s.key)}
-            className={`min-h-10 rounded-full border-2 border-ink px-4 text-sm font-semibold ${sort === s.key ? "bg-ink text-surface" : "bg-surface"}`}>
+            className={`min-h-10 rounded-lg border border-line px-4 text-sm font-semibold ${sort === s.key ? "bg-ink text-surface" : "bg-surface"}`}>
             {s.label}
           </button>
         ))}
       </div>
       <ul className="mt-3 space-y-3">
         {sorted.map((q) => (
-          <li key={q.id} className="rounded-2xl border-2 border-ink p-4">
+          <li key={q.id} className="rounded-2xl border border-line bg-white p-4 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <p className="text-sm">
                 <span className="font-semibold">{q.author}</span>{" "}
                 <a href={q.url} rel="noopener noreferrer nofollow" target="_blank"
-                  className="ml-1 rounded-full border border-ink px-2 py-0.5 text-xs font-semibold no-underline">via {q.platform} ↗</a>
+                  className="ml-1 rounded-md border border-line px-2 py-0.5 text-xs font-semibold no-underline">via {q.platform} ↗</a>
               </p>
               {q.rating != null && (
-                <span role="img" aria-label={`${String(q.rating).replace(".", ",")} sur ${q.scale}`} className="text-accent">{stars(q.rating, q.scale)}</span>
+                <span role="img" aria-label={`${String(q.rating).replace(".", ",")} sur ${q.scale}`} className="text-amber-700">{stars(q.rating, q.scale)}</span>
               )}
             </div>
             <p className="mt-1 text-xs text-ink-3">{q.dateLabel}</p>

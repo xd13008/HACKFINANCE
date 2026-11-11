@@ -11,7 +11,7 @@ export function Stars({ value, scale }: { value: number; scale: number }) {
   const five = Math.round((value / scale) * 5 * 2) / 2;
   const label = `${String(value).replace(".", ",")} sur ${scale}`;
   return (
-    <span role="img" aria-label={label} className="tracking-tight text-accent">
+    <span role="img" aria-label={label} className="tracking-tight text-amber-700">
       {"★".repeat(Math.floor(five))}{five % 1 ? "⯪" : ""}<span className="text-line">{"★".repeat(5 - Math.ceil(five))}</span>
     </span>
   );
@@ -38,11 +38,11 @@ export function PublicReviews({ sources, quotes, summary, name }: { sources: Rev
   return (
     <section className="my-10" aria-labelledby="avis-publics">
       <p className="text-xs font-semibold uppercase tracking-wide text-ink-3">Avis publics · sources citées</p>
-      <h2 id="avis-publics" className="mt-1 text-2xl font-extrabold">Ce que disent les utilisateurs de {name}</h2>
+      <h2 id="avis-publics" className="mt-1 font-display font-extrabold text-2xl sm:text-3xl tracking-tight scroll-mt-24">Ce que disent les utilisateurs de {name}</h2>
 
       <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {sources.map((s) => (
-          <li key={s.id} className="rounded-2xl border-2 border-ink p-4">
+          <li key={s.id} className="rounded-2xl border border-line bg-white p-4 shadow-sm">
             <p className="text-sm font-semibold">{label(s)}</p>
             <p className="mt-1 flex items-baseline gap-2">
               <span className="text-3xl font-extrabold">{s.rating != null ? String(s.rating).replace(".", ",") : "—"}</span>
@@ -58,7 +58,7 @@ export function PublicReviews({ sources, quotes, summary, name }: { sources: Rev
       </ul>
 
       {summary && (
-        <div className="mt-5 rounded-2xl border-2 border-ink p-5">
+        <div className="mt-5 rounded-2xl border border-line bg-white p-5 shadow-sm">
           <p className="text-xs font-semibold uppercase tracking-wide text-ink-3">
             Synthèse de la rédaction · {summary.based_on} avis publics lus
             {summary.period_start && summary.period_end ? ` (du ${formatDate(summary.period_start)} au ${formatDate(summary.period_end)})` : ""}

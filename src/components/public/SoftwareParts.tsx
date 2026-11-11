@@ -48,18 +48,18 @@ export function VerdictBox({ test, overall, criteria, scores, tester }: {
 export function PricingTable({ plans }: { plans: PricingPlan[] }) {
   if (!plans.length) return null;
   return (
-    <section aria-labelledby="prix" className="my-6">
-      <h2 id="prix" className="text-xl font-bold mb-3">Tarifs vérifiés</h2>
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm border border-line">
-          <thead className="bg-surface-2"><tr><th className="text-left p-2">Offre</th><th className="text-left p-2">Prix</th><th className="text-left p-2">Conditions</th><th className="text-left p-2">Source</th></tr></thead>
+    <section aria-labelledby="prix" className="my-10">
+      <h2 id="prix" className="font-display font-extrabold text-2xl sm:text-3xl tracking-tight mb-4 scroll-mt-24">Tarifs vérifiés</h2>
+      <div className="overflow-x-auto rounded-2xl border border-line bg-white shadow-sm">
+        <table className="w-full text-sm">
+          <thead className="bg-surface-2"><tr><th scope="col" className="text-left p-3">Offre</th><th scope="col" className="text-left p-3">Prix</th><th scope="col" className="text-left p-3">Conditions</th><th scope="col" className="text-left p-3">Source</th></tr></thead>
           <tbody>
             {plans.map((p) => (
               <tr key={p.id} className="border-t border-line">
-                <td className="p-2 font-medium">{p.plan_name}</td>
-                <td className="p-2">{priceLabel(p)}</td>
-                <td className="p-2 text-ink-2">{p.conditions}</td>
-                <td className="p-2"><a href={p.source_url} rel="nofollow noopener" target="_blank" className="underline">relevé le {formatDate(p.source_date)}</a></td>
+                <td className="p-3 font-medium">{p.plan_name}</td>
+                <td className="p-3">{priceLabel(p)}</td>
+                <td className="p-3 text-ink-2">{p.conditions}</td>
+                <td className="p-3"><a href={p.source_url} rel="nofollow noopener" target="_blank" className="underline">relevé le {formatDate(p.source_date)}</a></td>
               </tr>
             ))}
           </tbody>

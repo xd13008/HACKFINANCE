@@ -7,7 +7,8 @@ import {
 import type { Criterion } from "@/lib/data";
 import { ContentArticle } from "@/components/public/ContentArticle";
 import { ContentMeta } from "@/components/public/ContentMeta";
-import { FactsTable, PricingTable, VerdictBox, VisitCta } from "@/components/public/SoftwareParts";
+import { PricingTable, VisitCta } from "@/components/public/SoftwareParts";
+import { DecisionAlternatives, DecisionCost, DecisionHeader, DecisionIdentity, DecisionMethod, DecisionSynthesis, DecisionTest, type DecisionSection } from "@/components/public/DecisionFile";
 import { Breadcrumbs } from "@/components/public/Breadcrumbs";
 import { Tracker } from "@/components/public/Tracker";
 import { PublicReviews } from "@/components/public/PublicReviews";
@@ -57,21 +58,39 @@ export default async function SoftwarePage({ params }: { params: P }) {
   const plans = pricing.get(sw.id) ?? [];
   const commercial = affiliate ? ["Lien affilié"] : [];
 
+  const swFacts = facts.get(sw.id);
+  const multiEntity = (swFacts?.get("multi_entity")?.value as boolean | undefined) ?? null;
+  const alternatives = ranking.filter((r) => r.software.id !== sw.id).slice(0, 3);
+  const tested = test && ranked && category;
+  const sections: DecisionSection[] = [
+    ...(tested ? [{ id: "synthese", label: "Synthèse" }, { id: "test", label: "Le test" }] : []),
+    ...(plans.length ? [{ id: "cout", label: "Votre coût" }] : []),
+    ...(swFacts?.size || integrations.length ? [{ id: "identite", label: "Carte d’identité" }] : []),
+    ...(plans.length ? [{ id: "prix", label: "Tarifs" }] : []),
+    ...(reviews.sources.length ? [{ id: "avis-publics", label: "Avis publics" }] : []),
+    ...(alternatives.length ? [{ id: "alternatives", label: "Alternatives" }] : []),
+    ...(tested ? [{ id: "methode", label: "Méthode" }] : []),
+  ];
+
   const parts = (
     <>
-      {test && ranked && category && (
-        <VerdictBox test={test.test} overall={ranked.overall} criteria={category.criteria as Criterion[]} scores={test.scores} tester={names.get(test.test.tester_id)?.name} />
-      )}
+      <DecisionHeader name={sw.name} test={test?.test ?? null} overall={ranked?.overall ?? null} rank={ranked?.rank ?? null}
+        rankTotal={ranking.length} categoryName={category?.name ?? null} plans={plans} sections={sections} />
       <VisitCta name={sw.name} website={sw.website} affiliate={affiliate} softwareId={sw.id} />
+      {tested && <DecisionSynthesis test={test.test} plans={plans} />}
+      {tested && <DecisionTest criteria={category.criteria as Criterion[]} scores={test.scores} overall={ranked.overall} test={test.test} />}
+      <DecisionCost name={sw.name} plans={plans} multiEntity={multiEntity} />
+      <DecisionIdentity facts={swFacts} integrations={integrations} website={sw.website} />
       <PricingTable plans={plans} />
-      <FactsTable facts={facts.get(sw.id)} integrations={integrations} />
       <PublicReviews sources={reviews.sources} quotes={reviews.quotes} summary={reviews.summary} name={sw.name} />
+      {category && <DecisionAlternatives items={alternatives} categorySlug={category.slug} categoryName={category.name} />}
+      {tested && <DecisionMethod test={test.test} tester={names.get(test.test.tester_id)?.name} validator={names.get(test.test.validated_by ?? "")?.name} />}
     </>
   );
 
   if (!content) {
     return (
-      <article className="max-w-3xl mx-auto px-4 py-8">
+      <article className="max-w-6xl mx-auto px-4 py-8">
         <Tracker site={site.key} pageType="software_listing" rubrique={category?.slug} entityId={sw.id} />
         <Breadcrumbs items={crumbs} />
         <h1 className="text-3xl font-extrabold">{sw.name}</h1>
@@ -89,6 +108,7 @@ export default async function SoftwarePage({ params }: { params: P }) {
       rubrique={category?.slug}
       crumbs={crumbs}
       article={false}
+      wide
       meta={
         <ContentMeta
           testStatus={test ? "tested" : "listed"} testedAt={test?.test.tested_at}
