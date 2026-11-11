@@ -169,3 +169,20 @@ jamais sur les sujets réglementés, jamais de classement entre prestataires (co
 À ne pas confondre avec les **matchs éditoriaux** déjà en ligne : en bas de chaque fiche logiciel, les 5 solutions testées
 de la même catégorie dont la note est la plus proche, chacune ouvrant le duel `/comparer/a-vs-b`.
 Sans analyse rédigée validée, le duel affiche seulement les notes et faits validés, en `noindex`.
+
+## 6. Principe : toute information remontée doit être filtrable selon les critères du DAF
+
+Décision du 11 novembre 2026. Les sélections (assistant, univers, matchs, alternatives) ne sont pertinentes que si
+chaque information collectée peut servir de filtre et d'analyse selon les critères de description choisis par le DAF :
+taille et étape de l'entreprise, outils déjà en place (logiciel comptable, ERP, banques), nombre de sociétés,
+budget, hébergement des données, secteur, zone géographique (prestataires), délai de mise en place.
+
+Conséquences pour la collecte (agents 1 à 3) et le modèle de données :
+- chaque fait est stocké **typé et normalisé** (`software_facts.fact_type` + valeur booléenne, nombre, liste de codes),
+  jamais seulement en texte libre ; même vocabulaire de codes que les réponses de l'assistant (ex. `pme2`, `pennylane`) ;
+- les intégrations sont rattachées à un **référentiel d'outils** (pas de libellés divergents) ;
+- chaque fait garde sa source et sa date (règle 6) et n'est filtrable qu'une fois validé par un humain ;
+- un fait manquant s'affiche « non vérifié » et ne fait jamais passer un filtre.
+
+Maquette : écran 9, bloc « Les matchs pour départager » (6 matchs affichés, « Voir les N matchs » pour la suite,
+critères pré-cochés depuis le profil, seuls les matchs dont les deux solutions remplissent tous les critères sont montrés).
