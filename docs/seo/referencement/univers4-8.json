@@ -1,0 +1,3076 @@
+[
+ {
+  "name": "Sellsy",
+  "vendor": "Sellsy",
+  "website": "https://www.sellsy.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation",
+   "recouvrement"
+  ],
+  "tagline": "Suite commerciale avec devis, factures, abonnements et relances de paiement pour PME",
+  "g2_url": "https://www.g2.com/products/sellsy",
+  "g2_rating": 4.0,
+  "g2_reviews": 16,
+  "getapp_url": "https://www.getapp.fr/software/91156/sellsy",
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.sellsy.com/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/sellsy-facturation",
+   "https://www.g2.com/products/sellsy",
+   "https://www.getapp.fr/software/91156/sellsy"
+  ]
+ },
+ {
+  "name": "Axonaut",
+  "vendor": "Axonaut",
+  "website": "https://axonaut.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de gestion pour TPE et PME : CRM, devis, factures, trésorerie et relances",
+  "g2_url": "https://www.g2.com/products/axonaut/reviews",
+  "g2_rating": 4.9,
+  "g2_reviews": 45,
+  "getapp_url": "https://www.getapp.com/sales-software/a/axonaut/",
+  "getapp_rating": 4.6,
+  "getapp_reviews": 22,
+  "sources": [
+   "https://axonaut.com/",
+   "https://agicap.com/fr/article/meilleur-logiciel-facturation/",
+   "https://www.impli.fr/comparatif/logiciel-facturation",
+   "https://www.g2.com/products/axonaut/reviews",
+   "https://www.getapp.com/sales-software/a/axonaut/"
+  ]
+ },
+ {
+  "name": "Pennylane",
+  "vendor": "Pennylane",
+  "website": "https://www.pennylane.com/fr",
+  "website_verified": true,
+  "categories": [
+   "facturation",
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Logiciel de comptabilité et de facturation partagé entre l'entreprise et son expert-comptable",
+  "g2_url": "https://www.g2.com/products/pennylane",
+  "g2_rating": 4.0,
+  "g2_reviews": 6,
+  "getapp_url": "https://www.getapp.com/accounting-software/a/pennylane",
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.pennylane.com/fr",
+   "https://agicap.com/fr/article/meilleur-logiciel-facturation/",
+   "https://www.impli.fr/comparatif/logiciel-facturation",
+   "https://www.g2.com/products/pennylane",
+   "https://www.getapp.com/accounting-software/a/pennylane"
+  ]
+ },
+ {
+  "name": "Evoliz",
+  "vendor": "Evoliz",
+  "website": "https://www.evoliz.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de facturation et de pré-comptabilité en ligne pour TPE, PME et experts-comptables",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.evoliz.com/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/evoliz"
+  ]
+ },
+ {
+  "name": "Tiime",
+  "vendor": "Tiime",
+  "website": "https://www.tiime.fr/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Application de facturation, de notes de frais et de pré-comptabilité reliée à l'expert-comptable",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.tiime.fr/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/tiime"
+  ]
+ },
+ {
+  "name": "Indy",
+  "vendor": "Indy",
+  "website": "https://www.indy.fr/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Application de facturation et de comptabilité destinée aux indépendants et petites sociétés",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.indy.fr/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/indy-facturation"
+  ]
+ },
+ {
+  "name": "Shine Facturation",
+  "vendor": "Shine",
+  "website": "https://www.shine.fr/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Module de devis, factures et suivi des paiements, réservé aux titulaires d'un compte Shine",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.shine.fr/",
+   "https://agicap.com/fr/article/meilleur-logiciel-facturation/",
+   "https://www.impli.fr/comparatif/logiciel-facturation"
+  ]
+ },
+ {
+  "name": "Qonto Facturation",
+  "vendor": "Qonto",
+  "website": "https://qonto.com/fr",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Module de devis, factures et rapprochement des encaissements, réservé aux clients Qonto",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://qonto.com/fr",
+   "https://agicap.com/fr/article/meilleur-logiciel-facturation/",
+   "https://www.impli.fr/comparatif/logiciel-facturation"
+  ]
+ },
+ {
+  "name": "Abby",
+  "vendor": "Abby",
+  "website": "https://abby.fr/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de facturation et de gestion pour indépendants et petites entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://abby.fr/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/abby"
+  ]
+ },
+ {
+  "name": "Henrri",
+  "vendor": "L'Expert-comptable.com",
+  "website": "https://www.henrri.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de devis et de factures en ligne avec une formule gratuite",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.henrri.com/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/2"
+  ]
+ },
+ {
+  "name": "Freebe",
+  "vendor": "Freebe",
+  "website": "https://www.freebe.me/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Outil de facturation, de suivi des paiements et de relances pour indépendants",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.freebe.me/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/2"
+  ]
+ },
+ {
+  "name": "Zervant",
+  "vendor": "Zervant",
+  "website": "https://www.zervant.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de devis, factures et suivi des paiements pour indépendants et petites entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.zervant.com/fr/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/zervant"
+  ]
+ },
+ {
+  "name": "Factomos",
+  "vendor": "Factomos",
+  "website": "https://www.factomos.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de facturation en ligne avec devis, suivi des paiements et gestion de stock",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.factomos.com/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/factomos"
+  ]
+ },
+ {
+  "name": "INFast",
+  "vendor": "Intia",
+  "website": "https://intia.fr/fr/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de facturation électronique pour TPE avec relances de paiement et rapports",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://intia.fr/fr/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/intia"
+  ]
+ },
+ {
+  "name": "VosFactures",
+  "vendor": "VosFactures",
+  "website": "https://vosfactures.fr/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de devis et de factures en ligne pour TPE et PME avec suivi des paiements",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://vosfactures.fr/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/2"
+  ]
+ },
+ {
+  "name": "Facture.net",
+  "vendor": "Facture.net",
+  "website": "https://www.facture.net/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de facturation en ligne gratuit pour devis, factures et suivi des clients",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.facture.net/"
+  ]
+ },
+ {
+  "name": "Facturation.pro",
+  "vendor": "Facturation.pro",
+  "website": "https://www.facturation.pro/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de facturation en ligne pour devis, factures, acomptes et relances",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.facturation.pro/"
+  ]
+ },
+ {
+  "name": "Zoho Invoice",
+  "vendor": "Zoho",
+  "website": "https://www.zoho.com/fr/invoice/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de facturation en ligne avec devis, rappels de paiement et suivi des dépenses",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.zoho.com/fr/invoice/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/2"
+  ]
+ },
+ {
+  "name": "Sage 50",
+  "vendor": "Sage",
+  "website": "https://www.sage.com/fr-fr/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Gamme de logiciels de gestion commerciale, de facturation et de comptabilité pour PME",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.sage.com/fr-fr/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/2",
+   "https://www.sage.com/fr-fr/comptabilite-logiciels/consolidation-comptable/"
+  ]
+ },
+ {
+  "name": "EBP Gestion Commerciale",
+  "vendor": "EBP",
+  "website": "https://www.ebp.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciels de devis, facturation et gestion commerciale pour TPE et PME",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.ebp.com/"
+  ]
+ },
+ {
+  "name": "Odoo Facturation",
+  "vendor": "Odoo",
+  "website": "https://www.odoo.com/fr_FR/app/invoicing",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Module de facturation de la suite de gestion Odoo, avec relances et paiements en ligne",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.odoo.com/fr_FR/app/invoicing"
+  ]
+ },
+ {
+  "name": "Dolibarr",
+  "vendor": "Association Dolibarr",
+  "website": "https://www.dolibarr.org/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel libre de gestion avec devis, commandes, factures et suivi des règlements",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.dolibarr.org/"
+  ]
+ },
+ {
+  "name": "Incwo",
+  "vendor": "Incwo",
+  "website": "https://www.incwo.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de gestion en ligne pour PME : CRM, devis, factures, stocks",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.incwo.com/"
+  ]
+ },
+ {
+  "name": "Wuro",
+  "vendor": "Wuro",
+  "website": "https://www.wuro.fr/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de gestion commerciale et de facturation en ligne pour TPE et PME",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.wuro.fr/"
+  ]
+ },
+ {
+  "name": "Kolecto",
+  "vendor": "Kolecto",
+  "website": "https://www.kolecto.fr/",
+  "website_verified": true,
+  "categories": [
+   "facturation",
+   "recouvrement"
+  ],
+  "tagline": "Logiciel de facturation, de relance client et de suivi de trésorerie pour PME",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.kolecto.fr/"
+  ]
+ },
+ {
+  "name": "Obat",
+  "vendor": "Obat",
+  "website": "https://www.obat.fr/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de devis et de factures pour les artisans et entreprises du bâtiment",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.obat.fr/",
+   "https://agicap.com/fr/article/meilleur-logiciel-facturation/",
+   "https://www.impli.fr/comparatif/logiciel-facturation"
+  ]
+ },
+ {
+  "name": "Tolteck",
+  "vendor": "Tolteck",
+  "website": "https://www.tolteck.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de devis et de factures destiné aux artisans du bâtiment",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.tolteck.com/"
+  ]
+ },
+ {
+  "name": "ProGBat",
+  "vendor": "ProGBat",
+  "website": "https://www.progbat.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel en ligne de devis, facturation et suivi de chantier pour le bâtiment",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.progbat.com/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/progbat"
+  ]
+ },
+ {
+  "name": "Stripe Billing",
+  "vendor": "Stripe",
+  "website": "https://stripe.com/fr/billing",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Outil de facturation récurrente et de gestion des abonnements intégré aux paiements Stripe",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://stripe.com/fr/billing"
+  ]
+ },
+ {
+  "name": "Chargebee",
+  "vendor": "Chargebee",
+  "website": "https://www.chargebee.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Plateforme de gestion des abonnements, de facturation récurrente et de revenus",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.chargebee.com/"
+  ]
+ },
+ {
+  "name": "Zuora",
+  "vendor": "Zuora",
+  "website": "https://www.zuora.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Plateforme de facturation des abonnements et de gestion des revenus pour grandes entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.zuora.com/"
+  ]
+ },
+ {
+  "name": "ProAbono",
+  "vendor": "ProAbono",
+  "website": "https://www.proabono.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de facturation récurrente et de gestion des abonnements pour éditeurs et services",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.proabono.com/"
+  ]
+ },
+ {
+  "name": "Esker Order-to-Cash",
+  "vendor": "Esker",
+  "website": "https://www.esker.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "facturation",
+   "recouvrement",
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Plateforme d'automatisation des cycles achats et ventes : facturation, encaissement, recouvrement",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.esker.com/fr/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/esker"
+  ]
+ },
+ {
+  "name": "Generix Invoice Services",
+  "vendor": "Generix Group",
+  "website": "https://www.generixgroup.com/fr",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Solution de dématérialisation et d'échange de factures électroniques pour entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.generixgroup.com/fr"
+  ]
+ },
+ {
+  "name": "Cegedim e-business",
+  "vendor": "Cegedim",
+  "website": "https://www.cegedim-business-services.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Plateforme d'échange de factures électroniques et de dématérialisation des documents",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.cegedim-business-services.com/"
+  ]
+ },
+ {
+  "name": "Docaposte facturation électronique",
+  "vendor": "Docaposte",
+  "website": "https://www.docaposte.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Solutions de dématérialisation et d'échange de factures électroniques du groupe La Poste",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.docaposte.com/"
+  ]
+ },
+ {
+  "name": "Furious",
+  "vendor": "Furious Squad",
+  "website": "https://www.furious-squad.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de gestion de projets et de facturation pour sociétés de services",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.furious-squad.com/"
+  ]
+ },
+ {
+  "name": "BoondManager",
+  "vendor": "Boond",
+  "website": "https://www.boondmanager.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "ERP pour sociétés de conseil et ESN : temps, devis, factures et ressources",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.boondmanager.com/"
+  ]
+ },
+ {
+  "name": "MyFacturation",
+  "vendor": "MyFacturation",
+  "website": "https://www.myfacturation.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de facturation et de comptabilité pour petites entreprises avec relances",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.myfacturation.com/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/myfacturation"
+  ]
+ },
+ {
+  "name": "Ciel Devis Factures",
+  "vendor": "Sage",
+  "website": "https://www.ciel.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Logiciel de devis et factures sous Windows pour petites entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.ciel.com/",
+   "https://www.appvizer.fr/finance-comptabilite/facturation/2"
+  ]
+ },
+ {
+  "name": "Iopole",
+  "vendor": "Iopole",
+  "website": "https://www.iopole.com/",
+  "website_verified": true,
+  "categories": [
+   "facturation"
+  ],
+  "tagline": "Plateforme d'émission et de réception de factures électroniques",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.iopole.com/"
+  ]
+ },
+ {
+  "name": "Upflow",
+  "vendor": "Upflow",
+  "website": "https://upflow.io/fr",
+  "website_verified": true,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Logiciel de gestion du poste client avec relances automatisées et paiement en ligne",
+  "g2_url": "https://www.g2.com/products/upflow-upflow/reviews_and_filters",
+  "g2_rating": null,
+  "g2_reviews": 233,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://upflow.io/fr",
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement/upflow",
+   "https://www.g2.com/products/upflow-upflow/reviews_and_filters"
+  ]
+ },
+ {
+  "name": "LeanPay",
+  "vendor": "LeanPay",
+  "website": "https://www.leanpay.io/",
+  "website_verified": true,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Logiciel de relance client multicanal et de suivi du recouvrement hébergé en France",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.leanpay.io/",
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement/leanpay"
+  ]
+ },
+ {
+  "name": "My DSO Manager",
+  "vendor": "My DSO Manager",
+  "website": "https://www.mydsomanager.com/",
+  "website_verified": true,
+  "categories": [
+   "recouvrement",
+   "information-solvabilite"
+  ],
+  "tagline": "Logiciel de gestion du poste client, de relance et de suivi du risque client",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.mydsomanager.com/",
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement/my-dso"
+  ]
+ },
+ {
+  "name": "Hoopiz Credit Management",
+  "vendor": "Hoopiz",
+  "website": "https://www.hoopiz.fr/",
+  "website_verified": true,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Logiciel de credit management avec relances automatisées et suivi des litiges",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.hoopiz.fr/",
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement/hoopiz"
+  ]
+ },
+ {
+  "name": "Aston AI",
+  "vendor": "Aston iTF",
+  "website": "https://www.aston-ai.fr/",
+  "website_verified": false,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Plateforme de credit management et de recouvrement avec scénarios de relance",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": "https://www.getapp.fr/software/2063520/aston-itf",
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement/aston-itclients",
+   "https://www.getapp.fr/software/2063520/aston-itf"
+  ]
+ },
+ {
+  "name": "Clearnox",
+  "vendor": "Clearnox",
+  "website": "https://clearnox.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Outil de suivi des factures, de relance et de gestion des litiges clients",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://clearnox.com/fr/",
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement/clearnox"
+  ]
+ },
+ {
+  "name": "Billabex",
+  "vendor": "Billabex",
+  "website": "https://www.billabex.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Logiciel de relance des impayés piloté par IA, pour factures B2B",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.billabex.com/fr/",
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement/billabex"
+  ]
+ },
+ {
+  "name": "GCollect",
+  "vendor": "GCollect",
+  "website": "https://www.gcollect.fr/",
+  "website_verified": true,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Plateforme de relance et de suivi des encaissements pour entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.gcollect.fr/",
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement/gcollect"
+  ]
+ },
+ {
+  "name": "Eloficash",
+  "vendor": "Covline",
+  "website": "https://www.eloficash.com/",
+  "website_verified": true,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Logiciel de gestion du poste client et de pilotage du recouvrement pour ETI",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.eloficash.com/",
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement/eloficash"
+  ]
+ },
+ {
+  "name": "Sidetrade",
+  "vendor": "Sidetrade",
+  "website": "https://www.sidetrade.com/",
+  "website_verified": true,
+  "categories": [
+   "recouvrement",
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Plateforme order-to-cash avec IA pour le recouvrement, le credit management et l'encaissement",
+  "g2_url": "https://www.g2.com/products/sidetrade-o2c-intelligence-platform/reviews",
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.sidetrade.com/",
+   "https://www.sidetrade.com/company/",
+   "https://www.g2.com/products/sidetrade-o2c-intelligence-platform/reviews"
+  ]
+ },
+ {
+  "name": "HighRadius",
+  "vendor": "HighRadius",
+  "website": "https://www.highradius.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "recouvrement",
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Plateforme order-to-cash et de clôture financière avec agents IA pour grandes entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.highradius.com/fr/",
+   "https://www.highradius.com/fr/ressources/Blog/meilleur-logiciel-recouvrement/"
+  ]
+ },
+ {
+  "name": "Quadient Accounts Receivable",
+  "vendor": "Quadient",
+  "website": "https://www.quadient.com/fr",
+  "website_verified": true,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Solution de gestion du poste client et de relances automatisées",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.quadient.com/fr"
+  ]
+ },
+ {
+  "name": "Agicap",
+  "vendor": "Agicap",
+  "website": "https://agicap.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Logiciel de gestion de trésorerie avec module de relance et de suivi des encaissements",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://agicap.com/fr/",
+   "https://agicap.com/fr/article/meilleurs-logiciels-recouvrement/",
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement"
+  ]
+ },
+ {
+  "name": "Matys",
+  "vendor": "Matys",
+  "website": "https://www.matys.fr/",
+  "website_verified": false,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Logiciel de gestion du poste client avec relances automatisées et rapports",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement/creansoft"
+  ]
+ },
+ {
+  "name": "Rubypayeur",
+  "vendor": "Rubypayeur",
+  "website": "https://www.rubypayeur.com/",
+  "website_verified": false,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Plateforme de relance des impayés avec génération de mises en demeure",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement/rubypayeur"
+  ]
+ },
+ {
+  "name": "Recovr",
+  "vendor": "Recovr",
+  "website": "https://www.recovr.eu/",
+  "website_verified": true,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Outil de gestion des factures impayées avec automatisation des relances",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.recovr.eu/",
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement/recovr"
+  ]
+ },
+ {
+  "name": "Kwote",
+  "vendor": "Kwote",
+  "website": "https://www.kwote.fr/",
+  "website_verified": true,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Logiciel de credit management multilingue et multidevise avec relances",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.kwote.fr/",
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement/kwote"
+  ]
+ },
+ {
+  "name": "dsosuite",
+  "vendor": "dsosuite",
+  "website": "https://www.dsosuite.com/",
+  "website_verified": true,
+  "categories": [
+   "recouvrement"
+  ],
+  "tagline": "Outil de credit management : contacts, suivi des paiements et reporting",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.dsosuite.com/",
+   "https://www.appvizer.fr/finance-comptabilite/recouvrement/dsosuite"
+  ]
+ },
+ {
+  "name": "Pappers",
+  "vendor": "Pappers",
+  "website": "https://www.pappers.fr/",
+  "website_verified": true,
+  "categories": [
+   "information-solvabilite"
+  ],
+  "tagline": "Moteur de recherche d'informations légales et financières sur les entreprises françaises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.pappers.fr/",
+   "https://www.pappers.fr/scoring"
+  ]
+ },
+ {
+  "name": "Societe.com",
+  "vendor": "Societe.com",
+  "website": "https://www.societe.com/",
+  "website_verified": true,
+  "categories": [
+   "information-solvabilite"
+  ],
+  "tagline": "Informations légales et financières sur les entreprises, avec surveillance et alertes",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.societe.com/",
+   "https://www.societe.com/solutions/surveillance"
+  ]
+ },
+ {
+  "name": "Infogreffe",
+  "vendor": "GIE Infogreffe",
+  "website": "https://www.infogreffe.fr/",
+  "website_verified": false,
+  "categories": [
+   "information-solvabilite"
+  ],
+  "tagline": "Service des greffes des tribunaux de commerce : Kbis, comptes annuels, actes",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://independant.io/sites-information-entreprise/"
+  ]
+ },
+ {
+  "name": "Creditsafe",
+  "vendor": "Creditsafe",
+  "website": "https://www.creditsafe.com/fr/fr.html",
+  "website_verified": true,
+  "categories": [
+   "information-solvabilite"
+  ],
+  "tagline": "Rapports de solvabilité, scores de risque et alertes sur les entreprises",
+  "g2_url": "https://www.g2.com/products/creditsafe",
+  "g2_rating": 4.5,
+  "g2_reviews": 166,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.creditsafe.com/fr/fr.html",
+   "https://companydata.com/b2b-data-provider-comparisons/france/",
+   "https://www.g2.com/products/creditsafe"
+  ]
+ },
+ {
+  "name": "Altares",
+  "vendor": "Altares",
+  "website": "https://www.altares.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "information-solvabilite"
+  ],
+  "tagline": "Information financière et scores de défaillance, partenaire de Dun & Bradstreet",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.altares.com/fr/",
+   "https://companydata.com/b2b-data-provider-comparisons/france/"
+  ]
+ },
+ {
+  "name": "Ellisphere",
+  "vendor": "Ellisphere",
+  "website": "https://www.ellisphere.com/",
+  "website_verified": true,
+  "categories": [
+   "information-solvabilite"
+  ],
+  "tagline": "Information de solvabilité, scores de défaillance et outils de conformité",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.ellisphere.com/",
+   "https://companydata.com/b2b-data-provider-comparisons/france/"
+  ]
+ },
+ {
+  "name": "Infolegale",
+  "vendor": "Infolegale",
+  "website": "https://www.infolegale.fr/",
+  "website_verified": true,
+  "categories": [
+   "information-solvabilite"
+  ],
+  "tagline": "Information légale et financière sur les entreprises avec scores et alertes",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.infolegale.fr/",
+   "https://companydata.com/b2b-data-provider-comparisons/france/"
+  ]
+ },
+ {
+  "name": "Infonet",
+  "vendor": "Infonet",
+  "website": "https://infonet.fr/",
+  "website_verified": true,
+  "categories": [
+   "information-solvabilite"
+  ],
+  "tagline": "Informations financières, score de solvabilité et diagnostic des entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://infonet.fr/",
+   "https://www.lafabriquedunet.fr/logiciel/infonet/"
+  ]
+ },
+ {
+  "name": "Societeinfo",
+  "vendor": "Societeinfo",
+  "website": "https://societeinfo.com/",
+  "website_verified": true,
+  "categories": [
+   "information-solvabilite"
+  ],
+  "tagline": "Base de données d'entreprises françaises avec informations légales et financières",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://societeinfo.com/",
+   "https://societeinfo.com/presentation/comparatif-bases-de-donnees-b2b"
+  ]
+ },
+ {
+  "name": "Scores & Décisions",
+  "vendor": "Scores & Décisions",
+  "website": "https://www.scores-decisions.com/",
+  "website_verified": true,
+  "categories": [
+   "information-solvabilite"
+  ],
+  "tagline": "Scores de solvabilité et informations financières sur les entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.scores-decisions.com/",
+   "https://companydata.com/b2b-data-provider-comparisons/france/"
+  ]
+ },
+ {
+  "name": "Société.ninja",
+  "vendor": "Société.ninja",
+  "website": "https://www.societe.ninja/",
+  "website_verified": true,
+  "categories": [
+   "information-solvabilite"
+  ],
+  "tagline": "Fiches d'entreprises avec indicateur de solvabilité et limite d'encours suggérée",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.societe.ninja/",
+   "https://independant.io/sites-information-entreprise/"
+  ]
+ },
+ {
+  "name": "Score3",
+  "vendor": "Score3",
+  "website": "https://www.score3.fr/",
+  "website_verified": false,
+  "categories": [
+   "information-solvabilite"
+  ],
+  "tagline": "Rapports structurés sur les entreprises françaises et étrangères",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.clubic.com/telecharger-fiche600292-score3.html"
+  ]
+ },
+ {
+  "name": "Orbis / Diane",
+  "vendor": "Moody's (Bureau van Dijk)",
+  "website": "https://www.bvdinfo.com/fr-fr/",
+  "website_verified": true,
+  "categories": [
+   "information-solvabilite"
+  ],
+  "tagline": "Base de données financières sur les entreprises françaises et internationales",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.bvdinfo.com/fr-fr/",
+   "https://companydata.com/b2b-data-provider-comparisons/france/"
+  ]
+ },
+ {
+  "name": "CompanyData",
+  "vendor": "CompanyData",
+  "website": "https://companydata.com/",
+  "website_verified": true,
+  "categories": [
+   "information-solvabilite"
+  ],
+  "tagline": "Base de données d'entreprises avec informations légales et financières",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://companydata.com/"
+  ]
+ },
+ {
+  "name": "360Learning",
+  "vendor": "360Learning",
+  "website": "https://360learning.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de formation collaborative combinant LMS, création de contenus et IA",
+  "g2_url": "https://www.g2.com/products/360learning/",
+  "g2_rating": 4.6,
+  "g2_reviews": 598,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://360learning.com/fr/",
+   "https://360learning.com/fr/blog/comparatif-meilleurs-lms/",
+   "https://www.g2.com/products/360learning/"
+  ]
+ },
+ {
+  "name": "Didask",
+  "vendor": "Didask",
+  "website": "https://www.didask.com/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de formation fondée sur les sciences cognitives avec création assistée par IA",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.didask.com/"
+  ]
+ },
+ {
+  "name": "Rise Up",
+  "vendor": "Rise Up",
+  "website": "https://www.riseup.ai/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de formation LMS et LXP pour le présentiel, le distanciel et le mixte",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.riseup.ai/"
+  ]
+ },
+ {
+  "name": "Docebo",
+  "vendor": "Docebo",
+  "website": "https://www.docebo.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de formation d'entreprise avec IA, apprentissage social et analyses",
+  "g2_url": "https://www.g2.com/products/docebo/reviews",
+  "g2_rating": 4.3,
+  "g2_reviews": 742,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.docebo.com/fr/",
+   "https://www.g2.com/products/docebo/reviews"
+  ]
+ },
+ {
+  "name": "iSpring Learn",
+  "vendor": "iSpring",
+  "website": "https://www.ispring.fr/ispring-learn",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "LMS d'entreprise compatible SCORM et xAPI avec application mobile",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.ispring.fr/ispring-learn"
+  ]
+ },
+ {
+  "name": "TalentLMS",
+  "vendor": "Epignosis",
+  "website": "https://www.talentlms.com/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "LMS en ligne avec ludification, parcours et application mobile",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.talentlms.com/"
+  ]
+ },
+ {
+  "name": "Moodle",
+  "vendor": "Moodle",
+  "website": "https://moodle.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme d'apprentissage libre pour créer et gérer des cours en ligne",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://moodle.com/fr/"
+  ]
+ },
+ {
+  "name": "Cornerstone",
+  "vendor": "Cornerstone OnDemand",
+  "website": "https://www.cornerstoneondemand.com/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Suite de gestion de la formation et des talents pour grandes organisations",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.cornerstoneondemand.com/"
+  ]
+ },
+ {
+  "name": "Teach Up",
+  "vendor": "Teach Up",
+  "website": "https://www.teachup.com/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de formation personnalisée et collaborative avec suivi des compétences",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.teachup.com/"
+  ]
+ },
+ {
+  "name": "Beedeez",
+  "vendor": "Beedeez",
+  "website": "https://www.beedeez.com/fr",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Application de microlearning mobile pour la formation des équipes terrain",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.beedeez.com/fr"
+  ]
+ },
+ {
+  "name": "Coorpacademy",
+  "vendor": "Go1",
+  "website": "https://www.coorpacademy.com/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de formation en ligne avec catalogue de contenus et ludification",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.coorpacademy.com/"
+  ]
+ },
+ {
+  "name": "Syfadis",
+  "vendor": "Syfadis",
+  "website": "https://www.syfadis.com/",
+  "website_verified": false,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Suite logicielle de gestion de la formation et LMS pour entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://docs.syfadis.com/docs/en-gb/getting-started-with-xperience-lms"
+  ]
+ },
+ {
+  "name": "Cegid Talentsoft Learning",
+  "vendor": "Cegid",
+  "website": "https://www.cegid.com/fr/produits/cegid-talentsoft/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Module de formation de la suite de gestion des talents Cegid",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.cegid.com/fr/produits/cegid-talentsoft/"
+  ]
+ },
+ {
+  "name": "SAP SuccessFactors Learning",
+  "vendor": "SAP",
+  "website": "https://www.sap.com/france/products/hcm/corporate-lms.html",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Système de gestion de la formation intégré à la suite RH SAP SuccessFactors",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.sap.com/france/products/hcm/corporate-lms.html"
+  ]
+ },
+ {
+  "name": "CrossKnowledge",
+  "vendor": "Wiley",
+  "website": "https://www.crossknowledge.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de formation en ligne avec contenus en management et leadership",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.crossknowledge.com/fr/"
+  ]
+ },
+ {
+  "name": "Learnybox",
+  "vendor": "Learnybox",
+  "website": "https://learnybox.com/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de création et de diffusion de formations en ligne",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://learnybox.com/"
+  ]
+ },
+ {
+  "name": "Dokeos",
+  "vendor": "Dokeos",
+  "website": "https://www.dokeos.com/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme e-learning pour créer, diffuser et suivre des formations",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.dokeos.com/"
+  ]
+ },
+ {
+  "name": "Chamilo",
+  "vendor": "Association Chamilo",
+  "website": "https://chamilo.org/fr/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme d'apprentissage libre et gratuite pour créer et suivre des formations",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://chamilo.org/fr/"
+  ]
+ },
+ {
+  "name": "myskillcamp",
+  "vendor": "myskillcamp",
+  "website": "https://www.myskillcamp.com/fr",
+  "website_verified": false,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de formation agrégeant contenus internes et externes",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.appvizer.fr/ressources-humaines/learning-management-system"
+  ]
+ },
+ {
+  "name": "Sparted",
+  "vendor": "Sparted",
+  "website": "https://www.sparted.com/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Application de microlearning pour la formation des collaborateurs",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.sparted.com/"
+  ]
+ },
+ {
+  "name": "Teachizy",
+  "vendor": "Teachizy",
+  "website": "https://www.teachizy.fr/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de création, de diffusion et de vente de formations en ligne",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.teachizy.fr/"
+  ]
+ },
+ {
+  "name": "ExperQuiz",
+  "vendor": "ExperQuiz",
+  "website": "https://www.experquiz.com/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "LMS et outil d'évaluation pour la formation continue et la certification",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.experquiz.com/"
+  ]
+ },
+ {
+  "name": "Apolearn",
+  "vendor": "Apolearn",
+  "website": "https://apolearn.com/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de formation en ligne et de communautés d'apprentissage",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://apolearn.com/",
+   "https://www.appvizer.fr/education/formation-elearning/apolearn"
+  ]
+ },
+ {
+  "name": "MOS Chorus",
+  "vendor": "MOS - MindOnSite",
+  "website": "https://www.mindonsite.com/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de formation d'entreprise avec création de cours et analyses",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.mindonsite.com/"
+  ]
+ },
+ {
+  "name": "LearnWorlds",
+  "vendor": "LearnWorlds",
+  "website": "https://www.learnworlds.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de création, diffusion et vente de formations en ligne",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.learnworlds.com/fr/"
+  ]
+ },
+ {
+  "name": "Digiforma",
+  "vendor": "Digiforma",
+  "website": "https://www.digiforma.com/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Logiciel de gestion pour organismes de formation avec espace d'apprentissage",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.digiforma.com/"
+  ]
+ },
+ {
+  "name": "Edflex",
+  "vendor": "Edflex",
+  "website": "https://www.edflex.com/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de curation de contenus de formation pour entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.edflex.com/"
+  ]
+ },
+ {
+  "name": "Workday Learning",
+  "vendor": "Workday",
+  "website": "https://www.workday.com/fr-fr/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Module de gestion de la formation intégré à la suite RH et finance Workday",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.workday.com/fr-fr/"
+  ]
+ },
+ {
+  "name": "Skillsoft Percipio",
+  "vendor": "Skillsoft",
+  "website": "https://www.skillsoft.com/fr",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de formation en ligne avec catalogue de contenus et parcours",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.skillsoft.com/fr"
+  ]
+ },
+ {
+  "name": "Simbel",
+  "vendor": "Simbel",
+  "website": "https://www.simbel.com/",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Suite de gestion de la formation combinant gestion administrative (TMS) et LMS",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.simbel.com/"
+  ]
+ },
+ {
+  "name": "Schoolmaker",
+  "vendor": "Schoolmaker",
+  "website": "https://schoolmaker.com/fr",
+  "website_verified": true,
+  "categories": [
+   "plateformes-lms"
+  ],
+  "tagline": "Plateforme de création de formations en ligne et de communautés",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://schoolmaker.com/fr",
+   "https://schoolmaker.com/fr/blog/logiciels-formation"
+  ]
+ },
+ {
+  "name": "UiPath",
+  "vendor": "UiPath",
+  "website": "https://www.uipath.com/fr",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Plateforme d'automatisation des processus par robots logiciels et agents IA",
+  "g2_url": "https://www.g2.com/products/uipath-agentic-automation/reviews",
+  "g2_rating": 4.6,
+  "g2_reviews": 7582,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.uipath.com/fr",
+   "https://www.appvizer.fr/services-informatiques/rpa/uipath",
+   "https://www.g2.com/products/uipath-agentic-automation/reviews"
+  ]
+ },
+ {
+  "name": "Automation Anywhere",
+  "vendor": "Automation Anywhere",
+  "website": "https://www.automationanywhere.com/fr",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Plateforme d'automatisation des processus et d'agents IA pour entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.automationanywhere.com/fr",
+   "https://www.automationanywhere.com/fr/rpa/robotic-process-automation"
+  ]
+ },
+ {
+  "name": "Blue Prism",
+  "vendor": "SS&C Blue Prism",
+  "website": "https://www.blueprism.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Plateforme d'automatisation robotisée des processus pour grandes organisations",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.blueprism.com/fr/",
+   "https://www.appvizer.fr/services-informatiques/rpa"
+  ]
+ },
+ {
+  "name": "Microsoft Power Automate",
+  "vendor": "Microsoft",
+  "website": "https://www.microsoft.com/fr-fr/power-platform/products/power-automate",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Outil d'automatisation des flux de travail et des tâches de bureau",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.microsoft.com/fr-fr/power-platform/products/power-automate"
+  ]
+ },
+ {
+  "name": "Zoho RPA",
+  "vendor": "Zoho",
+  "website": "https://www.zoho.com/fr/rpa/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Outil d'automatisation robotisée avec éditeur visuel et planification des tâches",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.zoho.com/fr/rpa/",
+   "https://www.appvizer.fr/services-informatiques/rpa"
+  ]
+ },
+ {
+  "name": "BlackLine",
+  "vendor": "BlackLine",
+  "website": "https://www.blackline.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Logiciel d'automatisation de la clôture comptable et des rapprochements de comptes",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.blackline.com/fr/",
+   "https://thecfoclub.com/fr/tools/meilleurs-logiciels-cloture-financiere/"
+  ]
+ },
+ {
+  "name": "Trintech Cadency",
+  "vendor": "Trintech",
+  "website": "https://fr.trintech.com/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Logiciel de clôture financière et de rapprochement pour grandes entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://fr.trintech.com/"
+  ]
+ },
+ {
+  "name": "FloQast",
+  "vendor": "FloQast",
+  "website": "https://www.floqast.com/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Logiciel de gestion et d'automatisation de la clôture comptable",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.floqast.com/",
+   "https://thecfoclub.com/fr/tools/meilleurs-logiciels-cloture-financiere/"
+  ]
+ },
+ {
+  "name": "CCH Tagetik",
+  "vendor": "Wolters Kluwer",
+  "website": "https://www.wolterskluwer.com/fr-fr/solutions/cch-tagetik",
+  "website_verified": false,
+  "categories": [
+   "automatisation-ia-finance",
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de gestion de la performance : clôture, consolidation, intercompagnies, ESG",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://donneespersonnelles.fr/logiciels-reporting-esg",
+   "https://www.wolterskluwer.com/en/expert-insights/cch-tagetik-esg-demo"
+  ]
+ },
+ {
+  "name": "Yooz",
+  "vendor": "Yooz",
+  "website": "https://www.getyooz.com/fr",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Automatisation du traitement des factures fournisseurs par IA",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.getyooz.com/fr"
+  ]
+ },
+ {
+  "name": "Dext",
+  "vendor": "Dext",
+  "website": "https://dext.com/fr",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Extraction automatique des données des factures et reçus vers la comptabilité",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://dext.com/fr"
+  ]
+ },
+ {
+  "name": "Mindee",
+  "vendor": "Mindee",
+  "website": "https://www.mindee.com/fr",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "API d'extraction de données des documents, dont factures et reçus",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.mindee.com/fr"
+  ]
+ },
+ {
+  "name": "Rossum",
+  "vendor": "Rossum",
+  "website": "https://rossum.ai/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Plateforme d'extraction et de traitement des documents commerciaux par IA",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://rossum.ai/"
+  ]
+ },
+ {
+  "name": "Doxis (ex-Klippa)",
+  "vendor": "Doxis",
+  "website": "https://www.klippa.com/fr/accueil/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Traitement automatique des documents et des factures par OCR et IA",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.klippa.com/fr/accueil/"
+  ]
+ },
+ {
+  "name": "Tungsten Automation",
+  "vendor": "Tungsten Automation",
+  "website": "https://www.tungstenautomation.fr/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Logiciels de capture documentaire et d'automatisation des processus, ex-Kofax",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.tungstenautomation.fr/"
+  ]
+ },
+ {
+  "name": "ABBYY Vantage",
+  "vendor": "ABBYY",
+  "website": "https://www.abbyy.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Plateforme de traitement intelligent des documents, dont factures et bons de commande",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.abbyy.com/fr/"
+  ]
+ },
+ {
+  "name": "Inqom",
+  "vendor": "Visma",
+  "website": "https://www.inqom.com/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Logiciel de production comptable avec saisie et lettrage automatisés par IA",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.inqom.com/",
+   "https://hayot-expertise.fr/en/blog/inqom-vs-myunisoft-ai-pre-accounting-france-2026"
+  ]
+ },
+ {
+  "name": "Chaintrust",
+  "vendor": "Visma",
+  "website": "https://www.chaintrust.io/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Plateforme d'automatisation de la saisie comptable et du lettrage bancaire",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.chaintrust.io/",
+   "https://www.blogdumoderateur.com/tools/chaintrust/"
+  ]
+ },
+ {
+  "name": "MyUnisoft",
+  "vendor": "MyUnisoft",
+  "website": "https://myu.fr/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Logiciel de production comptable avec pré-comptabilité automatisée",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://myu.fr/",
+   "https://hayot-expertise.fr/en/blog/inqom-vs-myunisoft-ai-pre-accounting-france-2026"
+  ]
+ },
+ {
+  "name": "Basware",
+  "vendor": "Basware",
+  "website": "https://www.basware.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance",
+   "facturation"
+  ],
+  "tagline": "Automatisation du traitement des factures fournisseurs et réseau de facturation électronique",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.basware.com/fr/"
+  ]
+ },
+ {
+  "name": "Payflows",
+  "vendor": "Payflows",
+  "website": "https://www.payflows.io/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Automatisation des processus de paiement fournisseurs et de rapprochement",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.payflows.io/"
+  ]
+ },
+ {
+  "name": "OneStream",
+  "vendor": "OneStream",
+  "website": "https://www.onestream.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "automatisation-ia-finance"
+  ],
+  "tagline": "Plateforme de clôture, consolidation et planification financière",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.onestream.com/fr/"
+  ]
+ },
+ {
+  "name": "LabOxy",
+  "vendor": "LabOxy",
+  "website": "https://www.laboxy.fr/",
+  "website_verified": true,
+  "categories": [
+   "logiciels-cir-cii"
+  ],
+  "tagline": "Plateforme de pilotage de la R&D avec feuilles de temps et calcul du CIR et du CII",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.laboxy.fr/",
+   "https://lespepitestech.com/startup-de-la-french-tech/laboxy"
+  ]
+ },
+ {
+  "name": "MyInnoTime",
+  "vendor": "G.A.C. Group",
+  "website": "https://group-gac.com/en/service/time-and-activity-management-solution/",
+  "website_verified": true,
+  "categories": [
+   "logiciels-cir-cii"
+  ],
+  "tagline": "Solution de suivi des temps et activités conforme aux exigences du CIR et du CII",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://group-gac.com/en/service/time-and-activity-management-solution/"
+  ]
+ },
+ {
+  "name": "JourOff",
+  "vendor": "JourOff",
+  "website": "https://www.jouroff.com/",
+  "website_verified": true,
+  "categories": [
+   "logiciels-cir-cii"
+  ],
+  "tagline": "Gestion de projet, congés et temps avec suivi des temps de R&D",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.jouroff.com/",
+   "https://www.appvizer.fr/magazine/ressources-humaines/gestion-des-temps/suivez-votre-gestion-des-temps-pour-booster-votre-productivite-recherche-developpement"
+  ]
+ },
+ {
+  "name": "Gryzzly",
+  "vendor": "Gryzzly",
+  "website": "https://www.gryzzly.io/fr/",
+  "website_verified": true,
+  "categories": [
+   "logiciels-cir-cii"
+  ],
+  "tagline": "Outil de suivi des temps par projet utilisable pour justifier les temps de R&D",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.gryzzly.io/fr/"
+  ]
+ },
+ {
+  "name": "Sweep",
+  "vendor": "Sweep",
+  "website": "https://www.sweep.net/fr",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de gestion carbone, de collecte des données ESG et de reporting CSRD",
+  "g2_url": "https://www.g2.com/products/sweep-sweep/reviews",
+  "g2_rating": 4.8,
+  "g2_reviews": 4,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.sweep.net/fr",
+   "https://www.sweep.net/fr/reporting-esg",
+   "https://www.g2.com/products/sweep-sweep/reviews"
+  ]
+ },
+ {
+  "name": "Greenly",
+  "vendor": "Greenly",
+  "website": "https://greenly.earth/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de bilan carbone et de reporting ESG pour PME et ETI",
+  "g2_url": "https://www.g2.com/products/greenly",
+  "g2_rating": 4.7,
+  "g2_reviews": 27,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://greenly.earth/",
+   "https://www.g2.com/products/greenly"
+  ]
+ },
+ {
+  "name": "Carbo",
+  "vendor": "Carbo",
+  "website": "https://www.hellocarbo.com/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de bilan carbone, d'analyse de cycle de vie et de pilotage RSE",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.hellocarbo.com/",
+   "https://www.appvizer.fr/impact/bilan-carbone/carbo"
+  ]
+ },
+ {
+  "name": "Tennaxia",
+  "vendor": "Tennaxia",
+  "website": "https://www.tennaxia.com/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de reporting extra-financier, ESRS et bilan carbone",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.tennaxia.com/",
+   "https://donneespersonnelles.fr/logiciels-reporting-esg"
+  ]
+ },
+ {
+  "name": "Toovalu",
+  "vendor": "Toovalu",
+  "website": "https://www.toovalu.com/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Logiciel de bilan carbone, de pilotage climat et de reporting ESG et CSRD",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.toovalu.com/",
+   "https://donneespersonnelles.fr/logiciels-reporting-esg"
+  ]
+ },
+ {
+  "name": "Orki",
+  "vendor": "Orki",
+  "website": "https://orki.green/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Logiciel de calcul des émissions et de bilan carbone d'entreprise",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://orki.green/",
+   "https://www.appvizer.fr/impact/bilan-carbone/orkigreen"
+  ]
+ },
+ {
+  "name": "Sami",
+  "vendor": "Sami",
+  "website": "https://www.sami.eco/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de bilan carbone et d'accompagnement à la décarbonation",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.sami.eco/"
+  ]
+ },
+ {
+  "name": "Apiday",
+  "vendor": "Apiday",
+  "website": "https://www.apiday.com/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de collecte des données ESG, de pilotage RSE et de reporting CSRD",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.apiday.com/",
+   "https://www.appvizer.fr/impact/rse-management/apiday"
+  ]
+ },
+ {
+  "name": "Fruggr",
+  "vendor": "Fruggr",
+  "website": "https://www.fruggr.io/fr/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de mesure de l'empreinte environnementale et sociale du numérique",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.fruggr.io/fr/",
+   "https://www.appvizer.fr/impact/rse-management/fruggr"
+  ]
+ },
+ {
+  "name": "Zei",
+  "vendor": "Zei",
+  "website": "https://zei-world.com/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de collecte de données RSE et de reporting extra-financier",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://zei-world.com/",
+   "https://www.appvizer.fr/impact/rse-management/zei"
+  ]
+ },
+ {
+  "name": "EcoVadis",
+  "vendor": "EcoVadis",
+  "website": "https://ecovadis.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme d'évaluation RSE des entreprises et de suivi de leurs fournisseurs",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://ecovadis.com/fr/"
+  ]
+ },
+ {
+  "name": "Workiva",
+  "vendor": "Workiva",
+  "website": "https://www.workiva.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de reporting financier, ESG et de conformité pour grandes entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.workiva.com/fr/",
+   "https://donneespersonnelles.fr/logiciels-reporting-esg"
+  ]
+ },
+ {
+  "name": "IBM Envizi",
+  "vendor": "IBM",
+  "website": "https://www.ibm.com/fr-fr/products/envizi",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Suite de collecte, d'analyse et de reporting des données ESG",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.ibm.com/fr-fr/products/envizi",
+   "https://www.appvizer.fr/impact/bilan-carbone/ibm-envizi-esg-suite"
+  ]
+ },
+ {
+  "name": "Sphera",
+  "vendor": "Sphera",
+  "website": "https://sphera.com/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Logiciels de gestion EHS, de développement durable et de reporting ESG",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://sphera.com/",
+   "https://donneespersonnelles.fr/logiciels-reporting-esg"
+  ]
+ },
+ {
+  "name": "Enablon",
+  "vendor": "Wolters Kluwer",
+  "website": "https://www.wolterskluwer.com/fr-fr/solutions/enablon",
+  "website_verified": false,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Logiciel de gestion EHS, ESG et de reporting de développement durable",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.appvizer.fr/impact/rse-management/2"
+  ]
+ },
+ {
+  "name": "Ditto",
+  "vendor": "Beavr",
+  "website": "https://www.beavr.tech/",
+  "website_verified": false,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de pilotage RSE, de collecte de données et de conformité CSRD",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.hellocarbo.com/blog/idee/meilleurs-logiciels-saas-rse/"
+  ]
+ },
+ {
+  "name": "Lakaa",
+  "vendor": "Lakaa",
+  "website": "https://www.lakaa.com/",
+  "website_verified": false,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de pilotage RSE avec indicateurs, plans d'action et banque d'actions",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.hellocarbo.com/blog/idee/meilleurs-logiciels-saas-rse/"
+  ]
+ },
+ {
+  "name": "Greenscope",
+  "vendor": "Greenscope",
+  "website": "https://www.greenscope.io/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de pilotage de la performance durable et de reporting CSRD",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.greenscope.io/",
+   "https://foxeet.fr/contenu/greenscope-solution-performance-durable-test"
+  ]
+ },
+ {
+  "name": "Izypeo",
+  "vendor": "Izypeo",
+  "website": "https://www.izypeo.com/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Logiciels de suivi RSE et de bilan carbone avec rapports réglementaires",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.izypeo.com/",
+   "https://www.appvizer.fr/impact/rse-management/logiciel-rse-dizypeo"
+  ]
+ },
+ {
+  "name": "BlueKanGo",
+  "vendor": "BlueKanGo",
+  "website": "https://www.bluekango.com/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Logiciel de pilotage QHSE, RSE et ESG avec suivi des audits et des incidents",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.bluekango.com/",
+   "https://www.appvizer.fr/impact/rse-management/bluekango"
+  ]
+ },
+ {
+  "name": "Reporting 21",
+  "vendor": "Reporting 21",
+  "website": "https://www.reporting21.com/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Logiciel de collecte et de consolidation des données extra-financières",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.reporting21.com/"
+  ]
+ },
+ {
+  "name": "osapiens",
+  "vendor": "osapiens",
+  "website": "https://www.osapiens.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de conformité ESG, CSRD et de traçabilité des chaînes d'approvisionnement",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.osapiens.com/fr/"
+  ]
+ },
+ {
+  "name": "Plan A",
+  "vendor": "Plan A",
+  "website": "https://plana.earth/fr",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de comptabilité carbone, de décarbonation et de reporting ESG",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://plana.earth/fr"
+  ]
+ },
+ {
+  "name": "Aktio",
+  "vendor": "Aktio",
+  "website": "https://www.aktio.cc/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Plateforme de mesure de l'empreinte carbone et de reporting ESG pour entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.aktio.cc/",
+   "https://donneespersonnelles.fr/logiciels-reporting-esg"
+  ]
+ },
+ {
+  "name": "Take[air]",
+  "vendor": "Take[air]",
+  "website": "https://www.takeair.fr/",
+  "website_verified": true,
+  "categories": [
+   "reporting-esg"
+  ],
+  "tagline": "Outil de bilan carbone avec rapports personnalisés et plan de décarbonation",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.takeair.fr/",
+   "https://www.appvizer.fr/impact/bilan-carbone/takeair"
+  ]
+ },
+ {
+  "name": "Timmi Temps",
+  "vendor": "Almeria",
+  "website": "https://almeria.fr/fr-fiche-produit-timmi-temps",
+  "website_verified": true,
+  "categories": [
+   "logiciels-cir-cii"
+  ],
+  "tagline": "Logiciel de saisie des temps par projet servant à justifier les temps passés sur des projets éligibles au CIR",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://almeria.fr/fr-fiche-produit-timmi-temps"
+  ]
+ }
+]

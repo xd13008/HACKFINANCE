@@ -67,7 +67,9 @@ supabase/
                 première catégorie complète en brouillon : trésorerie (data/70 : 5 logiciels réels, faits, prix et notes G2/GetApp
                 sourcés, pages planifiées ; protocole de test et marche à suivre : docs/tests/PROTOCOLE-TRESORERIE.md),
                 3 sous-rubriques issues du rapprochement G2 + Semrush (data/75 : fraude aux virements, factures fournisseurs,
-                audit et contrôle interne ; docs/seo/MAPPING-G2-UNIVERS.md)
+                audit et contrôle interne ; docs/seo/MAPPING-G2-UNIVERS.md),
+                référencement de 524 logiciels réels en brouillon dans les 24 sous-rubriques (data/80, généré par
+                scripts/refs-to-sql.py depuis docs/seo/referencement/*.json + produits de l'API G2)
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/

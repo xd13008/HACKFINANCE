@@ -1,0 +1,1270 @@
+[
+  {
+    "name": "N2F",
+    "vendor": "N2F",
+    "website": "https://www.n2f.com/fr/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais"
+    ],
+    "tagline": "Application de notes de frais : photo des justificatifs, indemnités kilométriques et export comptable",
+    "g2_url": "https://www.g2.com/products/n2f/reviews",
+    "g2_rating": 4.7,
+    "g2_reviews": 26,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.n2f.com/fr/note-de-frais/",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/n2f"
+    ]
+  },
+  {
+    "name": "Lucca Notes de frais (ex-Cleemy)",
+    "vendor": "Lucca",
+    "website": "https://www.lucca.fr/finance/notes-de-frais/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais"
+    ],
+    "tagline": "Module de saisie, validation et suivi des frais professionnels intégré à la suite RH Lucca",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.lucca.fr/",
+      "https://www.impli.fr/comparatif/logiciel-note-de-frais"
+    ]
+  },
+  {
+    "name": "Medius Expense (ex-Expensya)",
+    "vendor": "Medius",
+    "website": "https://www.medius.com/fr/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais"
+    ],
+    "tagline": "Gestion des notes de frais avec lecture automatique des reçus, issue du rachat d'Expensya par Medius",
+    "g2_url": "https://www.g2.com/products/expensya-expensya/reviews",
+    "g2_rating": 4.6,
+    "g2_reviews": 110,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.medius.com/fr/",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/expensya"
+    ]
+  },
+  {
+    "name": "Medius AP Automation",
+    "vendor": "Medius",
+    "website": "https://www.medius.com/fr/",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs",
+      "achats"
+    ],
+    "tagline": "Automatisation du traitement des factures fournisseurs et gestion des achats pour les équipes comptables",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.medius.com/fr/"
+    ]
+  },
+  {
+    "name": "Cegid Notilus",
+    "vendor": "Cegid",
+    "website": "https://www.cegid.com/fr/produits/cegid-notilus/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais"
+    ],
+    "tagline": "Suite en ligne pour les notes de frais, les déplacements professionnels et la flotte de véhicules",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.cegid.com/fr/produits/cegid-notilus/",
+      "https://www.spendesk.com/fr/blog/applications-note-frais/"
+    ]
+  },
+  {
+    "name": "Silae Expense (ex-Jenji)",
+    "vendor": "Silae",
+    "website": "https://www.silae.fr/notes-de-frais-silae-expense/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais"
+    ],
+    "tagline": "Dématérialisation du cycle des notes de frais, de la photo du ticket jusqu'à l'export vers la paie",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.silae.fr/notes-de-frais-silae-expense/",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/silae-expense"
+    ]
+  },
+  {
+    "name": "Spendesk",
+    "vendor": "Spendesk",
+    "website": "https://www.spendesk.com/fr/",
+    "website_verified": true,
+    "categories": [
+      "cartes-entreprise",
+      "notes-de-frais",
+      "factures-fournisseurs",
+      "achats"
+    ],
+    "tagline": "Plateforme de dépenses : cartes de paiement, notes de frais, factures fournisseurs et demandes d'achat",
+    "g2_url": "https://www.g2.com/products/spendesk/reviews",
+    "g2_rating": 4.5,
+    "g2_reviews": 786,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.spendesk.com/fr/",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/spendesk"
+    ]
+  },
+  {
+    "name": "Mooncard",
+    "vendor": "Mooncard",
+    "website": "https://www.mooncard.co/fr",
+    "website_verified": true,
+    "categories": [
+      "cartes-entreprise",
+      "notes-de-frais"
+    ],
+    "tagline": "Cartes de paiement professionnelles reliées à un logiciel de notes de frais et de collecte des justificatifs",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.mooncard.co/fr",
+      "https://www.spendways.com/alternatives/mooncard/"
+    ]
+  },
+  {
+    "name": "Pleo",
+    "vendor": "Pleo",
+    "website": "https://www.pleo.io/fr",
+    "website_verified": true,
+    "categories": [
+      "cartes-entreprise",
+      "notes-de-frais",
+      "factures-fournisseurs"
+    ],
+    "tagline": "Cartes d'entreprise, remboursement des frais avancés et paiement des factures fournisseurs",
+    "g2_url": "https://www.g2.com/products/pleo/competitors/alternatives",
+    "g2_rating": 4.7,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.pleo.io/fr",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/pleo"
+    ]
+  },
+  {
+    "name": "Payhawk",
+    "vendor": "Payhawk",
+    "website": "https://payhawk.com/fr",
+    "website_verified": true,
+    "categories": [
+      "cartes-entreprise",
+      "notes-de-frais",
+      "factures-fournisseurs",
+      "achats"
+    ],
+    "tagline": "Cartes d'entreprise, notes de frais, factures fournisseurs et demandes d'achat dans un même outil",
+    "g2_url": "https://www.g2.com/products/payhawk/pricing",
+    "g2_rating": 4.5,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://payhawk.com/fr",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/payhawk"
+    ]
+  },
+  {
+    "name": "Rydoo",
+    "vendor": "Rydoo",
+    "website": "https://www.rydoo.com/fr/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais",
+      "factures-fournisseurs",
+      "cartes-entreprise"
+    ],
+    "tagline": "Notes de frais, cartes et paiements, voyages et traitement des factures fournisseurs",
+    "g2_url": "https://www.g2.com/products/rydoo/reviews",
+    "g2_rating": 4.4,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.rydoo.com/fr/",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/rydoo"
+    ]
+  },
+  {
+    "name": "SAP Concur Expense",
+    "vendor": "SAP Concur",
+    "website": "https://www.concur.fr/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais"
+    ],
+    "tagline": "Saisie et validation des frais professionnels, reliée à la réservation de voyages Concur Travel",
+    "g2_url": "https://www.g2.com/products/sap-concur/reviews",
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.concur.fr/",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/sap-concur"
+    ]
+  },
+  {
+    "name": "Zoho Expense",
+    "vendor": "Zoho",
+    "website": "https://www.zoho.com/fr/expense/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais"
+    ],
+    "tagline": "Gestion des notes de frais et des voyages avec capture des reçus et contrôle de la politique de dépenses",
+    "g2_url": "https://www.g2.com/products/zoho-expense/pricing",
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": "https://www.getapp.fr/reviews/101293/zoho-expense",
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.zoho.com/fr/expense/",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/zoho-expense"
+    ]
+  },
+  {
+    "name": "Navan Expense",
+    "vendor": "Navan",
+    "website": "https://navan.com/fr",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais",
+      "cartes-entreprise"
+    ],
+    "tagline": "Voyages d'affaires, notes de frais et cartes de paiement avec rapprochement et remboursement",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://navan.com/fr",
+      "https://www.capterra.fr/directory/30559/expense-report/software"
+    ]
+  },
+  {
+    "name": "Emburse (Captio)",
+    "vendor": "Emburse",
+    "website": "https://www.emburse.com/fr",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais",
+      "factures-fournisseurs"
+    ],
+    "tagline": "Gestion des notes de frais avec Captio et traitement des factures fournisseurs",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.emburse.com/fr",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/captio"
+    ]
+  },
+  {
+    "name": "Eurécia Notes de frais",
+    "vendor": "Eurécia",
+    "website": "https://www.eurecia.com/logiciel-notes-de-frais",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais"
+    ],
+    "tagline": "Module de notes de frais de la suite RH Eurécia, avec lecture des justificatifs et calcul des titres-restaurant",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.eurecia.com/",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/eurecia-note-de-frais"
+    ]
+  },
+  {
+    "name": "Vertical Expense",
+    "vendor": "Vertical Soft",
+    "website": null,
+    "website_verified": false,
+    "categories": [
+      "notes-de-frais"
+    ],
+    "tagline": "Logiciel en ligne de saisie et de validation des dépenses professionnelles, avec application mobile",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/vertical-expense",
+      "https://www.lafabriquedunet.fr/logiciels/alternatives/alternative-vertical-expense"
+    ]
+  },
+  {
+    "name": "Philéas Gestion",
+    "vendor": "Non identifié",
+    "website": null,
+    "website_verified": false,
+    "categories": [
+      "notes-de-frais"
+    ],
+    "tagline": "Logiciel français de notes de frais en ligne avec lecture des justificatifs et indemnités kilométriques",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/phileas-gestion",
+      "https://www.logiciels.pro/phileas-gestion/"
+    ]
+  },
+  {
+    "name": "Factorial (notes de frais et carte)",
+    "vendor": "Factorial",
+    "website": "https://factorial.fr/gestion-notes-frais",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais",
+      "cartes-entreprise"
+    ],
+    "tagline": "Module de gestion des notes de frais et carte corporate de la suite de gestion Factorial",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://factorial.fr/",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/factorial-finances"
+    ]
+  },
+  {
+    "name": "Odoo Notes de frais",
+    "vendor": "Odoo",
+    "website": "https://www.odoo.com/fr_FR/app/expenses",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais"
+    ],
+    "tagline": "Application open source de notes de frais avec lecture des reçus et lien avec la comptabilité Odoo",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.odoo.com/fr_FR/app/expenses",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/odoo-expenses"
+    ]
+  },
+  {
+    "name": "Odoo Achats",
+    "vendor": "Odoo",
+    "website": "https://www.odoo.com/fr_FR/app/purchase",
+    "website_verified": false,
+    "categories": [
+      "achats"
+    ],
+    "tagline": "Application de demandes de prix, bons de commande et contrôle des factures de la suite Odoo",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.appvizer.fr/finance-comptabilite/achat/2"
+    ]
+  },
+  {
+    "name": "Tiime",
+    "vendor": "Tiime",
+    "website": "https://www.tiime.fr/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais",
+      "factures-fournisseurs"
+    ],
+    "tagline": "Outil de gestion pour TPE : notes de frais, réception des factures fournisseurs et gestion des achats",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.tiime.fr/notes-de-frais",
+      "https://www.tiime.fr/achats"
+    ]
+  },
+  {
+    "name": "Pennylane (gestion des achats)",
+    "vendor": "Pennylane",
+    "website": "https://www.pennylane.com/fr/gestion-achats",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs"
+    ],
+    "tagline": "Réception, paiement et comptabilisation des factures fournisseurs dans le logiciel comptable Pennylane",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.pennylane.com/fr",
+      "https://www.impli.fr/comparatif/logiciel-dematerialisation-factures"
+    ]
+  },
+  {
+    "name": "Okticket",
+    "vendor": "Okticket",
+    "website": "https://www.okticket.fr/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais",
+      "cartes-entreprise"
+    ],
+    "tagline": "Logiciel de notes de frais avec photo des justificatifs, cartes de paiement et rapprochement bancaire",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.okticket.fr/",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/okticket"
+    ]
+  },
+  {
+    "name": "Tickelia",
+    "vendor": "Tickelia",
+    "website": "https://www.tickelia.com/fr/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais",
+      "cartes-entreprise"
+    ],
+    "tagline": "Gestion des notes de frais avec lecture des tickets, cartes d'entreprise et récupération de la TVA",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.tickelia.com/fr/",
+      "https://www.appvizer.fr/finance-comptabilite/notes-de-frais/tickelia"
+    ]
+  },
+  {
+    "name": "Klippa SpendControl",
+    "vendor": "Klippa",
+    "website": "https://www.klippa.com/fr/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais",
+      "factures-fournisseurs",
+      "cartes-entreprise"
+    ],
+    "tagline": "Gestion des frais et des factures fournisseurs avec extraction des données par lecture automatique",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.klippa.com/fr/"
+    ]
+  },
+  {
+    "name": "Dext",
+    "vendor": "Dext",
+    "website": "https://dext.com/fr",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs",
+      "notes-de-frais"
+    ],
+    "tagline": "Numérisation des factures d'achat et justificatifs de frais avec extraction des données pour la comptabilité",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://dext.com/fr",
+      "https://www.impli.fr/comparatif/logiciel-dematerialisation-factures"
+    ]
+  },
+  {
+    "name": "Kelio Notes de frais",
+    "vendor": "Bodet Software",
+    "website": "https://www.kelio.com/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais"
+    ],
+    "tagline": "Module de notes de frais de la suite de gestion des temps et RH Kelio",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.kelio.com/features/administrative-hr-management/expenses.html",
+      "https://www.appvizer.co.uk/accounting-finance/expense-management/kelio-notes-de-frais"
+    ]
+  },
+  {
+    "name": "ONexpense",
+    "vendor": "ONexpense",
+    "website": "https://www.onexpense.com/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais"
+    ],
+    "tagline": "Logiciel de notes de frais pour la saisie, la validation et le remboursement des dépenses des salariés",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.onexpense.com/",
+      "https://www.spendesk.com/fr/blog/applications-note-frais/"
+    ]
+  },
+  {
+    "name": "Evoliz",
+    "vendor": "Evoliz",
+    "website": "https://www.evoliz.com/logiciel-facturation/achats/",
+    "website_verified": true,
+    "categories": [
+      "notes-de-frais",
+      "factures-fournisseurs"
+    ],
+    "tagline": "Logiciel de facturation pour TPE avec module achats : dépenses, bons de commande et notes de frais",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.evoliz.com/",
+      "https://www.spendesk.com/fr/blog/applications-note-frais/"
+    ]
+  },
+  {
+    "name": "Weproc",
+    "vendor": "Weproc",
+    "website": "https://www.weproc.com/",
+    "website_verified": true,
+    "categories": [
+      "achats",
+      "factures-fournisseurs"
+    ],
+    "tagline": "Logiciel achats pour PME et ETI : demandes, commandes, réceptions, factures fournisseurs et paiements",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.weproc.com/",
+      "https://www.appvizer.fr/finance-comptabilite/achat/weproc"
+    ]
+  },
+  {
+    "name": "Flowie",
+    "vendor": "Flowie",
+    "website": "https://www.get-flowie.com/",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs",
+      "achats"
+    ],
+    "tagline": "Plateforme de comptes fournisseurs placée au-dessus de l'ERP : achats, factures, paiements",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.get-flowie.com/",
+      "https://www.appvizer.fr/finance-comptabilite/achat/flowie"
+    ]
+  },
+  {
+    "name": "Boomerang Web",
+    "vendor": "Boomerang Solution",
+    "website": null,
+    "website_verified": false,
+    "categories": [
+      "achats"
+    ],
+    "tagline": "Gestion des demandes d'achat, bons de commande et réceptions avec circuits de validation",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.appvizer.fr/finance-comptabilite/achat/boomerang-web",
+      "https://www.capterra.fr/software/1075314/Boomerang-Web"
+    ]
+  },
+  {
+    "name": "iSYBUY",
+    "vendor": "iSYBUY",
+    "website": "https://www.isybuy.com/",
+    "website_verified": true,
+    "categories": [
+      "achats",
+      "factures-fournisseurs"
+    ],
+    "tagline": "Suite achats Source-to-Pay pour ETI : fournisseurs, appels d'offres, commandes et traitement des factures",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.isybuy.com/",
+      "https://www.appvizer.fr/finance-comptabilite/achat/isybuy"
+    ]
+  },
+  {
+    "name": "Oxalys",
+    "vendor": "Oxalys",
+    "website": "https://www.oxalys.fr/",
+    "website_verified": true,
+    "categories": [
+      "achats",
+      "factures-fournisseurs"
+    ],
+    "tagline": "Logiciel achats : consultations, contrats, demandes d'achat jusqu'à la facture et qualité fournisseurs",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.oxalys.fr/",
+      "https://www.appvizer.fr/finance-comptabilite/achat/oxalys"
+    ]
+  },
+  {
+    "name": "Ivalua",
+    "vendor": "Ivalua",
+    "website": "https://www.ivalua.com/",
+    "website_verified": true,
+    "categories": [
+      "achats",
+      "factures-fournisseurs"
+    ],
+    "tagline": "Plateforme Source-to-Pay : sourcing, contrats, achats, automatisation des factures et analyse des dépenses",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.ivalua.com/solutions/",
+      "https://fr.ivalua.com/glossary/source-to-pay-s2p"
+    ]
+  },
+  {
+    "name": "Esker (achats et factures fournisseurs)",
+    "vendor": "Esker",
+    "website": "https://www.esker.com/fr/solutions/factures-fournisseurs/",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs",
+      "achats"
+    ],
+    "tagline": "Traitement des factures fournisseurs par lecture automatique et circuits électroniques, et gestion des achats",
+    "g2_url": "https://g2.com/products/esker-accounts-payable/competitors/alternatives",
+    "g2_rating": 4.4,
+    "g2_reviews": 60,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.esker.com/fr/",
+      "https://www.esker.com/fr/procurement-2026"
+    ]
+  },
+  {
+    "name": "Coupa",
+    "vendor": "Coupa",
+    "website": "https://www.coupa.com/fr/",
+    "website_verified": true,
+    "categories": [
+      "achats",
+      "factures-fournisseurs",
+      "notes-de-frais"
+    ],
+    "tagline": "Plateforme de gestion des dépenses d'entreprise couvrant achats, factures fournisseurs et frais",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": "https://www.getapp.fr/software/91050/coupa",
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.coupa.com/fr/produits/",
+      "https://www.coupa.com/fr/solutions-de-gestion-des-depenses-directes/"
+    ]
+  },
+  {
+    "name": "SAP Ariba",
+    "vendor": "SAP",
+    "website": "https://www.sap.com/france/products/spend-management/procure-to-pay/features.html",
+    "website_verified": true,
+    "categories": [
+      "achats",
+      "factures-fournisseurs"
+    ],
+    "tagline": "Suite achats de SAP : catalogues, achats guidés, sourcing, contrats et facturation fournisseurs",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": "https://www.getapp.fr/software/91044/sap-ariba",
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.sap.com/france/products/spend-management/ariba-catalog.html",
+      "https://www.sap.com/france/products/spend-management/centralized-procurement.html"
+    ]
+  },
+  {
+    "name": "JAGGAER One",
+    "vendor": "JAGGAER",
+    "website": "https://www.jaggaer.com/fr",
+    "website_verified": true,
+    "categories": [
+      "achats",
+      "factures-fournisseurs"
+    ],
+    "tagline": "Plateforme Source-to-Pay : sourcing, contrats, e-procurement, facturation et paiements",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.jaggaer.com/fr"
+    ]
+  },
+  {
+    "name": "Basware",
+    "vendor": "Basware",
+    "website": "https://www.basware.com/fr/",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs",
+      "achats"
+    ],
+    "tagline": "Automatisation des factures fournisseurs, réseau de facturation électronique et module e-procurement",
+    "g2_url": "https://www.g2.com/products/basware-basware/reviews",
+    "g2_rating": 4.1,
+    "g2_reviews": 136,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.basware.com/fr/",
+      "https://www.lafabriquedunet.fr/logiciel/basware"
+    ]
+  },
+  {
+    "name": "Precoro",
+    "vendor": "Precoro",
+    "website": "https://precoro.com/fr",
+    "website_verified": true,
+    "categories": [
+      "achats",
+      "factures-fournisseurs"
+    ],
+    "tagline": "Demandes d'achat, bons de commande, budgets et factures fournisseurs pour entreprises multisites",
+    "g2_url": "https://www.g2.com/products/precoro/reviews",
+    "g2_rating": 4.7,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://precoro.com/fr",
+      "https://www.appvizer.fr/finance-comptabilite/achat/precoro"
+    ]
+  },
+  {
+    "name": "Corma",
+    "vendor": "Corma",
+    "website": "https://www.corma.io/fr",
+    "website_verified": true,
+    "categories": [
+      "gestion-abonnements-saas"
+    ],
+    "tagline": "Gouvernance des licences et des accès logiciels : inventaire, usages, dépenses et revues d'accès",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.corma.io/",
+      "https://www.frenchweb.fr/corma-votre-copilote-pour-gerer-la-proliferation-dapplications-saas-dans-votre-entreprise/449805"
+    ]
+  },
+  {
+    "name": "LicenceOne",
+    "vendor": "LicenceOne",
+    "website": "https://licence.one/",
+    "website_verified": false,
+    "categories": [
+      "gestion-abonnements-saas"
+    ],
+    "tagline": "Suivi des abonnements SaaS des PME à partir des paiements, calendrier des renouvellements et accès",
+    "g2_url": "https://www.g2.com/products/licenceone/reviews",
+    "g2_rating": 5.0,
+    "g2_reviews": 5,
+    "getapp_url": "https://www.getapp.fr/software/2067682/licenceone",
+    "getapp_rating": 5.0,
+    "getapp_reviews": 3,
+    "sources": [
+      "https://www.appvizer.fr/services-informatiques/saas-management/licenceone",
+      "https://www.g2.com/fr/sellers/licenceone"
+    ]
+  },
+  {
+    "name": "Zygon",
+    "vendor": "Zygon (Memority)",
+    "website": "https://zygon.tech/",
+    "website_verified": false,
+    "categories": [
+      "gestion-abonnements-saas"
+    ],
+    "tagline": "Détection des applications SaaS utilisées dans l'entreprise, y compris hors du contrôle de la DSI",
+    "g2_url": "https://www.g2.com/products/zygon",
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.maddyness.com/2023/10/23/zygon-leve-3-millions-de-dollars-pour-adresser-les-enjeux-de-securite-lies-a-la-multiplication-des-saas/",
+      "https://www.appvizer.fr/services-informatiques/saas-management/zygon"
+    ]
+  },
+  {
+    "name": "Spendbase",
+    "vendor": "Spendbase",
+    "website": "https://www.spendbase.co/fr/",
+    "website_verified": true,
+    "categories": [
+      "gestion-abonnements-saas"
+    ],
+    "tagline": "Suivi des dépenses logicielles et cloud, gestion des renouvellements et cartes virtuelles par fournisseur",
+    "g2_url": "https://www.g2.com/products/spendbase/reviews?qs=pros-and-cons",
+    "g2_rating": 4.7,
+    "g2_reviews": 128,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.spendbase.co/fr/?p=112",
+      "https://www.appvizer.fr/services-informatiques/saas-management/spendbase"
+    ]
+  },
+  {
+    "name": "Freshservice (gestion SaaS)",
+    "vendor": "Freshworks",
+    "website": "https://www.freshworks.com/fr/saas-management/platform/",
+    "website_verified": true,
+    "categories": [
+      "gestion-abonnements-saas"
+    ],
+    "tagline": "Module de gestion des applications SaaS de l'outil de gestion des services informatiques Freshservice",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.freshworks.com/fr/saas-management/platform/"
+    ]
+  },
+  {
+    "name": "Flexera One SaaS Management",
+    "vendor": "Flexera",
+    "website": "https://www.flexera.com/products/flexera-one/saas-management",
+    "website_verified": true,
+    "categories": [
+      "gestion-abonnements-saas"
+    ],
+    "tagline": "Détection des applications SaaS connues et non déclarées et des licences inutilisées pour grandes entreprises",
+    "g2_url": "https://www.g2.com/products/flexera-one/reviews",
+    "g2_rating": 4.4,
+    "g2_reviews": 195,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.flexera.com/",
+      "https://www.capterra.fr/software/208701/flexnet-licensing"
+    ]
+  },
+  {
+    "name": "1Password SaaS Manager",
+    "vendor": "1Password",
+    "website": "https://1password.com/fr/saas-spend-management",
+    "website_verified": false,
+    "categories": [
+      "gestion-abonnements-saas"
+    ],
+    "tagline": "Suivi des licences et des dépenses SaaS rattaché au gestionnaire d'accès 1Password",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://1password.com/fr/saas-spend-management",
+      "https://1password.com/fr/features/software-license-management"
+    ]
+  },
+  {
+    "name": "Libeo",
+    "vendor": "Libeo",
+    "website": "https://libeo.io/",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs"
+    ],
+    "tagline": "Centralisation, validation et paiement des factures fournisseurs pour PME",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://libeo.io/",
+      "https://www.impli.fr/comparatif/logiciel-dematerialisation-factures"
+    ]
+  },
+  {
+    "name": "Yooz",
+    "vendor": "Yooz",
+    "website": "https://www.getyooz.com/fr",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs",
+      "achats"
+    ],
+    "tagline": "Capture, validation, paiement et export comptable des factures fournisseurs, plateforme agréée",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.getyooz.com/fr",
+      "https://www.lafabriquedunet.fr/logiciel/yooz"
+    ]
+  },
+  {
+    "name": "ITESOFT Streamline for Invoices",
+    "vendor": "ITESOFT",
+    "website": "https://www.itesoft.com/fr/",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs"
+    ],
+    "tagline": "Digitalisation du Procure-to-Pay et traitement automatique des factures fournisseurs",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.itesoft.com/fr/",
+      "https://www.appvizer.fr/communication/editique-dematerialisation/itesoft"
+    ]
+  },
+  {
+    "name": "Quadient AP (ex-Beanworks)",
+    "vendor": "Quadient",
+    "website": "https://www.quadient.com/fr",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs"
+    ],
+    "tagline": "Saisie, validation et paiement des factures fournisseurs avec connecteurs vers les ERP",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.quadient.com/fr/news/Quadient_connecte_sa_solution_comptes_fournisseurs_avec_Sage100",
+      "https://www.appvizer.fr/finance-comptabilite/compte-fournisseur/beanworksap"
+    ]
+  },
+  {
+    "name": "Payflows",
+    "vendor": "Payflows",
+    "website": "https://www.payflows.io/",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs"
+    ],
+    "tagline": "Automatisation des comptes fournisseurs et des paiements pour les directions financières",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.payflows.io/fr"
+    ]
+  },
+  {
+    "name": "Kolecto",
+    "vendor": "Kolecto",
+    "website": "https://www.kolecto.fr/",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs"
+    ],
+    "tagline": "Collecte automatique des factures fournisseurs, suivi des factures à payer et paiement groupé",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.kolecto.fr/"
+    ]
+  },
+  {
+    "name": "Agicap (gestion du poste fournisseurs)",
+    "vendor": "Agicap",
+    "website": "https://agicap.com/fr/produits/gestion-depenses-et-fournisseurs/",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs",
+      "achats"
+    ],
+    "tagline": "Traitement des factures fournisseurs de la demande d'achat au règlement, relié au suivi de trésorerie",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://agicap.com/fr/",
+      "https://agicap.com/fr/article/logiciel-gestion-factures-fournisseurs/"
+    ]
+  },
+  {
+    "name": "Tungsten Automation (ex-Kofax)",
+    "vendor": "Tungsten Automation",
+    "website": "https://www.tungstenautomation.fr/",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs"
+    ],
+    "tagline": "Automatisation du traitement des factures fournisseurs et orchestration des paiements",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.tungstenautomation.fr/",
+      "https://tailride.so/fr/blog/automatisation-des-factures-fournisseurs-comparatif-2026"
+    ]
+  },
+  {
+    "name": "Generix AP Automation",
+    "vendor": "Generix",
+    "website": "https://www.generixgroup.com/fr",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs"
+    ],
+    "tagline": "Réception et traitement des factures d'achat, portail fournisseurs et facturation électronique",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.generixgroup.com/fr",
+      "https://www.appvizer.fr/communication/editique-dematerialisation/e-invoice"
+    ]
+  },
+  {
+    "name": "Tailride",
+    "vendor": "Tailride",
+    "website": "https://tailride.so/fr",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs"
+    ],
+    "tagline": "Collecte des factures et reçus depuis les boîtes mail et portails, extraction et export comptable",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://tailride.so/fr"
+    ]
+  },
+  {
+    "name": "Tessi (factures fournisseurs)",
+    "vendor": "Tessi",
+    "website": "https://www.tessi.eu/fr/",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs"
+    ],
+    "tagline": "Dématérialisation des factures fournisseurs et des processus Procure-to-Pay, plateforme agréée",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.tessi.eu/fr/",
+      "https://www.appvizer.fr/finance-comptabilite/facturation/tessi-technologies"
+    ]
+  },
+  {
+    "name": "Compleo Invoice Platform",
+    "vendor": "Symtrax",
+    "website": "https://www.symtrax.com/",
+    "website_verified": true,
+    "categories": [
+      "factures-fournisseurs"
+    ],
+    "tagline": "Collecte, contrôle, validation et archivage des factures fournisseurs, en complément de l'ERP",
+    "g2_url": null,
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.symtrax.com/solutions/automate-incoming-invoice-processing/",
+      "https://www.appvizer.fr/finance-comptabilite/facturation/compleo"
+    ]
+  },
+  {
+    "name": "Freedz",
+    "vendor": "Docoon.immo (ex-Neovacom)",
+    "website": null,
+    "website_verified": false,
+    "categories": [
+      "factures-fournisseurs"
+    ],
+    "tagline": "Gestion et dématérialisation des factures fournisseurs pour les acteurs de l'immobilier",
+    "g2_url": "https://www.g2.com/products/freedz/discuss",
+    "g2_rating": null,
+    "g2_reviews": null,
+    "getapp_url": null,
+    "getapp_rating": null,
+    "getapp_reviews": null,
+    "sources": [
+      "https://www.appvizer.fr/finance-comptabilite/compte-fournisseur/freedz",
+      "https://www.solutions-numeriques.com/docoon-immo-ex-neovacom-une-plateforme-de-dematerialisation-partenaire-pour-limmobilier/"
+    ]
+  }
+]

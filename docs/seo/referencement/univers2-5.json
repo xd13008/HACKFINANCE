@@ -1,0 +1,1183 @@
+[
+ {
+  "name": "Qotid",
+  "vendor": "Qotid",
+  "website": "https://www.qotid.com/",
+  "website_verified": true,
+  "categories": [
+   "tresorerie",
+   "reporting-bi"
+  ],
+  "tagline": "Logiciel de suivi et de prévision de trésorerie avec reporting financier connecté à la comptabilité",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.qotid.com/",
+   "https://digitiz.fr/blog/logiciels-de-gestion-de-tresorerie/",
+   "https://www.appvizer.fr/finance-comptabilite/tresorerie"
+  ]
+ },
+ {
+  "name": "TurboPilot",
+  "vendor": "TurboPilot",
+  "website": "https://turbopilot.info/",
+  "website_verified": true,
+  "categories": [
+   "tresorerie",
+   "pilotage-financier"
+  ],
+  "tagline": "Prévision et suivi de trésorerie pour TPE et PME à partir du fichier FEC et des relevés bancaires",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://turbopilot.info/",
+   "https://digitiz.fr/blog/logiciels-de-gestion-de-tresorerie/",
+   "https://www.appvizer.fr/finance-comptabilite/tresorerie"
+  ]
+ },
+ {
+  "name": "Sellsy Trésorerie (ex-RocketChart)",
+  "vendor": "Sellsy",
+  "website": "https://go.sellsy.com/produits/gestion-de-tresorerie",
+  "website_verified": true,
+  "categories": [
+   "tresorerie"
+  ],
+  "tagline": "Module de suivi et de prévision de trésorerie intégré à la suite de gestion commerciale Sellsy",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://go.sellsy.com/produits/gestion-de-tresorerie",
+   "https://digitiz.fr/blog/logiciels-de-gestion-de-tresorerie/",
+   "https://www.appvizer.fr/finance-comptabilite/tresorerie"
+  ]
+ },
+ {
+  "name": "Axonaut",
+  "vendor": "Axonaut",
+  "website": "https://axonaut.com/",
+  "website_verified": true,
+  "categories": [
+   "tresorerie"
+  ],
+  "tagline": "Logiciel de gestion tout-en-un pour TPE avec synchronisation bancaire et suivi de trésorerie",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://axonaut.com/",
+   "https://digitiz.fr/blog/logiciels-de-gestion-de-tresorerie/"
+  ]
+ },
+ {
+  "name": "Zenfirst Tréso",
+  "vendor": "Zenfirst",
+  "website": "https://www.zenfirst.fr/",
+  "website_verified": true,
+  "categories": [
+   "tresorerie",
+   "pilotage-financier"
+  ],
+  "tagline": "Logiciel de gestion et de prévision de trésorerie pour TPE et PME, avec plan de trésorerie",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.zenfirst.fr/",
+   "https://www.appvizer.fr/finance-comptabilite/tresorerie/zenfirst",
+   "https://digitiz.fr/blog/logiciels-de-gestion-de-tresorerie/"
+  ]
+ },
+ {
+  "name": "Trezy",
+  "vendor": "Trezy",
+  "website": "https://www.trezy.io/fr/",
+  "website_verified": true,
+  "categories": [
+   "tresorerie"
+  ],
+  "tagline": "Logiciel de prévision de trésorerie pour PME avec connexion bancaire et indicateurs de performance",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.trezy.io/fr/",
+   "https://www.appvizer.fr/finance-comptabilite/tresorerie",
+   "https://www.impli.fr/comparatif/logiciels-gestion-tresorerie"
+  ]
+ },
+ {
+  "name": "iPaidThat Trésorerie",
+  "vendor": "iPaidThat",
+  "website": "https://www.ipaidthat.io/fr/",
+  "website_verified": false,
+  "categories": [
+   "tresorerie"
+  ],
+  "tagline": "Pré-comptabilité avec synchronisation bancaire, rapprochement et prévision de trésorerie pour TPE",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.appvizer.fr/finance-comptabilite/tresorerie",
+   "https://www.lafabriquedunet.fr/logiciel/ipaidthat",
+   "https://everybodywiki.com/IPaidThat"
+  ]
+ },
+ {
+  "name": "Cashlab",
+  "vendor": "Cashlab",
+  "website": "https://www.cashlab.fr/",
+  "website_verified": true,
+  "categories": [
+   "tresorerie",
+   "pilotage-financier"
+  ],
+  "tagline": "Logiciel de pilotage et de prévision de trésorerie multi-banques et multi-entités pour PME et ETI",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.cashlab.fr/",
+   "https://www.appvizer.fr/finance-comptabilite/tresorerie/cashlab",
+   "https://www.logiciels.pro/comparateur-logiciels-de-tresorerie/"
+  ]
+ },
+ {
+  "name": "Cashtrack",
+  "vendor": "Cashtrack",
+  "website": "https://www.cashtrack.fr/",
+  "website_verified": true,
+  "categories": [
+   "tresorerie"
+  ],
+  "tagline": "Logiciel SaaS de suivi et de prévision de trésorerie pour PME, avec scénarios et connexion bancaire",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.cashtrack.fr/",
+   "https://www.appvizer.fr/finance-comptabilite/tresorerie/cashtrack"
+  ]
+ },
+ {
+  "name": "Alticash",
+  "vendor": "Altisoft",
+  "website": "https://www.alticash.com/",
+  "website_verified": true,
+  "categories": [
+   "tresorerie"
+  ],
+  "tagline": "Logiciel de construction et de suivi du plan de trésorerie prévisionnel pour TPE et PME",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": "https://www.getapp.fr/software/2070622/alticash",
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.alticash.com/",
+   "https://www.appvizer.fr/finance-comptabilite/tresorerie/alticash",
+   "https://www.logiciels.pro/comparateur-logiciels-de-tresorerie/"
+  ]
+ },
+ {
+  "name": "MyTRESO",
+  "vendor": "Smartools",
+  "website": "https://smartools.app/",
+  "website_verified": false,
+  "categories": [
+   "tresorerie"
+  ],
+  "tagline": "Outil en ligne de suivi des opérations bancaires et de projection des flux de trésorerie",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.appvizer.fr/finance-comptabilite/tresorerie/mytreso"
+  ]
+ },
+ {
+  "name": "Karlia Trésorerie",
+  "vendor": "Karlia",
+  "website": "https://karlia.co/",
+  "website_verified": true,
+  "categories": [
+   "tresorerie"
+  ],
+  "tagline": "Module de gestion de trésorerie du logiciel de gestion Karlia, pour startups, TPE et PME",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://karlia.co/",
+   "https://www.appvizer.fr/finance-comptabilite/tresorerie/2",
+   "https://www.logiciels.pro/comparateur-logiciels-de-tresorerie/"
+  ]
+ },
+ {
+  "name": "Cadrio",
+  "vendor": "Cadrio",
+  "website": "https://www.cadrio.fr/",
+  "website_verified": true,
+  "categories": [
+   "tresorerie"
+  ],
+  "tagline": "Logiciel de trésorerie pour TPE avec connexion bancaire, catégorisation et projection des soldes",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.cadrio.fr/",
+   "https://www.capterra.com/p/10048711/Cadrio/"
+  ]
+ },
+ {
+  "name": "Payflows",
+  "vendor": "Payflows",
+  "website": "https://www.payflows.io/",
+  "website_verified": true,
+  "categories": [
+   "tresorerie",
+   "pilotage-financier"
+  ],
+  "tagline": "Plateforme finance réunissant paiements, prévision de trésorerie, rapprochement bancaire et achats",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.payflows.io/",
+   "https://www.eu-startups.com/2024/04/paris-based-payflows-raises-e25-million-series-a-to-build-the-command-centre-for-finance-teams/"
+  ]
+ },
+ {
+  "name": "Sage Trésorerie (Sage 100)",
+  "vendor": "Sage",
+  "website": "https://www.sage.com/fr-fr/comptabilite-logiciels/tresorerie/",
+  "website_verified": false,
+  "categories": [
+   "tresorerie"
+  ],
+  "tagline": "Module de trésorerie de la gamme Sage 100 : position bancaire, prévisions et rapprochement",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://digitiz.fr/blog/logiciels-de-gestion-de-tresorerie/",
+   "https://www.appvizer.fr/finance-comptabilite/tresorerie/2",
+   "https://www.logiciels.pro/comparateur-logiciels-de-tresorerie/"
+  ]
+ },
+ {
+  "name": "Cegid Allmybanks",
+  "vendor": "Cegid",
+  "website": "https://www.cegid.com/fr/produits/cegid-allmybanks/",
+  "website_verified": true,
+  "categories": [
+   "communication-bancaire",
+   "tresorerie",
+   "fraude-virements"
+  ],
+  "tagline": "Logiciel de paiements et de trésorerie groupe avec connectivité EBICS et SWIFT et contrôles anti-fraude",
+  "g2_url": "https://www.g2.com/products/cegid-allmybanks/reviews",
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.cegid.com/fr/produits/cegid-allmybanks/",
+   "https://agicap.com/fr/article/logiciel-tms-comparatif/",
+   "https://www.cegid.com/fr/blog/8-outils-anti-fraude-securiser-vos-paiements-virements-bancaires/"
+  ]
+ },
+ {
+  "name": "Sage XRT Treasury",
+  "vendor": "Sage",
+  "website": "https://www.sage.com/fr-fr/produits/sage-xrt-advanced/",
+  "website_verified": true,
+  "categories": [
+   "communication-bancaire",
+   "tresorerie"
+  ],
+  "tagline": "Système de gestion de trésorerie et de communication bancaire EBICS et SWIFT pour PME structurées et ETI",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.sage.com/fr-fr/produits/sage-xrt-advanced/",
+   "https://agicap.com/fr/article/logiciel-tms-comparatif/",
+   "https://www.highradius.com/fr/ressources/Blog/meilleur-logiciel-de-tresorerie/"
+  ]
+ },
+ {
+  "name": "Diapason",
+  "vendor": "Diapason",
+  "website": "https://www.mydiapason.com/",
+  "website_verified": true,
+  "categories": [
+   "communication-bancaire",
+   "tresorerie"
+  ],
+  "tagline": "Plateforme de gestion de trésorerie, de paiements et de risques financiers pour ETI et grands groupes",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.mydiapason.com/",
+   "https://agicap.com/fr/article/logiciel-tms-comparatif/",
+   "https://digitiz.fr/blog/logiciels-de-gestion-de-tresorerie/"
+  ]
+ },
+ {
+  "name": "Titan Treasury",
+  "vendor": "3V Finance",
+  "website": "https://www.3vfinance.com/fr/homepage",
+  "website_verified": true,
+  "categories": [
+   "communication-bancaire",
+   "tresorerie"
+  ],
+  "tagline": "Système de trésorerie en ligne orienté gestion des risques de change, de taux et de liquidité pour ETI",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.3vfinance.com/fr/homepage",
+   "https://www.appvizer.fr/finance-comptabilite/tresorerie/titantreasury",
+   "https://www.logiciels.pro/comparateur-logiciels-de-tresorerie/"
+  ]
+ },
+ {
+  "name": "Datalog TMS",
+  "vendor": "Datalog Finance",
+  "website": "https://www.datalog-finance.com/",
+  "website_verified": true,
+  "categories": [
+   "communication-bancaire",
+   "tresorerie"
+  ],
+  "tagline": "Système de gestion de trésorerie pour directions financières de groupes : liquidités, paiements, dette",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.datalog-finance.com/",
+   "https://www.capterra.fr/compare/157182/158748/treasury-line/vs/the-treasury-cloud"
+  ]
+ },
+ {
+  "name": "Coupa Treasury",
+  "vendor": "Coupa",
+  "website": "https://www.coupa.com/products/treasury-cash-management/",
+  "website_verified": true,
+  "categories": [
+   "communication-bancaire",
+   "tresorerie"
+  ],
+  "tagline": "Module de trésorerie de Coupa : visibilité des liquidités, prévisions, paiements centralisés",
+  "g2_url": "https://www.g2.com/products/cashforce/reviews",
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.coupa.com/products/treasury-cash-management/",
+   "https://www.highradius.com/fr/ressources/Blog/meilleur-logiciel-de-tresorerie/"
+  ]
+ },
+ {
+  "name": "FIS Treasury and Risk Manager",
+  "vendor": "FIS",
+  "website": "https://www.fisglobal.com/",
+  "website_verified": true,
+  "categories": [
+   "communication-bancaire",
+   "tresorerie"
+  ],
+  "tagline": "Suite de gestion de trésorerie et des risques (éditions Quantum et Integrity) pour grandes entreprises",
+  "g2_url": "https://www.g2.com/products/integrity-saas-treasury-management",
+  "g2_rating": 5.0,
+  "g2_reviews": 3,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.fisglobal.com/about-us/media-room/press-release/2025/fis-launches-next-generation-of-its-enterprise-treasury-and-risk-management-platform",
+   "https://www.highradius.com/fr/ressources/Blog/meilleur-logiciel-de-tresorerie/"
+  ]
+ },
+ {
+  "name": "ION Treasury (Reval, Wallstreet Suite)",
+  "vendor": "ION Group",
+  "website": "https://iongroup.com/treasury/",
+  "website_verified": true,
+  "categories": [
+   "communication-bancaire",
+   "tresorerie"
+  ],
+  "tagline": "Gamme de systèmes de gestion de trésorerie (Reval, Wallstreet Suite, IT2) pour groupes internationaux",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://iongroup.com/treasury/",
+   "https://www.highradius.com/fr/ressources/Blog/meilleur-logiciel-de-tresorerie/",
+   "https://www.appvizer.fr/finance-comptabilite/tresorerie"
+  ]
+ },
+ {
+  "name": "SAP Treasury and Risk Management",
+  "vendor": "SAP",
+  "website": "https://www.sap.com/france/products/financial-management/treasury-risk-management.html",
+  "website_verified": true,
+  "categories": [
+   "communication-bancaire",
+   "tresorerie"
+  ],
+  "tagline": "Module de gestion de la trésorerie et des risques financiers intégré à SAP S/4HANA",
+  "g2_url": "https://www.g2.com/products/sap-treasury-and-risk-management/competitors/alternatives",
+  "g2_rating": 4.2,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.sap.com/france/products/financial-management/treasury-risk-management.html",
+   "https://www.highradius.com/fr/ressources/Blog/meilleur-logiciel-de-tresorerie/"
+  ]
+ },
+ {
+  "name": "HighRadius Treasury",
+  "vendor": "HighRadius",
+  "website": "https://www.highradius.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "communication-bancaire",
+   "tresorerie"
+  ],
+  "tagline": "Logiciel de trésorerie : position de cash, prévisions par IA, gestion des paiements et des comptes",
+  "g2_url": null,
+  "g2_rating": 4.5,
+  "g2_reviews": 7,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.highradius.com/fr/",
+   "https://www.highradius.com/fr/ressources/Blog/meilleur-logiciel-de-tresorerie/"
+  ]
+ },
+ {
+  "name": "Serrala",
+  "vendor": "Serrala",
+  "website": "https://www.serrala.com/fr",
+  "website_verified": true,
+  "categories": [
+   "communication-bancaire",
+   "tresorerie"
+  ],
+  "tagline": "Logiciel d'automatisation des paiements, de la communication bancaire et de la trésorerie",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.serrala.com/fr"
+  ]
+ },
+ {
+  "name": "BL Banking FR",
+  "vendor": "Business-Logics",
+  "website": "https://business-logics.de/english/products/enterprises/index.html",
+  "website_verified": true,
+  "categories": [
+   "communication-bancaire"
+  ],
+  "tagline": "Client EBICS multibancaire conforme aux standards du CFONB, profils T et TS, pour entreprises",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://business-logics.de/english/products/enterprises/index.html",
+   "https://platform.softwareone.com/product/bl-bankingfr/PCP-6223-2370"
+  ]
+ },
+ {
+  "name": "Trustpair",
+  "vendor": "Trustpair",
+  "website": "https://trustpair.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "fraude-virements"
+  ],
+  "tagline": "Contrôle automatique des coordonnées bancaires des tiers avant paiement contre la fraude au virement",
+  "g2_url": "https://www.g2.com/products/trustpair/reviews",
+  "g2_rating": 4.8,
+  "g2_reviews": 21,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://trustpair.com/fr/digitalisation-des-processus/",
+   "https://www.g2.com/products/trustpair/reviews",
+   "https://www.cegid.com/fr/blog/8-outils-anti-fraude-securiser-vos-paiements-virements-bancaires/"
+  ]
+ },
+ {
+  "name": "Sis ID (Eftsure)",
+  "vendor": "Sis ID",
+  "website": "https://sis-id.com/",
+  "website_verified": true,
+  "categories": [
+   "fraude-virements"
+  ],
+  "tagline": "Vérification collaborative des coordonnées bancaires des fournisseurs pour sécuriser les virements",
+  "g2_url": "https://www.g2.com/products/eftsure-sis-id/reviews",
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://sis-id.com/",
+   "https://www.cegid.com/fr/blog/8-outils-anti-fraude-securiser-vos-paiements-virements-bancaires/"
+  ]
+ },
+ {
+  "name": "Youtrust Verify (ex-Yousign Verify)",
+  "vendor": "Youtrust",
+  "website": "https://youtrust.com/fr-fr/verify/verification-compte-bancaire",
+  "website_verified": true,
+  "categories": [
+   "fraude-virements"
+  ],
+  "tagline": "Vérification par API du titulaire et de l'existence d'un compte bancaire à partir de l'IBAN",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://youtrust.com/fr-fr/verify/verification-compte-bancaire",
+   "https://youtrust.com/fr-fr/blog/iban-check"
+  ]
+ },
+ {
+  "name": "Pigment",
+  "vendor": "Pigment",
+  "website": "https://www.pigment.com/fr",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier"
+  ],
+  "tagline": "Plateforme de planification financière et opérationnelle : budget, prévisions, scénarios",
+  "g2_url": "https://www.g2.com/products/pigment-2024-01-19/reviews",
+  "g2_rating": 4.6,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.pigment.com/fr",
+   "https://www.lafabriquedunet.fr/logiciel/pigment"
+  ]
+ },
+ {
+  "name": "Workday Adaptive Planning",
+  "vendor": "Workday",
+  "website": "https://www.workday.com/fr-fr/products/adaptive-planning/overview.html",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier"
+  ],
+  "tagline": "Logiciel de planification budgétaire, de prévisions et de reporting financier en mode cloud",
+  "g2_url": "https://www.g2.com/products/workday-adaptive-planning/competitors/alternatives",
+  "g2_rating": 4.3,
+  "g2_reviews": 461,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.workday.com/fr-fr/products/adaptive-planning/overview.html",
+   "https://www.g2.com/categories/fp-a-financial-planning-analysis"
+  ]
+ },
+ {
+  "name": "Anaplan",
+  "vendor": "Anaplan",
+  "website": "https://www.anaplan.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier"
+  ],
+  "tagline": "Plateforme de planification connectée pour la finance, les ventes et la chaîne logistique",
+  "g2_url": "https://www.g2.com/products/anaplan",
+  "g2_rating": 4.6,
+  "g2_reviews": 493,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.anaplan.com/fr/",
+   "https://agicap.com/fr/article/logiciel-controle-gestion-comparatif/",
+   "https://www.g2.com/categories/fp-a-financial-planning-analysis"
+  ]
+ },
+ {
+  "name": "Board",
+  "vendor": "Board International",
+  "website": "https://www.board.com/fr",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier",
+   "reporting-bi"
+  ],
+  "tagline": "Plateforme de planification, budget, prévisions et analyse décisionnelle pour la finance",
+  "g2_url": "https://www.g2.com/products/board",
+  "g2_rating": 4.4,
+  "g2_reviews": 322,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.board.com/fr/cloud-ou-on-premise",
+   "https://agicap.com/fr/article/logiciel-controle-gestion-comparatif/"
+  ]
+ },
+ {
+  "name": "Jedox",
+  "vendor": "Jedox",
+  "website": "https://www.jedox.com/",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier",
+   "reporting-bi"
+  ],
+  "tagline": "Logiciel de planification budgétaire, de prévisions et de reporting à interface proche d'Excel",
+  "g2_url": "https://www.g2.com/products/jedox/competitors/alternatives",
+  "g2_rating": 4.3,
+  "g2_reviews": 189,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.jedox.com/en/financial-planning-analysis/budgeting-forecasting-software/",
+   "https://agicap.com/fr/article/logiciel-controle-gestion-comparatif/"
+  ]
+ },
+ {
+  "name": "Lucanet",
+  "vendor": "Lucanet",
+  "website": "https://www.lucanet.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier",
+   "reporting-bi"
+  ],
+  "tagline": "Logiciel de planification, de consolidation et de reporting financier pour ETI et groupes",
+  "g2_url": "https://www.g2.com/products/lucanet/competitors/alternatives",
+  "g2_rating": 4.7,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.lucanet.com/fr/",
+   "https://agicap.com/fr/article/logiciel-controle-gestion-comparatif/"
+  ]
+ },
+ {
+  "name": "CCH Tagetik",
+  "vendor": "Wolters Kluwer",
+  "website": "https://www.wolterskluwer.com/fr-fr/solutions/cch-tagetik",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier",
+   "reporting-bi"
+  ],
+  "tagline": "Plateforme de budget, prévisions, consolidation et reporting pour ETI multi-entités et groupes",
+  "g2_url": "https://www.g2.com/products/cch-tagetik/reviews",
+  "g2_rating": 4.3,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.wolterskluwer.com/fr-fr/expert-insights/de-cognos-planning-a-cch-tagetik-picard-surgeles",
+   "https://agicap.com/fr/article/logiciel-controle-gestion-comparatif/"
+  ]
+ },
+ {
+  "name": "OneStream",
+  "vendor": "OneStream Software",
+  "website": "https://www.onestream.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier",
+   "reporting-bi"
+  ],
+  "tagline": "Plateforme unifiée de planification, de consolidation et de reporting financier pour grands groupes",
+  "g2_url": "https://www.g2.com/products/onestream-unified-epm/competitors/alternatives",
+  "g2_rating": 4.6,
+  "g2_reviews": 161,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.onestream.com/fr/",
+   "https://agicap.com/fr/article/logiciel-controle-gestion-comparatif/"
+  ]
+ },
+ {
+  "name": "Talentia CPM",
+  "vendor": "Talentia Software",
+  "website": "https://www.talentia-software.com/fr/",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier",
+   "reporting-bi"
+  ],
+  "tagline": "Suite de performance financière : budget, prévisions, consolidation et reporting pour PME et ETI",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.talentia-software.com/fr/",
+   "https://www.talentia-software.com/en/finance-solutions/",
+   "https://agicap.com/fr/article/logiciel-controle-gestion-comparatif/"
+  ]
+ },
+ {
+  "name": "Prophix One",
+  "vendor": "Prophix",
+  "website": "https://www.prophix.com/",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier",
+   "reporting-bi"
+  ],
+  "tagline": "Plateforme de budget, prévisions, consolidation et reporting de gestion pour entreprises moyennes",
+  "g2_url": null,
+  "g2_rating": 4.4,
+  "g2_reviews": 223,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://fr.prophix.com/blog/planification-budg%C3%A9tisation-et-pr%C3%A9vision-quelle-est-la-diff%C3%A9rence/",
+   "https://www.prophix.com/use-case/financial-planning-analysis/"
+  ]
+ },
+ {
+  "name": "IBM Planning Analytics",
+  "vendor": "IBM",
+  "website": "https://www.ibm.com/fr-fr/products/planning-analytics",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier"
+  ],
+  "tagline": "Logiciel de planification multidimensionnelle (moteur TM1) avec intégration Excel",
+  "g2_url": null,
+  "g2_rating": 4.4,
+  "g2_reviews": 285,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.ibm.com/fr-fr/products/planning-analytics",
+   "https://www.g2.com/categories/fp-a-financial-planning-analysis"
+  ]
+ },
+ {
+  "name": "SAP Analytics Cloud pour la planification",
+  "vendor": "SAP",
+  "website": "https://www.sap.com/france/products/financial-management/analytics-cloud-planning.html",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier",
+   "reporting-bi"
+  ],
+  "tagline": "Outil cloud SAP qui réunit planification budgétaire, prévisions, scénarios et analytique",
+  "g2_url": "https://www.g2.com/products/sap-analytics-cloud",
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.sap.com/france/products/financial-management/analytics-cloud-planning.html",
+   "https://agicap.com/fr/article/logiciel-controle-gestion-comparatif/"
+  ]
+ },
+ {
+  "name": "Oracle EPM Cloud",
+  "vendor": "Oracle",
+  "website": "https://www.oracle.com/fr/erp/performance-management/",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier"
+  ],
+  "tagline": "Suite Oracle de gestion de la performance : planification, budget, consolidation et clôture",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.oracle.com/fr/erp/performance-management/"
+  ]
+ },
+ {
+  "name": "Unit4 FP&A",
+  "vendor": "Unit4",
+  "website": "https://www.unit4.com/products/budget-and-forecasting-software",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier"
+  ],
+  "tagline": "Logiciel cloud de budget, de prévisions glissantes et de modélisation de scénarios",
+  "g2_url": "https://www.g2.com/products/unit4-fp-a",
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.unit4.com/products/budget-and-forecasting-software",
+   "https://www.unit4.com/fr/our-customers/customer-story-havas"
+  ]
+ },
+ {
+  "name": "Forekasts",
+  "vendor": "Forekasts",
+  "website": "https://www.forekasts.fr/",
+  "website_verified": true,
+  "categories": [
+   "pilotage-financier"
+  ],
+  "tagline": "Outil en ligne de prévisionnel financier : compte de résultat, trésorerie et scénarios",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.forekasts.fr/",
+   "https://www.logiciels.pro/comparateur-logiciels-de-tresorerie/"
+  ]
+ },
+ {
+  "name": "MyReport",
+  "vendor": "Report One",
+  "website": "https://www.myreport.fr/",
+  "website_verified": true,
+  "categories": [
+   "reporting-bi",
+   "pilotage-financier"
+  ],
+  "tagline": "Logiciel de reporting et de tableaux de bord pour PME et ETI, connecté à l'ERP et à Excel",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.myreport.fr/",
+   "https://www.appvizer.fr/analytique/bi",
+   "https://agicap.com/fr/article/logiciel-controle-gestion-comparatif/"
+  ]
+ },
+ {
+  "name": "Microsoft Power BI",
+  "vendor": "Microsoft",
+  "website": "https://www.microsoft.com/fr-fr/power-platform/products/power-bi",
+  "website_verified": true,
+  "categories": [
+   "reporting-bi"
+  ],
+  "tagline": "Outil de visualisation et de tableaux de bord connectable aux données comptables et bancaires",
+  "g2_url": "https://www.g2.com/products/microsoft-microsoft-power-bi/competitors/alternatives",
+  "g2_rating": 4.5,
+  "g2_reviews": 1661,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.microsoft.com/fr-fr/power-platform/products/power-bi?page=1931",
+   "https://www.impli.fr/comparatif/logiciel-data-visualisation"
+  ]
+ },
+ {
+  "name": "Tableau",
+  "vendor": "Salesforce",
+  "website": "https://www.tableau.com/fr-fr",
+  "website_verified": true,
+  "categories": [
+   "reporting-bi"
+  ],
+  "tagline": "Logiciel de visualisation de données et de tableaux de bord interactifs multi-sources",
+  "g2_url": null,
+  "g2_rating": 4.4,
+  "g2_reviews": 4234,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.tableau.com/fr-fr/products/desktop",
+   "https://www.appvizer.fr/analytique/bi"
+  ]
+ },
+ {
+  "name": "Qlik Sense",
+  "vendor": "Qlik",
+  "website": "https://www.qlik.com/fr-fr",
+  "website_verified": true,
+  "categories": [
+   "reporting-bi"
+  ],
+  "tagline": "Plateforme d'analyse et de visualisation de données avec tableaux de bord interactifs",
+  "g2_url": null,
+  "g2_rating": 4.4,
+  "g2_reviews": 929,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.qlik.com/fr-fr",
+   "https://www.appvizer.fr/analytique/bi"
+  ]
+ },
+ {
+  "name": "Zoho Analytics",
+  "vendor": "Zoho",
+  "website": "https://www.zoho.com/fr/analytics/",
+  "website_verified": true,
+  "categories": [
+   "reporting-bi"
+  ],
+  "tagline": "Logiciel de BI et de rapports connectable à de nombreuses sources, dont les outils comptables",
+  "g2_url": null,
+  "g2_rating": 4.2,
+  "g2_reviews": 290,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.zoho.com/fr/analytics/",
+   "https://www.appvizer.fr/analytique/bi"
+  ]
+ },
+ {
+  "name": "Looker",
+  "vendor": "Google Cloud",
+  "website": "https://cloud.google.com/looker?hl=fr",
+  "website_verified": true,
+  "categories": [
+   "reporting-bi"
+  ],
+  "tagline": "Plateforme de BI et d'analyse intégrée avec modélisation centralisée des données",
+  "g2_url": null,
+  "g2_rating": 4.4,
+  "g2_reviews": 1652,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://cloud.google.com/looker?hl=fr"
+  ]
+ },
+ {
+  "name": "Toucan",
+  "vendor": "Toucan Toco",
+  "website": "https://www.toucantoco.com/",
+  "website_verified": true,
+  "categories": [
+   "reporting-bi"
+  ],
+  "tagline": "Plateforme d'analytique et de tableaux de bord personnalisés, conçue par un éditeur français",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.toucantoco.com/",
+   "https://www.impli.fr/comparatif/logiciel-data-visualisation"
+  ]
+ },
+ {
+  "name": "IBM Cognos Analytics",
+  "vendor": "IBM",
+  "website": "https://www.ibm.com/fr-fr/products/cognos-analytics",
+  "website_verified": true,
+  "categories": [
+   "reporting-bi"
+  ],
+  "tagline": "Logiciel de BI : rapports, tableaux de bord, modélisation et prévisions",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.ibm.com/fr-fr/products/cognos-analytics",
+   "https://www.appvizer.fr/analytique/bi"
+  ]
+ },
+ {
+  "name": "Oracle Analytics Cloud",
+  "vendor": "Oracle",
+  "website": "https://www.oracle.com/fr/analytics/",
+  "website_verified": true,
+  "categories": [
+   "reporting-bi"
+  ],
+  "tagline": "Suite d'analytique Oracle : préparation des données, visualisation, rapports et prévisions",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.oracle.com/fr/analytics/",
+   "https://www.appvizer.fr/analytique/bi"
+  ]
+ },
+ {
+  "name": "Strategy One (ex-MicroStrategy)",
+  "vendor": "Strategy",
+  "website": "https://www.strategy.com/",
+  "website_verified": true,
+  "categories": [
+   "reporting-bi"
+  ],
+  "tagline": "Plateforme de BI pour grandes entreprises : rapports, tableaux de bord et requêtes en langage naturel",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.strategy.com/press/microstrategy-one-platform-now-available-in-aws-marketplace-empowering-businesses-with-ai-driven-business-intelligence_11-07-2023",
+   "https://www.appvizer.fr/analytique/bi"
+  ]
+ },
+ {
+  "name": "Fizen",
+  "vendor": "Fizen",
+  "website": "https://www.fizen.fr/",
+  "website_verified": true,
+  "categories": [
+   "reporting-bi",
+   "tresorerie"
+  ],
+  "tagline": "Outil de pilotage pour entrepreneurs et indépendants : indicateurs de gestion et tableaux de bord",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://www.fizen.fr/"
+  ]
+ },
+ {
+  "name": "Tableo",
+  "vendor": "Tableo",
+  "website": "https://tableo.fr/",
+  "website_verified": true,
+  "categories": [
+   "reporting-bi"
+  ],
+  "tagline": "Tableaux de bord financiers connectés au logiciel Acropole Expert Comptabilité, pour cabinets et PME",
+  "g2_url": null,
+  "g2_rating": null,
+  "g2_reviews": null,
+  "getapp_url": null,
+  "getapp_rating": null,
+  "getapp_reviews": null,
+  "sources": [
+   "https://tableo.fr/login",
+   "https://www.appvizer.fr/analytique/tableaux-de-bord/tableo"
+  ]
+ }
+]
