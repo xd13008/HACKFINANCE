@@ -65,7 +65,9 @@ supabase/
                 en 8 univers opérationnels (data/50), sujets réglementés en contenu seul,
                 portails Radar RH / Radar RSE : catégories, grilles, facettes, pages planifiées + briefs),
                 première catégorie complète en brouillon : trésorerie (data/70 : 5 logiciels réels, faits, prix et notes G2/GetApp
-                sourcés, pages planifiées ; protocole de test et marche à suivre : docs/tests/PROTOCOLE-TRESORERIE.md)
+                sourcés, pages planifiées ; protocole de test et marche à suivre : docs/tests/PROTOCOLE-TRESORERIE.md),
+                3 sous-rubriques issues du rapprochement G2 + Semrush (data/75 : fraude aux virements, factures fournisseurs,
+                audit et contrôle interne ; docs/seo/MAPPING-G2-UNIVERS.md)
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/

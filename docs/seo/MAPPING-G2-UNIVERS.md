@@ -57,11 +57,19 @@ catégorie, (3) préparer le branchement de l'API de syndication G2 (corresponda
 - **Exclusions confirmées** : services financiers (banque, prêt, investissement), gestion de capital et plans d'actions,
   paiements et change tant que la revue juridique n'est pas faite.
 
-## 3. Prochaines étapes
+## 3. Décisions après mesure Semrush (FR, 11/11/2026)
 
-1. Mesurer les volumes de recherche français des 4 candidates (Semrush) avant de les créer.
-2. Créer les sous-rubriques retenues en brouillon (`supabase/data`), avec grille de critères et brief.
-3. Lors du branchement de la syndication G2 : utiliser ce tableau comme table de correspondance des catégories.
+| Candidate | Recherches mensuelles | Décision |
+|---|---|---|
+| Fraude aux virements | vérification iban 720 · fraude au président 590 · sis id 1 300 (marque) | **Créée** : `fraude-virements` (Trésorerie & cash) + guide « fraude au président » |
+| Factures fournisseurs | dématérialisation factures fournisseurs 590 · logiciel factures fournisseurs 70 | **Créée** : `factures-fournisseurs` (Dépenses & achats) ; « logiciel p2p » 260 et « procure to pay » 210 rattachés à `achats` |
+| Audit et contrôle interne | gestion des risques 320 · audit interne 210 · contrôle interne 140 (CPC ≈ 10 €) | **Créée** : `audit-controle-interne` (Comptabilité) |
+| Fiscalité et TVA | logiciel tva 90 · déclaration tva 0 | **Écartée** : facette ou guide plus tard |
+| Renommer « Consolidation » | logiciel consolidation 110 · clôture comptable 0 | **Non** : le nom actuel porte la demande |
+| Renommer « Recouvrement » | logiciel poste clients 0 | **Non** |
+
+Les 3 sous-rubriques sont en brouillon (`supabase/data/75_daf_sous_rubriques_g2.sql`) avec grille de critères, mots-clés et pages planifiées.
+Prochaine étape : référencer les logiciels de chaque sous-rubrique, comme pour la trésorerie (data/70).
 
 Sources : [G2 – toutes les catégories](https://www.g2.com/categories),
 [G2 – Accounting & Finance](https://www.g2.com/categories/accounting-finance),
