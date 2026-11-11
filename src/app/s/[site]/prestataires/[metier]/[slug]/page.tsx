@@ -1,33 +1,29 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getProvider, getProviderCategory, getProviders, getSite } from "@/lib/data";
+import { getProvider, getProviderCategory, getProviderLocations, getProviders, getSite } from "@/lib/data";
 import { Breadcrumbs } from "@/components/public/Breadcrumbs";
 import { DemoBanner } from "@/components/public/DemoBanner";
 import { JsonLd } from "@/components/public/JsonLd";
 import { OutboundLink } from "@/components/public/OutboundLink";
 import { Tracker } from "@/components/public/Tracker";
-import { absoluteUrl, ldBreadcrumb, staticMetadata } from "@/lib/seo";
+import { ldBreadcrumb, staticMetadata } from "@/lib/seo";
 import { formatDate } from "@/lib/format";
-import { requireSite, publishedSlugs } from "../../../_lib";
-import { ProviderList } from "@/components/public/ProviderList";
+import { requireSite } from "../../../_lib";
+import { LocalDirectory, MIN_INDEXABLE } from "@/components/public/LocalDirectory";
+import { DEPARTEMENTS, depLabel } from "@/lib/departements";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
 
-/** Pré-génère au build les pages publiées (mises en cache, servies par le CDN). */
-export async function generateStaticParams({ params }: { params: { site: string } }) {
-  // Seul le layout [site] fournit des paramètres parents : on renvoie métier et fiche.
-  const site = await getSite(params.site);
-  const out: { metier: string; slug: string }[] = [];
-  for (const metier of site ? await publishedSlugs(params.site, "provider_directory") : []) {
-    const cat = await getProviderCategory(site!.id, metier);
-    for (const pr of cat ? await getProviders(cat.id) : []) out.push({ metier, slug: pr.slug! });
-  }
-  return out.length ? out : [{ metier: "-", slug: "-" }];
+/** Fiches et pages locales générées à la demande puis mises en cache (des dizaines de milliers de pages possibles). */
+export async function generateStaticParams() {
+  return [{ metier: "-", slug: "-" }];
 }
 type P = Promise<{ site: string; metier: string; slug: string }>;
+type SP = Promise<{ page?: string }>;
 
-export async function generateMetadata({ params }: { params: P }): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: { params: P; searchParams: SP }): Promise<Metadata> {
   const p = await params;
+  const page = Number((await searchParams).page) || 1;
   const site = await getSite(p.site);
   const cat = site ? await getProviderCategory(site.id, p.metier) : null;
   const pr = await getProvider(p.slug);
@@ -38,13 +34,19 @@ export async function generateMetadata({ params }: { params: P }): Promise<Metad
       { noindex: pr.verification_status !== "verified" });
   }
   if (site && cat) {
-    return { title: `${cat.name} à ${p.slug}`, alternates: { canonical: absoluteUrl(site, `/prestataires/${cat.slug}/${p.slug}`) }, robots: { index: false, follow: true } };
+    const { providers, total } = await getProviders(cat.id, { city: p.slug, size: 1 });
+    if (!total) return { robots: { index: false } };
+    const c = providers[0];
+    const where = `à ${c.city}${c.department ? ` (${c.department})` : ""}`;
+    return staticMetadata(site, `/prestataires/${cat.slug}/${p.slug}`, `${cat.name} ${where}`,
+      `${total} ${cat.short_name ?? "professionnels"} référencés ${where} : annuaire factuel, sans classement, sources publiques datées.`,
+      { noindex: total < MIN_INDEXABLE || page > 1 });
   }
   return {};
 }
 
 /** Deuxième segment : fiche prestataire (slug) ou, à défaut, liste par ville. */
-export default async function ProviderPage({ params }: { params: P }) {
+export default async function ProviderPage({ params, searchParams }: { params: P; searchParams: SP }) {
   const p = await params;
   const site = await requireSite(p.site);
   const cat = await getProviderCategory(site.id, p.metier);
@@ -53,16 +55,15 @@ export default async function ProviderPage({ params }: { params: P }) {
   const crumbs = [{ name: "Accueil", path: "/" }, { name: cat.name, path: `/prestataires/${cat.slug}` }];
 
   if (!pr) {
-    const inCity = await getProviders(cat.id, p.slug);
-    if (!inCity.length) notFound();
-    const city = inCity[0].city;
+    const page = Number((await searchParams).page) || 1;
+    const [result, locations] = await Promise.all([getProviders(cat.id, { city: p.slug, page }), getProviderLocations(cat.id)]);
+    if (!result.total) notFound();
+    const c = result.providers[0];
+    const dep = c.department ?? undefined;
+    const path = `/prestataires/${cat.slug}/${p.slug}`;
     return (
-      <div className="max-w-3xl mx-auto px-4 py-8">
-        <Tracker site={site.key} pageType="provider_city" rubrique={cat.slug} />
-        <Breadcrumbs items={[...crumbs, { name: city ?? p.slug, path: `/prestataires/${cat.slug}/${p.slug}` }]} />
-        <h1 className="text-3xl font-extrabold">{cat.name} à {city}</h1>
-        <ProviderList providers={inCity} categorySlug={cat.slug} />
-      </div>
+      <LocalDirectory site={site} cat={cat} where={`à ${c.city}${dep ? ` (${dep})` : ""}`} path={path} result={result} locations={locations} department={dep}
+        crumbs={[...crumbs, ...(dep && DEPARTEMENTS[dep] ? [{ name: depLabel(dep), path: `/prestataires/${cat.slug}/departement/${dep.toLowerCase()}` }] : []), { name: c.city ?? p.slug, path }]} />
     );
   }
 

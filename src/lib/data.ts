@@ -181,15 +181,21 @@ export async function getSponsored(siteId: string, opts: { categoryId?: string; 
   }));
 }
 
-export async function getProviders(categoryId: string, city?: string) {
-  const { data: links } = await db().from("provider_categories").select("provider_id").eq("category_id", categoryId);
-  const ids = (links ?? []).map((l) => l.provider_id);
-  if (!ids.length) return [];
-  let q = db().from("providers_public").select("*").in("id", ids);
-  if (city) q = q.eq("city_slug", city);
-  const { data } = await q.order("name");
-  return data ?? [];
+/** Annuaire d'un métier (fiches publiées), paginé en base : ordre alphabétique, filtre ville ou département. */
+export async function getProviders(categoryId: string, opts: { city?: string; department?: string; page?: number; size?: number } = {}) {
+  const size = opts.size ?? 48, page = Math.max(1, opts.page ?? 1);
+  let q = db().from("providers_by_category").select("*", { count: "exact" }).eq("category_id", categoryId);
+  if (opts.city) q = q.eq("city_slug", opts.city);
+  if (opts.department) q = q.eq("department", opts.department);
+  const { data, count } = await q.order("name").range((page - 1) * size, page * size - 1);
+  return { providers: (data ?? []) as ProviderPublic[], total: count ?? 0, page, pages: Math.max(1, Math.ceil((count ?? 0) / size)) };
 }
+
+/** Villes et départements d'un annuaire, avec le nombre de fiches publiées. */
+export const getProviderLocations = cache(async (categoryId: string) => {
+  const { data } = await db().rpc("provider_locations", { p_category: categoryId });
+  return data ?? [];
+});
 
 export async function getProvider(slug: string) {
   const { data } = await db().from("providers_public").select("*").eq("slug", slug).maybeSingle();

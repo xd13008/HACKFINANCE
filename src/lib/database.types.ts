@@ -503,6 +503,12 @@ isOneToOne: false
       foreignKeyName: "listing_requests_created_provider_id_fkey"
       columns: ["created_provider_id"]
 isOneToOne: false
+      referencedRelation: "providers_by_category"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "listing_requests_created_provider_id_fkey"
+      columns: ["created_provider_id"]
+isOneToOne: false
       referencedRelation: "providers_public"
       referencedColumns: ["id"]
     },{
@@ -657,6 +663,12 @@ isOneToOne: false
       foreignKeyName: "provider_categories_provider_id_fkey"
       columns: ["provider_id"]
 isOneToOne: false
+      referencedRelation: "providers_by_category"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "provider_categories_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
       referencedRelation: "providers_public"
       referencedColumns: ["id"]
     }
@@ -781,6 +793,12 @@ isOneToOne: false
       foreignKeyName: "review_sources_provider_id_fkey"
       columns: ["provider_id"]
 isOneToOne: false
+      referencedRelation: "providers_by_category"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "review_sources_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
       referencedRelation: "providers_public"
       referencedColumns: ["id"]
     },{
@@ -808,6 +826,12 @@ isOneToOne: false
       columns: ["provider_id"]
 isOneToOne: false
       referencedRelation: "providers"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "review_summaries_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers_by_category"
       referencedColumns: ["id"]
     },{
       foreignKeyName: "review_summaries_provider_id_fkey"
@@ -1069,6 +1093,12 @@ isOneToOne: false
       foreignKeyName: "sponsored_placements_provider_id_fkey"
       columns: ["provider_id"]
 isOneToOne: false
+      referencedRelation: "providers_by_category"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "sponsored_placements_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
       referencedRelation: "providers_public"
       referencedColumns: ["id"]
     },{
@@ -1208,6 +1238,12 @@ isOneToOne: false
       foreignKeyName: "sponsored_placements_provider_id_fkey"
       columns: ["provider_id"]
 isOneToOne: false
+      referencedRelation: "providers_by_category"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "sponsored_placements_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
       referencedRelation: "providers_public"
       referencedColumns: ["id"]
     },{
@@ -1293,6 +1329,20 @@ isOneToOne: false
       columns: ["site_id"]
 isOneToOne: false
       referencedRelation: "sites"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"providers_by_category": {
+                  Row: {
+                    "category_id": string,"city": string | null,"city_slug": string | null,"coverage": string | null,"deal_size_range": string | null,"department": string | null,"description": string | null,"id": string,"is_fictional": boolean,"latitude": number | null,"longitude": number | null,"name": string,"offices": (string)[],"postal_code": string | null,"profession": string,"public_references": NonNullable<Json>,"region": string | null,"regulated_profession": boolean,"slug": string,"specialties": (string)[],"updated_at": string,"verification_status": string,"verified_at": string | null,"website": string | null
+                  }
+                  ComputedFields: never
+                  Relationships: [
+                    {
+      foreignKeyName: "provider_categories_category_id_fkey"
+      columns: ["category_id"]
+isOneToOne: false
+      referencedRelation: "categories"
       referencedColumns: ["id"]
     }
                   ]
@@ -1478,6 +1528,11 @@ isOneToOne: false
                            },
 "is_staff":
 { Args: Record<PropertyKey, never>; Returns: boolean
+                           },
+"provider_locations":
+{ Args: { "p_category": string }; Returns: {
+              "city": string,"city_slug": string,"department": string,"providers": number
+            }[]
                            },
 "purge_analytics":
 { Args: Record<PropertyKey, never>; Returns: number

@@ -42,7 +42,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires (99 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales (105 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -60,6 +60,7 @@ supabase/
                 1200-1300 avis tiers cités (review_sources, review_quotes, review_summaries : brouillon → validation humaine)
                 1400 identifiant G2 des logiciels (import des avis G2 par l'API de syndication)
                 1500 localisation des prestataires (code postal, département, GPS, bureaux, zone ; publique, SIREN toujours fermé)
+                1600 pages locales des annuaires : provider_locations() et vue providers_by_category (fiches publiées seulement)
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
                 périmètre DAF du cahier des charges, rubriques complémentaires, organisation de Radar Finances
@@ -85,6 +86,8 @@ src/
   lib/                  data.ts (lecture publique), seo.ts (metadata + JSON-LD), linking.ts (maillage auto),
                         checks.ts, diff.ts, admin.ts, actions/{public,admin}.ts (server actions)
   app/s/[site]/…        gabarits publics (URLs de ARCHITECTURE §5), sitemap.xml, robots.txt, llms.txt
+                        annuaires : /prestataires/[métier], /[ville], /departement/[code] (48 fiches par page,
+                        indexables à partir de 3 fiches publiées, pages suivantes en noindex)
   app/admin/(bo)/…      back-office : validation, contenus, SEO, catalogue, tests, prestataires,
                         demandes, régie, analytics, audit
   app/api/collect       mesure d'audience sans cookie (hachage quotidien salé, pas d'IP stockée)

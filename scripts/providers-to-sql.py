@@ -48,7 +48,7 @@ for path in sys.argv[1:]:
         dep = str(r.get("department")) if re.fullmatch(r"([0-9]{2,3}|2A|2B)", str(r.get("department") or "")) else None
         cov = r.get("coverage") if r.get("coverage") in ("national", "régional", "local") else None
         refs = [{"label": "Source", "source_url": u} for u in (r.get("sources") or []) if isinstance(u, str) and u.startswith("https://")][:5]
-        rows.append({"slug": slug, "name": name[:150], "profession": cats[0], "regulated": cats[0] in REGULATED or bool(r.get("regulated")),
+        rows.append({"slug": slug, "name": ((r.get("display_name") or name).strip())[:150], "profession": cats[0], "regulated": cats[0] in REGULATED or bool(r.get("regulated")),
                      "siren": siren, "website": site if site.startswith("https://") else None, "city": city, "city_slug": slugify(city) if city else None,
                      "region": (r.get("region") or None), "specialties": [str(x)[:80] for x in (r.get("specialties") or [])][:12],
                      "description": (r.get("description") or "")[:400] or None, "refs": json.dumps(refs, ensure_ascii=False),
@@ -66,6 +66,11 @@ if rows:
         f"{q(r['postal_code'])}, {q(r['department'])}, {('null' if r['lat'] is None else r['lat'])}, {('null' if r['lon'] is None else r['lon'])}, "
         f"{q(r['offices'])}, {q(r['coverage'])}, 'draft', 'unverified')" for r in rows))
     out.append("on conflict (slug) do nothing;\n")
+    # Fiches déjà chargées (brouillons) : nom affiché mis à jour, adresse (slug) inchangée
+    fix = [(r["slug"], r["name"]) for r in rows]
+    out.append("update public.providers p set name = x.name from (values")
+    out.append(",\n".join(f"  ({q(a)}, {q(b)})" for a, b in fix))
+    out.append(") as x(slug, name) where p.slug = x.slug and p.status = 'draft' and p.name is distinct from x.name;\n")
     links = [(r["slug"], c) for r in rows for c in r["cats"]]
     out.append("insert into public.provider_categories (provider_id, category_id)\nselect p.id, c.id from (values")
     out.append(",\n".join(f"  ({q(s)}, {q(c)})" for s, c in links))

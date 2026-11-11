@@ -2,6 +2,7 @@ import { publicClient } from "@/lib/supabase/public";
 import { getSite } from "@/lib/data";
 import { absoluteUrl } from "@/lib/seo";
 import { loadAllUniverses } from "@/lib/universe";
+import { MIN_INDEXABLE } from "@/lib/departements";
 
 export const revalidate = 3600;
 
@@ -22,18 +23,22 @@ export async function GET(_: Request, { params }: { params: Promise<{ site: stri
   const universes = (await loadAllUniverses(site.id)).filter((u) => u.tools.length);
   if (universes.length) urls.push({ loc: absoluteUrl(site, "/trouver"), lastmod: null });
   for (const u of universes) urls.push({ loc: absoluteUrl(site, `/univers/${u.vertical.slug}`), lastmod: u.tools.map((t) => t.testedAt).sort().at(-1) ?? null });
-  const catSlug = new Map((cats ?? []).map((c) => [c.id, c.slug]));
-  if (catSlug.size) {
-    const { data: links } = await db.from("provider_categories").select("provider_id,category_id").in("category_id", [...catSlug.keys()]);
-    const ids = [...new Set((links ?? []).map((l) => l.provider_id))];
-    // Seules les fiches vérifiées sont indexables.
-    const { data: providers } = ids.length
-      ? await db.from("providers_public").select("id,slug,updated_at").in("id", ids).eq("verification_status", "verified")
-      : { data: [] };
-    for (const l of links ?? []) {
-      const pr = (providers ?? []).find((x) => x.id === l.provider_id);
-      if (pr) urls.push({ loc: absoluteUrl(site, `/prestataires/${catSlug.get(l.category_id)}/${pr.slug}`), lastmod: pr.updated_at });
+  // Annuaires publiés : fiches vérifiées et pages locales (ville, département) d'au moins MIN_INDEXABLE fiches publiées
+  const directories = new Set((pages ?? []).filter((p) => p.type === "provider_directory").map((p) => p.path!.split("/")[2]));
+  for (const c of (cats ?? []).filter((x) => directories.has(x.slug))) {
+    for (let from = 0; ; from += 1000) {
+      const { data: rows } = await db.from("providers_by_category").select("slug,updated_at")
+        .eq("category_id", c.id).eq("verification_status", "verified").order("slug").range(from, from + 999);
+      for (const pr of rows ?? []) urls.push({ loc: absoluteUrl(site, `/prestataires/${c.slug}/${pr.slug}`), lastmod: pr.updated_at });
+      if ((rows ?? []).length < 1000) break;
     }
+    const { data: locations } = await db.rpc("provider_locations", { p_category: c.id });
+    const deps = new Map<string, number>();
+    for (const l of locations ?? []) {
+      if (l.city_slug && l.providers >= MIN_INDEXABLE) urls.push({ loc: absoluteUrl(site, `/prestataires/${c.slug}/${l.city_slug}`), lastmod: null });
+      if (l.department) deps.set(l.department, (deps.get(l.department) ?? 0) + l.providers);
+    }
+    for (const [d, n] of deps) if (n >= MIN_INDEXABLE) urls.push({ loc: absoluteUrl(site, `/prestataires/${c.slug}/departement/${d.toLowerCase()}`), lastmod: null });
   }
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
     .map((u) => `  <url><loc>${u.loc}</loc>${u.lastmod ? `<lastmod>${new Date(u.lastmod).toISOString()}</lastmod>` : ""}</url>`)

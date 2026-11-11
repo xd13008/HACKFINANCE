@@ -24,6 +24,16 @@ def nice(name):
     n = re.sub(r"\s+", " ", (name or "").strip())
     return n.title() if n.isupper() and len(n) > 4 else n
 
+def display(name):
+    """Nom affiché : sans les parenthèses du registre qui répètent le nom ou ne donnent qu'un sigle court."""
+    n = nice(name)
+    base = re.sub(r"\s*\(.*$", "", n).strip()
+    def keep(m):
+        inner = m.group(1).strip()
+        return "" if (inner.lower() in base.lower() or len(inner) <= 6) else f" ({inner})"
+    out = re.sub(r"\s*\(([^()]*)\)", keep, n).strip()
+    return out or base or n
+
 import glob
 # Sociétés déjà référencées par la recherche documentaire (data/95) : on ne les duplique pas
 known = {str(x.get("siren")) for f in glob.glob("docs/seo/prestataires/*.json") for x in json.load(open(f, encoding="utf-8")) if x.get("siren")}
@@ -40,7 +50,7 @@ for path in sys.argv[1:]:
             if cat not in by_siren[sid]["categories"]: by_siren[sid]["categories"].append(cat)
             continue
         desc = LABEL[cat] + (f" Ville du siège : {r['city'].title()}." if r.get("city") else "")
-        item = {"name": nice(name), "siren": r.get("siren"), "verified": True, "website": None,
+        item = {"name": nice(name), "display_name": display(name), "siren": r.get("siren"), "verified": True, "website": None,
                     "city": (r.get("city") or "").title() or None, "region": REGIONS.get(str(r.get("region_code") or "")),
                     "postal_code": r.get("postal_code"), "department": r.get("department"),
                     "latitude": r.get("latitude"), "longitude": r.get("longitude"), "offices": [], "coverage": None,

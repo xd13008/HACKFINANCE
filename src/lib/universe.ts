@@ -73,10 +73,13 @@ export const loadUniverse = cache(async (siteId: string, verticalSlug: string): 
   });
 
   // Prestataires : annuaires publiés de l'univers (sans classement)
-  const providers = (await Promise.all(categories.filter((c) => c.kind === "provider").map(async (c) => (await getProviders(c.id)).map((p) => ({
+  // (au plus 50 par métier sur la page univers ; le total complet vient du comptage en base)
+  const providerPages = await Promise.all(categories.filter((c) => c.kind === "provider").map(async (c) => ({ c, res: await getProviders(c.id, { size: 50 }) })));
+  const providersTotal = providerPages.reduce((n, x) => n + x.res.total, 0);
+  const providers = providerPages.map(({ c, res }) => res.providers.map((p) => ({
     slug: p.slug, name: p.name, city: p.city, metierSlug: c.slug, metierName: c.name,
     regulated: p.regulated_profession, verified: p.verification_status === "verified", specialties: p.specialties ?? [],
-  }))))).flat();
+  }))).flat();
 
   // Contenus publiés rattachés aux catégories de l'univers
   const catIds = new Set(categories.map((c) => c.id));
@@ -87,7 +90,7 @@ export const loadUniverse = cache(async (siteId: string, verticalSlug: string): 
   return {
     vertical, categories, tools, providers, related,
     kpis: {
-      tested: tools.length, providers: providers.length, medianEntry: median(entries),
+      tested: tools.length, providers: providersTotal, medianEntry: median(entries),
       minEntry: entries.length ? Math.min(...entries) : null, maxEntry: entries.length ? Math.max(...entries) : null,
       best: tools[0] ?? null,
     },
