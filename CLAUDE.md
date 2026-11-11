@@ -5,6 +5,7 @@ Plateforme unique (Next.js + Supabase) qui sert plusieurs portails par nom de do
 plus deux portails en préparation (`status = 'draft'`, 404 en production) : **Radar RH** (`radarrh.com`) et **Radar RSE** (`radarrse.com`).
 Référence produit : `ARCHITECTURE.md`. Mots-clés Semrush : `docs/seo/`.
 Plan éditorial par univers (6 sous-rubriques) et chaîne des 4 agents (collecte, rédaction, contrôle, mise en ligne), Match monétisé en pause (§5), informations filtrables selon les critères du DAF (§6) : `docs/PLAN-EDITORIAL-AGENTS.md`.
+Onglets à venir Club finance (questions-réponses modérées), Boîte à outils (services partenaires), Jobs (offres d'emploi finance) : `docs/PLAN-CLUB-OUTILS-JOBS.md`.
 Charte de rédaction des tests, alternatives et matchs (densité, ton, unicité SEO/GEO, contrôle avant publication) : `docs/CHARTE-REDACTION-TESTS.md`.
 
 ## Façon de travailler avec le dirigeant (@xav) — règles permanentes
