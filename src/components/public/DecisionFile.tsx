@@ -185,3 +185,41 @@ export function DecisionMethod({ test, tester, validator }: { test: TestRun; tes
     </section>
   );
 }
+
+/** 5 matchs : les solutions testées de la même catégorie dont la note est la plus proche. Chaque match ouvre le duel. */
+export function DecisionMatches({ self, ranking, criteria }: { self: RankedSoftware; ranking: RankedSoftware[]; criteria: Criterion[] }) {
+  const others = ranking.filter((r) => r.software.id !== self.software.id)
+    .sort((a, b) => Math.abs(a.overall - self.overall) - Math.abs(b.overall - self.overall) || a.rank - b.rank)
+    .slice(0, 5);
+  if (!others.length) return null;
+  const ahead = (x: RankedSoftware, y: RankedSoftware) => criteria.filter((c) => (x.criteria[c.key] ?? 0) > (y.criteria[c.key] ?? 0)).map((c) => c.label.toLowerCase());
+  const duel = (a: string, b: string) => `/comparer/${[a, b].sort().join("-vs-")}`;
+  return (
+    <section aria-labelledby="matchs" className="my-10">
+      <H2 id="matchs" kicker="Face à face">{`${others.length} match${others.length > 1 ? "s" : ""} avec ${self.software.name}`}</H2>
+      <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {others.map((o) => {
+          const win = ahead(self, o), lose = ahead(o, self);
+          return (
+            <li key={o.software.id}>
+              <Link href={duel(self.software.slug, o.software.slug)} className="flex flex-col gap-3 h-full p-5 rounded-2xl bg-white border border-line shadow-sm hover:border-ink">
+                <span className="text-xs font-semibold text-ink-3">Même catégorie · {Math.abs(o.overall - self.overall) < 0.05 ? "même note" : `écart de ${fmt(Math.abs(o.overall - self.overall))} point${Math.abs(o.overall - self.overall) >= 2 ? "s" : ""}`}</span>
+                <span className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
+                  <span><strong className="block">{self.software.name}</strong><span className="font-display font-extrabold text-2xl">{fmt(self.overall)}</span></span>
+                  <span className="rounded-md bg-accent px-2 py-1 text-xs font-extrabold">VS</span>
+                  <span className="text-right"><strong className="block">{o.software.name}</strong><span className="font-display font-extrabold text-2xl">{fmt(o.overall)}</span></span>
+                </span>
+                <span className="text-sm text-ink-2 flex flex-col gap-1">
+                  {win.length > 0 && <span><strong className="text-ink">{self.software.name}</strong> devant sur : {win.join(", ")}</span>}
+                  {lose.length > 0 && <span><strong className="text-ink">{o.software.name}</strong> devant sur : {lose.join(", ")}</span>}
+                </span>
+                <span className="mt-auto text-sm font-bold underline">Voir le match détaillé →</span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+      <p className="mt-2 text-xs text-ink-3">Notes de la rédaction sur 10, même protocole pour toutes les solutions. Aucun match n’est sponsorisé.</p>
+    </section>
+  );
+}

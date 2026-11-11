@@ -5,6 +5,9 @@ import type { Criterion } from "@/lib/data";
 import { ContentArticle } from "@/components/public/ContentArticle";
 import { ScoreBadge } from "@/components/public/ScoreBadge";
 import { priceLabel } from "@/lib/format";
+import { Breadcrumbs } from "@/components/public/Breadcrumbs";
+import { Tracker } from "@/components/public/Tracker";
+import { getSite } from "@/lib/data";
 import { metadataFor, requireSite, publishedSlugs, staticParams } from "../../_lib";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
@@ -17,6 +20,14 @@ type P = Promise<{ site: string; duel: string }>;
 
 export async function generateMetadata({ params }: { params: P }) {
   const p = await params;
+  const site = await getSite(p.site);
+  const content = site ? await getContentByPath(site.id, `/comparer/${p.duel}`) : null;
+  if (!content) {
+    // Match sans analyse rédigée : comparatif des seuls tests validés, accessible mais non indexé.
+    const m = p.duel.match(/^([a-z0-9-]+)-vs-([a-z0-9-]+)$/);
+    const [a, b] = m ? await Promise.all([getSoftware(m[1]), getSoftware(m[2])]) : [null, null];
+    return a && b ? { title: `${a.name} vs ${b.name} : le match des tests`, robots: { index: false, follow: true } } : { robots: { index: false } };
+  }
   return metadataFor(p.site, `/comparer/${p.duel}`);
 }
 
@@ -30,21 +41,22 @@ export default async function DuelPage({ params }: { params: P }) {
 
   const site = await requireSite(p.site);
   const content = await getContentByPath(site.id, `/comparer/${p.duel}`);
-  if (!content) notFound();
   const [swA, swB] = await Promise.all([getSoftware(a), getSoftware(b)]);
   if (!swA || !swB) notFound();
   const category = await getPrimaryCategory(swA.id);
   const ranking = category ? await getRanking(category.id) : [];
   const [rA, rB] = [ranking.find((r) => r.software.id === swA.id), ranking.find((r) => r.software.id === swB.id)];
+  // Sans analyse rédigée, le match n'existe que si les deux solutions ont un test validé dans la même catégorie.
+  if (!content && (!rA || !rB)) notFound();
   const [pricing, facts] = await Promise.all([getPricing([swA.id, swB.id]), getFacts([swA.id, swB.id])]);
   const criteria = (category?.criteria ?? []) as Criterion[];
-  const profiles = ((content.data as { profiles?: { profile: string; winner: string; why: string }[] })?.profiles) ?? [];
+  const profiles = ((content?.data as { profiles?: { profile: string; winner: string; why: string }[] })?.profiles) ?? [];
   const entry = (id: string) => { const pl = pricing.get(id) ?? []; const e = pl.find((x) => x.billing_period !== "quote") ?? pl[0]; return e ? priceLabel(e) : "—"; };
   const yesNo = (id: string, k: string) => { const v = facts.get(id)?.get(k)?.value; return v === true ? "Oui" : v === false ? "Non" : v != null ? String(v) : "—"; };
 
   const table = (
     <section className="my-6 overflow-x-auto">
-      <table className="w-full text-sm border border-line">
+      <table className="w-full text-sm border border-line bg-white">
         <thead className="bg-surface-2">
           <tr><th className="p-2 text-left">Critère</th>
             <th className="p-2 text-left"><Link href={`/logiciels/${swA.slug}`} className="underline">{swA.name}</Link></th>
@@ -55,7 +67,7 @@ export default async function DuelPage({ params }: { params: P }) {
             <td className="p-2">{rA && <ScoreBadge score={rA.overall} size="sm" />}</td><td className="p-2">{rB && <ScoreBadge score={rB.overall} size="sm" />}</td></tr>
           {criteria.map((c) => (
             <tr key={c.key} className="border-t border-line"><td className="p-2 text-ink-2">{c.label}</td>
-              <td className="p-2 tabular-nums">{rA?.criteria[c.key]?.toFixed(1) ?? "—"}</td><td className="p-2 tabular-nums">{rB?.criteria[c.key]?.toFixed(1) ?? "—"}</td></tr>
+              <td className="p-2 tabular-nums">{rA?.criteria[c.key]?.toFixed(1).replace(".", ",") ?? "—"}</td><td className="p-2 tabular-nums">{rB?.criteria[c.key]?.toFixed(1).replace(".", ",") ?? "—"}</td></tr>
           ))}
           <tr className="border-t border-line"><td className="p-2 text-ink-2">Prix d&apos;entrée</td><td className="p-2">{entry(swA.id)}</td><td className="p-2">{entry(swB.id)}</td></tr>
           <tr className="border-t border-line"><td className="p-2 text-ink-2">Offre gratuite</td><td className="p-2">{yesNo(swA.id, "free_plan")}</td><td className="p-2">{yesNo(swB.id, "free_plan")}</td></tr>
@@ -75,6 +87,21 @@ export default async function DuelPage({ params }: { params: P }) {
       )}
     </section>
   );
+
+  if (!content) {
+    const crumbs = [{ name: "Accueil", path: "/" }, ...(category ? [{ name: category.name, path: `/meilleurs-logiciels/${category.slug}` }] : []),
+      { name: `${swA.name} vs ${swB.name}`, path: `/comparer/${p.duel}` }];
+    return (
+      <article className="max-w-3xl mx-auto px-4 py-8">
+        <Tracker site={site.key} pageType="duel" rubrique={category?.slug} />
+        <Breadcrumbs items={crumbs} />
+        <h1 className="font-display text-3xl sm:text-4xl font-extrabold leading-tight">{swA.name} vs {swB.name} : le match des tests</h1>
+        <p className="mt-3 text-ink-2">Les deux solutions ont été testées par la rédaction sur le même protocole{category ? ` (${category.name})` : ""}. Ce comparatif reprend uniquement les notes et les faits validés ; l’analyse rédigée du match est à venir.</p>
+        {table}
+        <p className="text-sm"><Link href={`/logiciels/${swA.slug}`} className="font-bold underline">Le test de {swA.name}</Link> · <Link href={`/logiciels/${swB.slug}`} className="font-bold underline">Le test de {swB.name}</Link></p>
+      </article>
+    );
+  }
 
   return (
     <ContentArticle

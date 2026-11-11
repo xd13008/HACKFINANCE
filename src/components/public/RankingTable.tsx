@@ -44,7 +44,7 @@ export function RankingTable({ ranking, criteria, pricing, facts, pricingPages }
                     {criteria.map((c) => (
                       <tr key={c.key} className="border-t border-line">
                         <td className="py-1 text-ink-2">{c.label} <span className="text-ink-3">({c.weight} %)</span></td>
-                        <td className="py-1 text-right tabular-nums font-medium">{r.criteria[c.key]?.toFixed(1) ?? "—"}</td>
+                        <td className="py-1 text-right tabular-nums font-medium">{r.criteria[c.key]?.toFixed(1).replace(".", ",") ?? "—"}</td>
                       </tr>
                     ))}
                   </tbody>

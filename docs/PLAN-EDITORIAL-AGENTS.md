@@ -153,3 +153,19 @@ Sortie : un rapport par critère et des corrections proposées ; une page sous l
 4. Tâche planifiée de rédaction bihebdomadaire avec gabarits de profondeur (agent 2), et grille de contrôle qualité bloquante (agent 3).
 5. Agent de mise en ligne post-approbation et approbation par lot (agent 4).
 6. Bloc « Ce que disent les avis publics » (synthèse sourcée) et collecte d'avis vérifiés sur le site, **après avis juridique** (L111-7-2, droit des bases de données).
+
+## 5. Idée retenue pour plus tard : le Match monétisé (en pause)
+
+Décision du 11 novembre 2026 : l'événement « Le Match » est **en pause** (écran 5 de la maquette grisé, aucun lien depuis le site).
+L'idée est conservée pour monétiser plus tard, sous trois formes :
+- **Événement** : face-à-face en direct sur un cas réel, avec replay ;
+- **Webinaire** : démonstration comparée de 2 à 4 solutions ;
+- **Comparatif mis en avant** : un duel promu dans un bloc distinct.
+
+Règles qui s'appliqueront : participation payante toujours signalée (« Sponsorisé » / « Participation payante »),
+bloc séparé du classement éditorial, aucune influence sur les notes (`editorial_rankings` reste calculé depuis `scores`),
+jamais sur les sujets réglementés, jamais de classement entre prestataires (comparaison factuelle seulement).
+
+À ne pas confondre avec les **matchs éditoriaux** déjà en ligne : en bas de chaque fiche logiciel, les 5 solutions testées
+de la même catégorie dont la note est la plus proche, chacune ouvrant le duel `/comparer/a-vs-b`.
+Sans analyse rédigée validée, le duel affiche seulement les notes et faits validés, en `noindex`.

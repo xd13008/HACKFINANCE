@@ -8,7 +8,7 @@ import type { Criterion } from "@/lib/data";
 import { ContentArticle } from "@/components/public/ContentArticle";
 import { ContentMeta } from "@/components/public/ContentMeta";
 import { PricingTable, VisitCta } from "@/components/public/SoftwareParts";
-import { DecisionAlternatives, DecisionCost, DecisionHeader, DecisionIdentity, DecisionMethod, DecisionSynthesis, DecisionTest, type DecisionSection } from "@/components/public/DecisionFile";
+import { DecisionAlternatives, DecisionCost, DecisionHeader, DecisionIdentity, DecisionMatches, DecisionMethod, DecisionSynthesis, DecisionTest, type DecisionSection } from "@/components/public/DecisionFile";
 import { Breadcrumbs } from "@/components/public/Breadcrumbs";
 import { Tracker } from "@/components/public/Tracker";
 import { PublicReviews } from "@/components/public/PublicReviews";
@@ -69,6 +69,7 @@ export default async function SoftwarePage({ params }: { params: P }) {
     ...(plans.length ? [{ id: "prix", label: "Tarifs" }] : []),
     ...(reviews.sources.length ? [{ id: "avis-publics", label: "Avis publics" }] : []),
     ...(alternatives.length ? [{ id: "alternatives", label: "Alternatives" }] : []),
+    ...(ranked && ranking.length > 1 ? [{ id: "matchs", label: "Matchs" }] : []),
     ...(tested ? [{ id: "methode", label: "Méthode" }] : []),
   ];
 
@@ -84,6 +85,7 @@ export default async function SoftwarePage({ params }: { params: P }) {
       <PricingTable plans={plans} />
       <PublicReviews sources={reviews.sources} quotes={reviews.quotes} summary={reviews.summary} name={sw.name} />
       {category && <DecisionAlternatives items={alternatives} categorySlug={category.slug} categoryName={category.name} />}
+      {ranked && category && <DecisionMatches self={ranked} ranking={ranking} criteria={category.criteria as Criterion[]} />}
       {tested && <DecisionMethod test={test.test} tester={names.get(test.test.tester_id)?.name} validator={names.get(test.test.validated_by ?? "")?.name} />}
     </>
   );
