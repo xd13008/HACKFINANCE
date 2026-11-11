@@ -123,7 +123,9 @@ const FACT_LABELS: Record<string, string> = {
   mileage: "Indemnités kilométriques", approval_workflow: "Circuit de validation", po_matching: "Rapprochement avec les commandes",
   supplier_payments: "Paiement des fournisseurs", e_invoice_reception: "Réception des factures électroniques",
 };
-const factValue = (v: unknown) => (v === true ? "Oui" : v === false ? "Non" : Array.isArray(v) ? v.join(", ").toUpperCase() : String(v));
+/** Oui/Non, listes (tailles en sigles : « TPE, PME » ; noms de logiciels tels quels), nombres et textes. */
+const factValue = (v: unknown) => (v === true ? "Oui" : v === false ? "Non"
+  : Array.isArray(v) ? v.map((x) => (/^(tpe|pme|eti)$/.test(String(x)) ? String(x).toUpperCase() : String(x))).join(", ") : String(v));
 
 /** Carte d'identité : chaque fait validé avec sa source et sa date. */
 export function DecisionIdentity({ facts, integrations, website }: { facts: Map<string, Fact> | undefined; integrations: { name: string }[]; website: string | null }) {
