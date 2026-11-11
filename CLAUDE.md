@@ -42,7 +42,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales (105 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires (114 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -61,6 +61,8 @@ supabase/
                 1400 identifiant G2 des logiciels (import des avis G2 par l'API de syndication)
                 1500 localisation des prestataires (code postal, département, GPS, bureaux, zone ; publique, SIREN toujours fermé)
                 1600 pages locales des annuaires : provider_locations() et vue providers_by_category (fiches publiées seulement)
+                1700 publish_providers() : publication en masse d'un métier par ville ou département (éditeurs seulement,
+                     fiches « non vérifiées », jamais une fiche rejetée ; bouton dans /admin/prestataires)
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
                 périmètre DAF du cahier des charges, rubriques complémentaires, organisation de Radar Finances

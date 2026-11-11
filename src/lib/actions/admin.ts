@@ -468,6 +468,21 @@ export async function verifyProvider(fd: FormData) {
   revalidatePath("/s", "layout");
 }
 
+/** Publication en masse des fiches d'un annuaire pour une ville ou un département. Les fiches restent « non vérifiées ». */
+export async function publishProviders(_: ActionResult, fd: FormData): Promise<ActionResult> {
+  await requireRole("editor");
+  const c = await db();
+  const publish = str(fd, "publish") !== "0";
+  const { data, error } = await c.rpc("publish_providers", {
+    p_category: str(fd, "category_id"), p_city_slug: opt(fd, "city_slug") ?? undefined,
+    p_department: opt(fd, "department") ?? undefined, p_publish: publish,
+  });
+  revalidatePath("/admin/prestataires");
+  revalidatePath("/s", "layout");
+  if (error) return ko(error.message);
+  return ok(publish ? `${data} fiche(s) publiée(s), marquées « non vérifiées ».` : `${data} fiche(s) repassée(s) en brouillon.`);
+}
+
 // ---------------------------------------------------------------------------
 // Régie
 // ---------------------------------------------------------------------------

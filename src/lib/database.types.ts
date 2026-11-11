@@ -1534,6 +1534,9 @@ isOneToOne: false
               "city": string,"city_slug": string,"department": string,"providers": number
             }[]
                            },
+"publish_providers":
+{ Args: { "p_category": string,"p_city_slug"?: string,"p_department"?: string,"p_publish"?: boolean }; Returns: number
+                           },
 "purge_analytics":
 { Args: Record<PropertyKey, never>; Returns: number
                            },
