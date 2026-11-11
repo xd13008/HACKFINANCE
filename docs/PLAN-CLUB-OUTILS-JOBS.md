@@ -93,7 +93,7 @@ migration 0900), posées par la rédaction et marquées « Rédaction ». Invite
 
 ---
 
-## 3. Jobs (offres d'emploi finance)
+## 3. Jobs (offres d'emploi finance) — construit le 11/11/2026 (migration 1900)
 
 **Sources des offres.**
 1. *Import automatique* de l'API Offres d'emploi de France Travail (gratuite, inscription requise). Elle couvre les métiers de la finance : comptabilité, audit et contrôle comptable, contrôle de gestion, analyse financière, direction administrative et financière, management comptable.

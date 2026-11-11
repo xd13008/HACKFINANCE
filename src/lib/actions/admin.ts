@@ -484,6 +484,47 @@ export async function publishProviders(_: ActionResult, fd: FormData): Promise<A
 }
 
 // ---------------------------------------------------------------------------
+// Jobs : relecture des offres (la base n'autorise la publication qu'à un éditeur, et seulement si l'annonce est payée)
+// ---------------------------------------------------------------------------
+export async function reviewJob(_: ActionResult, fd: FormData): Promise<ActionResult> {
+  await requireRole("editor");
+  const c = await db();
+  const decision = str(fd, "decision");
+  const reason = opt(fd, "reason");
+  if (decision === "reject" && !reason) return ko("Indiquez le motif du refus : il est envoyé au recruteur.");
+  const { data: job, error } = await c.from("job_offers")
+    .update(decision === "approve" ? { status: "published", reject_reason: null } : { status: "rejected", reject_reason: reason })
+    .eq("id", str(fd, "job_id")).select("id,title,slug,source,posted_by_member").maybeSingle();
+  revalidatePath("/admin/emplois");
+  revalidatePath("/s", "layout");
+  if (error) return ko(error.message);
+  if (!job) return ko("Offre introuvable ou droits insuffisants.");
+  if (job.source === "member" && job.posted_by_member) {
+    const { serviceClient } = await import("@/lib/supabase/service");
+    const { brevoMailer } = await import("@/lib/mail");
+    const { data: m } = await serviceClient().from("members").select("email").eq("id", job.posted_by_member).maybeSingle();
+    if (m) await brevoMailer({
+      to: m.email,
+      subject: decision === "approve" ? `Votre annonce est en ligne : ${job.title}` : `Votre annonce n'a pas été publiée : ${job.title}`,
+      text: decision === "approve"
+        ? `Bonjour,\n\nVotre annonce « ${job.title} » est publiée. Suivez-la depuis « Mon espace ».\n`
+        : `Bonjour,\n\nVotre annonce « ${job.title} » n'a pas été publiée. Motif : ${reason}\n\nVous serez remboursé sous quelques jours.\n`,
+    });
+  }
+  // La ligne relue disparaît de la file : le résultat s'affiche en tête de page.
+  redirect(`/admin/emplois?fait=${decision === "approve" ? "publiee" : job.source === "member" ? "refusee-rembourser" : "refusee"}`);
+}
+
+export async function approveImportedJobs(_: ActionResult, fd: FormData): Promise<ActionResult> {
+  await requireRole("editor");
+  const c = await db();
+  const { data, error } = await c.rpc("approve_imported_jobs", { p_site: str(fd, "site_id"), p_family: opt(fd, "family") ?? undefined });
+  revalidatePath("/admin/emplois");
+  revalidatePath("/s", "layout");
+  return error ? ko(error.message) : ok(`${data} offre(s) France Travail publiée(s).`);
+}
+
+// ---------------------------------------------------------------------------
 // Régie
 // ---------------------------------------------------------------------------
 export async function updatePlacementRequest(_: ActionResult, fd: FormData): Promise<ActionResult> {

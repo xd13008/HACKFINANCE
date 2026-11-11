@@ -53,6 +53,7 @@ export default async function SiteLayout({ children, params }: { children: React
             {nav.highlights.slice(0, 2).map((h) => (
               <Link key={h.path} href={h.path!} className="hover:text-brand">{h.type === "simulator" ? "Simulateurs" : "Le guide"}</Link>
             ))}
+            {nav.hasJobs && <Link href="/emplois" className="hover:text-brand">Jobs</Link>}
           </nav>
           <Link href="/mon-espace" className="text-sm font-semibold rounded-lg border border-line px-3 py-1.5 hover:border-ink">Mon espace</Link>
         </div>
@@ -89,6 +90,8 @@ export default async function SiteLayout({ children, params }: { children: React
             <ul className="space-y-1 text-ink-2">
               <li><Link href="/referencer-mon-logiciel">Référencer mon logiciel</Link></li>
               <li><Link href="/referencer-mon-cabinet">Référencer mon cabinet</Link></li>
+              {nav.hasJobs && <li><Link href="/emplois">Offres d&apos;emploi finance</Link></li>}
+              {nav.hasJobs && <li><Link href="/emplois/publier">Publier une offre d&apos;emploi</Link></li>}
               <li><Link href="/publicite/annoncer">Annoncer sur {site.name}</Link></li>
               {nav.publishedPaths.has("/mentions-legales") && <li><Link href="/mentions-legales">Mentions légales</Link></li>}
               {nav.publishedPaths.has("/donnees-personnelles") && <li><Link href="/donnees-personnelles">Données personnelles</Link></li>}

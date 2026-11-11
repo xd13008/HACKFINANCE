@@ -9,6 +9,7 @@ import {
 } from "@/lib/actions/member";
 import { CONSENT_COOKIE, currentMember, HORIZONS, memberData, personalisationAccepted, RELATIONS, SIZES, TEAM_SIZES } from "@/lib/members";
 import { serviceClient } from "@/lib/supabase/service";
+import { payJob } from "@/lib/actions/jobs";
 import { requireSite, type SiteParams } from "../_lib";
 
 export const dynamic = "force-dynamic";
@@ -35,10 +36,13 @@ export default async function MySpace({ params, searchParams }: { params: SitePa
   const perso = personalisationAccepted((await cookies()).get(CONSENT_COOKIE)?.value);
   const data = await memberData(m.id);
   const db = serviceClient();
-  const [{ data: cats }, { data: names }] = await Promise.all([
+  const [{ data: cats }, { data: names }, { data: jobs }] = await Promise.all([
     db.from("categories").select("id,name,slug,kind").eq("site_id", site.id).neq("status", "archived").order("name"),
     db.from("software").select("name").eq("is_fictional", false).order("name").limit(1000),
+    db.from("job_offers").select("id,slug,title,status,reject_reason,expires_at,created_at").eq("posted_by_member", m.id).order("created_at", { ascending: false }),
   ]);
+  const JOB_STATUS: Record<string, string> = { draft: "brouillon", awaiting_payment: "en attente de paiement", pending_review: "payée, en relecture",
+    published: "en ligne", rejected: "refusée", expired: "expirée" };
   const s = site.key;
   const catName = (slug: string | null) => (cats ?? []).find((c) => c.slug === slug)?.name ?? slug ?? "—";
   const sizeName = (k: string | null) => SIZES.find(([v]) => v === k)?.[1] ?? k;
@@ -119,6 +123,25 @@ export default async function MySpace({ params, searchParams }: { params: SitePa
           <label className="text-sm">Échéance
             <select name="horizon" className={inputCls}>{HORIZONS.map(([k, l]) => <option key={k} value={k}>{l}</option>)}</select></label>
         </MemberAction>
+      </Section>
+
+      <div id="annonces" />
+      <Section title="Mes annonces d'emploi" intro="Annonces payantes : relues sous 2 jours ouvrés, puis en ligne pour la durée achetée.">
+        {(jobs ?? []).length === 0 ? <p className="text-sm text-ink-3">Aucune annonce.</p> : (
+          <ul className="divide-y divide-line">
+            {(jobs ?? []).map((j) => (
+              <li key={j.id} className="py-2 text-sm flex flex-wrap items-center justify-between gap-2">
+                <span>{j.status === "published" ? <Link href={`/emplois/${j.slug}`} className="underline font-semibold">{j.title}</Link> : <strong>{j.title}</strong>}
+                  {" · "}{JOB_STATUS[j.status] ?? j.status}{j.status === "published" && j.expires_at ? ` jusqu'au ${new Date(j.expires_at).toLocaleDateString("fr-FR")}` : ""}
+                  {j.status === "rejected" && j.reject_reason ? <span className="block text-red-800">Motif : {j.reject_reason}</span> : null}</span>
+                {j.status === "awaiting_payment" && (
+                  <MemberAction action={payJob} site={s} submit="Payer" className="flex gap-2"><input type="hidden" name="job_id" value={j.id} /></MemberAction>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
+        <p className="text-sm"><Link href="/emplois/publier" className="underline">Publier une nouvelle annonce</Link></p>
       </Section>
 
       <Section title="Mes recherches" intro={perso ? "Vos recherches « Trouver » sont enregistrées." : "Pour enregistrer vos recherches, acceptez le cookie de personnalisation."}>

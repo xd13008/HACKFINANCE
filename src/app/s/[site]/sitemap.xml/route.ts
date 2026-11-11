@@ -40,6 +40,14 @@ export async function GET(_: Request, { params }: { params: Promise<{ site: stri
     }
     for (const [d, n] of deps) if (n >= MIN_INDEXABLE) urls.push({ loc: absoluteUrl(site, `/prestataires/${c.slug}/departement/${d.toLowerCase()}`), lastmod: null });
   }
+  // Offres d'emploi en ligne (expirées exclues par la RLS)
+  const { count: jobCount } = await db.from("job_offers").select("id", { count: "exact", head: true }).eq("site_id", site.id);
+  if (jobCount) urls.push({ loc: absoluteUrl(site, "/emplois"), lastmod: null });
+  for (let from = 0; jobCount && from < jobCount; from += 1000) {
+    const { data: jobs } = await db.from("job_offers").select("slug,updated_at").eq("site_id", site.id).order("slug").range(from, from + 999);
+    for (const j of jobs ?? []) urls.push({ loc: absoluteUrl(site, `/emplois/${j.slug}`), lastmod: j.updated_at });
+    if ((jobs ?? []).length < 1000) break;
+  }
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
     .map((u) => `  <url><loc>${u.loc}</loc>${u.lastmod ? `<lastmod>${new Date(u.lastmod).toISOString()}</lastmod>` : ""}</url>`)
     .join("\n")}\n</urlset>\n`;

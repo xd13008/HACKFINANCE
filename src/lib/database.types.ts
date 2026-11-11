@@ -413,6 +413,96 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"job_offers": {
+                  Row: {
+                    "apply_email": string | null,"apply_url": string | null,"city": string | null,"company_name": string | null,"company_siren": string | null,"contract": string,"created_at": string,"department": string | null,"description": string,"experience": string | null,"expires_at": string | null,"external_id": string | null,"family": string,"featured": boolean,"id": string,"latitude": number | null,"longitude": number | null,"postal_code": string | null,"posted_by_member": string | null,"provider_id": string | null,"published_at": string | null,"reject_reason": string | null,"remote": string | null,"reviewed_at": string | null,"reviewed_by": string | null,"salary_max": number | null,"salary_min": number | null,"salary_text": string | null,"site_id": string,"slug": string,"source": string,"source_created_at": string | null,"source_url": string | null,"status": string,"title": string,"updated_at": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "apply_email"?: string | null,"apply_url"?: string | null,"city"?: string | null,"company_name"?: string | null,"company_siren"?: string | null,"contract": string,"created_at"?: string,"department"?: string | null,"description": string,"experience"?: string | null,"expires_at"?: string | null,"external_id"?: string | null,"family": string,"featured"?: boolean,"id"?: string,"latitude"?: number | null,"longitude"?: number | null,"postal_code"?: string | null,"posted_by_member"?: string | null,"provider_id"?: string | null,"published_at"?: string | null,"reject_reason"?: string | null,"remote"?: string | null,"reviewed_at"?: string | null,"reviewed_by"?: string | null,"salary_max"?: number | null,"salary_min"?: number | null,"salary_text"?: string | null,"site_id": string,"slug": string,"source": string,"source_created_at"?: string | null,"source_url"?: string | null,"status"?: string,"title": string,"updated_at"?: string
+                  }
+                  Update: {
+                    "apply_email"?: string | null,"apply_url"?: string | null,"city"?: string | null,"company_name"?: string | null,"company_siren"?: string | null,"contract"?: string,"created_at"?: string,"department"?: string | null,"description"?: string,"experience"?: string | null,"expires_at"?: string | null,"external_id"?: string | null,"family"?: string,"featured"?: boolean,"id"?: string,"latitude"?: number | null,"longitude"?: number | null,"postal_code"?: string | null,"posted_by_member"?: string | null,"provider_id"?: string | null,"published_at"?: string | null,"reject_reason"?: string | null,"remote"?: string | null,"reviewed_at"?: string | null,"reviewed_by"?: string | null,"salary_max"?: number | null,"salary_min"?: number | null,"salary_text"?: string | null,"site_id"?: string,"slug"?: string,"source"?: string,"source_created_at"?: string | null,"source_url"?: string | null,"status"?: string,"title"?: string,"updated_at"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "job_offers_posted_by_member_fkey"
+      columns: ["posted_by_member"]
+isOneToOne: false
+      referencedRelation: "members"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "job_offers_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "job_offers_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers_by_category"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "job_offers_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers_public"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "job_offers_site_id_fkey"
+      columns: ["site_id"]
+isOneToOne: false
+      referencedRelation: "sites"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"job_orders": {
+                  Row: {
+                    "amount_cents": number,"created_at": string,"id": string,"job_id": string,"member_id": string | null,"paid_at": string | null,"product_code": string,"status": string,"stripe_invoice_id": string | null,"stripe_payment_intent": string | null,"stripe_session_id": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "amount_cents": number,"created_at"?: string,"id"?: string,"job_id": string,"member_id"?: string | null,"paid_at"?: string | null,"product_code": string,"status"?: string,"stripe_invoice_id"?: string | null,"stripe_payment_intent"?: string | null,"stripe_session_id"?: string | null
+                  }
+                  Update: {
+                    "amount_cents"?: number,"created_at"?: string,"id"?: string,"job_id"?: string,"member_id"?: string | null,"paid_at"?: string | null,"product_code"?: string,"status"?: string,"stripe_invoice_id"?: string | null,"stripe_payment_intent"?: string | null,"stripe_session_id"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "job_orders_job_id_fkey"
+      columns: ["job_id"]
+isOneToOne: false
+      referencedRelation: "job_offers"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "job_orders_member_id_fkey"
+      columns: ["member_id"]
+isOneToOne: false
+      referencedRelation: "members"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "job_orders_product_code_fkey"
+      columns: ["product_code"]
+isOneToOne: false
+      referencedRelation: "job_products"
+      referencedColumns: ["code"]
+    }
+                  ]
+                },"job_products": {
+                  Row: {
+                    "active": boolean,"amount_cents": number,"code": string,"description": string | null,"duration_days": number,"featured": boolean,"label": string,"sort": number
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "active"?: boolean,"amount_cents": number,"code": string,"description"?: string | null,"duration_days"?: number,"featured"?: boolean,"label": string,"sort"?: number
+                  }
+                  Update: {
+                    "active"?: boolean,"amount_cents"?: number,"code"?: string,"description"?: string | null,"duration_days"?: number,"featured"?: boolean,"label"?: string,"sort"?: number
+                  }
+                  Relationships: [
+                    
+                  ]
                 },"keyword_questions": {
                   Row: {
                     "cluster": string,"created_at": string,"id": string,"question": string,"site_id": string,"source": string,"used_in": string | null,"volume": number
@@ -1687,6 +1777,9 @@ isOneToOne: false
               "entries": number,"outbound_clicks": number,"page_type": string,"pageviews": number,"path": string,"rubrique": string,"sessions": number
             }[]
                            },
+"approve_imported_jobs":
+{ Args: { "p_family"?: string,"p_site": string }; Returns: number
+                           },
 "approve_version":
 { Args: { "p_comment"?: string,"p_version": string }; Returns: undefined
                            },
@@ -1698,6 +1791,9 @@ isOneToOne: false
                            },
 "current_actor_kind":
 { Args: Record<PropertyKey, never>; Returns: string
+                           },
+"expire_jobs":
+{ Args: Record<PropertyKey, never>; Returns: number
                            },
 "gsc_summary":
 { Args: { "p_days"?: number,"p_site": string }; Returns: {
@@ -1756,6 +1852,9 @@ isOneToOne: false
                            },
 "unpublish_item":
 { Args: { "p_item": string,"p_reason": string }; Returns: undefined
+                           },
+"upsert_imported_jobs":
+{ Args: { "p_rows": Json,"p_site": string }; Returns: number
                            },
 "user_is_human_editor":
 { Args: { "uid": string }; Returns: boolean

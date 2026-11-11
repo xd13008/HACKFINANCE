@@ -53,6 +53,21 @@ Domaines achetés : `radarfinances.com` (portail finance, marque « Radar Financ
 4. Purge quotidienne des données personnelles : `/api/cron/purge` (vercel.json), protégée par `CRON_SECRET`.
 5. Compléter la page « Données personnelles » (responsable de traitement, contact, durées) avant d'ouvrir l'inscription au public.
 
+## 4 quater. Jobs : import France Travail et annonces payantes (Stripe)
+
+1. **France Travail** : créer une application sur francetravail.io, l'abonner à l'API « Offres d'emploi v2 ».
+   Renseigner dans Vercel (Production) `FRANCE_TRAVAIL_CLIENT_ID` et `FRANCE_TRAVAIL_CLIENT_SECRET`.
+   Import quotidien : `/api/cron/jobs` (vercel.json). Premier import sur 31 jours :
+   `curl -H "Authorization: Bearer $CRON_SECRET" "https://radarfinances.com/api/cron/jobs?jours=31"`.
+   Les offres importées attendent une relecture : /admin/emplois, « Publier les offres à relire » (par métier).
+2. **Stripe** : dans le tableau de bord, créer un taux de TVA 20 % (non inclus) et un webhook vers
+   `https://radarfinances.com/api/stripe/webhook` (événements `checkout.session.completed`, `checkout.session.expired`,
+   `checkout.session.async_payment_succeeded`, `checkout.session.async_payment_failed`).
+   Renseigner dans Vercel : `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_TAX_RATE_ID`. Jamais dans le dépôt ni dans un message.
+3. **Prix** : `supabase/data/99_job_products.sql` (hors taxes, en centimes), rejoué à chaque déploiement.
+4. **Refus d'une annonce payée** : rembourser depuis le tableau de bord Stripe (le back-office le rappelle).
+5. **CGV** des annonces à publier avant l'ouverture du paiement.
+
 ## 5. Agents (Claude API)
 1. Créer une clé API sur console.anthropic.com et définir une **limite de dépense** au niveau de l'organisation.
 2. Renseigner `ANTHROPIC_API_KEY`, `AGENT_EMAIL` et `AGENT_PASSWORD` (le compte au rôle « agent »).

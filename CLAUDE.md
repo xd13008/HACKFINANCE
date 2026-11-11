@@ -43,7 +43,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires, DAF inscrits (128 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires, DAF inscrits, jobs (144 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -67,6 +67,9 @@ supabase/
                 1800 DAF inscrits : members (profil), member_software, member_projects, visitors (navigateur consentant),
                      visitor_events / visitor_searches (navigation et recherches « Trouver »), consent_log ; lecture admin seule,
                      écriture serveur seule (lib/members.ts, clé de service) ; purge_member_data() via /api/cron/purge
+                1900 jobs : job_offers (import France Travail + annonces payantes des inscrits), job_products (prix, data/99),
+                     job_orders (Stripe) ; publication par un éditeur seulement (guard_job_publication), annonce payée exigée,
+                     anon : offres publiées non expirées ; approve_imported_jobs(), upsert_imported_jobs(), expire_jobs()
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
                 périmètre DAF du cahier des charges, rubriques complémentaires, organisation de Radar Finances
@@ -107,6 +110,9 @@ src/
   comptes DAF           /inscription (double validation par e-mail, lib/mail.ts Brevo), /connexion (lien sans mot de passe),
                         /mon-espace (profil, logiciels, projets, recherches, navigation, export JSON, suppression), /cookies ;
                         back-office /admin/inscrits (admin seulement). Aucune revente ni transmission des données à des tiers
+  jobs                  /emplois (liste filtrable, JobPosting), /emplois/[slug], /emplois/publier (contrôles du Code du travail,
+                        lib/jobs.ts, puis paiement Stripe Checkout lib/stripe.ts), /api/stripe/webhook (signature vérifiée,
+                        seule preuve de paiement), /api/cron/jobs (import lib/francetravail.ts) ; relecture /admin/emplois
   app/api/cron/*        tâches planifiées (Search Console quotidien, agents hebdomadaire) — Bearer CRON_SECRET
   lib/agents/           veille, rédaction, contrôle qualité : un appel Claude à sortie structurée, sans outil,
                         compte Supabase « agent » (RLS), plafonds de coût, journal agent_runs

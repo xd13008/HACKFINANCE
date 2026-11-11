@@ -27,17 +27,20 @@ export const getSite = cache(async (key: string): Promise<Site | null> => {
 });
 
 export const getNav = cache(async (siteId: string) => {
-  const [{ data: verticals }, { data: categories }, { data: pillars }, { data: pages }] = await Promise.all([
+  const [{ data: verticals }, { data: categories }, { data: pillars }, { data: pages }, { count: jobs }] = await Promise.all([
     db().from("verticals").select("*").eq("site_id", siteId).order("sort"),
     db().from("categories").select("*").eq("site_id", siteId).eq("status", "published").order("sort"),
     db().from("published_content").select("path,h1,type").eq("site_id", siteId).in("type", ["pillar", "simulator"]),
     db().from("published_content").select("path").eq("site_id", siteId).in("type", ["page", "glossary"]),
+    db().from("job_offers").select("id", { count: "exact", head: true }).eq("site_id", siteId),
   ]);
   return {
     verticals: verticals ?? [], categories: categories ?? [], highlights: pillars ?? [],
     /** Pages institutionnelles publiées : le pied de page ne lie que celles-ci (aucun lien vers une 404). */
     publishedPaths: new Set((pages ?? []).map((p) => p.path!)),
     hasGlossary: (pages ?? []).some((p) => p.path!.startsWith("/lexique/")),
+    /** Onglet Jobs affiché dès qu'une offre est en ligne (la RLS ne laisse voir que les offres publiées et non expirées). */
+    hasJobs: (jobs ?? 0) > 0,
   };
 });
 
