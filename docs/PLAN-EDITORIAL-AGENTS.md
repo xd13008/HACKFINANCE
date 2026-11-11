@@ -140,7 +140,8 @@ Sortie : un rapport par critère et des corrections proposées ; une page sous l
 | management de transition finance | 590 | 3,14 € | **11** | univers 6, très accessible |
 | ia finance | 390 | 2,48 € | 21 | univers 6 |
 
-- **À télécharger dès que le crédit est rechargé** : pour chaque catégorie, les déclinaisons « comparatif », « meilleur », « avis », « prix / tarif », « vs », « pour PME / startup / ETI », « gratuit », les noms des principaux éditeurs (« [éditeur] avis / prix / vs »), et les questions (`phrase_questions`). Sortie : `docs/seo/keywords-sous-rubriques-AAAA-MM.csv`, puis `supabase/data/` (idempotent).
+- **Relevé du 11 nov. 2026 (fait)** : `docs/seo/keywords-sous-rubriques-2026-11.csv` (60 mots-clés utiles, 23 270 recherches/mois, classés par univers, sous-rubrique et catégorie) → `supabase/data/60_keywords_sous_rubriques.sql`. Pépites à faible difficulté : cabinet management de transition (1 600, KD 17), daf de transition (880, KD 12), daf externalisé (880, KD 15), intégrateur erp (880, KD 17), logiciel gestion des achats (480, KD 17), comparatif ged (480, KD 20), logiciel reporting financier (110, KD 11, CPC 10 €).
+- **À compléter au prochain crédit** : pour chaque catégorie, les déclinaisons « comparatif », « meilleur », « avis », « prix / tarif », « vs », « pour PME / startup / ETI », « gratuit », les noms des principaux éditeurs (« [éditeur] avis / prix / vs »), et les questions (`phrase_questions`). Sortie : `docs/seo/keywords-sous-rubriques-AAAA-MM.csv`, puis `supabase/data/` (idempotent).
 
 ---
 

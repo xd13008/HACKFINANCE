@@ -1,0 +1,61 @@
+mot_cle;volume;cpc_eur;kd;intention;univers;sous_rubrique;categorie
+expert comptable en ligne;3600;9.87;37;informational;Équipe finance & expertise;Annuaire prestataires;experts-comptables
+cabinet management de transition;1600;9.21;17;commercial;Équipe finance & expertise;Annuaire prestataires;management-transition
+qonto avis;1600;1.39;41;informational;Dépenses & achats;Fiche (avis);cartes-entreprise
+indy avis;1600;0.62;31;informational;Comptabilité, clôture & conformité;Fiche (avis);comptabilite
+pennylane avis;1300;1.14;34;informational;Comptabilité, clôture & conformité;Fiche (avis);comptabilite
+société de recouvrement;1000;2.35;33;informational;Encaissement;Annuaire prestataires;societes-recouvrement
+daf externalisé;880;4.62;15;informational;Équipe finance & expertise;Annuaire prestataires;management-transition
+daf de transition;880;7.61;12;informational;Équipe finance & expertise;Annuaire prestataires;management-transition
+intégrateur erp;880;9.78;17;informational;Comptabilité, clôture & conformité;Annuaire prestataires;integrateurs-comptables
+tarif expert comptable;720;1.43;20;informational;Équipe finance & expertise;Tarifs;experts-comptables
+logiciel gestion des achats;480;6.19;17;informational;Dépenses & achats;Test de la rédaction;achats
+comparatif ged;480;3.24;20;commercial;Comptabilité, clôture & conformité;Podium;ged
+daf à temps partagé;480;0.0;12;informational;Équipe finance & expertise;Annuaire prestataires;management-transition
+cabinet de recouvrement;480;2.05;50;informational;Encaissement;Annuaire prestataires;societes-recouvrement
+ia comptabilité;480;2.17;47;informational;Comptabilité, clôture & conformité;Test de la rédaction;comptabilite
+axonaut avis;480;2.81;30;informational;Encaissement;Fiche (avis);facturation
+tiime avis;480;0.63;26;informational;Comptabilité, clôture & conformité;Fiche (avis);comptabilite
+comparatif plateforme agréée;390;1.29;27;informational;Comptabilité, clôture & conformité;Podium;facturation-electronique
+expert comptable prix;390;1.6;20;transactional;Équipe finance & expertise;Tarifs;experts-comptables
+odoo comptabilité;390;2.18;22;commercial;Comptabilité, clôture & conformité;Test de la rédaction;comptabilite
+meilleur logiciel comptabilité;320;3.97;28;commercial;Comptabilité, clôture & conformité;Podium;comptabilite
+yousign avis;320;2.27;15;commercial;Comptabilité, clôture & conformité;Fiche (avis);signature-electronique
+meilleur logiciel facturation;260;4.83;31;commercial;Encaissement;Podium;facturation
+pennylane prix;260;2.63;28;navigational;Comptabilité, clôture & conformité;Tarifs;comptabilite
+logiciel trésorerie gratuit;210;2.2;14;informational;Trésorerie & cash;Par profil;tresorerie
+logiciel note de frais gratuit;210;3.78;29;informational;Dépenses & achats;Par profil;notes-de-frais
+logiciel relance client;170;6.75;18;informational;Encaissement;Test de la rédaction;recouvrement
+logiciel ged pme;170;0.0;23;commercial;Comptabilité, clôture & conformité;Par profil;ged
+automatisation comptabilité;170;7.95;21;informational;Comptabilité, clôture & conformité;Test de la rédaction;comptabilite
+sellsy avis;170;2.93;22;informational;Encaissement;Fiche (avis);facturation
+carte bancaire entreprise;140;9.93;53;informational;Dépenses & achats;Test de la rédaction;cartes-entreprise
+logiciel budget;140;2.68;33;informational;Pilotage & performance;Test de la rédaction;pilotage-financier
+yooz avis;140;0.0;15;informational;Dépenses & achats;Fiche (avis);achats
+indy vs pennylane;140;0.87;12;commercial;Comptabilité, clôture & conformité;Match;comptabilite
+cegid avis;140;0.0;14;commercial;Comptabilité, clôture & conformité;Fiche (avis);comptabilite
+comparatif logiciel comptabilité;110;2.27;32;commercial;Comptabilité, clôture & conformité;Podium;comptabilite
+logiciel reporting financier;110;10.28;11;informational;Pilotage & performance;Test de la rédaction;reporting-bi
+yousign prix;110;2.6;26;navigational;Comptabilité, clôture & conformité;Tarifs;signature-electronique
+ebp avis;110;2.43;14;commercial;Comptabilité, clôture & conformité;Fiche (avis);comptabilite
+sage avis;110;8.68;19;informational;Comptabilité, clôture & conformité;Fiche (avis);comptabilite
+logiciel trésorerie pme;90;0.0;13;informational;Trésorerie & cash;Par profil;tresorerie
+comparatif signature électronique;90;12.04;21;commercial;Comptabilité, clôture & conformité;Podium;signature-electronique
+logiciel reporting esg;90;11.14;14;informational;RSE & performance durable;Test de la rédaction;reporting-esg
+contrôleur de gestion freelance;90;1.19;11;commercial;Pilotage & performance;Annuaire prestataires;controle-gestion-bi
+comparatif logiciel trésorerie;70;0.0;0;informational;Trésorerie & cash;Podium;tresorerie
+liste plateformes agréées;70;0.0;0;informational;Comptabilité, clôture & conformité;Podium;facturation-electronique
+logiciel relance facture;70;7.42;18;informational;Encaissement;Test de la rédaction;recouvrement
+comparatif expert comptable en ligne;70;5.25;19;commercial;Équipe finance & expertise;Podium;experts-comptables
+agicap avis;70;3.93;23;informational;Trésorerie & cash;Fiche (avis);tresorerie
+logiciel comptabilité startup;50;2.78;0;informational;Comptabilité, clôture & conformité;Par profil;comptabilite
+comparatif logiciel facturation;50;2.38;0;informational;Encaissement;Podium;facturation
+meilleur logiciel note de frais;50;23.81;0;informational;Dépenses & achats;Podium;notes-de-frais
+meilleur logiciel signature électronique;50;5.25;0;informational;Comptabilité, clôture & conformité;Podium;signature-electronique
+mooncard avis;50;19.04;19;informational;Dépenses & achats;Fiche (avis);notes-de-frais
+pennylane vs sage;50;0.0;0;informational;Comptabilité, clôture & conformité;Match;comptabilite
+logiciel consolidation comptable;40;0.0;0;informational;Comptabilité, clôture & conformité;Test de la rédaction;comptabilite
+pennylane vs tiime;40;0.78;0;informational;Comptabilité, clôture & conformité;Match;comptabilite
+logiciel cir;30;0.0;0;informational;Financement, aides & risques;Test de la rédaction;logiciels-cir-cii
+agicap prix;30;3.94;0;informational;Trésorerie & cash;Tarifs;tresorerie
+cabinet conseil csrd;20;5.02;0;informational;RSE & performance durable;Annuaire prestataires;conseil-csrd-carbone
