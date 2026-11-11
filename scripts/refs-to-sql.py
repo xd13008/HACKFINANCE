@@ -3,7 +3,9 @@
 Transforme les listes de référencement (JSON produits par la recherche documentaire) en SQL idempotent.
 Tout est inséré en BROUILLON : logiciels (status draft), rattachements aux catégories, liens G2 / GetApp
 (review_sources draft, note seulement si elle a été vue). Aucun fait ni prix : ils viennent ensuite des sites officiels.
-Usage : python3 -I scripts/refs-to-sql.py fichier1.json [fichier2.json ...] > supabase/data/80_daf_referencement.sql
+Usage : python3 -I scripts/refs-to-sql.py [--g2 produits_g2.json] fichier1.json [...] > supabase/data/80_daf_referencement.sql
+--g2 : produits renvoyés par l'API G2 (catégories + include=products) ; rapprochés par nom de domaine,
+       ils complètent l'identifiant G2, le lien, la note et le nombre d'avis (relevé daté, brouillon).
 """
 import json, re, sys, unicodedata
 
@@ -38,8 +40,20 @@ def count(v):
     except (TypeError, ValueError):
         return None
 
+def host(u):
+    m = re.match(r"https?://([^/]+)", (u or "").strip().lower())
+    h = m.group(1) if m else (u or "").strip().lower().split("/")[0]
+    return h[4:] if h.startswith("www.") else h
+
+args = sys.argv[1:]
+g2 = {}
+if args[:1] == ["--g2"]:
+    for p in json.load(open(args[1], encoding="utf-8")):
+        if p.get("domain"): g2.setdefault(host(p["domain"]), p)
+    args = args[2:]
+
 items, seen, rejected = [], {}, []
-for path in sys.argv[1:]:
+for path in args:
     for r in json.load(open(path, encoding="utf-8")):
         name = (r.get("name") or "").strip()
         cats = [c for c in (r.get("categories") or []) if c in CATS]
@@ -53,6 +67,10 @@ for path in sys.argv[1:]:
                 seen[slug][k] = seen[slug].get(k) or r.get(k)
             continue
         tag = (r.get("tagline") or "").strip()[:160] or None
+        gp = g2.get(host(site))
+        if gp:  # données de l'API G2 : identifiant, lien, note et nombre d'avis du jour
+            r = {**r, "g2_product_id": gp.get("g2_product_id"), "g2_url": gp.get("g2_url") or r.get("g2_url"),
+                 "g2_rating": gp.get("star_rating"), "g2_reviews": gp.get("review_count")}
         item = {**r, "name": name[:120], "vendor": (r.get("vendor") or name).strip()[:120], "slug": slug, "website": site,
                 "categories": cats, "tagline": tag}
         seen[slug] = item; items.append(item)
@@ -69,6 +87,11 @@ out.append(",\n".join(f"  ({q(s)}, {q(c)}, {'true' if p else 'false'})" for s, c
 out.append(f") as x(sw, cat, p)\njoin public.software s on s.slug = x.sw\njoin public.categories c on c.slug = x.cat and c.site_id = '{SITE}'\n"
            "where not exists (select 1 from public.software_categories sc where sc.software_id = s.id and sc.category_id = c.id)\n"
            "  and (not x.p or not exists (select 1 from public.software_categories sc where sc.software_id = s.id and sc.is_primary));\n")
+g2ids = [(i["slug"], i["g2_product_id"]) for i in items if re.fullmatch(r"[A-Za-z0-9-]{1,64}", str(i.get("g2_product_id") or ""))]
+if g2ids:
+    out.append("update public.software s set g2_product_id = x.g2 from (values")
+    out.append(",\n".join(f"  ({q(s)}, {q(g)})" for s, g in g2ids))
+    out.append(") as x(sw, g2) where s.slug = x.sw and s.g2_product_id is null;\n")
 reviews = []
 for i in items:
     for plat in ("g2", "getapp"):
@@ -83,3 +106,4 @@ if reviews:
                "where not exists (select 1 from public.review_sources r where r.software_id = s.id and r.platform = x.platform);\n")
 print("\n".join(out))
 print(f"-- écartés : {', '.join(rejected)}" if rejected else "", file=sys.stderr)
+print(f"-- rapprochés avec G2 : {len(g2ids)}", file=sys.stderr)
