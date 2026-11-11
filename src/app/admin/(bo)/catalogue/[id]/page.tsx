@@ -4,7 +4,7 @@ import { serverClient } from "@/lib/supabase/server";
 import { requireRole } from "@/lib/admin";
 import { Badge, Card, Field, PageHeader, StatusBadge, Table, inputCls } from "@/components/admin/ui";
 import { ActionForm } from "@/components/admin/ActionForm";
-import { addFact, addPricing, createTestRun, decideFact, decidePricing, decideReviewSource, publishSoftwareListing } from "@/lib/actions/admin";
+import { addFact, addPricing, createTestRun, decideFact, decidePricing, decideReviewQuote, decideReviewSource, importG2Now, publishSoftwareListing } from "@/lib/actions/admin";
 import { priceLabel } from "@/lib/format";
 
 export default async function SoftwareAdmin({ params }: { params: Promise<{ id: string }> }) {
@@ -19,8 +19,9 @@ export default async function SoftwareAdmin({ params }: { params: Promise<{ id: 
     db.from("software_categories").select("category_id,categories(name)").eq("software_id", id),
     db.from("test_runs").select("id,status,tested_at,category_id").eq("software_id", id).order("tested_at", { ascending: false }),
     db.from("content_items").select("id,type,path,status").eq("software_id", id),
-    db.from("review_sources").select("*").eq("software_id", id).order("platform"),
+    db.from("review_sources").select("*, review_quotes(*)").eq("software_id", id).order("platform"),
   ]);
+  const draftQuotes = (reviews ?? []).flatMap((r) => (r.review_quotes ?? []).filter((q) => q.status === "draft").map((q) => ({ ...q, platform: r.platform })));
   return (
     <div className="space-y-6">
       <PageHeader title={sw.name} intro={`${sw.vendor} · /logiciels/${sw.slug}`} actions={<div className="flex gap-2"><StatusBadge status={sw.status} />{sw.is_fictional && <Badge tone="warn">fictif</Badge>}</div>} />
@@ -82,6 +83,28 @@ export default async function SoftwareAdmin({ params }: { params: Promise<{ id: 
               </tr>
             ))}
           </Table>
+          {draftQuotes.length > 0 && (
+            <div className="mt-4 border-t border-line pt-3 space-y-2">
+              <p className="text-sm font-medium">Citations à valider ({draftQuotes.length})</p>
+              {draftQuotes.map((q) => (
+                <div key={q.id} className="text-sm rounded-lg bg-surface-2 p-2">
+                  <p>« {q.quote} »</p>
+                  <p className="text-xs text-ink-3">{q.author_label} · {q.review_date} · {q.platform} · {q.sentiment} · <a href={q.review_url} target="_blank" rel="noopener noreferrer" className="underline">avis</a></p>
+                  <div className="flex gap-3 mt-1">
+                    <form action={decideReviewQuote}><input type="hidden" name="quote_id" value={q.id} /><input type="hidden" name="decision" value="validate" /><button className="text-xs underline text-green-700">Valider</button></form>
+                    <form action={decideReviewQuote}><input type="hidden" name="quote_id" value={q.id} /><input type="hidden" name="decision" value="reject" /><button className="text-xs underline text-red-700">Rejeter</button></form>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+          <div className="mt-4 border-t border-line pt-3">
+            <ActionForm action={importG2Now} submit="Importer les avis G2" className="flex flex-wrap gap-2 items-end">
+              <input type="hidden" name="software_id" value={sw.id} />
+              <Field label="Identifiant produit G2"><input name="g2_product_id" required defaultValue={sw.g2_product_id ?? ""} className={inputCls} /></Field>
+            </ActionForm>
+            <p className="text-xs text-ink-3 mt-1">API de syndication G2 : note et citations courtes arrivent en brouillon, à valider.</p>
+          </div>
         </Card>
         <Card title="Tarifs">
           <Table head={["Offre", "Prix", "Source", "Statut"]}>

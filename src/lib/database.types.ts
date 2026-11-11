@@ -971,14 +971,14 @@ isOneToOne: true
                   ]
                 },"software": {
                   Row: {
-                    "claimed_at": string | null,"claimed_by_email": string | null,"created_at": string,"created_by": string | null,"founded_year": number | null,"hq_country": string | null,"id": string,"is_fictional": boolean,"logo_path": string | null,"name": string,"slug": string,"status": string,"tagline": string | null,"updated_at": string,"vendor": string,"website": string | null
+                    "claimed_at": string | null,"claimed_by_email": string | null,"created_at": string,"created_by": string | null,"founded_year": number | null,"g2_product_id": string | null,"hq_country": string | null,"id": string,"is_fictional": boolean,"logo_path": string | null,"name": string,"slug": string,"status": string,"tagline": string | null,"updated_at": string,"vendor": string,"website": string | null
                   }
                   ComputedFields: never
                   Insert: {
-                    "claimed_at"?: string | null,"claimed_by_email"?: string | null,"created_at"?: string,"created_by"?: string | null,"founded_year"?: number | null,"hq_country"?: string | null,"id"?: string,"is_fictional"?: boolean,"logo_path"?: string | null,"name": string,"slug": string,"status"?: string,"tagline"?: string | null,"updated_at"?: string,"vendor": string,"website"?: string | null
+                    "claimed_at"?: string | null,"claimed_by_email"?: string | null,"created_at"?: string,"created_by"?: string | null,"founded_year"?: number | null,"g2_product_id"?: string | null,"hq_country"?: string | null,"id"?: string,"is_fictional"?: boolean,"logo_path"?: string | null,"name": string,"slug": string,"status"?: string,"tagline"?: string | null,"updated_at"?: string,"vendor": string,"website"?: string | null
                   }
                   Update: {
-                    "claimed_at"?: string | null,"claimed_by_email"?: string | null,"created_at"?: string,"created_by"?: string | null,"founded_year"?: number | null,"hq_country"?: string | null,"id"?: string,"is_fictional"?: boolean,"logo_path"?: string | null,"name"?: string,"slug"?: string,"status"?: string,"tagline"?: string | null,"updated_at"?: string,"vendor"?: string,"website"?: string | null
+                    "claimed_at"?: string | null,"claimed_by_email"?: string | null,"created_at"?: string,"created_by"?: string | null,"founded_year"?: number | null,"g2_product_id"?: string | null,"hq_country"?: string | null,"id"?: string,"is_fictional"?: boolean,"logo_path"?: string | null,"name"?: string,"slug"?: string,"status"?: string,"tagline"?: string | null,"updated_at"?: string,"vendor"?: string,"website"?: string | null
                   }
                   Relationships: [
                     

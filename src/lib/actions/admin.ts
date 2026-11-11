@@ -312,6 +312,35 @@ export async function decideReviewSource(_: ActionResult, fd: FormData): Promise
   return error ? ko(error.message) : ok(reject ? "Note rejetée." : "Note vérifiée et validée.");
 }
 
+/** Import des avis G2 (API de syndication) en brouillon. La clé reste côté serveur (G2_API_TOKEN). */
+export async function importG2Now(_: ActionResult, fd: FormData): Promise<ActionResult> {
+  await requireRole("editor");
+  const c = await serverClient();
+  const softwareId = str(fd, "software_id");
+  const productId = str(fd, "g2_product_id");
+  if (!/^[A-Za-z0-9-]{1,64}$/.test(productId)) return ko("Identifiant G2 invalide.");
+  const { error } = await c.from("software").update({ g2_product_id: productId }).eq("id", softwareId);
+  if (error) return ko(error.message);
+  const token = process.env.G2_API_TOKEN;
+  if (!token) return ko("Identifiant enregistré. Clé G2 absente : ajoutez G2_API_TOKEN dans les variables Vercel, puis relancez l'import.");
+  try {
+    const { importG2Reviews } = await import("@/lib/g2");
+    const r = await importG2Reviews(c, softwareId, productId, token);
+    revalidatePath("/admin", "layout");
+    return ok(`Note G2 relevée (${r.rating ?? "—"}/5, ${r.reviewCount ?? "?"} avis) ; ${r.quotesAdded} citation(s) ajoutée(s) en brouillon.`);
+  } catch (e) {
+    return ko((e as Error).message.replace(/api_token=[^&\s]+/g, "api_token=***"));
+  }
+}
+
+/** Validation humaine d'une citation d'avis tiers. */
+export async function decideReviewQuote(fd: FormData) {
+  await requireRole("editor");
+  const c = await serverClient();
+  await c.from("review_quotes").update({ status: str(fd, "decision") === "validate" ? "validated" : "rejected" }).eq("id", str(fd, "quote_id")).eq("status", "draft");
+  revalidatePath("/admin", "layout");
+}
+
 /** Publication d'une catégorie : au moins un test validé est exigé, sinon la page serait vide. */
 export async function setCategoryStatus(_: ActionResult, fd: FormData): Promise<ActionResult> {
   await requireRole("editor");

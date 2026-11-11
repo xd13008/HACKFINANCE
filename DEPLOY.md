@@ -38,6 +38,12 @@ Domaines achetés : `radarfinances.com` (portail finance, marque « Radar Financ
 3. Dans Search Console, ajouter l'e-mail du compte de service en utilisateur « Restreint » de chaque propriété.
 4. Coller le JSON dans `GSC_SERVICE_ACCOUNT`. Bouton manuel : back-office → SEO → *Importer Search Console*.
 
+## 4 bis. Avis G2 (API de syndication)
+1. Obtenir auprès de son interlocuteur G2 une **clé de syndication** (la clé développeur standard ne donne pas accès aux avis des autres éditeurs).
+2. La renseigner dans la variable Vercel `G2_API_TOKEN` (environnement Production). Jamais dans le dépôt ni dans un message.
+3. Back-office → Catalogue → logiciel → bloc *Avis publics* : saisir l'identifiant produit G2, puis *Importer les avis G2*.
+   La note et des citations courtes (≤ 300 caractères, fonction de l'auteur sans nom) arrivent en brouillon ; un éditeur les valide.
+
 ## 5. Agents (Claude API)
 1. Créer une clé API sur console.anthropic.com et définir une **limite de dépense** au niveau de l'organisation.
 2. Renseigner `ANTHROPIC_API_KEY`, `AGENT_EMAIL` et `AGENT_PASSWORD` (le compte au rôle « agent »).

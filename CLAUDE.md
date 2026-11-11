@@ -58,6 +58,7 @@ supabase/
                 0500 demandes+régie · 0600 analytics+agents · 0700 reporting · 0800 agents+Storage+GSC · 0900 questions SEO
                 1000 checklist GEO · 1100 sujets réglementés (contenu seul, aucun emplacement publicitaire)
                 1200-1300 avis tiers cités (review_sources, review_quotes, review_summaries : brouillon → validation humaine)
+                1400 identifiant G2 des logiciels (import des avis G2 par l'API de syndication)
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
                 périmètre DAF du cahier des charges, rubriques complémentaires, organisation de Radar Finances
@@ -79,6 +80,7 @@ src/
   lib/agents/           veille, rédaction, contrôle qualité : un appel Claude à sortie structurée, sans outil,
                         compte Supabase « agent » (RLS), plafonds de coût, journal agent_runs
   lib/gsc.ts            import Search Console (compte de service Google)
+  lib/g2.ts             avis G2 (API de syndication, clé G2_API_TOKEN côté serveur) → note et citations ≤ 300 car. en brouillon
   components/public|admin
 tests/                  Vitest
 docs/seo/               relevés Semrush, PLAN-CONTENUS.md (priorités), scripts/seo-build.py pour régénérer
