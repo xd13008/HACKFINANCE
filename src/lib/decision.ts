@@ -23,8 +23,13 @@ function perEntity(perUnit: string | null): boolean {
 }
 
 /** Coût annuel HT d'une offre pour un nombre d'entités, ou null si l'offre ne couvre pas ce cas. */
+/** Tarif à l'usage (par facture, par transaction…) : coût annuel non calculable sans volume. */
+function usageBased(perUnit: string | null): boolean {
+  return /par\s+(facture|transaction|document|envoi|flux|paiement)/i.test(perUnit ?? "");
+}
+
 export function planAnnualCost(plan: PlanLike, entities: number): number | null {
-  if (plan.billing_period === "quote" || plan.price_eur == null) return null;
+  if (plan.billing_period === "quote" || plan.price_eur == null || usageBased(plan.per_unit)) return null;
   const cap = entityCap(plan.per_unit);
   if (cap != null && entities > cap) return null;
   const price = Number(plan.price_eur);

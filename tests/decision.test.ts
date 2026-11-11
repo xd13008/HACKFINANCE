@@ -51,4 +51,8 @@ describe("profil et formats", () => {
   it("format en euros", () => {
     expect(eur(2988)).toBe("2 988 €");
   });
+  it("un tarif à l'usage (par facture) n'a pas de coût annuel estimé", () => {
+    expect(planAnnualCost({ plan_name: "PDP", price_eur: 0.2, billing_period: "one_time", per_unit: "par facture" }, 1)).toBeNull();
+    expect(cheapestPlan([{ plan_name: "PDP", price_eur: 0.2, billing_period: "one_time", per_unit: "par facture" }], 1)).toEqual({ kind: "none" });
+  });
 });
