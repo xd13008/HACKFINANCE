@@ -1,3 +1,4 @@
+import { agentCredentials } from "@/lib/agents/runner";
 import Link from "next/link";
 import { serverClient } from "@/lib/supabase/server";
 import { requireRole } from "@/lib/admin";
@@ -26,13 +27,13 @@ export default async function AgentsPage() {
     ...["veille", "redaction", "controle_qualite", "verification_offres"].map((a) => db.rpc("agent_month_cost", { p_agent: a })),
   ]);
   const monthCost: Record<string, number> = { veille: Number(costs[0].data ?? 0), redaction: Number(costs[1].data ?? 0), controle_qualite: Number(costs[2].data ?? 0), verification_offres: Number(costs[3].data ?? 0) };
-  const hasKey = !!process.env.ANTHROPIC_API_KEY && !!process.env.AGENT_EMAIL;
+  const hasKey = !!process.env.ANTHROPIC_API_KEY && !!agentCredentials().password;
 
   return (
     <div className="space-y-6">
       <PageHeader title="Pilotage des agents"
         intro="Les agents préparent le travail et écrivent uniquement en brouillon, avec le compte « agent » soumis à la RLS. Ils n'ont aucun outil : ni navigation libre, ni envoi de message, ni paiement. Un humain reste responsable de chaque publication." />
-      {!hasKey && <p className="rounded-lg bg-amber-50 text-amber-900 p-3 text-sm">Configuration serveur incomplète : ANTHROPIC_API_KEY, AGENT_EMAIL et AGENT_PASSWORD sont requis pour lancer un agent.</p>}
+      {!hasKey && <p className="rounded-lg bg-amber-50 text-amber-900 p-3 text-sm">Il manque la clé Claude : ajoutez ANTHROPIC_API_KEY dans Vercel (Settings, Environment Variables), puis redéployez. Le compte agent est créé automatiquement.</p>}
 
       <div className="grid xl:grid-cols-3 gap-4">
         {(settings ?? []).map((s) => (

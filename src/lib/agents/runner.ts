@@ -1,3 +1,4 @@
+import { createHmac } from "node:crypto";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import type { Database } from "@/lib/database.types";
 import type { Llm, LlmRequest } from "./llm";
@@ -12,9 +13,22 @@ export class BudgetExceeded extends Error {}
  * Client Supabase authentifié avec le compte « agent » : toutes les écritures passent par la RLS
  * (brouillons uniquement). Jamais la clé service_role.
  */
+/**
+ * Identifiants du compte « agent ». Par défaut, créés au déploiement par scripts/migrate-prod.mjs (ensureAgentAccount) :
+ * mot de passe dérivé de la clé de service, jamais écrit nulle part. AGENT_EMAIL / AGENT_PASSWORD restent possibles.
+ */
+export const DEFAULT_AGENT_EMAIL = "agent.interne@radarfinances.com";
+export function agentCredentials() {
+  const service = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const email = process.env.AGENT_EMAIL ?? DEFAULT_AGENT_EMAIL;
+  const password = process.env.AGENT_PASSWORD
+    ?? (service ? createHmac("sha256", service).update("radar-agent-account-v1").digest("base64url") : null);
+  return { email, password };
+}
+
 export async function agentDb(): Promise<Db> {
-  const email = process.env.AGENT_EMAIL, password = process.env.AGENT_PASSWORD;
-  if (!email || !password) throw new Error("AGENT_EMAIL / AGENT_PASSWORD non configurés");
+  const { email, password } = agentCredentials();
+  if (!password) throw new Error("Compte agent non configuré (clé de service absente)");
   const db = createClient<Database>(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
     auth: { persistSession: false, autoRefreshToken: false },
   });

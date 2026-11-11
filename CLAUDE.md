@@ -140,7 +140,9 @@ docs/seo/               relevés Semrush, PLAN-CONTENUS.md (priorités), scripts
   des avertissements (ton, mots interdits, longueur, FAQ, liens vers les matchs et alternatives), jamais bloquants à eux seuls.
 - Tests : injecter un `Llm` factice ; ne jamais appeler l'API réelle dans les tests (coût).
 - Agent `verification_offres` (lib/agents/offres.ts) : règles fixes d'abord (hors univers, discrimination → refus sans coût),
-  puis Claude par lots de 20 (effort low). Confiance < 0,7 → doute ; refus d'une annonce payée seulement si ≥ 0,85.
+  puis Haiku 5.5 par lots de 20 (effort low), puis Opus 5.5 en second avis sur les cas limites (effort medium) ; s'il doute
+  encore, l'offre est à arbitrer. Confiance < 0,7 → doute ; refus d'une annonce payée seulement si ≥ 0,85.
+  Compte « agent » créé au déploiement (scripts/migrate-prod.mjs, ensureAgentAccount) : seule ANTHROPIC_API_KEY est à fournir.
   Lancé chaque nuit par /api/cron/jobs après l'import ; lib/jobs-settle.ts rembourse (Stripe) et prévient le recruteur une fois.
 
 ## Conventions

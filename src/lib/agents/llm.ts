@@ -7,6 +7,8 @@ export const AGENT_MODEL = "claude-opus-5-5";
 /** Prix $/million de tokens (Claude API, nov. 2026). Les réponses servies par un modèle de repli sont estimées au tarif Opus 5. */
 const PRICES: Record<string, { in: number; out: number; cacheRead: number; cacheWrite: number }> = {
   "claude-opus-5-5": { in: 4, out: 20, cacheRead: 0.2, cacheWrite: 5 },
+  // Haiku 5.5 : tarif des requêtes de 100 000 tokens au plus (nos lots en font moins de 20 000)
+  "claude-haiku-5-5": { in: 0.1, out: 0.5, cacheRead: 0.01, cacheWrite: 0.125 },
   default: { in: 5, out: 25, cacheRead: 0.5, cacheWrite: 6.25 },
 };
 
@@ -26,6 +28,8 @@ export type LlmRequest<T> = {
   schema: z.ZodType<T>;
   effort: "low" | "medium" | "high";
   maxTokens?: number;
+  /** Modèle choisi par le dirigeant pour un agent donné (par défaut AGENT_MODEL). */
+  model?: string;
 };
 export type LlmResult<T> = { data: T; costUsd: number; model: string };
 
@@ -41,15 +45,18 @@ export class AgentRefusal extends Error {}
  */
 export const claudeLlm: Llm = async <T>(req: LlmRequest<T>): Promise<LlmResult<T>> => {
   const client = new Anthropic();
-  const res = await client.beta.messages.parse({
-    model: AGENT_MODEL,
+  const model = req.model ?? AGENT_MODEL;
+  const base = {
+    model,
     max_tokens: req.maxTokens ?? 16000,
-    betas: ["server-side-fallback-2026-07-01"],
-    fallbacks: "default",
     output_config: { effort: req.effort, format: betaZodOutputFormat(req.schema) },
-    system: [{ type: "text", text: req.system, cache_control: { type: "ephemeral" } }],
-    messages: [{ role: "user", content: req.user }],
-  });
+    system: [{ type: "text" as const, text: req.system, cache_control: { type: "ephemeral" as const } }],
+    messages: [{ role: "user" as const, content: req.user }],
+  };
+  // Repli serveur : disponible pour Opus 5.5, pas pour Haiku 5.5 (un refus y est traité comme un doute par l'appelant).
+  const res = model === AGENT_MODEL
+    ? await client.beta.messages.parse({ ...base, betas: ["server-side-fallback-2026-07-01"], fallbacks: "default" })
+    : await client.beta.messages.parse(base);
   const cost = costUsd(res.model, res.usage as Usage);
   if (res.stop_reason === "refusal") throw new AgentRefusal(`Requête déclinée (${res.stop_details?.category ?? "inconnue"})`);
   if (res.stop_reason === "max_tokens") throw new Error("Réponse tronquée (max_tokens atteint)");

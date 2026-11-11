@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { Llm } from "./llm";
+import { AGENT_MODEL, AgentRefusal, type Llm } from "./llm";
 import type { AgentResult, Db } from "./runner";
 import { asDocument } from "./text";
 import { UNIVERSES, universeOf, type Universe } from "@/lib/jobs";
@@ -7,7 +7,8 @@ import { UNIVERSES, universeOf, type Universe } from "@/lib/jobs";
 /**
  * Agent « vérification des offres » : contrôle chaque offre en attente (annonce payante ou France Travail).
  * 1. Règles fixes, sans coût : hors des univers finance ou critère discriminatoire → refus.
- * 2. Claude, par lots de 20 : métier réel de la finance d'entreprise, univers, conformité, arnaque ou publicité déguisée.
+ * 2. Haiku 5.5, par lots de 20 : métier réel de la finance d'entreprise, univers, conformité, arnaque ou publicité déguisée.
+ * 3. Opus 5.5 en second avis sur les cas limites (doute, confiance insuffisante, lot décliné).
  * La décision passe par agent_review_job() : journalisée, appliquée seulement si un administrateur a activé
  * la publication automatique. Le doute reste en attente humaine.
  */
@@ -42,6 +43,9 @@ ${UNIVERSES.map(([k, l, d]) => `- ${k} : ${l} (${d})`).join("\n")}`;
 
 const BLOCKING = /\b[âa]g[ée]e?s?\s+(de|entre|d['’]au moins|de moins|de plus)\b|\b(moins|plus) de \d{2}\s*ans(?!\s*d['’]exp)|\blimite d['’][âa]ge\b|\bnationalit[ée] fran[çc]aise (exig|requis|obligatoire)|\b(homme|femme)s? (uniquement|exclusivement|seulement)\b/i;
 const BATCH = 20;
+/** Choix du dirigeant (11/11/2026) : Haiku 5.5 en premier passage (coût), Opus 5.5 en second avis sur les cas limites. */
+export const JOBS_REVIEW_MODEL = "claude-haiku-5-5";
+export const JOBS_SECOND_OPINION_MODEL = AGENT_MODEL;
 const DESC_MAX = 3000;
 
 type Pending = { id: string; title: string; company_name: string | null; city: string | null; contract: string; source: string; description: string };
@@ -58,7 +62,7 @@ export async function reviewJobs(deps: { db: Db; llm: Llm; runId?: string | null
   const seen = new Set((done ?? []).map((d) => d.job_id));
   const todo: Pending[] = (rows ?? []).filter((r) => !seen.has(r.id)).slice(0, limit);
 
-  const counts = { approve: 0, reject: 0, escalate: 0, published: 0, rejected: 0, rules: 0, llm: 0 };
+  const counts = { approve: 0, reject: 0, escalate: 0, published: 0, rejected: 0, rules: 0, llm: 0, opus: 0 };
   const record = async (id: string, verdict: "approve" | "reject" | "escalate", universe: string | null, reasons: string[], confidence: number | null) => {
     const { data: status, error: e } = await db.rpc("agent_review_job", {
       p_job: id, p_verdict: verdict, p_universe: universe as string, p_reasons: reasons, p_confidence: confidence ?? undefined,
@@ -79,28 +83,60 @@ export async function reviewJobs(deps: { db: Db; llm: Llm; runId?: string | null
     forLlm.push({ ...j, guess });
   }
 
-  // 2. Claude, par lots
-  for (let i = 0; i < forLlm.length; i += BATCH) {
-    const batch = forLlm.slice(i, i + BATCH);
+  // Seuils de prudence : une annonce payante n'est refusée (et remboursée) que sur une décision très sûre.
+  type Review = z.infer<typeof JobReviewOutput>["reviews"][number];
+  type Item = Pending & { guess: Universe | null };
+  const verdictOf = (r: Review, j: Item) => {
+    const sure = r.verdict === "reject" && j.source === "member" ? r.confidence >= 0.85 : r.confidence >= 0.7;
+    return r.verdict !== "escalate" && sure ? r.verdict : "escalate";
+  };
+  const ask = async (batch: Item[], model: string, effort: "low" | "medium", intro: string) => {
     const user = batch.map((j) => asDocument(`offre ${j.id}`, [
       `id: ${j.id}`, `source: ${j.source === "member" ? "annonce payante déposée par un recruteur" : "France Travail"}`,
       `intitulé: ${j.title}`, `entreprise: ${j.company_name ?? "non indiquée"}`, `lieu: ${j.city ?? "non indiqué"}`, `contrat: ${j.contract}`,
       `univers pressenti: ${j.guess}`,
       `description${j.description.length > DESC_MAX ? ` (${DESC_MAX} premiers caractères sur ${j.description.length})` : ""}:\n${j.description.slice(0, DESC_MAX)}`,
     ].join("\n"))).join("\n\n");
-    const { data } = await llm({ system: JOBS_REVIEW_SYSTEM, user: `Vérifie ces ${batch.length} offres.\n\n${user}`, schema: JobReviewOutput, effort: "low", maxTokens: 8000 });
+    try {
+      const { data } = await llm({ system: JOBS_REVIEW_SYSTEM, user: `${intro}\n\n${user}`, schema: JobReviewOutput, effort, maxTokens: 8000, model });
+      return data.reviews;
+    } catch (e) {
+      if (e instanceof AgentRefusal) return null;           // lot décliné : traité comme un doute
+      throw e;
+    }
+  };
+
+  // 2. Premier passage : Haiku 5.5, par lots
+  const borderline: { j: Item; first: Review | null }[] = [];
+  for (let i = 0; i < forLlm.length; i += BATCH) {
+    const batch = forLlm.slice(i, i + BATCH);
+    const reviews = await ask(batch, JOBS_REVIEW_MODEL, "low", `Vérifie ces ${batch.length} offres.`);
     counts.llm += batch.length;
     for (const j of batch) {
-      const r = data.reviews.find((x) => x.id === j.id);
-      if (!r) continue;                                   // sans réponse : revue au prochain passage
-      // Seuils de prudence : une annonce payante n'est refusée (et remboursée) que sur une décision très sûre.
-      const sure = r.verdict === "reject" && j.source === "member" ? r.confidence >= 0.85 : r.confidence >= 0.7;
-      const verdict = r.verdict !== "escalate" && sure ? r.verdict : "escalate";
-      await record(j.id, verdict, r.universe ?? j.guess, r.reasons.length ? r.reasons : ["Sans motif"], r.confidence);
+      const r = reviews?.find((x) => x.id === j.id);
+      if (reviews && !r) continue;                         // sans réponse : revue au prochain passage
+      if (!r || verdictOf(r, j) === "escalate") { borderline.push({ j, first: r ?? null }); continue; }
+      await record(j.id, verdictOf(r, j), r.universe ?? j.guess, r.reasons.length ? r.reasons : ["Sans motif"], r.confidence);
+    }
+  }
+
+  // 3. Second avis : Opus 5.5 sur les cas limites ; s'il doute encore, l'offre revient à un humain
+  for (let i = 0; i < borderline.length; i += BATCH) {
+    const batch = borderline.slice(i, i + BATCH);
+    const reviews = await ask(batch.map((b) => b.j), JOBS_SECOND_OPINION_MODEL, "medium",
+      `Deuxième avis : ces ${batch.length} offres sont des cas limites. Examine-les attentivement.`);
+    counts.opus += batch.length;
+    for (const { j, first } of batch) {
+      const r = reviews?.find((x) => x.id === j.id);
+      if (!r) {
+        await record(j.id, "escalate", first?.universe ?? j.guess, first?.reasons.length ? first.reasons : ["Vérification automatique impossible : à relire"], first?.confidence ?? null);
+        continue;
+      }
+      await record(j.id, verdictOf(r, j), r.universe ?? first?.universe ?? j.guess, r.reasons.length ? r.reasons : ["Sans motif"], r.confidence);
     }
   }
   return {
-    summary: `${todo.length} offre(s) vérifiée(s) : ${counts.approve} approuvée(s), ${counts.reject} refusée(s), ${counts.escalate} en doute ; ${counts.published} publiée(s), ${counts.rejected} refusée(s) en ligne.`,
+    summary: `${todo.length} offre(s) vérifiée(s) (${counts.opus} revue(s) par Opus) : ${counts.approve} approuvée(s), ${counts.reject} refusée(s), ${counts.escalate} à arbitrer ; ${counts.published} publiée(s), ${counts.rejected} refusée(s) en ligne.`,
     output: counts,
   };
 }

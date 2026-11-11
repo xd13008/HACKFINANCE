@@ -11,6 +11,7 @@
  *
  * Usage : VERCEL_ENV=production POSTGRES_URL_NON_POOLING=… node scripts/migrate-prod.mjs
  */
+import { createHmac } from "node:crypto";
 import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import pg from "pg";
@@ -98,9 +99,34 @@ try {
     await grant(email, ["admin", "editor", "compliance"], "administrateur");
   }
   if (process.env.AGENT_EMAIL?.includes("@")) await grant(process.env.AGENT_EMAIL, ["agent"], "compte agent");
+  else await ensureAgentAccount(client, grant);
 } catch (e) {
   console.error(`[migrations] échec : ${e.message}`);
   process.exitCode = 1;
 } finally {
   await client.end().catch(() => {});
+}
+
+/**
+ * Compte « agent » créé automatiquement (aucun réglage pour le dirigeant) : e-mail interne, mot de passe dérivé de la clé
+ * de service (même calcul que src/lib/agents/runner.ts), jamais affiché ni stocké. Rôle « agent » seulement (RLS : brouillons).
+ * Un échec n'interrompt pas le déploiement : les agents restent simplement inactifs.
+ */
+async function ensureAgentAccount(db, grant) {
+  const base = process.env.NEXT_PUBLIC_SUPABASE_URL, service = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!base || !service) { log("compte agent : clé de service absente, ignoré"); return; }
+  const email = "agent.interne@radarfinances.com";
+  const password = createHmac("sha256", service).update("radar-agent-account-v1").digest("base64url");
+  const headers = { apikey: service, authorization: `Bearer ${service}`, "content-type": "application/json" };
+  try {
+    const { rows } = await db.query("select id from auth.users where lower(email) = $1", [email]);
+    const res = rows.length
+      ? await fetch(`${base}/auth/v1/admin/users/${rows[0].id}`, { method: "PUT", headers, body: JSON.stringify({ password }) })
+      : await fetch(`${base}/auth/v1/admin/users`, { method: "POST", headers, body: JSON.stringify({ email, password, email_confirm: true }) });
+    if (!res.ok) { log(`compte agent : création impossible (${res.status})`); return; }
+    if (!rows.length) log("compte agent : créé");
+    await grant(email, ["agent"], "compte agent");
+  } catch (e) {
+    log(`compte agent : ${e.message}`);
+  }
 }

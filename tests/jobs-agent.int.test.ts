@@ -23,17 +23,20 @@ async function as(email: string) {
   if (error) throw error;
   return db;
 }
-type Review = { id: string; verdict: "approve" | "reject" | "escalate"; universe: string | null; reasons: string[]; confidence: number };
-/** Faux modèle : décide d'après l'intitulé, enregistre les identifiants reçus. */
-function fakeLlm(decide: Record<string, Omit<Review, "id">>) {
-  const seen: string[][] = [];
-  const llm = (async (req: { user: string }) => {
+type Review = { verdict: "approve" | "reject" | "escalate"; universe: string | null; reasons: string[]; confidence: number };
+/** Faux modèle : décide d'après l'intitulé et le modèle appelé (Haiku, puis Opus pour les cas limites). */
+function fakeLlm(decide: Record<string, Review | { haiku: Review; opus: Review }>) {
+  const seen: { model: string; ids: string[] }[] = [];
+  const llm = (async (req: { user: string; model?: string }) => {
     const ids = [...req.user.matchAll(/^id: ([0-9a-f-]{36})$/gm)].map((m) => m[1]);
     const titles = [...req.user.matchAll(/^intitulé: (.+)$/gm)].map((m) => m[1]);
-    seen.push(ids);
-    return { data: { reviews: ids.map((id, i) => ({ id, ...decide[titles[i]] })) } as never, costUsd: 0.01, model: "fake" };
+    const model = req.model ?? "?";
+    seen.push({ model, ids });
+    const pick = (t: string) => { const d = decide[t]; return "haiku" in d ? (model.includes("haiku") ? d.haiku : d.opus) : d; };
+    return { data: { reviews: ids.map((id, i) => ({ id, ...pick(titles[i]) })) } as never, costUsd: 0.01, model };
   }) as unknown as Llm;
-  return { llm, seen };
+  const ids = (m: string) => seen.filter((x) => x.model.includes(m)).flatMap((x) => x.ids);
+  return { llm, seen, ids };
 }
 
 describe.skipIf(!reachable)("agent de vérification des offres (Supabase local, modèle factice)", () => {
@@ -67,21 +70,22 @@ describe.skipIf(!reachable)("agent de vérification des offres (Supabase local, 
     const ok = await job("Contrôleur de gestion H/F");
     const bank = await job("Conseiller bancaire H/F");
     const doubt = await job("Trésorier H/F");
-    const { llm, seen } = fakeLlm({
+    const { llm, ids } = fakeLlm({
       "Contrôleur de gestion H/F": { verdict: "approve", universe: "pilotage-performance", reasons: ["Poste de contrôle de gestion"], confidence: 0.9 },
       "Trésorier H/F": { verdict: "approve", universe: "tresorerie-cash", reasons: ["Peu d'informations"], confidence: 0.5 },
     });
     const r = await runJobReview({ db: agent, llm });
     expect(r.status).toBe("succeeded");
-    expect(seen.flat()).not.toContain(bank);                       // refusé par les règles, sans coût
-    expect(seen.flat()).toEqual(expect.arrayContaining([ok, doubt]));
+    expect([...ids("haiku"), ...ids("opus")]).not.toContain(bank);   // refusé par les règles, sans coût
+    expect(ids("haiku")).toEqual(expect.arrayContaining([ok, doubt]));
+    expect(ids("opus")).toEqual([doubt]);                             // seul le cas limite passe à Opus
     expect([await status(ok), await status(bank), await status(doubt)]).toEqual(["pending_review", "pending_review", "pending_review"]);
     const { data: rev } = await svc.from("job_reviews").select("job_id,verdict,applied").in("job_id", [ok, bank, doubt]);
     expect(Object.fromEntries((rev ?? []).map((x) => [x.job_id, `${x.verdict}/${x.applied}`])))
       .toEqual({ [ok]: "approve/false", [bank]: "reject/false", [doubt]: "escalate/false" });  // confiance 0,5 → doute
     const again = fakeLlm({});
     await runJobReview({ db: agent, llm: again.llm });
-    expect(again.seen.flat()).toHaveLength(0);                     // pas de seconde vérification
+    expect(again.seen).toHaveLength(0);                            // pas de seconde vérification
   });
 
   it("autorisé par l'admin : publie, refuse, rembourse et prévient une seule fois", async () => {
@@ -98,13 +102,15 @@ describe.skipIf(!reachable)("agent de vérification des offres (Supabase local, 
     const { llm } = fakeLlm({
       "Credit manager H/F": { verdict: "approve", universe: "encaissement", reasons: ["Crédit management en entreprise"], confidence: 0.95 },
       "Comptable H/F": { verdict: "reject", universe: null, reasons: ["Frais d'inscription demandés au candidat"], confidence: 0.92 },
-      "DAF H/F": { verdict: "reject", universe: null, reasons: ["Description vague"], confidence: 0.8 },               // payée : seuil 0,85 → doute
+      // payée : refus Haiku à 0,8 sous le seuil de 0,85 → second avis Opus, qui l'approuve
+      "DAF H/F": { haiku: { verdict: "reject", universe: null, reasons: ["Description vague"], confidence: 0.8 },
+                   opus: { verdict: "approve", universe: "equipe-expertise", reasons: ["Poste de DAF détaillé"], confidence: 0.9 } },
       "Responsable comptable H/F": { verdict: "reject", universe: null, reasons: ["Annonce pour une formation payante"], confidence: 0.95 },
     });
     await runJobReview({ db: agent, llm });
     expect(await status(good)).toBe("published");
     expect(await status(scam)).toBe("rejected");
-    expect(await status(paidLow)).toBe("pending_review");
+    expect(await status(paidLow)).toBe("published");
     expect(await status(paidBad)).toBe("rejected");
 
     vi.stubEnv("STRIPE_SECRET_KEY", "sk_test_x"); vi.stubEnv("STRIPE_WEBHOOK_SECRET", "whsec_x"); vi.stubEnv("STRIPE_TAX_RATE_ID", "txr_x");
@@ -116,7 +122,7 @@ describe.skipIf(!reachable)("agent de vérification des offres (Supabase local, 
     vi.unstubAllEnvs();
     expect(refunds).toEqual(["pi_bad"]);
     expect((await svc.from("job_orders").select("status").eq("job_id", paidBad).single()).data!.status).toBe("refunded");
-    expect(mails).toEqual(["Votre annonce n'a pas été publiée : Responsable comptable H/F"]);
+    expect(mails.sort()).toEqual(["Votre annonce est en ligne : DAF H/F", "Votre annonce n'a pas été publiée : Responsable comptable H/F"]);
     expect(s1.refunded).toBe(1);
     expect(s2.mailed + s2.refunded).toBe(0);
   });
