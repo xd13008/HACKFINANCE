@@ -42,7 +42,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires (94 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires (99 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -59,6 +59,7 @@ supabase/
                 1000 checklist GEO · 1100 sujets réglementés (contenu seul, aucun emplacement publicitaire)
                 1200-1300 avis tiers cités (review_sources, review_quotes, review_summaries : brouillon → validation humaine)
                 1400 identifiant G2 des logiciels (import des avis G2 par l'API de syndication)
+                1500 localisation des prestataires (code postal, département, GPS, bureaux, zone ; publique, SIREN toujours fermé)
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
                 périmètre DAF du cahier des charges, rubriques complémentaires, organisation de Radar Finances
@@ -70,7 +71,9 @@ supabase/
                 audit et contrôle interne ; docs/seo/MAPPING-G2-UNIVERS.md),
                 référencement de 524 logiciels réels en brouillon dans les 24 sous-rubriques (data/80, généré par
                 scripts/refs-to-sql.py depuis docs/seo/referencement/*.json + produits de l'API G2),
-                correspondance G2 de 282 logiciels via l'API G2 v2 (data/85 : identifiant, lien, note, nombre d'avis en brouillon)
+                correspondance G2 de 282 logiciels via l'API G2 v2 (data/85 : identifiant, lien, note, nombre d'avis en brouillon),
+                770 faits et 159 offres relevés sur les sites officiels (data/90, scripts/facts-to-sql.py : facturation électronique,
+                notes de frais, factures fournisseurs ; statut DGFiP des 163 plateformes agréées), en brouillon avec citation
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/

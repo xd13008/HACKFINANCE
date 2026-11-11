@@ -55,7 +55,9 @@ for path in sys.argv[1:]:
                 skipped += 1; continue
             if price is not None and (not isinstance(price, (int, float)) or price < 0 or price > 1_000_000):
                 skipped += 1; continue
-            if per in ("quote",) : price = None
+            if per == "quote": price = None
+            if price is None and per in ("month", "year", "one_time"):  # prix non affiché en euros (ex. dollars) : écarté
+                skipped += 1; continue
             plans.append((slug, p["plan_name"].strip()[:80], price, per, (p.get("per_unit") or None), (p.get("conditions") or "")[:300] or None, p["source_url"]))
 
 # dédoublonnage : un fait par (logiciel, type), une offre par (logiciel, nom)
