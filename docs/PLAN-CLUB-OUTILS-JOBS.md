@@ -136,3 +136,10 @@ Chaque onglet n'apparaît qu'une fois ouvert au public (même logique que les un
 3. Boîte à outils : mise en relation d'abord (recommandé), ou vente en ligne directe.
 4. ~~Jobs : dépôt gratuit au lancement, ou payant.~~ **Décidé le 11/11/2026 : annonce payante dès le lancement.** Conséquences : paiement en ligne (Stripe), facture automatique, CGV de vente d'annonces ; l'annonce n'est publiée qu'une fois payée et relue ; l'import France Travail reste gratuit et alimente la page Jobs dès l'ouverture.
 5. Qui modère : une personne nommée, au moins 30 minutes par jour à l'ouverture du Club.
+
+## 6. Décisions du 11/11/2026 (suite)
+
+- Jobs : seules les offres qui relèvent des **8 univers finance** sont retenues (import et dépôt) ; les postes de vente bancaire,
+  d'assurance ou de crédit sont exclus.
+- Jobs : la vérification est confiée à un **agent** (annonces payées et France Travail). Il publie seul une fois la publication
+  automatique activée par un administrateur ; les cas douteux restent à arbitrer ; une annonce payée refusée est remboursée automatiquement.

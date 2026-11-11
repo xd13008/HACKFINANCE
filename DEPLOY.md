@@ -65,7 +65,10 @@ Domaines achetés : `radarfinances.com` (portail finance, marque « Radar Financ
    `checkout.session.async_payment_succeeded`, `checkout.session.async_payment_failed`).
    Renseigner dans Vercel : `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_TAX_RATE_ID`. Jamais dans le dépôt ni dans un message.
 3. **Prix** : `supabase/data/99_job_products.sql` (hors taxes, en centimes), rejoué à chaque déploiement.
-4. **Refus d'une annonce payée** : rembourser depuis le tableau de bord Stripe (le back-office le rappelle).
+4. **Refus d'une annonce payée** : remboursement Stripe automatique par la tâche de nuit (`lib/jobs-settle.ts`).
+6. **Agent de vérification des offres** : nécessite `ANTHROPIC_API_KEY`, `AGENT_EMAIL`, `AGENT_PASSWORD` (compte rôle agent).
+   Activer l'agent et son plafond dans /admin/agents, puis la publication automatique dans /admin/emplois (admin).
+   Sans publication automatique, l'agent ne fait que recommander.
 5. **CGV** des annonces à publier avant l'ouverture du paiement.
 
 ## 5. Agents (Claude API)

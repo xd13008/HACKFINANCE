@@ -59,3 +59,17 @@ export function verifyStripeSignature(payload: string, header: string | null, se
 export function signStripePayload(payload: string, secret: string, t = Math.floor(Date.now() / 1000)) {
   return `t=${t},v1=${createHmac("sha256", secret).update(`${t}.${payload}`).digest("hex")}`;
 }
+
+/** Remboursement intégral d'un paiement (annonce refusée). Clé d'idempotence : un seul remboursement par commande. */
+export async function refundPayment(paymentIntent: string, orderId: string, fetcher: typeof fetch = fetch) {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) throw new Error("Paiement non configuré");
+  const res = await fetcher("https://api.stripe.com/v1/refunds", {
+    method: "POST",
+    headers: { authorization: `Bearer ${key}`, "content-type": "application/x-www-form-urlencoded", "idempotency-key": `refund-${orderId}` },
+    body: new URLSearchParams({ payment_intent: paymentIntent, reason: "requested_by_customer", "metadata[order_id]": orderId }),
+  });
+  const body = (await res.json()) as { id?: string; status?: string; error?: { message?: string } };
+  if (!res.ok || !body.id) throw new Error(body.error?.message ?? `Stripe ${res.status}`);
+  return { id: body.id, status: body.status };
+}

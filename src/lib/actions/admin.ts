@@ -503,6 +503,7 @@ export async function reviewJob(_: ActionResult, fd: FormData): Promise<ActionRe
     const { serviceClient } = await import("@/lib/supabase/service");
     const { brevoMailer } = await import("@/lib/mail");
     const { data: m } = await serviceClient().from("members").select("email").eq("id", job.posted_by_member).maybeSingle();
+    if (m) await serviceClient().from("job_offers").update({ notified_status: decision === "approve" ? "published" : "rejected" }).eq("id", job.id);
     if (m) await brevoMailer({
       to: m.email,
       subject: decision === "approve" ? `Votre annonce est en ligne : ${job.title}` : `Votre annonce n'a pas été publiée : ${job.title}`,
@@ -513,6 +514,16 @@ export async function reviewJob(_: ActionResult, fd: FormData): Promise<ActionRe
   }
   // La ligne relue disparaît de la file : le résultat s'affiche en tête de page.
   redirect(`/admin/emplois?fait=${decision === "approve" ? "publiee" : job.source === "member" ? "refusee-rembourser" : "refusee"}`);
+}
+
+/** Publication automatique des offres approuvées par l'agent de vérification (décision d'un administrateur, journalisée). */
+export async function setJobAutoPublish(_: ActionResult, fd: FormData): Promise<ActionResult> {
+  const me = await requireRole("admin");
+  const c = await db();
+  const on = str(fd, "on") === "1";
+  const { error } = await c.from("job_settings").upsert({ site_id: str(fd, "site_id"), auto_publish: on, updated_by: me.id }, { onConflict: "site_id" });
+  revalidatePath("/admin/emplois");
+  return error ? ko(error.message) : ok(on ? "Publication automatique activée : l'agent publie les offres qu'il approuve." : "Publication automatique désactivée : l'agent ne fait plus que recommander.");
 }
 
 export async function approveImportedJobs(_: ActionResult, fd: FormData): Promise<ActionResult> {

@@ -23,6 +23,9 @@ Charte de rédaction des tests, alternatives et matchs (densité, ton, unicité 
 3. **Le commercial ne peut pas modifier une note, un classement, un verdict ni un contenu** (RLS). Le classement éditorial
    (`editorial_rankings`) est calculé depuis `scores` seulement ; le sponsoring vit dans `sponsored_placements` et s'affiche dans un bloc distinct, étiqueté.
 4. **Un agent écrit uniquement en brouillon** (`software_facts`, `content_versions`, `review_tasks`), jamais publié.
+   Seule exception, décidée par le dirigeant le 11/11/2026 : les **offres d'emploi** (pas l'éditorial). L'agent
+   `verification_offres` les publie ou les refuse via `agent_review_job()`, uniquement si un admin a activé
+   `job_settings.auto_publish` ; chaque décision est journalisée (`job_reviews`) et le doute reste en attente humaine.
 5. **Aucune fonctionnalité de crédit, levée de fonds, assurance ou lead financier** (cadre IOBSP / CIF / ORIAS / loi Hoguet non validé — voir ARCHITECTURE §9).
    Ces sujets n'existent qu'en guides d'information marqués `content_items.regulated_topic` : sans catégorie, sans classement,
    sans emplacement publicitaire (trigger `guard_regulated_inventory`), sans lien affilié.
@@ -43,7 +46,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires, DAF inscrits, jobs (144 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires, DAF inscrits, jobs, agent de vérification des offres (158 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -70,6 +73,9 @@ supabase/
                 1900 jobs : job_offers (import France Travail + annonces payantes des inscrits), job_products (prix, data/99),
                      job_orders (Stripe) ; publication par un éditeur seulement (guard_job_publication), annonce payée exigée,
                      anon : offres publiées non expirées ; approve_imported_jobs(), upsert_imported_jobs(), expire_jobs()
+                2000 agent de vérification des offres : universe_slug (8 univers finance, offres hors univers écartées),
+                     job_reviews (journal des décisions), job_settings.auto_publish (activé par un admin seulement),
+                     agent_review_job() : seule voie d'écriture de l'agent ; publie/refuse seulement si auto_publish
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
                 périmètre DAF du cahier des charges, rubriques complémentaires, organisation de Radar Finances
@@ -133,6 +139,9 @@ docs/seo/               relevés Semrush, PLAN-CONTENUS.md (priorités), scripts
 - Charte de rédaction (`lib/agents/charter.ts`) : consignes de l'agent de rédaction et de contrôle ; `charterCheck()` ajoute au rapport
   des avertissements (ton, mots interdits, longueur, FAQ, liens vers les matchs et alternatives), jamais bloquants à eux seuls.
 - Tests : injecter un `Llm` factice ; ne jamais appeler l'API réelle dans les tests (coût).
+- Agent `verification_offres` (lib/agents/offres.ts) : règles fixes d'abord (hors univers, discrimination → refus sans coût),
+  puis Claude par lots de 20 (effort low). Confiance < 0,7 → doute ; refus d'une annonce payée seulement si ≥ 0,85.
+  Lancé chaque nuit par /api/cron/jobs après l'import ; lib/jobs-settle.ts rembourse (Stripe) et prévient le recruteur une fois.
 
 ## Conventions
 

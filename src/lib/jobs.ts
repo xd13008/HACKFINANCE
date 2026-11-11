@@ -40,6 +40,49 @@ export function familyOf(title: string): Family | null {
 }
 
 // ---------------------------------------------------------------------------
+// Univers de Radar Finances : une offre n'est retenue que si elle relève de l'un des 8 univers
+// ---------------------------------------------------------------------------
+export const UNIVERSES = [
+  ["comptabilite-conformite", "Comptabilité, clôture & conformité", "comptabilité générale, clôture, consolidation, audit et contrôle interne, fiscalité, facturation électronique"],
+  ["tresorerie-cash", "Trésorerie & cash", "trésorerie, cash management, relations bancaires côté entreprise, prévention de la fraude aux paiements"],
+  ["depenses-achats", "Dépenses & achats", "comptabilité fournisseurs, notes de frais, procure-to-pay, contrôle des dépenses"],
+  ["encaissement", "Encaissement (Order-to-Cash)", "comptabilité clients, facturation, recouvrement, credit management"],
+  ["pilotage-performance", "Pilotage & performance", "contrôle de gestion, FP&A, budget, reporting, business intelligence financière"],
+  ["equipe-expertise", "Équipe finance & expertise", "direction financière (DAF, RAF, CFO), cabinets d'expertise comptable et de commissariat aux comptes, management de transition"],
+  ["financement-aides-risques", "Financement, aides & risques", "CIR/CII, subventions, gestion des risques de l'entreprise (jamais la vente de crédit, d'assurance ou de placements)"],
+  ["rse-performance-durable", "RSE & performance durable", "reporting extra-financier, CSRD, bilan carbone, contrôle de gestion RSE"],
+] as const;
+export type Universe = (typeof UNIVERSES)[number][0];
+export const universeLabel = (k: string | null) => UNIVERSES.find(([v]) => v === k)?.[1] ?? "—";
+
+/** Postes hors finance d'entreprise : vente de produits bancaires, d'assurance ou de crédit (règle 5), commerce, immobilier. */
+const OUT_OF_SCOPE = /\b(banque|bancaire|agence|conseill(er|[èe]re) (client|financier|financi[èe]re|patrimon|commercial|bancaire|en (gestion de )?patrimoine|en investissement)|charg[ée]e? de client[èe]le|gestionnaire de patrimoine|courti(er|[èe]re)|assurances?|souscript|cr[ée]dit (immobilier|conso)|commercial|vendeu(r|se)|caissi(er|[èe]re)|t[ée]l[ée]conseill|immobili|gestionnaire locati|syndic|trader|actuaire)\b/i;
+
+const UNIVERSE_RULES: [Universe, RegExp][] = [
+  ["rse-performance-durable", /\b(csrd|esg|rse|extra[- ]financ|bilan carbone|durabilit[ée]|climat)\b/i],
+  ["financement-aides-risques", /\b(cir|cii|cr[ée]dit d['’]imp[ôo]t recherche|subventions?|risk manag|gestion des risques|responsable des risques)\b/i],
+  ["depenses-achats", /comptable (fournisseurs?|achats?)|comptabilit[ée] fournisseurs?|accounts? payable|\bp2p\b|procure[- ]to[- ]pay|notes? de frais/i],
+  ["encaissement", /comptable clients?|comptabilit[ée] clients?|credit manag|recouvrement|cash collect|poste clients?|gestionnaire (de )?facturation|charg[ée]e? de facturation|assistant(e)? facturation|order[- ]to[- ]cash/i],
+  ["tresorerie-cash", /tr[ée]sori(er|[èe]re|erie)|cash manag|front office tr[ée]so/i],
+  ["pilotage-performance", /contr[ôo]l(eur|euse|e) de gestion|\bfp&?a\b|business partner|analyste financ|contr[ôo]leu(r|se) financ|reporting financ|responsable budget/i],
+  ["equipe-expertise", /\b(daf|raf|cfo)\b|direct(eur|rice) (administratif|administrative|financ)|responsable administratif et financier|expert[- ]comptable|commissaire aux comptes|collaborat(eur|rice) (comptable|cabinet|expert)|mission comptable|auditeur (externe|financier)|management de transition/i],
+  ["comptabilite-conformite", /comptab|\bcomptable|consolid|cl[ôo]ture|audit|contr[ôo]le interne|fiscal|r[ée]viseur/i],
+];
+
+/** Univers de l'offre d'après son intitulé ; null = hors des univers finance (offre écartée). */
+export function universeOf(title: string): Universe | null {
+  if (OUT_OF_SCOPE.test(title)) return null;
+  for (const [u, re] of UNIVERSE_RULES) if (re.test(title)) return u;
+  return null;
+}
+const FAMILY_OF_UNIVERSE: Record<Universe, Family> = {
+  "comptabilite-conformite": "comptabilite", "tresorerie-cash": "tresorerie", "depenses-achats": "comptabilite", encaissement: "tresorerie",
+  "pilotage-performance": "controle-gestion", "equipe-expertise": "direction-financiere", "financement-aides-risques": "analyse-financiere",
+  "rse-performance-durable": "analyse-financiere",
+};
+export const familyFor = (title: string, universe: Universe): Family => familyOf(title) ?? FAMILY_OF_UNIVERSE[universe];
+
+// ---------------------------------------------------------------------------
 // Contrôles légaux (Code du travail, art. L1132-1, L5331-1 à L5331-6)
 // ---------------------------------------------------------------------------
 export type JobDraft = {
@@ -75,7 +118,7 @@ export function checkJobOffer(d: JobDraft): CheckResult {
   const words = d.description.split(/\s+/).filter(Boolean).length;
   if (words > 50 && (d.description.match(FRENCH)?.length ?? 0) / words < 0.04)
     errors.push("L'offre doit être rédigée en français (art. L5331-4).");
-  if (!familyOf(title)) errors.push("L'intitulé doit correspondre à un métier de la finance (comptabilité, contrôle de gestion, audit, trésorerie, direction financière…).");
+  if (!universeOf(title)) errors.push("L'intitulé doit relever d'un des univers finance du site (comptabilité, trésorerie, dépenses, encaissement, contrôle de gestion, direction financière, aides et risques, RSE). Les postes de vente de produits bancaires, d'assurance ou de crédit sont exclus.");
   if (d.company_siren != null && !/^[0-9]{9}$/.test(d.company_siren)) errors.push("Le SIREN doit compter 9 chiffres.");
   if (d.salary_min != null && d.salary_max != null && d.salary_min > d.salary_max) errors.push("Le salaire minimum dépasse le maximum.");
   if (!d.apply_url && !d.apply_email) errors.push("Indiquez un lien ou un e-mail de candidature.");
@@ -123,9 +166,10 @@ const FT_CONTRACT: Record<string, Contract> = { CDI: "cdi", CDD: "cdd", MIS: "in
 
 export function mapFtOffer(o: FtOffer) {
   const title = (o.intitule ?? "").trim().slice(0, 160);
-  const family = familyOf(title);
+  const universe = universeOf(title);
   const description = (o.description ?? "").trim();
-  if (!o.id || !/^[A-Za-z0-9]{3,40}$/.test(o.id) || !family || title.length < 5 || description.length < 50) return null;
+  if (!o.id || !/^[A-Za-z0-9]{3,40}$/.test(o.id) || !universe || title.length < 5 || description.length < 50) return null;
+  const family = familyFor(title, universe);
   const libelle = o.lieuTravail?.libelle ?? "";
   const city = (libelle.includes(" - ") ? libelle.split(" - ").slice(1).join(" - ") : libelle).trim().slice(0, 120) || null;
   const postal = /^[0-9]{5}$/.test(o.lieuTravail?.codePostal ?? "") ? o.lieuTravail!.codePostal! : null;
@@ -135,7 +179,7 @@ export function mapFtOffer(o: FtOffer) {
   return {
     external_id: o.id, slug: jobSlug(title, city, o.id), title, company_name: o.entreprise?.nom?.slice(0, 200) ?? null,
     city, postal_code: postal, department: departmentOf(postal) ?? (/^(\d{2}|2A|2B|97\d) - /.exec(libelle)?.[1] ?? null),
-    latitude: coord(o.lieuTravail?.latitude), longitude: coord(o.lieuTravail?.longitude), family,
+    latitude: coord(o.lieuTravail?.latitude), longitude: coord(o.lieuTravail?.longitude), family, universe_slug: universe,
     contract: o.alternance ? "alternance" : (FT_CONTRACT[o.typeContrat ?? ""] ?? "autre"),
     experience: o.experienceLibelle?.slice(0, 100) ?? null, salary_min: salary.min, salary_max: salary.max,
     salary_text: o.salaire?.libelle?.slice(0, 200) ?? null, description: description.slice(0, 15000),

@@ -3,7 +3,7 @@ import type { Database } from "@/lib/database.types";
 import type { Llm, LlmRequest } from "./llm";
 
 export type Db = SupabaseClient<Database>;
-export type AgentName = "veille" | "redaction" | "controle_qualite";
+export type AgentName = "veille" | "redaction" | "controle_qualite" | "verification_offres";
 export type AgentResult = { summary: string; output: Record<string, unknown> };
 
 export class BudgetExceeded extends Error {}

@@ -7,7 +7,7 @@ import { absoluteUrl, staticMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/public/JsonLd";
 import { Tracker } from "@/components/public/Tracker";
 import { Breadcrumbs } from "@/components/public/Breadcrumbs";
-import { contractLabel, familyLabel, jobPostingLd } from "@/lib/jobs";
+import { contractLabel, familyLabel, jobPostingLd, universeLabel } from "@/lib/jobs";
 import { requireSite } from "../../_lib";
 
 export const revalidate = 300;
@@ -17,7 +17,7 @@ type P = Promise<{ site: string; slug: string }>;
 const getJob = cache(async (siteId: string, slug: string) => {
   if (!/^[a-z0-9-]{3,120}$/.test(slug)) return null;
   const { data } = await publicClient().from("job_offers")
-    .select("id,slug,title,company_name,provider_id,city,postal_code,department,family,contract,remote,experience,salary_min,salary_max,salary_text,description,apply_url,apply_email,source,source_url,featured,published_at,expires_at")
+    .select("id,slug,title,company_name,provider_id,city,postal_code,department,family,universe_slug,contract,remote,experience,salary_min,salary_max,salary_text,description,apply_url,apply_email,source,source_url,featured,published_at,expires_at")
     .eq("site_id", siteId).eq("slug", slug).maybeSingle();
   return data;
 });
@@ -42,7 +42,7 @@ export default async function JobPage({ params }: { params: P }) {
   const url = absoluteUrl(site, `/emplois/${j.slug}`);
   const apply = j.apply_url ?? (j.apply_email ? `mailto:${j.apply_email}?subject=${encodeURIComponent(`Candidature : ${j.title}`)}` : null);
   const facts: [string, string | null][] = [
-    ["Contrat", contractLabel(j.contract)], ["Métier", familyLabel(j.family)], ["Lieu", j.city ? `${j.city}${j.postal_code ? ` (${j.postal_code})` : ""}` : null],
+    ["Contrat", contractLabel(j.contract)], ["Métier", familyLabel(j.family)], ["Univers", j.universe_slug ? universeLabel(j.universe_slug) : null], ["Lieu", j.city ? `${j.city}${j.postal_code ? ` (${j.postal_code})` : ""}` : null],
     ["Télétravail", j.remote === "total" ? "Complet" : j.remote === "partiel" ? "Partiel" : j.remote === "non" ? "Non" : null],
     ["Expérience", j.experience], ["Salaire", j.salary_text ?? (j.salary_min ? `${j.salary_min.toLocaleString("fr-FR")} €${j.salary_max && j.salary_max !== j.salary_min ? ` à ${j.salary_max.toLocaleString("fr-FR")} €` : ""} par an` : null)],
     ["Publiée le", j.published_at ? new Date(j.published_at).toLocaleDateString("fr-FR") : null],

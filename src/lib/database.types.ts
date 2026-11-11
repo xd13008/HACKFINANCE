@@ -415,14 +415,14 @@ isOneToOne: false
                   ]
                 },"job_offers": {
                   Row: {
-                    "apply_email": string | null,"apply_url": string | null,"city": string | null,"company_name": string | null,"company_siren": string | null,"contract": string,"created_at": string,"department": string | null,"description": string,"experience": string | null,"expires_at": string | null,"external_id": string | null,"family": string,"featured": boolean,"id": string,"latitude": number | null,"longitude": number | null,"postal_code": string | null,"posted_by_member": string | null,"provider_id": string | null,"published_at": string | null,"reject_reason": string | null,"remote": string | null,"reviewed_at": string | null,"reviewed_by": string | null,"salary_max": number | null,"salary_min": number | null,"salary_text": string | null,"site_id": string,"slug": string,"source": string,"source_created_at": string | null,"source_url": string | null,"status": string,"title": string,"updated_at": string
+                    "apply_email": string | null,"apply_url": string | null,"city": string | null,"company_name": string | null,"company_siren": string | null,"contract": string,"created_at": string,"department": string | null,"description": string,"experience": string | null,"expires_at": string | null,"external_id": string | null,"family": string,"featured": boolean,"id": string,"latitude": number | null,"longitude": number | null,"notified_status": string | null,"postal_code": string | null,"posted_by_member": string | null,"provider_id": string | null,"published_at": string | null,"reject_reason": string | null,"remote": string | null,"reviewed_at": string | null,"reviewed_by": string | null,"salary_max": number | null,"salary_min": number | null,"salary_text": string | null,"site_id": string,"slug": string,"source": string,"source_created_at": string | null,"source_url": string | null,"status": string,"title": string,"universe_slug": string | null,"updated_at": string
                   }
                   ComputedFields: never
                   Insert: {
-                    "apply_email"?: string | null,"apply_url"?: string | null,"city"?: string | null,"company_name"?: string | null,"company_siren"?: string | null,"contract": string,"created_at"?: string,"department"?: string | null,"description": string,"experience"?: string | null,"expires_at"?: string | null,"external_id"?: string | null,"family": string,"featured"?: boolean,"id"?: string,"latitude"?: number | null,"longitude"?: number | null,"postal_code"?: string | null,"posted_by_member"?: string | null,"provider_id"?: string | null,"published_at"?: string | null,"reject_reason"?: string | null,"remote"?: string | null,"reviewed_at"?: string | null,"reviewed_by"?: string | null,"salary_max"?: number | null,"salary_min"?: number | null,"salary_text"?: string | null,"site_id": string,"slug": string,"source": string,"source_created_at"?: string | null,"source_url"?: string | null,"status"?: string,"title": string,"updated_at"?: string
+                    "apply_email"?: string | null,"apply_url"?: string | null,"city"?: string | null,"company_name"?: string | null,"company_siren"?: string | null,"contract": string,"created_at"?: string,"department"?: string | null,"description": string,"experience"?: string | null,"expires_at"?: string | null,"external_id"?: string | null,"family": string,"featured"?: boolean,"id"?: string,"latitude"?: number | null,"longitude"?: number | null,"notified_status"?: string | null,"postal_code"?: string | null,"posted_by_member"?: string | null,"provider_id"?: string | null,"published_at"?: string | null,"reject_reason"?: string | null,"remote"?: string | null,"reviewed_at"?: string | null,"reviewed_by"?: string | null,"salary_max"?: number | null,"salary_min"?: number | null,"salary_text"?: string | null,"site_id": string,"slug": string,"source": string,"source_created_at"?: string | null,"source_url"?: string | null,"status"?: string,"title": string,"universe_slug"?: string | null,"updated_at"?: string
                   }
                   Update: {
-                    "apply_email"?: string | null,"apply_url"?: string | null,"city"?: string | null,"company_name"?: string | null,"company_siren"?: string | null,"contract"?: string,"created_at"?: string,"department"?: string | null,"description"?: string,"experience"?: string | null,"expires_at"?: string | null,"external_id"?: string | null,"family"?: string,"featured"?: boolean,"id"?: string,"latitude"?: number | null,"longitude"?: number | null,"postal_code"?: string | null,"posted_by_member"?: string | null,"provider_id"?: string | null,"published_at"?: string | null,"reject_reason"?: string | null,"remote"?: string | null,"reviewed_at"?: string | null,"reviewed_by"?: string | null,"salary_max"?: number | null,"salary_min"?: number | null,"salary_text"?: string | null,"site_id"?: string,"slug"?: string,"source"?: string,"source_created_at"?: string | null,"source_url"?: string | null,"status"?: string,"title"?: string,"updated_at"?: string
+                    "apply_email"?: string | null,"apply_url"?: string | null,"city"?: string | null,"company_name"?: string | null,"company_siren"?: string | null,"contract"?: string,"created_at"?: string,"department"?: string | null,"description"?: string,"experience"?: string | null,"expires_at"?: string | null,"external_id"?: string | null,"family"?: string,"featured"?: boolean,"id"?: string,"latitude"?: number | null,"longitude"?: number | null,"notified_status"?: string | null,"postal_code"?: string | null,"posted_by_member"?: string | null,"provider_id"?: string | null,"published_at"?: string | null,"reject_reason"?: string | null,"remote"?: string | null,"reviewed_at"?: string | null,"reviewed_by"?: string | null,"salary_max"?: number | null,"salary_min"?: number | null,"salary_text"?: string | null,"site_id"?: string,"slug"?: string,"source"?: string,"source_created_at"?: string | null,"source_url"?: string | null,"status"?: string,"title"?: string,"universe_slug"?: string | null,"updated_at"?: string
                   }
                   Relationships: [
                     {
@@ -502,6 +502,52 @@ isOneToOne: false
                   }
                   Relationships: [
                     
+                  ]
+                },"job_reviews": {
+                  Row: {
+                    "applied": boolean,"confidence": number | null,"created_at": string,"created_by": string | null,"id": number,"job_id": string,"reasons": (string)[],"reviewer": string,"run_id": string | null,"universe_slug": string | null,"verdict": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "applied"?: boolean,"confidence"?: number | null,"created_at"?: string,"created_by"?: string | null,"id"?: number,"job_id": string,"reasons"?: (string)[],"reviewer": string,"run_id"?: string | null,"universe_slug"?: string | null,"verdict": string
+                  }
+                  Update: {
+                    "applied"?: boolean,"confidence"?: number | null,"created_at"?: string,"created_by"?: string | null,"id"?: number,"job_id"?: string,"reasons"?: (string)[],"reviewer"?: string,"run_id"?: string | null,"universe_slug"?: string | null,"verdict"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "job_reviews_job_id_fkey"
+      columns: ["job_id"]
+isOneToOne: false
+      referencedRelation: "job_offers"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "job_reviews_run_id_fkey"
+      columns: ["run_id"]
+isOneToOne: false
+      referencedRelation: "agent_runs"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"job_settings": {
+                  Row: {
+                    "auto_publish": boolean,"site_id": string,"updated_at": string,"updated_by": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "auto_publish"?: boolean,"site_id": string,"updated_at"?: string,"updated_by"?: string | null
+                  }
+                  Update: {
+                    "auto_publish"?: boolean,"site_id"?: string,"updated_at"?: string,"updated_by"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "job_settings_site_id_fkey"
+      columns: ["site_id"]
+isOneToOne: true
+      referencedRelation: "sites"
+      referencedColumns: ["id"]
+    }
                   ]
                 },"keyword_questions": {
                   Row: {
@@ -1741,6 +1787,9 @@ isOneToOne: false
           Functions: {
             "agent_month_cost":
 { Args: { "p_agent": string }; Returns: number
+                           },
+"agent_review_job":
+{ Args: { "p_confidence"?: number,"p_job": string,"p_reasons": (string)[],"p_run"?: string,"p_universe": string,"p_verdict": string }; Returns: string
                            },
 "analytics_by_rubrique":
 { Args: { "p_from": string,"p_site": string,"p_to": string }; Returns: {

@@ -3,6 +3,7 @@ import { agentDb, runAgent, type Db } from "./runner";
 import { veilleSoftware, type Fetcher } from "./veille";
 import { draftContent } from "./redaction";
 import { qualityCheck } from "./qc";
+import { reviewJobs } from "./offres";
 
 export type AgentDeps = { db?: Db; llm?: Llm; fetcher?: Fetcher; triggeredBy?: string | null };
 
@@ -47,4 +48,11 @@ export async function runScheduled(d: AgentDeps = {}) {
     if (r.summary.startsWith("Plafond")) break;
   }
   return results;
+}
+
+/** Vérification des offres d'emploi en attente (annonces payantes et France Travail). */
+export async function runJobReview(d: AgentDeps & { limit?: number } = {}) {
+  const { db, llm } = await deps(d);
+  return runAgent("verification_offres", { db, llm, triggeredBy: d.triggeredBy, input: { limit: d.limit ?? 200 } },
+    (w) => reviewJobs(w, d.limit ?? 200));
 }

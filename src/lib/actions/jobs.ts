@@ -8,7 +8,7 @@ import { z } from "zod";
 import { getSite } from "@/lib/data";
 import { serviceClient } from "@/lib/supabase/service";
 import { currentMember } from "@/lib/members";
-import { checkJobOffer, CONTRACTS, familyOf, jobSlug, REMOTES } from "@/lib/jobs";
+import { checkJobOffer, CONTRACTS, familyFor, jobSlug, REMOTES, universeOf } from "@/lib/jobs";
 import { createCheckout, stripeConfigured } from "@/lib/stripe";
 
 export type JobState = { ok: boolean; message: string; errors?: string[]; warnings?: string[] };
@@ -70,7 +70,7 @@ export async function createJobPosting(_: JobState, fd: FormData): Promise<JobSt
     site_id: site.id, source: "member", slug: jobSlug(d.title, d.city, randomBytes(4).toString("hex")), title: d.title,
     company_name: d.company_name, company_siren: d.company_siren, provider_id: provider?.id ?? null, city: d.city,
     postal_code: d.postal_code, department: d.postal_code.startsWith("20") ? (Number(d.postal_code) < 20200 ? "2A" : "2B") : d.postal_code.startsWith("97") ? d.postal_code.slice(0, 3) : d.postal_code.slice(0, 2),
-    family: familyOf(d.title)!, contract: d.contract, remote: d.remote, experience: d.experience, salary_min: d.salary_min,
+    universe_slug: universeOf(d.title)!, family: familyFor(d.title, universeOf(d.title)!), contract: d.contract, remote: d.remote, experience: d.experience, salary_min: d.salary_min,
     salary_max: d.salary_max, description: d.description, apply_url: d.apply_url, apply_email: d.apply_email,
     featured: product.featured, status: "awaiting_payment", posted_by_member: m.id,
   }).select("id").single();

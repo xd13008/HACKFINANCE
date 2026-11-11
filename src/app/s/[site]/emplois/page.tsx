@@ -4,18 +4,18 @@ import { publicClient } from "@/lib/supabase/public";
 import { staticMetadata } from "@/lib/seo";
 import { Tracker } from "@/components/public/Tracker";
 import { Breadcrumbs } from "@/components/public/Breadcrumbs";
-import { CONTRACTS, contractLabel, FAMILIES, familyLabel } from "@/lib/jobs";
+import { CONTRACTS, contractLabel, UNIVERSES, universeLabel } from "@/lib/jobs";
 import { depLabel } from "@/lib/departements";
 import { requireSite, type SiteParams } from "../_lib";
 
 export const revalidate = 300;
 const SIZE = 30;
-type SP = Promise<{ metier?: string; contrat?: string; dep?: string; page?: string }>;
+type SP = Promise<{ univers?: string; contrat?: string; dep?: string; page?: string }>;
 
 export async function generateMetadata({ params, searchParams }: { params: SiteParams; searchParams: SP }): Promise<Metadata> {
   const site = await requireSite((await params).site);
   const sp = await searchParams;
-  const filtered = !!(sp.metier || sp.contrat || sp.dep || (sp.page && sp.page !== "1"));
+  const filtered = !!(sp.univers || sp.contrat || sp.dep || (sp.page && sp.page !== "1"));
   return staticMetadata(site, "/emplois", "Offres d'emploi en finance : comptabilité, contrôle de gestion, DAF",
     "Offres d'emploi finance en France : comptable, contrôleur de gestion, DAF, trésorier, auditeur. Mises à jour chaque jour.", { noindex: filtered });
 }
@@ -25,16 +25,16 @@ export default async function JobsPage({ params, searchParams }: { params: SiteP
   const sp = await searchParams;
   const page = Math.max(1, Number(sp.page) || 1);
   let q = publicClient().from("job_offers")
-    .select("slug,title,company_name,city,department,family,contract,remote,salary_min,salary_max,featured,source,published_at", { count: "exact" })
-    .eq("site_id", site.id);
-  if (FAMILIES.some(([k]) => k === sp.metier)) q = q.eq("family", sp.metier!);
+    .select("slug,title,company_name,city,department,universe_slug,contract,remote,salary_min,salary_max,featured,source,published_at", { count: "exact" })
+    .eq("site_id", site.id).not("universe_slug", "is", null);
+  if (UNIVERSES.some(([k]) => k === sp.univers)) q = q.eq("universe_slug", sp.univers!);
   if (CONTRACTS.some(([k]) => k === sp.contrat)) q = q.eq("contract", sp.contrat!);
   if (sp.dep && /^([0-9]{2,3}|2A|2B)$/.test(sp.dep)) q = q.eq("department", sp.dep);
   const { data, count } = await q.order("featured", { ascending: false }).order("published_at", { ascending: false })
     .range((page - 1) * SIZE, page * SIZE - 1);
   const pages = Math.max(1, Math.ceil((count ?? 0) / SIZE));
   const link = (p: Record<string, string | undefined>) => {
-    const u = new URLSearchParams(Object.entries({ metier: sp.metier, contrat: sp.contrat, dep: sp.dep, ...p }).filter(([, v]) => v) as [string, string][]);
+    const u = new URLSearchParams(Object.entries({ univers: sp.univers, contrat: sp.contrat, dep: sp.dep, ...p }).filter(([, v]) => v) as [string, string][]);
     return `/emplois${u.size ? `?${u}` : ""}`;
   };
   const k = (n: number) => `${Math.round(n / 1000)} k€`;
@@ -46,14 +46,14 @@ export default async function JobsPage({ params, searchParams }: { params: SiteP
       <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
         <div>
           <h1 className="text-3xl font-extrabold">Offres d&apos;emploi en finance</h1>
-          <p className="text-ink-2 mt-2">{(count ?? 0).toLocaleString("fr-FR")} offre(s) · comptabilité, contrôle de gestion, audit, trésorerie, direction financière.</p>
+          <p className="text-ink-2 mt-2">{(count ?? 0).toLocaleString("fr-FR")} offre(s) dans les 8 univers finance : comptabilité, trésorerie, dépenses, encaissement, pilotage, direction financière, aides et risques, RSE.</p>
         </div>
         <Link href="/emplois/publier" className="rounded-lg bg-brand text-white font-semibold px-4 py-2.5">Publier une annonce</Link>
       </div>
 
       <form className="flex flex-wrap gap-2 items-end mb-6 text-sm" action="/emplois">
-        <label>Métier<select name="metier" defaultValue={sp.metier ?? ""} className="block rounded-lg border border-line px-3 py-2 bg-white">
-          <option value="">Tous</option>{FAMILIES.map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select></label>
+        <label>Univers<select name="univers" defaultValue={sp.univers ?? ""} className="block rounded-lg border border-line px-3 py-2 bg-white">
+          <option value="">Tous</option>{UNIVERSES.map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select></label>
         <label>Contrat<select name="contrat" defaultValue={sp.contrat ?? ""} className="block rounded-lg border border-line px-3 py-2 bg-white">
           <option value="">Tous</option>{CONTRACTS.map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select></label>
         <label>Département<input name="dep" defaultValue={sp.dep ?? ""} placeholder="ex. 69" size={6} className="block rounded-lg border border-line px-3 py-2 bg-white" /></label>
@@ -72,7 +72,7 @@ export default async function JobsPage({ params, searchParams }: { params: SiteP
                 {j.featured && <span className="text-xs font-semibold rounded bg-accent px-2 py-1">Annonce</span>}
               </div>
               <p className="text-sm text-ink-3 mt-2">
-                {[familyLabel(j.family), contractLabel(j.contract), j.remote === "total" ? "Télétravail complet" : j.remote === "partiel" ? "Télétravail partiel" : null,
+                {[universeLabel(j.universe_slug), contractLabel(j.contract), j.remote === "total" ? "Télétravail complet" : j.remote === "partiel" ? "Télétravail partiel" : null,
                   j.salary_min ? (j.salary_max && j.salary_max !== j.salary_min ? `${k(j.salary_min)} à ${k(j.salary_max)}` : k(j.salary_min)) : null,
                   j.source === "france_travail" ? "Source : France Travail" : null,
                   j.published_at ? `publiée le ${new Date(j.published_at).toLocaleDateString("fr-FR")}` : null].filter(Boolean).join(" · ")}

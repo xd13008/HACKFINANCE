@@ -11,6 +11,7 @@ const LABEL: Record<string, { name: string; role: string }> = {
   veille: { name: "Veille", role: "Relit les pages de prix et de fonctionnalités des éditeurs, propose des faits en brouillon et une alerte." },
   redaction: { name: "Rédaction", role: "Rédige un brouillon à partir d'un brief SEO et des données validées ; soumet seulement si la checklist SEO passe." },
   controle_qualite: { name: "Contrôle qualité", role: "Relit une version : sources manquantes, contradictions, conseils interdits. Un point bloquant empêche l'approbation." },
+  verification_offres: { name: "Vérification des offres d'emploi", role: "Vérifie chaque nuit les annonces payées et les offres France Travail : univers finance, Code du travail, arnaques. Publie seulement si la publication automatique est activée dans Emplois ; le doute vous revient." },
 };
 
 export default async function AgentsPage() {
@@ -22,9 +23,9 @@ export default async function AgentsPage() {
     db.from("software").select("id,name,is_fictional").eq("status", "published").order("name"),
     db.from("seo_briefs").select("content_item_id,primary_keyword,content_items(title,path,status)"),
     db.from("content_versions").select("id,version_no,content_items!content_versions_content_item_id_fkey(title,path)").eq("status", "submitted"),
-    ...["veille", "redaction", "controle_qualite"].map((a) => db.rpc("agent_month_cost", { p_agent: a })),
+    ...["veille", "redaction", "controle_qualite", "verification_offres"].map((a) => db.rpc("agent_month_cost", { p_agent: a })),
   ]);
-  const monthCost: Record<string, number> = { veille: Number(costs[0].data ?? 0), redaction: Number(costs[1].data ?? 0), controle_qualite: Number(costs[2].data ?? 0) };
+  const monthCost: Record<string, number> = { veille: Number(costs[0].data ?? 0), redaction: Number(costs[1].data ?? 0), controle_qualite: Number(costs[2].data ?? 0), verification_offres: Number(costs[3].data ?? 0) };
   const hasKey = !!process.env.ANTHROPIC_API_KEY && !!process.env.AGENT_EMAIL;
 
   return (

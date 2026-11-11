@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { checkJobOffer, departmentOf, familyOf, jobPostingLd, jobSlug, mapFtOffer, parseSalary } from "@/lib/jobs";
+import { checkJobOffer, departmentOf, familyOf, jobPostingLd, jobSlug, mapFtOffer, parseSalary, universeOf } from "@/lib/jobs";
 import { fetchFinanceOffers } from "@/lib/francetravail";
 import { checkoutParams, createCheckout, signStripePayload, verifyStripeSignature } from "@/lib/stripe";
 
@@ -17,6 +17,25 @@ describe("métiers", () => {
     expect(familyOf("Auditeur interne H/F")).toBe("audit");
     expect(familyOf("Credit manager H/F")).toBe("tresorerie");
     expect(familyOf("Développeur backend Python H/F")).toBeNull();
+  });
+});
+
+describe("univers finance", () => {
+  it("range chaque poste dans un des 8 univers", () => {
+    expect(universeOf("Comptable fournisseurs H/F")).toBe("depenses-achats");
+    expect(universeOf("Chargé de recouvrement H/F")).toBe("encaissement");
+    expect(universeOf("Trésorier groupe H/F")).toBe("tresorerie-cash");
+    expect(universeOf("Contrôleur de gestion industriel H/F")).toBe("pilotage-performance");
+    expect(universeOf("Directeur administratif et financier H/F")).toBe("equipe-expertise");
+    expect(universeOf("Collaborateur comptable en cabinet H/F")).toBe("equipe-expertise");
+    expect(universeOf("Consultant CIR / CII H/F")).toBe("financement-aides-risques");
+    expect(universeOf("Responsable reporting extra-financier CSRD H/F")).toBe("rse-performance-durable");
+    expect(universeOf("Comptable général H/F")).toBe("comptabilite-conformite");
+    expect(universeOf("Auditeur interne H/F")).toBe("comptabilite-conformite");
+  });
+  it("écarte les postes de vente bancaire, d'assurance ou de crédit et les autres métiers", () => {
+    for (const t of ["Conseiller bancaire H/F", "Conseiller financier en agence H/F", "Chargé de clientèle assurance H/F", "Gestionnaire de patrimoine H/F",
+      "Comptable en agence bancaire H/F", "Chef de rayon H/F", "Développeur Python H/F"]) expect(universeOf(t)).toBeNull();
   });
 });
 
@@ -41,7 +60,8 @@ describe("contrôles légaux", () => {
   it("exige une offre en français et un métier de la finance", () => {
     const en = "We are looking for a financial controller to join our team. You will own the monthly close, budgeting and forecasting. ".repeat(4);
     expect(checkJobOffer({ ...ok, description: en }).errors.join(" ")).toMatch(/français/);
-    expect(checkJobOffer({ ...ok, title: "Chef de rayon H/F" }).errors.join(" ")).toMatch(/finance/);
+    expect(checkJobOffer({ ...ok, title: "Chef de rayon H/F" }).errors.join(" ")).toMatch(/univers finance/);
+    expect(checkJobOffer({ ...ok, title: "Conseiller bancaire H/F" }).errors.join(" ")).toMatch(/univers finance/);
   });
 });
 
@@ -54,7 +74,7 @@ describe("France Travail", () => {
   };
   it("convertit une offre", () => {
     const r = mapFtOffer(offer)!;
-    expect(r).toMatchObject({ external_id: "201ABCD", family: "comptabilite", contract: "cdd", city: "LYON 03", postal_code: "69003",
+    expect(r).toMatchObject({ external_id: "201ABCD", family: "comptabilite", universe_slug: "comptabilite-conformite", contract: "cdd", city: "LYON 03", postal_code: "69003",
       department: "69", salary_min: 38000, salary_max: 45000, company_name: "ACME", apply_url: "https://exemple.test/apply" });
     expect(r.slug).toMatch(/^comptable-lyon-03-201abcd$/);
   });
