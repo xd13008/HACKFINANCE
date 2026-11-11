@@ -118,6 +118,10 @@ const FACT_LABELS: Record<string, string> = {
   free_plan: "Offre gratuite", bank_connections: "Banques connectées", multi_entity: "Plusieurs sociétés",
   target_sizes: "Tailles d’entreprise", hosting: "Hébergement des données", min_price_eur: "Prix d’entrée (€ HT/mois)",
   free_trial: "Essai gratuit", no_commitment: "Sans engagement", bank_protocols: "Protocoles bancaires", accounts_included: "Comptes bancaires inclus",
+  pa_status: "Plateforme agréée (DGFiP)", e_invoice_formats: "Formats de facture électronique", ereporting: "E-reporting", api: "API",
+  accounting_exports: "Logiciels comptables connectés", ocr: "Lecture automatique des justificatifs", corporate_cards: "Cartes de paiement",
+  mileage: "Indemnités kilométriques", approval_workflow: "Circuit de validation", po_matching: "Rapprochement avec les commandes",
+  supplier_payments: "Paiement des fournisseurs", e_invoice_reception: "Réception des factures électroniques",
 };
 const factValue = (v: unknown) => (v === true ? "Oui" : v === false ? "Non" : Array.isArray(v) ? v.join(", ").toUpperCase() : String(v));
 
