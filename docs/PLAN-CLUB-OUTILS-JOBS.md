@@ -134,5 +134,5 @@ Chaque onglet n'apparaît qu'une fois ouvert au public (même logique que les un
 1. Ordre de lancement : Jobs → Club → Boîte à outils (recommandé).
 2. ~~Club : lecture publique et indexée, ou réservée aux membres.~~ **Décidé le 11/11/2026 : Club ouvert, lecture publique et indexée** (écriture réservée aux membres confirmés).
 3. Boîte à outils : mise en relation d'abord (recommandé), ou vente en ligne directe.
-4. Jobs : dépôt gratuit au lancement (recommandé), payant pour les cabinets ensuite.
+4. ~~Jobs : dépôt gratuit au lancement, ou payant.~~ **Décidé le 11/11/2026 : annonce payante dès le lancement.** Conséquences : paiement en ligne (Stripe), facture automatique, CGV de vente d'annonces ; l'annonce n'est publiée qu'une fois payée et relue ; l'import France Travail reste gratuit et alimente la page Jobs dès l'ouverture.
 5. Qui modère : une personne nommée, au moins 30 minutes par jour à l'ouverture du Club.
