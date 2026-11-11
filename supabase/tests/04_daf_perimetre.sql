@@ -24,8 +24,8 @@ select ok(
 
 select is(
   (select count(*)::int from public.categories c join public.sites s on s.id = c.site_id
-   where s.key = 'daf' and c.slug ~ '(paie|csrd|rse|credit|affacturage|compte-pro|assurance|leasing|levee)'),
-  0, 'Hors périmètre DAF : paie/RSE (portails dédiés), financement, compte pro, assurance'
+   where s.key = 'daf' and c.slug ~ '(paie|sirh|credit|affacturage|compte-pro|assurance|leasing|levee)'),
+  0, 'Hors périmètre DAF : paie (portail Radar RH), financement, compte pro, assurance'
 );
 
 select ok(

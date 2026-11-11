@@ -32,8 +32,8 @@ select ok(
 select set_eq(
   $$ select c.slug from public.categories c join public.verticals v on v.id = c.vertical_id
      join public.sites s on s.id = c.site_id where s.key = 'daf' and v.slug = 'rse-performance-durable' $$,
-  $$ values ('reporting-esg') $$,
-  'RSE sur Radar Finances : une catégorie angle DAF, le détail reste sur Radar RSE'
+  $$ values ('reporting-esg'), ('conseil-csrd-carbone') $$,
+  'RSE sur Radar Finances : un logiciel et un annuaire angle DAF, le détail reste sur Radar RSE'
 );
 
 select is(
