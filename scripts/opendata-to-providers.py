@@ -40,7 +40,9 @@ def display(name):
 
 import glob
 # Sociétés déjà référencées par la recherche documentaire (data/95) : on ne les duplique pas
-known = {str(x.get("siren")) for f in glob.glob("docs/seo/prestataires/*.json") for x in json.load(open(f, encoding="utf-8")) if x.get("siren")}
+# Liste figée : les deux premières recherches (data/95). Les recherches suivantes sont fusionnées par SIREN (data/97).
+KNOWN_FILES = ("docs/seo/prestataires/integrateurs-tresorerie-couts-recouvrement.json", "docs/seo/prestataires/bi-csrd-cir-formation-transition.json")
+known = {str(x.get("siren")) for f in KNOWN_FILES for x in json.load(open(f, encoding="utf-8")) if x.get("siren")}
 out, excluded, by_siren = [], 0, {}
 for path in sys.argv[1:]:
     for r in json.load(open(path, encoding="utf-8")):

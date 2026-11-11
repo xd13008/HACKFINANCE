@@ -80,7 +80,9 @@ supabase/
                 28 772 sociétés issues des registres publics (data/96, scripts/opendata-to-providers.py : activités comptables 69.20Z,
                 organismes de formation « Comptabilité, gestion » certifiés Qualiopi, recouvrement 82.91Z, recrutement et chasse de tête
                 78.10Z ; commissaires aux comptes repérés par leur dénomination, inscription H2A à vérifier ; hors entreprises
-                individuelles et associations ; catégories ajoutées par data/94)
+                individuelles et associations ; catégories ajoutées par data/94),
+                298 sociétés trouvées sur le web (data/97, scripts/providers-merge-sql.py : partenaires intégrateurs Odoo, Divalto,
+                Cegid, Pennylane, SAP B1 ; cabinets CSRD, transition, recrutement finance…) fusionnées par SIREN, une seule fiche par SIREN
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/

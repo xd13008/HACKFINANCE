@@ -1,0 +1,4323 @@
+[
+  {
+    "name": "Portcities Phidias",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Gold"
+    ],
+    "description": "Société partenaire Odoo (niveau Gold affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74"
+    ]
+  },
+  {
+    "name": "Falinwa France",
+    "siren": "800649816",
+    "verified": true,
+    "website": null,
+    "city": "Toulouse",
+    "region": "Occitanie",
+    "postal_code": "31000",
+    "department": "31",
+    "latitude": 43.608354548,
+    "longitude": 1.4429178577,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Gold"
+    ],
+    "description": "Société partenaire Odoo (niveau Gold affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74"
+    ]
+  },
+  {
+    "name": "Camptocamp France",
+    "siren": "433698578",
+    "verified": true,
+    "website": null,
+    "city": "Le Bourget-du-Lac",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "73370",
+    "department": "73",
+    "latitude": 45.642035596,
+    "longitude": 5.8731133506,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Gold"
+    ],
+    "description": "Société partenaire Odoo (niveau Gold affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74"
+    ]
+  },
+  {
+    "name": "Orbeet",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Gold"
+    ],
+    "description": "Société partenaire Odoo (niveau Gold affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74"
+    ]
+  },
+  {
+    "name": "DarbTech Labs",
+    "siren": "850857046",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75012",
+    "department": "75",
+    "latitude": 48.8419368695064,
+    "longitude": 2.38606577020804,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Gold"
+    ],
+    "description": "Société partenaire Odoo (niveau Gold affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74"
+    ]
+  },
+  {
+    "name": "BLACKSWAN TECHNOLOGY",
+    "siren": "921407045",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75116",
+    "department": "75",
+    "latitude": 48.8673340162684,
+    "longitude": 2.27950214359021,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Gold"
+    ],
+    "description": "Société partenaire Odoo (niveau Gold affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74"
+    ]
+  },
+  {
+    "name": "ADQUAT",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74"
+    ]
+  },
+  {
+    "name": "NUPROD",
+    "siren": "909391567",
+    "verified": true,
+    "website": null,
+    "city": "Cazats",
+    "region": "Nouvelle-Aquitaine",
+    "postal_code": "33430",
+    "department": "33",
+    "latitude": 44.473611675,
+    "longitude": -0.211722664,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "Aunéor Conseil",
+    "siren": "801609132",
+    "verified": true,
+    "website": null,
+    "city": "Velleron",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "postal_code": "84740",
+    "department": "84",
+    "latitude": 43.95487202843832,
+    "longitude": 5.028245035780114,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "TSC France",
+    "siren": "980248306",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75002",
+    "department": "75",
+    "latitude": 48.86877785,
+    "longitude": 2.3316350583,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "ACTION DIGITALE",
+    "siren": "844071324",
+    "verified": true,
+    "website": null,
+    "city": "Idron",
+    "region": "Nouvelle-Aquitaine",
+    "postal_code": "64320",
+    "department": "64",
+    "latitude": 43.298001155008,
+    "longitude": -0.303531076283645,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "Ynov'iT Services",
+    "siren": "917724916",
+    "verified": true,
+    "website": null,
+    "city": "Saint-Etienne",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "42000",
+    "department": "42",
+    "latitude": 45.4583725713386,
+    "longitude": 4.39363405837,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "Idealis Consulting Lyon",
+    "siren": "979366200",
+    "verified": true,
+    "website": null,
+    "city": "Lyon",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "69006",
+    "department": "69",
+    "latitude": 45.7638778359176,
+    "longitude": 4.85863438572146,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "Tetra Up",
+    "siren": "394703011",
+    "verified": true,
+    "website": null,
+    "city": "Douai",
+    "region": "Hauts-de-France",
+    "postal_code": "59500",
+    "department": "59",
+    "latitude": 50.369566988,
+    "longitude": 3.0887125358,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "Sodexis",
+    "siren": "949282271",
+    "verified": true,
+    "website": null,
+    "city": "Ambronay",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "01500",
+    "department": "01",
+    "latitude": 46.005868461,
+    "longitude": 5.3580518035,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "Xperdoo",
+    "siren": "980818686",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75002",
+    "department": "75",
+    "latitude": 48.869742039,
+    "longitude": 2.339379054,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "GEMBAWARE",
+    "siren": "820649481",
+    "verified": true,
+    "website": null,
+    "city": "Toulouse",
+    "region": "Occitanie",
+    "postal_code": "31100",
+    "department": "31",
+    "latitude": 43.5682452494366,
+    "longitude": 1.41503543914941,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "Croc'Doo",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "LIMPIDIT",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "Ooneur",
+    "siren": "942027244",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75011",
+    "department": "75",
+    "latitude": 48.8641275409124,
+    "longitude": 2.36692072305387,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "YOUR IT FACTORY",
+    "siren": "794359729",
+    "verified": true,
+    "website": null,
+    "city": "Saint-Germain-en-Laye",
+    "region": "Île-de-France",
+    "postal_code": "78100",
+    "department": "78",
+    "latitude": 48.896484192,
+    "longitude": 2.095470235,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "Aitec Service",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "Peaklane",
+    "siren": "940925944",
+    "verified": true,
+    "website": null,
+    "city": "Marseille",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "postal_code": "13006",
+    "department": "13",
+    "latitude": 43.2917934669668,
+    "longitude": 5.37562465847296,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "ADSI TECH",
+    "siren": "928081769",
+    "verified": true,
+    "website": null,
+    "city": "Puteaux",
+    "region": "Île-de-France",
+    "postal_code": "92800",
+    "department": "92",
+    "latitude": 48.8777214296963,
+    "longitude": 2.23457604093527,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Silver"
+    ],
+    "description": "Société partenaire Odoo (niveau Silver affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/2"
+    ]
+  },
+  {
+    "name": "Omydoo",
+    "siren": "887555639",
+    "verified": true,
+    "website": null,
+    "city": "Chapdes-Beaufort",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "63230",
+    "department": "63",
+    "latitude": 45.913251292,
+    "longitude": 2.8600269268,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "ANOR",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "Groupe Difference",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "ODC",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "Eggs-Solutions",
+    "siren": "752364703",
+    "verified": true,
+    "website": null,
+    "city": "Saint-Just-Saint-Rambert",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "42170",
+    "department": "42",
+    "latitude": 45.5109139522876,
+    "longitude": 4.26185495623641,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "TWC TECHNOLOGIES",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "Bside France",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "Yotech",
+    "siren": "820541233",
+    "verified": true,
+    "website": null,
+    "city": "Thyez",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "74300",
+    "department": "74",
+    "latitude": 46.0761177021793,
+    "longitude": 6.54288657822267,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "Ekonum",
+    "siren": "932975469",
+    "verified": true,
+    "website": null,
+    "city": "Realmont",
+    "region": "Occitanie",
+    "postal_code": "81120",
+    "department": "81",
+    "latitude": 43.77600403325516,
+    "longitude": 2.188213035990591,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "Vivasoft",
+    "siren": "805114832",
+    "verified": true,
+    "website": null,
+    "city": "Marssac-sur-Tarn",
+    "region": "Occitanie",
+    "postal_code": "81150",
+    "department": "81",
+    "latitude": 43.9132730262903,
+    "longitude": 2.05572668742554,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "Linkweaver",
+    "siren": "812756849",
+    "verified": true,
+    "website": null,
+    "city": "Les Lilas",
+    "region": "Île-de-France",
+    "postal_code": "93260",
+    "department": "93",
+    "latitude": 48.8793223672545,
+    "longitude": 2.42047354085087,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "PURE ILLUSION",
+    "siren": "904753357",
+    "verified": true,
+    "website": null,
+    "city": "Poisy",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "74330",
+    "department": "74",
+    "latitude": 45.931850734391,
+    "longitude": 6.07670717447883,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "KHETYS",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "Hors du Commun Lyon",
+    "siren": "901148817",
+    "verified": true,
+    "website": null,
+    "city": "Lyon",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "69009",
+    "department": "69",
+    "latitude": 45.786587019,
+    "longitude": 4.787519044,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "OFFICE FORMATIONS & CONSEIL",
+    "siren": "924799935",
+    "verified": true,
+    "website": null,
+    "city": "Saint-Paul-et-Valmalle",
+    "region": "Occitanie",
+    "postal_code": "34570",
+    "department": "34",
+    "latitude": 43.625685001,
+    "longitude": 3.6891107213,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "Nuxly",
+    "siren": "797621463",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75011",
+    "department": "75",
+    "latitude": 48.850631273,
+    "longitude": 2.393535909,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "XPERIANS",
+    "siren": "991540626",
+    "verified": true,
+    "website": null,
+    "city": "Bischheim",
+    "region": "Grand Est",
+    "postal_code": "67800",
+    "department": "67",
+    "latitude": 48.612265313414,
+    "longitude": 7.75920475335165,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "e-cosi",
+    "siren": "820046662",
+    "verified": true,
+    "website": null,
+    "city": "Orvault",
+    "region": "Pays de la Loire",
+    "postal_code": "44700",
+    "department": "44",
+    "latitude": 47.2620537266742,
+    "longitude": -1.58468797964359,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/3"
+    ]
+  },
+  {
+    "name": "RES PARTNER",
+    "siren": "884299181",
+    "verified": true,
+    "website": null,
+    "city": "Toulouse",
+    "region": "Occitanie",
+    "postal_code": "31000",
+    "department": "31",
+    "latitude": 43.6022317229557,
+    "longitude": 1.442128298734,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "LINOV",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "Moka",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "SIQUAL",
+    "siren": "918246018",
+    "verified": true,
+    "website": null,
+    "city": "Le Petit-Quevilly",
+    "region": "Normandie",
+    "postal_code": "76140",
+    "department": "76",
+    "latitude": 49.4152125781807,
+    "longitude": 1.06345250378934,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "Yes We Doo",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "ARIOS Télécom",
+    "siren": "793226671",
+    "verified": true,
+    "website": null,
+    "city": "Mareuil-sur-Lay-Dissais",
+    "region": "Pays de la Loire",
+    "postal_code": "85320",
+    "department": "85",
+    "latitude": 46.535236374,
+    "longitude": -1.221870438,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "Chef Pixel",
+    "siren": "938892494",
+    "verified": true,
+    "website": null,
+    "city": "Nantes",
+    "region": "Pays de la Loire",
+    "postal_code": "44300",
+    "department": "44",
+    "latitude": 47.2444393879434,
+    "longitude": -1.51344148339701,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "KODO",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "DIGITALSACE",
+    "siren": "890725427",
+    "verified": true,
+    "website": null,
+    "city": "Rosheim",
+    "region": "Grand Est",
+    "postal_code": "67560",
+    "department": "67",
+    "latitude": 48.502787358105,
+    "longitude": 7.49553176392614,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "REZET",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "Argosense",
+    "siren": "845405109",
+    "verified": true,
+    "website": null,
+    "city": "Reze",
+    "region": "Pays de la Loire",
+    "postal_code": "44400",
+    "department": "44",
+    "latitude": 47.188323603,
+    "longitude": -1.571470855,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "DIVAMEO",
+    "siren": "839017670",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75016",
+    "department": "75",
+    "latitude": 48.848839489,
+    "longitude": 2.273528771,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "Djungle",
+    "siren": "979177805",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75015",
+    "department": "75",
+    "latitude": 48.847397098,
+    "longitude": 2.2885263271,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "Doscaal",
+    "siren": "832518302",
+    "verified": true,
+    "website": null,
+    "city": "Caen",
+    "region": "Normandie",
+    "postal_code": "14000",
+    "department": "14",
+    "latitude": 49.164267651,
+    "longitude": -0.348240529,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "APPLIDEV",
+    "siren": "524738317",
+    "verified": true,
+    "website": null,
+    "city": "Arnage",
+    "region": "Pays de la Loire",
+    "postal_code": "72230",
+    "department": "72",
+    "latitude": 47.9469717620911,
+    "longitude": 0.178729499030906,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "YONA",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "Advences",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "EVEREST SERVICES (Prudentis)",
+    "siren": "412006850",
+    "verified": true,
+    "website": null,
+    "city": "Tours",
+    "region": "Centre-Val de Loire",
+    "postal_code": "37200",
+    "department": "37",
+    "latitude": 47.371158823,
+    "longitude": 0.678340447,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/4"
+    ]
+  },
+  {
+    "name": "BRETZEL.IO",
+    "siren": "933322562",
+    "verified": true,
+    "website": null,
+    "city": "Mittelhausbergen",
+    "region": "Grand Est",
+    "postal_code": "67206",
+    "department": "67",
+    "latitude": 48.6130002325333,
+    "longitude": 7.69140699393228,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "Erle",
+    "siren": "933295842",
+    "verified": true,
+    "website": null,
+    "city": "Anglet",
+    "region": "Nouvelle-Aquitaine",
+    "postal_code": "64600",
+    "department": "64",
+    "latitude": 43.4623875086808,
+    "longitude": -1.51872591776096,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "M&M Développement",
+    "siren": "928639004",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75001",
+    "department": "75",
+    "latitude": 48.8660774245032,
+    "longitude": 2.32945473837603,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "METRUM Digital",
+    "siren": "849388483",
+    "verified": true,
+    "website": null,
+    "city": "Nice",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "postal_code": "06000",
+    "department": "06",
+    "latitude": 43.666628968,
+    "longitude": 7.212988951,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "TeMPO Consulting",
+    "siren": "414420570",
+    "verified": true,
+    "website": null,
+    "city": "Strasbourg",
+    "region": "Grand Est",
+    "postal_code": "67100",
+    "department": "67",
+    "latitude": 48.5720659585443,
+    "longitude": 7.76625167044944,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "A.N.A Conseil",
+    "siren": "989162193",
+    "verified": true,
+    "website": null,
+    "city": "Pace",
+    "region": "Bretagne",
+    "postal_code": "35740",
+    "department": "35",
+    "latitude": 48.1490740196359,
+    "longitude": -1.77261908523929,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "Elipce Solutions",
+    "siren": "482323284",
+    "verified": true,
+    "website": null,
+    "city": "Valence",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "26000",
+    "department": "26",
+    "latitude": 44.9328983595387,
+    "longitude": 4.92999233547396,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "akolio",
+    "siren": "945370120",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75012",
+    "department": "75",
+    "latitude": 48.8505598206006,
+    "longitude": 2.37013220239579,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "ACUS CONSEIL",
+    "siren": "910323427",
+    "verified": true,
+    "website": null,
+    "city": "Le Perreux-sur-Marne",
+    "region": "Île-de-France",
+    "postal_code": "94170",
+    "department": "94",
+    "latitude": 48.840614279,
+    "longitude": 2.4962637875,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "Evoeron",
+    "siren": "982230302",
+    "verified": true,
+    "website": null,
+    "city": "Fillinges",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "74250",
+    "department": "74",
+    "latitude": 46.1503891138965,
+    "longitude": 6.32161326789649,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "MANGONO",
+    "siren": "799586219",
+    "verified": true,
+    "website": null,
+    "city": "Angers",
+    "region": "Pays de la Loire",
+    "postal_code": "49000",
+    "department": "49",
+    "latitude": 47.4708590471106,
+    "longitude": -0.596767855270376,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "Micrologic",
+    "siren": "331662635",
+    "verified": true,
+    "website": null,
+    "city": "Hœnheim",
+    "region": "Grand Est",
+    "postal_code": "67800",
+    "department": "67",
+    "latitude": 48.63201816,
+    "longitude": 7.7649380722,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "OpenCime",
+    "siren": "938885787",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75008",
+    "department": "75",
+    "latitude": 48.8733847796795,
+    "longitude": 2.32548783050415,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "Tulip Conseil",
+    "siren": "991620907",
+    "verified": true,
+    "website": null,
+    "city": "Azur",
+    "region": "Nouvelle-Aquitaine",
+    "postal_code": "40140",
+    "department": "40",
+    "latitude": 43.7742273851052,
+    "longitude": -1.29294857541419,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "SI Avesnois Lab",
+    "siren": "751524844",
+    "verified": true,
+    "website": null,
+    "city": "Trelon",
+    "region": "Hauts-de-France",
+    "postal_code": "59132",
+    "department": "59",
+    "latitude": 50.0584689931339,
+    "longitude": 4.09102392498428,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "A-K-I",
+    "siren": "991948043",
+    "verified": true,
+    "website": null,
+    "city": "Moelan-sur-Mer",
+    "region": "Bretagne",
+    "postal_code": "29350",
+    "department": "29",
+    "latitude": 47.8107992611818,
+    "longitude": -3.63729674089518,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "DLOREH",
+    "siren": "951055466",
+    "verified": true,
+    "website": null,
+    "city": "Sorgues",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "postal_code": "84700",
+    "department": "84",
+    "latitude": 44.012491217,
+    "longitude": 4.8817182379,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "SpikeeLabs",
+    "siren": "823686027",
+    "verified": true,
+    "website": null,
+    "city": "Rennes",
+    "region": "Bretagne",
+    "postal_code": "35000",
+    "department": "35",
+    "latitude": 48.1047493060332,
+    "longitude": -1.66718437524075,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "Blue Metrics",
+    "siren": "944954510",
+    "verified": true,
+    "website": null,
+    "city": "Saint-Barthelemy-d'Anjou",
+    "region": "Pays de la Loire",
+    "postal_code": "49124",
+    "department": "49",
+    "latitude": 47.4716927249861,
+    "longitude": -0.511747974389078,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "Calyros",
+    "siren": "944400704",
+    "verified": true,
+    "website": null,
+    "city": "Lyon",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "69003",
+    "department": "69",
+    "latitude": 45.7515312025431,
+    "longitude": 4.87843565744093,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/5"
+    ]
+  },
+  {
+    "name": "Curlo",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "ELOSI",
+    "siren": "481138964",
+    "verified": true,
+    "website": null,
+    "city": "Villeneuve-d'Ascq",
+    "region": "Hauts-de-France",
+    "postal_code": "59650",
+    "department": "59",
+    "latitude": 50.646121972,
+    "longitude": 3.132469101,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "Kerbi",
+    "siren": "919594549",
+    "verified": true,
+    "website": null,
+    "city": "Saint-Coulomb",
+    "region": "Bretagne",
+    "postal_code": "35350",
+    "department": "35",
+    "latitude": 48.680517845,
+    "longitude": -1.918831372,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "DynConsult FR",
+    "siren": "102228996",
+    "verified": true,
+    "website": null,
+    "city": "Publier",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "74500",
+    "department": "74",
+    "latitude": 46.3871591412605,
+    "longitude": 6.5696284247143,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "Humans Connexion",
+    "siren": "513792119",
+    "verified": true,
+    "website": null,
+    "city": "Toulouse",
+    "region": "Occitanie",
+    "postal_code": "31200",
+    "department": "31",
+    "latitude": 43.6398319476006,
+    "longitude": 1.41907834195686,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "IXEMELIS",
+    "siren": "499680254",
+    "verified": true,
+    "website": null,
+    "city": "Boulogne-Billancourt",
+    "region": "Île-de-France",
+    "postal_code": "92100",
+    "department": "92",
+    "latitude": 48.8300957884222,
+    "longitude": 2.23041037341851,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "JOINERY BUSINESS SOLUTIONS",
+    "siren": "892549791",
+    "verified": true,
+    "website": null,
+    "city": "Indre",
+    "region": "Pays de la Loire",
+    "postal_code": "44610",
+    "department": "44",
+    "latitude": 47.19798381,
+    "longitude": -1.654064026,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "STRAKIO",
+    "siren": "103181921",
+    "verified": true,
+    "website": null,
+    "city": "Bourg-les-Valence",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "26500",
+    "department": "26",
+    "latitude": 44.9566574576518,
+    "longitude": 4.88135651136182,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "TEOPLAN",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "Thoum Production",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "Asmozia",
+    "siren": "939149290",
+    "verified": true,
+    "website": null,
+    "city": "Vert-en-Drouais",
+    "region": "Centre-Val de Loire",
+    "postal_code": "28500",
+    "department": "28",
+    "latitude": 48.7600503742215,
+    "longitude": 1.28965314393841,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "Axeneo",
+    "siren": "878522002",
+    "verified": true,
+    "website": null,
+    "city": "Magny-le-Hongre",
+    "region": "Île-de-France",
+    "postal_code": "77700",
+    "department": "77",
+    "latitude": 48.87108544,
+    "longitude": 2.8173120513,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "NECC IT",
+    "siren": "990618910",
+    "verified": true,
+    "website": null,
+    "city": "Marcq-en-Barœul",
+    "region": "Hauts-de-France",
+    "postal_code": "59700",
+    "department": "59",
+    "latitude": 50.653933152329,
+    "longitude": 3.08142844022467,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "NEXTAIM",
+    "siren": "940146145",
+    "verified": true,
+    "website": null,
+    "city": "Cusy",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "74540",
+    "department": "74",
+    "latitude": 45.7640179228481,
+    "longitude": 6.03428346401278,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "Oxylead",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "TRANSITION",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "YZY Digital France",
+    "siren": "901629584",
+    "verified": true,
+    "website": null,
+    "city": "Bois-Colombes",
+    "region": "Île-de-France",
+    "postal_code": "92270",
+    "department": "92",
+    "latitude": 48.9068490554712,
+    "longitude": 2.26086564227181,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "Citybee",
+    "siren": "833117781",
+    "verified": true,
+    "website": null,
+    "city": "Villy-le-Bouveret",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "74350",
+    "department": "74",
+    "latitude": 46.0443325783319,
+    "longitude": 6.16857570880042,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "EXALTECH",
+    "siren": "501752661",
+    "verified": true,
+    "website": null,
+    "city": "Roquefort-les-Pins",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "postal_code": "06330",
+    "department": "06",
+    "latitude": 43.6700778157142,
+    "longitude": 7.05632691494178,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/6"
+    ]
+  },
+  {
+    "name": "ODOVIZE",
+    "siren": "103159174",
+    "verified": true,
+    "website": null,
+    "city": "Blois",
+    "region": "Centre-Val de Loire",
+    "postal_code": "41000",
+    "department": "41",
+    "latitude": 47.5969143975988,
+    "longitude": 1.3453568092552,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "OneSolutions",
+    "siren": "920631223",
+    "verified": true,
+    "website": null,
+    "city": "Grenoble",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "38000",
+    "department": "38",
+    "latitude": 45.1875872521012,
+    "longitude": 5.70417905835163,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "2L INFOSERVICES",
+    "siren": "498094671",
+    "verified": true,
+    "website": null,
+    "city": "Joue-les-Tours",
+    "region": "Centre-Val de Loire",
+    "postal_code": "37300",
+    "department": "37",
+    "latitude": 47.33654951,
+    "longitude": 0.643305857,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "DATASOLUTION",
+    "siren": "445223852",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75012",
+    "department": "75",
+    "latitude": 48.8493991368295,
+    "longitude": 2.38795048714911,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "Nexelans",
+    "siren": "952552420",
+    "verified": true,
+    "website": null,
+    "city": "Saint-Chef",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "38890",
+    "department": "38",
+    "latitude": 45.632781374,
+    "longitude": 5.3760729324,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "OOV SOLUTIONS",
+    "siren": "101113322",
+    "verified": true,
+    "website": null,
+    "city": "Darnetal",
+    "region": "Normandie",
+    "postal_code": "76160",
+    "department": "76",
+    "latitude": 49.4390566194578,
+    "longitude": 1.14236567776661,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "turnK",
+    "siren": "890531668",
+    "verified": true,
+    "website": null,
+    "city": "Bordeaux",
+    "region": "Nouvelle-Aquitaine",
+    "postal_code": "33300",
+    "department": "33",
+    "latitude": 44.8506215554595,
+    "longitude": -0.576692259148124,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "ACT Service",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "Agence Web",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "Althium",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "Harmony-Works-Consulting",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "IN EXTENSO",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "PIXEEPLAY",
+    "siren": "928319581",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75011",
+    "department": "75",
+    "latitude": 48.8573647395645,
+    "longitude": 2.38947534627221,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "SOFTEAM CONSULTING",
+    "siren": "818705774",
+    "verified": true,
+    "website": null,
+    "city": "Ivry-sur-Seine",
+    "region": "Île-de-France",
+    "postal_code": "94200",
+    "department": "94",
+    "latitude": 48.8188129697332,
+    "longitude": 2.39814093009666,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "TOHERO",
+    "siren": "811728203",
+    "verified": true,
+    "website": null,
+    "city": "Montpellier",
+    "region": "Occitanie",
+    "postal_code": "34000",
+    "department": "34",
+    "latitude": 43.6377827061938,
+    "longitude": 3.83150759192361,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "ACELYS SERVICES NUMERIQUES",
+    "siren": "808369599",
+    "verified": true,
+    "website": null,
+    "city": "Montpellier",
+    "region": "Occitanie",
+    "postal_code": "34000",
+    "department": "34",
+    "latitude": 43.6192785740869,
+    "longitude": 3.9139717666329,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "ANEOL",
+    "siren": "507940815",
+    "verified": true,
+    "website": null,
+    "city": "Saint-Etienne",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "42000",
+    "department": "42",
+    "latitude": 45.456109878,
+    "longitude": 4.3924970833,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "BRINURE Paris",
+    "siren": "812289544",
+    "verified": true,
+    "website": null,
+    "city": "Cormeilles-en-Parisis",
+    "region": "Île-de-France",
+    "postal_code": "95240",
+    "department": "95",
+    "latitude": 48.966297381,
+    "longitude": 2.1955952632,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "BS-TEAM FRANCE",
+    "siren": "878141613",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75008",
+    "department": "75",
+    "latitude": 48.873053731,
+    "longitude": 2.3165925738,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/7"
+    ]
+  },
+  {
+    "name": "Cellenza",
+    "siren": "529602161",
+    "verified": true,
+    "website": null,
+    "city": "Boulogne-Billancourt",
+    "region": "Île-de-France",
+    "postal_code": "92100",
+    "department": "92",
+    "latitude": 48.8290677030177,
+    "longitude": 2.23769900555696,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/8"
+    ]
+  },
+  {
+    "name": "Kent Group",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/8"
+    ]
+  },
+  {
+    "name": "Niboo France",
+    "siren": "992208686",
+    "verified": true,
+    "website": null,
+    "city": "Lille",
+    "region": "Hauts-de-France",
+    "postal_code": "59777",
+    "department": "59",
+    "latitude": 50.6385549913324,
+    "longitude": 3.07927499669798,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/8"
+    ]
+  },
+  {
+    "name": "WIZIOU",
+    "siren": "811737592",
+    "verified": true,
+    "website": null,
+    "city": "Montmerle-sur-Saone",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "01090",
+    "department": "01",
+    "latitude": 46.08446628,
+    "longitude": 4.7660744756,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Odoo",
+      "Odoo Ready"
+    ],
+    "description": "Société partenaire Odoo (niveau Ready affiché par l'éditeur) : mise en place, paramétrage et accompagnement des entreprises sur l'ERP Odoo.",
+    "regulated": false,
+    "sources": [
+      "https://www.odoo.com/fr_FR/partners/country/france-74/page/8"
+    ]
+  },
+  {
+    "name": "BK Solution",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid",
+      "Cegid Gold"
+    ],
+    "description": "Société référencée parmi les partenaires intégrateurs de Cegid : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-integrateurs/"
+    ]
+  },
+  {
+    "name": "Lucem",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid",
+      "Cegid Gold"
+    ],
+    "description": "Société référencée parmi les partenaires intégrateurs de Cegid : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-integrateurs/"
+    ]
+  },
+  {
+    "name": "Alcyia",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid",
+      "Cegid Integrator"
+    ],
+    "description": "Société référencée parmi les partenaires intégrateurs de Cegid : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-integrateurs/"
+    ]
+  },
+  {
+    "name": "Infogestion Consulting",
+    "siren": "507389260",
+    "verified": true,
+    "website": null,
+    "city": "Andernos-les-Bains",
+    "region": "Nouvelle-Aquitaine",
+    "postal_code": "33510",
+    "department": "33",
+    "latitude": 44.752207632,
+    "longitude": -1.107474826,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid XRP Ultimate",
+      "Cegid Integrator"
+    ],
+    "description": "Société référencée parmi les partenaires intégrateurs de Cegid (Cegid XRP Ultimate) : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-integrateurs/"
+    ]
+  },
+  {
+    "name": "Lebel Technologies",
+    "siren": "909165466",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75008",
+    "department": "75",
+    "latitude": 48.870759191,
+    "longitude": 2.3090181495,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid XRP Flex",
+      "Cegid Integrator"
+    ],
+    "description": "Société référencée parmi les partenaires intégrateurs de Cegid (Cegid XRP Flex) : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-integrateurs/"
+    ]
+  },
+  {
+    "name": "1 Life",
+    "siren": "791143795",
+    "verified": true,
+    "website": null,
+    "city": "Charbonnieres-les-Bains",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "69260",
+    "department": "69",
+    "latitude": 45.776120571,
+    "longitude": 4.7489782507,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid"
+    ],
+    "description": "Société référencée parmi les partenaires distributeurs de Cegid : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-distributeurs/"
+    ]
+  },
+  {
+    "name": "Altem",
+    "siren": "491884110",
+    "verified": true,
+    "website": null,
+    "city": "Bordeaux",
+    "region": "Nouvelle-Aquitaine",
+    "postal_code": "33000",
+    "department": "33",
+    "latitude": 44.847756052,
+    "longitude": -0.57360378,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid"
+    ],
+    "description": "Société référencée parmi les partenaires distributeurs de Cegid : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-distributeurs/"
+    ]
+  },
+  {
+    "name": "Apsys",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid",
+      "Pennylane",
+      "Cegid Partner Platinium"
+    ],
+    "description": "Société référencée parmi les partenaires distributeurs de Cegid : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-distributeurs/",
+      "https://www.pennylane.com/fr/pme/partenaires"
+    ]
+  },
+  {
+    "name": "Groupe Althays",
+    "siren": "439548199",
+    "verified": true,
+    "website": null,
+    "city": "Annecy",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "74000",
+    "department": "74",
+    "latitude": 45.930212355,
+    "longitude": 6.166217224,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid XRP Flex"
+    ],
+    "description": "Société référencée parmi les partenaires distributeurs de Cegid (Cegid XRP Flex) : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-distributeurs/",
+      "https://www.cegid.com/fr/ecosysteme-partenaires/"
+    ]
+  },
+  {
+    "name": "Groupe SRA",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid"
+    ],
+    "description": "Société référencée parmi les partenaires distributeurs de Cegid : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-distributeurs/"
+    ]
+  },
+  {
+    "name": "Horizons Group",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid XRP Sprint",
+      "Cegid XRP Flex",
+      "Cegid Distributeur"
+    ],
+    "description": "Société référencée parmi les partenaires distributeurs de Cegid (Cegid XRP Sprint, Cegid XRP Flex) : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-distributeurs/"
+    ]
+  },
+  {
+    "name": "Institut FIMAC",
+    "siren": "393590310",
+    "verified": true,
+    "website": null,
+    "city": "Toulouse",
+    "region": "Occitanie",
+    "postal_code": "31200",
+    "department": "31",
+    "latitude": 43.64411724,
+    "longitude": 1.4161903488,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid XRP Flex"
+    ],
+    "description": "Société référencée parmi les partenaires distributeurs de Cegid (Cegid XRP Flex) : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-distributeurs/"
+    ]
+  },
+  {
+    "name": "LCS Group",
+    "siren": "429370414",
+    "verified": true,
+    "website": null,
+    "city": "Clichy",
+    "region": "Île-de-France",
+    "postal_code": "92110",
+    "department": "92",
+    "latitude": 48.9010248637743,
+    "longitude": 2.31741230716344,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid"
+    ],
+    "description": "Société référencée parmi les partenaires distributeurs de Cegid : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-distributeurs/",
+      "https://www.cegid.com/fr/ecosysteme-partenaires/"
+    ]
+  },
+  {
+    "name": "OCI",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid",
+      "Cegid Certified partner"
+    ],
+    "description": "Société référencée parmi les partenaires distributeurs de Cegid : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-distributeurs/"
+    ]
+  },
+  {
+    "name": "OGI",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid"
+    ],
+    "description": "Société référencée parmi les partenaires distributeurs de Cegid : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-distributeurs/"
+    ]
+  },
+  {
+    "name": "RSM France",
+    "siren": "800709891",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75009",
+    "department": "75",
+    "latitude": 48.8720296451969,
+    "longitude": 2.33564946639665,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid",
+      "Pennylane"
+    ],
+    "description": "Cabinet d'expertise comptable et de conseil, cité parmi les partenaires de Cegid et de Pennylane pour la mise en place de solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-distributeurs/?spaged=2",
+      "https://www.pennylane.com/fr/pme/partenaires"
+    ]
+  },
+  {
+    "name": "Sharp DX France",
+    "siren": "517970158",
+    "verified": true,
+    "website": null,
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75009",
+    "department": "75",
+    "latitude": 48.878987229,
+    "longitude": 2.3345718207,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Cegid XRP Flex"
+    ],
+    "description": "Société référencée parmi les partenaires distributeurs de Cegid (Cegid XRP Flex) : déploiement et accompagnement des solutions de gestion.",
+    "regulated": false,
+    "sources": [
+      "https://www.cegid.com/fr/partenaires-distributeurs/?spaged=2"
+    ]
+  },
+  {
+    "name": "Adinfo",
+    "siren": "333556686",
+    "verified": true,
+    "website": null,
+    "city": "La Roche-sur-Yon",
+    "region": "Pays de la Loire",
+    "postal_code": "85000",
+    "department": "85",
+    "latitude": 46.70467886,
+    "longitude": -1.427695639,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Pennylane"
+    ],
+    "description": "Société citée par Pennylane parmi ses partenaires intégrateurs auprès des PME : mise en place et accompagnement de la solution Pennylane.",
+    "regulated": false,
+    "sources": [
+      "https://www.pennylane.com/fr/pme/partenaires"
+    ]
+  },
+  {
+    "name": "ADN Conseils",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Pennylane"
+    ],
+    "description": "Société citée par Pennylane parmi ses partenaires intégrateurs auprès des PME : mise en place et accompagnement de la solution Pennylane.",
+    "regulated": false,
+    "sources": [
+      "https://www.pennylane.com/fr/pme/partenaires"
+    ]
+  },
+  {
+    "name": "BDO Software & Services",
+    "siren": "334822129",
+    "verified": true,
+    "website": null,
+    "city": "La Motte-Servolex",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "73290",
+    "department": "73",
+    "latitude": 45.637901673536,
+    "longitude": 5.87184473188676,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Pennylane"
+    ],
+    "description": "Société citée par Pennylane parmi ses partenaires intégrateurs auprès des PME : mise en place et accompagnement de la solution Pennylane.",
+    "regulated": false,
+    "sources": [
+      "https://www.pennylane.com/fr/pme/partenaires"
+    ]
+  },
+  {
+    "name": "BRZ",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Pennylane"
+    ],
+    "description": "Société citée par Pennylane parmi ses partenaires intégrateurs auprès des PME : mise en place et accompagnement de la solution Pennylane.",
+    "regulated": false,
+    "sources": [
+      "https://www.pennylane.com/fr/pme/partenaires"
+    ]
+  },
+  {
+    "name": "EBS Group",
+    "siren": "803833722",
+    "verified": true,
+    "website": null,
+    "city": "Bievres",
+    "region": "Île-de-France",
+    "postal_code": "91570",
+    "department": "91",
+    "latitude": 48.7641675841922,
+    "longitude": 2.21431444573701,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Pennylane"
+    ],
+    "description": "Société citée par Pennylane parmi ses partenaires intégrateurs auprès des PME : mise en place et accompagnement de la solution Pennylane.",
+    "regulated": false,
+    "sources": [
+      "https://www.pennylane.com/fr/pme/partenaires"
+    ]
+  },
+  {
+    "name": "Trimarg",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": null,
+    "region": null,
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Pennylane"
+    ],
+    "description": "Société citée par Pennylane parmi ses partenaires intégrateurs auprès des PME : mise en place et accompagnement de la solution Pennylane.",
+    "regulated": false,
+    "sources": [
+      "https://www.pennylane.com/fr/pme/partenaires"
+    ]
+  },
+  {
+    "name": "Antiss",
+    "siren": "481863777",
+    "verified": true,
+    "website": "https://www.antiss.fr",
+    "city": "Paris",
+    "region": "Île-de-France",
+    "postal_code": "75008",
+    "department": "75",
+    "latitude": 48.880388948,
+    "longitude": 2.3215319384,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/",
+      "https://www.divalto.com/partenaires-integrateurs/antiss/"
+    ]
+  },
+  {
+    "name": "Groupe ARA",
+    "siren": "441224250",
+    "verified": true,
+    "website": "https://www.groupe-ara.com",
+    "city": "Rillieux-la-Pape",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "69140",
+    "department": "69",
+    "latitude": 45.815150202,
+    "longitude": 4.8779071526,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/",
+      "https://www.divalto.com/partenaires-integrateurs/ara/"
+    ]
+  },
+  {
+    "name": "AVA6-Neskar",
+    "siren": null,
+    "verified": false,
+    "website": null,
+    "city": "Limonest",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/"
+    ]
+  },
+  {
+    "name": "AZnetwork",
+    "siren": "423880061",
+    "verified": true,
+    "website": null,
+    "city": "Alencon",
+    "region": "Normandie",
+    "postal_code": "61000",
+    "department": "61",
+    "latitude": 48.44208395,
+    "longitude": 0.0920437492,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/"
+    ]
+  },
+  {
+    "name": "Baryton",
+    "siren": "943186841",
+    "verified": true,
+    "website": null,
+    "city": "Serris",
+    "region": "Île-de-France",
+    "postal_code": "77700",
+    "department": "77",
+    "latitude": 48.8415620474688,
+    "longitude": 2.79076950156473,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/"
+    ]
+  },
+  {
+    "name": "CIAG",
+    "siren": "378914014",
+    "verified": true,
+    "website": "https://www.ciag.fr",
+    "city": "Toulouse",
+    "region": "Occitanie",
+    "postal_code": "31100",
+    "department": "31",
+    "latitude": 43.5691995659176,
+    "longitude": 1.3908935556264,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/",
+      "https://www.divalto.com/partenaires-integrateurs/ciag/"
+    ]
+  },
+  {
+    "name": "Divy",
+    "siren": "887591030",
+    "verified": true,
+    "website": null,
+    "city": "Francheville",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "69340",
+    "department": "69",
+    "latitude": 45.7478960881686,
+    "longitude": 4.75566331271055,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/"
+    ]
+  },
+  {
+    "name": "Grenat Solution",
+    "siren": "498965771",
+    "verified": true,
+    "website": "https://www.grenat-groupe.fr",
+    "city": "Brest",
+    "region": "Bretagne",
+    "postal_code": "29200",
+    "department": "29",
+    "latitude": 48.4223125000103,
+    "longitude": -4.46757506602888,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/",
+      "https://www.divalto.com/partenaires-integrateurs/grenat/"
+    ]
+  },
+  {
+    "name": "Ikariss",
+    "siren": "919919928",
+    "verified": true,
+    "website": null,
+    "city": "Geispolsheim",
+    "region": "Grand Est",
+    "postal_code": "67118",
+    "department": "67",
+    "latitude": 48.5190643943443,
+    "longitude": 7.70223356212909,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/"
+    ]
+  },
+  {
+    "name": "Infinysoft",
+    "siren": "808317713",
+    "verified": true,
+    "website": null,
+    "city": "Castelnau-d'Estretefonds",
+    "region": "Occitanie",
+    "postal_code": "31620",
+    "department": "31",
+    "latitude": 43.787187615,
+    "longitude": 1.3585223853,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/"
+    ]
+  },
+  {
+    "name": "IT Project",
+    "siren": "828059683",
+    "verified": true,
+    "website": "https://itproject.solutions",
+    "city": "Saint-Just-Saint-Rambert",
+    "region": "Auvergne-Rhône-Alpes",
+    "postal_code": "42170",
+    "department": "42",
+    "latitude": 45.5076047607594,
+    "longitude": 4.24811589731416,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/",
+      "https://www.divalto.com/partenaires-integrateurs/it-project/"
+    ]
+  },
+  {
+    "name": "Microlog",
+    "siren": "352361398",
+    "verified": true,
+    "website": "https://microlog.eu",
+    "city": "Joue-les-Tours",
+    "region": "Centre-Val de Loire",
+    "postal_code": "37300",
+    "department": "37",
+    "latitude": 47.35723023,
+    "longitude": 0.6584342472,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/",
+      "https://www.divalto.com/partenaires-integrateurs/microlog/"
+    ]
+  },
+  {
+    "name": "Partner Informatique",
+    "siren": "339362667",
+    "verified": true,
+    "website": null,
+    "city": "Charnay-les-Macon",
+    "region": "Bourgogne-Franche-Comté",
+    "postal_code": "71850",
+    "department": "71",
+    "latitude": 46.314652172,
+    "longitude": 4.8108023085,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/"
+    ]
+  },
+  {
+    "name": "PG2i",
+    "siren": "478963507",
+    "verified": true,
+    "website": null,
+    "city": "Gemenos",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "postal_code": "13420",
+    "department": "13",
+    "latitude": 43.279790644,
+    "longitude": 5.6148330177,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/?pagination=2"
+    ]
+  },
+  {
+    "name": "Progiteam",
+    "siren": "907636625",
+    "verified": true,
+    "website": null,
+    "city": "Tourcoing",
+    "region": "Hauts-de-France",
+    "postal_code": "59200",
+    "department": "59",
+    "latitude": 50.7175227678669,
+    "longitude": 3.17050862885533,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/?pagination=2"
+    ]
+  },
+  {
+    "name": "RBI",
+    "siren": "321408221",
+    "verified": true,
+    "website": "https://www.rbi.fr",
+    "city": "Rennes",
+    "region": "Bretagne",
+    "postal_code": "35000",
+    "department": "35",
+    "latitude": 48.103731852,
+    "longitude": -1.711417722,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/?pagination=2",
+      "https://www.divalto.com/partenaires-integrateurs/rbi/"
+    ]
+  },
+  {
+    "name": "System Plus",
+    "siren": null,
+    "verified": false,
+    "website": "https://system-plus.fr",
+    "city": "Lille",
+    "region": "Hauts-de-France",
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/?pagination=2",
+      "https://www.divalto.com/partenaires-integrateurs/system-plus/"
+    ]
+  },
+  {
+    "name": "TGS France Informatique",
+    "siren": "788267599",
+    "verified": true,
+    "website": null,
+    "city": "Beaucouze",
+    "region": "Pays de la Loire",
+    "postal_code": "49070",
+    "department": "49",
+    "latitude": 47.4596263056585,
+    "longitude": -0.618102289037989,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/?pagination=2"
+    ]
+  },
+  {
+    "name": "Groupe Univerp",
+    "siren": null,
+    "verified": false,
+    "website": "https://www.groupeuniverp.com",
+    "city": "Nantes",
+    "region": "Pays de la Loire",
+    "postal_code": null,
+    "department": null,
+    "latitude": null,
+    "longitude": null,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/?pagination=2",
+      "https://www.divalto.com/partenaires-integrateurs/groupe-univerp/"
+    ]
+  },
+  {
+    "name": "Winepilot",
+    "siren": "834749665",
+    "verified": true,
+    "website": null,
+    "city": "Fauguerolles",
+    "region": "Nouvelle-Aquitaine",
+    "postal_code": "47400",
+    "department": "47",
+    "latitude": 44.457354573,
+    "longitude": 0.2328113187,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "Divalto"
+    ],
+    "description": "Société partenaire intégrateur de Divalto : déploiement, paramétrage et accompagnement des entreprises sur les solutions ERP et CRM Divalto.",
+    "regulated": false,
+    "sources": [
+      "https://www.divalto.com/partenaires/?pagination=2"
+    ]
+  },
+  {
+    "name": "ONE ID",
+    "siren": "501762678",
+    "verified": true,
+    "website": null,
+    "city": "Saint-Mathieu-de-Treviers",
+    "region": "Occitanie",
+    "postal_code": "34270",
+    "department": "34",
+    "latitude": 43.760969142,
+    "longitude": 3.872753269,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "SAP Business One"
+    ],
+    "description": "Société partenaire de SAP pour SAP Business One, ERP destiné aux PME : intégration, paramétrage et accompagnement des utilisateurs.",
+    "regulated": false,
+    "sources": [
+      "https://news.sap.com/france/2021/10/sap-accueille-quatre-nouveaux-partenaires-au-sein-de-ses-solutions-de-gestion-integrees-erp-sap-business-one-et-sap-business-bydesign/"
+    ]
+  },
+  {
+    "name": "Ipanova",
+    "siren": "809448632",
+    "verified": true,
+    "website": null,
+    "city": "Blagnac",
+    "region": "Occitanie",
+    "postal_code": "31700",
+    "department": "31",
+    "latitude": 43.6394534136135,
+    "longitude": 1.36908453415403,
+    "offices": [],
+    "coverage": null,
+    "categories": [
+      "integrateurs-comptables"
+    ],
+    "specialties": [
+      "SAP Business One"
+    ],
+    "description": "Société partenaire de SAP pour SAP Business One, ERP destiné aux PME : intégration, paramétrage et accompagnement des utilisateurs.",
+    "regulated": false,
+    "sources": [
+      "https://news.sap.com/france/2021/10/sap-accueille-quatre-nouveaux-partenaires-au-sein-de-ses-solutions-de-gestion-integrees-erp-sap-business-one-et-sap-business-bydesign/"
+    ]
+  }
+]

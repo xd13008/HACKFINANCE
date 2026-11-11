@@ -28,7 +28,7 @@ def num(v, lo, hi):
     except (TypeError, ValueError):
         return None
 
-rows, seen, rejected = [], set(), []
+rows, seen, rejected, sirens = [], set(), [], {}
 for path in sys.argv[1:]:
     for r in json.load(open(path, encoding="utf-8")):
         name = (r.get("name") or "").strip(); site = r.get("website") or ""
@@ -45,6 +45,10 @@ for path in sys.argv[1:]:
             slug = f"{base[:64]}-{n}"; n += 1
         seen.add(slug)
         siren = r.get("siren") if re.fullmatch(r"[0-9]{9}", str(r.get("siren") or "")) else None
+        if siren and siren in sirens:  # même société trouvée deux fois : catégories fusionnées, une seule fiche
+            for c in cats:
+                if c not in sirens[siren]["cats"]: sirens[siren]["cats"].append(c)
+            seen.discard(slug); continue
         cp = r.get("postal_code") if re.fullmatch(r"[0-9]{5}", str(r.get("postal_code") or "")) else None
         dep = str(r.get("department")) if re.fullmatch(r"([0-9]{2,3}|2A|2B)", str(r.get("department") or "")) else None
         cov = r.get("coverage") if r.get("coverage") in ("national", "régional", "local") else None
@@ -55,6 +59,7 @@ for path in sys.argv[1:]:
                      "description": (r.get("description") or "")[:400] or None, "refs": json.dumps(refs, ensure_ascii=False),
                      "postal_code": cp, "department": dep, "lat": num(r.get("latitude"), -90, 90), "lon": num(r.get("longitude"), -180, 180),
                      "offices": [str(x)[:80] for x in (r.get("offices") or [])][:30], "coverage": cov, "cats": cats})
+        if siren: sirens[siren] = rows[-1]
 
 out = [f"-- 95 · Cabinets et prestataires (recherche documentaire + registre Recherche d'entreprises, 11/11/2026).",
        f"-- Généré par scripts/providers-to-sql.py : {len(rows)} sociétés en BROUILLON ; écartées : {len(rejected)}.", ""]
