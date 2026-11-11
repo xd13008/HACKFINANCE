@@ -78,7 +78,9 @@ supabase/
                 161 cabinets et prestataires (data/95, scripts/providers-to-sql.py depuis docs/seo/prestataires/*.json :
                 personnes morales seulement, SIREN vérifié au registre public, localisation du siège), en brouillon,
                 28 772 sociétés issues des registres publics (data/96, scripts/opendata-to-providers.py : activités comptables 69.20Z,
-                organismes de formation « Comptabilité, gestion » certifiés Qualiopi, recouvrement 82.91Z ; hors entreprises individuelles)
+                organismes de formation « Comptabilité, gestion » certifiés Qualiopi, recouvrement 82.91Z, recrutement et chasse de tête
+                78.10Z ; commissaires aux comptes repérés par leur dénomination, inscription H2A à vérifier ; hors entreprises
+                individuelles et associations ; catégories ajoutées par data/94)
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/

@@ -9,8 +9,9 @@ import json, re, sys, unicodedata
 
 SITE = "10000000-0000-4000-a000-000000000001"
 CATS = {"integrateurs-comptables", "conseil-tresorerie", "cabinets-reduction-couts", "societes-recouvrement", "controle-gestion-bi",
-        "conseil-csrd-carbone", "cabinets-cir-cii", "organismes-formation-finance", "management-transition", "experts-comptables"}
-REGULATED = {"societes-recouvrement", "experts-comptables"}
+        "conseil-csrd-carbone", "cabinets-cir-cii", "organismes-formation-finance", "management-transition", "experts-comptables",
+        "commissaires-aux-comptes", "cabinets-recrutement-finance"}
+REGULATED = {"societes-recouvrement", "experts-comptables", "commissaires-aux-comptes"}
 
 def slugify(s):
     s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()

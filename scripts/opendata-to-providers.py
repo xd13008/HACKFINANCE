@@ -15,10 +15,14 @@ EXCLUDE = re.compile(r"EULER HERMES|ALLIANZ TRADE|COFACE|ATRADIUS|POUEY|IQERA|CA
                      r"ELLISPHERE|ALTARES|CREDITSAFE|INFOLEGALE|\bEOS\b|HOIST|INTRUM", re.I)
 LABEL = {"societes-recouvrement": "Société de recouvrement de créances (activité 82.91Z au registre).",
          "organismes-formation-finance": "Organisme de formation déclaré, spécialité « Comptabilité, gestion », certifié Qualiopi pour les actions de formation.",
-         "experts-comptables": "Société d'activités comptables (activité 69.20Z au registre)."}
+         "experts-comptables": "Société d'activités comptables (activité 69.20Z au registre).",
+         "commissaires-aux-comptes": "Société d'activités comptables dont la dénomination mentionne l'audit ou le commissariat aux comptes ; inscription sur la liste de la H2A à vérifier.",
+         "cabinets-recrutement-finance": "Cabinet de recrutement ou de chasse de tête (activité 78.10Z au registre)."}
 SOURCE = {"societes-recouvrement": "https://annuaire-entreprises.data.gouv.fr/",
           "organismes-formation-finance": "https://www.data.gouv.fr/datasets/liste-publique-des-organismes-de-formation-l-6351-7-1-du-code-du-travail",
-          "experts-comptables": "https://annuaire-entreprises.data.gouv.fr/"}
+          "experts-comptables": "https://annuaire-entreprises.data.gouv.fr/",
+          "commissaires-aux-comptes": "https://annuaire-entreprises.data.gouv.fr/",
+          "cabinets-recrutement-finance": "https://annuaire-entreprises.data.gouv.fr/"}
 
 def nice(name):
     n = re.sub(r"\s+", " ", (name or "").strip())
@@ -44,6 +48,10 @@ for path in sys.argv[1:]:
         if not name or EXCLUDE.search(name):
             excluded += 1; continue
         cat = r["category"]
+        # Recrutement : ni associations ou fondations (nature juridique 9xxx), ni placement de services à domicile
+        if cat == "cabinets-recrutement-finance" and (str(r.get("nature_juridique") or "").startswith("9")
+                or re.search(r"DOMICILE|ADOMO|AIDE A |NOUNOU|BABY|SENIOR|M[EÉ]NAGE|NURSE|GARDE D", name, re.I)):
+            excluded += 1; continue
         sid = str(r.get("siren") or "")
         if sid in known: excluded += 1; continue
         if sid in by_siren:  # même société trouvée plusieurs fois : une seule fiche, catégories fusionnées
@@ -55,7 +63,7 @@ for path in sys.argv[1:]:
                     "postal_code": r.get("postal_code"), "department": r.get("department"),
                     "latitude": r.get("latitude"), "longitude": r.get("longitude"), "offices": [], "coverage": None,
                     "categories": [cat], "specialties": [r["specialty"]] if r.get("specialty") else [],
-                    "description": desc, "regulated": cat in ("societes-recouvrement", "experts-comptables"),
+                    "description": desc, "regulated": cat in ("societes-recouvrement", "experts-comptables", "commissaires-aux-comptes"),
                     "sources": [SOURCE[cat]]}
         out.append(item); by_siren[sid] = item
 json.dump(out, sys.stdout, ensure_ascii=False)
