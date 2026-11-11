@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { connectsTo, entryMonthlyPrice, eur, fitScore, type SizeKey } from "@/lib/decision";
 import type { ProviderCard, ToolCard } from "@/lib/universe";
 
@@ -43,6 +43,16 @@ export function Assistant({ universes }: { universes: AssistantUniverse[] }) {
       .sort((a, b) => b.fit - a.fit)
       .slice(0, 5);
   }, [need, size, stack]);
+  // Recherche enregistrée dans le profil seulement si le cookie de personnalisation est accepté (contrôle côté serveur).
+  useEffect(() => {
+    if (!need || step < 4) return;
+    const results = need.n.kind === "software" ? picks.map((p) => p.t.slug) : need.n.providers.slice(0, 10).map((p) => p.slug);
+    fetch("/api/member/search", {
+      method: "POST", headers: { "content-type": "application/json" }, keepalive: true,
+      body: JSON.stringify({ size, stack, universe: need.u.slug, need: need.n.slug, results }),
+    }).catch(() => {});
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [needSlug, step]);
   const sizeLabel = SIZES.find(([k]) => k === size);
   const small = size === "tpe" || size === "pme1" || size === "crea";
   const experts = need ? (need.n.providers.length ? need.n.providers : need.u.providers).slice(0, 4) : [];

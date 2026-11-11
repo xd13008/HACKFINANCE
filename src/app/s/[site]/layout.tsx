@@ -5,6 +5,7 @@ import { publicClient } from "@/lib/supabase/public";
 import { siteUrl } from "@/lib/seo";
 import { requireSite, type SiteParams } from "./_lib";
 import { display } from "@/app/fonts";
+import { CookieBanner, CookieSettingsLink } from "@/components/public/CookieBanner";
 
 /** Portails connus au build : toutes les pages publiques peuvent être pré-générées et mises en cache. */
 export async function generateStaticParams() {
@@ -53,6 +54,7 @@ export default async function SiteLayout({ children, params }: { children: React
               <Link key={h.path} href={h.path!} className="hover:text-brand">{h.type === "simulator" ? "Simulateurs" : "Le guide"}</Link>
             ))}
           </nav>
+          <Link href="/mon-espace" className="text-sm font-semibold rounded-lg border border-line px-3 py-1.5 hover:border-ink">Mon espace</Link>
         </div>
       </header>
 
@@ -90,10 +92,13 @@ export default async function SiteLayout({ children, params }: { children: React
               <li><Link href="/publicite/annoncer">Annoncer sur {site.name}</Link></li>
               {nav.publishedPaths.has("/mentions-legales") && <li><Link href="/mentions-legales">Mentions légales</Link></li>}
               {nav.publishedPaths.has("/donnees-personnelles") && <li><Link href="/donnees-personnelles">Données personnelles</Link></li>}
+              <li><Link href="/cookies">Cookies</Link></li>
+              <li><CookieSettingsLink /></li>
             </ul>
           </div>
         </div>
       </footer>
+      <CookieBanner />
     </div>
   );
 }

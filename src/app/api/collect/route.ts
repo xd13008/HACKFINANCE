@@ -3,6 +3,9 @@ import { NextResponse, type NextRequest } from "next/server";
 import { z } from "zod";
 import { publicClient } from "@/lib/supabase/public";
 import { siteKeyForHost } from "@/lib/sites";
+import { serviceClient } from "@/lib/supabase/service";
+import { getSite } from "@/lib/data";
+import { CONSENT_COOKIE, personalisationAccepted, VISITOR_COOKIE } from "@/lib/members";
 
 const BOT = /bot|crawl|spider|slurp|bingpreview|headless|lighthouse|python-requests|curl|wget/i;
 const uuid = z.string().uuid().nullish();
@@ -67,5 +70,21 @@ export async function POST(req: NextRequest) {
     p_referrer_host: referrerHost ?? undefined, p_utm_source: e.utm?.source ?? undefined, p_utm_medium: e.utm?.medium ?? undefined,
     p_utm_campaign: e.utm?.campaign ?? undefined, p_device: dev, p_props: (e.props ?? {}) as never,
   });
+
+  // Personnalisation acceptée : la page vue est aussi rattachée au navigateur (et au compte s'il est inscrit).
+  const vid = req.cookies.get(VISITOR_COOKIE)?.value;
+  if (vid && /^[0-9a-f-]{36}$/.test(vid) && personalisationAccepted(req.cookies.get(CONSENT_COOKIE)?.value)
+      && e.type !== "sponsored_impression" && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    const db = serviceClient();
+    const site = await getSite(e.site);
+    const { data: v } = site
+      ? await db.from("visitors").update({ last_seen_at: new Date().toISOString() }).eq("id", vid).eq("site_id", site.id).select("id").maybeSingle()
+      : { data: null };
+    if (v) await db.from("visitor_events").insert({
+      visitor_id: v.id, event_type: e.type, path: e.path, page_type: e.pageType ?? null,
+      category_id: e.categoryId ?? null, entity_id: e.entityId ?? null,
+      props: e.type === "outbound_click" ? { href: String((e.props as { href?: unknown } | null)?.href ?? "").slice(0, 300) } : {},
+    });
+  }
   return new NextResponse(null, { status: 204 });
 }

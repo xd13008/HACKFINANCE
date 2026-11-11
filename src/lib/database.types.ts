@@ -157,6 +157,32 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"consent_log": {
+                  Row: {
+                    "choices": NonNullable<Json>,"created_at": string,"id": number,"site_id": string,"version": string,"visitor_id": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "choices": NonNullable<Json>,"created_at"?: string,"id"?: number,"site_id": string,"version": string,"visitor_id"?: string | null
+                  }
+                  Update: {
+                    "choices"?: NonNullable<Json>,"created_at"?: string,"id"?: number,"site_id"?: string,"version"?: string,"visitor_id"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "consent_log_site_id_fkey"
+      columns: ["site_id"]
+isOneToOne: false
+      referencedRelation: "sites"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "consent_log_visitor_id_fkey"
+      columns: ["visitor_id"]
+isOneToOne: false
+      referencedRelation: "visitors"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"content_items": {
                   Row: {
                     "blocked_reason": string | null,"category_id": string | null,"cluster": string | null,"created_at": string,"created_by": string | null,"facet_id": string | null,"first_published_at": string | null,"id": string,"is_fictional": boolean,"path": string | null,"pillar_id": string | null,"primary_keyword_id": string | null,"published_at": string | null,"published_version_id": string | null,"regulated_topic": string | null,"review_due_at": string | null,"robots": string,"site_id": string,"slug": string,"software_b_id": string | null,"software_id": string | null,"status": Database["public"]['Enums']["item_status"],"title": string,"type": Database["public"]['Enums']["content_type"],"updated_at": string
@@ -519,6 +545,98 @@ isOneToOne: false
       referencedColumns: ["id"]
     },{
       foreignKeyName: "listing_requests_site_id_fkey"
+      columns: ["site_id"]
+isOneToOne: false
+      referencedRelation: "sites"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"member_projects": {
+                  Row: {
+                    "category_id": string,"created_at": string,"horizon": string,"member_id": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "category_id": string,"created_at"?: string,"horizon": string,"member_id": string
+                  }
+                  Update: {
+                    "category_id"?: string,"created_at"?: string,"horizon"?: string,"member_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "member_projects_category_id_fkey"
+      columns: ["category_id"]
+isOneToOne: false
+      referencedRelation: "categories"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "member_projects_member_id_fkey"
+      columns: ["member_id"]
+isOneToOne: false
+      referencedRelation: "members"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"member_software": {
+                  Row: {
+                    "created_at": string,"id": string,"member_id": string,"relation": string,"satisfaction": number | null,"software_id": string | null,"software_name": string,"source": string,"updated_at": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "created_at"?: string,"id"?: string,"member_id": string,"relation": string,"satisfaction"?: number | null,"software_id"?: string | null,"software_name": string,"source"?: string,"updated_at"?: string
+                  }
+                  Update: {
+                    "created_at"?: string,"id"?: string,"member_id"?: string,"relation"?: string,"satisfaction"?: number | null,"software_id"?: string | null,"software_name"?: string,"source"?: string,"updated_at"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "member_software_member_id_fkey"
+      columns: ["member_id"]
+isOneToOne: false
+      referencedRelation: "members"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "member_software_software_id_fkey"
+      columns: ["software_id"]
+isOneToOne: false
+      referencedRelation: "software"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"member_tokens": {
+                  Row: {
+                    "created_at": string,"expires_at": string,"kind": string,"member_id": string,"token_hash": string,"used_at": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "created_at"?: string,"expires_at": string,"kind": string,"member_id": string,"token_hash": string,"used_at"?: string | null
+                  }
+                  Update: {
+                    "created_at"?: string,"expires_at"?: string,"kind"?: string,"member_id"?: string,"token_hash"?: string,"used_at"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "member_tokens_member_id_fkey"
+      columns: ["member_id"]
+isOneToOne: false
+      referencedRelation: "members"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"members": {
+                  Row: {
+                    "company_name": string | null,"company_size": string | null,"confirmed_at": string | null,"consent_at": string,"consent_newsletter": boolean,"consent_text": string,"created_at": string,"email": string,"erp": string | null,"finance_team_size": string | null,"first_name": string | null,"id": string,"job_title": string | null,"last_seen_at": string | null,"newsletter_consent_at": string | null,"notes": string | null,"region": string | null,"sector": string | null,"site_id": string,"source_path": string | null,"status": string,"updated_at": string,"utm": NonNullable<Json>
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "company_name"?: string | null,"company_size"?: string | null,"confirmed_at"?: string | null,"consent_at": string,"consent_newsletter"?: boolean,"consent_text": string,"created_at"?: string,"email": string,"erp"?: string | null,"finance_team_size"?: string | null,"first_name"?: string | null,"id"?: string,"job_title"?: string | null,"last_seen_at"?: string | null,"newsletter_consent_at"?: string | null,"notes"?: string | null,"region"?: string | null,"sector"?: string | null,"site_id": string,"source_path"?: string | null,"status"?: string,"updated_at"?: string,"utm"?: NonNullable<Json>
+                  }
+                  Update: {
+                    "company_name"?: string | null,"company_size"?: string | null,"confirmed_at"?: string | null,"consent_at"?: string,"consent_newsletter"?: boolean,"consent_text"?: string,"created_at"?: string,"email"?: string,"erp"?: string | null,"finance_team_size"?: string | null,"first_name"?: string | null,"id"?: string,"job_title"?: string | null,"last_seen_at"?: string | null,"newsletter_consent_at"?: string | null,"notes"?: string | null,"region"?: string | null,"sector"?: string | null,"site_id"?: string,"source_path"?: string | null,"status"?: string,"updated_at"?: string,"utm"?: NonNullable<Json>
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "members_site_id_fkey"
       columns: ["site_id"]
 isOneToOne: false
       referencedRelation: "sites"
@@ -1183,6 +1301,72 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"visitor_events": {
+                  Row: {
+                    "category_id": string | null,"entity_id": string | null,"event_type": string,"id": number,"occurred_at": string,"page_type": string | null,"path": string,"props": NonNullable<Json>,"visitor_id": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "category_id"?: string | null,"entity_id"?: string | null,"event_type": string,"id"?: number,"occurred_at"?: string,"page_type"?: string | null,"path": string,"props"?: NonNullable<Json>,"visitor_id": string
+                  }
+                  Update: {
+                    "category_id"?: string | null,"entity_id"?: string | null,"event_type"?: string,"id"?: number,"occurred_at"?: string,"page_type"?: string | null,"path"?: string,"props"?: NonNullable<Json>,"visitor_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "visitor_events_visitor_id_fkey"
+      columns: ["visitor_id"]
+isOneToOne: false
+      referencedRelation: "visitors"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"visitor_searches": {
+                  Row: {
+                    "company_size": string | null,"id": number,"need_slug": string | null,"occurred_at": string,"result_slugs": (string)[],"stack": (string)[],"universe_slug": string | null,"visitor_id": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "company_size"?: string | null,"id"?: number,"need_slug"?: string | null,"occurred_at"?: string,"result_slugs"?: (string)[],"stack"?: (string)[],"universe_slug"?: string | null,"visitor_id": string
+                  }
+                  Update: {
+                    "company_size"?: string | null,"id"?: number,"need_slug"?: string | null,"occurred_at"?: string,"result_slugs"?: (string)[],"stack"?: (string)[],"universe_slug"?: string | null,"visitor_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "visitor_searches_visitor_id_fkey"
+      columns: ["visitor_id"]
+isOneToOne: false
+      referencedRelation: "visitors"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"visitors": {
+                  Row: {
+                    "consent": NonNullable<Json>,"consent_version": string,"consented_at": string,"created_at": string,"id": string,"last_seen_at": string,"member_id": string | null,"site_id": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "consent": NonNullable<Json>,"consent_version": string,"consented_at": string,"created_at"?: string,"id"?: string,"last_seen_at"?: string,"member_id"?: string | null,"site_id": string
+                  }
+                  Update: {
+                    "consent"?: NonNullable<Json>,"consent_version"?: string,"consented_at"?: string,"created_at"?: string,"id"?: string,"last_seen_at"?: string,"member_id"?: string | null,"site_id"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "visitors_member_id_fkey"
+      columns: ["member_id"]
+isOneToOne: false
+      referencedRelation: "members"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "visitors_site_id_fkey"
+      columns: ["site_id"]
+isOneToOne: false
+      referencedRelation: "sites"
+      referencedColumns: ["id"]
+    }
+                  ]
                 }
           }
           Views: {
@@ -1539,6 +1723,9 @@ isOneToOne: false
                            },
 "purge_analytics":
 { Args: Record<PropertyKey, never>; Returns: number
+                           },
+"purge_member_data":
+{ Args: Record<PropertyKey, never>; Returns: Json
                            },
 "record_event":
 { Args: { "p_category_id"?: string,"p_device"?: string,"p_entity_id"?: string,"p_event_type": string,"p_link_kind"?: string,"p_page_type"?: string,"p_path": string,"p_placement_id"?: string,"p_props"?: Json,"p_referrer_host"?: string,"p_rubrique"?: string,"p_session_hash": string,"p_site_key": string,"p_utm_campaign"?: string,"p_utm_medium"?: string,"p_utm_source"?: string }; Returns: undefined

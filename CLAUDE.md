@@ -42,7 +42,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires (114 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires, DAF inscrits (128 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -63,6 +63,9 @@ supabase/
                 1600 pages locales des annuaires : provider_locations() et vue providers_by_category (fiches publiées seulement)
                 1700 publish_providers() : publication en masse d'un métier par ville ou département (éditeurs seulement,
                      fiches « non vérifiées », jamais une fiche rejetée ; bouton dans /admin/prestataires)
+                1800 DAF inscrits : members (profil), member_software, member_projects, visitors (navigateur consentant),
+                     visitor_events / visitor_searches (navigation et recherches « Trouver »), consent_log ; lecture admin seule,
+                     écriture serveur seule (lib/members.ts, clé de service) ; purge_member_data() via /api/cron/purge
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
                 périmètre DAF du cahier des charges, rubriques complémentaires, organisation de Radar Finances
@@ -97,7 +100,12 @@ src/
                         indexables à partir de 3 fiches publiées, pages suivantes en noindex)
   app/admin/(bo)/…      back-office : validation, contenus, SEO, catalogue, tests, prestataires,
                         demandes, régie, analytics, audit
-  app/api/collect       mesure d'audience sans cookie (hachage quotidien salé, pas d'IP stockée)
+  app/api/collect       mesure d'audience sans cookie (hachage quotidien salé, pas d'IP stockée) ; si le cookie
+                        de personnalisation est accepté, la page vue est aussi rattachée au navigateur (rf_vid) puis au compte
+  app/api/consent       bandeau cookies (CookieBanner) : refuser aussi visible qu'accepter, choix redemandé à 6 mois, preuve journalisée
+  comptes DAF           /inscription (double validation par e-mail, lib/mail.ts Brevo), /connexion (lien sans mot de passe),
+                        /mon-espace (profil, logiciels, projets, recherches, navigation, export JSON, suppression), /cookies ;
+                        back-office /admin/inscrits (admin seulement). Aucune revente ni transmission des données à des tiers
   app/api/cron/*        tâches planifiées (Search Console quotidien, agents hebdomadaire) — Bearer CRON_SECRET
   lib/agents/           veille, rédaction, contrôle qualité : un appel Claude à sortie structurée, sans outil,
                         compte Supabase « agent » (RLS), plafonds de coût, journal agent_runs

@@ -44,6 +44,15 @@ Domaines achetés : `radarfinances.com` (portail finance, marque « Radar Financ
 3. Back-office → Catalogue → logiciel → bloc *Avis publics* : saisir l'identifiant produit G2, puis *Importer les avis G2*.
    La note et des citations courtes (≤ 300 caractères, fonction de l'auteur sans nom) arrivent en brouillon ; un éditeur les valide.
 
+## 4 ter. Comptes DAF : e-mails de confirmation et de connexion (Brevo)
+
+1. Créer un compte Brevo, authentifier le domaine d'envoi (enregistrements DNS SPF et DKIM fournis par Brevo).
+2. Renseigner dans Vercel (Production) : `BREVO_API_KEY` (clé API, jamais dans le dépôt ni dans un message)
+   et `MAIL_FROM` (ex. `Radar Finances <bonjour@radarfinances.com>`).
+3. Sans ces variables, l'inscription affiche « L'e-mail n'a pas pu être envoyé » : aucun compte n'est activé.
+4. Purge quotidienne des données personnelles : `/api/cron/purge` (vercel.json), protégée par `CRON_SECRET`.
+5. Compléter la page « Données personnelles » (responsable de traitement, contact, durées) avant d'ouvrir l'inscription au public.
+
 ## 5. Agents (Claude API)
 1. Créer une clé API sur console.anthropic.com et définir une **limite de dépense** au niveau de l'organisation.
 2. Renseigner `ANTHROPIC_API_KEY`, `AGENT_EMAIL` et `AGENT_PASSWORD` (le compte au rôle « agent »).
