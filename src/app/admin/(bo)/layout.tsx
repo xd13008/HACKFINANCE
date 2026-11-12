@@ -31,7 +31,13 @@ export default async function BoLayout({ children }: { children: React.ReactNode
   const badge: Record<string, number> = { "/admin/validation": pending ?? 0, "/admin/demandes": tasks ?? 0 };
 
   if (!me.isStaff) {
-    return <div className="p-10">Votre compte n&apos;a pas de rôle humain dans le back-office.</div>;
+    return (
+      <div className="p-10 space-y-2">
+        <p>Le compte <strong>{me.email}</strong> n&apos;a pas de rôle dans le back-office.</p>
+        {me.rolesError && <p className="text-sm text-red-800">Lecture des rôles impossible : {me.rolesError}</p>}
+        <form action={logout}><button className="underline text-sm">Se déconnecter</button></form>
+      </div>
+    );
   }
 
   return (

@@ -11,15 +11,17 @@ export const getStaff = cache(async () => {
   const db = await serverClient();
   const { data: { user } } = await db.auth.getUser();
   if (!user) return null;
-  const [{ data: roles }, { data: profile }] = await Promise.all([
+  const [{ data: roles, error: rolesError }, { data: profile }] = await Promise.all([
     db.from("user_roles").select("role").eq("user_id", user.id),
     db.from("staff_profiles").select("display_name").eq("user_id", user.id).maybeSingle(),
   ]);
+  if (rolesError) console.error(`[admin] lecture des rôles impossible (${user.id}) : ${rolesError.code} ${rolesError.message}`);
   const r = (roles ?? []).map((x) => x.role);
   return {
     id: user.id, email: user.email ?? "", name: profile?.display_name ?? user.email ?? "", roles: r,
     is: (role: Role) => r.includes(role),
     isStaff: r.some((x) => x !== "agent"),
+    rolesError: rolesError?.message ?? null,
   };
 });
 

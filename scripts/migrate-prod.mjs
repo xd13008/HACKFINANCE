@@ -105,6 +105,18 @@ try {
     from auth.users u join public.user_roles r on r.user_id = u.id where r.role <> 'agent' group by u.email`);
   log(staff.length ? `comptes du back-office : ${staff.map((x) => `${mask(x.email)} (${x.roles.join(", ")})`).join(" ; ")}`
     : "comptes du back-office : aucun (définir INITIAL_ADMIN_EMAIL après avoir créé le compte dans Supabase Auth)");
+  // Contrôle : chaque compte lit bien ses propres rôles à travers la RLS (comme le site le fait)
+  for (const email of (process.env.INITIAL_ADMIN_EMAIL ?? "").split(",").filter((e) => e.includes("@"))) {
+    const { rows: us } = await client.query("select id, email_confirmed_at is not null as confirmed from auth.users where lower(email) = lower($1)", [email.trim()]);
+    for (const u of us) {
+      await client.query("begin");
+      await client.query("select set_config('request.jwt.claims', $1, true)", [JSON.stringify({ sub: u.id, role: "authenticated" })]);
+      await client.query("set local role authenticated");
+      const { rows: seen } = await client.query("select count(*)::int as n from public.user_roles where user_id = $1", [u.id]);
+      await client.query("rollback");
+      log(`contrôle ${mask(email)} : ${us.length} compte(s), confirmé ${u.confirmed ? "oui" : "non"}, rôles lus par le site : ${seen[0].n}`);
+    }
+  }
 } catch (e) {
   console.error(`[migrations] échec : ${e.message}`);
   process.exitCode = 1;
