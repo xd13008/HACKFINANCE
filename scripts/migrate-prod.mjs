@@ -100,6 +100,11 @@ try {
   }
   if (process.env.AGENT_EMAIL?.includes("@")) await grant(process.env.AGENT_EMAIL, ["agent"], "compte agent");
   else await ensureAgentAccount(client, grant);
+  // État des comptes du back-office (sans afficher les adresses complètes)
+  const { rows: staff } = await client.query(`select u.email, array_agg(r.role::text order by r.role) as roles
+    from auth.users u join public.user_roles r on r.user_id = u.id where r.role <> 'agent' group by u.email`);
+  log(staff.length ? `comptes du back-office : ${staff.map((x) => `${mask(x.email)} (${x.roles.join(", ")})`).join(" ; ")}`
+    : "comptes du back-office : aucun (définir INITIAL_ADMIN_EMAIL après avoir créé le compte dans Supabase Auth)");
 } catch (e) {
   console.error(`[migrations] échec : ${e.message}`);
   process.exitCode = 1;
