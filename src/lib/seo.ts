@@ -26,13 +26,14 @@ export function brandTitle(site: Site, title: string) {
 }
 
 /** Métadonnées des pages hors contenus éditoriaux (publicité, lexique, formulaires…). */
-export function staticMetadata(site: Site, path: string, title: string, description: string, opts: { noindex?: boolean } = {}): Metadata {
+export function staticMetadata(site: Site, path: string, title: string, description: string, opts: { noindex?: boolean; canonicalPath?: string } = {}): Metadata {
   const url = absoluteUrl(site, path);
+  const canonical = absoluteUrl(site, opts.canonicalPath ?? path);
   const full = brandTitle(site, title);
   const image = ogImage(site, title);
   return {
     title: { absolute: full }, description,
-    alternates: { canonical: url },
+    alternates: { canonical },
     robots: opts.noindex ? ROBOTS_NOINDEX : ROBOTS_INDEX,
     openGraph: { type: "website", url, siteName: site.name, title: full, description, locale: "fr_FR", images: [image] },
     twitter: { card: "summary_large_image", title: full, description, images: [{ url: image.url, alt: image.alt }] },

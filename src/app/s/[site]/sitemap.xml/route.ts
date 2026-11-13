@@ -2,7 +2,7 @@ import { publicClient } from "@/lib/supabase/public";
 import { getSite } from "@/lib/data";
 import { absoluteUrl } from "@/lib/seo";
 import { loadAllUniverses } from "@/lib/universe";
-import { MIN_INDEXABLE } from "@/lib/departements";
+import { MIN_INDEXABLE, departmentIndexing } from "@/lib/departements";
 
 export const revalidate = 3600;
 
@@ -38,7 +38,7 @@ export async function GET(_: Request, { params }: { params: Promise<{ site: stri
       if (l.city_slug && l.providers >= MIN_INDEXABLE) urls.push({ loc: absoluteUrl(site, `/prestataires/${c.slug}/${l.city_slug}`), lastmod: null });
       if (l.department) deps.set(l.department, (deps.get(l.department) ?? 0) + l.providers);
     }
-    for (const [d, n] of deps) if (n >= MIN_INDEXABLE) urls.push({ loc: absoluteUrl(site, `/prestataires/${c.slug}/departement/${d.toLowerCase()}`), lastmod: null });
+    for (const [d] of deps) if (departmentIndexing(locations ?? [], d).indexable) urls.push({ loc: absoluteUrl(site, `/prestataires/${c.slug}/departement/${d.toLowerCase()}`), lastmod: null });
   }
   // Offres d'emploi en ligne (expirées exclues par la RLS)
   const { count: jobCount } = await db.from("job_offers").select("id", { count: "exact", head: true }).eq("site_id", site.id);

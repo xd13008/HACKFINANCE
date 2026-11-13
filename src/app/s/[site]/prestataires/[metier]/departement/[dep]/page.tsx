@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getProviderCategory, getProviderLocations, getProviders, getSite } from "@/lib/data";
-import { DEPARTEMENTS, depLabel } from "@/lib/departements";
+import { DEPARTEMENTS, depLabel, departmentIndexing } from "@/lib/departements";
 import { LocalDirectory, MIN_INDEXABLE } from "@/components/public/LocalDirectory";
 import { staticMetadata } from "@/lib/seo";
 import { requireSite } from "../../../../_lib";
@@ -16,11 +16,14 @@ export async function generateMetadata({ params, searchParams }: { params: P; se
   const site = await getSite(p.site);
   const cat = site ? await getProviderCategory(site.id, p.metier) : null;
   if (!site || !cat || !DEPARTEMENTS[code(p.dep)]) return { robots: { index: false } };
-  const { total } = await getProviders(cat.id, { department: code(p.dep), size: 1 });
+  const [{ total }, locations] = await Promise.all([getProviders(cat.id, { department: code(p.dep), size: 1 }), getProviderLocations(cat.id)]);
   const where = `dans le département ${depLabel(code(p.dep))}`;
+  // Une page département qui répète sa ville principale (ex. Paris = 75) renvoie vers la page ville et sort de l'index.
+  const dep = departmentIndexing(locations, code(p.dep));
   return staticMetadata(site, `/prestataires/${cat.slug}/departement/${p.dep}`, `${cat.name} ${where}`,
     `${total} ${cat.short_name ?? "professionnels"} référencés ${where} : annuaire factuel par ville, sans classement, sources publiques.`,
-    { noindex: total < MIN_INDEXABLE || page > 1 });
+    { noindex: total < MIN_INDEXABLE || page > 1 || !dep.indexable,
+      canonicalPath: !dep.indexable && dep.mainCity && dep.mainCityIndexable ? `/prestataires/${cat.slug}/${dep.mainCity}` : undefined });
 }
 
 export default async function DepartmentPage({ params, searchParams }: { params: P; searchParams: SP }) {

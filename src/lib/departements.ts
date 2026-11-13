@@ -22,3 +22,21 @@ export const depLabel = (code: string) => (DEPARTEMENTS[code] ? `${DEPARTEMENTS[
 
 /** Nombre minimal de fiches publiées pour qu'une page locale d'annuaire soit indexable (contenu suffisant). */
 export const MIN_INDEXABLE = 3;
+
+/** Au-delà de cette part des fiches dans une seule ville, la page département répète la page ville (ex. Paris = 75). */
+export const DOMINANT_CITY_SHARE = 0.8;
+
+/**
+ * Évite le contenu dupliqué entre une page département et la page de sa ville principale.
+ * La page département n'est indexable que si elle apporte autre chose : au moins 2 villes indexables
+ * et aucune ville ne concentre plus de 80 % de ses fiches. Sinon, elle renvoie (canonical) vers la ville principale.
+ */
+export function departmentIndexing(locations: { city_slug: string | null; department: string | null; providers: number }[], dep: string) {
+  const inDep = locations.filter((l) => l.department === dep && l.city_slug);
+  const total = inDep.reduce((n, l) => n + l.providers, 0);
+  const main = [...inDep].sort((a, b) => b.providers - a.providers)[0];
+  const indexableCities = inDep.filter((l) => l.providers >= MIN_INDEXABLE).length;
+  const share = main && total ? main.providers / total : 1;
+  const indexable = total >= MIN_INDEXABLE && indexableCities >= 2 && share < DOMINANT_CITY_SHARE;
+  return { indexable, total, mainCity: main?.city_slug ?? null, mainCityIndexable: (main?.providers ?? 0) >= MIN_INDEXABLE, share };
+}
