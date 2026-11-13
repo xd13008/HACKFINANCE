@@ -107,6 +107,20 @@ describe("France Travail", () => {
     expect(r.rows.map((x) => x.external_id)).toEqual(["201ABCD"]);
     expect(calls.some((c) => c.includes("publieeDepuis=3") && c.includes("range=0-149"))).toBe(true);
   });
+  it("demande le jeton avec un scope réduit si le scope complet est refusé", async () => {
+    vi.stubEnv("FRANCE_TRAVAIL_CLIENT_ID", "id"); vi.stubEnv("FRANCE_TRAVAIL_CLIENT_SECRET", "secret");
+    const scopes: string[] = [];
+    const fetcher = (async (url: string, init?: RequestInit) => {
+      if (url.includes("access_token")) {
+        const sc = new URLSearchParams(String(init?.body)).get("scope")!; scopes.push(sc);
+        return sc.includes("o2dsoffre") ? new Response('{"error":"invalid_scope"}', { status: 400 }) : new Response(JSON.stringify({ access_token: "tok" }), { status: 200 });
+      }
+      return new Response(null, { status: 204 });
+    }) as typeof fetch;
+    const r = await fetchFinanceOffers(3, fetcher);
+    expect(scopes).toEqual(["api_offresdemploiv2 o2dsoffre", "api_offresdemploiv2"]);
+    expect(r.rows).toEqual([]);
+  });
   it("refuse de tourner sans identifiants", async () => {
     await expect(fetchFinanceOffers(3, (async () => new Response("{}")) as typeof fetch)).rejects.toThrow(/non configurés/);
   });

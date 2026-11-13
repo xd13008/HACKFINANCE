@@ -112,6 +112,22 @@ try {
       log(`clé Claude : ${r.ok ? "valide" : `refusée (${r.status})`}`);
     } catch (e) { log(`clé Claude : contrôle impossible (${e.message})`); }
   } else log("clé Claude : absente");
+  // Contrôle des identifiants France Travail (jeton seulement, aucune offre importée ici)
+  if (process.env.FRANCE_TRAVAIL_CLIENT_ID && process.env.FRANCE_TRAVAIL_CLIENT_SECRET) {
+    let ok = null;
+    for (const scope of ["api_offresdemploiv2 o2dsoffre", "api_offresdemploiv2"]) {
+      try {
+        const r = await fetch("https://entreprise.francetravail.fr/connexion/oauth2/access_token?realm=%2Fpartenaire", {
+          method: "POST", headers: { "content-type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ grant_type: "client_credentials", client_id: process.env.FRANCE_TRAVAIL_CLIENT_ID,
+            client_secret: process.env.FRANCE_TRAVAIL_CLIENT_SECRET, scope }),
+        });
+        ok = r.ok ? "valides" : `refusés (${r.status})`;
+        if (r.ok) break;
+      } catch (e) { ok = `contrôle impossible (${e.message})`; }
+    }
+    log(`identifiants France Travail : ${ok}`);
+  } else log("identifiants France Travail : absents");
   const { rows: ag } = await client.query("select agent, enabled from public.agent_settings order by agent");
   log(`agents : ${ag.map((a) => `${a.agent} ${a.enabled ? "actif" : "désactivé"}`).join(", ")}`);
   const { rows: js } = await client.query("select s.key, coalesce(j.auto_publish, false) as auto from public.sites s left join public.job_settings j on j.site_id = s.id where s.key = 'daf'");

@@ -526,6 +526,21 @@ export async function setJobAutoPublish(_: ActionResult, fd: FormData): Promise<
   return error ? ko(error.message) : ok(on ? "Publication automatique activée : l'agent publie les offres qu'il approuve." : "Publication automatique désactivée : l'agent ne fait plus que recommander.");
 }
 
+/** Lancer tout de suite l'import France Travail (31 derniers jours) et la vérification par l'agent (administrateur). */
+export async function runJobsNow(_: ActionResult, fd: FormData): Promise<ActionResult> {
+  const me = await requireRole("admin");
+  const days = Number(str(fd, "days")) === 31 ? 31 : 3;
+  const { runJobsPipeline } = await import("@/lib/jobs-pipeline");
+  const r = await runJobsPipeline(days, me.id);
+  revalidatePath("/admin/emplois");
+  revalidatePath("/s", "layout");
+  const parts = [
+    r.importError ? `Import impossible : ${r.importError}` : `${r.finance ?? 0} offre(s) finance importée(s) sur ${r.fetched ?? 0} lue(s)`,
+    r.agent ? `Agent : ${r.agent.summary}` : null,
+  ].filter(Boolean);
+  return r.importError && r.agent?.status !== "succeeded" ? ko(parts.join(" · ")) : ok(parts.join(" · "));
+}
+
 export async function approveImportedJobs(_: ActionResult, fd: FormData): Promise<ActionResult> {
   await requireRole("editor");
   const c = await db();

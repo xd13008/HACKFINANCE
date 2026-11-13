@@ -16,11 +16,16 @@ type Fetcher = typeof fetch;
 export async function ftToken(fetcher: Fetcher = fetch) {
   const id = process.env.FRANCE_TRAVAIL_CLIENT_ID, secret = process.env.FRANCE_TRAVAIL_CLIENT_SECRET;
   if (!id || !secret) throw new Error("FRANCE_TRAVAIL_CLIENT_ID / FRANCE_TRAVAIL_CLIENT_SECRET non configurés");
-  const res = await fetcher(TOKEN_URL, {
-    method: "POST", headers: { "content-type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({ grant_type: "client_credentials", client_id: id, client_secret: secret, scope: "api_offresdemploiv2 o2dsoffre" }),
-  });
-  if (!res.ok) throw new Error(`Jeton France Travail refusé (${res.status})`);
+  // Selon l'application, France Travail accorde « api_offresdemploiv2 o2dsoffre » ou seulement « api_offresdemploiv2 ».
+  let res: Response | null = null;
+  for (const scope of ["api_offresdemploiv2 o2dsoffre", "api_offresdemploiv2"]) {
+    res = await fetcher(TOKEN_URL, {
+      method: "POST", headers: { "content-type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ grant_type: "client_credentials", client_id: id, client_secret: secret, scope }),
+    });
+    if (res.ok) break;
+  }
+  if (!res?.ok) throw new Error(`Jeton France Travail refusé (${res?.status})`);
   return ((await res.json()) as { access_token: string }).access_token;
 }
 

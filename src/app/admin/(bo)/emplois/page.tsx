@@ -3,8 +3,10 @@ import { serverClient } from "@/lib/supabase/server";
 import { currentSite, requireRole } from "@/lib/admin";
 import { ActionForm } from "@/components/admin/ActionForm";
 import { Card, PageHeader, Table, inputCls } from "@/components/admin/ui";
-import { approveImportedJobs, reviewJob, setJobAutoPublish } from "@/lib/actions/admin";
+import { approveImportedJobs, reviewJob, runJobsNow, setJobAutoPublish } from "@/lib/actions/admin";
 import { checkJobOffer, contractLabel, FAMILIES, UNIVERSES, universeLabel } from "@/lib/jobs";
+
+export const maxDuration = 300; // import et vérification lancés depuis le bouton
 
 /** Offres d'emploi : vérification par l'agent, arbitrage des cas douteux, import France Travail. */
 const DONE: Record<string, string> = {
@@ -66,6 +68,12 @@ export default async function JobsAdmin({ searchParams }: { searchParams: Promis
           <ActionForm action={setJobAutoPublish} submit={auto ? "Désactiver la publication automatique" : "Activer la publication automatique"} tone={auto ? "ghost" : "primary"} className="flex gap-2"
             confirm={auto ? undefined : "L'agent publiera seul les offres qu'il approuve, et refusera (avec remboursement) celles clairement non conformes. Les cas douteux vous resteront. Activer ?"}>
             <input type="hidden" name="site_id" value={siteId} /><input type="hidden" name="on" value={auto ? "0" : "1"} />
+          </ActionForm>
+        )}
+        {isAdmin && (
+          <ActionForm action={runJobsNow} submit="Lancer l'import maintenant (31 derniers jours)" tone="ghost" className="flex gap-2 mt-3"
+            confirm="Importer les offres finance de France Travail des 31 derniers jours, puis lancer la vérification par l'agent ? Cela peut prendre quelques minutes.">
+            <input type="hidden" name="days" value="31" />
           </ActionForm>
         )}
         {(unrefunded ?? []).length > 0 && <p className="text-sm text-red-800 mt-3">{(unrefunded ?? []).length} annonce(s) refusée(s) encore à rembourser : le remboursement automatique a échoué ou Stripe n&apos;est pas configuré.</p>}

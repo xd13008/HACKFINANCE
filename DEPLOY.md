@@ -57,8 +57,8 @@ Domaines achetés : `radarfinances.com` (portail finance, marque « Radar Financ
 
 1. **France Travail** : créer une application sur francetravail.io, l'abonner à l'API « Offres d'emploi v2 ».
    Renseigner dans Vercel (Production) `FRANCE_TRAVAIL_CLIENT_ID` et `FRANCE_TRAVAIL_CLIENT_SECRET`.
-   Import quotidien : `/api/cron/jobs` (vercel.json). Premier import sur 31 jours :
-   `curl -H "Authorization: Bearer $CRON_SECRET" "https://radarfinances.com/api/cron/jobs?jours=31"`.
+   Import quotidien : `/api/cron/jobs` (vercel.json). Premier import : bouton « Lancer l'import maintenant (31 derniers jours) »
+   dans /admin/emplois (administrateur). Le journal de déploiement indique si les identifiants sont valides.
    Les offres importées attendent une relecture : /admin/emplois, « Publier les offres à relire » (par métier).
 2. **Stripe** : dans le tableau de bord, créer un taux de TVA 20 % (non inclus) et un webhook vers
    `https://radarfinances.com/api/stripe/webhook` (événements `checkout.session.completed`, `checkout.session.expired`,
