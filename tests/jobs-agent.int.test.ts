@@ -40,7 +40,8 @@ function fakeLlm(decide: Record<string, Review | { haiku: Review; opus: Review }
 }
 
 describe.skipIf(!reachable)("agent de vérification des offres (Supabase local, modèle factice)", () => {
-  const svc = createClient<Database>(URL, SERVICE, { auth: { persistSession: false } });
+  // Client créé seulement si le test tourne (sans clé locale, le bloc est ignoré sans planter la collecte).
+  const svc = reachable ? createClient<Database>(URL, SERVICE, { auth: { persistSession: false } }) : (null as never);
   let admin: Awaited<ReturnType<typeof as>>, agent: Awaited<ReturnType<typeof as>>;
   const job = async (title: string, source: "france_travail" | "member" = "france_travail", member?: string) => {
     const { data, error } = await svc.from("job_offers").insert({
