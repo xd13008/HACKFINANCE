@@ -35,10 +35,13 @@ Hors local : « management de transition » 4 400, « société de recouvrement 
 | expert comptable tours | 720 | `/prestataires/experts-comptables/tours` | 64 |
 | expert comptable metz | 720 | `/prestataires/experts-comptables/metz` | 71 |
 
-## Pour qu'une page locale apparaisse
+## Pour qu'une page locale apparaisse (back-office → Prestataires → « Pages locales prioritaires »)
 
-1. Publier la catégorie du métier (back-office → Catalogue → Catégories) et sa page d'annuaire (contenu validé).
-2. Publier les fiches de la ville : chaque fiche du registre est factuelle (« fiche non vérifiée ») ; une fiche vérifiée par la rédaction l'indique.
-3. La page devient indexable à partir de 3 fiches publiées (`MIN_INDEXABLE`), et `ALLOW_INDEXING=true` en production.
+1. **Publier la catégorie** du métier (bouton dans le bloc ; les annuaires ne demandent aucun test de logiciel).
+2. **Valider la page d'annuaire** : lien « relire et valider », « Soumettre à validation », puis « Approuver et publier » dans la
+   file de validation. Textes prêts en brouillon pour 3 annuaires (`supabase/data/99_annuaires_textes.sql`) : experts-comptables,
+   commissaires aux comptes, cabinets de recrutement ; checklist SEO validée, sources datées.
+3. **Publier les fiches des villes prioritaires** (bouton « Publier les fiches de ces N villes ») : fiches marquées « non vérifiées ».
+4. La page ville devient indexable à partir de 3 fiches publiées (`MIN_INDEXABLE`), et `ALLOW_INDEXING=true` en production.
 
 Villes sans cabinet de recrutement en base : Brest, Angers, Caen, Le Mans (à compléter).

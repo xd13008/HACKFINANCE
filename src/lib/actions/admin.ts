@@ -348,8 +348,12 @@ export async function setCategoryStatus(_: ActionResult, fd: FormData): Promise<
   const id = str(fd, "category_id");
   const publish = str(fd, "publish") === "1";
   if (publish) {
-    const { count } = await c.from("test_runs").select("id", { count: "exact", head: true }).eq("category_id", id).eq("status", "validated");
-    if (!count) return ko("Publication refusée : aucun test validé dans cette catégorie. Validez d'abord au moins un test réel.");
+    const { data: k } = await c.from("categories").select("kind").eq("id", id).maybeSingle();
+    // Logiciels : une catégorie publiée doit présenter au moins un test réel. Annuaires de prestataires : jamais de test ni de classement.
+    if (k?.kind !== "provider") {
+      const { count } = await c.from("test_runs").select("id", { count: "exact", head: true }).eq("category_id", id).eq("status", "validated");
+      if (!count) return ko("Publication refusée : aucun test validé dans cette catégorie. Validez d'abord au moins un test réel.");
+    }
   }
   const { data: cat, error } = await c.from("categories").update({ status: publish ? "published" : "draft" }).eq("id", id).select("slug,sites(key)").maybeSingle();
   if (error || !cat) return ko(error?.message ?? "Catégorie introuvable ou droits insuffisants.");
@@ -469,6 +473,23 @@ export async function verifyProvider(fd: FormData) {
 }
 
 /** Publication en masse des fiches d'un annuaire pour une ville ou un département. Les fiches restent « non vérifiées ». */
+/** Pages locales prioritaires : publie, en une fois, les fiches en brouillon des villes les plus recherchées d'un annuaire. */
+export async function publishPriorityCities(_: ActionResult, fd: FormData): Promise<ActionResult> {
+  await requireRole("editor");
+  const c = await db();
+  const category = str(fd, "category_id");
+  const cities = String(fd.get("cities") ?? "").split(",").map((x) => x.trim()).filter((x) => /^[a-z0-9-]{2,80}$/.test(x)).slice(0, 30);
+  let total = 0;
+  for (const city of cities) {
+    const { data, error } = await c.rpc("publish_providers", { p_category: category, p_city_slug: city });
+    if (error) return ko(`${city} : ${error.message}`);
+    total += data ?? 0;
+  }
+  revalidatePath("/admin/prestataires");
+  revalidatePath("/s", "layout");
+  return ok(`${total} fiche(s) publiée(s) dans ${cities.length} ville(s), marquées « non vérifiées ».`);
+}
+
 export async function publishProviders(_: ActionResult, fd: FormData): Promise<ActionResult> {
   await requireRole("editor");
   const c = await db();

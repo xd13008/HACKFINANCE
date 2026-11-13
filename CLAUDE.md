@@ -98,7 +98,8 @@ supabase/
                 individuelles et associations ; catégories ajoutées par data/94),
                 298 sociétés trouvées sur le web (data/97, scripts/providers-merge-sql.py : partenaires intégrateurs Odoo, Divalto,
                 Cegid, Pennylane, SAP B1 ; cabinets CSRD, transition, recrutement finance…) fusionnées par SIREN, une seule fiche par SIREN,
-                80 mots-clés « métier + ville » des annuaires (data/98 ; priorités : docs/seo/PAGES-LOCALES.md)
+                80 mots-clés « métier + ville » des annuaires (data/98 ; priorités : docs/seo/PAGES-LOCALES.md),
+                textes des 3 annuaires prioritaires en brouillon avec mots-clés nationaux (data/99_annuaires_textes)
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/
