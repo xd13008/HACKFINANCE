@@ -105,6 +105,17 @@ try {
     from auth.users u join public.user_roles r on r.user_id = u.id where r.role <> 'agent' group by u.email`);
   log(staff.length ? `comptes du back-office : ${staff.map((x) => `${mask(x.email)} (${x.roles.join(", ")})`).join(" ; ")}`
     : "comptes du back-office : aucun (définir INITIAL_ADMIN_EMAIL après avoir créé le compte dans Supabase Auth)");
+  // Contrôle des agents : clé Claude valide (appel gratuit à la liste des modèles), agents activés, publication automatique
+  if (process.env.ANTHROPIC_API_KEY) {
+    try {
+      const r = await fetch("https://api.anthropic.com/v1/models?limit=1", { headers: { "x-api-key": process.env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01" } });
+      log(`clé Claude : ${r.ok ? "valide" : `refusée (${r.status})`}`);
+    } catch (e) { log(`clé Claude : contrôle impossible (${e.message})`); }
+  } else log("clé Claude : absente");
+  const { rows: ag } = await client.query("select agent, enabled from public.agent_settings order by agent");
+  log(`agents : ${ag.map((a) => `${a.agent} ${a.enabled ? "actif" : "désactivé"}`).join(", ")}`);
+  const { rows: js } = await client.query("select s.key, coalesce(j.auto_publish, false) as auto from public.sites s left join public.job_settings j on j.site_id = s.id where s.key = 'daf'");
+  if (js.length) log(`publication automatique des offres (daf) : ${js[0].auto ? "activée" : "désactivée"}`);
   // Contrôle : chaque compte lit bien ses propres rôles à travers la RLS (comme le site le fait)
   for (const email of (process.env.INITIAL_ADMIN_EMAIL ?? "").split(",").filter((e) => e.includes("@"))) {
     const { rows: us } = await client.query("select id, email_confirmed_at is not null as confirmed from auth.users where lower(email) = lower($1)", [email.trim()]);
