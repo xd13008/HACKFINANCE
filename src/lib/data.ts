@@ -195,6 +195,17 @@ export async function getProviders(categoryId: string, opts: { city?: string; de
 }
 
 /** Villes et départements d'un annuaire, avec le nombre de fiches publiées. */
+export type CityFacts = {
+  total: number; verified: number;
+  postal_codes: { code: string; n: number }[];
+  other_directories: { slug: string; name: string; n: number }[];
+};
+/** Faits d'une page ville d'annuaire (fiches publiées seulement), calculés en base. */
+export const getProviderCityFacts = cache(async (categoryId: string, citySlug: string): Promise<CityFacts | null> => {
+  const { data } = await db().rpc("provider_city_facts", { p_category: categoryId, p_city_slug: citySlug });
+  return (data as CityFacts | null) ?? null;
+});
+
 export const getProviderLocations = cache(async (categoryId: string) => {
   const { data } = await db().rpc("provider_locations", { p_category: categoryId });
   return data ?? [];

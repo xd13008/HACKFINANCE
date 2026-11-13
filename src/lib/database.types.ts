@@ -1858,6 +1858,9 @@ isOneToOne: false
 "is_staff":
 { Args: Record<PropertyKey, never>; Returns: boolean
                            },
+"provider_city_facts":
+{ Args: { "p_category": string,"p_city_slug": string }; Returns: Json
+                           },
 "provider_locations":
 { Args: { "p_category": string }; Returns: {
               "city": string,"city_slug": string,"department": string,"providers": number

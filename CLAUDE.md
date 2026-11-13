@@ -46,7 +46,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires, DAF inscrits, jobs, agent de vérification des offres (158 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires, DAF inscrits, jobs, agent de vérification des offres, faits des pages ville (163 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -76,6 +76,8 @@ supabase/
                 2000 agent de vérification des offres : universe_slug (8 univers finance, offres hors univers écartées),
                      job_reviews (journal des décisions), job_settings.auto_publish (activé par un admin seulement),
                      agent_review_job() : seule voie d'écriture de l'agent ; publie/refuse seulement si auto_publish
+                2100 provider_city_facts() : faits d'une page ville (codes postaux, fiches vérifiées, autres annuaires),
+                     fiches publiées seulement ; encadré « En bref » (components/public/CityFacts.tsx), aucun texte rédigé
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
                 périmètre DAF du cahier des charges, rubriques complémentaires, organisation de Radar Finances

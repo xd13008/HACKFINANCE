@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getProvider, getProviderCategory, getProviderLocations, getProviders, getSite } from "@/lib/data";
+import { getProvider, getProviderCategory, getProviderCityFacts, getProviderLocations, getProviders, getSite } from "@/lib/data";
 import { Breadcrumbs } from "@/components/public/Breadcrumbs";
 import { DemoBanner } from "@/components/public/DemoBanner";
 import { JsonLd } from "@/components/public/JsonLd";
@@ -10,9 +10,19 @@ import { ldBreadcrumb, staticMetadata } from "@/lib/seo";
 import { formatDate } from "@/lib/format";
 import { requireSite } from "../../../_lib";
 import { LocalDirectory, MIN_INDEXABLE } from "@/components/public/LocalDirectory";
+import { CityFacts } from "@/components/public/CityFacts";
 import { DEPARTEMENTS, depLabel } from "@/lib/departements";
 
-export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
+export const revalidate = 300;
+
+/** Nom d'affichage d'une ville : la variante en casse mixte du registre (« Paris » plutôt que « PARIS »), sinon mise en forme. */
+function cityName(locations: { city: string | null; city_slug: string | null; providers: number }[], slug: string) {
+  const variants = locations.filter((l) => l.city_slug === slug && l.city).sort((a, b) => b.providers - a.providers).map((l) => l.city!);
+  const mixed = variants.find((v) => v !== v.toUpperCase());
+  if (mixed) return mixed;
+  const v = variants[0];
+  return v ? v.toLowerCase().replace(/(^|[\s-])\p{L}/gu, (m) => m.toUpperCase()) : null;
+} // secondes ; la publication revalide aussi la page immédiatement
 
 /** Fiches et pages locales générées à la demande puis mises en cache (des dizaines de milliers de pages possibles). */
 export async function generateStaticParams() {
@@ -56,13 +66,16 @@ export default async function ProviderPage({ params, searchParams }: { params: P
 
   if (!pr) {
     const page = Number((await searchParams).page) || 1;
-    const [result, locations] = await Promise.all([getProviders(cat.id, { city: p.slug, page }), getProviderLocations(cat.id)]);
+    const [result, locations, facts] = await Promise.all([getProviders(cat.id, { city: p.slug, page }), getProviderLocations(cat.id), getProviderCityFacts(cat.id, p.slug)]);
     if (!result.total) notFound();
     const c = result.providers[0];
+    const latest = result.providers.map((x) => x.updated_at).filter(Boolean).sort().at(-1);
     const dep = c.department ?? undefined;
     const path = `/prestataires/${cat.slug}/${p.slug}`;
     return (
       <LocalDirectory site={site} cat={cat} where={`à ${c.city}${dep ? ` (${dep})` : ""}`} path={path} result={result} locations={locations} department={dep}
+        facts={<CityFacts cat={cat} city={cityName(locations, p.slug) ?? c.city ?? p.slug} citySlug={p.slug} department={dep} facts={facts} locations={locations}
+          imported={latest ? new Date(latest).toLocaleDateString("fr-FR", { month: "long", year: "numeric" }) : null} />}
         crumbs={[...crumbs, ...(dep && DEPARTEMENTS[dep] ? [{ name: depLabel(dep), path: `/prestataires/${cat.slug}/departement/${dep.toLowerCase()}` }] : []), { name: c.city ?? p.slug, path }]} />
     );
   }

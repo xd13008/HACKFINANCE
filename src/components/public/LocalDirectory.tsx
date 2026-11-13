@@ -42,10 +42,10 @@ export function LocationsIndex({ cat, locations, department }: { cat: Category; 
 }
 
 /** Page locale d'un annuaire (ville ou département) : faits, liste paginée, lieux voisins, appel au référencement. */
-export function LocalDirectory({ site, cat, where, crumbs, path, result, locations, department }: {
+export function LocalDirectory({ site, cat, where, crumbs, path, result, locations, department, facts }: {
   site: Site; cat: Category; where: string; crumbs: Crumb[]; path: string;
   result: { providers: ProviderPublic[]; total: number; page: number; pages: number };
-  locations: Location[]; department?: string;
+  locations: Location[]; department?: string; facts?: React.ReactNode;
 }) {
   const label = cat.short_name ?? cat.name.toLowerCase();
   const verified = result.providers.filter((p) => p.verification_status === "verified").length;
@@ -65,6 +65,7 @@ export function LocalDirectory({ site, cat, where, crumbs, path, result, locatio
         {verified ? ` ; ${verified} fiche(s) vérifiée(s) par la rédaction sur cette page.` : "."}
       </p>
       {regulated && <p className="mt-2 text-sm rounded-lg bg-surface-2 p-3 max-w-3xl">Profession réglementée : les fiches sont factuelles, sans note ni avis.</p>}
+      {result.page === 1 && facts}
       <ProviderList providers={result.providers} categorySlug={cat.slug} />
       {result.pages > 1 && (
         <nav aria-label="Pages" className="flex items-center gap-4 my-6 text-sm">
