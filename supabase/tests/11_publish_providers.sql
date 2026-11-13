@@ -19,7 +19,7 @@ insert into public.providers (id, name, slug, profession, city, city_slug, depar
   ('13000000-0000-4000-a000-0000000000e4', 'Quimper', 'masse-quimper', 'test-masse', 'Quimper', 'quimper', '29', 'draft', 'unverified'),
   ('13000000-0000-4000-a000-0000000000e5', 'Rennes', 'masse-rennes', 'test-masse', 'Rennes', 'rennes', '35', 'draft', 'unverified');
 insert into public.provider_categories (provider_id, category_id)
-select id, '12000000-0000-4000-a000-0000000000fe' from public.providers where slug like 'masse-%';
+select id, '12000000-0000-4000-a000-0000000000fe' from public.providers where id::text like '13000000-0000-4000-a000-0000000000e%';
 
 -- Commercial et agent : refus
 select pg_temp.as_user('00000000-0000-4000-a000-000000000003');
@@ -36,7 +36,7 @@ set local role anon;
 select throws_ok($$ select public.publish_providers('12000000-0000-4000-a000-0000000000fe', 'brest') $$, '42501', null,
   'anon : ne peut pas appeler la fonction');
 reset role;
-select is((select count(*)::int from public.providers where slug like 'masse-%' and status = 'published'), 0,
+select is((select count(*)::int from public.providers where id::text like '13000000-0000-4000-a000-0000000000e%' and status = 'published'), 0,
   'Après les refus, aucune fiche n''est publiée');
 
 -- Éditeur
@@ -48,7 +48,7 @@ select is(public.publish_providers('12000000-0000-4000-a000-0000000000fe', 'bres
 select is(public.publish_providers('12000000-0000-4000-a000-0000000000fe', null, '29'), 1,
   'éditeur : publie par département (Quimper restait)');
 reset role;
-select is((select array_agg(slug order by slug) from public.providers where slug like 'masse-%' and status = 'published'),
+select is((select array_agg(slug order by slug) from public.providers where id::text like '13000000-0000-4000-a000-0000000000e%' and status = 'published'),
   array['masse-brest-1', 'masse-brest-2', 'masse-quimper'], 'Rennes et la fiche rejetée restent en brouillon, non vérifiées');
 select pg_temp.as_user('00000000-0000-4000-a000-000000000002');
 select is(public.publish_providers('12000000-0000-4000-a000-0000000000fe', 'brest', null, false), 2,
