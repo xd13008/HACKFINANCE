@@ -44,3 +44,6 @@ next-env.d.ts
 # supabase
 supabase/.branches
 supabase/.temp
+
+# Captures d'écran de relecture (envoyées au dirigeant, jamais versionnées)
+/apercu/
