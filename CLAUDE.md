@@ -8,7 +8,9 @@ Plan éditorial par univers (6 sous-rubriques) et chaîne des 4 agents (collecte
 Onglets à venir Club finance (questions-réponses modérées), Boîte à outils (services partenaires), Jobs (offres d'emploi finance) : `docs/PLAN-CLUB-OUTILS-JOBS.md`.
 Grille de lecture des cabinets (critères typés pour filtrer et comparer, sources datées, validation humaine) : `docs/GRILLE-LECTURE-CABINETS.md`.
 **Consigne permanente :** toute collecte d'information sur un cabinet ou un prestataire sert à aider le DAF à choisir le cabinet adapté.
-Chaque information devient un critère de filtre ou de comparaison du référentiel `provider_criteria` (codes normalisés), avec source et date.
+Chaque information devient un critère de filtre ou de comparaison du référentiel `provider_criteria` (codes normalisés), avec source et date,
+rangé dans l'un des 5 axes du dirigeant : métier (références, cas clients, types de clients), interlocuteur, conseil, périmètre et prix, outils ;
+plus le cabinet en chiffres (chiffre d'affaires, effectif).
 Charte de rédaction des tests, alternatives et matchs (densité, ton, unicité SEO/GEO, contrôle avant publication) : `docs/CHARTE-REDACTION-TESTS.md`.
 
 ## Façon de travailler avec le dirigeant (@xav) — règles permanentes
@@ -49,7 +51,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires, DAF inscrits, jobs, agent de vérification des offres, faits des pages ville, grille de lecture des cabinets (182 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires, DAF inscrits, jobs, agent de vérification des offres, faits des pages ville, grille de lecture des cabinets (188 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -84,6 +86,9 @@ supabase/
                 2200 grille de lecture des cabinets : provider_criteria (référentiel), provider_facts (faits typés, sourcés, datés,
                      brouillon → validation humaine ; validate_provider_facts()), providers_filtered() et provider_filter_options()
                      (filtres des pages ville sur faits validés) ; comparaison /prestataires/[métier]/comparer (noindex)
+                2300 grille par axes (provider_grid_axes : les 5 questions du dirigeant, texte des experts-comptables ; critère → axe),
+                     références et cas clients (type list), situations accompagnées, interlocuteur, délai, forfait, outils,
+                     chiffre d'affaires et effectif avec leur période (provider_facts.period)
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
                 périmètre DAF du cahier des charges, rubriques complémentaires, organisation de Radar Finances
@@ -110,7 +115,7 @@ supabase/
                 textes des 3 annuaires prioritaires en brouillon avec mots-clés nationaux (data/99_annuaires_textes),
                 date de consultation (11/11/2026) ajoutée aux sources des fiches prestataires (data/99_prestataires_sources_datees),
                 grille de lecture en brouillon (data/99_grille_prestataires, scripts/grid-to-sql.py depuis docs/seo/grille/*.json ;
-                pilote Nantes : registre pour 141 fiches, sites officiels pour 18)
+                pilote Nantes : registre pour 141 fiches dont 22 chiffres d'affaires, sites officiels pour 18)
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/

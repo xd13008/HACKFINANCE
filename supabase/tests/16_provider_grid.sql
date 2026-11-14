@@ -1,7 +1,7 @@
 -- Grille de lecture des cabinets : faits typés, brouillon par défaut, validation humaine, filtres sur faits validés — `pnpm test:db`
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(19);
+select plan(25);
 
 create or replace function pg_temp.as_user(uid uuid) returns void language plpgsql as $$
 begin
@@ -99,6 +99,25 @@ select is((public.providers_filtered('12000000-0000-4000-a000-0000000000e1', 'gr
 select is(public.provider_filter_options('12000000-0000-4000-a000-0000000000e1', 'grilleville'),
   '[{"n":1,"code":"eti","criterion":"clients"},{"n":1,"code":"pme","criterion":"clients"},{"n":1,"code":"tpe","criterion":"clients"},{"n":1,"code":"oui","criterion":"facturation_electronique"}]'::jsonb,
   'anon : options des filtres issues des seuls faits validés de fiches publiées');
+reset role;
+
+-- Axes du dirigeant, listes, période (migration 2300)
+select throws_ok($$ insert into public.provider_facts (provider_id, criterion, value, source_url, source_kind, accessed_on)
+  values ('13000000-0000-4000-a000-0000000000e2', 'references', jsonb_build_array(repeat('x', 201)), 'https://exemple.test', 'site_officiel', '2026-11-14') $$,
+  '22023', null, 'liste : texte de plus de 200 caractères refusé');
+select throws_ok($$ insert into public.provider_facts (provider_id, criterion, value, source_url, source_kind, accessed_on, period)
+  values ('13000000-0000-4000-a000-0000000000e2', 'chiffre_affaires', '1200000', 'https://exemple.test', 'registre_public', '2026-11-14', '25') $$,
+  '23514', null, 'période : une année sur 4 chiffres');
+select pg_temp.as_user('00000000-0000-4000-a000-000000000003');
+select is(pg_temp.affected($$ update public.provider_grid_axes set advice = 'Choisissez notre partenaire' where code = 'metier' $$), 0,
+  'commercial : ne modifie pas les conseils des axes');
+reset role;
+select pg_temp.as_user('00000000-0000-4000-a000-000000000004');
+select is(pg_temp.affected($$ update public.provider_grid_axes set advice = 'x' where code = 'metier' $$), 0, 'agent : ne modifie pas les axes');
+reset role;
+select pg_temp.as_anon();
+select is((select count(*)::int from public.provider_grid_axes where scope = 'experts-comptables' and advice is not null), 5, 'anon : lit les 5 conseils du dirigeant');
+select lives_ok($$ select period from public.provider_facts limit 1 $$, 'anon : la période d''une donnée est lisible');
 reset role;
 
 select * from finish();

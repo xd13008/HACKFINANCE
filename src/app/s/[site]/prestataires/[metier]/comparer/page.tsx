@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getGridCriteria, getGridFacts, getProviderCategory, getProvidersBySlugs, getSite } from "@/lib/data";
-import { criteriaFor, formatValue, hostOf, MAX_COMPARE, NOT_VERIFIED } from "@/lib/grid";
-import { formatDate } from "@/lib/format";
+import { getGridAxes, getGridCriteria, getGridFacts, getProviderCategory, getProvidersBySlugs, getSite } from "@/lib/data";
+import { axesFor, MAX_COMPARE, NOT_VERIFIED } from "@/lib/grid";
+import { AxisAdvice, GridValue } from "@/components/public/ProviderGrid";
 import { staticMetadata } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/public/Breadcrumbs";
 import { requireSite } from "../../../_lib";
@@ -33,8 +33,8 @@ export default async function Compare({ params, searchParams }: { params: P; sea
   const slugs = slugsOf(asked);
   const found = await getProvidersBySlugs(cat.id, slugs);
   const providers = slugs.map((s) => found.find((x) => x.slug === s)).filter((x) => !!x);
-  const [all, facts] = await Promise.all([getGridCriteria(), getGridFacts(providers.map((x) => x.id!))]);
-  const criteria = criteriaFor(all, cat.slug);
+  const [axes, all, facts] = await Promise.all([getGridAxes(), getGridCriteria(), getGridFacts(providers.map((x) => x.id!))]);
+  const groups = axesFor(axes, all, cat.slug);
   const tooMany = (Array.isArray(asked) ? asked.length : 0) > MAX_COMPARE;
   const back = providers[0]?.city_slug ? `/prestataires/${cat.slug}/${providers[0].city_slug}#annuaire` : `/prestataires/${cat.slug}`;
   const crumbs = [{ name: "Accueil", path: "/" }, { name: cat.name, path: `/prestataires/${cat.slug}` }, { name: "Comparer", path: `/prestataires/${cat.slug}/comparer` }];
@@ -62,23 +62,22 @@ export default async function Compare({ params, searchParams }: { params: P; sea
                 ))}
               </tr>
             </thead>
-            <tbody>
-              {criteria.map((c) => (
-                <tr key={c.code} className="border-t border-line align-top">
-                  <th scope="row" className="text-left py-2 pr-3 font-medium sticky left-0 bg-surface">{c.label}<span className="block text-xs font-normal text-ink-3">{c.question}</span></th>
-                  {providers.map((x) => {
-                    const f = facts.find((ff) => ff.provider_id === x.id && ff.criterion === c.code);
-                    const v = formatValue(c, f?.value);
-                    return (
-                      <td key={x.id} className="py-2 pr-3">
-                        {v ?? <span className="text-ink-3">{NOT_VERIFIED}</span>}
-                        {f && v && <span className="block text-xs text-ink-3"><a href={f.source_url} rel="nofollow noopener" target="_blank" className="underline">{hostOf(f.source_url)}</a>, {formatDate(f.accessed_on)}</span>}
-                      </td>
-                    );
-                  })}
-                </tr>
-              ))}
-            </tbody>
+            {groups.map(({ axis, criteria }, i) => (
+              <tbody key={axis.code}>
+                <tr><td colSpan={providers.length + 1} className="pt-6 pb-1">
+                  <h2 className="font-bold text-lg">{axis.code === "cabinet" ? axis.title : `${i + 1}. ${axis.title}`}</h2>
+                  <AxisAdvice axis={axis} />
+                </td></tr>
+                {criteria.map((c) => (
+                  <tr key={c.code} className="border-t border-line align-top">
+                    <th scope="row" className="text-left py-2 pr-3 font-medium sticky left-0 bg-surface">{c.label}<span className="block text-xs font-normal text-ink-3">{c.question}</span></th>
+                    {providers.map((x) => (
+                      <td key={x.id} className="py-2 pr-3"><GridValue compact c={c} f={facts.find((ff) => ff.provider_id === x.id && ff.criterion === c.code)} /></td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            ))}
           </table>
         </div>
       )}

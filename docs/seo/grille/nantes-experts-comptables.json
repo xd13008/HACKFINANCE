@@ -28,7 +28,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "nom+adresse",
-   "note": "SIREN absent du site ; même nom et adresse 3 rue Edouard Nignon 44300 Nantes.",
+   "note": "SIREN absent du site ; même nom et adresse 3 rue Edouard Nignon 44300 Nantes. | Pas de page références ni tarifs (devis). Espace client via Tiime. Mission de DAF externalisé citée. Présence au Bénin annoncée « bientôt ».",
    "facts": {
     "missions_comptables": [
      "tenue",
@@ -51,7 +51,33 @@
     ],
     "logiciels": [
      "tiime"
+    ],
+    "references": [
+     "Groupe A2V Conseil",
+     "Hyg'UP (fonds de dotation)"
+    ],
+    "cas_clients": [
+     "Groupe de conseil multi-sociétés : le cabinet établit les liasses fiscales de plusieurs entités du groupe dans le cadre de procédures convenues.",
+     "Fonds de dotation (secteur non lucratif) : le cabinet tient la comptabilité et assure le pilotage financier de la structure."
+    ],
+    "cas_usage": [
+     "creation",
+     "externalisation-paie"
+    ],
+    "conseil": [
+     "optimisation-fiscale",
+     "tresorerie",
+     "statut-juridique",
+     "previsionnel",
+     "tableau-de-bord"
+    ],
+    "outils_cabinet": [
+     "espace-client"
     ]
+   },
+   "sources": {
+    "references": "https://www.ak-partners.fr/",
+    "cas_clients": "https://www.ak-partners.fr/"
    }
   },
   {
@@ -60,7 +86,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "siren",
-   "note": "Nom commercial Comptasanté ; SIRET 80020493500046 dans les mentions légales.",
+   "note": "Nom commercial Comptasanté ; SIRET 80020493500046 dans les mentions légales. | Cabinet spécialisé professions de santé libérales. Nombre de clients contradictoire sur l'accueil (+11 000 et 10 000 praticiens), laissé vide. Délai « 24h » affiché sur l'accueil, sans précision contractuelle. Offres : Essentiel 55 € HT, Éq",
    "facts": {
     "missions_comptables": [
      "tenue",
@@ -80,8 +106,34 @@
     "mode_travail": [
      "a-distance"
     ],
-    "tarif": "à partir de 55 € HT/mois"
-   }
+    "tarif": "à partir de 55 € HT/mois",
+    "cas_usage": [
+     "creation",
+     "transmission"
+    ],
+    "conseil": [
+     "statut-juridique",
+     "optimisation-fiscale",
+     "patrimoine-dirigeant",
+     "tableau-de-bord"
+    ],
+    "forfait_inclus": [
+     "bilan",
+     "tableau-de-bord",
+     "rendez-vous-annuel"
+    ],
+    "outils_cabinet": [
+     "flux-bancaires",
+     "depot-pieces",
+     "tableau-de-bord",
+     "application-mobile",
+     "espace-client"
+    ],
+    "interlocuteur_attitre": true,
+    "qui_traite": "collaborateur-supervise",
+    "tarif_min_mensuel": 55
+   },
+   "sources": {}
   },
   {
    "slug": "cayola-consulting-auditeurs-associes-m",
@@ -89,7 +141,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "siren",
-   "note": "RCS Nantes 808 740 773 dans les mentions légales.",
+   "note": "RCS Nantes 808 740 773 dans les mentions légales. | Outils en ligne (facturation, achats, caisse, notes de frais, compta collaborative) et plateforme d'échange de documents certifiée HDS. La page Gestion contient une ligne listant d'autres fonctions non décrites dans le contenu : ignorée. Pa",
    "facts": {
     "missions_comptables": [
      "fiscalite",
@@ -99,8 +151,20 @@
     ],
     "logiciels": [
      "meg"
+    ],
+    "cas_usage": [
+     "creation",
+     "reprise"
+    ],
+    "conseil": [
+     "patrimoine-dirigeant"
+    ],
+    "outils_cabinet": [
+     "depot-pieces",
+     "espace-client"
     ]
-   }
+   },
+   "sources": {}
   },
   {
    "slug": "dacodaq",
@@ -108,7 +172,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "nom+adresse",
-   "note": "SIREN absent du site ; même nom et adresse 82 route de Vannes 44300 Nantes. Paie confiée à des partenaires.",
+   "note": "SIREN absent du site ; même nom et adresse 82 route de Vannes 44300 Nantes. Paie confiée à des partenaires. | WebFetch interrompu, pages lues en HTTP direct. Petit cabinet : échanges en direct avec l'expert-comptable. Paie confiée à des partenaires. Outils évoqués sans détail.",
    "facts": {
     "missions_comptables": [
      "tenue",
@@ -119,8 +183,20 @@
      "creation",
      "conseil-gestion",
      "transmission"
-    ]
-   }
+    ],
+    "cas_usage": [
+     "creation",
+     "reprise",
+     "transmission",
+     "croissance"
+    ],
+    "conseil": [
+     "tableau-de-bord",
+     "remuneration-dirigeant"
+    ],
+    "qui_traite": "expert-comptable"
+   },
+   "sources": {}
   },
   {
    "slug": "groupe-y-nantes-atlantique-groupe-y",
@@ -128,7 +204,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "nom+adresse",
-   "note": "Site du groupe (édité par Groupe Y Management, Niort) ; page du bureau à la même adresse 3 chemin Pressoir Chênaie 44100 Nantes.",
+   "note": "Site du groupe (édité par Groupe Y Management, Niort) ; page du bureau à la même adresse 3 chemin Pressoir Chênaie 44100 Nantes. | Références = logos clients du groupe (pas propres au bureau de Nantes). Page « Facturation électronique : obligations et réforme » existe mais corps non lisible : accompagnement non confirmé. 336 collaborateurs, 10 sites. Devis seulement.",
    "facts": {
     "missions_comptables": [
      "fiscalite",
@@ -142,8 +218,12 @@
      "startups",
      "associations"
     ],
-    "reseau": "Groupe Y"
-   }
+    "reseau": "Groupe Y",
+    "outils_cabinet": [
+     "espace-client"
+    ]
+   },
+   "sources": {}
   },
   {
    "slug": "tyls-nantes-tyls-conseil",
@@ -151,7 +231,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "nom+adresse",
-   "note": "SIREN non affiché ; la page du cabinet indique 44000 Nantes (Les Salorges) alors que la fiche est en 44100.",
+   "note": "SIREN non affiché ; la page du cabinet indique 44000 Nantes (Les Salorges) alors que la fiche est en 44100. | Référence issue d'un témoignage (client depuis plus de 10 ans). Pilotage : tableaux de bord, prévisionnel de trésorerie connecté, contrôle de gestion, DAF externalisé. Pas de tarifs ni de page facturation électronique trouvée.",
    "facts": {
     "missions_comptables": [
      "tenue",
@@ -184,7 +264,31 @@
      "sur-place",
      "a-distance"
     ],
-    "reseau": "Réseau TYLS"
+    "reseau": "Réseau TYLS",
+    "references": [
+     "Arte Venezzia - San Marco"
+    ],
+    "cas_usage": [
+     "creation",
+     "reprise",
+     "transmission",
+     "externalisation-paie",
+     "controle-gestion"
+    ],
+    "conseil": [
+     "tableau-de-bord",
+     "tresorerie",
+     "previsionnel",
+     "statut-juridique",
+     "patrimoine-dirigeant"
+    ],
+    "outils_cabinet": [
+     "tableau-de-bord",
+     "espace-client"
+    ]
+   },
+   "sources": {
+    "references": "https://tyls.com/cabinets/nantes"
    }
   },
   {
@@ -193,7 +297,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "nom+adresse",
-   "note": "SIREN absent des mentions légales ; raison sociale SAS A C E Audit Conseil Expertise, 3 impasse des Tourmalines 44300 Nantes, identique.",
+   "note": "SIREN absent des mentions légales ; raison sociale SAS A C E Audit Conseil Expertise, 3 impasse des Tourmalines 44300 Nantes, identique. | « Plus de 1450 clients » affiché en texte (compteurs animés illisibles). Espace client : Dext, MEG, ACD, Silae. Entretien de fin d'exercice. Reprise : valorisation, actes, prévisionnel, holding. Pas de tarifs.",
    "facts": {
     "missions_comptables": [
      "fiscalite",
@@ -211,8 +315,23 @@
      "silae",
      "acd",
      "dext"
-    ]
-   }
+    ],
+    "cas_usage": [
+     "creation",
+     "reprise",
+     "externalisation-paie"
+    ],
+    "conseil": [
+     "tableau-de-bord",
+     "previsionnel"
+    ],
+    "outils_cabinet": [
+     "depot-pieces",
+     "espace-client"
+    ],
+    "nombre_clients": 1450
+   },
+   "sources": {}
   },
   {
    "slug": "cocerto-entreprise",
@@ -220,7 +339,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "siren",
-   "note": "SIREN 871 800 751 affiché dans les mentions légales (RCS Nantes).",
+   "note": "SIREN 871 800 751 affiché dans les mentions légales (RCS Nantes). | Site en refonte. Portail et appli Cocerto Workplace ; logiciels Plume et Mes Factures. Page EAI International sans détail (non retenu). Groupes de sociétés et restructuration cités comme enjeux. Pas de tarifs.",
    "facts": {
     "missions_comptables": [
      "tenue",
@@ -249,8 +368,22 @@
      "commerce",
      "agriculture",
      "associations-ess"
+    ],
+    "cas_usage": [
+     "creation",
+     "reprise",
+     "croissance",
+     "transmission",
+     "structuration-groupe"
+    ],
+    "outils_cabinet": [
+     "depot-pieces",
+     "tableau-de-bord",
+     "application-mobile",
+     "espace-client"
     ]
-   }
+   },
+   "sources": {}
   },
   {
    "slug": "numbr-nantes-numbr",
@@ -258,7 +391,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "nom+adresse",
-   "note": "SIREN non affiché (mentions légales : société NUMBR, RCS Épinal, SIREN 490 823 168) ; bureau Numbr à Nantes 44000, 14 mail Pablo Picasso.",
+   "note": "SIREN non affiché (mentions légales : société NUMBR, RCS Épinal, SIREN 490 823 168) ; bureau Numbr à Nantes 44000, 14 mail Pablo Picasso. | Trois formules : cabinet physique à Nantes sur devis (expert-comptable identifié qui suit le dossier), à distance dès 39 € HT/mois (conseiller dédié), cabinet + logiciel dès 29 € HT/mois. Outils via Tiime ; paie via partenaire Apy Paie.",
    "facts": {
     "missions_comptables": [
      "tenue",
@@ -290,8 +423,34 @@
      "a-distance"
     ],
     "tarif": "à partir de 29 € HT/mois avec logiciel, 39 € HT/mois à distance ; cabinet physique sur devis",
-    "reseau": "Réseau Numbr"
-   }
+    "reseau": "Réseau Numbr",
+    "cas_usage": [
+     "creation",
+     "externalisation-paie"
+    ],
+    "conseil": [
+     "remuneration-dirigeant",
+     "tresorerie",
+     "statut-juridique",
+     "previsionnel"
+    ],
+    "forfait_inclus": [
+     "bilan",
+     "tva",
+     "liasse-fiscale",
+     "juridique-annuel"
+    ],
+    "outils_cabinet": [
+     "flux-bancaires",
+     "depot-pieces",
+     "tableau-de-bord",
+     "application-mobile",
+     "espace-client"
+    ],
+    "interlocuteur_attitre": true,
+    "qui_traite": "expert-comptable"
+   },
+   "sources": {}
   },
   {
    "slug": "pascal-gouhier-conseil-copagex",
@@ -299,7 +458,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "siren",
-   "note": "SIRET 484 886 718 00044 affiché sur le site ; 8 bd Albert Einstein 44300 Nantes.",
+   "note": "SIRET 484 886 718 00044 affiché sur le site ; 8 bd Albert Einstein 44300 Nantes. | Plus de 600 entreprises accompagnées depuis 2005 (cumul, pas un portefeuille actuel). Partenaire Odoo (mise en place de l'ERP, facturation électronique via Odoo). Aucune référence ni tarif publiés.",
    "facts": {
     "missions_comptables": [
      "tenue",
@@ -321,8 +480,26 @@
     ],
     "logiciels": [
      "odoo"
-    ]
-   }
+    ],
+    "cas_usage": [
+     "creation",
+     "croissance",
+     "transmission",
+     "changement-outil",
+     "externalisation-comptabilite",
+     "externalisation-paie",
+     "facturation-electronique"
+    ],
+    "conseil": [
+     "statut-juridique",
+     "tableau-de-bord"
+    ],
+    "outils_cabinet": [
+     "tableau-de-bord"
+    ],
+    "facturation_electronique": true
+   },
+   "sources": {}
   },
   {
    "slug": "yellodit",
@@ -330,7 +507,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "siren",
-   "note": "SIREN 792 043 747 (RCS Nantes) dans les mentions légales ; siège 4 rue Voltaire, 44000 Nantes",
+   "note": "SIREN 792 043 747 (RCS Nantes) dans les mentions légales ; siège 4 rue Voltaire, 44000 Nantes | « Plus de 300 clients » affiché. Outils fournis via Pennylane (flux bancaires, justificatifs par appli mobile). Accompagnement réforme : choix Pennylane, webinaires, cartographie du système d'information des clients. Réponse « rapide » sans",
    "facts": {
     "missions_comptables": [
      "audit",
@@ -349,8 +526,25 @@
      "sur-place",
      "a-distance"
     ],
-    "facturation_electronique": true
-   }
+    "facturation_electronique": true,
+    "cas_usage": [
+     "facturation-electronique",
+     "externalisation-comptabilite"
+    ],
+    "conseil": [
+     "remuneration-dirigeant",
+     "tresorerie",
+     "statut-juridique",
+     "tableau-de-bord"
+    ],
+    "outils_cabinet": [
+     "flux-bancaires",
+     "depot-pieces",
+     "application-mobile"
+    ],
+    "nombre_clients": 300
+   },
+   "sources": {}
   },
   {
    "slug": "cabinet-riaud",
@@ -358,7 +552,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "siren",
-   "note": "SIREN 950945295 lu dans les mentions légales (https://cabinetriaud.com/mentions-legales/)",
+   "note": "SIREN 950945295 lu dans les mentions légales (https://cabinetriaud.com/mentions-legales/) | 3 forfaits « à partir de » 200, 325 et 584 €/mois (HT non précisé). Comptes annuels et rendez-vous d'atterrissage avant clôture listés ; TVA mensuelle à partir de l'offre Professionnelle ; PV d'AGO en option (inclus en Professionnelle). Vol",
    "facts": {
     "missions_comptables": [
      "tenue",
@@ -377,7 +571,44 @@
     "logiciels": [
      "pennylane",
      "odoo"
-    ]
+    ],
+    "references": [
+     "1er degré",
+     "Aviron Nantes",
+     "Be sure",
+     "Benz 35",
+     "Campus de la transition",
+     "Emliss",
+     "Eveil au jardin",
+     "inlead",
+     "Les pépites vertes",
+     "Nidoludo",
+     "Psy Activ",
+     "SIMEON",
+     "Teintes Appliquées",
+     "Terra preta"
+    ],
+    "cas_usage": [
+     "creation",
+     "rse",
+     "externalisation-comptabilite"
+    ],
+    "conseil": [
+     "tableau-de-bord"
+    ],
+    "forfait_inclus": [
+     "bilan",
+     "tva",
+     "juridique-annuel",
+     "rendez-vous-annuel"
+    ],
+    "outils_cabinet": [
+     "espace-client"
+    ],
+    "tarif": "Forfaits à partir de 200, 325 et 584 € par mois (HT ou TTC non précisé)"
+   },
+   "sources": {
+    "references": "https://cabinetriaud.com/"
    }
   },
   {
@@ -386,7 +617,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "siren",
-   "note": "SIRET 35066186400032 lu dans les mentions légales (https://www.hlp-audit.fr/mentions-legales/)",
+   "note": "SIRET 35066186400032 lu dans les mentions légales (https://www.hlp-audit.fr/mentions-legales/) | Interlocuteur dédié promis sur la page création/reprise. Outils via Pennylane. Programme RFE sur 24 mois (guides, événements). Aussi audit/CAC, consolidation, restructuring, OTI, fresque du climat. Aucune référence ni tarif.",
    "facts": {
     "missions_comptables": [
      "bilan",
@@ -413,8 +644,32 @@
      "pennylane",
      "silae"
     ],
-    "facturation_electronique": true
-   }
+    "facturation_electronique": true,
+    "cas_usage": [
+     "creation",
+     "reprise",
+     "difficultes",
+     "international",
+     "structuration-groupe",
+     "changement-outil",
+     "facturation-electronique",
+     "externalisation-paie",
+     "rse"
+    ],
+    "conseil": [
+     "statut-juridique",
+     "previsionnel",
+     "tableau-de-bord"
+    ],
+    "outils_cabinet": [
+     "flux-bancaires",
+     "depot-pieces",
+     "tableau-de-bord",
+     "espace-client"
+    ],
+    "interlocuteur_attitre": true
+   },
+   "sources": {}
   },
   {
    "slug": "accompagnement-strategie-loire-atlantique-vendee-as44",
@@ -422,7 +677,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "siren",
-   "note": "Association (pas une société commerciale) ; SIRET 38432416600022 affiché.",
+   "note": "Association (pas une société commerciale) ; SIRET 38432416600022 affiché. | Association de gestion et de comptabilité (AGC) orientée agriculture. Interlocuteur : un conseiller-comptable (expert-comptable non précisé). Chiffres de la page « en chiffres » = fédération nationale, non retenus. Patrimoine : offre « serv",
    "facts": {
     "missions_comptables": [
      "fiscalite",
@@ -434,8 +689,33 @@
     ],
     "secteurs": [
      "agriculture"
-    ]
-   }
+    ],
+    "cas_usage": [
+     "creation",
+     "reprise",
+     "transmission",
+     "externalisation-comptabilite",
+     "externalisation-paie"
+    ],
+    "conseil": [
+     "previsionnel",
+     "statut-juridique",
+     "patrimoine-dirigeant"
+    ],
+    "forfait_inclus": [
+     "bilan",
+     "tva",
+     "liasse-fiscale"
+    ],
+    "outils_cabinet": [
+     "flux-bancaires",
+     "tableau-de-bord",
+     "application-mobile",
+     "espace-client"
+    ],
+    "interlocuteur_attitre": true
+   },
+   "sources": {}
   },
   {
    "slug": "exco-avec",
@@ -443,7 +723,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "nom+adresse",
-   "note": "Pas de site propre : fiche du réseau Exco (29 bd Albert Einstein, Nantes). SIREN non affiché.",
+   "note": "Pas de site propre : fiche du réseau Exco (29 bd Albert Einstein, Nantes). SIREN non affiché. | Réseau Exco : seule la page du bureau de Nantes retenue. Elle liste les métiers (comptabilité, audit, conseil, évaluation, juridique-fiscal, paie/RH) et un accès client, sans détail. Pas de références, délai ni tarif.",
    "facts": {
     "missions_comptables": [
      "fiscalite",
@@ -457,8 +737,16 @@
      "pme",
      "startups"
     ],
-    "reseau": "Réseau Exco (membre de Kreston)"
-   }
+    "reseau": "Réseau Exco (membre de Kreston)",
+    "cas_usage": [
+     "externalisation-comptabilite",
+     "externalisation-paie"
+    ],
+    "outils_cabinet": [
+     "espace-client"
+    ]
+   },
+   "sources": {}
   },
   {
    "slug": "groupe-secob-nantes-choimet-associes",
@@ -466,7 +754,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "nom+adresse",
-   "note": "Site du groupe (siège Cesson-Sévigné) ; agence de Nantes au 6 rue de la Cornouaille 44300. SIREN non affiché.",
+   "note": "Site du groupe (siège Cesson-Sévigné) ; agence de Nantes au 6 rue de la Cornouaille 44300. SIREN non affiché. | Réseau Secob : seule la page de l'agence de Nantes retenue (comptabilité, paie, facturation électronique, consolidation, RSE, audit). Espace client, Yeap et Pennylane figurent dans le menu du groupe sans lien explicite avec Nantes : non ret",
    "facts": {
     "missions_comptables": [
      "fiscalite",
@@ -492,8 +780,16 @@
      "pennylane"
     ],
     "facturation_electronique": true,
-    "reseau": "Groupe Secob"
-   }
+    "reseau": "Groupe Secob",
+    "cas_usage": [
+     "facturation-electronique",
+     "externalisation-comptabilite",
+     "externalisation-paie",
+     "structuration-groupe",
+     "rse"
+    ]
+   },
+   "sources": {}
   },
   {
    "slug": "ker",
@@ -501,7 +797,7 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "siren",
-   "note": "",
+   "note": " | Réponse sous 48 h ouvrées. « Expert dédié » avec point mensuel, sans préciser s'il est expert-comptable (qui_traite laissé vide). 500 clients au total (Nantes, Bordeaux, Guyane) ; la page Nantes dit aussi « plus de 100 » localement. Intégra",
    "facts": {
     "missions_comptables": [
      "tenue",
@@ -529,7 +825,60 @@
     "logiciels": [
      "pennylane"
     ],
-    "facturation_electronique": true
+    "facturation_electronique": true,
+    "references": [
+     "Goodflair",
+     "Diabet",
+     "Kumquat",
+     "Heliosand",
+     "Audencia Junior Conseil",
+     "Audencia",
+     "Eiffage",
+     "CDC Habitat",
+     "Padova",
+     "Phoenix Tower International",
+     "Voltalia",
+     "Budget Guyane",
+     "Gestimmo",
+     "BoxDesign",
+     "Sefibat Guyane",
+     "Pizzeria au petit bateau",
+     "Cabania",
+     "Creamik",
+     "Atypikoo"
+    ],
+    "cas_clients": [
+     "Atypikoo : dossier repris en cours d'année après des erreurs de l'ancien cabinet ; KER a corrigé et remis la comptabilité à jour.",
+     "Société domiciliée dans les DOM, comptes en retard après 18 mois d'inactivité de l'ancien cabinet : reprise du dossier, mise à jour des déclarations et pistes d'optimisation.",
+     "Entrepreneur passé d'auto-entrepreneur à SARL, avec une SCI : accompagnement du changement de statut et régularisation de TVA."
+    ],
+    "cas_usage": [
+     "creation",
+     "croissance",
+     "changement-outil",
+     "facturation-electronique",
+     "externalisation-comptabilite",
+     "externalisation-paie"
+    ],
+    "conseil": [
+     "remuneration-dirigeant",
+     "optimisation-fiscale",
+     "tresorerie",
+     "statut-juridique",
+     "previsionnel",
+     "tableau-de-bord"
+    ],
+    "outils_cabinet": [
+     "flux-bancaires",
+     "depot-pieces",
+     "tableau-de-bord"
+    ],
+    "interlocuteur_attitre": true,
+    "delai_reponse": "48h"
+   },
+   "sources": {
+    "references": "https://www.kerconseil.fr/",
+    "cas_clients": "https://www.kerconseil.fr/"
    }
   },
   {
@@ -538,15 +887,22 @@
    "source_kind": "site_officiel",
    "accessed_on": "2026-11-14",
    "match": "nom+adresse",
-   "note": "SIREN non renseigné dans les mentions légales (texte provisoire) ; nom et adresse 44000 concordants.",
+   "note": "SIREN non renseigné dans les mentions légales (texte provisoire) ; nom et adresse 44000 concordants. | Spécialiste consolidation (normes françaises et IFRS, filiales étrangères, choix d'outil de consolidation), reporting ESG/CSRD et commissariat aux comptes. Pas de tenue comptable PME. Compteurs du site à 0 (non exploités).",
    "facts": {
     "missions_comptables": [
      "audit"
     ],
     "clients": [
      "pme"
+    ],
+    "cas_usage": [
+     "structuration-groupe",
+     "international",
+     "changement-outil",
+     "rse"
     ]
-   }
+   },
+   "sources": {}
   }
  ],
  "registre": [
@@ -558,7 +914,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2025
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "3a-conseils",
@@ -568,7 +925,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2022
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "a-c-a-r",
@@ -578,7 +936,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2014
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "a-v-s",
@@ -589,6 +948,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2004
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -599,7 +961,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2021
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "accompagnement-strategie-loire-atlantique-vendee-as44",
@@ -610,6 +973,9 @@
    "facts": {
     "effectif": "10-19",
     "annee_creation": 1984
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -620,7 +986,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2002
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "advelia",
@@ -630,7 +997,12 @@
    "note": "Sirene : effectif 2024",
    "facts": {
     "effectif": "20-49",
-    "annee_creation": 2008
+    "annee_creation": 2008,
+    "chiffre_affaires": 2580811
+   },
+   "periods": {
+    "effectif": "2024",
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -641,7 +1013,12 @@
    "note": "Sirene : effectif 2024",
    "facts": {
     "effectif": "10-19",
-    "annee_creation": 1985
+    "annee_creation": 1985,
+    "chiffre_affaires": 1685580
+   },
+   "periods": {
+    "effectif": "2024",
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -652,7 +1029,8 @@
    "note": null,
    "facts": {
     "annee_creation": 1978
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "agora-audit-j-p-h-audit",
@@ -662,7 +1040,8 @@
    "note": null,
    "facts": {
     "annee_creation": 1997
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "agora-experts-expert-com",
@@ -673,6 +1052,9 @@
    "facts": {
     "effectif": "20-49",
     "annee_creation": 2019
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -683,7 +1065,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2024
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "albenanne-albenanne",
@@ -693,7 +1076,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2024
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "alcom-expertise-et-conseils-alcom-expertise-conseils",
@@ -703,7 +1087,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2025
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "allard-audit-expertise-a-a-e",
@@ -714,6 +1099,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2007
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -725,6 +1113,9 @@
    "facts": {
     "effectif": "3-5",
     "annee_creation": 1973
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -736,6 +1127,9 @@
    "facts": {
     "effectif": "20-49",
     "annee_creation": 2003
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -747,6 +1141,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2003
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -757,7 +1154,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2022
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "artelos",
@@ -768,6 +1166,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2024
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -779,6 +1180,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2003
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -790,6 +1194,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2020
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -801,6 +1208,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2016
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -812,6 +1222,9 @@
    "facts": {
     "effectif": "20-49",
     "annee_creation": 2004
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -823,6 +1236,9 @@
    "facts": {
     "effectif": "20-49",
     "annee_creation": 1989
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -834,6 +1250,9 @@
    "facts": {
     "effectif": "6-9",
     "annee_creation": 2020
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -845,6 +1264,9 @@
    "facts": {
     "effectif": "20-49",
     "annee_creation": 1994
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -855,7 +1277,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2021
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "bdm-factory",
@@ -865,7 +1288,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2022
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "bosser-expertise-compta-sante",
@@ -875,7 +1299,12 @@
    "note": "Sirene : effectif 2024",
    "facts": {
     "effectif": "50-99",
-    "annee_creation": 2014
+    "annee_creation": 2014,
+    "chiffre_affaires": 8921028
+   },
+   "periods": {
+    "effectif": "2024",
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -886,7 +1315,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2015
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "cabinet-conseil-burban-et-associes-et-par-abreviation-ccba",
@@ -897,6 +1327,9 @@
    "facts": {
     "effectif": "10-19",
     "annee_creation": 2011
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -908,6 +1341,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2023
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -919,6 +1355,9 @@
    "facts": {
     "effectif": "10-19",
     "annee_creation": 1998
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -930,6 +1369,9 @@
    "facts": {
     "effectif": "6-9",
     "annee_creation": 2002
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -941,6 +1383,9 @@
    "facts": {
     "effectif": "20-49",
     "annee_creation": 2014
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -952,6 +1397,9 @@
    "facts": {
     "effectif": "10-19",
     "annee_creation": 2014
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -962,7 +1410,8 @@
    "note": null,
    "facts": {
     "annee_creation": 1983
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "cie-fiduc-revis-cab-boucard-desoubries-cofir",
@@ -972,7 +1421,8 @@
    "note": null,
    "facts": {
     "annee_creation": 1984
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "clc-finances",
@@ -983,6 +1433,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2013
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -993,7 +1446,12 @@
    "note": "Sirene : effectif 2024",
    "facts": {
     "effectif": "10-19",
-    "annee_creation": 2008
+    "annee_creation": 2008,
+    "chiffre_affaires": 1709447
+   },
+   "periods": {
+    "effectif": "2024",
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -1004,7 +1462,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2015
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "cocerto-entreprise",
@@ -1014,7 +1473,12 @@
    "note": "Sirene : effectif 2024",
    "facts": {
     "effectif": "100-199",
-    "annee_creation": 1971
+    "annee_creation": 1971,
+    "chiffre_affaires": 23307373
+   },
+   "periods": {
+    "effectif": "2024",
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -1025,7 +1489,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2015
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "covivium-expertises",
@@ -1035,7 +1500,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2001
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "cynac-consulting",
@@ -1045,7 +1511,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2014
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "d-m-p-atlantique",
@@ -1056,6 +1523,9 @@
    "facts": {
     "effectif": "20-49",
     "annee_creation": 1991
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1067,6 +1537,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2023
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1078,6 +1551,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2011
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1088,7 +1564,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2001
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "e-c-atlantique-conseils",
@@ -1097,7 +1574,11 @@
    "accessed_on": "2026-11-14",
    "note": null,
    "facts": {
-    "annee_creation": 1995
+    "annee_creation": 1995,
+    "chiffre_affaires": 56197
+   },
+   "periods": {
+    "chiffre_affaires": "2024"
    }
   },
   {
@@ -1108,7 +1589,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2001
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "edelsen-ec3a",
@@ -1119,6 +1601,9 @@
    "facts": {
     "effectif": "3-5",
     "annee_creation": 2011
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1129,7 +1614,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2023
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "entre-deux-capital",
@@ -1139,7 +1625,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2026
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "es-finance",
@@ -1149,7 +1636,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2007
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "evolia-expertise",
@@ -1159,7 +1647,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2025
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "excel-partner",
@@ -1169,7 +1658,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2022
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "exco-avec",
@@ -1179,7 +1669,12 @@
    "note": "Sirene : effectif 2024",
    "facts": {
     "effectif": "100-199",
-    "annee_creation": 1992
+    "annee_creation": 1992,
+    "chiffre_affaires": 14784499
+   },
+   "periods": {
+    "effectif": "2024",
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -1191,6 +1686,9 @@
    "facts": {
     "effectif": "6-9",
     "annee_creation": 2020
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1202,6 +1700,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2000
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1213,6 +1714,9 @@
    "facts": {
     "effectif": "10-19",
     "annee_creation": 2002
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1223,7 +1727,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2006
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "f2g",
@@ -1234,6 +1739,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2009
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1245,6 +1753,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2015
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1256,6 +1767,9 @@
    "facts": {
     "effectif": "3-5",
     "annee_creation": 2014
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1267,6 +1781,9 @@
    "facts": {
     "effectif": "20-49",
     "annee_creation": 1987
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1276,7 +1793,11 @@
    "accessed_on": "2026-11-14",
    "note": null,
    "facts": {
-    "annee_creation": 2023
+    "annee_creation": 2023,
+    "chiffre_affaires": 191903
+   },
+   "periods": {
+    "chiffre_affaires": "2024"
    }
   },
   {
@@ -1287,7 +1808,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2023
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "financiere-nh-co",
@@ -1297,7 +1819,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2023
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "flouz-flouz",
@@ -1308,6 +1831,9 @@
    "facts": {
     "effectif": "3-5",
     "annee_creation": 2021
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1318,7 +1844,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2025
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "g-f-finances-g-f-finances",
@@ -1329,6 +1856,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2009
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1340,6 +1870,9 @@
    "facts": {
     "effectif": "6-9",
     "annee_creation": 2017
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1350,7 +1883,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2009
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "gerial",
@@ -1360,7 +1894,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2017
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "groupe-secob-nantes-choimet-associes",
@@ -1370,7 +1905,12 @@
    "note": "Sirene : effectif 2024",
    "facts": {
     "effectif": "50-99",
-    "annee_creation": 1962
+    "annee_creation": 1962,
+    "chiffre_affaires": 8966456
+   },
+   "periods": {
+    "effectif": "2024",
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -1381,7 +1921,12 @@
    "note": "Sirene : effectif 2024",
    "facts": {
     "effectif": "6-9",
-    "annee_creation": 1989
+    "annee_creation": 1989,
+    "chiffre_affaires": 1530184
+   },
+   "periods": {
+    "effectif": "2024",
+    "chiffre_affaires": "2024"
    }
   },
   {
@@ -1393,6 +1938,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2008
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1403,7 +1951,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2007
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "h-l-p-audit",
@@ -1413,7 +1962,12 @@
    "note": "Sirene : effectif 2024",
    "facts": {
     "effectif": "100-199",
-    "annee_creation": 1989
+    "annee_creation": 1989,
+    "chiffre_affaires": 10674720
+   },
+   "periods": {
+    "effectif": "2024",
+    "chiffre_affaires": "2023"
    }
   },
   {
@@ -1425,6 +1979,9 @@
    "facts": {
     "effectif": "3-5",
     "annee_creation": 2022
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1434,7 +1991,11 @@
    "accessed_on": "2026-11-14",
    "note": null,
    "facts": {
-    "annee_creation": 2006
+    "annee_creation": 2006,
+    "chiffre_affaires": 125326
+   },
+   "periods": {
+    "chiffre_affaires": "2022"
    }
   },
   {
@@ -1445,7 +2006,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2023
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "honestia-conseil-et-expertise-honestia-conseil-et-expertise",
@@ -1455,7 +2017,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2017
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "hr-audit",
@@ -1465,7 +2028,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2006
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "iko-4932z",
@@ -1476,6 +2040,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2021
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1487,6 +2054,9 @@
    "facts": {
     "effectif": "6-9",
     "annee_creation": 2012
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1498,6 +2068,9 @@
    "facts": {
     "effectif": "6-9",
     "annee_creation": 2023
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1508,7 +2081,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2024
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "kpmg-audit-ouest",
@@ -1517,7 +2091,11 @@
    "accessed_on": "2026-11-14",
    "note": null,
    "facts": {
-    "annee_creation": 2009
+    "annee_creation": 2009,
+    "chiffre_affaires": 257671
+   },
+   "periods": {
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -1529,6 +2107,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2005
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1540,6 +2121,9 @@
    "facts": {
     "effectif": "10-19",
     "annee_creation": 2021
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1550,7 +2134,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2021
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "le-comptable-nantais",
@@ -1560,7 +2145,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2026
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "light-experts-comptables",
@@ -1571,6 +2157,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2024
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1582,6 +2171,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2020
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1592,7 +2184,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2026
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "mapi",
@@ -1602,7 +2195,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2023
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "mhm",
@@ -1612,7 +2206,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2024
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "mmanagement-ouest-mmo",
@@ -1622,7 +2217,12 @@
    "note": "Sirene : effectif 2024",
    "facts": {
     "effectif": "3-5",
-    "annee_creation": 1989
+    "annee_creation": 1989,
+    "chiffre_affaires": 289965
+   },
+   "periods": {
+    "effectif": "2024",
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -1634,6 +2234,9 @@
    "facts": {
     "effectif": "6-9",
     "annee_creation": 1996
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1644,7 +2247,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2019
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "nab-expertise",
@@ -1654,7 +2258,12 @@
    "note": "Sirene : effectif 2024",
    "facts": {
     "effectif": "1-2",
-    "annee_creation": 2020
+    "annee_creation": 2020,
+    "chiffre_affaires": 217138
+   },
+   "periods": {
+    "effectif": "2024",
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -1665,7 +2274,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2021
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "nemesis-aequus-libra-aequus-libra",
@@ -1675,7 +2285,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2015
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "nexaudit",
@@ -1686,6 +2297,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2013
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1696,7 +2310,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2023
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "numbr-nantes-numbr",
@@ -1706,7 +2321,12 @@
    "note": "Sirene : effectif 2024",
    "facts": {
     "effectif": "20-49",
-    "annee_creation": 2013
+    "annee_creation": 2013,
+    "chiffre_affaires": 2983152
+   },
+   "periods": {
+    "effectif": "2024",
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -1717,7 +2337,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2026
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "osis",
@@ -1726,7 +2347,11 @@
    "accessed_on": "2026-11-14",
    "note": null,
    "facts": {
-    "annee_creation": 2009
+    "annee_creation": 2009,
+    "chiffre_affaires": 1587307
+   },
+   "periods": {
+    "chiffre_affaires": "2023"
    }
   },
   {
@@ -1737,7 +2362,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2001
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "ozeo-ozeo",
@@ -1748,6 +2374,9 @@
    "facts": {
     "effectif": "20-49",
     "annee_creation": 1991
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1757,7 +2386,11 @@
    "accessed_on": "2026-11-14",
    "note": null,
    "facts": {
-    "annee_creation": 2023
+    "annee_creation": 2023,
+    "chiffre_affaires": 9993
+   },
+   "periods": {
+    "chiffre_affaires": "2023"
    }
   },
   {
@@ -1769,6 +2402,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2005
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1779,7 +2415,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2009
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "plury",
@@ -1790,6 +2427,9 @@
    "facts": {
     "effectif": "6-9",
     "annee_creation": 2014
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1801,6 +2441,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2021
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1811,7 +2454,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2026
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "sareco-nantes-sas-sareco-nantes",
@@ -1822,6 +2466,9 @@
    "facts": {
     "effectif": "20-49",
     "annee_creation": 2015
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1833,6 +2480,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 1996
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1844,6 +2494,9 @@
    "facts": {
     "effectif": "3-5",
     "annee_creation": 2003
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1855,6 +2508,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 2006
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1865,7 +2521,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2020
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "sas-constellations",
@@ -1875,7 +2532,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2018
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "siloe-avm",
@@ -1885,7 +2543,12 @@
    "note": "Sirene : effectif 2024",
    "facts": {
     "effectif": "10-19",
-    "annee_creation": 2003
+    "annee_creation": 2003,
+    "chiffre_affaires": 1827442
+   },
+   "periods": {
+    "effectif": "2024",
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -1895,7 +2558,11 @@
    "accessed_on": "2026-11-14",
    "note": null,
    "facts": {
-    "annee_creation": 2020
+    "annee_creation": 2020,
+    "chiffre_affaires": 216000
+   },
+   "periods": {
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -1907,6 +2574,9 @@
    "facts": {
     "effectif": "6-9",
     "annee_creation": 1970
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1918,6 +2588,9 @@
    "facts": {
     "effectif": "3-5",
     "annee_creation": 2000
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1927,7 +2600,11 @@
    "accessed_on": "2026-11-14",
    "note": null,
    "facts": {
-    "annee_creation": 2012
+    "annee_creation": 2012,
+    "chiffre_affaires": 245229
+   },
+   "periods": {
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -1939,6 +2616,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 1981
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1949,7 +2629,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2026
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "sorcoff-sa",
@@ -1960,6 +2641,9 @@
    "facts": {
     "effectif": "1-2",
     "annee_creation": 1978
+   },
+   "periods": {
+    "effectif": "2024"
    }
   },
   {
@@ -1970,7 +2654,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2026
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "st-conseils-56",
@@ -1980,7 +2665,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2022
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "stl-expertise",
@@ -1990,7 +2676,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2021
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "thotis",
@@ -2000,7 +2687,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2026
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "tyls-nantes-tyls-conseil",
@@ -2010,7 +2698,12 @@
    "note": "Sirene : effectif 2024",
    "facts": {
     "effectif": "10-19",
-    "annee_creation": 2012
+    "annee_creation": 2012,
+    "chiffre_affaires": 959853
+   },
+   "periods": {
+    "effectif": "2024",
+    "chiffre_affaires": "2025"
    }
   },
   {
@@ -2021,7 +2714,8 @@
    "note": null,
    "facts": {
     "annee_creation": 2015
-   }
+   },
+   "periods": {}
   },
   {
    "slug": "yellodit",
@@ -2032,7 +2726,19 @@
    "facts": {
     "effectif": "6-9",
     "annee_creation": 2013
+   },
+   "periods": {
+    "effectif": "2024"
    }
   }
+ ],
+ "ecartees_v2": [
+  "bosser-expertise-compta-sante delai_reponse : délai affiché sans engagement",
+  "groupe-y-nantes-atlantique-groupe-y references : clients du groupe, pas du bureau de Nantes",
+  "cocerto-entreprise nombre_clients : chiffre du groupe",
+  "numbr-nantes-numbr tarif_min_mensuel : le bureau de Nantes travaille sur devis",
+  "pascal-gouhier-conseil-copagex nombre_clients : cumul depuis 2005",
+  "cabinet-riaud tarif_min_mensuel : HT non précisé",
+  "ker nombre_clients : total Nantes, Bordeaux et Guyane"
  ]
 }

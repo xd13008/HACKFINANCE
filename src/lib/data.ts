@@ -1,7 +1,7 @@
 import { cache } from "react";
 import { publicClient } from "@/lib/supabase/public";
 import type { Database } from "@/lib/database.types";
-import type { FilterOption, Filters, GridCriterion, GridFact } from "@/lib/grid";
+import type { FilterOption, Filters, GridAxis, GridCriterion, GridFact } from "@/lib/grid";
 
 type Tables = Database["public"]["Tables"];
 type Views = Database["public"]["Views"];
@@ -218,10 +218,16 @@ export const getGridCriteria = cache(async (): Promise<GridCriterion[]> => {
   return (data ?? []) as unknown as GridCriterion[];
 });
 
+/** Axes de lecture (les 5 questions du dirigeant). */
+export const getGridAxes = cache(async (): Promise<GridAxis[]> => {
+  const { data } = await db().from("provider_grid_axes").select("*").order("sort");
+  return (data ?? []) as GridAxis[];
+});
+
 /** Faits validés de fiches publiées (la base ne sert rien d'autre au public). */
 export async function getGridFacts(providerIds: string[]): Promise<GridFact[]> {
   if (!providerIds.length) return [];
-  const { data } = await db().from("provider_facts").select("provider_id,criterion,value,source_url,source_kind,accessed_on")
+  const { data } = await db().from("provider_facts").select("provider_id,criterion,value,source_url,source_kind,accessed_on,period")
     .in("provider_id", providerIds).eq("status", "validated");
   return (data ?? []) as GridFact[];
 }

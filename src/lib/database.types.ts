@@ -929,28 +929,28 @@ isOneToOne: false
                   ]
                 },"provider_criteria": {
                   Row: {
-                    "code": string,"filterable": boolean,"kind": string,"label": string,"options": NonNullable<Json>,"professions": (string)[] | null,"question": string,"sort": number,"source_hint": string | null,"unit": string | null
+                    "axis": string,"code": string,"filterable": boolean,"kind": string,"label": string,"options": NonNullable<Json>,"professions": (string)[] | null,"question": string,"sort": number,"source_hint": string | null,"unit": string | null
                   }
                   ComputedFields: never
                   Insert: {
-                    "code": string,"filterable"?: boolean,"kind": string,"label": string,"options"?: NonNullable<Json>,"professions"?: (string)[] | null,"question": string,"sort"?: number,"source_hint"?: string | null,"unit"?: string | null
+                    "axis"?: string,"code": string,"filterable"?: boolean,"kind": string,"label": string,"options"?: NonNullable<Json>,"professions"?: (string)[] | null,"question": string,"sort"?: number,"source_hint"?: string | null,"unit"?: string | null
                   }
                   Update: {
-                    "code"?: string,"filterable"?: boolean,"kind"?: string,"label"?: string,"options"?: NonNullable<Json>,"professions"?: (string)[] | null,"question"?: string,"sort"?: number,"source_hint"?: string | null,"unit"?: string | null
+                    "axis"?: string,"code"?: string,"filterable"?: boolean,"kind"?: string,"label"?: string,"options"?: NonNullable<Json>,"professions"?: (string)[] | null,"question"?: string,"sort"?: number,"source_hint"?: string | null,"unit"?: string | null
                   }
                   Relationships: [
                     
                   ]
                 },"provider_facts": {
                   Row: {
-                    "accessed_on": string,"author_kind": string,"created_at": string,"created_by": string | null,"criterion": string,"id": string,"note": string | null,"provider_id": string,"source_kind": string,"source_url": string,"status": Database["public"]['Enums']["fact_status"],"validated_at": string | null,"validated_by": string | null,"value": NonNullable<Json>
+                    "accessed_on": string,"author_kind": string,"created_at": string,"created_by": string | null,"criterion": string,"id": string,"note": string | null,"period": string | null,"provider_id": string,"source_kind": string,"source_url": string,"status": Database["public"]['Enums']["fact_status"],"validated_at": string | null,"validated_by": string | null,"value": NonNullable<Json>
                   }
                   ComputedFields: never
                   Insert: {
-                    "accessed_on": string,"author_kind"?: string,"created_at"?: string,"created_by"?: string | null,"criterion": string,"id"?: string,"note"?: string | null,"provider_id": string,"source_kind": string,"source_url": string,"status"?: Database["public"]['Enums']["fact_status"],"validated_at"?: string | null,"validated_by"?: string | null,"value": NonNullable<Json>
+                    "accessed_on": string,"author_kind"?: string,"created_at"?: string,"created_by"?: string | null,"criterion": string,"id"?: string,"note"?: string | null,"period"?: string | null,"provider_id": string,"source_kind": string,"source_url": string,"status"?: Database["public"]['Enums']["fact_status"],"validated_at"?: string | null,"validated_by"?: string | null,"value": NonNullable<Json>
                   }
                   Update: {
-                    "accessed_on"?: string,"author_kind"?: string,"created_at"?: string,"created_by"?: string | null,"criterion"?: string,"id"?: string,"note"?: string | null,"provider_id"?: string,"source_kind"?: string,"source_url"?: string,"status"?: Database["public"]['Enums']["fact_status"],"validated_at"?: string | null,"validated_by"?: string | null,"value"?: NonNullable<Json>
+                    "accessed_on"?: string,"author_kind"?: string,"created_at"?: string,"created_by"?: string | null,"criterion"?: string,"id"?: string,"note"?: string | null,"period"?: string | null,"provider_id"?: string,"source_kind"?: string,"source_url"?: string,"status"?: Database["public"]['Enums']["fact_status"],"validated_at"?: string | null,"validated_by"?: string | null,"value"?: NonNullable<Json>
                   }
                   Relationships: [
                     {
@@ -978,6 +978,20 @@ isOneToOne: false
       referencedRelation: "providers_public"
       referencedColumns: ["id"]
     }
+                  ]
+                },"provider_grid_axes": {
+                  Row: {
+                    "accessed_on": string | null,"advice": string | null,"code": string,"scope": string,"sort": number,"source_label": string | null,"source_url": string | null,"title": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "accessed_on"?: string | null,"advice"?: string | null,"code": string,"scope"?: string,"sort"?: number,"source_label"?: string | null,"source_url"?: string | null,"title": string
+                  }
+                  Update: {
+                    "accessed_on"?: string | null,"advice"?: string | null,"code"?: string,"scope"?: string,"sort"?: number,"source_label"?: string | null,"source_url"?: string | null,"title"?: string
+                  }
+                  Relationships: [
+                    
                   ]
                 },"providers": {
                   Row: {

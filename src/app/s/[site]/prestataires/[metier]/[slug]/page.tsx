@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getFilterOptions, getFilteredProviders, getGridCriteria, getGridFacts, getProvider, getProviderCategory, getProviderCityFacts, getProviderLocations, getProviders, getSite } from "@/lib/data";
+import { getGridAxes, getFilterOptions, getFilteredProviders, getGridCriteria, getGridFacts, getProvider, getProviderCategory, getProviderCityFacts, getProviderLocations, getProviders, getSite } from "@/lib/data";
 import { criteriaFor, filtersToQuery, groupOptions, parseFilters } from "@/lib/grid";
 import { ProviderGrid } from "@/components/public/ProviderGrid";
 import { GridFilters } from "@/components/public/GridFilters";
@@ -94,7 +94,7 @@ export default async function ProviderPage({ params, searchParams }: { params: P
     );
   }
 
-  const [criteria, gridFacts] = await Promise.all([getGridCriteria(), getGridFacts([pr.id!])]);
+  const [axes, criteria, gridFacts] = await Promise.all([getGridAxes(), getGridCriteria(), getGridFacts([pr.id!])]);
   const refs = (pr.public_references ?? []) as { label: string; source_url?: string; accessed_at?: string }[];
   const host = (u?: string) => { try { return u ? new URL(u).hostname.replace(/^www\./, "") : null; } catch { return null; } };
   const path = `/prestataires/${cat.slug}/${pr.slug}`;
@@ -116,7 +116,7 @@ export default async function ProviderPage({ params, searchParams }: { params: P
         {pr.deal_size_range && <div><dt className="text-ink-3">Taille des opérations</dt><dd>{pr.deal_size_range}</dd></div>}
         {pr.specialties && pr.specialties.length > 0 && <div><dt className="text-ink-3">Spécialités</dt><dd>{pr.specialties.join(", ")}</dd></div>}
       </dl>
-      <ProviderGrid criteria={criteria} facts={gridFacts} categorySlug={cat.slug} compareHref={pr.city_slug ? `/prestataires/${cat.slug}/${pr.city_slug}#annuaire` : undefined} />
+      <ProviderGrid axes={axes} criteria={criteria} facts={gridFacts} categorySlug={cat.slug} compareHref={pr.city_slug ? `/prestataires/${cat.slug}/${pr.city_slug}#annuaire` : undefined} />
       {refs.length > 0 && (
         <section className="mt-6"><h2 className="text-xl font-bold mb-2">Sources</h2>
           <ul className="list-disc pl-5 text-sm">{refs.map((r, i) => (

@@ -10,7 +10,7 @@ export async function GridReview({ result }: { result?: string }) {
   const db = await serverClient();
   const [{ data: criteria }, { data: drafts }] = await Promise.all([
     db.from("provider_criteria").select("*").order("sort"),
-    db.from("provider_facts").select("id,provider_id,criterion,value,source_url,source_kind,accessed_on,note,providers!inner(name,city,city_slug,status)")
+    db.from("provider_facts").select("id,provider_id,criterion,value,source_url,source_kind,accessed_on,period,note,providers!inner(name,city,city_slug,status)")
       .eq("status", "draft").order("provider_id").limit(2000),
   ]);
   const crit = (criteria ?? []) as unknown as GridCriterion[];
@@ -62,7 +62,7 @@ export async function GridReview({ result }: { result?: string }) {
                 const c = crit.find((x) => x.code === f.criterion);
                 return (
                   <li key={f.id}>
-                    <span className="text-ink-3">{c?.label ?? f.criterion} : </span>{c ? formatValue(c, f.value) : JSON.stringify(f.value)}
+                    <span className="text-ink-3">{c?.label ?? f.criterion} : </span>{c ? formatValue(c, f.value) : JSON.stringify(f.value)}{f.period ? ` (${f.period})` : ""}
                     <span className="text-xs text-ink-3"> · <a href={f.source_url} target="_blank" rel="noopener" className="underline">{hostOf(f.source_url)}</a> ({SOURCE_KIND[f.source_kind]}, {f.accessed_on})</span>
                   </li>
                 );

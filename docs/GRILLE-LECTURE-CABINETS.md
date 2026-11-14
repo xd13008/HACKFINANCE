@@ -25,43 +25,54 @@ typé et normalisé, avec sa source et sa date. Une information qui n'aide ni à
 - **Aucune donnée personnelle.** Pas de nom d'associé, de photo, d'e-mail ni de téléphone, et le SIREN n'est jamais servi (règle 9).
   La source du registre est citée par son adresse générale, pas par une URL contenant le SIREN.
 
-## 2. Critères communs (tous les annuaires)
+## 2. Les 5 axes de lecture (texte du dirigeant, 14/11/2026)
 
-| Code | Question du DAF | Type | Filtre | Source habituelle |
-|---|---|---|---|---|
-| `clients` | Suit-il des entreprises de ma taille ? | indépendants, création, TPE, PME, ETI, groupes, start-up, associations | oui | site du cabinet |
-| `secteurs` | Connaît-il mon secteur ? | 18 secteurs | oui | site du cabinet |
-| `logiciels` | Travaille-t-il avec mes outils ? | 19 logiciels (Pennylane, Tiime, Sage, Cegid, Odoo…) | oui | site du cabinet, pages partenaires |
-| `facturation_electronique` | M'accompagne-t-il dans la réforme ? | oui / non | oui | site du cabinet |
-| `mode_travail` | À distance ou en rendez-vous ? | sur place, à distance | oui | site du cabinet |
-| `langues` | Peut-il travailler dans une autre langue ? | 7 langues | oui | site du cabinet |
-| `tarif` | Combien cela coûte-t-il ? | texte (prix affiché) | non | page tarifs |
-| `reseau` | Fait-il partie d'un réseau ? | texte | non | site du cabinet |
-| `effectif` | A-t-il la taille pour me suivre ? | tranche d'effectif | oui | registre public (Sirene) |
-| `annee_creation` | Depuis quand existe-t-il ? | année | non | registre public (Sirene) |
+La grille est rangée selon les 5 questions qu'un DAF doit se poser, puis « le cabinet en chiffres ». Pour les experts-comptables,
+chaque axe affiche la question à poser au cabinet (table `provider_grid_axes`, texte du dirigeant). Les autres métiers n'ont que les titres,
+tant que le dirigeant n'a pas fourni leur texte.
+
+| Axe | Question à poser (experts-comptables) | Critères |
+|---|---|---|
+| 1. La connaissance de votre métier | Le cabinet doit déjà suivre des clients de votre secteur et de votre taille. Demandez-lui combien. | `secteurs`, `clients` (types et taille), `cas_usage` (situations accompagnées), `references` (sociétés clientes citées), `cas_clients` (résumés ≤ 200 caractères), `nombre_clients` |
+| 2. Un interlocuteur attitré | Savoir qui traite le dossier ; exiger un nom et un délai de réponse garanti (48 h maximum). | `interlocuteur_attitre`, `qui_traite`, `delai_reponse`, `mode_travail`, `langues` |
+| 3. Le conseil, pas seulement la saisie | Rémunération du dirigeant, optimisation fiscale, trésorerie, statut juridique ; tester le cabinet avec une vraie question. | `conseil` |
+| 4. Le périmètre et le prix | Lettre de mission détaillée ; ce qui est inclus dans le forfait et ce qui est en supplément. | `missions_*`, `forfait_inclus`, `tarif_min_mensuel` (€ HT), `tarif` (texte) |
+| 5. Les outils | Flux bancaires automatiques, dépôt des pièces en ligne, tableau de bord ; prêt pour la facturation électronique (obligation progressive depuis septembre 2026, source impots.gouv.fr consultée le 14/11/2026). | `outils_cabinet`, `logiciels`, `facturation_electronique` |
+| Le cabinet en chiffres | — | `chiffre_affaires` (comptes publiés, avec l'exercice), `effectif` (tranche, avec l'année), `annee_creation`, `reseau` |
+
+Règles propres à ces critères :
+- **Références et cas clients.**
+  - On ne retient que les sociétés citées publiquement par le cabinet, jamais une personne (« Dr Martin » est exclu).
+  - Les cas clients sont résumés avec nos mots, sans copie.
+  - Les clients d'un groupe ou d'un réseau ne sont pas attribués au bureau local.
+- **Chiffres déclarés.**
+  - On écarte un chiffre cumulé (« 600 entreprises depuis 2005 »), un chiffre de groupe ou des chiffres contradictoires.
+  - Un prix n'est retenu comme « € HT par mois » que si le site le dit HT. Sinon, il est gardé en texte avec la mention.
+  - Un délai de réponse n'est retenu que s'il est présenté comme un engagement.
+- **Chiffre d'affaires.** Il est retenu à partir de l'exercice 2022, s'il est supérieur à 0. Il est toujours affiché avec son exercice.
 
 ## 3. Critères propres à un métier
 
 | Annuaire | Critères |
 |---|---|
-| Experts-comptables | `missions_comptables` : 14 missions (tenue, bilan, fiscalité, paie, social, juridique, création, conseil de gestion, prévisionnel, consolidation, audit, transmission, international, en ligne) |
+| Experts-comptables | `missions_comptables` (14 missions), `qui_traite` |
 | Commissaires aux comptes | `missions_audit` : CAC légal, audit contractuel, comptes consolidés, durabilité (CSRD), apports et fusion, associations |
-| Recrutement finance | `fonctions_recrutees` (DAF, contrôle de gestion, comptabilité, trésorerie, audit, consolidation, paie, fiscalité), `methode_recrutement`, `honoraires` |
+| Recrutement finance | `fonctions_recrutees`, `methode_recrutement`, `honoraires` |
 | Intégrateurs | `niveau_partenariat` (texte, d'après l'annuaire de l'éditeur) |
 
 Pour ajouter un critère :
-1. Ajouter une ligne au référentiel dans une nouvelle migration (`on conflict do update`).
+1. Ajouter une ligne au référentiel dans une nouvelle migration (`on conflict do update`), avec son axe.
 2. Ne jamais renommer un code déjà utilisé.
 
 ## 4. Où la grille apparaît
 
-- **Fiche cabinet :** tableau « Grille de lecture ». Chaque critère y figure avec sa valeur, sa source et sa date, ou « Non vérifié ».
+- **Fiche cabinet :** « Grille de lecture » rangée par axe, avec la question à poser. Chaque critère y figure avec sa valeur, sa source, sa date et sa période, ou « Non vérifié ».
 - **Page ville :**
   - bloc « Trouver le cabinet adapté » : les filtres ne proposent que les valeurs vérifiées présentes sur la page ;
   - 4 critères clés sur chaque carte ;
   - cases « Comparer ».
   - Les pages filtrées sont en `noindex`, avec une canonique vers la page ville.
-- **Page de comparaison** (`/prestataires/[métier]/comparer?c=…`) : 2 à 4 cabinets côte à côte, `noindex`.
+- **Page de comparaison** (`/prestataires/[métier]/comparer?c=…`) : 2 à 4 cabinets côte à côte, rangés par axe, `noindex`.
 
 ## 5. Collecte
 
@@ -84,3 +95,20 @@ Pour ajouter un critère :
   - Cagec : pas d'activité d'expertise comptable. Sa place dans l'annuaire est à revoir.
 - **Enseignement :** la plupart des petits cabinets n'ont pas de site. Leur grille repose sur le registre, puis sur la déclaration du cabinet
   (formulaire « Référencer mon cabinet », à brancher sur la grille).
+
+### Deuxième passage (14/11/2026) : références, cas clients, axes 2 à 5
+
+Sur les 18 sites retenus :
+- **Ce qu'on a trouvé :**
+  - références : 4 cabinets ;
+  - cas clients : 2 ;
+  - situations accompagnées : 17 ;
+  - outils proposés : 15 ;
+  - interlocuteur attitré : 5 ;
+  - délai garanti : 1 (KER, 48 h).
+- **Chiffre d'affaires publié :** 22 cabinets sur 141.
+- **7 données écartées**, détaillées dans `ecartees_v2` du fichier JSON :
+  - clients d'un groupe ;
+  - délai sans engagement ;
+  - prix sans mention HT ;
+  - chiffres cumulés ou de groupe.
