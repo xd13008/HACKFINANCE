@@ -1,0 +1,2038 @@
+{
+ "ville": "nantes",
+ "annuaire": "experts-comptables",
+ "collecte": "2026-11-14",
+ "methode": "Site officiel identifié (SIREN dans les mentions légales, ou nom et adresse à Nantes), page d'accueil et page des services lues ; aucun blocage contourné. Faits en brouillon jusqu'à validation par un éditeur.",
+ "ecartees": [
+  {
+   "slug": "audit-conseil-et-associes-one-ace",
+   "raison": "site édité par une société liée (A C E Audit Conseil Expertise)"
+  },
+  {
+   "slug": "kpmg-audit-ouest",
+   "raison": "informations issues de la page nationale de KPMG, pas de l'entité de Nantes"
+  },
+  {
+   "slug": "cabinet-sarrouy-one-ace",
+   "raison": "site édité par une autre société, Cabinet Sarrouy n'y est pas cité"
+  },
+  {
+   "slug": "cagec-gestion-sarl",
+   "raison": "le site ne présente pas d'activité d'expertise comptable : à revoir dans l'annuaire"
+  }
+ ],
+ "sites": [
+  {
+   "slug": "ak-partners-ak-partners",
+   "source_url": "https://www.ak-partners.fr/",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "nom+adresse",
+   "note": "SIREN absent du site ; même nom et adresse 3 rue Edouard Nignon 44300 Nantes.",
+   "facts": {
+    "missions_comptables": [
+     "tenue",
+     "fiscalite",
+     "social",
+     "paie",
+     "juridique",
+     "creation",
+     "previsionnel",
+     "conseil-gestion",
+     "audit"
+    ],
+    "clients": [
+     "tpe",
+     "pme",
+     "independants"
+    ],
+    "secteurs": [
+     "associations-ess"
+    ],
+    "logiciels": [
+     "tiime"
+    ]
+   }
+  },
+  {
+   "slug": "bosser-expertise-compta-sante",
+   "source_url": "https://comptasante.fr/",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "siren",
+   "note": "Nom commercial Comptasanté ; SIRET 80020493500046 dans les mentions légales.",
+   "facts": {
+    "missions_comptables": [
+     "tenue",
+     "fiscalite",
+     "juridique",
+     "creation",
+     "conseil-gestion",
+     "transmission",
+     "en-ligne"
+    ],
+    "clients": [
+     "independants"
+    ],
+    "secteurs": [
+     "sante"
+    ],
+    "mode_travail": [
+     "a-distance"
+    ],
+    "tarif": "à partir de 55 € HT/mois"
+   }
+  },
+  {
+   "slug": "cayola-consulting-auditeurs-associes-m",
+   "source_url": "https://cayola-consulting.fr/",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "siren",
+   "note": "RCS Nantes 808 740 773 dans les mentions légales.",
+   "facts": {
+    "missions_comptables": [
+     "fiscalite",
+     "social",
+     "juridique",
+     "audit"
+    ],
+    "logiciels": [
+     "meg"
+    ]
+   }
+  },
+  {
+   "slug": "dacodaq",
+   "source_url": "https://dacodaq.fr/",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "nom+adresse",
+   "note": "SIREN absent du site ; même nom et adresse 82 route de Vannes 44300 Nantes. Paie confiée à des partenaires.",
+   "facts": {
+    "missions_comptables": [
+     "tenue",
+     "bilan",
+     "fiscalite",
+     "social",
+     "juridique",
+     "creation",
+     "conseil-gestion",
+     "transmission"
+    ]
+   }
+  },
+  {
+   "slug": "groupe-y-nantes-atlantique-groupe-y",
+   "source_url": "https://www.groupey.fr/cabinet-comptable-nantes/",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "nom+adresse",
+   "note": "Site du groupe (édité par Groupe Y Management, Niort) ; page du bureau à la même adresse 3 chemin Pressoir Chênaie 44100 Nantes.",
+   "facts": {
+    "missions_comptables": [
+     "fiscalite",
+     "juridique",
+     "social",
+     "paie",
+     "audit"
+    ],
+    "clients": [
+     "pme",
+     "startups",
+     "associations"
+    ],
+    "reseau": "Groupe Y"
+   }
+  },
+  {
+   "slug": "tyls-nantes-tyls-conseil",
+   "source_url": "https://tyls.com/cabinets/nantes",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "nom+adresse",
+   "note": "SIREN non affiché ; la page du cabinet indique 44000 Nantes (Les Salorges) alors que la fiche est en 44100.",
+   "facts": {
+    "missions_comptables": [
+     "tenue",
+     "fiscalite",
+     "paie",
+     "social",
+     "juridique",
+     "creation",
+     "conseil-gestion",
+     "previsionnel",
+     "audit",
+     "transmission"
+    ],
+    "clients": [
+     "tpe",
+     "pme",
+     "independants",
+     "associations",
+     "startups"
+    ],
+    "secteurs": [
+     "agriculture",
+     "btp",
+     "restauration-hotellerie",
+     "artisanat",
+     "immobilier",
+     "industrie"
+    ],
+    "mode_travail": [
+     "sur-place",
+     "a-distance"
+    ],
+    "reseau": "Réseau TYLS"
+   }
+  },
+  {
+   "slug": "audit-conseil-expertise-one-ace-a-c-e",
+   "source_url": "https://www.one-ace.fr/",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "nom+adresse",
+   "note": "SIREN absent des mentions légales ; raison sociale SAS A C E Audit Conseil Expertise, 3 impasse des Tourmalines 44300 Nantes, identique.",
+   "facts": {
+    "missions_comptables": [
+     "fiscalite",
+     "social",
+     "juridique",
+     "creation",
+     "audit"
+    ],
+    "secteurs": [
+     "artisanat",
+     "commerce"
+    ],
+    "logiciels": [
+     "meg",
+     "silae",
+     "acd",
+     "dext"
+    ]
+   }
+  },
+  {
+   "slug": "cocerto-entreprise",
+   "source_url": "https://cocerto.fr/",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "siren",
+   "note": "SIREN 871 800 751 affiché dans les mentions légales (RCS Nantes).",
+   "facts": {
+    "missions_comptables": [
+     "tenue",
+     "bilan",
+     "fiscalite",
+     "social",
+     "juridique",
+     "creation",
+     "conseil-gestion",
+     "previsionnel",
+     "audit",
+     "transmission"
+    ],
+    "clients": [
+     "tpe",
+     "pme",
+     "startups",
+     "associations",
+     "independants"
+    ],
+    "secteurs": [
+     "btp",
+     "restauration-hotellerie",
+     "professions-liberales",
+     "artisanat",
+     "commerce",
+     "agriculture",
+     "associations-ess"
+    ]
+   }
+  },
+  {
+   "slug": "numbr-nantes-numbr",
+   "source_url": "https://numbr.co/cabinet-expert-comptable-nantes/",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "nom+adresse",
+   "note": "SIREN non affiché (mentions légales : société NUMBR, RCS Épinal, SIREN 490 823 168) ; bureau Numbr à Nantes 44000, 14 mail Pablo Picasso.",
+   "facts": {
+    "missions_comptables": [
+     "tenue",
+     "bilan",
+     "fiscalite",
+     "juridique",
+     "paie",
+     "creation",
+     "en-ligne"
+    ],
+    "clients": [
+     "tpe",
+     "independants"
+    ],
+    "secteurs": [
+     "restauration-hotellerie",
+     "sante",
+     "commerce",
+     "transport",
+     "btp",
+     "artisanat"
+    ],
+    "logiciels": [
+     "tiime",
+     "apy"
+    ],
+    "mode_travail": [
+     "sur-place",
+     "a-distance"
+    ],
+    "tarif": "à partir de 29 € HT/mois avec logiciel, 39 € HT/mois à distance ; cabinet physique sur devis",
+    "reseau": "Réseau Numbr"
+   }
+  },
+  {
+   "slug": "pascal-gouhier-conseil-copagex",
+   "source_url": "https://www.copagex.com/",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "siren",
+   "note": "SIRET 484 886 718 00044 affiché sur le site ; 8 bd Albert Einstein 44300 Nantes.",
+   "facts": {
+    "missions_comptables": [
+     "tenue",
+     "fiscalite",
+     "juridique",
+     "paie",
+     "social",
+     "creation"
+    ],
+    "clients": [
+     "associations"
+    ],
+    "secteurs": [
+     "restauration-hotellerie",
+     "commerce",
+     "artisanat",
+     "associations-ess",
+     "conseil"
+    ],
+    "logiciels": [
+     "odoo"
+    ]
+   }
+  },
+  {
+   "slug": "yellodit",
+   "source_url": "https://www.yellodit.fr",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "siren",
+   "note": "SIREN 792 043 747 (RCS Nantes) dans les mentions légales ; siège 4 rue Voltaire, 44000 Nantes",
+   "facts": {
+    "missions_comptables": [
+     "audit",
+     "conseil-gestion",
+     "en-ligne"
+    ],
+    "secteurs": [
+     "conseil"
+    ],
+    "logiciels": [
+     "pennylane",
+     "silae",
+     "payfit"
+    ],
+    "mode_travail": [
+     "sur-place",
+     "a-distance"
+    ],
+    "facturation_electronique": true
+   }
+  },
+  {
+   "slug": "cabinet-riaud",
+   "source_url": "https://cabinetriaud.com",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "siren",
+   "note": "SIREN 950945295 lu dans les mentions légales (https://cabinetriaud.com/mentions-legales/)",
+   "facts": {
+    "missions_comptables": [
+     "tenue",
+     "bilan",
+     "fiscalite",
+     "juridique",
+     "creation",
+     "conseil-gestion"
+    ],
+    "clients": [
+     "associations"
+    ],
+    "secteurs": [
+     "associations-ess"
+    ],
+    "logiciels": [
+     "pennylane",
+     "odoo"
+    ]
+   }
+  },
+  {
+   "slug": "h-l-p-audit",
+   "source_url": "https://www.hlp-audit.fr",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "siren",
+   "note": "SIRET 35066186400032 lu dans les mentions légales (https://www.hlp-audit.fr/mentions-legales/)",
+   "facts": {
+    "missions_comptables": [
+     "bilan",
+     "fiscalite",
+     "paie",
+     "social",
+     "juridique",
+     "creation",
+     "conseil-gestion",
+     "previsionnel",
+     "audit",
+     "international"
+    ],
+    "clients": [
+     "tpe",
+     "pme",
+     "startups"
+    ],
+    "secteurs": [
+     "immobilier",
+     "services-financiers"
+    ],
+    "logiciels": [
+     "pennylane",
+     "silae"
+    ],
+    "facturation_electronique": true
+   }
+  },
+  {
+   "slug": "accompagnement-strategie-loire-atlantique-vendee-as44",
+   "source_url": "https://www.as44-85.fr/",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "siren",
+   "note": "Association (pas une société commerciale) ; SIRET 38432416600022 affiché.",
+   "facts": {
+    "missions_comptables": [
+     "fiscalite",
+     "juridique",
+     "social",
+     "conseil-gestion",
+     "creation",
+     "transmission"
+    ],
+    "secteurs": [
+     "agriculture"
+    ]
+   }
+  },
+  {
+   "slug": "exco-avec",
+   "source_url": "https://exco.fr/cabinets/exco-nantes/",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "nom+adresse",
+   "note": "Pas de site propre : fiche du réseau Exco (29 bd Albert Einstein, Nantes). SIREN non affiché.",
+   "facts": {
+    "missions_comptables": [
+     "fiscalite",
+     "juridique",
+     "paie",
+     "social",
+     "audit",
+     "conseil-gestion"
+    ],
+    "clients": [
+     "pme",
+     "startups"
+    ],
+    "reseau": "Réseau Exco (membre de Kreston)"
+   }
+  },
+  {
+   "slug": "groupe-secob-nantes-choimet-associes",
+   "source_url": "https://www.secob.fr/le-groupe-secob/nos-agences-regionales/secob-nantes-cabinet-comptable-audit/",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "nom+adresse",
+   "note": "Site du groupe (siège Cesson-Sévigné) ; agence de Nantes au 6 rue de la Cornouaille 44300. SIREN non affiché.",
+   "facts": {
+    "missions_comptables": [
+     "fiscalite",
+     "juridique",
+     "social",
+     "paie",
+     "audit"
+    ],
+    "clients": [
+     "tpe",
+     "pme",
+     "eti",
+     "independants"
+    ],
+    "secteurs": [
+     "commerce",
+     "industrie",
+     "artisanat",
+     "professions-liberales"
+    ],
+    "logiciels": [
+     "yeap",
+     "pennylane"
+    ],
+    "facturation_electronique": true,
+    "reseau": "Groupe Secob"
+   }
+  },
+  {
+   "slug": "ker",
+   "source_url": "https://www.kerconseil.fr/",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "siren",
+   "note": "",
+   "facts": {
+    "missions_comptables": [
+     "tenue",
+     "bilan",
+     "fiscalite",
+     "paie",
+     "juridique",
+     "creation",
+     "conseil-gestion",
+     "previsionnel"
+    ],
+    "clients": [
+     "startups",
+     "associations",
+     "independants"
+    ],
+    "secteurs": [
+     "e-commerce",
+     "immobilier",
+     "btp",
+     "restauration-hotellerie",
+     "associations-ess",
+     "sante"
+    ],
+    "logiciels": [
+     "pennylane"
+    ],
+    "facturation_electronique": true
+   }
+  },
+  {
+   "slug": "nexaudit",
+   "source_url": "https://www.nexaudit.fr/",
+   "source_kind": "site_officiel",
+   "accessed_on": "2026-11-14",
+   "match": "nom+adresse",
+   "note": "SIREN non renseigné dans les mentions légales (texte provisoire) ; nom et adresse 44000 concordants.",
+   "facts": {
+    "missions_comptables": [
+     "audit"
+    ],
+    "clients": [
+     "pme"
+    ]
+   }
+  }
+ ],
+ "registre": [
+  {
+   "slug": "360-expertiz",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2025
+   }
+  },
+  {
+   "slug": "3a-conseils",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2022
+   }
+  },
+  {
+   "slug": "a-c-a-r",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2014
+   }
+  },
+  {
+   "slug": "a-v-s",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2004
+   }
+  },
+  {
+   "slug": "abea",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2021
+   }
+  },
+  {
+   "slug": "accompagnement-strategie-loire-atlantique-vendee-as44",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "10-19",
+    "annee_creation": 1984
+   }
+  },
+  {
+   "slug": "acofinances-ouest-acofi",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2002
+   }
+  },
+  {
+   "slug": "advelia",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "20-49",
+    "annee_creation": 2008
+   }
+  },
+  {
+   "slug": "aec-commissariats",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "10-19",
+    "annee_creation": 1985
+   }
+  },
+  {
+   "slug": "aga-associat-gestion-agreee",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 1978
+   }
+  },
+  {
+   "slug": "agora-audit-j-p-h-audit",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 1997
+   }
+  },
+  {
+   "slug": "agora-experts-expert-com",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "20-49",
+    "annee_creation": 2019
+   }
+  },
+  {
+   "slug": "ak-partners-ak-partners",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2024
+   }
+  },
+  {
+   "slug": "albenanne-albenanne",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2024
+   }
+  },
+  {
+   "slug": "alcom-expertise-et-conseils-alcom-expertise-conseils",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2025
+   }
+  },
+  {
+   "slug": "allard-audit-expertise-a-a-e",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2007
+   }
+  },
+  {
+   "slug": "allard-conseil-loire-ocean-a-c-l-o",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "3-5",
+    "annee_creation": 1973
+   }
+  },
+  {
+   "slug": "ameco",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "20-49",
+    "annee_creation": 2003
+   }
+  },
+  {
+   "slug": "ameco-audit",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2003
+   }
+  },
+  {
+   "slug": "armaro-atlantique",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2022
+   }
+  },
+  {
+   "slug": "artelos",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2024
+   }
+  },
+  {
+   "slug": "asa-finances",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2003
+   }
+  },
+  {
+   "slug": "asi-conseil",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2020
+   }
+  },
+  {
+   "slug": "asm-expertise-nantes",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2016
+   }
+  },
+  {
+   "slug": "audit-conseil-et-associes-one-ace",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "20-49",
+    "annee_creation": 2004
+   }
+  },
+  {
+   "slug": "audit-conseil-expertise-one-ace-a-c-e",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "20-49",
+    "annee_creation": 1989
+   }
+  },
+  {
+   "slug": "audit-et-capital",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "6-9",
+    "annee_creation": 2020
+   }
+  },
+  {
+   "slug": "bac-audit-conseil-nantes",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "20-49",
+    "annee_creation": 1994
+   }
+  },
+  {
+   "slug": "bd-myexpert",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2021
+   }
+  },
+  {
+   "slug": "bdm-factory",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2022
+   }
+  },
+  {
+   "slug": "bosser-expertise-compta-sante",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "50-99",
+    "annee_creation": 2014
+   }
+  },
+  {
+   "slug": "bousseau-expertise",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2015
+   }
+  },
+  {
+   "slug": "cabinet-conseil-burban-et-associes-et-par-abreviation-ccba",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "10-19",
+    "annee_creation": 2011
+   }
+  },
+  {
+   "slug": "cabinet-riaud",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2023
+   }
+  },
+  {
+   "slug": "cabinet-sarrouy-one-ace",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "10-19",
+    "annee_creation": 1998
+   }
+  },
+  {
+   "slug": "cagec-gestion-sarl",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "6-9",
+    "annee_creation": 2002
+   }
+  },
+  {
+   "slug": "cayola-consulting-auditeurs-associes-m",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "20-49",
+    "annee_creation": 2014
+   }
+  },
+  {
+   "slug": "cbp-one-ace",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "10-19",
+    "annee_creation": 2014
+   }
+  },
+  {
+   "slug": "cent-gest-entr-bretagne-loire",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 1983
+   }
+  },
+  {
+   "slug": "cie-fiduc-revis-cab-boucard-desoubries-cofir",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 1984
+   }
+  },
+  {
+   "slug": "clc-finances",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2013
+   }
+  },
+  {
+   "slug": "cocerto-associes",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "10-19",
+    "annee_creation": 2008
+   }
+  },
+  {
+   "slug": "cocerto-developpement",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2015
+   }
+  },
+  {
+   "slug": "cocerto-entreprise",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "100-199",
+    "annee_creation": 1971
+   }
+  },
+  {
+   "slug": "compt-actes",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2015
+   }
+  },
+  {
+   "slug": "covivium-expertises",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2001
+   }
+  },
+  {
+   "slug": "cynac-consulting",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2014
+   }
+  },
+  {
+   "slug": "d-m-p-atlantique",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "20-49",
+    "annee_creation": 1991
+   }
+  },
+  {
+   "slug": "dacodaq",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2023
+   }
+  },
+  {
+   "slug": "de-facto-conseil",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2011
+   }
+  },
+  {
+   "slug": "difference-audit",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2001
+   }
+  },
+  {
+   "slug": "e-c-atlantique-conseils",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 1995
+   }
+  },
+  {
+   "slug": "edelsen-audit",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2001
+   }
+  },
+  {
+   "slug": "edelsen-ec3a",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "3-5",
+    "annee_creation": 2011
+   }
+  },
+  {
+   "slug": "ensemble-2023",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2023
+   }
+  },
+  {
+   "slug": "entre-deux-capital",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2026
+   }
+  },
+  {
+   "slug": "es-finance",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2007
+   }
+  },
+  {
+   "slug": "evolia-expertise",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2025
+   }
+  },
+  {
+   "slug": "excel-partner",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2022
+   }
+  },
+  {
+   "slug": "exco-avec",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "100-199",
+    "annee_creation": 1992
+   }
+  },
+  {
+   "slug": "expansae",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "6-9",
+    "annee_creation": 2020
+   }
+  },
+  {
+   "slug": "expertise-comptable-namura-ec-namura",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2000
+   }
+  },
+  {
+   "slug": "expertise-finance-conseil-efc",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "10-19",
+    "annee_creation": 2002
+   }
+  },
+  {
+   "slug": "f-fradin-commissariat",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2006
+   }
+  },
+  {
+   "slug": "f2g",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2009
+   }
+  },
+  {
+   "slug": "fd-nancesfi",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2015
+   }
+  },
+  {
+   "slug": "fiduxia-nantes-fiduxia",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "3-5",
+    "annee_creation": 2014
+   }
+  },
+  {
+   "slug": "figura-figura-audit-conseils",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "20-49",
+    "annee_creation": 1987
+   }
+  },
+  {
+   "slug": "financiere-ct",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2023
+   }
+  },
+  {
+   "slug": "financiere-dl",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2023
+   }
+  },
+  {
+   "slug": "financiere-nh-co",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2023
+   }
+  },
+  {
+   "slug": "flouz-flouz",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "3-5",
+    "annee_creation": 2021
+   }
+  },
+  {
+   "slug": "fph-advisory",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2025
+   }
+  },
+  {
+   "slug": "g-f-finances-g-f-finances",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2009
+   }
+  },
+  {
+   "slug": "gcl-nantes",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "6-9",
+    "annee_creation": 2017
+   }
+  },
+  {
+   "slug": "geirinvest",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2009
+   }
+  },
+  {
+   "slug": "gerial",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2017
+   }
+  },
+  {
+   "slug": "groupe-secob-nantes-choimet-associes",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "50-99",
+    "annee_creation": 1962
+   }
+  },
+  {
+   "slug": "groupe-y-nantes-atlantique-groupe-y",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "6-9",
+    "annee_creation": 1989
+   }
+  },
+  {
+   "slug": "h-ameco",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2008
+   }
+  },
+  {
+   "slug": "h-e-f-c",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2007
+   }
+  },
+  {
+   "slug": "h-l-p-audit",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "100-199",
+    "annee_creation": 1989
+   }
+  },
+  {
+   "slug": "habena-conseil-habena-conseil-habena-conseil",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "3-5",
+    "annee_creation": 2022
+   }
+  },
+  {
+   "slug": "holding-amik",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2006
+   }
+  },
+  {
+   "slug": "holding-toadenn-nantes",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2023
+   }
+  },
+  {
+   "slug": "honestia-conseil-et-expertise-honestia-conseil-et-expertise",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2017
+   }
+  },
+  {
+   "slug": "hr-audit",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2006
+   }
+  },
+  {
+   "slug": "iko-4932z",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2021
+   }
+  },
+  {
+   "slug": "iseo-iseo-iseo",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "6-9",
+    "annee_creation": 2012
+   }
+  },
+  {
+   "slug": "ker",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "6-9",
+    "annee_creation": 2023
+   }
+  },
+  {
+   "slug": "kereac",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2024
+   }
+  },
+  {
+   "slug": "kpmg-audit-ouest",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2009
+   }
+  },
+  {
+   "slug": "l-m-r-audit",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2005
+   }
+  },
+  {
+   "slug": "la-french-audit-la-french-audit",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "10-19",
+    "annee_creation": 2021
+   }
+  },
+  {
+   "slug": "la-french-audit-legal-la-french-audit-legal",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2021
+   }
+  },
+  {
+   "slug": "le-comptable-nantais",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2026
+   }
+  },
+  {
+   "slug": "light-experts-comptables",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2024
+   }
+  },
+  {
+   "slug": "lr-finances",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2020
+   }
+  },
+  {
+   "slug": "m-a-nantes-m-a-nantes-m-a",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2026
+   }
+  },
+  {
+   "slug": "mapi",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2023
+   }
+  },
+  {
+   "slug": "mhm",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2024
+   }
+  },
+  {
+   "slug": "mmanagement-ouest-mmo",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "3-5",
+    "annee_creation": 1989
+   }
+  },
+  {
+   "slug": "mo-developpement",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "6-9",
+    "annee_creation": 1996
+   }
+  },
+  {
+   "slug": "mte-conseil",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2019
+   }
+  },
+  {
+   "slug": "nab-expertise",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2020
+   }
+  },
+  {
+   "slug": "naonex-fb-advisory",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2021
+   }
+  },
+  {
+   "slug": "nemesis-aequus-libra-aequus-libra",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2015
+   }
+  },
+  {
+   "slug": "nexaudit",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2013
+   }
+  },
+  {
+   "slug": "noritop23",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2023
+   }
+  },
+  {
+   "slug": "numbr-nantes-numbr",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "20-49",
+    "annee_creation": 2013
+   }
+  },
+  {
+   "slug": "oravia",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2026
+   }
+  },
+  {
+   "slug": "osis",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2009
+   }
+  },
+  {
+   "slug": "ouest-atlantique-audit",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2001
+   }
+  },
+  {
+   "slug": "ozeo-ozeo",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "20-49",
+    "annee_creation": 1991
+   }
+  },
+  {
+   "slug": "pack-ret",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2023
+   }
+  },
+  {
+   "slug": "pascal-gouhier-conseil-copagex",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2005
+   }
+  },
+  {
+   "slug": "pb-finances",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2009
+   }
+  },
+  {
+   "slug": "plury",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "6-9",
+    "annee_creation": 2014
+   }
+  },
+  {
+   "slug": "pyramide-expertise",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2021
+   }
+  },
+  {
+   "slug": "roch-finances",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2026
+   }
+  },
+  {
+   "slug": "sareco-nantes-sas-sareco-nantes",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "20-49",
+    "annee_creation": 2015
+   }
+  },
+  {
+   "slug": "sarl-aurecca",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 1996
+   }
+  },
+  {
+   "slug": "sarl-gesteca",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "3-5",
+    "annee_creation": 2003
+   }
+  },
+  {
+   "slug": "sarl-le-menager",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 2006
+   }
+  },
+  {
+   "slug": "sarl-piault-expert-comptable",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2020
+   }
+  },
+  {
+   "slug": "sas-constellations",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2018
+   }
+  },
+  {
+   "slug": "siloe-avm",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "10-19",
+    "annee_creation": 2003
+   }
+  },
+  {
+   "slug": "silven",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2020
+   }
+  },
+  {
+   "slug": "soc-organisat-revision-expertise-comptab-sorec",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "6-9",
+    "annee_creation": 1970
+   }
+  },
+  {
+   "slug": "sodecca",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "3-5",
+    "annee_creation": 2000
+   }
+  },
+  {
+   "slug": "sofac-audit",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2012
+   }
+  },
+  {
+   "slug": "sofac-sofac",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 1981
+   }
+  },
+  {
+   "slug": "soleya",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2026
+   }
+  },
+  {
+   "slug": "sorcoff-sa",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "1-2",
+    "annee_creation": 1978
+   }
+  },
+  {
+   "slug": "spmb-capital",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2026
+   }
+  },
+  {
+   "slug": "st-conseils-56",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2022
+   }
+  },
+  {
+   "slug": "stl-expertise",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2021
+   }
+  },
+  {
+   "slug": "thotis",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2026
+   }
+  },
+  {
+   "slug": "tyls-nantes-tyls-conseil",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "10-19",
+    "annee_creation": 2012
+   }
+  },
+  {
+   "slug": "undae",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": null,
+   "facts": {
+    "annee_creation": 2015
+   }
+  },
+  {
+   "slug": "yellodit",
+   "source_url": "https://annuaire-entreprises.data.gouv.fr",
+   "source_kind": "registre_public",
+   "accessed_on": "2026-11-14",
+   "note": "Sirene : effectif 2024",
+   "facts": {
+    "effectif": "6-9",
+    "annee_creation": 2013
+   }
+  }
+ ]
+}

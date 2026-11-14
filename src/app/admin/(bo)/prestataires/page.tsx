@@ -5,10 +5,11 @@ import { Badge, Card, PageHeader, StatusBadge, Table, inputCls } from "@/compone
 import { publishProviders, verifyProvider } from "@/lib/actions/admin";
 import { ActionForm } from "@/components/admin/ActionForm";
 import { LocalPriorities } from "@/components/admin/LocalPriorities";
+import { GridReview } from "@/components/admin/GridReview";
 import { currentSite } from "@/lib/admin";
 
 const PAGE = 100;
-type SP = Promise<{ q?: string; metier?: string; statut?: string; page?: string }>;
+type SP = Promise<{ q?: string; metier?: string; statut?: string; page?: string; grille?: string }>;
 
 /** Prestataires : recherche, filtres et pagination (des dizaines de milliers de fiches issues du registre public). */
 export default async function Providers({ searchParams }: { searchParams: SP }) {
@@ -59,6 +60,7 @@ export default async function Providers({ searchParams }: { searchParams: SP }) 
     <div>
       <PageHeader title="Prestataires" intro="Vérification : SIREN, site, références publiques. Les fiches non vérifiées restent hors index. Les contacts nominatifs sont internes." />
       {siteForLocal && <LocalPriorities siteId={siteForLocal} />}
+      <GridReview result={sp.grille} />
       <Card>
         <form className="flex flex-wrap gap-2 items-end mb-4">
           <label className="text-sm">Recherche (nom, ville ou n° de département)<input name="q" defaultValue={q} className={inputCls} /></label>

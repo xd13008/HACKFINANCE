@@ -927,6 +927,58 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"provider_criteria": {
+                  Row: {
+                    "code": string,"filterable": boolean,"kind": string,"label": string,"options": NonNullable<Json>,"professions": (string)[] | null,"question": string,"sort": number,"source_hint": string | null,"unit": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "code": string,"filterable"?: boolean,"kind": string,"label": string,"options"?: NonNullable<Json>,"professions"?: (string)[] | null,"question": string,"sort"?: number,"source_hint"?: string | null,"unit"?: string | null
+                  }
+                  Update: {
+                    "code"?: string,"filterable"?: boolean,"kind"?: string,"label"?: string,"options"?: NonNullable<Json>,"professions"?: (string)[] | null,"question"?: string,"sort"?: number,"source_hint"?: string | null,"unit"?: string | null
+                  }
+                  Relationships: [
+                    
+                  ]
+                },"provider_facts": {
+                  Row: {
+                    "accessed_on": string,"author_kind": string,"created_at": string,"created_by": string | null,"criterion": string,"id": string,"note": string | null,"provider_id": string,"source_kind": string,"source_url": string,"status": Database["public"]['Enums']["fact_status"],"validated_at": string | null,"validated_by": string | null,"value": NonNullable<Json>
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "accessed_on": string,"author_kind"?: string,"created_at"?: string,"created_by"?: string | null,"criterion": string,"id"?: string,"note"?: string | null,"provider_id": string,"source_kind": string,"source_url": string,"status"?: Database["public"]['Enums']["fact_status"],"validated_at"?: string | null,"validated_by"?: string | null,"value": NonNullable<Json>
+                  }
+                  Update: {
+                    "accessed_on"?: string,"author_kind"?: string,"created_at"?: string,"created_by"?: string | null,"criterion"?: string,"id"?: string,"note"?: string | null,"provider_id"?: string,"source_kind"?: string,"source_url"?: string,"status"?: Database["public"]['Enums']["fact_status"],"validated_at"?: string | null,"validated_by"?: string | null,"value"?: NonNullable<Json>
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "provider_facts_criterion_fkey"
+      columns: ["criterion"]
+isOneToOne: false
+      referencedRelation: "provider_criteria"
+      referencedColumns: ["code"]
+    },{
+      foreignKeyName: "provider_facts_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "provider_facts_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers_by_category"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "provider_facts_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers_public"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"providers": {
                   Row: {
                     "city": string | null,"city_slug": string | null,"coverage": string | null,"created_at": string,"deal_size_range": string | null,"department": string | null,"description": string | null,"id": string,"internal_contact": NonNullable<Json>,"is_fictional": boolean,"latitude": number | null,"longitude": number | null,"name": string,"offices": (string)[],"postal_code": string | null,"profession": string,"public_references": NonNullable<Json>,"region": string | null,"regulated_profession": boolean,"siren": string | null,"slug": string,"specialties": (string)[],"status": string,"updated_at": string,"verification_status": string,"verified_at": string | null,"verified_by": string | null,"website": string | null
@@ -1861,10 +1913,16 @@ isOneToOne: false
 "provider_city_facts":
 { Args: { "p_category": string,"p_city_slug": string }; Returns: Json
                            },
+"provider_filter_options":
+{ Args: { "p_category": string,"p_city_slug"?: string,"p_department"?: string }; Returns: Json
+                           },
 "provider_locations":
 { Args: { "p_category": string }; Returns: {
               "city": string,"city_slug": string,"department": string,"providers": number
             }[]
+                           },
+"providers_filtered":
+{ Args: { "p_category": string,"p_city_slug"?: string,"p_department"?: string,"p_filters"?: Json,"p_limit"?: number,"p_offset"?: number }; Returns: Json
                            },
 "publish_providers":
 { Args: { "p_category": string,"p_city_slug"?: string,"p_department"?: string,"p_publish"?: boolean }; Returns: number
@@ -1910,6 +1968,9 @@ isOneToOne: false
                            },
 "user_is_human_editor":
 { Args: { "uid": string }; Returns: boolean
+                           },
+"validate_provider_facts":
+{ Args: { "p_city_slug"?: string,"p_provider"?: string,"p_reject"?: boolean,"p_source_kind"?: string }; Returns: number
                            },
 "validate_test_run":
 { Args: { "p_test_run": string }; Returns: undefined

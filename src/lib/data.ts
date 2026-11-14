@@ -1,6 +1,7 @@
 import { cache } from "react";
 import { publicClient } from "@/lib/supabase/public";
 import type { Database } from "@/lib/database.types";
+import type { FilterOption, Filters, GridCriterion, GridFact } from "@/lib/grid";
 
 type Tables = Database["public"]["Tables"];
 type Views = Database["public"]["Views"];
@@ -210,6 +211,45 @@ export const getProviderLocations = cache(async (categoryId: string) => {
   const { data } = await db().rpc("provider_locations", { p_category: categoryId });
   return data ?? [];
 });
+
+/** Référentiel de la grille de lecture (critères, valeurs normalisées). */
+export const getGridCriteria = cache(async (): Promise<GridCriterion[]> => {
+  const { data } = await db().from("provider_criteria").select("*").order("sort");
+  return (data ?? []) as unknown as GridCriterion[];
+});
+
+/** Faits validés de fiches publiées (la base ne sert rien d'autre au public). */
+export async function getGridFacts(providerIds: string[]): Promise<GridFact[]> {
+  if (!providerIds.length) return [];
+  const { data } = await db().from("provider_facts").select("provider_id,criterion,value,source_url,source_kind,accessed_on")
+    .in("provider_id", providerIds).eq("status", "validated");
+  return (data ?? []) as GridFact[];
+}
+
+/** Valeurs de filtre disponibles sur une page locale (faits validés seulement). */
+export const getFilterOptions = cache(async (categoryId: string, citySlug?: string, department?: string): Promise<FilterOption[]> => {
+  const { data } = await db().rpc("provider_filter_options", { p_category: categoryId, p_city_slug: citySlug, p_department: department });
+  return (data as FilterOption[] | null) ?? [];
+});
+
+/** Annuaire filtré par la grille : la base sélectionne (faits validés), puis on lit la page de fiches. */
+export async function getFilteredProviders(categoryId: string, filters: Filters, opts: { city?: string; department?: string; page?: number; size?: number } = {}) {
+  const size = opts.size ?? 48, page = Math.max(1, opts.page ?? 1);
+  const { data } = await db().rpc("providers_filtered", {
+    p_category: categoryId, p_city_slug: opts.city, p_department: opts.department, p_filters: filters, p_limit: size, p_offset: (page - 1) * size,
+  });
+  const res = (data as { total: number; ids: string[] } | null) ?? { total: 0, ids: [] };
+  const { data: rows } = res.ids.length
+    ? await db().from("providers_by_category").select("*").eq("category_id", categoryId).in("id", res.ids).order("name")
+    : { data: [] };
+  return { providers: (rows ?? []) as ProviderPublic[], total: res.total, page, pages: Math.max(1, Math.ceil(res.total / size)) };
+}
+
+export async function getProvidersBySlugs(categoryId: string, slugs: string[]) {
+  if (!slugs.length) return [];
+  const { data } = await db().from("providers_by_category").select("*").eq("category_id", categoryId).in("slug", slugs);
+  return (data ?? []) as ProviderPublic[];
+}
 
 export async function getProvider(slug: string) {
   const { data } = await db().from("providers_public").select("*").eq("slug", slug).maybeSingle();

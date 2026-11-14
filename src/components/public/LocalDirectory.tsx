@@ -6,6 +6,7 @@ import { Breadcrumbs, type Crumb } from "./Breadcrumbs";
 import { JsonLd } from "./JsonLd";
 import { ProviderList } from "./ProviderList";
 import { Tracker } from "./Tracker";
+import type { GridCriterion, GridFact } from "@/lib/grid";
 
 export type Location = { city: string | null; city_slug: string | null; department: string | null; providers: number };
 
@@ -42,11 +43,14 @@ export function LocationsIndex({ cat, locations, department }: { cat: Category; 
 }
 
 /** Page locale d'un annuaire (ville ou département) : faits, liste paginée, lieux voisins, appel au référencement. */
-export function LocalDirectory({ site, cat, where, crumbs, path, result, locations, department, facts }: {
+export function LocalDirectory({ site, cat, where, crumbs, path, result, locations, department, facts, filters, grid, query = "", allTotal }: {
   site: Site; cat: Category; where: string; crumbs: Crumb[]; path: string;
   result: { providers: ProviderPublic[]; total: number; page: number; pages: number };
   locations: Location[]; department?: string; facts?: React.ReactNode;
+  /** Grille de lecture : filtres (formulaire), faits vérifiés des fiches affichées, filtres actifs à conserver dans la pagination. */
+  filters?: React.ReactNode; grid?: { criteria: GridCriterion[]; facts: GridFact[] }; query?: string; allTotal?: number;
 }) {
+  const pageHref = (n: number) => { const q = [query, n > 1 ? `page=${n}` : ""].filter(Boolean).join("&"); return q ? `${path}?${q}` : path; };
   const label = cat.short_name ?? cat.name.toLowerCase();
   const verified = result.providers.filter((p) => p.verification_status === "verified").length;
   const regulated = result.providers.some((p) => p.regulated_profession);
@@ -60,18 +64,21 @@ export function LocalDirectory({ site, cat, where, crumbs, path, result, locatio
       <Breadcrumbs items={crumbs} />
       <h1 className="font-display font-extrabold text-3xl sm:text-4xl leading-tight">{cat.name} {where}</h1>
       <p className="mt-3 max-w-3xl text-ink-2">
-        {result.total.toLocaleString("fr-FR")} {result.total > 1 ? "fiches référencées" : "fiche référencée"} {where} ({label}).
+        {query && allTotal !== undefined
+          ? <>{result.total.toLocaleString("fr-FR")} fiche(s) sur {allTotal.toLocaleString("fr-FR")} correspondent à vos critères {where} ({label}).</>
+          : <>{result.total.toLocaleString("fr-FR")} {result.total > 1 ? "fiches référencées" : "fiche référencée"} {where} ({label}).</>}{" "}
         Annuaire factuel en ordre alphabétique, sans classement : chaque fiche indique sa source (registre public des entreprises, site du cabinet)
         {verified ? ` ; ${verified} fiche(s) vérifiée(s) par la rédaction sur cette page.` : "."}
       </p>
       {regulated && <p className="mt-2 text-sm rounded-lg bg-surface-2 p-3 max-w-3xl">Profession réglementée : les fiches sont factuelles, sans note ni avis.</p>}
-      {result.page === 1 && facts}
-      <ProviderList providers={result.providers} categorySlug={cat.slug} />
+      {result.page === 1 && !query && facts}
+      {filters}
+      <ProviderList providers={result.providers} categorySlug={cat.slug} grid={grid} compare={!!grid && result.providers.length > 1} />
       {result.pages > 1 && (
         <nav aria-label="Pages" className="flex items-center gap-4 my-6 text-sm">
-          {result.page > 1 && <Link href={`${path}${result.page > 2 ? `?page=${result.page - 1}` : ""}`} className="underline">← Page précédente</Link>}
+          {result.page > 1 && <Link href={pageHref(result.page - 1)} className="underline">← Page précédente</Link>}
           <span className="text-ink-3">Page {result.page} sur {result.pages}</span>
-          {result.page < result.pages && <Link href={`${path}?page=${result.page + 1}`} className="underline">Page suivante →</Link>}
+          {result.page < result.pages && <Link href={pageHref(result.page + 1)} className="underline">Page suivante →</Link>}
         </nav>
       )}
       <LocationsIndex cat={cat} locations={locations} department={department} />

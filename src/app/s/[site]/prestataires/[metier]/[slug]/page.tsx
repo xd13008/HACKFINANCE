@@ -1,6 +1,9 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getProvider, getProviderCategory, getProviderCityFacts, getProviderLocations, getProviders, getSite } from "@/lib/data";
+import { getFilterOptions, getFilteredProviders, getGridCriteria, getGridFacts, getProvider, getProviderCategory, getProviderCityFacts, getProviderLocations, getProviders, getSite } from "@/lib/data";
+import { criteriaFor, filtersToQuery, groupOptions, parseFilters } from "@/lib/grid";
+import { ProviderGrid } from "@/components/public/ProviderGrid";
+import { GridFilters } from "@/components/public/GridFilters";
 import { Breadcrumbs } from "@/components/public/Breadcrumbs";
 import { DemoBanner } from "@/components/public/DemoBanner";
 import { JsonLd } from "@/components/public/JsonLd";
@@ -29,11 +32,12 @@ export async function generateStaticParams() {
   return [{ metier: "-", slug: "-" }];
 }
 type P = Promise<{ site: string; metier: string; slug: string }>;
-type SP = Promise<{ page?: string }>;
+type SP = Promise<Record<string, string | string[] | undefined>>;
 
 export async function generateMetadata({ params, searchParams }: { params: P; searchParams: SP }): Promise<Metadata> {
   const p = await params;
-  const page = Number((await searchParams).page) || 1;
+  const sp = await searchParams;
+  const page = Number(sp.page) || 1;
   const site = await getSite(p.site);
   const cat = site ? await getProviderCategory(site.id, p.metier) : null;
   const pr = await getProvider(p.slug);
@@ -50,7 +54,8 @@ export async function generateMetadata({ params, searchParams }: { params: P; se
     const where = `à ${c.city}${c.department ? ` (${c.department})` : ""}`;
     return staticMetadata(site, `/prestataires/${cat.slug}/${p.slug}`, `${cat.name} ${where}`,
       `${total} ${cat.short_name ?? "professionnels"} référencés ${where} : annuaire factuel, sans classement, sources publiques datées.`,
-      { noindex: total < MIN_INDEXABLE || page > 1 });
+      // Résultats filtrés : jamais indexés, la page ville reste la page de référence.
+      { noindex: total < MIN_INDEXABLE || page > 1 || Object.keys(parseFilters(sp, await getGridCriteria())).length > 0, canonicalPath: `/prestataires/${cat.slug}/${p.slug}` });
   }
   return {};
 }
@@ -65,21 +70,31 @@ export default async function ProviderPage({ params, searchParams }: { params: P
   const crumbs = [{ name: "Accueil", path: "/" }, { name: cat.name, path: `/prestataires/${cat.slug}` }];
 
   if (!pr) {
-    const page = Number((await searchParams).page) || 1;
-    const [result, locations, facts] = await Promise.all([getProviders(cat.id, { city: p.slug, page }), getProviderLocations(cat.id), getProviderCityFacts(cat.id, p.slug)]);
-    if (!result.total) notFound();
-    const c = result.providers[0];
+    const sp = await searchParams;
+    const page = Number(sp.page) || 1;
+    const criteria = criteriaFor(await getGridCriteria(), cat.slug);
+    const active = parseFilters(sp, criteria);
+    const filtered = Object.keys(active).length > 0;
+    const [all, locations, facts, options] = await Promise.all([getProviders(cat.id, { city: p.slug, page: filtered ? 1 : page, size: filtered ? 1 : 48 }),
+      getProviderLocations(cat.id), getProviderCityFacts(cat.id, p.slug), getFilterOptions(cat.id, p.slug)]);
+    if (!all.total) notFound();
+    const result = filtered ? await getFilteredProviders(cat.id, active, { city: p.slug, page }) : all;
+    const gridFacts = await getGridFacts(result.providers.map((x) => x.id!));
+    const c = all.providers[0];
     const latest = result.providers.map((x) => x.updated_at).filter(Boolean).sort().at(-1);
     const dep = c.department ?? undefined;
     const path = `/prestataires/${cat.slug}/${p.slug}`;
     return (
       <LocalDirectory site={site} cat={cat} where={`à ${c.city}${dep ? ` (${dep})` : ""}`} path={path} result={result} locations={locations} department={dep}
+        grid={{ criteria, facts: gridFacts }} query={filtersToQuery(active)} allTotal={all.total}
+        filters={<GridFilters groups={groupOptions(criteria, options)} active={active} path={path} total={result.total} />}
         facts={<CityFacts cat={cat} city={cityName(locations, p.slug) ?? c.city ?? p.slug} citySlug={p.slug} department={dep} facts={facts} locations={locations}
           imported={latest ? new Date(latest).toLocaleDateString("fr-FR", { month: "long", year: "numeric" }) : null} />}
         crumbs={[...crumbs, ...(dep && DEPARTEMENTS[dep] ? [{ name: depLabel(dep), path: `/prestataires/${cat.slug}/departement/${dep.toLowerCase()}` }] : []), { name: c.city ?? p.slug, path }]} />
     );
   }
 
+  const [criteria, gridFacts] = await Promise.all([getGridCriteria(), getGridFacts([pr.id!])]);
   const refs = (pr.public_references ?? []) as { label: string; source_url?: string; accessed_at?: string }[];
   const host = (u?: string) => { try { return u ? new URL(u).hostname.replace(/^www\./, "") : null; } catch { return null; } };
   const path = `/prestataires/${cat.slug}/${pr.slug}`;
@@ -101,6 +116,7 @@ export default async function ProviderPage({ params, searchParams }: { params: P
         {pr.deal_size_range && <div><dt className="text-ink-3">Taille des opérations</dt><dd>{pr.deal_size_range}</dd></div>}
         {pr.specialties && pr.specialties.length > 0 && <div><dt className="text-ink-3">Spécialités</dt><dd>{pr.specialties.join(", ")}</dd></div>}
       </dl>
+      <ProviderGrid criteria={criteria} facts={gridFacts} categorySlug={cat.slug} compareHref={pr.city_slug ? `/prestataires/${cat.slug}/${pr.city_slug}#annuaire` : undefined} />
       {refs.length > 0 && (
         <section className="mt-6"><h2 className="text-xl font-bold mb-2">Sources</h2>
           <ul className="list-disc pl-5 text-sm">{refs.map((r, i) => (

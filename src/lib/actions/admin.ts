@@ -724,3 +724,20 @@ export async function updateAgentSettings(_: ActionResult, fd: FormData): Promis
   revalidatePath("/admin/agents");
   return error ? ko(error.message) : ok("Réglages enregistrés.");
 }
+
+// ---------------------------------------------------------------------------
+// Grille de lecture des cabinets : validation humaine des faits (brouillons d'agent ou du registre)
+// ---------------------------------------------------------------------------
+export async function reviewProviderFacts(fd: FormData) {
+  await requireRole("editor");
+  const c = await db();
+  const reject = str(fd, "decision") === "reject";
+  const { data, error } = await c.rpc("validate_provider_facts", {
+    p_provider: opt(fd, "provider_id") ?? undefined, p_city_slug: opt(fd, "city_slug") ?? undefined,
+    p_source_kind: opt(fd, "source_kind") ?? undefined, p_reject: reject,
+  });
+  revalidatePath("/admin/prestataires");
+  revalidatePath("/s", "layout");
+  const back = `/admin/prestataires?grille=${error ? "erreur" : `${reject ? "rejet" : "valide"}-${data ?? 0}`}#grille`;
+  redirect(back);
+}
