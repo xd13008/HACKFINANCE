@@ -80,7 +80,8 @@ export default async function ProviderPage({ params, searchParams }: { params: P
     );
   }
 
-  const refs = (pr.public_references ?? []) as { label: string; source_url?: string }[];
+  const refs = (pr.public_references ?? []) as { label: string; source_url?: string; accessed_at?: string }[];
+  const host = (u?: string) => { try { return u ? new URL(u).hostname.replace(/^www\./, "") : null; } catch { return null; } };
   const path = `/prestataires/${cat.slug}/${pr.slug}`;
   return (
     <article className="max-w-3xl mx-auto px-4 py-8">
@@ -101,8 +102,13 @@ export default async function ProviderPage({ params, searchParams }: { params: P
         {pr.specialties && pr.specialties.length > 0 && <div><dt className="text-ink-3">Spécialités</dt><dd>{pr.specialties.join(", ")}</dd></div>}
       </dl>
       {refs.length > 0 && (
-        <section className="mt-6"><h2 className="text-xl font-bold mb-2">Références publiques</h2>
-          <ul className="list-disc pl-5 text-sm">{refs.map((r) => <li key={r.label}>{r.source_url ? <a href={r.source_url} rel="nofollow noopener" target="_blank" className="underline">{r.label}</a> : r.label}</li>)}</ul>
+        <section className="mt-6"><h2 className="text-xl font-bold mb-2">Sources</h2>
+          <ul className="list-disc pl-5 text-sm">{refs.map((r, i) => (
+            <li key={`${r.source_url ?? r.label}-${i}`}>
+              {r.source_url ? <a href={r.source_url} rel="nofollow noopener" target="_blank" className="underline">{r.label !== "Source" ? r.label : host(r.source_url) ?? r.label}</a> : r.label}
+              {r.accessed_at && <span className="text-ink-3"> · consultée le {formatDate(r.accessed_at)}</span>}
+            </li>
+          ))}</ul>
         </section>
       )}
       {pr.website && (
