@@ -32,6 +32,20 @@ Domaines achetés : `radarfinances.com` (portail finance, marque « Radar Financ
    - import Search Console chaque jour ;
    - agents chaque semaine.
 
+## 3 bis. Site de test (versions « preview »)
+
+Une base Supabase séparée, reliée aux seules versions « preview » de Vercel. On y relit les pages comme en production, sans rien toucher en production.
+
+1. **Base.** Vercel, onglet *Storage* : créer une base Supabase, par exemple `radar-test`, en région Paris (eu-west-3). La connecter au projet pour l'environnement **Preview seulement**.
+2. **Production.** Dans la connexion de la base de production au projet, décocher **Preview** : elle ne sert plus que l'environnement *Production*.
+3. **Branche.** Toute branche Git autre que `main` est déployée sur le site de test. La branche `test` donne une adresse fixe :
+   `iceberg-x3ag-git-test-chance24.vercel.app`. L'accès est réservé à l'équipe Vercel (protection par défaut des versions preview), et le site n'est jamais indexé (`ALLOW_INDEXING=false`).
+4. **Au déploiement**, `scripts/migrate-prod.mjs` :
+   - applique les migrations et les données sur la base de test ;
+   - rejoue `supabase/test-env/*.sql`, qui publie les annuaires prioritaires et valide la grille de lecture, pour la relecture.
+   Sur la base de production, ces fichiers ne s'exécutent jamais.
+5. **Garde-fou.** Une version de test encore reliée à la base de production n'écrit rien. Le script la reconnaît à l'identifiant public du projet (`PROD_DB_REF`) et le signale dans le journal du build. Test : `tests/migrate-guard.test.ts`.
+
 ## 4. Google Search Console
 1. Vérifier les propriétés de domaine `sc-domain:radarfinances.com` et `sc-domain:cedermasociete.com`.
 2. Dans Google Cloud : activer l'API *Search Console*, créer un **compte de service** et télécharger sa clé JSON.

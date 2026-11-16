@@ -1,5 +1,6 @@
 /**
- * Migrations de production, exécutées par le build Vercel (production uniquement).
+ * Migrations, exécutées par le build Vercel : en production, et sur le site de test (versions « preview » reliées
+ * à la base de test ; jamais si elles pointent sur la base de production). Le site de test rejoue en plus supabase/test-env.
  * - Applique, dans l'ordre et chacune dans une transaction, les fichiers de supabase/migrations
  *   absents de supabase_migrations.schema_migrations (même table que la CLI Supabase).
  * - Base vide (aucun portail) : charge supabase/bootstrap/*.sql (taxonomie, sans données fictives).
@@ -19,15 +20,25 @@ import pg from "pg";
 const root = path.resolve(import.meta.dirname, "..");
 const log = (m) => console.log(`[migrations] ${m}`);
 
-if (process.env.VERCEL_ENV !== "production" && process.env.FORCE_MIGRATIONS !== "1") {
+// Identifiant public (non secret) du projet Supabase de production : une version de test ne doit jamais y écrire.
+const PROD_DB_REF = "ngcjecjwjztkdkfuszly";
+const raw = process.env.POSTGRES_URL_NON_POOLING;
+const onProdDb = [raw, process.env.NEXT_PUBLIC_SUPABASE_URL].some((v) => v?.includes(PROD_DB_REF));
+// Site de test : versions « preview » de Vercel reliées à la base de test (jamais à celle de production).
+const testSite = process.env.VERCEL_ENV === "preview";
+if (testSite && onProdDb) {
+  log("version de test reliée à la base de production : aucune écriture (connecter la base de test à « Preview » dans Vercel)");
+  process.exit(0);
+}
+if (!testSite && process.env.VERCEL_ENV !== "production" && process.env.FORCE_MIGRATIONS !== "1") {
   log(`ignoré (environnement « ${process.env.VERCEL_ENV ?? "local"} »)`);
   process.exit(0);
 }
-const raw = process.env.POSTGRES_URL_NON_POOLING;
 if (!raw) {
   console.error("[migrations] POSTGRES_URL_NON_POOLING absente : base non configurée");
   process.exit(1);
 }
+if (testSite) log("site de test : base de test (migrations, données, puis publication de test)");
 
 // sslmode est retiré de l'URL : le certificat Supabase est géré par l'option ssl ci-dessous.
 const url = new URL(raw);
@@ -82,6 +93,14 @@ try {
   for (const f of files("supabase/data")) {
     log(`données ${f}`);
     await client.query(readFileSync(path.join(root, "supabase/data", f), "utf8"));
+  }
+
+  // Site de test seulement : tout ce qui attend une validation humaine est publié, pour relire les pages comme en production.
+  if (testSite && !onProdDb) {
+    for (const f of files("supabase/test-env")) {
+      log(`site de test : ${f}`);
+      await client.query(readFileSync(path.join(root, "supabase/test-env", f), "utf8"));
+    }
   }
 
   const mask = (e) => e.replace(/^(.).*(@.*)$/, "$1…$2");

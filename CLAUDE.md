@@ -116,6 +116,8 @@ supabase/
                 date de consultation (11/11/2026) ajoutée aux sources des fiches prestataires (data/99_prestataires_sources_datees),
                 grille de lecture en brouillon (data/99_grille_prestataires, scripts/grid-to-sql.py depuis docs/seo/grille/*.json ;
                 pilote Nantes : registre pour 141 fiches dont 22 chiffres d'affaires, sites officiels pour 18)
+  test-env/     SITE DE TEST seulement (versions « preview » sur la base de test, jamais la production — garde-fou PROD_DB_REF
+                dans scripts/migrate-prod.mjs) : publie les annuaires prioritaires et valide la grille pour relecture (DEPLOY.md §3 bis)
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
   tests/        pgTAP
 src/
