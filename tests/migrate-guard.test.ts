@@ -20,3 +20,10 @@ describe("déploiement : protection de la base de production", () => {
     expect(run({})).toContain("ignoré");
   });
 });
+
+describe("déploiement : base de test connectée avec le préfixe TEST", () => {
+  it("une base TEST qui pointerait sur la production est refusée", () => {
+    const out = run({ VERCEL_ENV: "preview", TEST_POSTGRES_URL_NON_POOLING: "postgresql://postgres.ngcjecjwjztkdkfuszly:x@127.0.0.1:1/postgres" });
+    expect(out).toContain("aucune écriture");
+  });
+});

@@ -16,12 +16,15 @@ import { createHmac } from "node:crypto";
 import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import pg from "pg";
+import { applyPreviewEnv } from "../src/lib/preview-env.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const log = (m) => console.log(`[migrations] ${m}`);
 
 // Identifiant public (non secret) du projet Supabase de production : une version de test ne doit jamais y écrire.
 const PROD_DB_REF = "ngcjecjwjztkdkfuszly";
+// Site de test : la base de test est connectée avec le préfixe TEST (DEPLOY.md §3 bis).
+const fromTest = applyPreviewEnv();
 const raw = process.env.POSTGRES_URL_NON_POOLING;
 const onProdDb = [raw, process.env.NEXT_PUBLIC_SUPABASE_URL].some((v) => v?.includes(PROD_DB_REF));
 // Site de test : versions « preview » de Vercel reliées à la base de test (jamais à celle de production).
@@ -38,7 +41,7 @@ if (!raw) {
   console.error("[migrations] POSTGRES_URL_NON_POOLING absente : base non configurée");
   process.exit(1);
 }
-if (testSite) log("site de test : base de test (migrations, données, puis publication de test)");
+if (testSite) log(`site de test : base de test (${fromTest.length} réglages TEST), migrations, données puis publication de test`);
 
 // sslmode est retiré de l'URL : le certificat Supabase est géré par l'option ssl ci-dessous.
 const url = new URL(raw);
