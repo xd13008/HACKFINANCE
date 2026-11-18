@@ -4,7 +4,8 @@ import { getNav } from "@/lib/data";
 import { publicClient } from "@/lib/supabase/public";
 import { siteUrl } from "@/lib/seo";
 import { requireSite, type SiteParams } from "./_lib";
-import { display } from "@/app/fonts";
+import { display, text } from "@/app/fonts";
+import { SiteHeader } from "@/components/public/SiteHeader";
 import { CookieBanner, CookieSettingsLink } from "@/components/public/CookieBanner";
 
 /** Portails connus au build : toutes les pages publiques peuvent être pré-générées et mises en cache. */
@@ -33,31 +34,11 @@ export default async function SiteLayout({ children, params }: { children: React
   const theme = (site.theme ?? {}) as { primary?: string; accent?: string; page?: string };
   // Univers qui ont au moins une catégorie publiée (les autres ne sont pas encore servis)
   const liveVerticals = nav.verticals.filter((v) => nav.categories.some((c) => c.vertical_id === v.id));
-  const softwareCats = nav.categories.filter((c) => c.kind === "software");
-  const providerCats = nav.categories.filter((c) => c.kind === "provider");
 
   return (
     <div style={{ ["--brand" as string]: theme.primary ?? "#0f4c81", ["--accent" as string]: theme.accent ?? "#f59e0b", ["--page" as string]: theme.page ?? "#ffffff" }}
-         className={`${display.variable} min-h-screen flex flex-col bg-page`}>
-      <header className="border-b border-line bg-white sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
-          <Link href="/" className="font-display font-extrabold text-lg text-brand tracking-tight">{site.name}</Link>
-          <nav aria-label="Navigation principale" className="hidden md:flex gap-5 text-sm items-center">
-            <Link href="/trouver" className="font-semibold rounded-lg bg-accent text-ink px-3 py-1.5">Trouver une solution</Link>
-            {softwareCats.slice(0, 4).map((c) => (
-              <Link key={c.id} href={`/meilleurs-logiciels/${c.slug}`} className="hover:text-brand">{c.short_name ?? c.name}</Link>
-            ))}
-            {providerCats.slice(0, 3).map((c) => (
-              <Link key={c.id} href={`/prestataires/${c.slug}`} className="hover:text-brand">{c.name}</Link>
-            ))}
-            {nav.highlights.slice(0, 2).map((h) => (
-              <Link key={h.path} href={h.path!} className="hover:text-brand">{h.type === "simulator" ? "Simulateurs" : "Le guide"}</Link>
-            ))}
-            {nav.hasJobs && <Link href="/emplois" className="hover:text-brand">Jobs</Link>}
-          </nav>
-          <Link href="/mon-espace" className="text-sm font-semibold rounded-lg border border-line px-3 py-1.5 hover:border-ink">Mon espace</Link>
-        </div>
-      </header>
+         className={`${display.variable} ${text.variable} min-h-screen flex flex-col bg-page`}>
+      <SiteHeader site={site} verticals={nav.verticals} hasJobs={!!nav.hasJobs} />
 
       <main className="flex-1">{children}</main>
 

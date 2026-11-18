@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { getNav, getRanking, listContent, getContentByPath } from "@/lib/data";
+import { getNav, getContentByPath } from "@/lib/data";
 import { JsonLd } from "@/components/public/JsonLd";
 import { Tracker } from "@/components/public/Tracker";
-import { ScoreBadge } from "@/components/public/ScoreBadge";
-import { ldOrganization, ldWebsite, CONTENT_TYPE_LABEL, staticMetadata } from "@/lib/seo";
+import { ldOrganization, ldWebsite, staticMetadata } from "@/lib/seo";
 import { metadataFor, requireSite, type SiteParams } from "./_lib";
 
 export const revalidate = 300; // secondes ; la publication revalide aussi la page immédiatement
@@ -16,90 +15,84 @@ export async function generateMetadata({ params }: { params: SiteParams }) {
   return metadataFor(key, "/");
 }
 
+/** Textes de l'accueil validés par le dirigeant (maquette du 11/11/2026, écran 1). Autres portails : titre et description du portail. */
+const HERO: Record<string, { before: string; mark: string; after: string }> = {
+  daf: { before: "Votre outil ou partenaire finance est-il ", mark: "le bon", after: " ?" },
+};
+
+const TRUST = ["Tests réels par la rédaction", "Sources publiques datées", "Sponsorisé toujours signalé", "Vos données ne partent qu'avec votre accord"];
+
 export default async function Home({ params }: { params: SiteParams }) {
   const site = await requireSite((await params).site);
-  const [nav, home, latest] = await Promise.all([
-    getNav(site.id),
-    getContentByPath(site.id, "/"),
-    listContent(site.id, { types: ["guide", "pillar", "simulator", "resource", "duel", "software_review"], limit: 6 }),
-  ]);
-  const softwareCats = nav.categories.filter((c) => c.kind === "software");
-  const providerCats = nav.categories.filter((c) => c.kind === "provider");
-  const rankings = await Promise.all(softwareCats.map(async (c) => ({ cat: c, top: (await getRanking(c.id)).slice(0, 3) })));
+  const [nav, home] = await Promise.all([getNav(site.id), getContentByPath(site.id, "/")]);
+  const hero = HERO[site.key];
+  const title = hero ? null : (home?.h1 ?? site.tagline);
+  // Ce que chaque univers propose déjà (catégories publiées seulement)
+  const offer = (verticalId: string) => {
+    const cats = nav.categories.filter((c) => c.vertical_id === verticalId);
+    const sw = cats.filter((c) => c.kind === "software").length, pro = cats.filter((c) => c.kind === "provider").length;
+    const parts = [sw && `${sw} catégorie${sw > 1 ? "s" : ""} de logiciels`, pro && `${pro} annuaire${pro > 1 ? "s" : ""} de professionnels`].filter(Boolean);
+    return parts.length ? parts.join(" · ") : "En préparation";
+  };
 
   return (
     <div>
       <JsonLd data={[ldOrganization(site), ldWebsite(site)]} />
       <Tracker site={site.key} pageType="home" />
       <section className="bg-brand text-white">
-        <div className="max-w-6xl mx-auto px-4 py-14">
-          <h1 className="text-3xl sm:text-5xl font-extrabold max-w-3xl leading-tight">{home?.h1 ?? site.tagline}</h1>
-          <p className="mt-4 text-lg max-w-2xl opacity-90">{home?.summary ?? site.description}</p>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-20 sm:pt-20 sm:pb-24 flex flex-col gap-10">
+          <h1 className="m-0 font-display font-extrabold text-5xl sm:text-7xl lg:text-[84px] leading-[0.98] tracking-[-0.035em] max-w-5xl">
+            {hero ? <>{hero.before}<span className="bg-accent text-ink rounded-[14px] px-3 [box-decoration-break:clone]">{hero.mark}</span>{hero.after}</> : title}
+          </h1>
+          {!hero && (home?.summary ?? site.description) && <p className="m-0 text-lg max-w-2xl text-white/80">{home?.summary ?? site.description}</p>}
+          <div className="grid gap-4 sm:grid-cols-2 max-w-5xl">
+            <Link href="/trouver" className="flex flex-col gap-3.5 rounded-[28px] bg-accent text-ink p-7 min-h-44 no-underline">
+              <span className="text-[13px] font-bold uppercase tracking-[0.06em]">Vous avez déjà un outil, un cabinet ou un prestataire</span>
+              <span className="font-display font-extrabold text-3xl sm:text-[34px] leading-[1.05] tracking-tight">Challenger ma solution</span>
+              <span className="mt-auto flex items-center justify-between gap-4 font-semibold">Comparez-la aux solutions testées
+                <span aria-hidden="true" className="w-13 h-13 shrink-0 rounded-[10px] bg-brand text-accent flex items-center justify-center text-2xl">→</span></span>
+            </Link>
+            <Link href="/trouver" className="flex flex-col gap-3.5 rounded-[28px] bg-white text-ink p-7 min-h-44 no-underline">
+              <span className="text-[13px] font-bold uppercase tracking-[0.06em]">Vous partez de zéro</span>
+              <span className="font-display font-extrabold text-3xl sm:text-[34px] leading-[1.05] tracking-tight">Trouver une solution</span>
+              <span className="mt-auto flex items-center justify-between gap-4 font-semibold">Par besoin, sur vos critères
+                <span aria-hidden="true" className="w-13 h-13 shrink-0 rounded-[10px] bg-brand text-white flex items-center justify-center text-2xl">→</span></span>
+            </Link>
+          </div>
+          <ul className="m-0 p-0 list-none flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-400">
+            {TRUST.map((t) => <li key={t}><span aria-hidden="true">✓ </span>{t}</li>)}
+          </ul>
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-4 py-10 space-y-12">
-        {rankings.length > 0 && (
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Nos comparatifs</h2>
-            <div className="grid gap-4 md:grid-cols-2">
-              {rankings.map(({ cat, top }) => (
-                <Link key={cat.id} href={`/meilleurs-logiciels/${cat.slug}`} className="block rounded-xl border border-line p-5 hover:border-brand">
-                  <p className="font-semibold text-lg">{cat.name}</p>
-                  <ol className="mt-3 space-y-1 text-sm">
-                    {top.map((r) => (
-                      <li key={r.software.id} className="flex items-center justify-between">
-                        <span>{r.rank}. {r.software.name}</span><ScoreBadge score={r.overall} size="sm" />
-                      </li>
-                    ))}
-                  </ol>
-                  {!top.length && <p className="text-sm text-ink-3 mt-2">Tests en cours</p>}
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {nav.highlights.length > 0 && (
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Commencer ici</h2>
-            <div className="grid gap-4 md:grid-cols-3">
-              {nav.highlights.map((h) => (
-                <Link key={h.path} href={h.path!} className="block rounded-xl bg-surface-2 p-5 hover:ring-2 ring-brand">
-                  <span className="text-xs uppercase tracking-wide text-ink-3">{CONTENT_TYPE_LABEL[h.type!]}</span>
-                  <p className="font-semibold mt-1">{h.h1}</p>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-        {providerCats.length > 0 && (
-          <section>
-            <h2 className="text-2xl font-bold mb-4">Annuaire des professionnels</h2>
-            <ul className="flex flex-wrap gap-3">
-              {providerCats.map((c) => (
-                <li key={c.id}><Link href={`/prestataires/${c.slug}`} className="inline-block rounded-lg border border-line bg-white px-4 py-2 hover:border-brand">{c.name}</Link></li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Dernières publications</h2>
-          <ul className="grid gap-4 md:grid-cols-3">
-            {latest.map((c) => (
-              <li key={c.id}>
-                <Link href={c.path!} className="block h-full rounded-xl border border-line p-4 hover:border-brand">
-                  <span className="text-xs uppercase tracking-wide text-ink-3">{CONTENT_TYPE_LABEL[c.type!]}</span>
-                  <p className="font-semibold mt-1">{c.h1}</p>
-                  <p className="text-sm text-ink-2 mt-1 line-clamp-3">{c.meta_description}</p>
+      {nav.verticals.length > 0 && (
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-6" aria-labelledby="univers">
+          <h2 id="univers" className="m-0 mb-7 font-display font-extrabold text-4xl sm:text-5xl tracking-[-0.03em] leading-none">
+            {site.key === "daf" ? `Les ${nav.verticals.length} univers du DAF` : "Nos univers"}
+          </h2>
+          <ul className="m-0 p-0 list-none grid gap-3.5 sm:grid-cols-2 lg:grid-cols-4">
+            {nav.verticals.map((v) => (
+              <li key={v.id}>
+                <Link href={`/univers/${v.slug}`} className="h-full min-h-36 flex flex-col justify-between gap-7 rounded-3xl bg-white border border-line p-6 text-ink no-underline hover:border-ink">
+                  <span className="font-display font-extrabold text-[26px] leading-[1.05] tracking-tight">{v.name}</span>
+                  {v.description && <span className="text-sm text-ink-2 leading-snug">{v.description}</span>}
+                  <span className="flex items-center justify-between text-sm font-semibold">{offer(v.id)}<span aria-hidden="true" className="text-[22px]">→</span></span>
                 </Link>
               </li>
             ))}
           </ul>
         </section>
-      </div>
+      )}
+
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-4">
+        <div className="flex flex-wrap items-center justify-between gap-4 rounded-[28px] bg-accent text-ink p-8">
+          <p className="m-0 font-display font-extrabold text-3xl sm:text-[34px] leading-[1.05] tracking-tight max-w-2xl">Éditeur, cabinet ? Votre fiche est gratuite.</p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/referencer-mon-logiciel" className="inline-flex items-center min-h-13 px-6 rounded-[10px] bg-brand text-white font-bold no-underline">Référencer mon logiciel →</Link>
+            <Link href="/referencer-mon-cabinet" className="inline-flex items-center min-h-13 px-6 rounded-[10px] bg-brand text-white font-bold no-underline">Référencer mon cabinet →</Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

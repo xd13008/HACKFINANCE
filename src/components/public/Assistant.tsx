@@ -125,7 +125,7 @@ export function Assistant({ universes }: { universes: AssistantUniverse[] }) {
   const criteria = need.n.criteria.slice(0, 5);
   return (
     <div>
-      <section className="bg-ink text-white">
+      <section className="bg-brand text-white">
         <div className="max-w-6xl mx-auto px-4 py-10 flex flex-col gap-4">
           <p className="text-sm font-bold uppercase tracking-wider text-accent">Votre sélection personnalisée</p>
           <h1 className="font-display font-extrabold text-4xl sm:text-5xl leading-tight tracking-tight">
