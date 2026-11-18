@@ -71,7 +71,7 @@ export default async function UniversePage({ params }: { params: P }) {
       ]} />
       <Tracker site={site.key} pageType="universe" rubrique={u.vertical.slug} />
 
-      <section className="bg-ink text-white">
+      <section className="bg-brand text-white">
         <div className="max-w-6xl mx-auto px-4 pt-4"><Breadcrumbs items={crumbs} /></div>
         <div className="max-w-6xl mx-auto px-4 pb-8 pt-6 flex flex-col gap-5">
           <p className="text-sm font-bold uppercase tracking-wider text-accent">Univers · le tableau de bord du DAF</p>

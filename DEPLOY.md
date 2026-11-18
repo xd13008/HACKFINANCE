@@ -36,9 +36,14 @@ Domaines achetés : `radarfinances.com` (portail finance, marque « Radar Financ
 
 Une base Supabase séparée, reliée aux seules versions « preview » de Vercel. On y relit les pages comme en production, sans rien toucher en production.
 
-1. **Base.** Vercel, onglet *Storage* : créer une base Supabase, par exemple `radar-test`, en région Paris (eu-west-3). La connecter au projet pour l'environnement **Preview seulement**.
-2. **Production.** Dans la connexion de la base de production au projet, décocher **Preview** : elle ne sert plus que l'environnement *Production*.
-3. **Branche.** Toute branche Git autre que `main` est déployée sur le site de test. La branche `test` donne une adresse fixe :
+1. **Base.** Base Supabase `radar-test` (Vercel, onglet *Storage*), connectée au projet pour **Preview seulement**,
+   avec le préfixe **`TEST`** (Vercel l'impose, car la base de production est déjà connectée sans préfixe).
+   `src/lib/preview-env.mjs` recopie ces réglages sous leurs noms habituels : au build (`next.config.ts`), à l'exécution (`src/instrumentation.ts`)
+   et pour les migrations. En production, il ne fait rien.
+2. **Production.** Les 16 variables de la base de production ne ciblent que *Production* (fait le 17/11/2026).
+3. **Branche.** Toute branche Git autre que `main` est déployée sur le site de test. Pour mettre à jour le site de test :
+   `git checkout test && git merge main && git push`. Vercel ne redéploie pas un commit déjà déployé : la fusion crée un nouveau commit.
+   La branche `test` donne une adresse fixe :
    `iceberg-x3ag-git-test-chance24.vercel.app`. L'accès est réservé à l'équipe Vercel (protection par défaut des versions preview), et le site n'est jamais indexé (`ALLOW_INDEXING=false`).
 4. **Au déploiement**, `scripts/migrate-prod.mjs` :
    - applique les migrations et les données sur la base de test ;
