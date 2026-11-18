@@ -37,7 +37,7 @@ export default async function SiteLayout({ children, params }: { children: React
 
   return (
     <div style={{ ["--brand" as string]: theme.primary ?? "#0f4c81", ["--accent" as string]: theme.accent ?? "#f59e0b", ["--page" as string]: theme.page ?? "#ffffff" }}
-         className={`${display.variable} ${text.variable} min-h-screen flex flex-col bg-page`}>
+         className={`${display.variable} ${text.variable} font-sans min-h-screen flex flex-col bg-page`}>
       <SiteHeader site={site} verticals={nav.verticals} hasJobs={!!nav.hasJobs} />
 
       <main className="flex-1">{children}</main>
