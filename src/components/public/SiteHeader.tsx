@@ -36,7 +36,7 @@ export function SiteHeader({ site, verticals, hasJobs }: { site: Site; verticals
             </MenuDetails>
           )}
           {hasJobs && <Link href="/emplois" className="text-white no-underline py-2">Jobs</Link>}
-          <Link href="/referencer-mon-logiciel" className="text-white no-underline py-2">Je suis éditeur ou cabinet →</Link>
+          <Link href="/espace-pro" className="text-white no-underline py-2">Je suis éditeur ou cabinet →</Link>
           <Link href="/mon-espace" className="rounded-lg border border-white/30 px-3 py-1.5 text-white no-underline hover:border-white">Mon espace</Link>
         </nav>
         <MenuDetails className="md:hidden ml-auto relative">
@@ -46,7 +46,7 @@ export function SiteHeader({ site, verticals, hasJobs }: { site: Site; verticals
               <Link href="/trouver" className="rounded-lg bg-accent px-3 py-2.5 font-semibold text-ink no-underline">Trouver une solution</Link>
               <Link href="/mon-espace" className="rounded-lg px-3 py-2.5 font-semibold text-ink no-underline">Mon espace</Link>
               {hasJobs && <Link href="/emplois" className="rounded-lg px-3 py-2.5 font-semibold text-ink no-underline">Jobs</Link>}
-              <Link href="/referencer-mon-logiciel" className="rounded-lg px-3 py-2.5 font-semibold text-ink no-underline">Je suis éditeur ou cabinet</Link>
+              <Link href="/espace-pro" className="rounded-lg px-3 py-2.5 font-semibold text-ink no-underline">Je suis éditeur ou cabinet</Link>
             </div>
             <p className="px-5 pt-3 text-xs font-bold uppercase tracking-wider text-ink-3">Univers</p>
             {universes}

@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
-import { getCategory, getFacts, getPricing, getRanking, getSponsored, getContentByPath, listContent } from "@/lib/data";
-import type { Criterion } from "@/lib/data";
+import { getContentByPath, getSponsored } from "@/lib/data";
+import { defaultWeights, loadCategoryHub } from "@/lib/category";
 import { ContentArticle } from "@/components/public/ContentArticle";
-import { RankingTable } from "@/components/public/RankingTable";
+import { CategoryExplorer } from "@/components/public/CategoryExplorer";
+import { CategoryTabs } from "@/components/public/CategoryHero";
 import { SponsoredBlock } from "@/components/public/SponsoredBlock";
 import { ldItemList } from "@/lib/seo";
 import { metadataFor, requireSite, publishedSlugs, staticParams } from "../../_lib";
@@ -20,32 +21,38 @@ export async function generateMetadata({ params }: { params: P }) {
   return metadataFor(p.site, `/meilleurs-logiciels/${p.categorie}`);
 }
 
+/** Maquette, écran 2 : onglet « Test de la rédaction » (critères pondérés, filtres, comparateur) sous le texte validé de la catégorie. */
 export default async function CategoryPage({ params }: { params: P }) {
   const p = await params;
   const site = await requireSite(p.site);
-  const category = await getCategory(site.id, p.categorie);
-  if (!category || category.kind !== "software") notFound();
-  const content = await getContentByPath(site.id, `/meilleurs-logiciels/${category.slug}`);
+  const hub = await loadCategoryHub(site.id, p.categorie);
+  if (!hub) notFound();
+  const content = await getContentByPath(site.id, `/meilleurs-logiciels/${hub.category.slug}`);
   if (!content) notFound();
-
-  const ranking = await getRanking(category.id);
-  const ids = ranking.map((r) => r.software.id);
-  const [pricing, facts, sponsored] = await Promise.all([
-    getPricing(ids), getFacts(ids), getSponsored(site.id, { categoryId: category.id, types: ["category_sponsored"] }),
-  ]);
+  const sponsored = await getSponsored(site.id, { categoryId: hub.category.id, types: ["category_sponsored"] });
 
   return (
     <ContentArticle
       site={site}
       content={content}
-      rubrique={category.slug}
-      crumbs={[{ name: "Accueil", path: "/" }, { name: category.name, path: content.path! }]}
-      about={ranking.map((r) => r.software.name)}
-      extraLd={[ldItemList(site, ranking.map((r) => ({ name: r.software.name, path: `/logiciels/${r.software.slug}` })))]}
+      rubrique={hub.category.slug}
+      wide
+      crumbs={[{ name: "Accueil", path: "/" }, ...(hub.vertical ? [{ name: hub.vertical.name, path: `/univers/${hub.vertical.slug}` }] : []), { name: hub.category.name, path: content.path! }]}
+      about={hub.tools.map((t) => t.name)}
+      extraLd={[ldItemList(site, hub.tools.map((t) => ({ name: t.name, path: `/logiciels/${t.slug}` })))]}
       before={
         <>
-          <SponsoredBlock placements={sponsored} title="Partenaires de la catégorie" />
-          <RankingTable pricingPages={new Set((await listContent(site.id, { types: ["pricing"], limit: 500 })).map((c) => c.path!))} ranking={ranking} criteria={category.criteria as Criterion[]} pricing={pricing} facts={facts} />
+          <CategoryTabs slug={hub.category.slug} current="" dark={false} />
+          <CategoryExplorer
+            categorySlug={hub.category.slug}
+            criteria={hub.criteria.map((c) => ({ key: c.key, label: c.label }))}
+            defaults={defaultWeights(hub.criteria)}
+            tools={hub.tools.map((t) => ({ slug: t.slug, name: t.name, tagline: t.tagline, score: t.score, criteria: t.criteria, targetSizes: t.targetSizes,
+              multiEntity: t.multiEntity, freePlan: t.freePlan, hosting: t.hosting, bankConnections: t.bankConnections, integrations: t.integrations, entry: t.entry, testedAt: t.testedAt }))}
+            referenced={hub.referenced}
+            providerCategories={hub.providerCategories}
+            sponsored={sponsored.length ? <SponsoredBlock placements={sponsored} title="Sponsorisé · hors classement éditorial" /> : undefined}
+          />
         </>
       }
     />

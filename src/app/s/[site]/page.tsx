@@ -46,10 +46,10 @@ export default async function Home({ params }: { params: SiteParams }) {
           </h1>
           {!hero && (home?.summary ?? site.description) && <p className="m-0 text-lg max-w-2xl text-white/80">{home?.summary ?? site.description}</p>}
           <div className="grid gap-4 sm:grid-cols-2 max-w-5xl">
-            <Link href="/trouver" className="flex flex-col gap-3.5 rounded-[28px] bg-accent text-ink p-7 min-h-44 no-underline">
+            <Link href="/challenger" className="flex flex-col gap-3.5 rounded-[28px] bg-accent text-ink p-7 min-h-44 no-underline">
               <span className="text-[13px] font-bold uppercase tracking-[0.06em]">Vous avez déjà un outil, un cabinet ou un prestataire</span>
               <span className="font-display font-extrabold text-3xl sm:text-[34px] leading-[1.05] tracking-tight">Challenger ma solution</span>
-              <span className="mt-auto flex items-center justify-between gap-4 font-semibold">Comparez-la aux solutions testées
+              <span className="mt-auto flex items-center justify-between gap-4 font-semibold">Comparez-la aux alternatives, sur vos critères
                 <span aria-hidden="true" className="w-13 h-13 shrink-0 rounded-[10px] bg-brand text-accent flex items-center justify-center text-2xl">→</span></span>
             </Link>
             <Link href="/trouver" className="flex flex-col gap-3.5 rounded-[28px] bg-white text-ink p-7 min-h-44 no-underline">
@@ -88,8 +88,8 @@ export default async function Home({ params }: { params: SiteParams }) {
         <div className="flex flex-wrap items-center justify-between gap-4 rounded-[28px] bg-accent text-ink p-8">
           <p className="m-0 font-display font-extrabold text-3xl sm:text-[34px] leading-[1.05] tracking-tight max-w-2xl">Éditeur, cabinet ? Votre fiche est gratuite.</p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/referencer-mon-logiciel" className="inline-flex items-center min-h-13 px-6 rounded-[10px] bg-brand text-white font-bold no-underline">Référencer mon logiciel →</Link>
-            <Link href="/referencer-mon-cabinet" className="inline-flex items-center min-h-13 px-6 rounded-[10px] bg-brand text-white font-bold no-underline">Référencer mon cabinet →</Link>
+            <Link href="/espace-pro?type=logiciel#referencer" className="inline-flex items-center min-h-13 px-6 rounded-[10px] bg-brand text-white font-bold no-underline">Référencer mon logiciel →</Link>
+            <Link href="/espace-pro?type=cabinet#referencer" className="inline-flex items-center min-h-13 px-6 rounded-[10px] bg-brand text-white font-bold no-underline">Référencer mon cabinet →</Link>
           </div>
         </div>
       </section>

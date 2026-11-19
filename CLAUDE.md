@@ -51,7 +51,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires, DAF inscrits, jobs, agent de vérification des offres, faits des pages ville, grille de lecture des cabinets (188 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires, DAF inscrits, jobs, agent de vérification des offres, faits des pages ville, grille de lecture des cabinets, Challenger et mise en relation (204 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -89,6 +89,10 @@ supabase/
                 2300 grille par axes (provider_grid_axes : les 5 questions du dirigeant, texte des experts-comptables ; critère → axe),
                      références et cas clients (type list), situations accompagnées, interlocuteur, délai, forfait, outils,
                      chiffre d'affaires et effectif avec leur période (provider_facts.period)
+                2400 écrans de la maquette validée : challenge_responses (Challenger, baromètre ≥ 30 réponses), contact_requests +
+                     contact_request_targets (mise en relation : transmission aux seules solutions cochées ; refus en base sur
+                     un sujet réglementé), category_blocks (blocs fonctionnels ; constats = faits bloc_<code>) ; écriture serveur
+                     seulement, lecture admin/commercial ; purge_lead_data() à 3 ans (/api/cron/purge)
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
                 périmètre DAF du cahier des charges, rubriques complémentaires, organisation de Radar Finances
@@ -115,7 +119,8 @@ supabase/
                 textes des 3 annuaires prioritaires en brouillon avec mots-clés nationaux (data/99_annuaires_textes),
                 date de consultation (11/11/2026) ajoutée aux sources des fiches prestataires (data/99_prestataires_sources_datees),
                 grille de lecture en brouillon (data/99_grille_prestataires, scripts/grid-to-sql.py depuis docs/seo/grille/*.json ;
-                pilote Nantes : registre pour 141 fiches dont 22 chiffres d'affaires, sites officiels pour 18)
+                pilote Nantes : registre pour 141 fiches dont 22 chiffres d'affaires, sites officiels pour 18),
+                blocs fonctionnels de la trésorerie (data/99_blocs_fonctionnels, textes de la maquette validée)
   test-env/     SITE DE TEST seulement (versions « preview » sur la base de test, jamais la production — garde-fou PROD_DB_REF
                 dans scripts/migrate-prod.mjs) : publie les annuaires prioritaires et valide la grille pour relecture (DEPLOY.md §3 bis)
   seeds/        données FICTIVES (is_fictional), locales uniquement, publiées via le vrai circuit
@@ -128,7 +133,11 @@ src/
                         annuaires : /prestataires/[métier], /[ville], /departement/[code] (48 fiches par page,
                         indexables à partir de 3 fiches publiées, pages suivantes en noindex)
   app/admin/(bo)/…      back-office : validation, contenus, SEO, catalogue, tests, prestataires,
-                        demandes, régie, analytics, audit
+                        demandes, régie, mises en relation, analytics, audit
+  écrans de la maquette (claude.ai/artifact/CHheJ2udwjQvKpVmRXLLcb, validée le 11/11/2026) : 1 accueil, 2/13/14 catégorie à onglets
+                        (/meilleurs-logiciels/[cat]/{podium,matchs,par-profil,blocs-fonctionnels,tarifs}, lib/category.ts),
+                        3 /comparer?l=…, 4 /mise-en-relation, 6 /espace-pro, 7 /integrations/[outil], 8 /challenger,
+                        9 /trouver, 10 /univers, 11 fiche, 12 /recherche (+ /api/recherche) ; 5 « Le Match » en pause
   app/api/collect       mesure d'audience sans cookie (hachage quotidien salé, pas d'IP stockée) ; si le cookie
                         de personnalisation est accepté, la page vue est aussi rattachée au navigateur (rf_vid) puis au compte
   app/api/consent       bandeau cookies (CookieBanner) : refuser aussi visible qu'accepter, choix redemandé à 6 mois, preuve journalisée
