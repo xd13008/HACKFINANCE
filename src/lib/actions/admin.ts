@@ -741,3 +741,27 @@ export async function reviewProviderFacts(fd: FormData) {
   const back = `/admin/prestataires?grille=${error ? "erreur" : `${reject ? "rejet" : "valide"}-${data ?? 0}`}#grille`;
   redirect(back);
 }
+
+// ---------------------------------------------------------------------------
+// Mises en relation (écran 4) : transmission manuelle aux seules solutions cochées par le visiteur
+// ---------------------------------------------------------------------------
+export async function markContactTransmitted(fd: FormData) {
+  await requireRole("sales", "admin");
+  const c = await db();
+  const request = str(fd, "request_id"), software = str(fd, "software_id");
+  await c.from("contact_request_targets").update({ transmitted_at: new Date().toISOString() }).eq("request_id", request).eq("software_id", software).is("transmitted_at", null);
+  const { data: left } = await c.from("contact_request_targets").select("software_id").eq("request_id", request).is("transmitted_at", null);
+  if (!left?.length) await c.from("contact_requests").update({ status: "transmitted", handled_at: new Date().toISOString() }).eq("id", request);
+  revalidatePath("/admin/mises-en-relation");
+  redirect("/admin/mises-en-relation?fait=transmise");
+}
+
+export async function setContactStatus(fd: FormData) {
+  await requireRole("sales", "admin");
+  const status = str(fd, "status");
+  if (!["closed", "spam", "new"].includes(status)) redirect("/admin/mises-en-relation");
+  const c = await db();
+  await c.from("contact_requests").update({ status, handled_at: new Date().toISOString() }).eq("id", str(fd, "request_id"));
+  revalidatePath("/admin/mises-en-relation");
+  redirect(`/admin/mises-en-relation?fait=${status}`);
+}

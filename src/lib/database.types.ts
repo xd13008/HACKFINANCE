@@ -299,14 +299,14 @@ isOneToOne: false
                   ]
                 },"contact_requests": {
                   Row: {
-                    "category_id": string | null,"company": string,"company_size": string,"consent_at": string,"consent_text": string,"contact_name": string,"created_at": string,"email": string,"handled_at": string | null,"handled_by": string | null,"id": string,"job_title": string | null,"need": string,"origin_path": string | null,"phone": string | null,"site_id": string,"status": string,"timing": string | null
+                    "budget": string | null,"category_id": string | null,"company": string,"company_size": string,"consent_at": string,"consent_feedback": boolean,"consent_newsletter": boolean,"consent_text": string,"contact_name": string,"created_at": string,"email": string,"handled_at": string | null,"handled_by": string | null,"id": string,"job_title": string | null,"need": string,"origin_path": string | null,"phone": string | null,"site_id": string,"status": string,"timing": string | null
                   }
                   ComputedFields: never
                   Insert: {
-                    "category_id"?: string | null,"company": string,"company_size": string,"consent_at"?: string,"consent_text": string,"contact_name": string,"created_at"?: string,"email": string,"handled_at"?: string | null,"handled_by"?: string | null,"id"?: string,"job_title"?: string | null,"need": string,"origin_path"?: string | null,"phone"?: string | null,"site_id": string,"status"?: string,"timing"?: string | null
+                    "budget"?: string | null,"category_id"?: string | null,"company": string,"company_size": string,"consent_at"?: string,"consent_feedback"?: boolean,"consent_newsletter"?: boolean,"consent_text": string,"contact_name": string,"created_at"?: string,"email": string,"handled_at"?: string | null,"handled_by"?: string | null,"id"?: string,"job_title"?: string | null,"need": string,"origin_path"?: string | null,"phone"?: string | null,"site_id": string,"status"?: string,"timing"?: string | null
                   }
                   Update: {
-                    "category_id"?: string | null,"company"?: string,"company_size"?: string,"consent_at"?: string,"consent_text"?: string,"contact_name"?: string,"created_at"?: string,"email"?: string,"handled_at"?: string | null,"handled_by"?: string | null,"id"?: string,"job_title"?: string | null,"need"?: string,"origin_path"?: string | null,"phone"?: string | null,"site_id"?: string,"status"?: string,"timing"?: string | null
+                    "budget"?: string | null,"category_id"?: string | null,"company"?: string,"company_size"?: string,"consent_at"?: string,"consent_feedback"?: boolean,"consent_newsletter"?: boolean,"consent_text"?: string,"contact_name"?: string,"created_at"?: string,"email"?: string,"handled_at"?: string | null,"handled_by"?: string | null,"id"?: string,"job_title"?: string | null,"need"?: string,"origin_path"?: string | null,"phone"?: string | null,"site_id"?: string,"status"?: string,"timing"?: string | null
                   }
                   Relationships: [
                     {

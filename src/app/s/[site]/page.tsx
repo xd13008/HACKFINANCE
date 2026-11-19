@@ -88,8 +88,8 @@ export default async function Home({ params }: { params: SiteParams }) {
         <div className="flex flex-wrap items-center justify-between gap-4 rounded-[28px] bg-accent text-ink p-8">
           <p className="m-0 font-display font-extrabold text-3xl sm:text-[34px] leading-[1.05] tracking-tight max-w-2xl">Éditeur, cabinet ? Votre fiche est gratuite.</p>
           <div className="flex flex-wrap gap-3">
-            <Link href="/referencer-mon-logiciel" className="inline-flex items-center min-h-13 px-6 rounded-[10px] bg-brand text-white font-bold no-underline">Référencer mon logiciel →</Link>
-            <Link href="/referencer-mon-cabinet" className="inline-flex items-center min-h-13 px-6 rounded-[10px] bg-brand text-white font-bold no-underline">Référencer mon cabinet →</Link>
+            <Link href="/espace-pro?type=logiciel#referencer" className="inline-flex items-center min-h-13 px-6 rounded-[10px] bg-brand text-white font-bold no-underline">Référencer mon logiciel →</Link>
+            <Link href="/espace-pro?type=cabinet#referencer" className="inline-flex items-center min-h-13 px-6 rounded-[10px] bg-brand text-white font-bold no-underline">Référencer mon cabinet →</Link>
           </div>
         </div>
       </section>
