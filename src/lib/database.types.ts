@@ -137,6 +137,76 @@ isOneToOne: false
       referencedColumns: ["id"]
     }
                   ]
+                },"category_blocks": {
+                  Row: {
+                    "advice": string | null,"category_id": string,"code": string,"label": string,"sort": number,"why": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "advice"?: string | null,"category_id": string,"code": string,"label": string,"sort"?: number,"why"?: string | null
+                  }
+                  Update: {
+                    "advice"?: string | null,"category_id"?: string,"code"?: string,"label"?: string,"sort"?: number,"why"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "category_blocks_category_id_fkey"
+      columns: ["category_id"]
+isOneToOne: false
+      referencedRelation: "categories"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"challenge_responses": {
+                  Row: {
+                    "category_id": string | null,"company": string | null,"company_size": string | null,"consent_at": string,"consent_comparison": boolean,"consent_contact_ids": (string)[],"consent_reminder": boolean,"consent_text": string,"contract_end": string | null,"created_at": string,"email": string,"id": string,"mail_status": string,"provider_id": string | null,"reasons": (string)[],"satisfaction": number,"site_id": string,"software_id": string | null,"target_type": string
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "category_id"?: string | null,"company"?: string | null,"company_size"?: string | null,"consent_at"?: string,"consent_comparison": boolean,"consent_contact_ids"?: (string)[],"consent_reminder"?: boolean,"consent_text": string,"contract_end"?: string | null,"created_at"?: string,"email": string,"id"?: string,"mail_status"?: string,"provider_id"?: string | null,"reasons"?: (string)[],"satisfaction": number,"site_id": string,"software_id"?: string | null,"target_type": string
+                  }
+                  Update: {
+                    "category_id"?: string | null,"company"?: string | null,"company_size"?: string | null,"consent_at"?: string,"consent_comparison"?: boolean,"consent_contact_ids"?: (string)[],"consent_reminder"?: boolean,"consent_text"?: string,"contract_end"?: string | null,"created_at"?: string,"email"?: string,"id"?: string,"mail_status"?: string,"provider_id"?: string | null,"reasons"?: (string)[],"satisfaction"?: number,"site_id"?: string,"software_id"?: string | null,"target_type"?: string
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "challenge_responses_category_id_fkey"
+      columns: ["category_id"]
+isOneToOne: false
+      referencedRelation: "categories"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "challenge_responses_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "challenge_responses_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers_by_category"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "challenge_responses_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers_public"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "challenge_responses_site_id_fkey"
+      columns: ["site_id"]
+isOneToOne: false
+      referencedRelation: "sites"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "challenge_responses_software_id_fkey"
+      columns: ["software_id"]
+isOneToOne: false
+      referencedRelation: "software"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"commercial_contracts": {
                   Row: {
                     "amount_eur": number | null,"client_name": string,"created_at": string,"created_by": string | null,"ends_on": string,"id": string,"notes": string | null,"reference": string,"site_id": string,"starts_on": string,"status": string
@@ -180,6 +250,76 @@ isOneToOne: false
       columns: ["visitor_id"]
 isOneToOne: false
       referencedRelation: "visitors"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"contact_request_targets": {
+                  Row: {
+                    "provider_id": string | null,"request_id": string,"software_id": string | null,"transmitted_at": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "provider_id"?: string | null,"request_id": string,"software_id"?: string | null,"transmitted_at"?: string | null
+                  }
+                  Update: {
+                    "provider_id"?: string | null,"request_id"?: string,"software_id"?: string | null,"transmitted_at"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "contact_request_targets_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "contact_request_targets_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers_by_category"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "contact_request_targets_provider_id_fkey"
+      columns: ["provider_id"]
+isOneToOne: false
+      referencedRelation: "providers_public"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "contact_request_targets_request_id_fkey"
+      columns: ["request_id"]
+isOneToOne: false
+      referencedRelation: "contact_requests"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "contact_request_targets_software_id_fkey"
+      columns: ["software_id"]
+isOneToOne: false
+      referencedRelation: "software"
+      referencedColumns: ["id"]
+    }
+                  ]
+                },"contact_requests": {
+                  Row: {
+                    "category_id": string | null,"company": string,"company_size": string,"consent_at": string,"consent_text": string,"contact_name": string,"created_at": string,"email": string,"handled_at": string | null,"handled_by": string | null,"id": string,"job_title": string | null,"need": string,"origin_path": string | null,"phone": string | null,"site_id": string,"status": string,"timing": string | null
+                  }
+                  ComputedFields: never
+                  Insert: {
+                    "category_id"?: string | null,"company": string,"company_size": string,"consent_at"?: string,"consent_text": string,"contact_name": string,"created_at"?: string,"email": string,"handled_at"?: string | null,"handled_by"?: string | null,"id"?: string,"job_title"?: string | null,"need": string,"origin_path"?: string | null,"phone"?: string | null,"site_id": string,"status"?: string,"timing"?: string | null
+                  }
+                  Update: {
+                    "category_id"?: string | null,"company"?: string,"company_size"?: string,"consent_at"?: string,"consent_text"?: string,"contact_name"?: string,"created_at"?: string,"email"?: string,"handled_at"?: string | null,"handled_by"?: string | null,"id"?: string,"job_title"?: string | null,"need"?: string,"origin_path"?: string | null,"phone"?: string | null,"site_id"?: string,"status"?: string,"timing"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "contact_requests_category_id_fkey"
+      columns: ["category_id"]
+isOneToOne: false
+      referencedRelation: "categories"
+      referencedColumns: ["id"]
+    },{
+      foreignKeyName: "contact_requests_site_id_fkey"
+      columns: ["site_id"]
+isOneToOne: false
+      referencedRelation: "sites"
       referencedColumns: ["id"]
     }
                   ]
@@ -1944,6 +2084,9 @@ isOneToOne: false
 "purge_analytics":
 { Args: Record<PropertyKey, never>; Returns: number
                            },
+"purge_lead_data":
+{ Args: Record<PropertyKey, never>; Returns: Json
+                           },
 "purge_member_data":
 { Args: Record<PropertyKey, never>; Returns: Json
                            },
@@ -1961,6 +2104,9 @@ isOneToOne: false
                            },
 "review_interval":
 { Args: { "t": Database["public"]['Enums']["content_type"] }; Returns: string
+                           },
+"satisfaction_barometer":
+{ Args: { "p_provider"?: string,"p_software"?: string }; Returns: Json
                            },
 "seo_check":
 { Args: { "p_version": string }; Returns: Json

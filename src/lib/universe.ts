@@ -46,13 +46,11 @@ async function integrationsBySoftware(ids: string[]) {
 
 const factValue = <T,>(m: Map<string, { value: unknown }> | undefined, key: string): T | null => (m?.get(key)?.value as T) ?? null;
 
-export const loadUniverse = cache(async (siteId: string, verticalSlug: string): Promise<UniverseData | null> => {
-  const vertical = (await listVerticals(siteId)).find((v) => v.slug === verticalSlug);
-  if (!vertical) return null;
-  const { data: cats } = await db().from("categories").select("*").eq("site_id", siteId).eq("vertical_id", vertical.id).eq("status", "published").order("sort");
-  const categories = cats ?? [];
-
-  // Logiciels : classement éditorial de chaque catégorie (une solution n'apparaît qu'une fois, dans sa meilleure catégorie)
+/**
+ * Fiches « outil » des catégories données : classement éditorial (tests validés), faits et prix validés, intégrations.
+ * Une solution n'apparaît qu'une fois, dans la catégorie où elle est le mieux notée.
+ */
+export async function loadToolCards(categories: Category[]): Promise<ToolCard[]> {
   const ranked = (await Promise.all(categories.filter((c) => c.kind === "software").map(async (c) => (await getRanking(c.id)).map((r) => ({ r, c })))))
     .flat()
     .sort((a, b) => b.r.overall - a.r.overall);
@@ -71,6 +69,17 @@ export const loadUniverse = cache(async (siteId: string, verticalSlug: string): 
       integrations: integ.get(r.software.id) ?? [], plans, entry: entryMonthlyPrice(plans), testedAt: r.testedAt,
     };
   });
+
+  return tools;
+}
+
+export const loadUniverse = cache(async (siteId: string, verticalSlug: string): Promise<UniverseData | null> => {
+  const vertical = (await listVerticals(siteId)).find((v) => v.slug === verticalSlug);
+  if (!vertical) return null;
+  const { data: cats } = await db().from("categories").select("*").eq("site_id", siteId).eq("vertical_id", vertical.id).eq("status", "published").order("sort");
+  const categories = cats ?? [];
+
+  const tools = await loadToolCards(categories);
 
   // Prestataires : annuaires publiés de l'univers (sans classement)
   // (au plus 50 par métier sur la page univers ; le total complet vient du comptage en base)
