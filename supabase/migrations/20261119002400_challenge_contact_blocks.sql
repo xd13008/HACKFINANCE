@@ -3,7 +3,7 @@
 --        mise en relation (écran 4), blocs fonctionnels d'une catégorie (écran 13)
 -- Règles :
 -- - aucune donnée n'est transmise à un éditeur ou un cabinet sans l'accord explicite du visiteur, solution par solution ;
--- - écriture serveur seulement (clé de service, lib/leads.ts), après contrôle ; lecture réservée à l'équipe (admin, commercial) ;
+-- - écriture serveur seulement (clé de service, lib/actions/contact.ts et lib/actions/challenge.ts), après contrôle ; lecture réservée à l'équipe (admin, commercial) ;
 -- - pas de mise en relation dans les sujets réglementés (règle 5) : contrôlé côté serveur et par la base (guard_contact_target) ;
 -- - le baromètre de satisfaction n'est publié qu'à partir de 30 réponses, anonyme et agrégé.
 -- =============================================================================

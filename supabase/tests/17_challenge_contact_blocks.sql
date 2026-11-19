@@ -1,7 +1,7 @@
 -- Challenger, mise en relation, blocs fonctionnels (migration 2400) : droits et garde-fous — `pnpm test:db`
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(16);
+select plan(23);
 
 create or replace function pg_temp.as_user(uid uuid) returns void language plpgsql as $$
 begin
@@ -80,6 +80,28 @@ select is(public.satisfaction_barometer('14000000-0000-4000-a000-0000000000b1')-
 insert into public.challenge_responses (site_id, target_type, software_id, satisfaction, email, consent_comparison, consent_text)
 values ('10000000-0000-4000-a000-000000000001', 'software', '14000000-0000-4000-a000-0000000000b1', 7, 'b30@exemple.test', true, 'a');
 select is(public.satisfaction_barometer('14000000-0000-4000-a000-0000000000b1'), '{"n": 30, "avg": 7.0}'::jsonb, '30 réponses : moyenne publiée, sans donnée nominative');
+
+-- Revue de sécurité (migration 2500) : le commercial traite la demande, sans toucher aux destinataires ni à la preuve
+insert into public.contact_request_targets (request_id, software_id) values ('17000000-0000-4000-a000-000000000001', '14000000-0000-4000-a000-0000000000b1');
+insert into public.software (id, vendor, name, slug, status) values ('14000000-0000-4000-a000-0000000000b2', 'U', 'Autre éditeur', 'autre-editeur', 'published');
+select pg_temp.as_user('00000000-0000-4000-a000-000000000003');
+select throws_ok($$ update public.contact_request_targets set software_id = '14000000-0000-4000-a000-0000000000b2' where request_id = '17000000-0000-4000-a000-000000000001' $$,
+  '42501', null, 'commercial : ne change pas le destinataire coché par le visiteur');
+select throws_ok($$ update public.contact_requests set consent_text = 'autre accord' where id = '17000000-0000-4000-a000-000000000001' $$,
+  '42501', null, 'commercial : ne réécrit pas la preuve de consentement');
+select throws_ok($$ update public.contact_requests set email = 'autre@exemple.test' where id = '17000000-0000-4000-a000-000000000001' $$,
+  '42501', null, 'commercial : ne modifie pas les coordonnées du visiteur');
+select is(pg_temp.affected($$ update public.contact_request_targets set transmitted_at = now() where request_id = '17000000-0000-4000-a000-000000000001' $$), 1,
+  'commercial : horodate la transmission');
+select is(pg_temp.affected($$ update public.contact_requests set status = 'transmitted', handled_at = now() where id = '17000000-0000-4000-a000-000000000001' $$), 1,
+  'commercial : change le statut');
+reset role;
+select ok((select count(*) from public.audit_log where table_name in ('contact_requests', 'contact_request_targets') and row_id is not distinct from '17000000-0000-4000-a000-000000000001' or (table_name = 'contact_request_targets' and after ->> 'request_id' = '17000000-0000-4000-a000-000000000001')) >= 2,
+  'chaque modification est journalisée');
+update public.contact_request_targets set transmitted_at = null;
+update public.contact_requests set status = 'spam' where id = '17000000-0000-4000-a000-000000000001';
+select throws_ok($$ update public.contact_request_targets set transmitted_at = now() where request_id = '17000000-0000-4000-a000-000000000001' $$,
+  '42501', null, 'demande indésirable : aucune transmission');
 
 select * from finish();
 rollback;

@@ -82,7 +82,8 @@ const schema = z.object({
   consent_comparison: z.literal("on", { error: "Cochez l'envoi du comparatif pour le recevoir." }),
   contact: z.array(z.string().max(200)).max(5).default([]),
   consent_reminder: z.literal("on").optional(),
-  link: z.string().max(500),
+  // Lien du comparatif : uniquement une page /challenger du site (jamais une adresse libre dans l'e-mail).
+  link: z.string().max(300).regex(/^\/challenger(\?[a-z]+=[a-z0-9-]{1,120})?$/).catch("/challenger"),
 });
 
 function fieldsOf(fd: FormData) {
@@ -92,6 +93,24 @@ function fieldsOf(fd: FormData) {
     else o[k] = String(v);
   }
   return o;
+}
+
+/** Alternatives cochées, limitées à celles que le parcours a pu proposer (même catégorie de logiciels ou même métier). */
+async function consentedContacts(type: "software" | "provider" | "spreadsheet", from: string | null, categoryId: string | null, slugs: string[]) {
+  if (!slugs.length) return [];
+  const pub = publicClient();
+  if (type === "provider") {
+    if (!from) return [];
+    const { data: own } = await pub.from("providers_by_category").select("category_id").eq("slug", from);
+    const cats = (own ?? []).map((o) => o.category_id!).filter(Boolean);
+    if (!cats.length) return [];
+    const { data } = await pub.from("providers_by_category").select("id,name,slug").in("category_id", cats).in("slug", slugs).neq("slug", from);
+    return [...new Map((data ?? []).map((x) => [x.id!, { id: x.id!, name: x.name! }])).values()];
+  }
+  if (!categoryId) return [];
+  const { data: links } = await pub.from("software_categories").select("software_id").eq("category_id", categoryId);
+  const { data } = await pub.from("software").select("id,name").in("slug", slugs).eq("status", "published").in("id", (links ?? []).map((l) => l.software_id));
+  return (data ?? []).filter((x) => x.id).map((x) => ({ id: x.id, name: x.name }));
 }
 
 export async function submitChallenge(_: ChallengeState, fd: FormData): Promise<ChallengeState> {
@@ -110,15 +129,15 @@ export async function submitChallenge(_: ChallengeState, fd: FormData): Promise<
   const pr = d.target_type === "provider" && d.target_slug ? (await pub.from("providers_public").select("id,name").eq("slug", d.target_slug).maybeSingle()).data : null;
   const cat = d.category_slug ? (await pub.from("categories").select("id").eq("site_id", site.id).eq("slug", d.category_slug).maybeSingle()).data : null;
   if (d.target_type !== "spreadsheet" && !sw && !pr) return { ok: false, message: "Solution de départ introuvable." };
-  // Alternatives que le visiteur accepte d'entendre : uniquement des fiches publiées.
-  const contactIds = d.contact.length
-    ? d.target_type === "provider"
-      ? ((await pub.from("providers_public").select("id").in("slug", d.contact)).data ?? []).map((x) => x.id!)
-      : ((await pub.from("software").select("id").in("slug", d.contact).eq("status", "published")).data ?? []).map((x) => x.id)
-    : [];
-  const consentText = CHALLENGE_CONSENT + (contactIds.length ? ` J'accepte d'être recontacté par les ${contactIds.length} alternative(s) cochée(s), et elles seules.` : "")
+  // Alternatives que le visiteur accepte d'entendre : fiches publiées du même métier ou de la même catégorie, et elles seules.
+  const contacts = await consentedContacts(d.target_type, d.target_slug, cat?.id ?? null, d.contact);
+  const contactIds = contacts.map((c) => c.id);
+  const consentText = CHALLENGE_CONSENT + (contacts.length ? ` J'accepte d'être recontacté par ces alternatives, et elles seules : ${contacts.map((c) => c.name).join(", ")}.` : "")
     + (d.consent_reminder ? " Prévenez-moi avant l'échéance de mon contrat." : "");
   const db = serviceClient();
+  // Anti-abus : 3 comparatifs par adresse e-mail et par 24 heures au plus.
+  const { count } = await db.from("challenge_responses").select("id", { count: "exact", head: true }).eq("email", d.email).gte("created_at", new Date(Date.now() - 864e5).toISOString());
+  if ((count ?? 0) >= 3) return { ok: false, message: "Plusieurs comparatifs ont déjà été envoyés à cette adresse aujourd'hui. Réessayez demain." };
   const { data: row, error } = await db.from("challenge_responses").insert({
     site_id: site.id, target_type: d.target_type, software_id: sw?.id ?? null, provider_id: pr?.id ?? null, category_id: cat?.id ?? null,
     satisfaction: d.satisfaction, reasons: d.reasons, contract_end: d.contract_end, company_size: d.company_size, company: d.company,
@@ -126,7 +145,7 @@ export async function submitChallenge(_: ChallengeState, fd: FormData): Promise<
   }).select("id").single();
   if (error || !row) return { ok: false, message: "Impossible d'enregistrer votre demande. Réessayez dans un instant." };
 
-  const url = `${siteUrl(site)}${d.link.startsWith("/") ? d.link : "/challenger"}`;
+  const url = `${siteUrl(site)}${d.link}`;
   const from = sw?.name ?? pr?.name ?? "votre tableur";
   const mail = await brevoMailer({
     to: d.email,

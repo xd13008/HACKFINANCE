@@ -51,7 +51,7 @@ pnpm db:reset            # applique les migrations + le jeu de données fictif (
 pnpm db:types            # régénère src/lib/database.types.ts après une migration
 pnpm dev                 # http://radarfinances.localhost:3000 et http://cedermasociete.localhost:3000
 pnpm test                # Vitest : unitaires + intégration agents (modèle factice, Supabase local requis)
-pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires, DAF inscrits, jobs, agent de vérification des offres, faits des pages ville, grille de lecture des cabinets, Challenger et mise en relation (204 tests)
+pnpm test:db             # pgTAP : droits, validation, agents, Storage, questions SEO, périmètre DAF, sujets réglementés, portails RH/RSE, univers DAF, avis tiers cités, couverture logiciels + prestataires, localisation des prestataires, pages locales, publication en masse des prestataires, DAF inscrits, jobs, agent de vérification des offres, faits des pages ville, grille de lecture des cabinets, Challenger et mise en relation (211 tests)
 pnpm typecheck && pnpm lint && pnpm build
 pnpm keywords:sql        # CSV Semrush → supabase/seeds/02_keywords.sql
 ```
@@ -93,6 +93,10 @@ supabase/
                      contact_request_targets (mise en relation : transmission aux seules solutions cochées ; refus en base sur
                      un sujet réglementé), category_blocks (blocs fonctionnels ; constats = faits bloc_<code>) ; écriture serveur
                      seulement, lecture admin/commercial ; purge_lead_data() à 3 ans (/api/cron/purge)
+                2500 droits des mises en relation : le commercial ne modifie que le statut et l'horodatage de transmission
+                     (jamais les destinataires, les coordonnées ni la preuve de consentement), modifications journalisées,
+                     aucune transmission d'une demande close ou indésirable ; formulaires publics : 3 envois par e-mail et par 24 h,
+                     aucun texte saisi par le visiteur dans les e-mails envoyés
   bootstrap/    données de PRODUCTION : taxonomie, mots-clés, inventaire, brouillons IA (aucune donnée fictive)
   data/         données de référence idempotentes, rejouées à chaque déploiement (mots-clés Semrush, pages institutionnelles,
                 périmètre DAF du cahier des charges, rubriques complémentaires, organisation de Radar Finances
