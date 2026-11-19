@@ -107,6 +107,12 @@ export function Assistant({ universes }: { universes: AssistantUniverse[] }) {
                 </div>
               </section>
             ))}
+            {step === 2 && (
+              <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
+                <span className="text-sm text-ink-2">{stack.length ? `${stack.length} outil(s) sélectionné(s)` : "Aucun outil sélectionné : ce n’est pas grave."}</span>
+                <button type="button" onClick={() => { setStep(3); window.scrollTo({ top: 0 }); }} className="min-h-12 px-7 rounded-lg bg-ink text-white font-bold">Continuer →</button>
+              </div>
+            )}
             {step === 3 && (universes.some((u) => u.needs.length) ? universes.filter((u) => u.needs.length).map((u) => (
               <section key={u.slug} className="p-5 rounded-xl bg-white border border-line">
                 <h2 className="text-xs font-bold uppercase tracking-wider text-ink-3 mb-3">{u.name}</h2>
