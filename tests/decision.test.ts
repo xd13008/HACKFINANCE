@@ -56,3 +56,14 @@ describe("profil et formats", () => {
     expect(cheapestPlan([{ plan_name: "PDP", price_eur: 0.2, billing_period: "one_time", per_unit: "par facture" }], 1)).toEqual({ kind: "none" });
   });
 });
+
+describe("coût annuel par profil (onglet Tarifs)", () => {
+  it("multiplie par utilisateur et par société seulement quand l'offre le dit", async () => {
+    const { profileAnnualCost } = await import("@/lib/decision");
+    expect(profileAnnualCost({ plan_name: "A", price_eur: 10, billing_period: "month", per_unit: "par utilisateur" }, 1, 3)).toBe(360);
+    expect(profileAnnualCost({ plan_name: "B", price_eur: 50, billing_period: "month", per_unit: "par société" }, 2, 5)).toBe(1200);
+    expect(profileAnnualCost({ plan_name: "C", price_eur: 1000, billing_period: "year", per_unit: null }, 3, 9)).toBe(1000);
+    expect(profileAnnualCost({ plan_name: "D", price_eur: 99, billing_period: "month", per_unit: "jusqu'à 2 sociétés" }, 3, 1)).toBeNull();
+    expect(profileAnnualCost({ plan_name: "E", price_eur: null, billing_period: "quote", per_unit: null }, 1, 1)).toBeNull();
+  });
+});

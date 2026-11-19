@@ -18,14 +18,14 @@ export function tabPath(slug: string, tab: CategoryTab) {
 export function CategoryTabs({ slug, current, dark = true }: { slug: string; current: CategoryTab; dark?: boolean }) {
   return (
     <nav aria-label="Onglets de la catégorie" className={dark ? "border-t border-zinc-800" : ""}>
-      <ul className={`m-0 p-0 list-none flex flex-wrap gap-x-6 gap-y-1 ${dark ? "max-w-6xl mx-auto px-4 sm:px-6" : ""}`}>
+      <ul className={`m-0 p-0 list-none flex flex-wrap ${dark ? "gap-x-6 gap-y-1 max-w-6xl mx-auto px-4 sm:px-6" : "gap-2 mt-5"}`}>
         {CATEGORY_TABS.map(([tab, label]) => {
           const on = tab === current;
           return (
             <li key={tab}>
               <Link href={tabPath(slug, tab)} aria-current={on ? "page" : undefined}
-                className={`inline-block py-3.5 text-sm no-underline ${dark ? (on ? "text-accent font-extrabold border-b-[3px] border-accent" : "text-zinc-300 font-semibold hover:text-white")
-                  : (on ? "font-extrabold border-b-[3px] border-ink" : "text-ink-2 font-semibold")}`}>{label}</Link>
+                className={dark ? `inline-block py-3.5 text-sm no-underline ${on ? "text-accent font-extrabold border-b-[3px] border-accent" : "text-zinc-300 font-semibold hover:text-white"}`
+                  : `inline-flex items-center min-h-11 px-4.5 rounded-lg text-sm font-bold no-underline ${on ? "bg-ink text-white" : "border border-line bg-white text-ink hover:border-ink"}`}>{label}</Link>
             </li>
           );
         })}

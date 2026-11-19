@@ -95,3 +95,18 @@ export function fitScore(input: { score: number; targetSizes: string[]; integrat
 export function eur(v: number): string {
   return `${Math.round(v).toLocaleString("fr-FR").replace(/ | /g, " ")} €`;
 }
+
+/** L'offre est-elle facturée par utilisateur ? */
+function perUser(perUnit: string | null): boolean {
+  return /par\s+utilisateur/i.test(perUnit ?? "");
+}
+
+/**
+ * Coût annuel HT d'une offre pour un profil (sociétés, utilisateurs), ou null si l'offre ne couvre pas ce cas
+ * ou n'a pas de prix public calculable (sur devis, à l'usage). Écran « Tarifs » de la maquette.
+ */
+export function profileAnnualCost(plan: PlanLike, entities: number, users: number): number | null {
+  const base = planAnnualCost(plan, entities);
+  if (base == null) return null;
+  return perUser(plan.per_unit) ? base * Math.max(1, users) : base;
+}
