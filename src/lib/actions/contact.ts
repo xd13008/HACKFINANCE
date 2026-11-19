@@ -20,7 +20,7 @@ const schema = z.object({
   timing: z.enum(["immediat", "3-mois", "6-mois", "information"]).optional().or(z.literal("")).transform((v) => v || null),
   budget: z.enum(["moins-100", "100-250", "250-500", "plus-500", "inconnu"]).optional().or(z.literal("")).transform((v) => v || null),
   details: z.string().trim().max(1500).optional().transform((v) => v || ""),
-  targets: z.array(z.string().max(200)).min(1, "Cochez au moins une solution").max(5, "5 solutions au plus"),
+  targets: z.array(z.string().max(200)).default([]).pipe(z.array(z.string()).min(1, "Cochez au moins une solution").max(5, "5 solutions au plus")),
   contact_name: z.string().trim().min(2, "Nom requis").max(120),
   job_title: z.string().trim().max(120).optional().transform((v) => v || null),
   email: z.string().trim().toLowerCase().email("E-mail professionnel invalide").max(200),
@@ -62,19 +62,30 @@ export async function submitContactRequest(_: ContactState, fd: FormData): Promi
   const consentText = `${CONTACT_CONSENT} Solutions cochées : ${sw.map((s) => s.name).join(", ")}.`
     + (d.newsletter ? ` ${CONTACT_NEWSLETTER}` : "") + (d.feedback ? ` ${CONTACT_FEEDBACK}` : "");
   const db = serviceClient();
+  // Anti-abus : 3 demandes par adresse e-mail et par 24 heures au plus (le site n'envoie pas d'e-mails en rafale à un tiers).
+  const { count } = await db.from("contact_requests").select("id", { count: "exact", head: true }).eq("email", d.email).gte("created_at", new Date(Date.now() - 864e5).toISOString());
+  if ((count ?? 0) >= 3) return { ok: false, message: "Plusieurs demandes ont déjà été envoyées avec cette adresse aujourd'hui. Réessayez demain." };
   const { data: req, error } = await db.from("contact_requests").insert({
-    site_id: site.id, category_id: cat.id, need: `${cat.name}${d.details ? ` : ${d.details}` : ""}`.slice(0, 2000), company: d.company, company_size: d.company_size,
+    site_id: site.id, category_id: cat.id, need: `Démo ou devis, ${cat.name}${d.details ? ` : ${d.details}` : ""}`.slice(0, 2000), company: d.company, company_size: d.company_size,
     contact_name: d.contact_name, job_title: d.job_title, email: d.email, phone: d.phone, timing: d.timing, budget: d.budget,
     consent_text: consentText, consent_newsletter: !!d.newsletter, consent_feedback: !!d.feedback, origin_path: d.origin ?? null,
   }).select("id").single();
   if (error || !req) return { ok: false, message: error?.code === "42501" ? "Ce besoin ne permet pas de mise en relation." : "Impossible d'enregistrer la demande. Réessayez dans un instant." };
-  await db.from("contact_request_targets").insert(sw.map((s) => ({ request_id: req.id, software_id: s.id })));
-  await brevoMailer({
+  const { error: targetsError } = await db.from("contact_request_targets").insert(sw.map((s) => ({ request_id: req.id, software_id: s.id })));
+  if (targetsError) {
+    await db.from("contact_requests").delete().eq("id", req.id); // jamais de demande sans ses destinataires
+    return { ok: false, message: "Impossible d'enregistrer la demande. Réessayez dans un instant." };
+  }
+  // Aucun texte saisi par le visiteur dans l'e-mail : le formulaire ne peut pas servir à écrire à un tiers.
+  const mail = await brevoMailer({
     to: d.email,
     subject: `Votre demande : ${cat.name}`,
-    text: `Bonjour ${d.contact_name},\n\nNous avons bien reçu votre demande « ${cat.name} ». Elle sera transmise uniquement à : ${sw.map((s) => s.name).join(", ")}.\n`
+    text: `Bonjour,\n\nNous avons bien reçu votre demande « ${cat.name} ». Elle sera transmise uniquement à : ${sw.map((s) => s.name).join(", ")}.\n`
       + "Aucun autre destinataire ne recevra vos coordonnées. Vous pouvez retirer votre accord ou demander la suppression de vos données en répondant à ce message.\n\n"
       + site.name,
   });
-  return { ok: true, message: `Demande enregistrée. Elle sera transmise uniquement à : ${sw.map((s) => s.name).join(", ")}. Un e-mail de confirmation récapitule vos choix.` };
+  const recipients = sw.map((s) => s.name).join(", ");
+  return { ok: true, message: mail.ok
+    ? `Demande enregistrée. Elle sera transmise uniquement à : ${recipients}. Un e-mail de confirmation récapitule vos choix.`
+    : `Demande enregistrée. Elle sera transmise uniquement à : ${recipients}. Notez cette liste : l'e-mail de confirmation n'est pas encore activé.` };
 }

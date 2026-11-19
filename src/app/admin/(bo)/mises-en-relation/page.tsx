@@ -3,7 +3,7 @@ import { requireRole } from "@/lib/admin";
 import { Card, PageHeader } from "@/components/admin/ui";
 import { markContactTransmitted, setContactStatus } from "@/lib/actions/admin";
 
-const DONE: Record<string, string> = { transmise: "Transmission enregistrée.", closed: "Demande close.", spam: "Demande marquée comme indésirable.", new: "Demande rouverte." };
+const DONE: Record<string, string> = { erreur: "Action refusée : la demande est close ou indésirable, ou déjà traitée.", transmise: "Transmission enregistrée.", closed: "Demande close.", spam: "Demande marquée comme indésirable.", new: "Demande rouverte." };
 const SIZE: Record<string, string> = { tpe: "< 10 salariés", pme1: "10 à 49", pme2: "50 à 249", eti: "250 et plus" };
 const STATUS: Record<string, string> = { new: "Nouvelle", transmitted: "Transmise", closed: "Close", spam: "Indésirable" };
 
@@ -13,7 +13,8 @@ const STATUS: Record<string, string> = { new: "Nouvelle", transmitted: "Transmis
  */
 export default async function MisesEnRelation({ searchParams }: { searchParams: Promise<{ fait?: string }> }) {
   const me = await requireRole("sales", "admin");
-  const done = DONE[(await searchParams).fait ?? ""];
+  const fait = (await searchParams).fait ?? "";
+  const done = DONE[fait];
   const db = await serverClient();
   const { data: requests } = await db.from("contact_requests").select("*, contact_request_targets(software_id,transmitted_at), categories(name)").order("created_at", { ascending: false }).limit(200);
   const { data: challenges } = me.is("admin")
@@ -29,7 +30,7 @@ export default async function MisesEnRelation({ searchParams }: { searchParams: 
   return (
     <div className="space-y-4">
       <PageHeader title="Mises en relation" intro="Chaque demande n'est transmise qu'aux solutions cochées par le visiteur, avec le texte de consentement ci-dessous. Marquez chaque transmission une fois faite." />
-      {done && <p role="status" className="rounded-lg p-3 bg-green-50 text-green-900 text-sm">{done}</p>}
+      {done && <p role="status" className={`rounded-lg p-3 text-sm ${fait === "erreur" ? "bg-red-50 text-red-900" : "bg-green-50 text-green-900"}`}>{done}</p>}
       <Card>
         <h2 className="font-bold mb-3">Demandes de démo ou de devis ({(requests ?? []).length})</h2>
         {(requests ?? []).length === 0 ? <p className="text-sm text-ink-3">Aucune demande.</p> : (requests ?? []).map((r) => (
@@ -42,7 +43,7 @@ export default async function MisesEnRelation({ searchParams }: { searchParams: 
               {r.contact_request_targets.map((t) => (
                 <li key={t.software_id} className="flex flex-wrap items-center gap-3">
                   <span>{name(t.software_id!)}</span>
-                  {t.transmitted_at ? <span className="text-green-800">transmise le {new Date(t.transmitted_at).toLocaleString("fr-FR")}</span> : (
+                  {t.transmitted_at ? <span className="text-green-800">transmise le {new Date(t.transmitted_at).toLocaleString("fr-FR")}</span> : r.status === "spam" || r.status === "closed" ? <span className="text-ink-3">non transmise</span> : (
                     <form action={markContactTransmitted}><input type="hidden" name="request_id" value={r.id} /><input type="hidden" name="software_id" value={t.software_id!} />
                       <button className="text-xs underline">Marquer transmise</button></form>
                   )}

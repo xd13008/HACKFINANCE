@@ -746,22 +746,26 @@ export async function reviewProviderFacts(fd: FormData) {
 // Mises en relation (écran 4) : transmission manuelle aux seules solutions cochées par le visiteur
 // ---------------------------------------------------------------------------
 export async function markContactTransmitted(fd: FormData) {
-  await requireRole("sales", "admin");
+  const me = await requireRole("sales", "admin");
   const c = await db();
   const request = str(fd, "request_id"), software = str(fd, "software_id");
-  await c.from("contact_request_targets").update({ transmitted_at: new Date().toISOString() }).eq("request_id", request).eq("software_id", software).is("transmitted_at", null);
+  const now = new Date().toISOString();
+  // Refusé en base si la demande est close ou indésirable (guard_contact_transmission).
+  const { data: done, error } = await c.from("contact_request_targets").update({ transmitted_at: now }).eq("request_id", request).eq("software_id", software).is("transmitted_at", null).select("request_id");
+  if (error || !done?.length) redirect("/admin/mises-en-relation?fait=erreur");
   const { data: left } = await c.from("contact_request_targets").select("software_id").eq("request_id", request).is("transmitted_at", null);
-  if (!left?.length) await c.from("contact_requests").update({ status: "transmitted", handled_at: new Date().toISOString() }).eq("id", request);
+  const status = !left?.length ? { status: "transmitted" } : {};
+  await c.from("contact_requests").update({ ...status, handled_by: me.id, handled_at: now }).eq("id", request);
   revalidatePath("/admin/mises-en-relation");
   redirect("/admin/mises-en-relation?fait=transmise");
 }
 
 export async function setContactStatus(fd: FormData) {
-  await requireRole("sales", "admin");
   const status = str(fd, "status");
   if (!["closed", "spam", "new"].includes(status)) redirect("/admin/mises-en-relation");
+  const me = await requireRole("sales", "admin");
   const c = await db();
-  await c.from("contact_requests").update({ status, handled_at: new Date().toISOString() }).eq("id", str(fd, "request_id"));
+  const { data, error } = await c.from("contact_requests").update({ status, handled_by: me.id, handled_at: new Date().toISOString() }).eq("id", str(fd, "request_id")).select("id");
   revalidatePath("/admin/mises-en-relation");
-  redirect(`/admin/mises-en-relation?fait=${status}`);
+  redirect(`/admin/mises-en-relation?fait=${error || !data?.length ? "erreur" : status}`);
 }
