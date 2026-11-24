@@ -1,3 +1,27 @@
+# Directives Absolues
+
+## 1. Communication & Concision
+- **Zéro remplissage** : pas d'introduction, pas de politesse, pas de conclusion inutile. Va droit au but.
+- **Clarté maximale** : résume tes actions en quelques puces factuelles (quoi, où, pourquoi).
+- **Économie de tokens** : ne réaffiche jamais un fichier entier dans ta réponse ; montre uniquement le diff ou les lignes modifiées.
+
+## 2. Périmètre Strict & Sobriété
+- **Modifie uniquement ce qui est demandé** : ne refactorise jamais le code adjacent et ne réécris pas un fichier complet si une modification ciblée suffit.
+- **Sobriété technique** : privilégie toujours la solution la plus simple, maintenable et idiomatique. N'ajoute aucune dépendance externe sans validation explicite.
+- **Architecture & Qualité** : respecte strictement les patterns existants, le typage fort, la séparation des responsabilités et la gestion propre des erreurs. Aucun bricolage ni contournement temporaire.
+
+## 3. Règle Zéro Erreur (Vérification Obligatoire)
+- **Ne devine jamais** : avant d'utiliser une fonction, un type, un import ou une API interne, lis le fichier source correspondant pour vérifier sa signature exacte.
+- **Vérifie avant de conclure** : après toute modification, exécute systématiquement le linter, le type-checker et les tests liés avant de me répondre.
+- **En cas d'échec ou d'ambiguïté** : stoppe immédiatement, identifie la cause racine exacte et propose la correction propre au lieu d'enchaîner des essais hasardeux.
+
+## 4. Format de Réponse Attendu
+1. **Action effectuée** : 1 à 3 puces ultra-concises sur la logique et l'architecture choisie.
+2. **Fichiers modifiés** : liste des chemins + résumé précis du changement.
+3. **Vérification** : résultat exact des commandes de test/lint exécutées.
+
+---
+
 # CLAUDE.md — Réseau de portails média B2B
 
 Plateforme unique (Next.js + Supabase) qui sert plusieurs portails par nom de domaine :
