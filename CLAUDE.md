@@ -178,6 +178,11 @@ src/
   app/api/cron/*        tâches planifiées (Search Console quotidien, agents hebdomadaire) — Bearer CRON_SECRET
   lib/agents/           veille, rédaction, contrôle qualité : un appel Claude à sortie structurée, sans outil,
                         compte Supabase « agent » (RLS), plafonds de coût, journal agent_runs
+  suivi des erreurs     Sentry (organisation chance-consulting, projet portails-media, région UE) : instrumentation.ts,
+                        instrumentation-client.ts, sentry.{server,edge}.config.ts, app/global-error.tsx ; réglages communs
+                        lib/sentry-options.ts (aucune donnée personnelle : ni utilisateur, IP, cookies, en-têtes, corps, paramètres
+                        d'URL, requêtes SQL ni contenu des appels aux modèles ; e-mails masqués). Actif si NEXT_PUBLIC_SENTRY_DSN
+                        est défini (Vercel : production et preview) ; navigateur : erreurs seulement, sans Replay
   lib/gsc.ts            import Search Console (compte de service Google)
   lib/g2.ts             avis G2 (API de syndication, clé G2_API_TOKEN côté serveur) → note et citations ≤ 300 car. en brouillon
   components/public|admin
