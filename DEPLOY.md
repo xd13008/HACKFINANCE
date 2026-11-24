@@ -92,6 +92,15 @@ Une base Supabase séparée, reliée aux seules versions « preview » de Vercel
    Sans publication automatique, l'agent ne fait que recommander.
 5. **CGV** des annonces à publier avant l'ouverture du paiement.
 
+## 4 quinquies. Suivi des erreurs (Sentry, région UE)
+
+- Projet `chance-consulting/portails-media` (de.sentry.io). `NEXT_PUBLIC_SENTRY_DSN` est défini sur Vercel (production et preview) ;
+  la DSN est publique, ce n'est pas un secret. Sans elle, Sentry est désactivé (développement local, CI).
+- Optionnel, pour des piles d'appel lisibles : créer un jeton d'organisation Sentry (droit « Release: Admin ») et l'ajouter sur Vercel
+  sous `SENTRY_AUTH_TOKEN` (type « Sensitive »). Sans lui, le build n'envoie simplement pas les « source maps ».
+- Recommandé : Sentry → Settings → Projects → portails-media → Security & Privacy → activer « Prevent Storing of IP Addresses ».
+- Aucune donnée personnelle n'est envoyée (lib/sentry-options.ts) ; pas d'enregistrement de session (Replay).
+
 ## 5. Agents (Claude API)
 1. Créer une clé API sur console.anthropic.com et définir une **limite de dépense** au niveau de l'organisation.
 2. Renseigner `ANTHROPIC_API_KEY`, `AGENT_EMAIL` et `AGENT_PASSWORD` (le compte au rôle « agent »).
